@@ -33,9 +33,26 @@ import com.amazonaws.services.pinpointemail.model.*;
  * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint API is available in the US East (N. Virginia) Region at the following endpoint:
- * <code>email.us-east-1.amazonaws.com</code>
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
+ * Regions at the following endpoints:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonPinpointEmail {
@@ -131,6 +148,46 @@ public interface AmazonPinpointEmail {
      *      target="_top">AWS API Documentation</a>
      */
     CreateDedicatedIpPoolResult createDedicatedIpPool(CreateDedicatedIpPoolRequest createDedicatedIpPoolRequest);
+
+    /**
+     * <p>
+     * Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your
+     * messages will be handled by various email providers around the world. When you perform a predictive inbox
+     * placement test, you provide a sample message that contains the content that you plan to send to your customers.
+     * Amazon Pinpoint then sends that message to special email addresses spread across several major email providers.
+     * After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+     * operation to view the results of the test.
+     * </p>
+     * 
+     * @param createDeliverabilityTestReportRequest
+     *        A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you
+     *        predict how your messages will be handled by various email providers around the world. When you perform a
+     *        predictive inbox placement test, you provide a sample message that contains the content that you plan to
+     *        send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across
+     *        several major email providers. After about 24 hours, the test is complete, and you can use the
+     *        <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+     * @return Result of the CreateDeliverabilityTestReport operation returned by the service.
+     * @throws AccountSuspendedException
+     *         The message can't be sent because the account's ability to send email has been permanently restricted.
+     * @throws SendingPausedException
+     *         The message can't be sent because the account's ability to send email is currently paused.
+     * @throws MessageRejectedException
+     *         The message can't be sent because it contains invalid content.
+     * @throws MailFromDomainNotVerifiedException
+     *         The message can't be sent because the sending domain isn't verified.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.CreateDeliverabilityTestReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateDeliverabilityTestReportResult createDeliverabilityTestReport(CreateDeliverabilityTestReportRequest createDeliverabilityTestReportRequest);
 
     /**
      * <p>
@@ -283,6 +340,26 @@ public interface AmazonPinpointEmail {
 
     /**
      * <p>
+     * Retrieve a list of the blacklists that your dedicated IP addresses appear on.
+     * </p>
+     * 
+     * @param getBlacklistReportsRequest
+     *        A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
+     * @return Result of the GetBlacklistReports operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.GetBlacklistReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetBlacklistReportsResult getBlacklistReports(GetBlacklistReportsRequest getBlacklistReportsRequest);
+
+    /**
+     * <p>
      * Get information about an existing configuration set, including the dedicated IP pool that it's associated with,
      * whether or not it's enabled for sending email, and more.
      * </p>
@@ -379,6 +456,81 @@ public interface AmazonPinpointEmail {
 
     /**
      * <p>
+     * Show the status of the Deliverability dashboard. When the Deliverability dashboard is enabled, you gain access to
+     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     * perform predictive inbox placement tests.
+     * </p>
+     * <p>
+     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
+     * a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the current calendar
+     * month.
+     * </p>
+     * 
+     * @param getDeliverabilityDashboardOptionsRequest
+     *        A request to retrieve the status of the Deliverability dashboard for your account. When the Deliverability
+     *        dashboard is enabled, you gain access to reputation metrics for the domains that you use to send email
+     *        using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+     *        <p>
+     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
+     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
+     *        first day of a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the
+     *        current calendar month.
+     * @return Result of the GetDeliverabilityDashboardOptions operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.GetDeliverabilityDashboardOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDeliverabilityDashboardOptionsResult getDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest getDeliverabilityDashboardOptionsRequest);
+
+    /**
+     * <p>
+     * Retrieve the results of a predictive inbox placement test.
+     * </p>
+     * 
+     * @param getDeliverabilityTestReportRequest
+     *        A request to retrieve the results of a predictive inbox placement test.
+     * @return Result of the GetDeliverabilityTestReport operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.GetDeliverabilityTestReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDeliverabilityTestReportResult getDeliverabilityTestReport(GetDeliverabilityTestReportRequest getDeliverabilityTestReportRequest);
+
+    /**
+     * <p>
+     * Retrieve inbox placement and engagement rates for the domains that you use to send email.
+     * </p>
+     * 
+     * @param getDomainStatisticsReportRequest
+     *        A request to obtain deliverability metrics for a domain.
+     * @return Result of the GetDomainStatisticsReport operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.GetDomainStatisticsReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDomainStatisticsReportResult getDomainStatisticsReport(GetDomainStatisticsReportRequest getDomainStatisticsReportRequest);
+
+    /**
+     * <p>
      * Provides information about a specific identity associated with your Amazon Pinpoint account, including the
      * identity's verification status, its DKIM authentication status, and its custom Mail-From settings.
      * </p>
@@ -440,6 +592,28 @@ public interface AmazonPinpointEmail {
      *      target="_top">AWS API Documentation</a>
      */
     ListDedicatedIpPoolsResult listDedicatedIpPools(ListDedicatedIpPoolsRequest listDedicatedIpPoolsRequest);
+
+    /**
+     * <p>
+     * Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For
+     * predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code>
+     * operation to view the results.
+     * </p>
+     * 
+     * @param listDeliverabilityTestReportsRequest
+     *        A request to list all of the predictive inbox placement tests that you've performed.
+     * @return Result of the ListDeliverabilityTestReports operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.ListDeliverabilityTestReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDeliverabilityTestReportsResult listDeliverabilityTestReports(ListDeliverabilityTestReportsRequest listDeliverabilityTestReportsRequest);
 
     /**
      * <p>
@@ -638,6 +812,45 @@ public interface AmazonPinpointEmail {
      *      target="_top">AWS API Documentation</a>
      */
     PutDedicatedIpWarmupAttributesResult putDedicatedIpWarmupAttributes(PutDedicatedIpWarmupAttributesRequest putDedicatedIpWarmupAttributesRequest);
+
+    /**
+     * <p>
+     * Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to
+     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     * perform predictive inbox placement tests.
+     * </p>
+     * <p>
+     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
+     * a calendar month, we prorate the monthly charge based on how many days have elapsed in the current calendar
+     * month.
+     * </p>
+     * 
+     * @param putDeliverabilityDashboardOptionRequest
+     *        A request to enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard,
+     *        you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint.
+     *        You also gain the ability to perform predictive inbox placement tests.</p>
+     *        <p>
+     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
+     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
+     *        first day of a calendar month, we prorate the monthly charge based on how many days have elapsed in the
+     *        current calendar month.
+     * @return Result of the PutDeliverabilityDashboardOption operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.PutDeliverabilityDashboardOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutDeliverabilityDashboardOptionResult putDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest putDeliverabilityDashboardOptionRequest);
 
     /**
      * <p>

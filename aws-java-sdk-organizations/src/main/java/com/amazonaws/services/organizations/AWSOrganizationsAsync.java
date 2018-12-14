@@ -516,6 +516,15 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Using CreateAccount to create multiple temporary accounts is not recommended. You can only close an account from
+     * the Billing and Cost Management Console, and you must be signed in as the root user. For information on the
+     * requirements and process for closing an account, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing an AWS
+     * Account</a> in the <i>AWS Organizations User Guide</i>.
+     * </p>
+     * </li>
      * </ul>
      * </important> <note>
      * <p>
@@ -605,6 +614,15 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * If you get an exception that indicates that the operation failed because your organization is still initializing,
      * wait one hour and then try again. If the error persists, contact <a
      * href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Using CreateAccount to create multiple temporary accounts is not recommended. You can only close an account from
+     * the Billing and Cost Management Console, and you must be signed in as the root user. For information on the
+     * requirements and process for closing an account, see <a
+     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing an AWS
+     * Account</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
      * </ul>

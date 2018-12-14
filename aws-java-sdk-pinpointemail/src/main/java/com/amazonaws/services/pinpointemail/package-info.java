@@ -19,9 +19,26 @@
  * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint API is available in the US East (N. Virginia) Region at the following endpoint:
- * <code>email.us-east-1.amazonaws.com</code>
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
+ * Regions at the following endpoints:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * </ul>
  */
 package com.amazonaws.services.pinpointemail;
 

@@ -69,6 +69,19 @@ public class AbstractAmazonPinpointEmailAsync extends AbstractAmazonPinpointEmai
     }
 
     @Override
+    public java.util.concurrent.Future<CreateDeliverabilityTestReportResult> createDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request) {
+
+        return createDeliverabilityTestReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDeliverabilityTestReportResult> createDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDeliverabilityTestReportRequest, CreateDeliverabilityTestReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateEmailIdentityResult> createEmailIdentityAsync(CreateEmailIdentityRequest request) {
 
         return createEmailIdentityAsync(request, null);
@@ -149,6 +162,19 @@ public class AbstractAmazonPinpointEmailAsync extends AbstractAmazonPinpointEmai
     }
 
     @Override
+    public java.util.concurrent.Future<GetBlacklistReportsResult> getBlacklistReportsAsync(GetBlacklistReportsRequest request) {
+
+        return getBlacklistReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBlacklistReportsResult> getBlacklistReportsAsync(GetBlacklistReportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetBlacklistReportsRequest, GetBlacklistReportsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConfigurationSetResult> getConfigurationSetAsync(GetConfigurationSetRequest request) {
 
         return getConfigurationSetAsync(request, null);
@@ -203,6 +229,47 @@ public class AbstractAmazonPinpointEmailAsync extends AbstractAmazonPinpointEmai
     }
 
     @Override
+    public java.util.concurrent.Future<GetDeliverabilityDashboardOptionsResult> getDeliverabilityDashboardOptionsAsync(
+            GetDeliverabilityDashboardOptionsRequest request) {
+
+        return getDeliverabilityDashboardOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverabilityDashboardOptionsResult> getDeliverabilityDashboardOptionsAsync(
+            GetDeliverabilityDashboardOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeliverabilityDashboardOptionsRequest, GetDeliverabilityDashboardOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverabilityTestReportResult> getDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request) {
+
+        return getDeliverabilityTestReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverabilityTestReportResult> getDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDeliverabilityTestReportRequest, GetDeliverabilityTestReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainStatisticsReportResult> getDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request) {
+
+        return getDomainStatisticsReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainStatisticsReportResult> getDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDomainStatisticsReportRequest, GetDomainStatisticsReportResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEmailIdentityResult> getEmailIdentityAsync(GetEmailIdentityRequest request) {
 
         return getEmailIdentityAsync(request, null);
@@ -237,6 +304,19 @@ public class AbstractAmazonPinpointEmailAsync extends AbstractAmazonPinpointEmai
     @Override
     public java.util.concurrent.Future<ListDedicatedIpPoolsResult> listDedicatedIpPoolsAsync(ListDedicatedIpPoolsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDedicatedIpPoolsRequest, ListDedicatedIpPoolsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeliverabilityTestReportsResult> listDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request) {
+
+        return listDeliverabilityTestReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeliverabilityTestReportsResult> listDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDeliverabilityTestReportsRequest, ListDeliverabilityTestReportsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -364,6 +444,21 @@ public class AbstractAmazonPinpointEmailAsync extends AbstractAmazonPinpointEmai
     @Override
     public java.util.concurrent.Future<PutDedicatedIpWarmupAttributesResult> putDedicatedIpWarmupAttributesAsync(PutDedicatedIpWarmupAttributesRequest request,
             com.amazonaws.handlers.AsyncHandler<PutDedicatedIpWarmupAttributesRequest, PutDedicatedIpWarmupAttributesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliverabilityDashboardOptionResult> putDeliverabilityDashboardOptionAsync(
+            PutDeliverabilityDashboardOptionRequest request) {
+
+        return putDeliverabilityDashboardOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliverabilityDashboardOptionResult> putDeliverabilityDashboardOptionAsync(
+            PutDeliverabilityDashboardOptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDeliverabilityDashboardOptionRequest, PutDeliverabilityDashboardOptionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -32,9 +32,26 @@ import java.util.concurrent.ExecutorService;
  * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint API is available in the US East (N. Virginia) Region at the following endpoint:
- * <code>email.us-east-1.amazonaws.com</code>
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
+ * Regions at the following endpoints:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -154,6 +171,40 @@ public class AmazonPinpointEmailAsyncClient extends AmazonPinpointEmailClient im
 
                 try {
                     result = executeCreateDedicatedIpPool(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDeliverabilityTestReportResult> createDeliverabilityTestReportAsync(CreateDeliverabilityTestReportRequest request) {
+
+        return createDeliverabilityTestReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDeliverabilityTestReportResult> createDeliverabilityTestReportAsync(
+            final CreateDeliverabilityTestReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateDeliverabilityTestReportRequest, CreateDeliverabilityTestReportResult> asyncHandler) {
+        final CreateDeliverabilityTestReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateDeliverabilityTestReportResult>() {
+            @Override
+            public CreateDeliverabilityTestReportResult call() throws Exception {
+                CreateDeliverabilityTestReportResult result = null;
+
+                try {
+                    result = executeCreateDeliverabilityTestReport(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -370,6 +421,39 @@ public class AmazonPinpointEmailAsyncClient extends AmazonPinpointEmailClient im
     }
 
     @Override
+    public java.util.concurrent.Future<GetBlacklistReportsResult> getBlacklistReportsAsync(GetBlacklistReportsRequest request) {
+
+        return getBlacklistReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBlacklistReportsResult> getBlacklistReportsAsync(final GetBlacklistReportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBlacklistReportsRequest, GetBlacklistReportsResult> asyncHandler) {
+        final GetBlacklistReportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBlacklistReportsResult>() {
+            @Override
+            public GetBlacklistReportsResult call() throws Exception {
+                GetBlacklistReportsResult result = null;
+
+                try {
+                    result = executeGetBlacklistReports(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetConfigurationSetResult> getConfigurationSetAsync(GetConfigurationSetRequest request) {
 
         return getConfigurationSetAsync(request, null);
@@ -504,6 +588,107 @@ public class AmazonPinpointEmailAsyncClient extends AmazonPinpointEmailClient im
     }
 
     @Override
+    public java.util.concurrent.Future<GetDeliverabilityDashboardOptionsResult> getDeliverabilityDashboardOptionsAsync(
+            GetDeliverabilityDashboardOptionsRequest request) {
+
+        return getDeliverabilityDashboardOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverabilityDashboardOptionsResult> getDeliverabilityDashboardOptionsAsync(
+            final GetDeliverabilityDashboardOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeliverabilityDashboardOptionsRequest, GetDeliverabilityDashboardOptionsResult> asyncHandler) {
+        final GetDeliverabilityDashboardOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeliverabilityDashboardOptionsResult>() {
+            @Override
+            public GetDeliverabilityDashboardOptionsResult call() throws Exception {
+                GetDeliverabilityDashboardOptionsResult result = null;
+
+                try {
+                    result = executeGetDeliverabilityDashboardOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverabilityTestReportResult> getDeliverabilityTestReportAsync(GetDeliverabilityTestReportRequest request) {
+
+        return getDeliverabilityTestReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDeliverabilityTestReportResult> getDeliverabilityTestReportAsync(final GetDeliverabilityTestReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDeliverabilityTestReportRequest, GetDeliverabilityTestReportResult> asyncHandler) {
+        final GetDeliverabilityTestReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDeliverabilityTestReportResult>() {
+            @Override
+            public GetDeliverabilityTestReportResult call() throws Exception {
+                GetDeliverabilityTestReportResult result = null;
+
+                try {
+                    result = executeGetDeliverabilityTestReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainStatisticsReportResult> getDomainStatisticsReportAsync(GetDomainStatisticsReportRequest request) {
+
+        return getDomainStatisticsReportAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDomainStatisticsReportResult> getDomainStatisticsReportAsync(final GetDomainStatisticsReportRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetDomainStatisticsReportRequest, GetDomainStatisticsReportResult> asyncHandler) {
+        final GetDomainStatisticsReportRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetDomainStatisticsReportResult>() {
+            @Override
+            public GetDomainStatisticsReportResult call() throws Exception {
+                GetDomainStatisticsReportResult result = null;
+
+                try {
+                    result = executeGetDomainStatisticsReport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetEmailIdentityResult> getEmailIdentityAsync(GetEmailIdentityRequest request) {
 
         return getEmailIdentityAsync(request, null);
@@ -587,6 +772,40 @@ public class AmazonPinpointEmailAsyncClient extends AmazonPinpointEmailClient im
 
                 try {
                     result = executeListDedicatedIpPools(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeliverabilityTestReportsResult> listDeliverabilityTestReportsAsync(ListDeliverabilityTestReportsRequest request) {
+
+        return listDeliverabilityTestReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeliverabilityTestReportsResult> listDeliverabilityTestReportsAsync(
+            final ListDeliverabilityTestReportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListDeliverabilityTestReportsRequest, ListDeliverabilityTestReportsResult> asyncHandler) {
+        final ListDeliverabilityTestReportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListDeliverabilityTestReportsResult>() {
+            @Override
+            public ListDeliverabilityTestReportsResult call() throws Exception {
+                ListDeliverabilityTestReportsResult result = null;
+
+                try {
+                    result = executeListDeliverabilityTestReports(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -895,6 +1114,41 @@ public class AmazonPinpointEmailAsyncClient extends AmazonPinpointEmailClient im
 
                 try {
                     result = executePutDedicatedIpWarmupAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliverabilityDashboardOptionResult> putDeliverabilityDashboardOptionAsync(
+            PutDeliverabilityDashboardOptionRequest request) {
+
+        return putDeliverabilityDashboardOptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDeliverabilityDashboardOptionResult> putDeliverabilityDashboardOptionAsync(
+            final PutDeliverabilityDashboardOptionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDeliverabilityDashboardOptionRequest, PutDeliverabilityDashboardOptionResult> asyncHandler) {
+        final PutDeliverabilityDashboardOptionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDeliverabilityDashboardOptionResult>() {
+            @Override
+            public PutDeliverabilityDashboardOptionResult call() throws Exception {
+                PutDeliverabilityDashboardOptionResult result = null;
+
+                try {
+                    result = executePutDeliverabilityDashboardOption(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

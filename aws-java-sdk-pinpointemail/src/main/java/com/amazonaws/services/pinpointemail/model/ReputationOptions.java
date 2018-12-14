@@ -38,8 +38,8 @@ public class ReputationOptions implements Serializable, Cloneable, StructuredPoj
     private Boolean reputationMetricsEnabled;
     /**
      * <p>
-     * The date and time when the reputation metrics were last given a fresh start. When your account is given a fresh
-     * start, your reputation metrics are calculated starting from the date of the fresh start.
+     * The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is
+     * given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.
      * </p>
      */
     private java.util.Date lastFreshStart;
@@ -106,13 +106,14 @@ public class ReputationOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date and time when the reputation metrics were last given a fresh start. When your account is given a fresh
-     * start, your reputation metrics are calculated starting from the date of the fresh start.
+     * The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is
+     * given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.
      * </p>
      * 
      * @param lastFreshStart
-     *        The date and time when the reputation metrics were last given a fresh start. When your account is given a
-     *        fresh start, your reputation metrics are calculated starting from the date of the fresh start.
+     *        The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your
+     *        account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh
+     *        start.
      */
 
     public void setLastFreshStart(java.util.Date lastFreshStart) {
@@ -121,12 +122,13 @@ public class ReputationOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date and time when the reputation metrics were last given a fresh start. When your account is given a fresh
-     * start, your reputation metrics are calculated starting from the date of the fresh start.
+     * The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is
+     * given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.
      * </p>
      * 
-     * @return The date and time when the reputation metrics were last given a fresh start. When your account is given a
-     *         fresh start, your reputation metrics are calculated starting from the date of the fresh start.
+     * @return The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your
+     *         account is given a fresh start, your reputation metrics are calculated starting from the date of the
+     *         fresh start.
      */
 
     public java.util.Date getLastFreshStart() {
@@ -135,13 +137,14 @@ public class ReputationOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date and time when the reputation metrics were last given a fresh start. When your account is given a fresh
-     * start, your reputation metrics are calculated starting from the date of the fresh start.
+     * The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your account is
+     * given a fresh start, your reputation metrics are calculated starting from the date of the fresh start.
      * </p>
      * 
      * @param lastFreshStart
-     *        The date and time when the reputation metrics were last given a fresh start. When your account is given a
-     *        fresh start, your reputation metrics are calculated starting from the date of the fresh start.
+     *        The date and time (in Unix time) when the reputation metrics were last given a fresh start. When your
+     *        account is given a fresh start, your reputation metrics are calculated starting from the date of the fresh
+     *        start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

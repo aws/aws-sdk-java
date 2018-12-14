@@ -137,6 +137,27 @@ public enum Region {
     EU_Frankfurt("eu-central-1"),
 
     /**
+     * The EU (Stockholm) Amazon S3 Region. This region uses Amazon S3 servers
+     * located in Stockholm.
+     * <p>
+     * The EU (Stockholm) Region requires AWS V4 authentication, therefore when
+     * accessing buckets inside this region, you need to explicitly configure
+     * the "eu-north-1" endpoint for the AmazonS3Client in order to enable V4
+     * signing:
+     *
+     * <pre>
+     * AmazonS3Client s3 = new AmazonS3Client();
+     * s3.setRegion(RegionUtils.getRegion("eu-north-1"));
+     * </pre>
+     *
+     * </p>
+     *
+     * @see AmazonS3Client#setEndpoint(String)
+     * @see AmazonS3Client#setRegion(com.amazonaws.regions.Region)
+     */
+    EU_North_1("eu-north-1"),
+
+    /**
      * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
      * in Singapore.
      * <p>

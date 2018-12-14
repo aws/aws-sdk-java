@@ -32,9 +32,26 @@ import com.amazonaws.services.pinpointemail.model.*;
  * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint API is available in the US East (N. Virginia) Region at the following endpoint:
- * <code>email.us-east-1.amazonaws.com</code>
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
+ * Regions at the following endpoints:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonPinpointEmailAsync extends AmazonPinpointEmail {
@@ -167,6 +184,63 @@ public interface AmazonPinpointEmailAsync extends AmazonPinpointEmail {
      */
     java.util.concurrent.Future<CreateDedicatedIpPoolResult> createDedicatedIpPoolAsync(CreateDedicatedIpPoolRequest createDedicatedIpPoolRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDedicatedIpPoolRequest, CreateDedicatedIpPoolResult> asyncHandler);
+
+    /**
+     * <p>
+     * Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your
+     * messages will be handled by various email providers around the world. When you perform a predictive inbox
+     * placement test, you provide a sample message that contains the content that you plan to send to your customers.
+     * Amazon Pinpoint then sends that message to special email addresses spread across several major email providers.
+     * After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+     * operation to view the results of the test.
+     * </p>
+     * 
+     * @param createDeliverabilityTestReportRequest
+     *        A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you
+     *        predict how your messages will be handled by various email providers around the world. When you perform a
+     *        predictive inbox placement test, you provide a sample message that contains the content that you plan to
+     *        send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across
+     *        several major email providers. After about 24 hours, the test is complete, and you can use the
+     *        <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+     * @return A Java Future containing the result of the CreateDeliverabilityTestReport operation returned by the
+     *         service.
+     * @sample AmazonPinpointEmailAsync.CreateDeliverabilityTestReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDeliverabilityTestReportResult> createDeliverabilityTestReportAsync(
+            CreateDeliverabilityTestReportRequest createDeliverabilityTestReportRequest);
+
+    /**
+     * <p>
+     * Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your
+     * messages will be handled by various email providers around the world. When you perform a predictive inbox
+     * placement test, you provide a sample message that contains the content that you plan to send to your customers.
+     * Amazon Pinpoint then sends that message to special email addresses spread across several major email providers.
+     * After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+     * operation to view the results of the test.
+     * </p>
+     * 
+     * @param createDeliverabilityTestReportRequest
+     *        A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you
+     *        predict how your messages will be handled by various email providers around the world. When you perform a
+     *        predictive inbox placement test, you provide a sample message that contains the content that you plan to
+     *        send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across
+     *        several major email providers. After about 24 hours, the test is complete, and you can use the
+     *        <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDeliverabilityTestReport operation returned by the
+     *         service.
+     * @sample AmazonPinpointEmailAsyncHandler.CreateDeliverabilityTestReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDeliverabilityTestReportResult> createDeliverabilityTestReportAsync(
+            CreateDeliverabilityTestReportRequest createDeliverabilityTestReportRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDeliverabilityTestReportRequest, CreateDeliverabilityTestReportResult> asyncHandler);
 
     /**
      * <p>
@@ -432,6 +506,39 @@ public interface AmazonPinpointEmailAsync extends AmazonPinpointEmail {
 
     /**
      * <p>
+     * Retrieve a list of the blacklists that your dedicated IP addresses appear on.
+     * </p>
+     * 
+     * @param getBlacklistReportsRequest
+     *        A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
+     * @return A Java Future containing the result of the GetBlacklistReports operation returned by the service.
+     * @sample AmazonPinpointEmailAsync.GetBlacklistReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBlacklistReportsResult> getBlacklistReportsAsync(GetBlacklistReportsRequest getBlacklistReportsRequest);
+
+    /**
+     * <p>
+     * Retrieve a list of the blacklists that your dedicated IP addresses appear on.
+     * </p>
+     * 
+     * @param getBlacklistReportsRequest
+     *        A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBlacklistReports operation returned by the service.
+     * @sample AmazonPinpointEmailAsyncHandler.GetBlacklistReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBlacklistReportsResult> getBlacklistReportsAsync(GetBlacklistReportsRequest getBlacklistReportsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBlacklistReportsRequest, GetBlacklistReportsResult> asyncHandler);
+
+    /**
+     * <p>
      * Get information about an existing configuration set, including the dedicated IP pool that it's associated with,
      * whether or not it's enabled for sending email, and more.
      * </p>
@@ -598,6 +705,143 @@ public interface AmazonPinpointEmailAsync extends AmazonPinpointEmail {
 
     /**
      * <p>
+     * Show the status of the Deliverability dashboard. When the Deliverability dashboard is enabled, you gain access to
+     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     * perform predictive inbox placement tests.
+     * </p>
+     * <p>
+     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
+     * a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the current calendar
+     * month.
+     * </p>
+     * 
+     * @param getDeliverabilityDashboardOptionsRequest
+     *        A request to retrieve the status of the Deliverability dashboard for your account. When the Deliverability
+     *        dashboard is enabled, you gain access to reputation metrics for the domains that you use to send email
+     *        using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+     *        <p>
+     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
+     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
+     *        first day of a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the
+     *        current calendar month.
+     * @return A Java Future containing the result of the GetDeliverabilityDashboardOptions operation returned by the
+     *         service.
+     * @sample AmazonPinpointEmailAsync.GetDeliverabilityDashboardOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeliverabilityDashboardOptionsResult> getDeliverabilityDashboardOptionsAsync(
+            GetDeliverabilityDashboardOptionsRequest getDeliverabilityDashboardOptionsRequest);
+
+    /**
+     * <p>
+     * Show the status of the Deliverability dashboard. When the Deliverability dashboard is enabled, you gain access to
+     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     * perform predictive inbox placement tests.
+     * </p>
+     * <p>
+     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
+     * a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the current calendar
+     * month.
+     * </p>
+     * 
+     * @param getDeliverabilityDashboardOptionsRequest
+     *        A request to retrieve the status of the Deliverability dashboard for your account. When the Deliverability
+     *        dashboard is enabled, you gain access to reputation metrics for the domains that you use to send email
+     *        using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+     *        <p>
+     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
+     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
+     *        first day of a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the
+     *        current calendar month.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeliverabilityDashboardOptions operation returned by the
+     *         service.
+     * @sample AmazonPinpointEmailAsyncHandler.GetDeliverabilityDashboardOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeliverabilityDashboardOptionsResult> getDeliverabilityDashboardOptionsAsync(
+            GetDeliverabilityDashboardOptionsRequest getDeliverabilityDashboardOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeliverabilityDashboardOptionsRequest, GetDeliverabilityDashboardOptionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve the results of a predictive inbox placement test.
+     * </p>
+     * 
+     * @param getDeliverabilityTestReportRequest
+     *        A request to retrieve the results of a predictive inbox placement test.
+     * @return A Java Future containing the result of the GetDeliverabilityTestReport operation returned by the service.
+     * @sample AmazonPinpointEmailAsync.GetDeliverabilityTestReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeliverabilityTestReportResult> getDeliverabilityTestReportAsync(
+            GetDeliverabilityTestReportRequest getDeliverabilityTestReportRequest);
+
+    /**
+     * <p>
+     * Retrieve the results of a predictive inbox placement test.
+     * </p>
+     * 
+     * @param getDeliverabilityTestReportRequest
+     *        A request to retrieve the results of a predictive inbox placement test.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDeliverabilityTestReport operation returned by the service.
+     * @sample AmazonPinpointEmailAsyncHandler.GetDeliverabilityTestReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDeliverabilityTestReportResult> getDeliverabilityTestReportAsync(
+            GetDeliverabilityTestReportRequest getDeliverabilityTestReportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDeliverabilityTestReportRequest, GetDeliverabilityTestReportResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve inbox placement and engagement rates for the domains that you use to send email.
+     * </p>
+     * 
+     * @param getDomainStatisticsReportRequest
+     *        A request to obtain deliverability metrics for a domain.
+     * @return A Java Future containing the result of the GetDomainStatisticsReport operation returned by the service.
+     * @sample AmazonPinpointEmailAsync.GetDomainStatisticsReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDomainStatisticsReportResult> getDomainStatisticsReportAsync(
+            GetDomainStatisticsReportRequest getDomainStatisticsReportRequest);
+
+    /**
+     * <p>
+     * Retrieve inbox placement and engagement rates for the domains that you use to send email.
+     * </p>
+     * 
+     * @param getDomainStatisticsReportRequest
+     *        A request to obtain deliverability metrics for a domain.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDomainStatisticsReport operation returned by the service.
+     * @sample AmazonPinpointEmailAsyncHandler.GetDomainStatisticsReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDomainStatisticsReportResult> getDomainStatisticsReportAsync(
+            GetDomainStatisticsReportRequest getDomainStatisticsReportRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDomainStatisticsReportRequest, GetDomainStatisticsReportResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides information about a specific identity associated with your Amazon Pinpoint account, including the
      * identity's verification status, its DKIM authentication status, and its custom Mail-From settings.
      * </p>
@@ -710,6 +954,47 @@ public interface AmazonPinpointEmailAsync extends AmazonPinpointEmail {
      */
     java.util.concurrent.Future<ListDedicatedIpPoolsResult> listDedicatedIpPoolsAsync(ListDedicatedIpPoolsRequest listDedicatedIpPoolsRequest,
             com.amazonaws.handlers.AsyncHandler<ListDedicatedIpPoolsRequest, ListDedicatedIpPoolsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For
+     * predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code>
+     * operation to view the results.
+     * </p>
+     * 
+     * @param listDeliverabilityTestReportsRequest
+     *        A request to list all of the predictive inbox placement tests that you've performed.
+     * @return A Java Future containing the result of the ListDeliverabilityTestReports operation returned by the
+     *         service.
+     * @sample AmazonPinpointEmailAsync.ListDeliverabilityTestReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeliverabilityTestReportsResult> listDeliverabilityTestReportsAsync(
+            ListDeliverabilityTestReportsRequest listDeliverabilityTestReportsRequest);
+
+    /**
+     * <p>
+     * Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For
+     * predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code>
+     * operation to view the results.
+     * </p>
+     * 
+     * @param listDeliverabilityTestReportsRequest
+     *        A request to list all of the predictive inbox placement tests that you've performed.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDeliverabilityTestReports operation returned by the
+     *         service.
+     * @sample AmazonPinpointEmailAsyncHandler.ListDeliverabilityTestReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDeliverabilityTestReportsResult> listDeliverabilityTestReportsAsync(
+            ListDeliverabilityTestReportsRequest listDeliverabilityTestReportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDeliverabilityTestReportsRequest, ListDeliverabilityTestReportsResult> asyncHandler);
 
     /**
      * <p>
@@ -1073,6 +1358,73 @@ public interface AmazonPinpointEmailAsync extends AmazonPinpointEmail {
     java.util.concurrent.Future<PutDedicatedIpWarmupAttributesResult> putDedicatedIpWarmupAttributesAsync(
             PutDedicatedIpWarmupAttributesRequest putDedicatedIpWarmupAttributesRequest,
             com.amazonaws.handlers.AsyncHandler<PutDedicatedIpWarmupAttributesRequest, PutDedicatedIpWarmupAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to
+     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     * perform predictive inbox placement tests.
+     * </p>
+     * <p>
+     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
+     * a calendar month, we prorate the monthly charge based on how many days have elapsed in the current calendar
+     * month.
+     * </p>
+     * 
+     * @param putDeliverabilityDashboardOptionRequest
+     *        A request to enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard,
+     *        you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint.
+     *        You also gain the ability to perform predictive inbox placement tests.</p>
+     *        <p>
+     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
+     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
+     *        first day of a calendar month, we prorate the monthly charge based on how many days have elapsed in the
+     *        current calendar month.
+     * @return A Java Future containing the result of the PutDeliverabilityDashboardOption operation returned by the
+     *         service.
+     * @sample AmazonPinpointEmailAsync.PutDeliverabilityDashboardOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDeliverabilityDashboardOptionResult> putDeliverabilityDashboardOptionAsync(
+            PutDeliverabilityDashboardOptionRequest putDeliverabilityDashboardOptionRequest);
+
+    /**
+     * <p>
+     * Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to
+     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     * perform predictive inbox placement tests.
+     * </p>
+     * <p>
+     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
+     * a calendar month, we prorate the monthly charge based on how many days have elapsed in the current calendar
+     * month.
+     * </p>
+     * 
+     * @param putDeliverabilityDashboardOptionRequest
+     *        A request to enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard,
+     *        you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint.
+     *        You also gain the ability to perform predictive inbox placement tests.</p>
+     *        <p>
+     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
+     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
+     *        first day of a calendar month, we prorate the monthly charge based on how many days have elapsed in the
+     *        current calendar month.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDeliverabilityDashboardOption operation returned by the
+     *         service.
+     * @sample AmazonPinpointEmailAsyncHandler.PutDeliverabilityDashboardOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDeliverabilityDashboardOptionResult> putDeliverabilityDashboardOptionAsync(
+            PutDeliverabilityDashboardOptionRequest putDeliverabilityDashboardOptionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDeliverabilityDashboardOptionRequest, PutDeliverabilityDashboardOptionResult> asyncHandler);
 
     /**
      * <p>

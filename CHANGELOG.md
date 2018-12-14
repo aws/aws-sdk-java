@@ -1,3 +1,12 @@
+# __1.11.469__ __2018-12-13__
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for AWS Organizations
+
+## __Amazon Pinpoint Email Service__
+  - ### Features
+    - This release adds new operations for the Amazon Pinpoint Deliverability Dashboard. You can use the Deliverability Dashboard to view response and inbox placement metrics for the domains that you use to send email. You can also perform tests on individual email messages to determine how often your messages are delivered to the inbox on several major email providers.
+
 # __1.11.468__ __2018-12-12__
 ## __AWS Glue__
   - ### Features

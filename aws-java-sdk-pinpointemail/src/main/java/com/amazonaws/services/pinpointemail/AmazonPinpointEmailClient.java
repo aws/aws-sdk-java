@@ -57,9 +57,26 @@ import com.amazonaws.services.pinpointemail.model.transform.*;
  * href="http://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html">Amazon Pinpoint Developer Guide</a>.
  * </p>
  * <p>
- * The Amazon Pinpoint API is available in the US East (N. Virginia) Region at the following endpoint:
- * <code>email.us-east-1.amazonaws.com</code>
+ * The Amazon Pinpoint Email API is available in the US East (N. Virginia), US West (Oregon) and the EU (Ireland)
+ * Regions at the following endpoints:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>US East (N. Virginia)</b>: <code>email.us-east-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>US West (Oregon)</b>: <code>email.us-west-2.amazonaws.com</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>EU (Ireland)</b>: <code>email.eu-west-1.amazonaws.com</code>
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -354,6 +371,87 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<CreateDedicatedIpPoolResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new CreateDedicatedIpPoolResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your
+     * messages will be handled by various email providers around the world. When you perform a predictive inbox
+     * placement test, you provide a sample message that contains the content that you plan to send to your customers.
+     * Amazon Pinpoint then sends that message to special email addresses spread across several major email providers.
+     * After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+     * operation to view the results of the test.
+     * </p>
+     * 
+     * @param createDeliverabilityTestReportRequest
+     *        A request to perform a predictive inbox placement test. Predictive inbox placement tests can help you
+     *        predict how your messages will be handled by various email providers around the world. When you perform a
+     *        predictive inbox placement test, you provide a sample message that contains the content that you plan to
+     *        send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across
+     *        several major email providers. After about 24 hours, the test is complete, and you can use the
+     *        <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+     * @return Result of the CreateDeliverabilityTestReport operation returned by the service.
+     * @throws AccountSuspendedException
+     *         The message can't be sent because the account's ability to send email has been permanently restricted.
+     * @throws SendingPausedException
+     *         The message can't be sent because the account's ability to send email is currently paused.
+     * @throws MessageRejectedException
+     *         The message can't be sent because it contains invalid content.
+     * @throws MailFromDomainNotVerifiedException
+     *         The message can't be sent because the sending domain isn't verified.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.CreateDeliverabilityTestReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/CreateDeliverabilityTestReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateDeliverabilityTestReportResult createDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDeliverabilityTestReport(request);
+    }
+
+    @SdkInternalApi
+    final CreateDeliverabilityTestReportResult executeCreateDeliverabilityTestReport(CreateDeliverabilityTestReportRequest createDeliverabilityTestReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDeliverabilityTestReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDeliverabilityTestReportRequest> request = null;
+        Response<CreateDeliverabilityTestReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDeliverabilityTestReportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDeliverabilityTestReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeliverabilityTestReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDeliverabilityTestReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDeliverabilityTestReportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -753,6 +851,65 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Retrieve a list of the blacklists that your dedicated IP addresses appear on.
+     * </p>
+     * 
+     * @param getBlacklistReportsRequest
+     *        A request to retrieve a list of the blacklists that your dedicated IP addresses appear on.
+     * @return Result of the GetBlacklistReports operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.GetBlacklistReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetBlacklistReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetBlacklistReportsResult getBlacklistReports(GetBlacklistReportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBlacklistReports(request);
+    }
+
+    @SdkInternalApi
+    final GetBlacklistReportsResult executeGetBlacklistReports(GetBlacklistReportsRequest getBlacklistReportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBlacklistReportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBlacklistReportsRequest> request = null;
+        Response<GetBlacklistReportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetBlacklistReportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBlacklistReportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBlacklistReports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetBlacklistReportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetBlacklistReportsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Get information about an existing configuration set, including the dedicated IP pool that it's associated with,
      * whether or not it's enabled for sending email, and more.
      * </p>
@@ -1007,6 +1164,205 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Show the status of the Deliverability dashboard. When the Deliverability dashboard is enabled, you gain access to
+     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     * perform predictive inbox placement tests.
+     * </p>
+     * <p>
+     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
+     * a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the current calendar
+     * month.
+     * </p>
+     * 
+     * @param getDeliverabilityDashboardOptionsRequest
+     *        A request to retrieve the status of the Deliverability dashboard for your account. When the Deliverability
+     *        dashboard is enabled, you gain access to reputation metrics for the domains that you use to send email
+     *        using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>
+     *        <p>
+     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
+     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
+     *        first day of a calendar month, AWS prorates the monthly charge based on how many days have elapsed in the
+     *        current calendar month.
+     * @return Result of the GetDeliverabilityDashboardOptions operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.GetDeliverabilityDashboardOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityDashboardOptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDeliverabilityDashboardOptionsResult getDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeliverabilityDashboardOptions(request);
+    }
+
+    @SdkInternalApi
+    final GetDeliverabilityDashboardOptionsResult executeGetDeliverabilityDashboardOptions(
+            GetDeliverabilityDashboardOptionsRequest getDeliverabilityDashboardOptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDeliverabilityDashboardOptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeliverabilityDashboardOptionsRequest> request = null;
+        Response<GetDeliverabilityDashboardOptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeliverabilityDashboardOptionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDeliverabilityDashboardOptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeliverabilityDashboardOptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeliverabilityDashboardOptionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDeliverabilityDashboardOptionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve the results of a predictive inbox placement test.
+     * </p>
+     * 
+     * @param getDeliverabilityTestReportRequest
+     *        A request to retrieve the results of a predictive inbox placement test.
+     * @return Result of the GetDeliverabilityTestReport operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.GetDeliverabilityTestReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDeliverabilityTestReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDeliverabilityTestReportResult getDeliverabilityTestReport(GetDeliverabilityTestReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDeliverabilityTestReport(request);
+    }
+
+    @SdkInternalApi
+    final GetDeliverabilityTestReportResult executeGetDeliverabilityTestReport(GetDeliverabilityTestReportRequest getDeliverabilityTestReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDeliverabilityTestReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDeliverabilityTestReportRequest> request = null;
+        Response<GetDeliverabilityTestReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDeliverabilityTestReportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDeliverabilityTestReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeliverabilityTestReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDeliverabilityTestReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDeliverabilityTestReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieve inbox placement and engagement rates for the domains that you use to send email.
+     * </p>
+     * 
+     * @param getDomainStatisticsReportRequest
+     *        A request to obtain deliverability metrics for a domain.
+     * @return Result of the GetDomainStatisticsReport operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.GetDomainStatisticsReport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/GetDomainStatisticsReport"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDomainStatisticsReportResult getDomainStatisticsReport(GetDomainStatisticsReportRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDomainStatisticsReport(request);
+    }
+
+    @SdkInternalApi
+    final GetDomainStatisticsReportResult executeGetDomainStatisticsReport(GetDomainStatisticsReportRequest getDomainStatisticsReportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDomainStatisticsReportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDomainStatisticsReportRequest> request = null;
+        Response<GetDomainStatisticsReportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDomainStatisticsReportRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDomainStatisticsReportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDomainStatisticsReport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDomainStatisticsReportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDomainStatisticsReportResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides information about a specific identity associated with your Amazon Pinpoint account, including the
      * identity's verification status, its DKIM authentication status, and its custom Mail-From settings.
      * </p>
@@ -1177,6 +1533,69 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<ListDedicatedIpPoolsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListDedicatedIpPoolsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For
+     * predictive inbox placement tests that are complete, you can use the <code>GetDeliverabilityTestReport</code>
+     * operation to view the results.
+     * </p>
+     * 
+     * @param listDeliverabilityTestReportsRequest
+     *        A request to list all of the predictive inbox placement tests that you've performed.
+     * @return Result of the ListDeliverabilityTestReports operation returned by the service.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.ListDeliverabilityTestReports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/ListDeliverabilityTestReports"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDeliverabilityTestReportsResult listDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDeliverabilityTestReports(request);
+    }
+
+    @SdkInternalApi
+    final ListDeliverabilityTestReportsResult executeListDeliverabilityTestReports(ListDeliverabilityTestReportsRequest listDeliverabilityTestReportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDeliverabilityTestReportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDeliverabilityTestReportsRequest> request = null;
+        Response<ListDeliverabilityTestReportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDeliverabilityTestReportsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDeliverabilityTestReportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeliverabilityTestReports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDeliverabilityTestReportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDeliverabilityTestReportsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1741,6 +2160,87 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<PutDedicatedIpWarmupAttributesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutDedicatedIpWarmupAttributesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to
+     * reputation metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to
+     * perform predictive inbox placement tests.
+     * </p>
+     * <p>
+     * When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any other
+     * fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the first day of
+     * a calendar month, we prorate the monthly charge based on how many days have elapsed in the current calendar
+     * month.
+     * </p>
+     * 
+     * @param putDeliverabilityDashboardOptionRequest
+     *        A request to enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard,
+     *        you gain access to reputation metrics for the domains that you use to send email using Amazon Pinpoint.
+     *        You also gain the ability to perform predictive inbox placement tests.</p>
+     *        <p>
+     *        When you use the Deliverability dashboard, you pay a monthly charge of USD$1,250.00, in addition to any
+     *        other fees that you accrue by using Amazon Pinpoint. If you enable the Deliverability dashboard after the
+     *        first day of a calendar month, we prorate the monthly charge based on how many days have elapsed in the
+     *        current calendar month.
+     * @return Result of the PutDeliverabilityDashboardOption operation returned by the service.
+     * @throws AlreadyExistsException
+     *         The resource specified in your request already exists.
+     * @throws NotFoundException
+     *         The resource you attempted to access doesn't exist.
+     * @throws TooManyRequestsException
+     *         Too many requests have been made to the operation.
+     * @throws LimitExceededException
+     *         There are too many instances of the specified resource type.
+     * @throws BadRequestException
+     *         The input you provided is invalid.
+     * @sample AmazonPinpointEmail.PutDeliverabilityDashboardOption
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDeliverabilityDashboardOption"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutDeliverabilityDashboardOptionResult putDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request) {
+        request = beforeClientExecution(request);
+        return executePutDeliverabilityDashboardOption(request);
+    }
+
+    @SdkInternalApi
+    final PutDeliverabilityDashboardOptionResult executePutDeliverabilityDashboardOption(
+            PutDeliverabilityDashboardOptionRequest putDeliverabilityDashboardOptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putDeliverabilityDashboardOptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutDeliverabilityDashboardOptionRequest> request = null;
+        Response<PutDeliverabilityDashboardOptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutDeliverabilityDashboardOptionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putDeliverabilityDashboardOptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Pinpoint Email");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDeliverabilityDashboardOption");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutDeliverabilityDashboardOptionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutDeliverabilityDashboardOptionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

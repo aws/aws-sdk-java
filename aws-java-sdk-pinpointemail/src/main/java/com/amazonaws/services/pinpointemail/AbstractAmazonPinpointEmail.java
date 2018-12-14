@@ -43,6 +43,11 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
     }
 
     @Override
+    public CreateDeliverabilityTestReportResult createDeliverabilityTestReport(CreateDeliverabilityTestReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateEmailIdentityResult createEmailIdentity(CreateEmailIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,6 +78,11 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
     }
 
     @Override
+    public GetBlacklistReportsResult getBlacklistReports(GetBlacklistReportsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetConfigurationSetResult getConfigurationSet(GetConfigurationSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +103,21 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
     }
 
     @Override
+    public GetDeliverabilityDashboardOptionsResult getDeliverabilityDashboardOptions(GetDeliverabilityDashboardOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeliverabilityTestReportResult getDeliverabilityTestReport(GetDeliverabilityTestReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDomainStatisticsReportResult getDomainStatisticsReport(GetDomainStatisticsReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetEmailIdentityResult getEmailIdentity(GetEmailIdentityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +129,11 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
 
     @Override
     public ListDedicatedIpPoolsResult listDedicatedIpPools(ListDedicatedIpPoolsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDeliverabilityTestReportsResult listDeliverabilityTestReports(ListDeliverabilityTestReportsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -149,6 +179,11 @@ public class AbstractAmazonPinpointEmail implements AmazonPinpointEmail {
 
     @Override
     public PutDedicatedIpWarmupAttributesResult putDedicatedIpWarmupAttributes(PutDedicatedIpWarmupAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDeliverabilityDashboardOptionResult putDeliverabilityDashboardOption(PutDeliverabilityDashboardOptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
