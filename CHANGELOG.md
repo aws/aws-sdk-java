@@ -1,3 +1,16 @@
+# __1.11.470__ __2018-12-14__
+## __AWS CloudFormation__
+  - ### Features
+    - Documentation updates for cloudformation
+
+## __Alexa For Business__
+  - ### Features
+    - Released new APIs for managing private skill access to Enrolled Users.  These API's are the equivalent of the A4B console for Private Skills checkbox "Available for Users".
+
+## __Amazon Redshift__
+  - ### Features
+    - Documentation updates for Amazon Redshift
+
 # __1.11.469__ __2018-12-13__
 ## __AWS Organizations__
   - ### Features

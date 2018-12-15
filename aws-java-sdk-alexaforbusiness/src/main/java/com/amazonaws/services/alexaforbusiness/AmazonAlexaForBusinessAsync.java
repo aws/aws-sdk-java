@@ -26,13 +26,13 @@ import com.amazonaws.services.alexaforbusiness.model.*;
  * </p>
  * <p>
  * <p>
- * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides the tools you to manage
+ * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools to manage
  * Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills
  * using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private
  * skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus
- * providing context-aware voice experiences for your customers. In addition, Alexa for Business enables Alexa Voice
- * Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for Business as shared
- * devices as a part of their existing management flow.
+ * providing context-aware voice experiences for your customers. Device makers building with the Alexa Voice Service
+ * (AVS) can create fully integrated solutions, register their products with Alexa for Business, and manage them as
+ * shared devices in their organization.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -210,6 +210,37 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
     java.util.concurrent.Future<AssociateSkillWithSkillGroupResult> associateSkillWithSkillGroupAsync(
             AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateSkillWithSkillGroupRequest, AssociateSkillWithSkillGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Makes a private skill available for enrolled users to enable on their devices.
+     * </p>
+     * 
+     * @param associateSkillWithUsersRequest
+     * @return A Java Future containing the result of the AssociateSkillWithUsers operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.AssociateSkillWithUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest associateSkillWithUsersRequest);
+
+    /**
+     * <p>
+     * Makes a private skill available for enrolled users to enable on their devices.
+     * </p>
+     * 
+     * @param associateSkillWithUsersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSkillWithUsers operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.AssociateSkillWithUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest associateSkillWithUsersRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSkillWithUsersRequest, AssociateSkillWithUsersResult> asyncHandler);
 
     /**
      * <p>
@@ -916,6 +947,39 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
     java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
             DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromSkillGroupRequest, DisassociateSkillFromSkillGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.
+     * </p>
+     * 
+     * @param disassociateSkillFromUsersRequest
+     * @return A Java Future containing the result of the DisassociateSkillFromUsers operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsync.DisassociateSkillFromUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(
+            DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest);
+
+    /**
+     * <p>
+     * Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.
+     * </p>
+     * 
+     * @param disassociateSkillFromUsersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateSkillFromUsers operation returned by the service.
+     * @sample AmazonAlexaForBusinessAsyncHandler.DisassociateSkillFromUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(
+            DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromUsersRequest, DisassociateSkillFromUsersResult> asyncHandler);
 
     /**
      * <p>

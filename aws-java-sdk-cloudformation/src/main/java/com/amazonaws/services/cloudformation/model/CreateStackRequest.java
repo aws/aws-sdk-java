@@ -193,8 +193,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -209,9 +209,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * >AWS::Include</a> and <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
@@ -230,9 +230,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     * >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * </li>
      * </ul>
@@ -1009,8 +1009,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1025,9 +1025,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * >AWS::Include</a> and <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
@@ -1046,9 +1046,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     * >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * </li>
      * </ul>
@@ -1140,7 +1140,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </ul>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *         >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      *         </p>
      *         </li>
@@ -1156,9 +1156,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         one or more macros, and you choose to create a stack directly from the processed template, without first
      *         reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *         <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *         >AWS::Include</a> and <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *         >AWS::Include</a> and <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *         >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *         </p>
      *         <p>
@@ -1177,9 +1177,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </p>
      *         </important>
      *         <p>
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     *         >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *         CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *         </p>
      *         </li>
      * @see Capability
@@ -1278,8 +1278,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1294,9 +1294,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * >AWS::Include</a> and <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
@@ -1315,9 +1315,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     * >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * </li>
      * </ul>
@@ -1409,7 +1409,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1425,9 +1425,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *        >AWS::Include</a> and <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        >AWS::Include</a> and <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
@@ -1446,9 +1446,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </important>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     *        >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        </li>
      * @see Capability
@@ -1549,8 +1549,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1565,9 +1565,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * >AWS::Include</a> and <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
@@ -1586,9 +1586,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     * >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * </li>
      * </ul>
@@ -1685,7 +1685,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1701,9 +1701,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *        >AWS::Include</a> and <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        >AWS::Include</a> and <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
@@ -1722,9 +1722,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </important>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     *        >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1827,8 +1827,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -1843,9 +1843,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * >AWS::Include</a> and <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
@@ -1864,9 +1864,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     * >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * </li>
      * </ul>
@@ -1958,7 +1958,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -1974,9 +1974,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *        >AWS::Include</a> and <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        >AWS::Include</a> and <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
@@ -1995,9 +1995,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </important>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     *        >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2095,8 +2095,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
      * </li>
@@ -2111,9 +2111,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * macros before actually creating the stack. If your stack template contains one or more macros, and you choose to
      * create a stack directly from the processed template, without first reviewing the resulting changes in a change
      * set, you must acknowledge this capability. This includes the <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     * >AWS::Include</a> and <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      * </p>
      * <p>
@@ -2132,9 +2132,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * </important>
      * <p>
-     * For more information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     * >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
      * </p>
      * </li>
      * </ul>
@@ -2226,7 +2226,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </ul>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
      *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      *        </p>
      *        </li>
@@ -2242,9 +2242,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        one or more macros, and you choose to create a stack directly from the processed template, without first
      *        reviewing the resulting changes in a change set, you must acknowledge this capability. This includes the
      *        <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
-     *        >AWS::Include</a> and <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        >AWS::Include</a> and <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
      *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.
      *        </p>
      *        <p>
@@ -2263,9 +2263,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </p>
      *        </important>
      *        <p>
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html"
-     *        >Using AWS CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

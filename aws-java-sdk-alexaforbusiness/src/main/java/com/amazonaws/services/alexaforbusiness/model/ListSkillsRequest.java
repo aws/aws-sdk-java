@@ -27,7 +27,7 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the skill group for which to list enabled skills. Required.
+     * The ARN of the skill group for which to list enabled skills.
      * </p>
      */
     private String skillGroupArn;
@@ -47,7 +47,7 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * An optional token returned from a prior request. Use this token for pagination of results from this action. If
      * this parameter is specified, the response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.
+     * <code>MaxResults</code>.
      * </p>
      */
     private String nextToken;
@@ -55,18 +55,18 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The maximum number of results to include in the response. If more results exist than the specified
      * <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
-     * retrieved. Required.
+     * retrieved.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * The ARN of the skill group for which to list enabled skills. Required.
+     * The ARN of the skill group for which to list enabled skills.
      * </p>
      * 
      * @param skillGroupArn
-     *        The ARN of the skill group for which to list enabled skills. Required.
+     *        The ARN of the skill group for which to list enabled skills.
      */
 
     public void setSkillGroupArn(String skillGroupArn) {
@@ -75,10 +75,10 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the skill group for which to list enabled skills. Required.
+     * The ARN of the skill group for which to list enabled skills.
      * </p>
      * 
-     * @return The ARN of the skill group for which to list enabled skills. Required.
+     * @return The ARN of the skill group for which to list enabled skills.
      */
 
     public String getSkillGroupArn() {
@@ -87,11 +87,11 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The ARN of the skill group for which to list enabled skills. Required.
+     * The ARN of the skill group for which to list enabled skills.
      * </p>
      * 
      * @param skillGroupArn
-     *        The ARN of the skill group for which to list enabled skills. Required.
+     *        The ARN of the skill group for which to list enabled skills.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,13 +222,13 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * An optional token returned from a prior request. Use this token for pagination of results from this action. If
      * this parameter is specified, the response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.
+     * <code>MaxResults</code>.
      * </p>
      * 
      * @param nextToken
      *        An optional token returned from a prior request. Use this token for pagination of results from this
      *        action. If this parameter is specified, the response includes only results beyond the token, up to the
-     *        value specified by <code>MaxResults</code>. Required.
+     *        value specified by <code>MaxResults</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -239,12 +239,12 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * An optional token returned from a prior request. Use this token for pagination of results from this action. If
      * this parameter is specified, the response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.
+     * <code>MaxResults</code>.
      * </p>
      * 
      * @return An optional token returned from a prior request. Use this token for pagination of results from this
      *         action. If this parameter is specified, the response includes only results beyond the token, up to the
-     *         value specified by <code>MaxResults</code>. Required.
+     *         value specified by <code>MaxResults</code>.
      */
 
     public String getNextToken() {
@@ -255,13 +255,13 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * An optional token returned from a prior request. Use this token for pagination of results from this action. If
      * this parameter is specified, the response includes only results beyond the token, up to the value specified by
-     * <code>MaxResults</code>. Required.
+     * <code>MaxResults</code>.
      * </p>
      * 
      * @param nextToken
      *        An optional token returned from a prior request. Use this token for pagination of results from this
      *        action. If this parameter is specified, the response includes only results beyond the token, up to the
-     *        value specified by <code>MaxResults</code>. Required.
+     *        value specified by <code>MaxResults</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,13 +274,13 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The maximum number of results to include in the response. If more results exist than the specified
      * <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
-     * retrieved. Required.
+     * retrieved.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to include in the response. If more results exist than the specified
      *        <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
-     *        retrieved. Required.
+     *        retrieved.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -291,12 +291,12 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The maximum number of results to include in the response. If more results exist than the specified
      * <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
-     * retrieved. Required.
+     * retrieved.
      * </p>
      * 
      * @return The maximum number of results to include in the response. If more results exist than the specified
      *         <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
-     *         retrieved. Required.
+     *         retrieved.
      */
 
     public Integer getMaxResults() {
@@ -307,13 +307,13 @@ public class ListSkillsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The maximum number of results to include in the response. If more results exist than the specified
      * <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
-     * retrieved. Required.
+     * retrieved.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to include in the response. If more results exist than the specified
      *        <code>MaxResults</code> value, a token is included in the response so that the remaining results can be
-     *        retrieved. Required.
+     *        retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

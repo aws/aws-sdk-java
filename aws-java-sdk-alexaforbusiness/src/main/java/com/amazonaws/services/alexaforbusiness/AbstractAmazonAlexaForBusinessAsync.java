@@ -95,6 +95,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest request) {
+
+        return associateSkillWithUsersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSkillWithUsersResult> associateSkillWithUsersAsync(AssociateSkillWithUsersRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateSkillWithUsersRequest, AssociateSkillWithUsersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAddressBookResult> createAddressBookAsync(CreateAddressBookRequest request) {
 
         return createAddressBookAsync(request, null);
@@ -380,6 +393,19 @@ public class AbstractAmazonAlexaForBusinessAsync extends AbstractAmazonAlexaForB
     public java.util.concurrent.Future<DisassociateSkillFromSkillGroupResult> disassociateSkillFromSkillGroupAsync(
             DisassociateSkillFromSkillGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromSkillGroupRequest, DisassociateSkillFromSkillGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(DisassociateSkillFromUsersRequest request) {
+
+        return disassociateSkillFromUsersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSkillFromUsersResult> disassociateSkillFromUsersAsync(DisassociateSkillFromUsersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSkillFromUsersRequest, DisassociateSkillFromUsersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

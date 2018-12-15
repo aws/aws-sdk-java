@@ -53,6 +53,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
     }
 
     @Override
+    public AssociateSkillWithUsersResult associateSkillWithUsers(AssociateSkillWithUsersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAddressBookResult createAddressBook(CreateAddressBookRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -159,6 +164,11 @@ public class AbstractAmazonAlexaForBusiness implements AmazonAlexaForBusiness {
 
     @Override
     public DisassociateSkillFromSkillGroupResult disassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateSkillFromUsersResult disassociateSkillFromUsers(DisassociateSkillFromUsersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

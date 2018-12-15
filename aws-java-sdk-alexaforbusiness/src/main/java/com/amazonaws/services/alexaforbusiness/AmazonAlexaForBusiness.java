@@ -27,13 +27,13 @@ import com.amazonaws.services.alexaforbusiness.model.*;
  * </p>
  * <p>
  * <p>
- * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides the tools you to manage
+ * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools to manage
  * Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills
  * using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private
  * skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus
- * providing context-aware voice experiences for your customers. In addition, Alexa for Business enables Alexa Voice
- * Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for Business as shared
- * devices as a part of their existing management flow.
+ * providing context-aware voice experiences for your customers. Device makers building with the Alexa Voice Service
+ * (AVS) can create fully integrated solutions, register their products with Alexa for Business, and manage them as
+ * shared devices in their organization.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -131,11 +131,28 @@ public interface AmazonAlexaForBusiness {
      *         Concurrent modification of resources. HTTP Status Code: 400.
      * @throws NotFoundException
      *         The resource is not found.
+     * @throws SkillNotLinkedException
+     *         The skill must be linked to a third-party account.
      * @sample AmazonAlexaForBusiness.AssociateSkillWithSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
      *      target="_top">AWS API Documentation</a>
      */
     AssociateSkillWithSkillGroupResult associateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest associateSkillWithSkillGroupRequest);
+
+    /**
+     * <p>
+     * Makes a private skill available for enrolled users to enable on their devices.
+     * </p>
+     * 
+     * @param associateSkillWithUsersRequest
+     * @return Result of the AssociateSkillWithUsers operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.AssociateSkillWithUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateSkillWithUsersResult associateSkillWithUsers(AssociateSkillWithUsersRequest associateSkillWithUsersRequest);
 
     /**
      * <p>
@@ -511,6 +528,21 @@ public interface AmazonAlexaForBusiness {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateSkillFromSkillGroupResult disassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest disassociateSkillFromSkillGroupRequest);
+
+    /**
+     * <p>
+     * Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.
+     * </p>
+     * 
+     * @param disassociateSkillFromUsersRequest
+     * @return Result of the DisassociateSkillFromUsers operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.DisassociateSkillFromUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateSkillFromUsersResult disassociateSkillFromUsers(DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest);
 
     /**
      * <p>

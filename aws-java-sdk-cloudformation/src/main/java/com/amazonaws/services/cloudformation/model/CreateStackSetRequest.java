@@ -76,66 +76,117 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
     /**
      * <p>
-     * A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack set
-     * templates might include resources that can affect permissions in your AWS account—for example, by creating new
-     * AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly acknowledge their
-     * capabilities by specifying this parameter.
-     * </p>
-     * <p>
-     * The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to specify
-     * this parameter:
+     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AWS::IAM::AccessKey
+     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     * </p>
+     * <p>
+     * Some stack templates might include resources that can affect permissions in your AWS account; for example, by
+     * creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     * acknowledge this by specifying one of these capabilities.
+     * </p>
+     * <p>
+     * The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> capability.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you have IAM resources, you can specify either capability.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::Group
+     * If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::InstanceProfile
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Policy
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Role
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::User
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::UserToGroupAddition
+     * If you don't specify either of these capabilities, AWS CloudFormation returns an
+     * <code>InsufficientCapabilities</code> error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions that are associated
-     * with them and edit their permissions if necessary.
+     * If your stack template contains these resources, we recommend that you review all permissions associated with
+     * them and edit their permissions if necessary.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you
-     * must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPABILITY_AUTO_EXPAND</code>
+     * </p>
+     * <p>
+     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
+     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
+     * must acknowledge this capability. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     * capability, if you include a macro in your template the stack set operation will fail.
+     * </p>
+     * </note></li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> capabilities;
     /**
@@ -527,125 +578,230 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack set
-     * templates might include resources that can affect permissions in your AWS account—for example, by creating new
-     * AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly acknowledge their
-     * capabilities by specifying this parameter.
-     * </p>
-     * <p>
-     * The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to specify
-     * this parameter:
+     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AWS::IAM::AccessKey
+     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     * </p>
+     * <p>
+     * Some stack templates might include resources that can affect permissions in your AWS account; for example, by
+     * creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     * acknowledge this by specifying one of these capabilities.
+     * </p>
+     * <p>
+     * The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> capability.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you have IAM resources, you can specify either capability.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::Group
+     * If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::InstanceProfile
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Policy
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Role
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::User
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::UserToGroupAddition
+     * If you don't specify either of these capabilities, AWS CloudFormation returns an
+     * <code>InsufficientCapabilities</code> error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions that are associated
-     * with them and edit their permissions if necessary.
+     * If your stack template contains these resources, we recommend that you review all permissions associated with
+     * them and edit their permissions if necessary.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you
-     * must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPABILITY_AUTO_EXPAND</code>
+     * </p>
+     * <p>
+     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
+     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
+     * must acknowledge this capability. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     * capability, if you include a macro in your template the stack set operation will fail.
+     * </p>
+     * </note></li>
+     * </ul>
      * 
-     * @return A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some
-     *         stack set templates might include resources that can affect permissions in your AWS account—for example,
-     *         by creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
-     *         acknowledge their capabilities by specifying this parameter.</p>
+     * @return In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *         in order for AWS CloudFormation to create the stack set and related stack instances.</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to
-     *         specify this parameter:
+     *         <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     *         </p>
+     *         <p>
+     *         Some stack templates might include resources that can affect permissions in your AWS account; for
+     *         example, by creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must
+     *         explicitly acknowledge this by specifying one of these capabilities.
+     *         </p>
+     *         <p>
+     *         The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     *         <code>CAPABILITY_NAMED_IAM</code> capability.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         AWS::IAM::AccessKey
+     *         If you have IAM resources, you can specify either capability.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AWS::IAM::Group
+     *         If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AWS::IAM::InstanceProfile
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         AWS::IAM::Policy
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         AWS::IAM::Role
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         AWS::IAM::User
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         AWS::IAM::UserToGroupAddition
+     *         If you don't specify either of these capabilities, AWS CloudFormation returns an
+     *         <code>InsufficientCapabilities</code> error.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If your stack template contains these resources, we recommend that you review all permissions that are
-     *         associated with them and edit their permissions if necessary.
+     *         If your stack template contains these resources, we recommend that you review all permissions associated
+     *         with them and edit their permissions if necessary.
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         If you have IAM resources, you can specify either capability. If you have IAM resources with custom
-     *         names, you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     *         <code>InsufficientCapabilities</code> error.
+     *         <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *         AWS::IAM::AccessKey</a>
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *         AWS::IAM::Group</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *         AWS::IAM::InstanceProfile</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *         AWS::IAM::Policy</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *         AWS::IAM::Role</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *         AWS::IAM::User</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *         AWS::IAM::UserToGroupAddition</a>
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         For more information, see <a href=
      *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     *         >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     *         >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CAPABILITY_AUTO_EXPAND</code>
+     *         </p>
+     *         <p>
+     *         Some templates contain macros. If your stack template contains one or more macros, and you choose to
+     *         create a stack directly from the processed template, without first reviewing the resulting changes in a
+     *         change set, you must acknowledge this capability. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *         CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *         >AWS::Include</a> and <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *         >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     *         capability, if you include a macro in your template the stack set operation will fail.
+     *         </p>
+     *         </note></li>
      * @see Capability
      */
 
@@ -658,126 +814,230 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack set
-     * templates might include resources that can affect permissions in your AWS account—for example, by creating new
-     * AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly acknowledge their
-     * capabilities by specifying this parameter.
-     * </p>
-     * <p>
-     * The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to specify
-     * this parameter:
+     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AWS::IAM::AccessKey
+     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     * </p>
+     * <p>
+     * Some stack templates might include resources that can affect permissions in your AWS account; for example, by
+     * creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     * acknowledge this by specifying one of these capabilities.
+     * </p>
+     * <p>
+     * The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> capability.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you have IAM resources, you can specify either capability.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::Group
+     * If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::InstanceProfile
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Policy
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Role
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::User
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::UserToGroupAddition
+     * If you don't specify either of these capabilities, AWS CloudFormation returns an
+     * <code>InsufficientCapabilities</code> error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions that are associated
-     * with them and edit their permissions if necessary.
+     * If your stack template contains these resources, we recommend that you review all permissions associated with
+     * them and edit their permissions if necessary.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you
-     * must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPABILITY_AUTO_EXPAND</code>
+     * </p>
+     * <p>
+     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
+     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
+     * must acknowledge this capability. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     * capability, if you include a macro in your template the stack set operation will fail.
+     * </p>
+     * </note></li>
+     * </ul>
      * 
      * @param capabilities
-     *        A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack
-     *        set templates might include resources that can affect permissions in your AWS account—for example, by
-     *        creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *        in order for AWS CloudFormation to create the stack set and related stack instances.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to
-     *        specify this parameter:
+     *        <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     *        </p>
+     *        <p>
+     *        Some stack templates might include resources that can affect permissions in your AWS account; for example,
+     *        by creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     *        acknowledge this by specifying one of these capabilities.
+     *        </p>
+     *        <p>
+     *        The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     *        <code>CAPABILITY_NAMED_IAM</code> capability.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS::IAM::AccessKey
+     *        If you have IAM resources, you can specify either capability.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS::IAM::Group
+     *        If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS::IAM::InstanceProfile
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::Policy
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::Role
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::User
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::UserToGroupAddition
+     *        If you don't specify either of these capabilities, AWS CloudFormation returns an
+     *        <code>InsufficientCapabilities</code> error.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions that are
-     *        associated with them and edit their permissions if necessary.
+     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        with them and edit their permissions if necessary.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you have IAM resources, you can specify either capability. If you have IAM resources with custom names,
-     *        you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     *        <code>InsufficientCapabilities</code> error.
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *        AWS::IAM::AccessKey</a>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *        AWS::IAM::Group</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *        AWS::IAM::InstanceProfile</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *        AWS::IAM::Policy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *        AWS::IAM::Role</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *        AWS::IAM::User</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *        AWS::IAM::UserToGroupAddition</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     *        >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CAPABILITY_AUTO_EXPAND</code>
+     *        </p>
+     *        <p>
+     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
+     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
+     *        change set, you must acknowledge this capability. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        >AWS::Include</a> and <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        </p>
+     *        </note></li>
      * @see Capability
      */
 
@@ -792,66 +1052,117 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack set
-     * templates might include resources that can affect permissions in your AWS account—for example, by creating new
-     * AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly acknowledge their
-     * capabilities by specifying this parameter.
-     * </p>
-     * <p>
-     * The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to specify
-     * this parameter:
+     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AWS::IAM::AccessKey
+     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     * </p>
+     * <p>
+     * Some stack templates might include resources that can affect permissions in your AWS account; for example, by
+     * creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     * acknowledge this by specifying one of these capabilities.
+     * </p>
+     * <p>
+     * The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> capability.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you have IAM resources, you can specify either capability.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::Group
+     * If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::InstanceProfile
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Policy
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Role
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::User
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::UserToGroupAddition
+     * If you don't specify either of these capabilities, AWS CloudFormation returns an
+     * <code>InsufficientCapabilities</code> error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions that are associated
-     * with them and edit their permissions if necessary.
+     * If your stack template contains these resources, we recommend that you review all permissions associated with
+     * them and edit their permissions if necessary.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you
-     * must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPABILITY_AUTO_EXPAND</code>
+     * </p>
+     * <p>
+     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
+     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
+     * must acknowledge this capability. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     * capability, if you include a macro in your template the stack set operation will fail.
+     * </p>
+     * </note></li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
@@ -859,64 +1170,117 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param capabilities
-     *        A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack
-     *        set templates might include resources that can affect permissions in your AWS account—for example, by
-     *        creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *        in order for AWS CloudFormation to create the stack set and related stack instances.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to
-     *        specify this parameter:
+     *        <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     *        </p>
+     *        <p>
+     *        Some stack templates might include resources that can affect permissions in your AWS account; for example,
+     *        by creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     *        acknowledge this by specifying one of these capabilities.
+     *        </p>
+     *        <p>
+     *        The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     *        <code>CAPABILITY_NAMED_IAM</code> capability.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS::IAM::AccessKey
+     *        If you have IAM resources, you can specify either capability.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS::IAM::Group
+     *        If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS::IAM::InstanceProfile
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::Policy
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::Role
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::User
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::UserToGroupAddition
+     *        If you don't specify either of these capabilities, AWS CloudFormation returns an
+     *        <code>InsufficientCapabilities</code> error.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions that are
-     *        associated with them and edit their permissions if necessary.
+     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        with them and edit their permissions if necessary.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you have IAM resources, you can specify either capability. If you have IAM resources with custom names,
-     *        you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     *        <code>InsufficientCapabilities</code> error.
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *        AWS::IAM::AccessKey</a>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *        AWS::IAM::Group</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *        AWS::IAM::InstanceProfile</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *        AWS::IAM::Policy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *        AWS::IAM::Role</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *        AWS::IAM::User</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *        AWS::IAM::UserToGroupAddition</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     *        >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CAPABILITY_AUTO_EXPAND</code>
+     *        </p>
+     *        <p>
+     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
+     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
+     *        change set, you must acknowledge this capability. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        >AWS::Include</a> and <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -933,126 +1297,230 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack set
-     * templates might include resources that can affect permissions in your AWS account—for example, by creating new
-     * AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly acknowledge their
-     * capabilities by specifying this parameter.
-     * </p>
-     * <p>
-     * The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to specify
-     * this parameter:
+     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AWS::IAM::AccessKey
+     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     * </p>
+     * <p>
+     * Some stack templates might include resources that can affect permissions in your AWS account; for example, by
+     * creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     * acknowledge this by specifying one of these capabilities.
+     * </p>
+     * <p>
+     * The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> capability.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you have IAM resources, you can specify either capability.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::Group
+     * If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::InstanceProfile
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Policy
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Role
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::User
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::UserToGroupAddition
+     * If you don't specify either of these capabilities, AWS CloudFormation returns an
+     * <code>InsufficientCapabilities</code> error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions that are associated
-     * with them and edit their permissions if necessary.
+     * If your stack template contains these resources, we recommend that you review all permissions associated with
+     * them and edit their permissions if necessary.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you
-     * must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPABILITY_AUTO_EXPAND</code>
+     * </p>
+     * <p>
+     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
+     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
+     * must acknowledge this capability. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     * capability, if you include a macro in your template the stack set operation will fail.
+     * </p>
+     * </note></li>
+     * </ul>
      * 
      * @param capabilities
-     *        A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack
-     *        set templates might include resources that can affect permissions in your AWS account—for example, by
-     *        creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *        in order for AWS CloudFormation to create the stack set and related stack instances.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to
-     *        specify this parameter:
+     *        <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     *        </p>
+     *        <p>
+     *        Some stack templates might include resources that can affect permissions in your AWS account; for example,
+     *        by creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     *        acknowledge this by specifying one of these capabilities.
+     *        </p>
+     *        <p>
+     *        The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     *        <code>CAPABILITY_NAMED_IAM</code> capability.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS::IAM::AccessKey
+     *        If you have IAM resources, you can specify either capability.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS::IAM::Group
+     *        If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS::IAM::InstanceProfile
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::Policy
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::Role
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::User
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::UserToGroupAddition
+     *        If you don't specify either of these capabilities, AWS CloudFormation returns an
+     *        <code>InsufficientCapabilities</code> error.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions that are
-     *        associated with them and edit their permissions if necessary.
+     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        with them and edit their permissions if necessary.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you have IAM resources, you can specify either capability. If you have IAM resources with custom names,
-     *        you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     *        <code>InsufficientCapabilities</code> error.
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *        AWS::IAM::AccessKey</a>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *        AWS::IAM::Group</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *        AWS::IAM::InstanceProfile</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *        AWS::IAM::Policy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *        AWS::IAM::Role</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *        AWS::IAM::User</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *        AWS::IAM::UserToGroupAddition</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     *        >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CAPABILITY_AUTO_EXPAND</code>
+     *        </p>
+     *        <p>
+     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
+     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
+     *        change set, you must acknowledge this capability. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        >AWS::Include</a> and <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */
@@ -1064,126 +1532,230 @@ public class CreateStackSetRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack set
-     * templates might include resources that can affect permissions in your AWS account—for example, by creating new
-     * AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly acknowledge their
-     * capabilities by specifying this parameter.
-     * </p>
-     * <p>
-     * The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to specify
-     * this parameter:
+     * In some cases, you must explicity acknowledge that your stack set template contains certain capabilities in order
+     * for AWS CloudFormation to create the stack set and related stack instances.
      * </p>
      * <ul>
      * <li>
      * <p>
-     * AWS::IAM::AccessKey
+     * <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     * </p>
+     * <p>
+     * Some stack templates might include resources that can affect permissions in your AWS account; for example, by
+     * creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     * acknowledge this by specifying one of these capabilities.
+     * </p>
+     * <p>
+     * The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     * <code>CAPABILITY_NAMED_IAM</code> capability.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If you have IAM resources, you can specify either capability.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::Group
+     * If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS::IAM::InstanceProfile
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Policy
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::Role
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::User
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * AWS::IAM::UserToGroupAddition
+     * If you don't specify either of these capabilities, AWS CloudFormation returns an
+     * <code>InsufficientCapabilities</code> error.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If your stack template contains these resources, we recommend that you review all permissions that are associated
-     * with them and edit their permissions if necessary.
+     * If your stack template contains these resources, we recommend that you review all permissions associated with
+     * them and edit their permissions if necessary.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you
-     * must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     * <code>InsufficientCapabilities</code> error.
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     * AWS::IAM::AccessKey</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     * AWS::IAM::Group</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     * AWS::IAM::InstanceProfile</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     * AWS::IAM::Policy</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     * AWS::IAM::Role</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     * AWS::IAM::User</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     * AWS::IAM::UserToGroupAddition</a>
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     * >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     * >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CAPABILITY_AUTO_EXPAND</code>
+     * </p>
+     * <p>
+     * Some templates contain macros. If your stack template contains one or more macros, and you choose to create a
+     * stack directly from the processed template, without first reviewing the resulting changes in a change set, you
+     * must acknowledge this capability. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     * CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     * "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     * >AWS::Include</a> and <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     * >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     * capability, if you include a macro in your template the stack set operation will fail.
+     * </p>
+     * </note></li>
+     * </ul>
      * 
      * @param capabilities
-     *        A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack
-     *        set templates might include resources that can affect permissions in your AWS account—for example, by
-     *        creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
-     *        acknowledge their capabilities by specifying this parameter.</p>
+     *        In some cases, you must explicity acknowledge that your stack set template contains certain capabilities
+     *        in order for AWS CloudFormation to create the stack set and related stack instances.</p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to
-     *        specify this parameter:
+     *        <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
+     *        </p>
+     *        <p>
+     *        Some stack templates might include resources that can affect permissions in your AWS account; for example,
+     *        by creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly
+     *        acknowledge this by specifying one of these capabilities.
+     *        </p>
+     *        <p>
+     *        The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code> or
+     *        <code>CAPABILITY_NAMED_IAM</code> capability.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        AWS::IAM::AccessKey
+     *        If you have IAM resources, you can specify either capability.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS::IAM::Group
+     *        If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS::IAM::InstanceProfile
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::Policy
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::Role
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::User
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        AWS::IAM::UserToGroupAddition
+     *        If you don't specify either of these capabilities, AWS CloudFormation returns an
+     *        <code>InsufficientCapabilities</code> error.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If your stack template contains these resources, we recommend that you review all permissions that are
-     *        associated with them and edit their permissions if necessary.
+     *        If your stack template contains these resources, we recommend that you review all permissions associated
+     *        with them and edit their permissions if necessary.
      *        </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        If you have IAM resources, you can specify either capability. If you have IAM resources with custom names,
-     *        you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an
-     *        <code>InsufficientCapabilities</code> error.
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
+     *        AWS::IAM::AccessKey</a>
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
+     *        AWS::IAM::Group</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html">
+     *        AWS::IAM::InstanceProfile</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
+     *        AWS::IAM::Policy</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
+     *        AWS::IAM::Role</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
+     *        AWS::IAM::User</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">
+     *        AWS::IAM::UserToGroupAddition</a>
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        For more information, see <a href=
      *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities"
-     *        >Acknowledging IAM Resources in AWS CloudFormation Templates.</a>
+     *        >Acknowledging IAM Resources in AWS CloudFormation Templates</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CAPABILITY_AUTO_EXPAND</code>
+     *        </p>
+     *        <p>
+     *        Some templates contain macros. If your stack template contains one or more macros, and you choose to
+     *        create a stack directly from the processed template, without first reviewing the resulting changes in a
+     *        change set, you must acknowledge this capability. For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS
+     *        CloudFormation Macros to Perform Custom Processing on Templates</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Stack sets do not currently support macros in stack templates. (This includes the <a href=
+     *        "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html"
+     *        >AWS::Include</a> and <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html"
+     *        >AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
+     *        capability, if you include a macro in your template the stack set operation will fail.
+     *        </p>
+     *        </note></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Capability
      */

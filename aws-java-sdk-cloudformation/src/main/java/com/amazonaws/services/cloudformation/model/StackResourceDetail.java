@@ -95,9 +95,9 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      */
     private StackResourceDriftInformation driftInformation;
@@ -569,17 +569,17 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
      * @param driftInformation
      *        Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
      *        expected configuration, as defined in the stack template and any values specified as template parameters.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     *        >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *        Unregulated Configuration Changes to Stacks and Resources</a>.
      */
 
     public void setDriftInformation(StackResourceDriftInformation driftInformation) {
@@ -590,16 +590,16 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
      * @return Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
      *         expected configuration, as defined in the stack template and any values specified as template parameters.
-     *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     *         >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *         Unregulated Configuration Changes to Stacks and Resources</a>.
      */
 
     public StackResourceDriftInformation getDriftInformation() {
@@ -610,17 +610,17 @@ public class StackResourceDetail implements Serializable, Cloneable {
      * <p>
      * Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
      * @param driftInformation
      *        Information about whether the resource's actual configuration differs, or has <i>drifted</i>, from its
      *        expected configuration, as defined in the stack template and any values specified as template parameters.
-     *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     *        >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *        Unregulated Configuration Changes to Stacks and Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

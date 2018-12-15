@@ -190,9 +190,9 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      */
     private StackDriftInformation driftInformation;
@@ -1524,17 +1524,17 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
      * @param driftInformation
      *        Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected
      *        configuration, as defined in the stack template and any values specified as template parameters. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     *        >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *        Unregulated Configuration Changes to Stacks and Resources</a>.
      */
 
     public void setDriftInformation(StackDriftInformation driftInformation) {
@@ -1545,16 +1545,16 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
      * @return Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected
      *         configuration, as defined in the stack template and any values specified as template parameters. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     *         >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     *         information, see <a
+     *         href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *         Unregulated Configuration Changes to Stacks and Resources</a>.
      */
 
     public StackDriftInformation getDriftInformation() {
@@ -1565,17 +1565,17 @@ public class Stack implements Serializable, Cloneable {
      * <p>
      * Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected
      * configuration, as defined in the stack template and any values specified as template parameters. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     * >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     * Unregulated Configuration Changes to Stacks and Resources</a>.
      * </p>
      * 
      * @param driftInformation
      *        Information on whether a stack's actual configuration differs, or has <i>drifted</i>, from it's expected
      *        configuration, as defined in the stack template and any values specified as template parameters. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html"
-     *        >Detecting Unregulated Configuration Changes to Stacks and Resources</a>.
+     *        information, see <a
+     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+     *        Unregulated Configuration Changes to Stacks and Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

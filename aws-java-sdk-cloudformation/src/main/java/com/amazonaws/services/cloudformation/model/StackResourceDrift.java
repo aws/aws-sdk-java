@@ -25,8 +25,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift
- * detection, see <a href=
- * "http://docs.aws.amazon.com/http:/docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
+ * detection, see <a
+ * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html"
  * >Resources that Support Drift Detection</a>.
  * </p>
  * <p>

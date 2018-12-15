@@ -51,13 +51,13 @@ import com.amazonaws.services.alexaforbusiness.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides the tools you to manage
+ * Alexa for Business helps you use Alexa in your organization. Alexa for Business provides you with the tools to manage
  * Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills
  * using the Alexa Skills Kit and the Alexa for Business API operations. You can also make these available as private
  * skills for your organization. Alexa for Business makes it efficient to voice-enable your products and services, thus
- * providing context-aware voice experiences for your customers. In addition, Alexa for Business enables Alexa Voice
- * Services (AVS) device manufacturers to centrally deploy and manage their devices in Alexa for Business as shared
- * devices as a part of their existing management flow.
+ * providing context-aware voice experiences for your customers. Device makers building with the Alexa Voice Service
+ * (AVS) can create fully integrated solutions, register their products with Alexa for Business, and manage them as
+ * shared devices in their organization.
  * </p>
  */
 @ThreadSafe
@@ -88,6 +88,9 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.LimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SkillNotLinkedException").withModeledClass(
+                                    com.amazonaws.services.alexaforbusiness.model.SkillNotLinkedException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NameInUseException").withModeledClass(
                                     com.amazonaws.services.alexaforbusiness.model.NameInUseException.class))
@@ -410,6 +413,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *         Concurrent modification of resources. HTTP Status Code: 400.
      * @throws NotFoundException
      *         The resource is not found.
+     * @throws SkillNotLinkedException
+     *         The skill must be linked to a third-party account.
      * @sample AmazonAlexaForBusiness.AssociateSkillWithSkillGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup"
      *      target="_top">AWS API Documentation</a>
@@ -447,6 +452,62 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<AssociateSkillWithSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateSkillWithSkillGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Makes a private skill available for enrolled users to enable on their devices.
+     * </p>
+     * 
+     * @param associateSkillWithUsersRequest
+     * @return Result of the AssociateSkillWithUsers operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.AssociateSkillWithUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateSkillWithUsersResult associateSkillWithUsers(AssociateSkillWithUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateSkillWithUsers(request);
+    }
+
+    @SdkInternalApi
+    final AssociateSkillWithUsersResult executeAssociateSkillWithUsers(AssociateSkillWithUsersRequest associateSkillWithUsersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateSkillWithUsersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateSkillWithUsersRequest> request = null;
+        Response<AssociateSkillWithUsersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateSkillWithUsersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateSkillWithUsersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSkillWithUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateSkillWithUsersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateSkillWithUsersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1699,6 +1760,62 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateSkillFromSkillGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateSkillFromSkillGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.
+     * </p>
+     * 
+     * @param disassociateSkillFromUsersRequest
+     * @return Result of the DisassociateSkillFromUsers operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Concurrent modification of resources. HTTP Status Code: 400.
+     * @sample AmazonAlexaForBusiness.DisassociateSkillFromUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateSkillFromUsersResult disassociateSkillFromUsers(DisassociateSkillFromUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateSkillFromUsers(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateSkillFromUsersResult executeDisassociateSkillFromUsers(DisassociateSkillFromUsersRequest disassociateSkillFromUsersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateSkillFromUsersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateSkillFromUsersRequest> request = null;
+        Response<DisassociateSkillFromUsersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateSkillFromUsersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateSkillFromUsersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSkillFromUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateSkillFromUsersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateSkillFromUsersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
