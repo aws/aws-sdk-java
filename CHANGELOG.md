@@ -1,3 +1,12 @@
+# __1.11.471__ __2018-12-17__
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - This release adds support for ECR repository tagging.
+
+## __Amazon QuickSight__
+  - ### Features
+    - Amazon QuickSight's RegisterUser API now generates a user invitation URL when registering a user with the QuickSight identity type. This URL can then be used by the registered QuickSight user to complete the user registration process. This release also corrects some HTTP return status codes.
+
 # __1.11.470__ __2018-12-14__
 ## __AWS CloudFormation__
   - ### Features

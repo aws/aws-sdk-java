@@ -31,6 +31,13 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
     private User user;
     /**
      * <p>
+     * The URL the user visits to complete registration and provide a password. This is returned only for users with an
+     * identity type of <code>QUICKSIGHT</code>.
+     * </p>
+     */
+    private String userInvitationUrl;
+    /**
+     * <p>
      * The AWS request ID for this operation.
      * </p>
      */
@@ -79,6 +86,52 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     public RegisterUserResult withUser(User user) {
         setUser(user);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL the user visits to complete registration and provide a password. This is returned only for users with an
+     * identity type of <code>QUICKSIGHT</code>.
+     * </p>
+     * 
+     * @param userInvitationUrl
+     *        The URL the user visits to complete registration and provide a password. This is returned only for users
+     *        with an identity type of <code>QUICKSIGHT</code>.
+     */
+
+    public void setUserInvitationUrl(String userInvitationUrl) {
+        this.userInvitationUrl = userInvitationUrl;
+    }
+
+    /**
+     * <p>
+     * The URL the user visits to complete registration and provide a password. This is returned only for users with an
+     * identity type of <code>QUICKSIGHT</code>.
+     * </p>
+     * 
+     * @return The URL the user visits to complete registration and provide a password. This is returned only for users
+     *         with an identity type of <code>QUICKSIGHT</code>.
+     */
+
+    public String getUserInvitationUrl() {
+        return this.userInvitationUrl;
+    }
+
+    /**
+     * <p>
+     * The URL the user visits to complete registration and provide a password. This is returned only for users with an
+     * identity type of <code>QUICKSIGHT</code>.
+     * </p>
+     * 
+     * @param userInvitationUrl
+     *        The URL the user visits to complete registration and provide a password. This is returned only for users
+     *        with an identity type of <code>QUICKSIGHT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterUserResult withUserInvitationUrl(String userInvitationUrl) {
+        setUserInvitationUrl(userInvitationUrl);
         return this;
     }
 
@@ -176,6 +229,8 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
         sb.append("{");
         if (getUser() != null)
             sb.append("User: ").append(getUser()).append(",");
+        if (getUserInvitationUrl() != null)
+            sb.append("UserInvitationUrl: ").append(getUserInvitationUrl()).append(",");
         if (getRequestId() != null)
             sb.append("RequestId: ").append(getRequestId()).append(",");
         if (getStatus() != null)
@@ -198,6 +253,10 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getUser() != null && other.getUser().equals(this.getUser()) == false)
             return false;
+        if (other.getUserInvitationUrl() == null ^ this.getUserInvitationUrl() == null)
+            return false;
+        if (other.getUserInvitationUrl() != null && other.getUserInvitationUrl().equals(this.getUserInvitationUrl()) == false)
+            return false;
         if (other.getRequestId() == null ^ this.getRequestId() == null)
             return false;
         if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
@@ -215,6 +274,7 @@ public class RegisterUserResult extends com.amazonaws.AmazonWebServiceResult<com
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getUser() == null) ? 0 : getUser().hashCode());
+        hashCode = prime * hashCode + ((getUserInvitationUrl() == null) ? 0 : getUserInvitationUrl().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;

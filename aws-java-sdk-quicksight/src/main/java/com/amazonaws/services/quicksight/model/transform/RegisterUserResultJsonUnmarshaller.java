@@ -54,6 +54,10 @@ public class RegisterUserResultJsonUnmarshaller implements Unmarshaller<Register
                     context.nextToken();
                     registerUserResult.setUser(UserJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("UserInvitationUrl", targetDepth)) {
+                    context.nextToken();
+                    registerUserResult.setUserInvitationUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();
                     registerUserResult.setRequestId(context.getUnmarshaller(String.class).unmarshall(context));

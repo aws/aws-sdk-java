@@ -27,14 +27,14 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user that you want to list groups for.
+     * The Amazon QuickSight user name that you want to list group memberships for.
      * </p>
      */
     private String userName;
     /**
      * <p>
-     * The AWS Account ID that the user is in. Currently, use the AWS Account ID which contains your Amazon QuickSight
-     * account.
+     * The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
+     * QuickSight account.
      * </p>
      */
     private String awsAccountId;
@@ -59,11 +59,11 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user that you want to list groups for.
+     * The Amazon QuickSight user name that you want to list group memberships for.
      * </p>
      * 
      * @param userName
-     *        The name of the user that you want to list groups for.
+     *        The Amazon QuickSight user name that you want to list group memberships for.
      */
 
     public void setUserName(String userName) {
@@ -72,10 +72,10 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user that you want to list groups for.
+     * The Amazon QuickSight user name that you want to list group memberships for.
      * </p>
      * 
-     * @return The name of the user that you want to list groups for.
+     * @return The Amazon QuickSight user name that you want to list group memberships for.
      */
 
     public String getUserName() {
@@ -84,11 +84,11 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the user that you want to list groups for.
+     * The Amazon QuickSight user name that you want to list group memberships for.
      * </p>
      * 
      * @param userName
-     *        The name of the user that you want to list groups for.
+     *        The Amazon QuickSight user name that you want to list group memberships for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,13 +99,13 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS Account ID that the user is in. Currently, use the AWS Account ID which contains your Amazon QuickSight
-     * account.
+     * The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
+     * QuickSight account.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID that the user is in. Currently, use the AWS Account ID which contains your Amazon
-     *        QuickSight account.
+     *        The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your
+     *        Amazon QuickSight account.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -114,12 +114,12 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS Account ID that the user is in. Currently, use the AWS Account ID which contains your Amazon QuickSight
-     * account.
+     * The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
+     * QuickSight account.
      * </p>
      * 
-     * @return The AWS Account ID that the user is in. Currently, use the AWS Account ID which contains your Amazon
-     *         QuickSight account.
+     * @return The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your
+     *         Amazon QuickSight account.
      */
 
     public String getAwsAccountId() {
@@ -128,13 +128,13 @@ public class ListUserGroupsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The AWS Account ID that the user is in. Currently, use the AWS Account ID which contains your Amazon QuickSight
-     * account.
+     * The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your Amazon
+     * QuickSight account.
      * </p>
      * 
      * @param awsAccountId
-     *        The AWS Account ID that the user is in. Currently, use the AWS Account ID which contains your Amazon
-     *        QuickSight account.
+     *        The AWS Account ID that the user is in. Currently, you use the ID for the AWS account that contains your
+     *        Amazon QuickSight account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

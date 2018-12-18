@@ -34,8 +34,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String registryId;
     /**
      * <p>
-     * A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are
-     * described.
+     * A list of repositories to describe.
      * </p>
      */
     private String repositoryName;
@@ -61,7 +60,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
+     * can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
      * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
      * with <code>imageIds</code>.
      * </p>
@@ -122,13 +121,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are
-     * described.
+     * A list of repositories to describe.
      * </p>
      * 
      * @param repositoryName
-     *        A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are
-     *        described.
+     *        A list of repositories to describe.
      */
 
     public void setRepositoryName(String repositoryName) {
@@ -137,12 +134,10 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are
-     * described.
+     * A list of repositories to describe.
      * </p>
      * 
-     * @return A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are
-     *         described.
+     * @return A list of repositories to describe.
      */
 
     public String getRepositoryName() {
@@ -151,13 +146,11 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are
-     * described.
+     * A list of repositories to describe.
      * </p>
      * 
      * @param repositoryName
-     *        A list of repositories to describe. If this parameter is omitted, then all repositories in a registry are
-     *        described.
+     *        A list of repositories to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,7 +299,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
+     * can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
      * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
      * with <code>imageIds</code>.
      * </p>
@@ -316,7 +309,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      *        this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a
      *        single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *        request can be seen by sending another <code>DescribeImages</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     *        <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
      *        <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
      *        This option cannot be used when you specify images with <code>imageIds</code>.
      */
@@ -331,7 +324,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
+     * can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
      * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
      * with <code>imageIds</code>.
      * </p>
@@ -340,7 +333,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      *         When this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in
      *         a single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *         request can be seen by sending another <code>DescribeImages</code> request with the returned
-     *         <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     *         <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
      *         <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
      *         This option cannot be used when you specify images with <code>imageIds</code>.
      */
@@ -355,7 +348,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      * parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a single page
      * along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by
      * sending another <code>DescribeImages</code> request with the returned <code>nextToken</code> value. This value
-     * can be between 1 and 100. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
+     * can be between 1 and 1000. If this parameter is not used, then <code>DescribeImages</code> returns up to 100
      * results and a <code>nextToken</code> value, if applicable. This option cannot be used when you specify images
      * with <code>imageIds</code>.
      * </p>
@@ -365,7 +358,7 @@ public class DescribeImagesRequest extends com.amazonaws.AmazonWebServiceRequest
      *        this parameter is used, <code>DescribeImages</code> only returns <code>maxResults</code> results in a
      *        single page along with a <code>nextToken</code> response element. The remaining results of the initial
      *        request can be seen by sending another <code>DescribeImages</code> request with the returned
-     *        <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then
+     *        <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then
      *        <code>DescribeImages</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
      *        This option cannot be used when you specify images with <code>imageIds</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

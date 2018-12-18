@@ -25,9 +25,9 @@ public class GetDashboardEmbedUrlResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Call the GetDashboardEmbedUrl API to get the URL that you can embed in your dashboard. This URL is valid for 5
-     * minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code that enables
-     * a single-signon session.
+     * URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes, and
+     * the resulting session is valid for 10 hours. The API provides the URL with an auth_code that enables a
+     * single-signon session.
      * </p>
      */
     private String embedUrl;
@@ -46,15 +46,15 @@ public class GetDashboardEmbedUrlResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Call the GetDashboardEmbedUrl API to get the URL that you can embed in your dashboard. This URL is valid for 5
-     * minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code that enables
-     * a single-signon session.
+     * URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes, and
+     * the resulting session is valid for 10 hours. The API provides the URL with an auth_code that enables a
+     * single-signon session.
      * </p>
      * 
      * @param embedUrl
-     *        Call the GetDashboardEmbedUrl API to get the URL that you can embed in your dashboard. This URL is valid
-     *        for 5 minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code
-     *        that enables a single-signon session.
+     *        URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5
+     *        minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code that
+     *        enables a single-signon session.
      */
 
     public void setEmbedUrl(String embedUrl) {
@@ -63,14 +63,14 @@ public class GetDashboardEmbedUrlResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Call the GetDashboardEmbedUrl API to get the URL that you can embed in your dashboard. This URL is valid for 5
-     * minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code that enables
-     * a single-signon session.
+     * URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes, and
+     * the resulting session is valid for 10 hours. The API provides the URL with an auth_code that enables a
+     * single-signon session.
      * </p>
      * 
-     * @return Call the GetDashboardEmbedUrl API to get the URL that you can embed in your dashboard. This URL is valid
-     *         for 5 minutes, and the resulting session is valid for 10 hours. The API provides the URL with an
-     *         auth_code that enables a single-signon session.
+     * @return URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5
+     *         minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code that
+     *         enables a single-signon session.
      */
 
     public String getEmbedUrl() {
@@ -79,15 +79,15 @@ public class GetDashboardEmbedUrlResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Call the GetDashboardEmbedUrl API to get the URL that you can embed in your dashboard. This URL is valid for 5
-     * minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code that enables
-     * a single-signon session.
+     * URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5 minutes, and
+     * the resulting session is valid for 10 hours. The API provides the URL with an auth_code that enables a
+     * single-signon session.
      * </p>
      * 
      * @param embedUrl
-     *        Call the GetDashboardEmbedUrl API to get the URL that you can embed in your dashboard. This URL is valid
-     *        for 5 minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code
-     *        that enables a single-signon session.
+     *        URL that you can put into your server-side webpage to embed your dashboard. This URL is valid for 5
+     *        minutes, and the resulting session is valid for 10 hours. The API provides the URL with an auth_code that
+     *        enables a single-signon session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

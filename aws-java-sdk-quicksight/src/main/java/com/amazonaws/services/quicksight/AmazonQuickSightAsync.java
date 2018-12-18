@@ -27,8 +27,8 @@ import com.amazonaws.services.quicksight.model.*;
  * <p>
  * <fullname>Amazon QuickSight API Reference</fullname>
  * <p>
- * Amazon QuickSight is a fast, cloud-powered BI service that makes it easy to build visualizations, perform ad hoc
- * analysis, and quickly get business insights from your data. This API interface reference contains documentation for a
+ * Amazon QuickSight is a fully managed, serverless, cloud business intelligence service that makes it easy to extend
+ * data and insights to every user in your organization. This API interface reference contains documentation for a
  * programming interface that you can use to manage Amazon QuickSight.
  * </p>
  */
@@ -46,6 +46,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * The response is a group object.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight create-group --aws-account-id=111122223333 --namespace=default --group-name="Sales-Management" --description="Sales Management - Forecasting" </code>
      * </p>
      * 
      * @param createGroupRequest
@@ -68,6 +74,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * The response is a group object.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight create-group --aws-account-id=111122223333 --namespace=default --group-name="Sales-Management" --description="Sales Management - Forecasting" </code>
      * </p>
      * 
      * @param createGroupRequest
@@ -101,6 +113,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is the group member object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales --member-name=Pat </code>
+     * </p>
      * 
      * @param createGroupMembershipRequest
      * @return A Java Future containing the result of the CreateGroupMembership operation returned by the service.
@@ -127,6 +145,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is the group member object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales --member-name=Pat </code>
+     * </p>
      * 
      * @param createGroupMembershipRequest
      * @param asyncHandler
@@ -149,6 +173,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * The permissions resource is
      * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-group -\-aws-account-id=111122223333 -\-namespace=default -\-group-name=Sales-Management </code>
+     * </p>
      * 
      * @param deleteGroupRequest
      * @return A Java Future containing the result of the DeleteGroup operation returned by the service.
@@ -165,6 +195,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The permissions resource is
      * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-group -\-aws-account-id=111122223333 -\-namespace=default -\-group-name=Sales-Management </code>
      * </p>
      * 
      * @param deleteGroupRequest
@@ -194,6 +230,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The condition key is <code>quicksight:UserName</code>.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales-Management --member-name=Charlie </code>
+     * </p>
      * 
      * @param deleteGroupMembershipRequest
      * @return A Java Future containing the result of the DeleteGroupMembership operation returned by the service.
@@ -216,6 +258,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * The condition key is <code>quicksight:UserName</code>.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales-Management --member-name=Charlie </code>
      * </p>
      * 
      * @param deleteGroupMembershipRequest
@@ -240,6 +288,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * The permission resource is
      * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt; </i> </code>.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
+     * </p>
      * 
      * @param deleteUserRequest
      * @return A Java Future containing the result of the DeleteUser operation returned by the service.
@@ -257,6 +311,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The permission resource is
      * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt; </i> </code>.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
      * </p>
      * 
      * @param deleteUserRequest
@@ -284,6 +344,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is the group object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default -\-group-name=Sales </code>
+     * </p>
      * 
      * @param describeGroupRequest
      * @return A Java Future containing the result of the DescribeGroup operation returned by the service.
@@ -304,6 +370,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * The response is the group object.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default -\-group-name=Sales </code>
      * </p>
      * 
      * @param describeGroupRequest
@@ -331,6 +403,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * The response is a user object that contains the user's Amazon Resource Name (ARN), AWS Identity and Access
      * Management (IAM) role, and email address.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight describe-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
+     * </p>
      * 
      * @param describeUserRequest
      * @return A Java Future containing the result of the DescribeUser operation returned by the service.
@@ -352,6 +430,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * The response is a user object that contains the user's Amazon Resource Name (ARN), AWS Identity and Access
      * Management (IAM) role, and email address.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight describe-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
+     * </p>
      * 
      * @param describeUserRequest
      * @param asyncHandler
@@ -368,8 +452,36 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates an embedded URL and authorization code. Before this can work properly, you need to configure the
-     * dashboards and user permissions first.
+     * Generates a server-side embeddable URL and authorization code. Before this can work properly, first you need to
+     * configure the dashboards and user permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/en_us/quicksight/latest/user/embedding.html"> Embedding Amazon QuickSight
+     * Dashboards</a>.
+     * </p>
+     * <p>
+     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * Assume the role with permissions enabled for actions: <code>quickSight:RegisterUser</code> and
+     * <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role, assume-role-with-web-identity, or
+     * assume-role-with-saml.
+     * </p>
+     * <p>
+     * <code>aws sts assume-role --role-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --role-session-name embeddingsession</code>
+     * </p>
+     * <p>
+     * If the user does not exist in QuickSight, register the user:
+     * </p>
+     * <p>
+     * <code>aws quicksight register-user --aws-account-id 111122223333 --namespace default --identity-type IAM --iam-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --user-role READER --session-name "embeddingsession" --email user123@example.com --region us-east-1</code>
+     * </p>
+     * <p>
+     * Get the URL for the embedded dashboard
+     * </p>
+     * <p>
+     * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code>
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -382,8 +494,36 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates an embedded URL and authorization code. Before this can work properly, you need to configure the
-     * dashboards and user permissions first.
+     * Generates a server-side embeddable URL and authorization code. Before this can work properly, first you need to
+     * configure the dashboards and user permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/en_us/quicksight/latest/user/embedding.html"> Embedding Amazon QuickSight
+     * Dashboards</a>.
+     * </p>
+     * <p>
+     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * Assume the role with permissions enabled for actions: <code>quickSight:RegisterUser</code> and
+     * <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role, assume-role-with-web-identity, or
+     * assume-role-with-saml.
+     * </p>
+     * <p>
+     * <code>aws sts assume-role --role-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --role-session-name embeddingsession</code>
+     * </p>
+     * <p>
+     * If the user does not exist in QuickSight, register the user:
+     * </p>
+     * <p>
+     * <code>aws quicksight register-user --aws-account-id 111122223333 --namespace default --identity-type IAM --iam-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --user-role READER --session-name "embeddingsession" --email user123@example.com --region us-east-1</code>
+     * </p>
+     * <p>
+     * Get the URL for the embedded dashboard
+     * </p>
+     * <p>
+     * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code>
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -410,6 +550,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is a list of group member objects.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-group-memberships -\-aws-account-id=111122223333 -\-namespace=default </code>
+     * </p>
      * 
      * @param listGroupMembershipsRequest
      * @return A Java Future containing the result of the ListGroupMemberships operation returned by the service.
@@ -429,6 +575,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * The response is a list of group member objects.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-group-memberships -\-aws-account-id=111122223333 -\-namespace=default </code>
      * </p>
      * 
      * @param listGroupMembershipsRequest
@@ -455,6 +607,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is a list of group objects.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default </code>
+     * </p>
      * 
      * @param listGroupsRequest
      * @return A Java Future containing the result of the ListGroups operation returned by the service.
@@ -475,6 +633,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is a list of group objects.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default </code>
+     * </p>
      * 
      * @param listGroupsRequest
      * @param asyncHandler
@@ -491,7 +655,20 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists the Amazon QuickSight groups that a user is part of.
+     * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
+     * </p>
+     * <p>
+     * The permission resource is
+     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i> </code>.
+     * </p>
+     * <p>
+     * The response is a one or more group objects.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-user-groups -\-user-name=Pat -\-aws-account-id=111122223333 -\-namespace=default -\-region=us-east-1 </code>
      * </p>
      * 
      * @param listUserGroupsRequest
@@ -504,7 +681,20 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Lists the Amazon QuickSight groups that a user is part of.
+     * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
+     * </p>
+     * <p>
+     * The permission resource is
+     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i> </code>.
+     * </p>
+     * <p>
+     * The response is a one or more group objects.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-user-groups -\-user-name=Pat -\-aws-account-id=111122223333 -\-namespace=default -\-region=us-east-1 </code>
      * </p>
      * 
      * @param listUserGroupsRequest
@@ -532,6 +722,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * The response is a list of user objects, containing each user's Amazon Resource Name (ARN), AWS Identity and
      * Access Management (IAM) role, and email address.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default </code>
+     * </p>
      * 
      * @param listUsersRequest
      * @return A Java Future containing the result of the ListUsers operation returned by the service.
@@ -552,6 +748,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is a list of user objects, containing each user's Amazon Resource Name (ARN), AWS Identity and
      * Access Management (IAM) role, and email address.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default </code>
      * </p>
      * 
      * @param listUsersRequest
@@ -582,6 +784,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The condition keys are <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat </code>
+     * </p>
      * 
      * @param registerUserRequest
      * @return A Java Future containing the result of the RegisterUser operation returned by the service.
@@ -605,6 +813,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * The condition keys are <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat </code>
      * </p>
      * 
      * @param registerUserRequest
@@ -631,6 +845,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is a group object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default --group-name=Sales --description="Sales BI Dashboards" </code>
+     * </p>
      * 
      * @param updateGroupRequest
      * @return A Java Future containing the result of the UpdateGroup operation returned by the service.
@@ -651,6 +871,12 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * The response is a group object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default --group-name=Sales --description="Sales BI Dashboards" </code>
+     * </p>
      * 
      * @param updateGroupRequest
      * @param asyncHandler
@@ -669,6 +895,20 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * <p>
      * Updates an Amazon QuickSight user.
      * </p>
+     * <p>
+     * The permission resource is
+     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i> </code>.
+     * </p>
+     * <p>
+     * The response is a user object that contains the user's Amazon QuickSight user name, email address, active or
+     * inactive status in Amazon QuickSight, Amazon QuickSight role, and Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight update-user --user-name=Pat --role=ADMIN --email=new_address@amazon.com --aws-account-id=111122223333 --namespace=default --region=us-east-1 </code>
+     * </p>
      * 
      * @param updateUserRequest
      * @return A Java Future containing the result of the UpdateUser operation returned by the service.
@@ -681,6 +921,20 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates an Amazon QuickSight user.
+     * </p>
+     * <p>
+     * The permission resource is
+     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i> </code>.
+     * </p>
+     * <p>
+     * The response is a user object that contains the user's Amazon QuickSight user name, email address, active or
+     * inactive status in Amazon QuickSight, Amazon QuickSight role, and Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight update-user --user-name=Pat --role=ADMIN --email=new_address@amazon.com --aws-account-id=111122223333 --namespace=default --region=us-east-1 </code>
      * </p>
      * 
      * @param updateUserRequest

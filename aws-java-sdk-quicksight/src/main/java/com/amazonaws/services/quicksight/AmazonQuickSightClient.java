@@ -52,8 +52,8 @@ import com.amazonaws.services.quicksight.model.transform.*;
  * <p>
  * <fullname>Amazon QuickSight API Reference</fullname>
  * <p>
- * Amazon QuickSight is a fast, cloud-powered BI service that makes it easy to build visualizations, perform ad hoc
- * analysis, and quickly get business insights from your data. This API interface reference contains documentation for a
+ * Amazon QuickSight is a fully managed, serverless, cloud business intelligence service that makes it easy to extend
+ * data and insights to every user in your organization. This API interface reference contains documentation for a
  * programming interface that you can use to manage Amazon QuickSight.
  * </p>
  */
@@ -185,18 +185,26 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * The response is a group object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight create-group --aws-account-id=111122223333 --namespace=default --group-name="Sales-Management" --description="Sales Management - Forecasting" </code>
+     * </p>
      * 
      * @param createGroupRequest
      *        The request object for this operation.
      * @return Result of the CreateGroup operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceExistsException
      *         The resource specified doesn't exist.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws PreconditionNotMetException
@@ -269,15 +277,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * The response is the group member object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight create-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales --member-name=Pat </code>
+     * </p>
      * 
      * @param createGroupMembershipRequest
      * @return Result of the CreateGroupMembership operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws PreconditionNotMetException
@@ -340,15 +356,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * The permissions resource is
      * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i> </code>.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-group -\-aws-account-id=111122223333 -\-namespace=default -\-group-name=Sales-Management </code>
+     * </p>
      * 
      * @param deleteGroupRequest
      * @return Result of the DeleteGroup operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws PreconditionNotMetException
@@ -416,15 +440,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * The condition key is <code>quicksight:UserName</code>.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-group-membership --aws-account-id=111122223333 --namespace=default --group-name=Sales-Management --member-name=Charlie </code>
+     * </p>
      * 
      * @param deleteGroupMembershipRequest
      * @return Result of the DeleteGroupMembership operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws PreconditionNotMetException
@@ -488,15 +520,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * The permission resource is
      * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt; </i> </code>.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight delete-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
+     * </p>
      * 
      * @param deleteUserRequest
      * @return Result of the DeleteUser operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws InternalFailureException
@@ -560,15 +600,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * The response is the group object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight describe-group -\-aws-account-id=11112222333 -\-namespace=default -\-group-name=Sales </code>
+     * </p>
      * 
      * @param describeGroupRequest
      * @return Result of the DescribeGroup operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws PreconditionNotMetException
@@ -634,15 +682,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * The response is a user object that contains the user's Amazon Resource Name (ARN), AWS Identity and Access
      * Management (IAM) role, and email address.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight describe-user --aws-account-id=111122223333 --namespace=default --user-name=Pat </code>
+     * </p>
      * 
      * @param describeUserRequest
      * @return Result of the DescribeUser operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws InternalFailureException
@@ -696,20 +752,50 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Generates an embedded URL and authorization code. Before this can work properly, you need to configure the
-     * dashboards and user permissions first.
+     * Generates a server-side embeddable URL and authorization code. Before this can work properly, first you need to
+     * configure the dashboards and user permissions. For more information, see <a
+     * href="https://docs.aws.amazon.com/en_us/quicksight/latest/user/embedding.html"> Embedding Amazon QuickSight
+     * Dashboards</a>.
+     * </p>
+     * <p>
+     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * Assume the role with permissions enabled for actions: <code>quickSight:RegisterUser</code> and
+     * <code>quicksight:GetDashboardEmbedURL</code>. You can use assume-role, assume-role-with-web-identity, or
+     * assume-role-with-saml.
+     * </p>
+     * <p>
+     * <code>aws sts assume-role --role-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --role-session-name embeddingsession</code>
+     * </p>
+     * <p>
+     * If the user does not exist in QuickSight, register the user:
+     * </p>
+     * <p>
+     * <code>aws quicksight register-user --aws-account-id 111122223333 --namespace default --identity-type IAM --iam-arn "arn:aws:iam::111122223333:role/embedding_quicksight_dashboard_role" --user-role READER --session-name "embeddingsession" --email user123@example.com --region us-east-1</code>
+     * </p>
+     * <p>
+     * Get the URL for the embedded dashboard
+     * </p>
+     * <p>
+     * <code>aws quicksight get-dashboard-embed-url --aws-account-id 111122223333 --dashboard-id 1a1ac2b2-3fc3-4b44-5e5d-c6db6778df89 --identity-type IAM</code>
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
      * @return Result of the GetDashboardEmbedUrl operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceExistsException
      *         The resource specified doesn't exist.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws PreconditionNotMetException
@@ -718,17 +804,17 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         The domain specified is not on the allowlist. All domains for embedded dashboards must be added to the
      *         approved list by an Amazon QuickSight admin.
      * @throws QuickSightUserNotFoundException
-     *         The user is not found. This could happen in any operation that requires finding a user based on the
-     *         provided user name, such as DeleteUser, DescribeUser, and so on.
+     *         The user is not found. This error can happen in any operation that requires finding a user based on a
+     *         provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.
      * @throws IdentityTypeNotSupportedException
-     *         The identity type specified is not supported. Supported identity types include: IAM and QUICKSIGHT.
+     *         The identity type specified is not supported. Supported identity types include IAM and QUICKSIGHT.
      * @throws SessionLifetimeInMinutesInvalidException
-     *         The number of minutes specified for the lifetime of a session is invalid. The session lifetime must be
-     *         between 15 and 600 minutes.
+     *         The number of minutes specified for the lifetime of a session is not valid. The session lifetime must be
+     *         from 15 to 600 minutes.
      * @throws UnsupportedUserEditionException
-     *         Indicates that you are calling an operation on an Amazon QuickSight subscription where the edition does
-     *         not include support for that operation. Amazon QuickSight currently has Standard Edition and Enterprise
-     *         Edition. Not every operation and capability is available in every edition.
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -789,15 +875,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * The response is a list of group member objects.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-group-memberships -\-aws-account-id=111122223333 -\-namespace=default </code>
+     * </p>
      * 
      * @param listGroupMembershipsRequest
      * @return Result of the ListGroupMemberships operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws InvalidNextTokenException
@@ -864,15 +958,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * The response is a list of group objects.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-groups -\-aws-account-id=111122223333 -\-namespace=default </code>
+     * </p>
      * 
      * @param listGroupsRequest
      * @return Result of the ListGroups operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws InvalidNextTokenException
@@ -930,17 +1032,32 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists the Amazon QuickSight groups that a user is part of.
+     * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
+     * </p>
+     * <p>
+     * The permission resource is
+     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i> </code>.
+     * </p>
+     * <p>
+     * The response is a one or more group objects.
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-user-groups -\-user-name=Pat -\-aws-account-id=111122223333 -\-namespace=default -\-region=us-east-1 </code>
      * </p>
      * 
      * @param listUserGroupsRequest
      * @return Result of the ListUserGroups operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws InternalFailureException
@@ -1004,15 +1121,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * The response is a list of user objects, containing each user's Amazon Resource Name (ARN), AWS Identity and
      * Access Management (IAM) role, and email address.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight list-users --aws-account-id=111122223333 --namespace=default </code>
+     * </p>
      * 
      * @param listUsersRequest
      * @return Result of the ListUsers operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws InvalidNextTokenException
@@ -1081,15 +1206,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * The condition keys are <code>quicksight:IamArn</code> and <code>quicksight:SessionName</code>.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight register-user -\-aws-account-id=111122223333 -\-namespace=default -\-email=pat@example.com -\-identity-type=IAM -\-user-role=AUTHOR -\-iam-arn=arn:aws:iam::111122223333:user/Pat </code>
+     * </p>
      * 
      * @param registerUserRequest
      * @return Result of the RegisterUser operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws LimitExceededException
@@ -1158,15 +1291,23 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * The response is a group object.
      * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight update-group --aws-account-id=111122223333 --namespace=default --group-name=Sales --description="Sales BI Dashboards" </code>
+     * </p>
      * 
      * @param updateGroupRequest
      * @return Result of the UpdateGroup operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws PreconditionNotMetException
@@ -1224,15 +1365,31 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * <p>
      * Updates an Amazon QuickSight user.
      * </p>
+     * <p>
+     * The permission resource is
+     * <code>arn:aws:quicksight:us-east-1:<i>&lt;aws-account-id&gt;</i>:user/default/<i>&lt;user-name&gt;</i> </code>.
+     * </p>
+     * <p>
+     * The response is a user object that contains the user's Amazon QuickSight user name, email address, active or
+     * inactive status in Amazon QuickSight, Amazon QuickSight role, and Amazon Resource Name (ARN).
+     * </p>
+     * <p>
+     * <b>CLI Sample:</b>
+     * </p>
+     * <p>
+     * <code>aws quicksight update-user --user-name=Pat --role=ADMIN --email=new_address@amazon.com --aws-account-id=111122223333 --namespace=default --region=us-east-1 </code>
+     * </p>
      * 
      * @param updateUserRequest
      * @return Result of the UpdateUser operation returned by the service.
      * @throws AccessDeniedException
-     *         You don't have access to this.
+     *         You don't have access to this. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Ensure that your account is authorized to use the Amazon QuickSight
+     *         service, that your policies have the correct permissions, and that you are using the correct access keys.
      * @throws InvalidParameterValueException
      *         One or more parameters don't have a valid value.
      * @throws ResourceNotFoundException
-     *         One or more resources couldn't be found.
+     *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws InternalFailureException

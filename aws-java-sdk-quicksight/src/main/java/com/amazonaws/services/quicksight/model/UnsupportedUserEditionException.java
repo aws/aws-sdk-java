@@ -16,9 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that you are calling an operation on an Amazon QuickSight subscription where the edition does not include
- * support for that operation. Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not every
- * operation and capability is available in every edition.
+ * This error indicates that you are calling an operation on an Amazon QuickSight subscription where the edition doesn't
+ * include support for that operation. Amazon QuickSight currently has Standard Edition and Enterprise Edition. Not
+ * every operation and capability is available in every edition.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

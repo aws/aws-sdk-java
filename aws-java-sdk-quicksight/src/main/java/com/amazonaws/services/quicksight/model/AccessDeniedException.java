@@ -16,7 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You don't have access to this.
+ * You don't have access to this. The provided credentials couldn't be validated. You might not be authorized to carry
+ * out the request. Ensure that your account is authorized to use the Amazon QuickSight service, that your policies have
+ * the correct permissions, and that you are using the correct access keys.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

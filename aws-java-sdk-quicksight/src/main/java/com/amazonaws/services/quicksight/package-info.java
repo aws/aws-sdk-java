@@ -14,8 +14,8 @@
 /**
  * <fullname>Amazon QuickSight API Reference</fullname>
  * <p>
- * Amazon QuickSight is a fast, cloud-powered BI service that makes it easy to build visualizations, perform ad hoc
- * analysis, and quickly get business insights from your data. This API interface reference contains documentation for a
+ * Amazon QuickSight is a fully managed, serverless, cloud business intelligence service that makes it easy to extend
+ * data and insights to every user in your organization. This API interface reference contains documentation for a
  * programming interface that you can use to manage Amazon QuickSight.
  * </p>
  */

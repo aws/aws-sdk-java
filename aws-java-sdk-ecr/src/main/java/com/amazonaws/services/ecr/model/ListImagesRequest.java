@@ -59,7 +59,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
      * another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between
-     * 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
+     * 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
      * <code>nextToken</code> value, if applicable.
      * </p>
      */
@@ -251,7 +251,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
      * another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between
-     * 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
+     * 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
      * <code>nextToken</code> value, if applicable.
      * </p>
      * 
@@ -260,7 +260,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page
      *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      *        seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListImages</code> returns
+     *        This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns
      *        up to 100 results and a <code>nextToken</code> value, if applicable.
      */
 
@@ -274,7 +274,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
      * another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between
-     * 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
+     * 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
      * <code>nextToken</code> value, if applicable.
      * </p>
      * 
@@ -282,7 +282,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page
      *         along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      *         seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-     *         This value can be between 1 and 100. If this parameter is not used, then <code>ListImages</code> returns
+     *         This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns
      *         up to 100 results and a <code>nextToken</code> value, if applicable.
      */
 
@@ -296,7 +296,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page along with a
      * <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending
      * another <code>ListImages</code> request with the returned <code>nextToken</code> value. This value can be between
-     * 1 and 100. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
+     * 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns up to 100 results and a
      * <code>nextToken</code> value, if applicable.
      * </p>
      * 
@@ -305,7 +305,7 @@ public class ListImagesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        parameter is used, <code>ListImages</code> only returns <code>maxResults</code> results in a single page
      *        along with a <code>nextToken</code> response element. The remaining results of the initial request can be
      *        seen by sending another <code>ListImages</code> request with the returned <code>nextToken</code> value.
-     *        This value can be between 1 and 100. If this parameter is not used, then <code>ListImages</code> returns
+     *        This value can be between 1 and 1000. If this parameter is not used, then <code>ListImages</code> returns
      *        up to 100 results and a <code>nextToken</code> value, if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -123,6 +123,11 @@ public class AbstractAmazonECR implements AmazonECR {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutImageResult putImage(PutImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +144,16 @@ public class AbstractAmazonECR implements AmazonECR {
 
     @Override
     public StartLifecyclePolicyPreviewResult startLifecyclePolicyPreview(StartLifecyclePolicyPreviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

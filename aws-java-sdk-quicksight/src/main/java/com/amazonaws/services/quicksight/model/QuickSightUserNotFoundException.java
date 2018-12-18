@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The user is not found. This could happen in any operation that requires finding a user based on the provided user
- * name, such as DeleteUser, DescribeUser, and so on.
+ * The user is not found. This error can happen in any operation that requires finding a user based on a provided user
+ * name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so on.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

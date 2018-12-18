@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The number of minutes specified for the lifetime of a session is invalid. The session lifetime must be between 15 and
+ * The number of minutes specified for the lifetime of a session is not valid. The session lifetime must be from 15 to
  * 600 minutes.
  * </p>
  */

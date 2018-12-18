@@ -39,7 +39,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     private String dashboardId;
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     * The authentication method the user uses to sign in (IAM only).
      * </p>
      */
     private String identityType;
@@ -144,11 +144,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     * The authentication method the user uses to sign in (IAM only).
      * </p>
      * 
      * @param identityType
-     *        The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     *        The authentication method the user uses to sign in (IAM only).
      * @see IdentityType
      */
 
@@ -158,10 +158,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     * The authentication method the user uses to sign in (IAM only).
      * </p>
      * 
-     * @return The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     * @return The authentication method the user uses to sign in (IAM only).
      * @see IdentityType
      */
 
@@ -171,11 +171,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     * The authentication method the user uses to sign in (IAM only).
      * </p>
      * 
      * @param identityType
-     *        The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     *        The authentication method the user uses to sign in (IAM only).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -187,11 +187,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     * The authentication method the user uses to sign in (IAM only).
      * </p>
      * 
      * @param identityType
-     *        The authentication method the user uses to sign in (IAM or QUICKSIGHT).
+     *        The authentication method the user uses to sign in (IAM only).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */

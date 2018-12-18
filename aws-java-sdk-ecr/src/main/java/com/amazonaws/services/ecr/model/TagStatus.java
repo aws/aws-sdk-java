@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum TagStatus {
 
     TAGGED("TAGGED"),
-    UNTAGGED("UNTAGGED");
+    UNTAGGED("UNTAGGED"),
+    ANY("ANY");
 
     private String value;
 
