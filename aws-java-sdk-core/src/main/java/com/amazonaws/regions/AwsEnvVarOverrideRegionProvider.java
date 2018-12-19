@@ -33,7 +33,7 @@ public class AwsEnvVarOverrideRegionProvider extends AwsRegionProvider {
         }
         region = StringUtils.trim(region);
 
-        if (StringUtils.isNullOrEmpty(region) {
+        if (StringUtils.isNullOrEmpty(region)) {
             throw new SdkClientException(
                     "Unable to load region from environment variables " +
                     "(" + AWS_REGION_ENV_VAR + " (or " + ALTERNATE_AWS_REGION_ENV_VAR + "))");

@@ -256,7 +256,7 @@ public class SDKGlobalConfiguration {
 
     /**
      * Environment variable to set an alternate path to the shared config file
-     * (default path is * ~/.aws/config).
+     * (default path is ~/.aws/config).
      */
     public static final String AWS_CONFIG_FILE_ENV_VAR = "AWS_CONFIG_FILE";
 
