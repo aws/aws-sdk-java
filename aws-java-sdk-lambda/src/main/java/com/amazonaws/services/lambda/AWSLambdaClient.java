@@ -837,7 +837,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         Request throughput limit exceeded
      * @throws ResourceInUseException
      *         The operation conflicts with the resource's availability. For example, you attempted to update an
-     *         EventSoure Mapping in CREATING, or tried to delete a EventSoure mapping currently in the UPDATING state.
+     *         EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.
      * @sample AWSLambda.DeleteEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"
      *      target="_top">AWS API Documentation</a>
@@ -2873,7 +2873,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      *         The resource already exists.
      * @throws ResourceInUseException
      *         The operation conflicts with the resource's availability. For example, you attempted to update an
-     *         EventSoure Mapping in CREATING, or tried to delete a EventSoure mapping currently in the UPDATING state.
+     *         EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.
      * @sample AWSLambda.UpdateEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping"
      *      target="_top">AWS API Documentation</a>
