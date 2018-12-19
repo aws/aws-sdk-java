@@ -27,7 +27,7 @@ import com.amazonaws.client.AwsAsyncClientParams;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public final class AmazonApiGatewayAsyncClientBuilder extends AwsAsyncClientBuilder<AmazonApiGatewayAsyncClientBuilder, AmazonApiGatewayAsync> {
 
-    private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();;
+    private static final ClientConfigurationFactory CLIENT_CONFIG_FACTORY = new ClientConfigurationFactory();
 
     /**
      * @return Create new instance of builder with all defaults set.
