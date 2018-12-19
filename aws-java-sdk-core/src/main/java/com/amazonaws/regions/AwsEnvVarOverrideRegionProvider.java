@@ -15,6 +15,7 @@
 package com.amazonaws.regions;
 
 import com.amazonaws.SdkClientException;
+import com.amazonaws.util.StringUtils;
 
 import static com.amazonaws.SDKGlobalConfiguration.AWS_REGION_ENV_VAR;
 import static com.amazonaws.SDKGlobalConfiguration.ALTERNATE_AWS_REGION_ENV_VAR;
