@@ -86,7 +86,7 @@ public class EndpointGroup implements Serializable, Cloneable, StructuredPojo {
     private String healthCheckPath;
     /**
      * <p>
-     * The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.
+     * The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
@@ -513,11 +513,11 @@ public class EndpointGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.
+     * The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.
+     *        The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -526,10 +526,10 @@ public class EndpointGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.
+     * The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.
      * </p>
      * 
-     * @return The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.
+     * @return The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -538,11 +538,11 @@ public class EndpointGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.
+     * The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The elapsed time, in seconds, between health checks for each endpoint. The default value is 30.
+     *        The time—10 seconds or 30 seconds—between health checks for each endpoint. The default value is 30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -290,6 +290,21 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Applies a security group to the association between the target network and the Client VPN endpoint. This action
+     * replaces the existing security groups with the specified security groups.
+     * </p>
+     * 
+     * @param applySecurityGroupsToClientVpnTargetNetworkRequest
+     * @return Result of the ApplySecurityGroupsToClientVpnTargetNetwork operation returned by the service.
+     * @sample AmazonEC2.ApplySecurityGroupsToClientVpnTargetNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ApplySecurityGroupsToClientVpnTargetNetworkResult applySecurityGroupsToClientVpnTargetNetwork(
+            ApplySecurityGroupsToClientVpnTargetNetworkRequest applySecurityGroupsToClientVpnTargetNetworkRequest);
+
+    /**
+     * <p>
      * Assigns one or more IPv6 addresses to the specified network interface. You can specify one or more specific IPv6
      * addresses, or you can specify the number of IPv6 addresses to be automatically assigned from within the subnet's
      * IPv6 CIDR block range. You can assign as many IPv6 addresses to a network interface as you can assign private
@@ -376,6 +391,21 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     AssociateAddressResult associateAddress(AssociateAddressRequest associateAddressRequest);
+
+    /**
+     * <p>
+     * Associates a target network with a Client VPN endpoint. A target network is a subnet in a VPC. You can associate
+     * multiple subnets from the same VPC with a Client VPN endpoint. You can associate only one subnet in each
+     * Availability Zone. We recommend that you associate at least two subnets to provide Availability Zone redundancy.
+     * </p>
+     * 
+     * @param associateClientVpnTargetNetworkRequest
+     * @return Result of the AssociateClientVpnTargetNetwork operation returned by the service.
+     * @sample AmazonEC2.AssociateClientVpnTargetNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateClientVpnTargetNetworkResult associateClientVpnTargetNetwork(AssociateClientVpnTargetNetworkRequest associateClientVpnTargetNetworkRequest);
 
     /**
      * <p>
@@ -611,6 +641,21 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     AttachVpnGatewayResult attachVpnGateway(AttachVpnGatewayRequest attachVpnGatewayRequest);
+
+    /**
+     * <p>
+     * Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization rules act as firewall rules
+     * that grant access to networks. You must configure ingress authorization rules to enable clients to access
+     * resources in AWS or on-premises networks.
+     * </p>
+     * 
+     * @param authorizeClientVpnIngressRequest
+     * @return Result of the AuthorizeClientVpnIngress operation returned by the service.
+     * @sample AmazonEC2.AuthorizeClientVpnIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AuthorizeClientVpnIngressResult authorizeClientVpnIngress(AuthorizeClientVpnIngressRequest authorizeClientVpnIngressRequest);
 
     /**
      * <p>
@@ -970,6 +1015,35 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     CreateCapacityReservationResult createCapacityReservation(CreateCapacityReservationRequest createCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Creates a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to enable and
+     * manage client VPN sessions. It is the destination endpoint at which all client VPN sessions are terminated.
+     * </p>
+     * 
+     * @param createClientVpnEndpointRequest
+     * @return Result of the CreateClientVpnEndpoint operation returned by the service.
+     * @sample AmazonEC2.CreateClientVpnEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateClientVpnEndpointResult createClientVpnEndpoint(CreateClientVpnEndpointRequest createClientVpnEndpointRequest);
+
+    /**
+     * <p>
+     * Adds a route to a network to a Client VPN endpoint. Each Client VPN endpoint has a route table that describes the
+     * available destination network routes. Each route in the route table specifies the path for traﬃc to speciﬁc
+     * resources or networks.
+     * </p>
+     * 
+     * @param createClientVpnRouteRequest
+     * @return Result of the CreateClientVpnRoute operation returned by the service.
+     * @sample AmazonEC2.CreateClientVpnRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateClientVpnRouteResult createClientVpnRoute(CreateClientVpnRouteRequest createClientVpnRouteRequest);
 
     /**
      * <p>
@@ -2069,6 +2143,36 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Deletes the specified Client VPN endpoint. You must disassociate all target networks before you can delete a
+     * Client VPN endpoint.
+     * </p>
+     * 
+     * @param deleteClientVpnEndpointRequest
+     * @return Result of the DeleteClientVpnEndpoint operation returned by the service.
+     * @sample AmazonEC2.DeleteClientVpnEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteClientVpnEndpointResult deleteClientVpnEndpoint(DeleteClientVpnEndpointRequest deleteClientVpnEndpointRequest);
+
+    /**
+     * <p>
+     * Deletes a route from a Client VPN endpoint. You can only delete routes that you manually added using the
+     * <b>CreateClientVpnRoute</b> action. You cannot delete routes that were automatically added when associating a
+     * subnet. To remove routes that have been automatically added, disassociate the target subnet from the Client VPN
+     * endpoint.
+     * </p>
+     * 
+     * @param deleteClientVpnRouteRequest
+     * @return Result of the DeleteClientVpnRoute operation returned by the service.
+     * @sample AmazonEC2.DeleteClientVpnRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteClientVpnRouteResult deleteClientVpnRoute(DeleteClientVpnRouteRequest deleteClientVpnRouteRequest);
+
+    /**
+     * <p>
      * Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer
      * gateway.
      * </p>
@@ -2890,6 +2994,73 @@ public interface AmazonEC2 {
      * @see #describeClassicLinkInstances(DescribeClassicLinkInstancesRequest)
      */
     DescribeClassicLinkInstancesResult describeClassicLinkInstances();
+
+    /**
+     * <p>
+     * Describes the authorization rules for a specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param describeClientVpnAuthorizationRulesRequest
+     * @return Result of the DescribeClientVpnAuthorizationRules operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnAuthorizationRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeClientVpnAuthorizationRulesResult describeClientVpnAuthorizationRules(
+            DescribeClientVpnAuthorizationRulesRequest describeClientVpnAuthorizationRulesRequest);
+
+    /**
+     * <p>
+     * Describes active client connections and connections that have been terminated within the last 60 minutes for the
+     * specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param describeClientVpnConnectionsRequest
+     * @return Result of the DescribeClientVpnConnections operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeClientVpnConnectionsResult describeClientVpnConnections(DescribeClientVpnConnectionsRequest describeClientVpnConnectionsRequest);
+
+    /**
+     * <p>
+     * Describes one or more Client VPN endpoints in the account.
+     * </p>
+     * 
+     * @param describeClientVpnEndpointsRequest
+     * @return Result of the DescribeClientVpnEndpoints operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeClientVpnEndpointsResult describeClientVpnEndpoints(DescribeClientVpnEndpointsRequest describeClientVpnEndpointsRequest);
+
+    /**
+     * <p>
+     * Describes the routes for the specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param describeClientVpnRoutesRequest
+     * @return Result of the DescribeClientVpnRoutes operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeClientVpnRoutesResult describeClientVpnRoutes(DescribeClientVpnRoutesRequest describeClientVpnRoutesRequest);
+
+    /**
+     * <p>
+     * Describes the target networks associated with the specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param describeClientVpnTargetNetworksRequest
+     * @return Result of the DescribeClientVpnTargetNetworks operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnTargetNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeClientVpnTargetNetworksResult describeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest describeClientVpnTargetNetworksRequest);
 
     /**
      * <p>
@@ -4915,6 +5086,43 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Disassociates a target network from the specified Client VPN endpoint. When you disassociate the last target
+     * network from a Client VPN, the following happens:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The route that was automatically added for the VPC is deleted
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All active client connections are terminated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New client connections are disallowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Client VPN endpoint's status changes to <code>pending-associate</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param disassociateClientVpnTargetNetworkRequest
+     * @return Result of the DisassociateClientVpnTargetNetwork operation returned by the service.
+     * @sample AmazonEC2.DisassociateClientVpnTargetNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateClientVpnTargetNetworkResult disassociateClientVpnTargetNetwork(
+            DisassociateClientVpnTargetNetworkRequest disassociateClientVpnTargetNetworkRequest);
+
+    /**
+     * <p>
      * Disassociates an IAM instance profile from a running or stopped instance.
      * </p>
      * <p>
@@ -5074,6 +5282,37 @@ public interface AmazonEC2 {
      *      target="_top">AWS API Documentation</a>
      */
     EnableVpcClassicLinkDnsSupportResult enableVpcClassicLinkDnsSupport(EnableVpcClassicLinkDnsSupportRequest enableVpcClassicLinkDnsSupportRequest);
+
+    /**
+     * <p>
+     * Downloads the client certificate revocation list for the specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param exportClientVpnClientCertificateRevocationListRequest
+     * @return Result of the ExportClientVpnClientCertificateRevocationList operation returned by the service.
+     * @sample AmazonEC2.ExportClientVpnClientCertificateRevocationList
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExportClientVpnClientCertificateRevocationListResult exportClientVpnClientCertificateRevocationList(
+            ExportClientVpnClientCertificateRevocationListRequest exportClientVpnClientCertificateRevocationListRequest);
+
+    /**
+     * <p>
+     * Downloads the contents of the client configuration file for the specified Client VPN endpoint. The client
+     * configuration file includes the Client VPN endpoint and certificate information clients need to establish a
+     * connection with the Client VPN endpoint.
+     * </p>
+     * 
+     * @param exportClientVpnClientConfigurationRequest
+     * @return Result of the ExportClientVpnClientConfiguration operation returned by the service.
+     * @sample AmazonEC2.ExportClientVpnClientConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ExportClientVpnClientConfigurationResult exportClientVpnClientConfiguration(
+            ExportClientVpnClientConfigurationRequest exportClientVpnClientConfigurationRequest);
 
     /**
      * <p>
@@ -5259,6 +5498,25 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Uploads a client certificate revocation list to the specified Client VPN endpoint. Uploading a client certificate
+     * revocation list overwrites the existing client certificate revocation list.
+     * </p>
+     * <p>
+     * Uploading a client certificate revocation list resets existing client connections.
+     * </p>
+     * 
+     * @param importClientVpnClientCertificateRevocationListRequest
+     * @return Result of the ImportClientVpnClientCertificateRevocationList operation returned by the service.
+     * @sample AmazonEC2.ImportClientVpnClientCertificateRevocationList
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ImportClientVpnClientCertificateRevocationListResult importClientVpnClientCertificateRevocationList(
+            ImportClientVpnClientCertificateRevocationListRequest importClientVpnClientCertificateRevocationListRequest);
+
+    /**
+     * <p>
      * Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI). For more
      * information, see <a
      * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an
@@ -5379,6 +5637,21 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     ModifyCapacityReservationResult modifyCapacityReservation(ModifyCapacityReservationRequest modifyCapacityReservationRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Client VPN endpoint. You can only modify an endpoint's server certificate information,
+     * client connection logging information, DNS server, and description. Modifying the DNS server resets existing
+     * client connections.
+     * </p>
+     * 
+     * @param modifyClientVpnEndpointRequest
+     * @return Result of the ModifyClientVpnEndpoint operation returned by the service.
+     * @sample AmazonEC2.ModifyClientVpnEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyClientVpnEndpointResult modifyClientVpnEndpoint(ModifyClientVpnEndpointRequest modifyClientVpnEndpointRequest);
 
     /**
      * <p>
@@ -6582,6 +6855,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Removes an ingress authorization rule from a Client VPN endpoint.
+     * </p>
+     * 
+     * @param revokeClientVpnIngressRequest
+     * @return Result of the RevokeClientVpnIngress operation returned by the service.
+     * @sample AmazonEC2.RevokeClientVpnIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RevokeClientVpnIngressResult revokeClientVpnIngress(RevokeClientVpnIngressRequest revokeClientVpnIngressRequest);
+
+    /**
+     * <p>
      * [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC. This action doesn't apply to
      * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
      * match the existing rule's values exactly.
@@ -6859,6 +7145,20 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     StopInstancesResult stopInstances(StopInstancesRequest stopInstancesRequest);
+
+    /**
+     * <p>
+     * Terminates active Client VPN endpoint connections. This action can be used to terminate a specific client
+     * connection, or up to five connections established by a specific user.
+     * </p>
+     * 
+     * @param terminateClientVpnConnectionsRequest
+     * @return Result of the TerminateClientVpnConnections operation returned by the service.
+     * @sample AmazonEC2.TerminateClientVpnConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    TerminateClientVpnConnectionsResult terminateClientVpnConnections(TerminateClientVpnConnectionsRequest terminateClientVpnConnectionsRequest);
 
     /**
      * <p>

@@ -29,6 +29,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * The IDs of one or more resources, separated by spaces.
      * </p>
+     * <p>
+     * Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resources;
     /**
@@ -51,7 +54,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * initialize any additional object members.
      * 
      * @param resources
-     *        The IDs of one or more resources, separated by spaces.
+     *        The IDs of one or more resources, separated by spaces.</p>
+     *        <p>
+     *        Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
      * @param tags
      *        One or more tags. The <code>value</code> parameter is required, but if you don't want the tag to have a
      *        value, specify the parameter with no value, and we set the value to an empty string.
@@ -65,8 +70,13 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * The IDs of one or more resources, separated by spaces.
      * </p>
+     * <p>
+     * Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
+     * </p>
      * 
-     * @return The IDs of one or more resources, separated by spaces.
+     * @return The IDs of one or more resources, separated by spaces.</p>
+     *         <p>
+     *         Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
      */
 
     public java.util.List<String> getResources() {
@@ -80,9 +90,14 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * The IDs of one or more resources, separated by spaces.
      * </p>
+     * <p>
+     * Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
+     * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources, separated by spaces.
+     *        The IDs of one or more resources, separated by spaces.</p>
+     *        <p>
+     *        Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
      */
 
     public void setResources(java.util.Collection<String> resources) {
@@ -99,13 +114,18 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * The IDs of one or more resources, separated by spaces.
      * </p>
      * <p>
+     * Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources, separated by spaces.
+     *        The IDs of one or more resources, separated by spaces.</p>
+     *        <p>
+     *        Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,9 +143,14 @@ public class CreateTagsRequest extends AmazonWebServiceRequest implements Serial
      * <p>
      * The IDs of one or more resources, separated by spaces.
      * </p>
+     * <p>
+     * Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
+     * </p>
      * 
      * @param resources
-     *        The IDs of one or more resources, separated by spaces.
+     *        The IDs of one or more resources, separated by spaces.</p>
+     *        <p>
+     *        Constraints: Up to 1000 resource IDs. We recommend breaking up this request into smaller batches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

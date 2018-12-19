@@ -27,36 +27,46 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * The Amazon Resource Name (ARN) of the accelerator that you want to update. Attribute is required.
      * </p>
      */
     private String acceleratorArn;
     /**
      * <p>
-     * Update whether flow logs are enabled.
+     * Update whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      */
     private Boolean flowLogsEnabled;
     /**
      * <p>
-     * Update the name of the Amazon S3 bucket for the flow logs.
+     * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
+     * to write to the bucket.
      * </p>
      */
     private String flowLogsS3Bucket;
     /**
      * <p>
-     * Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
+     * root of the bucket.
      * </p>
      */
     private String flowLogsS3Prefix;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * The Amazon Resource Name (ARN) of the accelerator that you want to update. Attribute is required.
      * </p>
      * 
      * @param acceleratorArn
-     *        The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     *        The Amazon Resource Name (ARN) of the accelerator that you want to update. Attribute is required.
      */
 
     public void setAcceleratorArn(String acceleratorArn) {
@@ -65,10 +75,10 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * The Amazon Resource Name (ARN) of the accelerator that you want to update. Attribute is required.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * @return The Amazon Resource Name (ARN) of the accelerator that you want to update. Attribute is required.
      */
 
     public String getAcceleratorArn() {
@@ -77,11 +87,11 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     * The Amazon Resource Name (ARN) of the accelerator that you want to update. Attribute is required.
      * </p>
      * 
      * @param acceleratorArn
-     *        The Amazon Resource Name (ARN) of the accelerator that you want to update.
+     *        The Amazon Resource Name (ARN) of the accelerator that you want to update. Attribute is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +102,22 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update whether flow logs are enabled.
+     * Update whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param flowLogsEnabled
-     *        Update whether flow logs are enabled.
+     *        Update whether flow logs are enabled. The default value is false. If the value is true,
+     *        <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
+     *        >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public void setFlowLogsEnabled(Boolean flowLogsEnabled) {
@@ -105,10 +126,21 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update whether flow logs are enabled.
+     * Update whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
-     * @return Update whether flow logs are enabled.
+     * @return Update whether flow logs are enabled. The default value is false. If the value is true,
+     *         <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
+     *         >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public Boolean getFlowLogsEnabled() {
@@ -117,11 +149,22 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update whether flow logs are enabled.
+     * Update whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param flowLogsEnabled
-     *        Update whether flow logs are enabled.
+     *        Update whether flow logs are enabled. The default value is false. If the value is true,
+     *        <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
+     *        >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,10 +175,21 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update whether flow logs are enabled.
+     * Update whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
-     * @return Update whether flow logs are enabled.
+     * @return Update whether flow logs are enabled. The default value is false. If the value is true,
+     *         <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
+     *         >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public Boolean isFlowLogsEnabled() {
@@ -144,11 +198,15 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update the name of the Amazon S3 bucket for the flow logs.
+     * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
+     * to write to the bucket.
      * </p>
      * 
      * @param flowLogsS3Bucket
-     *        Update the name of the Amazon S3 bucket for the flow logs.
+     *        The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+     *        is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *        permission to write to the bucket.
      */
 
     public void setFlowLogsS3Bucket(String flowLogsS3Bucket) {
@@ -157,10 +215,14 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update the name of the Amazon S3 bucket for the flow logs.
+     * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
+     * to write to the bucket.
      * </p>
      * 
-     * @return Update the name of the Amazon S3 bucket for the flow logs.
+     * @return The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+     *         is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *         permission to write to the bucket.
      */
 
     public String getFlowLogsS3Bucket() {
@@ -169,11 +231,15 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update the name of the Amazon S3 bucket for the flow logs.
+     * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
+     * to write to the bucket.
      * </p>
      * 
      * @param flowLogsS3Bucket
-     *        Update the name of the Amazon S3 bucket for the flow logs.
+     *        The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+     *        is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *        permission to write to the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +250,15 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
+     * root of the bucket.
      * </p>
      * 
      * @param flowLogsS3Prefix
-     *        Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     *        Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     *        <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored
+     *        in the root of the bucket.
      */
 
     public void setFlowLogsS3Prefix(String flowLogsS3Prefix) {
@@ -197,10 +267,14 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
+     * root of the bucket.
      * </p>
      * 
-     * @return Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * @return Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     *         <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are
+     *         stored in the root of the bucket.
      */
 
     public String getFlowLogsS3Prefix() {
@@ -209,11 +283,15 @@ public class UpdateAcceleratorAttributesRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     * Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
+     * root of the bucket.
      * </p>
      * 
      * @param flowLogsS3Prefix
-     *        Update the prefix for the location in the Amazon S3 bucket for the flow logs.
+     *        Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     *        <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored
+     *        in the root of the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

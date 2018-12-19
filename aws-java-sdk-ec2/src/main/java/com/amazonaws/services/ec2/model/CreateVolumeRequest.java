@@ -48,7 +48,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
-     * Range is 100 to 64,000IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
      * families guarantee performance up to 32,000 IOPS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
@@ -332,7 +332,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
-     * Range is 100 to 64,000IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
      * families guarantee performance up to 32,000 IOPS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
@@ -344,7 +344,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
-     *        IOPS/GiB. Range is 100 to 64,000IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
+     *        IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
      *        only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      *        instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
      *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
@@ -360,7 +360,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
-     * Range is 100 to 64,000IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
      * families guarantee performance up to 32,000 IOPS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
@@ -371,7 +371,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * </p>
      * 
      * @return The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
-     *         IOPS/GiB. Range is 100 to 64,000IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
+     *         IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
      *         only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      *         instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
      *         <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
@@ -387,7 +387,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB.
-     * Range is 100 to 64,000IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
+     * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
      * families guarantee performance up to 32,000 IOPS. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
@@ -399,7 +399,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * 
      * @param iops
      *        The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50
-     *        IOPS/GiB. Range is 100 to 64,000IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
+     *        IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
      *        only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      *        instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
      *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume

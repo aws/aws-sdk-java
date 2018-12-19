@@ -75,7 +75,7 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
     private String healthCheckPath;
     /**
      * <p>
-     * The time, in seconds, between each health check for an endpoint. The default value is 30.
+     * The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
@@ -450,11 +450,11 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time, in seconds, between each health check for an endpoint. The default value is 30.
+     * The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The time, in seconds, between each health check for an endpoint. The default value is 30.
+     *        The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -463,10 +463,10 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time, in seconds, between each health check for an endpoint. The default value is 30.
+     * The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
      * </p>
      * 
-     * @return The time, in seconds, between each health check for an endpoint. The default value is 30.
+     * @return The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -475,11 +475,11 @@ public class UpdateEndpointGroupRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The time, in seconds, between each health check for an endpoint. The default value is 30.
+     * The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The time, in seconds, between each health check for an endpoint. The default value is 30.
+     *        The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

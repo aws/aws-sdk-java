@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The endpoint group that you specified doesn't exist.
+ * The listener that you specified has an endpoint group associated with it. You must remove all dependent resources
+ * from a listener before you can delete it.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

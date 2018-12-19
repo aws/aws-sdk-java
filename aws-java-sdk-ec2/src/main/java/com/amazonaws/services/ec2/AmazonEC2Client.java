@@ -744,6 +744,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Applies a security group to the association between the target network and the Client VPN endpoint. This action
+     * replaces the existing security groups with the specified security groups.
+     * </p>
+     * 
+     * @param applySecurityGroupsToClientVpnTargetNetworkRequest
+     * @return Result of the ApplySecurityGroupsToClientVpnTargetNetwork operation returned by the service.
+     * @sample AmazonEC2.ApplySecurityGroupsToClientVpnTargetNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ApplySecurityGroupsToClientVpnTargetNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ApplySecurityGroupsToClientVpnTargetNetworkResult applySecurityGroupsToClientVpnTargetNetwork(
+            ApplySecurityGroupsToClientVpnTargetNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeApplySecurityGroupsToClientVpnTargetNetwork(request);
+    }
+
+    @SdkInternalApi
+    final ApplySecurityGroupsToClientVpnTargetNetworkResult executeApplySecurityGroupsToClientVpnTargetNetwork(
+            ApplySecurityGroupsToClientVpnTargetNetworkRequest applySecurityGroupsToClientVpnTargetNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(applySecurityGroupsToClientVpnTargetNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ApplySecurityGroupsToClientVpnTargetNetworkRequest> request = null;
+        Response<ApplySecurityGroupsToClientVpnTargetNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ApplySecurityGroupsToClientVpnTargetNetworkRequestMarshaller().marshall(super
+                        .beforeMarshalling(applySecurityGroupsToClientVpnTargetNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplySecurityGroupsToClientVpnTargetNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ApplySecurityGroupsToClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<ApplySecurityGroupsToClientVpnTargetNetworkResult>(
+                    new ApplySecurityGroupsToClientVpnTargetNetworkResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Assigns one or more IPv6 addresses to the specified network interface. You can specify one or more specific IPv6
      * addresses, or you can specify the number of IPv6 addresses to be automatically assigned from within the subnet's
      * IPv6 CIDR block range. You can assign as many IPv6 addresses to a network interface as you can assign private
@@ -938,6 +994,61 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AssociateAddressResult> responseHandler = new StaxResponseHandler<AssociateAddressResult>(
                     new AssociateAddressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates a target network with a Client VPN endpoint. A target network is a subnet in a VPC. You can associate
+     * multiple subnets from the same VPC with a Client VPN endpoint. You can associate only one subnet in each
+     * Availability Zone. We recommend that you associate at least two subnets to provide Availability Zone redundancy.
+     * </p>
+     * 
+     * @param associateClientVpnTargetNetworkRequest
+     * @return Result of the AssociateClientVpnTargetNetwork operation returned by the service.
+     * @sample AmazonEC2.AssociateClientVpnTargetNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateClientVpnTargetNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateClientVpnTargetNetworkResult associateClientVpnTargetNetwork(AssociateClientVpnTargetNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateClientVpnTargetNetwork(request);
+    }
+
+    @SdkInternalApi
+    final AssociateClientVpnTargetNetworkResult executeAssociateClientVpnTargetNetwork(
+            AssociateClientVpnTargetNetworkRequest associateClientVpnTargetNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateClientVpnTargetNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateClientVpnTargetNetworkRequest> request = null;
+        Response<AssociateClientVpnTargetNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateClientVpnTargetNetworkRequestMarshaller().marshall(super.beforeMarshalling(associateClientVpnTargetNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateClientVpnTargetNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AssociateClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<AssociateClientVpnTargetNetworkResult>(
+                    new AssociateClientVpnTargetNetworkResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1602,6 +1713,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<AttachVpnGatewayResult> responseHandler = new StaxResponseHandler<AttachVpnGatewayResult>(
                     new AttachVpnGatewayResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization rules act as firewall rules
+     * that grant access to networks. You must configure ingress authorization rules to enable clients to access
+     * resources in AWS or on-premises networks.
+     * </p>
+     * 
+     * @param authorizeClientVpnIngressRequest
+     * @return Result of the AuthorizeClientVpnIngress operation returned by the service.
+     * @sample AmazonEC2.AuthorizeClientVpnIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AuthorizeClientVpnIngress" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AuthorizeClientVpnIngressResult authorizeClientVpnIngress(AuthorizeClientVpnIngressRequest request) {
+        request = beforeClientExecution(request);
+        return executeAuthorizeClientVpnIngress(request);
+    }
+
+    @SdkInternalApi
+    final AuthorizeClientVpnIngressResult executeAuthorizeClientVpnIngress(AuthorizeClientVpnIngressRequest authorizeClientVpnIngressRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(authorizeClientVpnIngressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AuthorizeClientVpnIngressRequest> request = null;
+        Response<AuthorizeClientVpnIngressResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AuthorizeClientVpnIngressRequestMarshaller().marshall(super.beforeMarshalling(authorizeClientVpnIngressRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeClientVpnIngress");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AuthorizeClientVpnIngressResult> responseHandler = new StaxResponseHandler<AuthorizeClientVpnIngressResult>(
+                    new AuthorizeClientVpnIngressResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2580,6 +2745,113 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateCapacityReservationResult> responseHandler = new StaxResponseHandler<CreateCapacityReservationResult>(
                     new CreateCapacityReservationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to enable and
+     * manage client VPN sessions. It is the destination endpoint at which all client VPN sessions are terminated.
+     * </p>
+     * 
+     * @param createClientVpnEndpointRequest
+     * @return Result of the CreateClientVpnEndpoint operation returned by the service.
+     * @sample AmazonEC2.CreateClientVpnEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateClientVpnEndpointResult createClientVpnEndpoint(CreateClientVpnEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateClientVpnEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateClientVpnEndpointResult executeCreateClientVpnEndpoint(CreateClientVpnEndpointRequest createClientVpnEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createClientVpnEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateClientVpnEndpointRequest> request = null;
+        Response<CreateClientVpnEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateClientVpnEndpointRequestMarshaller().marshall(super.beforeMarshalling(createClientVpnEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClientVpnEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateClientVpnEndpointResult> responseHandler = new StaxResponseHandler<CreateClientVpnEndpointResult>(
+                    new CreateClientVpnEndpointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a route to a network to a Client VPN endpoint. Each Client VPN endpoint has a route table that describes the
+     * available destination network routes. Each route in the route table specifies the path for traﬃc to speciﬁc
+     * resources or networks.
+     * </p>
+     * 
+     * @param createClientVpnRouteRequest
+     * @return Result of the CreateClientVpnRoute operation returned by the service.
+     * @sample AmazonEC2.CreateClientVpnRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateClientVpnRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateClientVpnRouteResult createClientVpnRoute(CreateClientVpnRouteRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateClientVpnRoute(request);
+    }
+
+    @SdkInternalApi
+    final CreateClientVpnRouteResult executeCreateClientVpnRoute(CreateClientVpnRouteRequest createClientVpnRouteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createClientVpnRouteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateClientVpnRouteRequest> request = null;
+        Response<CreateClientVpnRouteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateClientVpnRouteRequestMarshaller().marshall(super.beforeMarshalling(createClientVpnRouteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClientVpnRoute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateClientVpnRouteResult> responseHandler = new StaxResponseHandler<CreateClientVpnRouteResult>(
+                    new CreateClientVpnRouteResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5280,6 +5552,114 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Deletes the specified Client VPN endpoint. You must disassociate all target networks before you can delete a
+     * Client VPN endpoint.
+     * </p>
+     * 
+     * @param deleteClientVpnEndpointRequest
+     * @return Result of the DeleteClientVpnEndpoint operation returned by the service.
+     * @sample AmazonEC2.DeleteClientVpnEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteClientVpnEndpointResult deleteClientVpnEndpoint(DeleteClientVpnEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteClientVpnEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteClientVpnEndpointResult executeDeleteClientVpnEndpoint(DeleteClientVpnEndpointRequest deleteClientVpnEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteClientVpnEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteClientVpnEndpointRequest> request = null;
+        Response<DeleteClientVpnEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteClientVpnEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteClientVpnEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClientVpnEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteClientVpnEndpointResult> responseHandler = new StaxResponseHandler<DeleteClientVpnEndpointResult>(
+                    new DeleteClientVpnEndpointResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a route from a Client VPN endpoint. You can only delete routes that you manually added using the
+     * <b>CreateClientVpnRoute</b> action. You cannot delete routes that were automatically added when associating a
+     * subnet. To remove routes that have been automatically added, disassociate the target subnet from the Client VPN
+     * endpoint.
+     * </p>
+     * 
+     * @param deleteClientVpnRouteRequest
+     * @return Result of the DeleteClientVpnRoute operation returned by the service.
+     * @sample AmazonEC2.DeleteClientVpnRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteClientVpnRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteClientVpnRouteResult deleteClientVpnRoute(DeleteClientVpnRouteRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteClientVpnRoute(request);
+    }
+
+    @SdkInternalApi
+    final DeleteClientVpnRouteResult executeDeleteClientVpnRoute(DeleteClientVpnRouteRequest deleteClientVpnRouteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteClientVpnRouteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteClientVpnRouteRequest> request = null;
+        Response<DeleteClientVpnRouteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteClientVpnRouteRequestMarshaller().marshall(super.beforeMarshalling(deleteClientVpnRouteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteClientVpnRoute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteClientVpnRouteResult> responseHandler = new StaxResponseHandler<DeleteClientVpnRouteResult>(
+                    new DeleteClientVpnRouteResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer
      * gateway.
      * </p>
@@ -7880,6 +8260,270 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeClassicLinkInstancesResult describeClassicLinkInstances() {
         return describeClassicLinkInstances(new DescribeClassicLinkInstancesRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the authorization rules for a specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param describeClientVpnAuthorizationRulesRequest
+     * @return Result of the DescribeClientVpnAuthorizationRules operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnAuthorizationRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnAuthorizationRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeClientVpnAuthorizationRulesResult describeClientVpnAuthorizationRules(DescribeClientVpnAuthorizationRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClientVpnAuthorizationRules(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClientVpnAuthorizationRulesResult executeDescribeClientVpnAuthorizationRules(
+            DescribeClientVpnAuthorizationRulesRequest describeClientVpnAuthorizationRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClientVpnAuthorizationRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClientVpnAuthorizationRulesRequest> request = null;
+        Response<DescribeClientVpnAuthorizationRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClientVpnAuthorizationRulesRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeClientVpnAuthorizationRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnAuthorizationRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClientVpnAuthorizationRulesResult> responseHandler = new StaxResponseHandler<DescribeClientVpnAuthorizationRulesResult>(
+                    new DescribeClientVpnAuthorizationRulesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes active client connections and connections that have been terminated within the last 60 minutes for the
+     * specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param describeClientVpnConnectionsRequest
+     * @return Result of the DescribeClientVpnConnections operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeClientVpnConnectionsResult describeClientVpnConnections(DescribeClientVpnConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClientVpnConnections(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClientVpnConnectionsResult executeDescribeClientVpnConnections(DescribeClientVpnConnectionsRequest describeClientVpnConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClientVpnConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClientVpnConnectionsRequest> request = null;
+        Response<DescribeClientVpnConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClientVpnConnectionsRequestMarshaller().marshall(super.beforeMarshalling(describeClientVpnConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnConnections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClientVpnConnectionsResult> responseHandler = new StaxResponseHandler<DescribeClientVpnConnectionsResult>(
+                    new DescribeClientVpnConnectionsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes one or more Client VPN endpoints in the account.
+     * </p>
+     * 
+     * @param describeClientVpnEndpointsRequest
+     * @return Result of the DescribeClientVpnEndpoints operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeClientVpnEndpointsResult describeClientVpnEndpoints(DescribeClientVpnEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClientVpnEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClientVpnEndpointsResult executeDescribeClientVpnEndpoints(DescribeClientVpnEndpointsRequest describeClientVpnEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClientVpnEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClientVpnEndpointsRequest> request = null;
+        Response<DescribeClientVpnEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClientVpnEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeClientVpnEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClientVpnEndpointsResult> responseHandler = new StaxResponseHandler<DescribeClientVpnEndpointsResult>(
+                    new DescribeClientVpnEndpointsResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the routes for the specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param describeClientVpnRoutesRequest
+     * @return Result of the DescribeClientVpnRoutes operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnRoutes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeClientVpnRoutesResult describeClientVpnRoutes(DescribeClientVpnRoutesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClientVpnRoutes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClientVpnRoutesResult executeDescribeClientVpnRoutes(DescribeClientVpnRoutesRequest describeClientVpnRoutesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClientVpnRoutesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClientVpnRoutesRequest> request = null;
+        Response<DescribeClientVpnRoutesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClientVpnRoutesRequestMarshaller().marshall(super.beforeMarshalling(describeClientVpnRoutesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnRoutes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClientVpnRoutesResult> responseHandler = new StaxResponseHandler<DescribeClientVpnRoutesResult>(
+                    new DescribeClientVpnRoutesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the target networks associated with the specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param describeClientVpnTargetNetworksRequest
+     * @return Result of the DescribeClientVpnTargetNetworks operation returned by the service.
+     * @sample AmazonEC2.DescribeClientVpnTargetNetworks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeClientVpnTargetNetworks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeClientVpnTargetNetworksResult describeClientVpnTargetNetworks(DescribeClientVpnTargetNetworksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeClientVpnTargetNetworks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeClientVpnTargetNetworksResult executeDescribeClientVpnTargetNetworks(
+            DescribeClientVpnTargetNetworksRequest describeClientVpnTargetNetworksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeClientVpnTargetNetworksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeClientVpnTargetNetworksRequest> request = null;
+        Response<DescribeClientVpnTargetNetworksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeClientVpnTargetNetworksRequestMarshaller().marshall(super.beforeMarshalling(describeClientVpnTargetNetworksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClientVpnTargetNetworks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeClientVpnTargetNetworksResult> responseHandler = new StaxResponseHandler<DescribeClientVpnTargetNetworksResult>(
+                    new DescribeClientVpnTargetNetworksResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -13428,6 +14072,83 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Disassociates a target network from the specified Client VPN endpoint. When you disassociate the last target
+     * network from a Client VPN, the following happens:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The route that was automatically added for the VPC is deleted
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * All active client connections are terminated
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * New client connections are disallowed
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The Client VPN endpoint's status changes to <code>pending-associate</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param disassociateClientVpnTargetNetworkRequest
+     * @return Result of the DisassociateClientVpnTargetNetwork operation returned by the service.
+     * @sample AmazonEC2.DisassociateClientVpnTargetNetwork
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateClientVpnTargetNetwork"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateClientVpnTargetNetworkResult disassociateClientVpnTargetNetwork(DisassociateClientVpnTargetNetworkRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateClientVpnTargetNetwork(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateClientVpnTargetNetworkResult executeDisassociateClientVpnTargetNetwork(
+            DisassociateClientVpnTargetNetworkRequest disassociateClientVpnTargetNetworkRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateClientVpnTargetNetworkRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateClientVpnTargetNetworkRequest> request = null;
+        Response<DisassociateClientVpnTargetNetworkResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateClientVpnTargetNetworkRequestMarshaller()
+                        .marshall(super.beforeMarshalling(disassociateClientVpnTargetNetworkRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateClientVpnTargetNetwork");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisassociateClientVpnTargetNetworkResult> responseHandler = new StaxResponseHandler<DisassociateClientVpnTargetNetworkResult>(
+                    new DisassociateClientVpnTargetNetworkResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates an IAM instance profile from a running or stopped instance.
      * </p>
      * <p>
@@ -13970,6 +14691,118 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableVpcClassicLinkDnsSupportResult> responseHandler = new StaxResponseHandler<EnableVpcClassicLinkDnsSupportResult>(
                     new EnableVpcClassicLinkDnsSupportResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Downloads the client certificate revocation list for the specified Client VPN endpoint.
+     * </p>
+     * 
+     * @param exportClientVpnClientCertificateRevocationListRequest
+     * @return Result of the ExportClientVpnClientCertificateRevocationList operation returned by the service.
+     * @sample AmazonEC2.ExportClientVpnClientCertificateRevocationList
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientCertificateRevocationList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportClientVpnClientCertificateRevocationListResult exportClientVpnClientCertificateRevocationList(
+            ExportClientVpnClientCertificateRevocationListRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportClientVpnClientCertificateRevocationList(request);
+    }
+
+    @SdkInternalApi
+    final ExportClientVpnClientCertificateRevocationListResult executeExportClientVpnClientCertificateRevocationList(
+            ExportClientVpnClientCertificateRevocationListRequest exportClientVpnClientCertificateRevocationListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportClientVpnClientCertificateRevocationListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportClientVpnClientCertificateRevocationListRequest> request = null;
+        Response<ExportClientVpnClientCertificateRevocationListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportClientVpnClientCertificateRevocationListRequestMarshaller().marshall(super
+                        .beforeMarshalling(exportClientVpnClientCertificateRevocationListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportClientVpnClientCertificateRevocationList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ExportClientVpnClientCertificateRevocationListResult> responseHandler = new StaxResponseHandler<ExportClientVpnClientCertificateRevocationListResult>(
+                    new ExportClientVpnClientCertificateRevocationListResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Downloads the contents of the client configuration file for the specified Client VPN endpoint. The client
+     * configuration file includes the Client VPN endpoint and certificate information clients need to establish a
+     * connection with the Client VPN endpoint.
+     * </p>
+     * 
+     * @param exportClientVpnClientConfigurationRequest
+     * @return Result of the ExportClientVpnClientConfiguration operation returned by the service.
+     * @sample AmazonEC2.ExportClientVpnClientConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportClientVpnClientConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportClientVpnClientConfigurationResult exportClientVpnClientConfiguration(ExportClientVpnClientConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportClientVpnClientConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final ExportClientVpnClientConfigurationResult executeExportClientVpnClientConfiguration(
+            ExportClientVpnClientConfigurationRequest exportClientVpnClientConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportClientVpnClientConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportClientVpnClientConfigurationRequest> request = null;
+        Response<ExportClientVpnClientConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportClientVpnClientConfigurationRequestMarshaller()
+                        .marshall(super.beforeMarshalling(exportClientVpnClientConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportClientVpnClientConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ExportClientVpnClientConfigurationResult> responseHandler = new StaxResponseHandler<ExportClientVpnClientConfigurationResult>(
+                    new ExportClientVpnClientConfigurationResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -14559,6 +15392,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Uploads a client certificate revocation list to the specified Client VPN endpoint. Uploading a client certificate
+     * revocation list overwrites the existing client certificate revocation list.
+     * </p>
+     * <p>
+     * Uploading a client certificate revocation list resets existing client connections.
+     * </p>
+     * 
+     * @param importClientVpnClientCertificateRevocationListRequest
+     * @return Result of the ImportClientVpnClientCertificateRevocationList operation returned by the service.
+     * @sample AmazonEC2.ImportClientVpnClientCertificateRevocationList
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ImportClientVpnClientCertificateRevocationList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ImportClientVpnClientCertificateRevocationListResult importClientVpnClientCertificateRevocationList(
+            ImportClientVpnClientCertificateRevocationListRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportClientVpnClientCertificateRevocationList(request);
+    }
+
+    @SdkInternalApi
+    final ImportClientVpnClientCertificateRevocationListResult executeImportClientVpnClientCertificateRevocationList(
+            ImportClientVpnClientCertificateRevocationListRequest importClientVpnClientCertificateRevocationListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importClientVpnClientCertificateRevocationListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportClientVpnClientCertificateRevocationListRequest> request = null;
+        Response<ImportClientVpnClientCertificateRevocationListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportClientVpnClientCertificateRevocationListRequestMarshaller().marshall(super
+                        .beforeMarshalling(importClientVpnClientCertificateRevocationListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportClientVpnClientCertificateRevocationList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ImportClientVpnClientCertificateRevocationListResult> responseHandler = new StaxResponseHandler<ImportClientVpnClientCertificateRevocationListResult>(
+                    new ImportClientVpnClientCertificateRevocationListResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Import single or multi-volume disk images or EBS snapshots into an Amazon Machine Image (AMI). For more
      * information, see <a
      * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing a VM as an
@@ -14897,6 +15790,60 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<ModifyCapacityReservationResult> responseHandler = new StaxResponseHandler<ModifyCapacityReservationResult>(
                     new ModifyCapacityReservationResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified Client VPN endpoint. You can only modify an endpoint's server certificate information,
+     * client connection logging information, DNS server, and description. Modifying the DNS server resets existing
+     * client connections.
+     * </p>
+     * 
+     * @param modifyClientVpnEndpointRequest
+     * @return Result of the ModifyClientVpnEndpoint operation returned by the service.
+     * @sample AmazonEC2.ModifyClientVpnEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyClientVpnEndpoint" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyClientVpnEndpointResult modifyClientVpnEndpoint(ModifyClientVpnEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyClientVpnEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final ModifyClientVpnEndpointResult executeModifyClientVpnEndpoint(ModifyClientVpnEndpointRequest modifyClientVpnEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyClientVpnEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyClientVpnEndpointRequest> request = null;
+        Response<ModifyClientVpnEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyClientVpnEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyClientVpnEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyClientVpnEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyClientVpnEndpointResult> responseHandler = new StaxResponseHandler<ModifyClientVpnEndpointResult>(
+                    new ModifyClientVpnEndpointResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -18221,6 +19168,58 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Removes an ingress authorization rule from a Client VPN endpoint.
+     * </p>
+     * 
+     * @param revokeClientVpnIngressRequest
+     * @return Result of the RevokeClientVpnIngress operation returned by the service.
+     * @sample AmazonEC2.RevokeClientVpnIngress
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RevokeClientVpnIngress" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RevokeClientVpnIngressResult revokeClientVpnIngress(RevokeClientVpnIngressRequest request) {
+        request = beforeClientExecution(request);
+        return executeRevokeClientVpnIngress(request);
+    }
+
+    @SdkInternalApi
+    final RevokeClientVpnIngressResult executeRevokeClientVpnIngress(RevokeClientVpnIngressRequest revokeClientVpnIngressRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(revokeClientVpnIngressRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RevokeClientVpnIngressRequest> request = null;
+        Response<RevokeClientVpnIngressResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RevokeClientVpnIngressRequestMarshaller().marshall(super.beforeMarshalling(revokeClientVpnIngressRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeClientVpnIngress");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RevokeClientVpnIngressResult> responseHandler = new StaxResponseHandler<RevokeClientVpnIngressResult>(
+                    new RevokeClientVpnIngressResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * [EC2-VPC only] Removes one or more egress rules from a security group for EC2-VPC. This action doesn't apply to
      * security groups for use in EC2-Classic. To remove a rule, the values that you specify (for example, ports) must
      * match the existing rule's values exactly.
@@ -18758,6 +19757,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             }
 
             StaxResponseHandler<StopInstancesResult> responseHandler = new StaxResponseHandler<StopInstancesResult>(new StopInstancesResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Terminates active Client VPN endpoint connections. This action can be used to terminate a specific client
+     * connection, or up to five connections established by a specific user.
+     * </p>
+     * 
+     * @param terminateClientVpnConnectionsRequest
+     * @return Result of the TerminateClientVpnConnections operation returned by the service.
+     * @sample AmazonEC2.TerminateClientVpnConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateClientVpnConnections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public TerminateClientVpnConnectionsResult terminateClientVpnConnections(TerminateClientVpnConnectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeTerminateClientVpnConnections(request);
+    }
+
+    @SdkInternalApi
+    final TerminateClientVpnConnectionsResult executeTerminateClientVpnConnections(TerminateClientVpnConnectionsRequest terminateClientVpnConnectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(terminateClientVpnConnectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TerminateClientVpnConnectionsRequest> request = null;
+        Response<TerminateClientVpnConnectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TerminateClientVpnConnectionsRequestMarshaller().marshall(super.beforeMarshalling(terminateClientVpnConnectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateClientVpnConnections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<TerminateClientVpnConnectionsResult> responseHandler = new StaxResponseHandler<TerminateClientVpnConnectionsResult>(
+                    new TerminateClientVpnConnectionsResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -30,12 +30,42 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * <p>
      * The name of this environment tier.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <i>Web server tier</i> – <code>WebServer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <i>Worker tier</i> – <code>Worker</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
      * <p>
      * The type of this environment tier.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <i>Web server tier</i> – <code>Standard</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <i>Worker tier</i> – <code>SQS/HTTP</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String type;
     /**
@@ -56,9 +86,38 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * <p>
      * The name of this environment tier.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <i>Web server tier</i> – <code>WebServer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <i>Worker tier</i> – <code>Worker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of this environment tier.
+     *        The name of this environment tier.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <i>Web server tier</i> – <code>WebServer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <i>Worker tier</i> – <code>Worker</code>
+     *        </p>
+     *        </li>
      */
 
     public void setName(String name) {
@@ -69,8 +128,37 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * <p>
      * The name of this environment tier.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <i>Web server tier</i> – <code>WebServer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <i>Worker tier</i> – <code>Worker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The name of this environment tier.
+     * @return The name of this environment tier.</p>
+     *         <p>
+     *         Valid values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <i>Web server tier</i> – <code>WebServer</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <i>Worker tier</i> – <code>Worker</code>
+     *         </p>
+     *         </li>
      */
 
     public String getName() {
@@ -81,9 +169,38 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * <p>
      * The name of this environment tier.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <i>Web server tier</i> – <code>WebServer</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <i>Worker tier</i> – <code>Worker</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
-     *        The name of this environment tier.
+     *        The name of this environment tier.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <i>Web server tier</i> – <code>WebServer</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <i>Worker tier</i> – <code>Worker</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,9 +213,38 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * <p>
      * The type of this environment tier.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <i>Web server tier</i> – <code>Standard</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <i>Worker tier</i> – <code>SQS/HTTP</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of this environment tier.
+     *        The type of this environment tier.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <i>Web server tier</i> – <code>Standard</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <i>Worker tier</i> – <code>SQS/HTTP</code>
+     *        </p>
+     *        </li>
      */
 
     public void setType(String type) {
@@ -109,8 +255,37 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * <p>
      * The type of this environment tier.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <i>Web server tier</i> – <code>Standard</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <i>Worker tier</i> – <code>SQS/HTTP</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of this environment tier.
+     * @return The type of this environment tier.</p>
+     *         <p>
+     *         Valid values:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <i>Web server tier</i> – <code>Standard</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <i>Worker tier</i> – <code>SQS/HTTP</code>
+     *         </p>
+     *         </li>
      */
 
     public String getType() {
@@ -121,9 +296,38 @@ public class EnvironmentTier implements Serializable, Cloneable {
      * <p>
      * The type of this environment tier.
      * </p>
+     * <p>
+     * Valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <i>Web server tier</i> – <code>Standard</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <i>Worker tier</i> – <code>SQS/HTTP</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param type
-     *        The type of this environment tier.
+     *        The type of this environment tier.</p>
+     *        <p>
+     *        Valid values:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <i>Web server tier</i> – <code>Standard</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <i>Worker tier</i> – <code>SQS/HTTP</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

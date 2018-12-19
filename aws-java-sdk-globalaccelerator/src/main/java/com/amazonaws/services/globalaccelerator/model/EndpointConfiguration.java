@@ -42,7 +42,7 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5,
      * 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is
      * routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see
-     * <a href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
+     * <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      */
@@ -106,7 +106,7 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5,
      * 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is
      * routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see
-     * <a href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
+     * <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
@@ -116,7 +116,7 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      *        endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is
      *        routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to
      *        the last endpoint. For more information, see <a
-     *        href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html"
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html"
      *        >Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
@@ -130,7 +130,7 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5,
      * 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is
      * routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see
-     * <a href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
+     * <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
@@ -139,7 +139,7 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      *         endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is
      *         routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed
      *         to the last endpoint. For more information, see <a
-     *         href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html"
+     *         href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html"
      *         >Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
@@ -153,7 +153,7 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      * to route traffic based on proportions that you specify. For example, you might specify endpoint weights of 4, 5,
      * 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is routed to the first endpoint, 5/20 is
      * routed both to the second and third endpoints, and 6/20 is routed to the last endpoint. For more information, see
-     * <a href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
+     * <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html">Endpoint
      * Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
@@ -163,7 +163,7 @@ public class EndpointConfiguration implements Serializable, Cloneable, Structure
      *        endpoint weights of 4, 5, 5, and 6 (sum=20). The result is that 4/20 of your traffic, on average, is
      *        routed to the first endpoint, 5/20 is routed both to the second and third endpoints, and 6/20 is routed to
      *        the last endpoint. For more information, see <a
-     *        href="https://docs.awa.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html"
+     *        href="https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoints-endpoint-weights.html"
      *        >Endpoint Weights</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

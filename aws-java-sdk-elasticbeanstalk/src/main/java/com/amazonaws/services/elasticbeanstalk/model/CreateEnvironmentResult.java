@@ -173,7 +173,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1185,7 +1185,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1218,7 +1218,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1258,7 +1258,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1290,7 +1290,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *         <p>
      *         <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *         checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *         <code>RestartEnvironement</code> request.
+     *         <code>RestartEnvironment</code> request.
      *         </p>
      *         </li>
      *         </ul>
@@ -1330,7 +1330,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1363,7 +1363,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1405,7 +1405,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1438,7 +1438,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>
@@ -1478,7 +1478,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      * <p>
      * <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health checks
      * have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     * <code>RestartEnvironement</code> request.
+     * <code>RestartEnvironment</code> request.
      * </p>
      * </li>
      * </ul>
@@ -1511,7 +1511,7 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
      *        <p>
      *        <code>Grey</code>: Default health for a new environment. The environment is not fully launched and health
      *        checks have not started or health checks are suspended during an <code>UpdateEnvironment</code> or
-     *        <code>RestartEnvironement</code> request.
+     *        <code>RestartEnvironment</code> request.
      *        </p>
      *        </li>
      *        </ul>

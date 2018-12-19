@@ -1,3 +1,28 @@
+# __1.11.472__ __2018-12-18__
+## __AWS Elastic Beanstalk__
+  - ### Features
+    - This release adds a new resource that Elastic Beanstalk will soon support, EC2 launch template, to environment resource descriptions.
+
+## __AWS Global Accelerator__
+  - ### Features
+    - Documentation updates for Ubiquity
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Client VPN, is a client-based VPN service. With Client VPN, you can securely access resources in AWS as well as access resources in on-premises from any location using OpenVPN based devices. With Client VPN, you can set network based firewall rules that can restrict access to networks based on Active Directory groups.
+
+## __Amazon S3__
+  - ### Features
+    - Optimize S3 TransferManager parallel download performance by making parts writing to the destination file directly in parallel.
+
+## __AmazonApiGatewayManagementApi__
+  - ### Features
+    - This is the initial SDK release for the Amazon API Gateway Management API, which allows you to directly manage runtime aspects of your APIs. This release makes it easy to send data directly to clients connected to your WebSocket-based APIs.
+
+## __AmazonApiGatewayV2__
+  - ### Features
+    - This is the initial SDK release for the Amazon API Gateway v2 APIs. This SDK will allow you to manage and configure APIs in Amazon API Gateway; this first release provides the capabilities that allow you to programmatically setup and manage WebSocket APIs end to end. 
+
 # __1.11.471__ __2018-12-17__
 ## __Amazon EC2 Container Registry__
   - ### Features

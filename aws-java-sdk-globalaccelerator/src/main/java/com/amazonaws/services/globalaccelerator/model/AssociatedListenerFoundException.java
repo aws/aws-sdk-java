@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The listener that you specified doesn't exist.
+ * The accelerator that you specified has a listener associated with it. You must remove all dependent resources from an
+ * accelerator before you can delete it.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

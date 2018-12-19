@@ -27,18 +27,21 @@ public class DescribeAcceleratorAttributesRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.
+     * The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe. Value is
+     * required.
      * </p>
      */
     private String acceleratorArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.
+     * The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe. Value is
+     * required.
      * </p>
      * 
      * @param acceleratorArn
-     *        The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.
+     *        The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe. Value is
+     *        required.
      */
 
     public void setAcceleratorArn(String acceleratorArn) {
@@ -47,10 +50,12 @@ public class DescribeAcceleratorAttributesRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.
+     * The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe. Value is
+     * required.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.
+     * @return The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe. Value is
+     *         required.
      */
 
     public String getAcceleratorArn() {
@@ -59,11 +64,13 @@ public class DescribeAcceleratorAttributesRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.
+     * The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe. Value is
+     * required.
      * </p>
      * 
      * @param acceleratorArn
-     *        The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.
+     *        The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe. Value is
+     *        required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

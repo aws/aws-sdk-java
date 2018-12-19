@@ -80,6 +80,16 @@ public class EnvironmentResourceDescriptionStaxUnmarshaller implements Unmarshal
                     continue;
                 }
 
+                if (context.testExpression("LaunchTemplates", targetDepth)) {
+                    environmentResourceDescription.withLaunchTemplates(new ArrayList<LaunchTemplate>());
+                    continue;
+                }
+
+                if (context.testExpression("LaunchTemplates/member", targetDepth)) {
+                    environmentResourceDescription.withLaunchTemplates(LaunchTemplateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("LoadBalancers", targetDepth)) {
                     environmentResourceDescription.withLoadBalancers(new ArrayList<LoadBalancer>());
                     continue;

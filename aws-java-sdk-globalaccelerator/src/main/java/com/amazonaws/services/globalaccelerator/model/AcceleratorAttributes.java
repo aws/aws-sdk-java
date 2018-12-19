@@ -30,35 +30,51 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is
-     * true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     * Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      */
     private Boolean flowLogsEnabled;
     /**
      * <p>
-     * The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled. The
-     * bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.
+     * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
+     * to write to the bucket.
      * </p>
      */
     private String flowLogsS3Bucket;
     /**
      * <p>
-     * The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the flow
-     * logs are stored in the root of the bucket.
+     * The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
+     * root of the bucket.
      * </p>
      */
     private String flowLogsS3Prefix;
 
     /**
      * <p>
-     * Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is
-     * true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     * Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param flowLogsEnabled
-     *        Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the
-     *        value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     *        Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     *        <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
+     *        >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public void setFlowLogsEnabled(Boolean flowLogsEnabled) {
@@ -67,12 +83,21 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is
-     * true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     * Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
-     * @return Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the
-     *         value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     * @return Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     *         <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
+     *         >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public Boolean getFlowLogsEnabled() {
@@ -81,13 +106,22 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is
-     * true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     * Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
      * @param flowLogsEnabled
-     *        Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the
-     *        value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     *        Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     *        <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
+     *        >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,12 +132,21 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the value is
-     * true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     * Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     * <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html">Flow
+     * Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
-     * @return Indicates whether flow logs are enabled. The value is true or false. The default value is false. If the
-     *         value is true, FlowLogsS3Bucket and FlowLogsS3Prefix must be specified.
+     * @return Indicates whether flow logs are enabled. The default value is false. If the value is true,
+     *         <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.</p>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html"
+     *         >Flow Logs</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      */
 
     public Boolean isFlowLogsEnabled() {
@@ -112,14 +155,15 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled. The
-     * bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.
+     * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
+     * to write to the bucket.
      * </p>
      * 
      * @param flowLogsS3Bucket
-     *        The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled.
-     *        The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to
-     *        the bucket.
+     *        The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+     *        is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *        permission to write to the bucket.
      */
 
     public void setFlowLogsS3Bucket(String flowLogsS3Bucket) {
@@ -128,13 +172,14 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled. The
-     * bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.
+     * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
+     * to write to the bucket.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled.
-     *         The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to
-     *         the bucket.
+     * @return The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+     *         is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *         permission to write to the bucket.
      */
 
     public String getFlowLogsS3Bucket() {
@@ -143,14 +188,15 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled. The
-     * bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to the bucket.
+     * The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code> is
+     * <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission
+     * to write to the bucket.
      * </p>
      * 
      * @param flowLogsS3Bucket
-     *        The name of the Amazon S3 bucket for the flow logs. This attribute is required if flow logs are enabled.
-     *        The bucket must exist and have a bucket policy that grants AWS Global Accelerator permission to write to
-     *        the bucket.
+     *        The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
+     *        is <code>true</code>. The bucket must exist and have a bucket policy that grants AWS Global Accelerator
+     *        permission to write to the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,13 +207,15 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the flow
-     * logs are stored in the root of the bucket.
+     * The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
+     * root of the bucket.
      * </p>
      * 
      * @param flowLogsS3Prefix
-     *        The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the
-     *        flow logs are stored in the root of the bucket.
+     *        The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     *        <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored
+     *        in the root of the bucket.
      */
 
     public void setFlowLogsS3Prefix(String flowLogsS3Prefix) {
@@ -176,12 +224,14 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the flow
-     * logs are stored in the root of the bucket.
+     * The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
+     * root of the bucket.
      * </p>
      * 
-     * @return The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the
-     *         flow logs are stored in the root of the bucket.
+     * @return The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     *         <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are
+     *         stored in the root of the bucket.
      */
 
     public String getFlowLogsS3Prefix() {
@@ -190,13 +240,15 @@ public class AcceleratorAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the flow
-     * logs are stored in the root of the bucket.
+     * The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     * <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored in the
+     * root of the bucket.
      * </p>
      * 
      * @param flowLogsS3Prefix
-     *        The prefix for the location in the Amazon S3 bucket for the flow logs. If you don’t specify a prefix, the
-     *        flow logs are stored in the root of the bucket.
+     *        The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if
+     *        <code>FlowLogsEnabled</code> is <code>true</code>. If you don’t specify a prefix, the flow logs are stored
+     *        in the root of the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

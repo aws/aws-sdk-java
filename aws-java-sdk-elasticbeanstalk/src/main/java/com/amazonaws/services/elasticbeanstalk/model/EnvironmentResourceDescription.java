@@ -52,6 +52,12 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<LaunchConfiguration> launchConfigurations;
     /**
      * <p>
+     * The Amazon EC2 launch templates in use by this environment.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LaunchTemplate> launchTemplates;
+    /**
+     * <p>
      * The LoadBalancers in use by this environment.
      * </p>
      */
@@ -330,6 +336,79 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon EC2 launch templates in use by this environment.
+     * </p>
+     * 
+     * @return The Amazon EC2 launch templates in use by this environment.
+     */
+
+    public java.util.List<LaunchTemplate> getLaunchTemplates() {
+        if (launchTemplates == null) {
+            launchTemplates = new com.amazonaws.internal.SdkInternalList<LaunchTemplate>();
+        }
+        return launchTemplates;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 launch templates in use by this environment.
+     * </p>
+     * 
+     * @param launchTemplates
+     *        The Amazon EC2 launch templates in use by this environment.
+     */
+
+    public void setLaunchTemplates(java.util.Collection<LaunchTemplate> launchTemplates) {
+        if (launchTemplates == null) {
+            this.launchTemplates = null;
+            return;
+        }
+
+        this.launchTemplates = new com.amazonaws.internal.SdkInternalList<LaunchTemplate>(launchTemplates);
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 launch templates in use by this environment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLaunchTemplates(java.util.Collection)} or {@link #withLaunchTemplates(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param launchTemplates
+     *        The Amazon EC2 launch templates in use by this environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnvironmentResourceDescription withLaunchTemplates(LaunchTemplate... launchTemplates) {
+        if (this.launchTemplates == null) {
+            setLaunchTemplates(new com.amazonaws.internal.SdkInternalList<LaunchTemplate>(launchTemplates.length));
+        }
+        for (LaunchTemplate ele : launchTemplates) {
+            this.launchTemplates.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon EC2 launch templates in use by this environment.
+     * </p>
+     * 
+     * @param launchTemplates
+     *        The Amazon EC2 launch templates in use by this environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnvironmentResourceDescription withLaunchTemplates(java.util.Collection<LaunchTemplate> launchTemplates) {
+        setLaunchTemplates(launchTemplates);
+        return this;
+    }
+
+    /**
+     * <p>
      * The LoadBalancers in use by this environment.
      * </p>
      * 
@@ -567,6 +646,8 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
             sb.append("Instances: ").append(getInstances()).append(",");
         if (getLaunchConfigurations() != null)
             sb.append("LaunchConfigurations: ").append(getLaunchConfigurations()).append(",");
+        if (getLaunchTemplates() != null)
+            sb.append("LaunchTemplates: ").append(getLaunchTemplates()).append(",");
         if (getLoadBalancers() != null)
             sb.append("LoadBalancers: ").append(getLoadBalancers()).append(",");
         if (getTriggers() != null)
@@ -603,6 +684,10 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
             return false;
         if (other.getLaunchConfigurations() != null && other.getLaunchConfigurations().equals(this.getLaunchConfigurations()) == false)
             return false;
+        if (other.getLaunchTemplates() == null ^ this.getLaunchTemplates() == null)
+            return false;
+        if (other.getLaunchTemplates() != null && other.getLaunchTemplates().equals(this.getLaunchTemplates()) == false)
+            return false;
         if (other.getLoadBalancers() == null ^ this.getLoadBalancers() == null)
             return false;
         if (other.getLoadBalancers() != null && other.getLoadBalancers().equals(this.getLoadBalancers()) == false)
@@ -627,6 +712,7 @@ public class EnvironmentResourceDescription implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAutoScalingGroups() == null) ? 0 : getAutoScalingGroups().hashCode());
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
         hashCode = prime * hashCode + ((getLaunchConfigurations() == null) ? 0 : getLaunchConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplates() == null) ? 0 : getLaunchTemplates().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancers() == null) ? 0 : getLoadBalancers().hashCode());
         hashCode = prime * hashCode + ((getTriggers() == null) ? 0 : getTriggers().hashCode());
         hashCode = prime * hashCode + ((getQueues() == null) ? 0 : getQueues().hashCode());

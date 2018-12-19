@@ -557,6 +557,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<ApplySecurityGroupsToClientVpnTargetNetworkResult> applySecurityGroupsToClientVpnTargetNetworkAsync(
+            ApplySecurityGroupsToClientVpnTargetNetworkRequest request) {
+
+        return applySecurityGroupsToClientVpnTargetNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplySecurityGroupsToClientVpnTargetNetworkResult> applySecurityGroupsToClientVpnTargetNetworkAsync(
+            final ApplySecurityGroupsToClientVpnTargetNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ApplySecurityGroupsToClientVpnTargetNetworkRequest, ApplySecurityGroupsToClientVpnTargetNetworkResult> asyncHandler) {
+        final ApplySecurityGroupsToClientVpnTargetNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ApplySecurityGroupsToClientVpnTargetNetworkResult>() {
+            @Override
+            public ApplySecurityGroupsToClientVpnTargetNetworkResult call() throws Exception {
+                ApplySecurityGroupsToClientVpnTargetNetworkResult result = null;
+
+                try {
+                    result = executeApplySecurityGroupsToClientVpnTargetNetwork(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<AssignIpv6AddressesResult> assignIpv6AddressesAsync(AssignIpv6AddressesRequest request) {
 
         return assignIpv6AddressesAsync(request, null);
@@ -640,6 +675,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeAssociateAddress(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateClientVpnTargetNetworkResult> associateClientVpnTargetNetworkAsync(
+            AssociateClientVpnTargetNetworkRequest request) {
+
+        return associateClientVpnTargetNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateClientVpnTargetNetworkResult> associateClientVpnTargetNetworkAsync(
+            final AssociateClientVpnTargetNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateClientVpnTargetNetworkRequest, AssociateClientVpnTargetNetworkResult> asyncHandler) {
+        final AssociateClientVpnTargetNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateClientVpnTargetNetworkResult>() {
+            @Override
+            public AssociateClientVpnTargetNetworkResult call() throws Exception {
+                AssociateClientVpnTargetNetworkResult result = null;
+
+                try {
+                    result = executeAssociateClientVpnTargetNetwork(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1005,6 +1075,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeAttachVpnGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeClientVpnIngressResult> authorizeClientVpnIngressAsync(AuthorizeClientVpnIngressRequest request) {
+
+        return authorizeClientVpnIngressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeClientVpnIngressResult> authorizeClientVpnIngressAsync(final AuthorizeClientVpnIngressRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AuthorizeClientVpnIngressRequest, AuthorizeClientVpnIngressResult> asyncHandler) {
+        final AuthorizeClientVpnIngressRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AuthorizeClientVpnIngressResult>() {
+            @Override
+            public AuthorizeClientVpnIngressResult call() throws Exception {
+                AuthorizeClientVpnIngressResult result = null;
+
+                try {
+                    result = executeAuthorizeClientVpnIngress(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1558,6 +1661,72 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeCreateCapacityReservation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClientVpnEndpointResult> createClientVpnEndpointAsync(CreateClientVpnEndpointRequest request) {
+
+        return createClientVpnEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClientVpnEndpointResult> createClientVpnEndpointAsync(final CreateClientVpnEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateClientVpnEndpointRequest, CreateClientVpnEndpointResult> asyncHandler) {
+        final CreateClientVpnEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateClientVpnEndpointResult>() {
+            @Override
+            public CreateClientVpnEndpointResult call() throws Exception {
+                CreateClientVpnEndpointResult result = null;
+
+                try {
+                    result = executeCreateClientVpnEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClientVpnRouteResult> createClientVpnRouteAsync(CreateClientVpnRouteRequest request) {
+
+        return createClientVpnRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateClientVpnRouteResult> createClientVpnRouteAsync(final CreateClientVpnRouteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateClientVpnRouteRequest, CreateClientVpnRouteResult> asyncHandler) {
+        final CreateClientVpnRouteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateClientVpnRouteResult>() {
+            @Override
+            public CreateClientVpnRouteResult call() throws Exception {
+                CreateClientVpnRouteResult result = null;
+
+                try {
+                    result = executeCreateClientVpnRoute(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2970,6 +3139,72 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeCreateVpnGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteClientVpnEndpointResult> deleteClientVpnEndpointAsync(DeleteClientVpnEndpointRequest request) {
+
+        return deleteClientVpnEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteClientVpnEndpointResult> deleteClientVpnEndpointAsync(final DeleteClientVpnEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteClientVpnEndpointRequest, DeleteClientVpnEndpointResult> asyncHandler) {
+        final DeleteClientVpnEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteClientVpnEndpointResult>() {
+            @Override
+            public DeleteClientVpnEndpointResult call() throws Exception {
+                DeleteClientVpnEndpointResult result = null;
+
+                try {
+                    result = executeDeleteClientVpnEndpoint(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteClientVpnRouteResult> deleteClientVpnRouteAsync(DeleteClientVpnRouteRequest request) {
+
+        return deleteClientVpnRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteClientVpnRouteResult> deleteClientVpnRouteAsync(final DeleteClientVpnRouteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteClientVpnRouteRequest, DeleteClientVpnRouteResult> asyncHandler) {
+        final DeleteClientVpnRouteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteClientVpnRouteResult>() {
+            @Override
+            public DeleteClientVpnRouteResult call() throws Exception {
+                DeleteClientVpnRouteResult result = null;
+
+                try {
+                    result = executeDeleteClientVpnRoute(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4652,6 +4887,175 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
             com.amazonaws.handlers.AsyncHandler<DescribeClassicLinkInstancesRequest, DescribeClassicLinkInstancesResult> asyncHandler) {
 
         return describeClassicLinkInstancesAsync(new DescribeClassicLinkInstancesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnAuthorizationRulesResult> describeClientVpnAuthorizationRulesAsync(
+            DescribeClientVpnAuthorizationRulesRequest request) {
+
+        return describeClientVpnAuthorizationRulesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnAuthorizationRulesResult> describeClientVpnAuthorizationRulesAsync(
+            final DescribeClientVpnAuthorizationRulesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClientVpnAuthorizationRulesRequest, DescribeClientVpnAuthorizationRulesResult> asyncHandler) {
+        final DescribeClientVpnAuthorizationRulesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClientVpnAuthorizationRulesResult>() {
+            @Override
+            public DescribeClientVpnAuthorizationRulesResult call() throws Exception {
+                DescribeClientVpnAuthorizationRulesResult result = null;
+
+                try {
+                    result = executeDescribeClientVpnAuthorizationRules(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnConnectionsResult> describeClientVpnConnectionsAsync(DescribeClientVpnConnectionsRequest request) {
+
+        return describeClientVpnConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnConnectionsResult> describeClientVpnConnectionsAsync(final DescribeClientVpnConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClientVpnConnectionsRequest, DescribeClientVpnConnectionsResult> asyncHandler) {
+        final DescribeClientVpnConnectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClientVpnConnectionsResult>() {
+            @Override
+            public DescribeClientVpnConnectionsResult call() throws Exception {
+                DescribeClientVpnConnectionsResult result = null;
+
+                try {
+                    result = executeDescribeClientVpnConnections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnEndpointsResult> describeClientVpnEndpointsAsync(DescribeClientVpnEndpointsRequest request) {
+
+        return describeClientVpnEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnEndpointsResult> describeClientVpnEndpointsAsync(final DescribeClientVpnEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClientVpnEndpointsRequest, DescribeClientVpnEndpointsResult> asyncHandler) {
+        final DescribeClientVpnEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClientVpnEndpointsResult>() {
+            @Override
+            public DescribeClientVpnEndpointsResult call() throws Exception {
+                DescribeClientVpnEndpointsResult result = null;
+
+                try {
+                    result = executeDescribeClientVpnEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnRoutesResult> describeClientVpnRoutesAsync(DescribeClientVpnRoutesRequest request) {
+
+        return describeClientVpnRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnRoutesResult> describeClientVpnRoutesAsync(final DescribeClientVpnRoutesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClientVpnRoutesRequest, DescribeClientVpnRoutesResult> asyncHandler) {
+        final DescribeClientVpnRoutesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClientVpnRoutesResult>() {
+            @Override
+            public DescribeClientVpnRoutesResult call() throws Exception {
+                DescribeClientVpnRoutesResult result = null;
+
+                try {
+                    result = executeDescribeClientVpnRoutes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnTargetNetworksResult> describeClientVpnTargetNetworksAsync(
+            DescribeClientVpnTargetNetworksRequest request) {
+
+        return describeClientVpnTargetNetworksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeClientVpnTargetNetworksResult> describeClientVpnTargetNetworksAsync(
+            final DescribeClientVpnTargetNetworksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeClientVpnTargetNetworksRequest, DescribeClientVpnTargetNetworksResult> asyncHandler) {
+        final DescribeClientVpnTargetNetworksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeClientVpnTargetNetworksResult>() {
+            @Override
+            public DescribeClientVpnTargetNetworksResult call() throws Exception {
+                DescribeClientVpnTargetNetworksResult result = null;
+
+                try {
+                    result = executeDescribeClientVpnTargetNetworks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -8709,6 +9113,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateClientVpnTargetNetworkResult> disassociateClientVpnTargetNetworkAsync(
+            DisassociateClientVpnTargetNetworkRequest request) {
+
+        return disassociateClientVpnTargetNetworkAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateClientVpnTargetNetworkResult> disassociateClientVpnTargetNetworkAsync(
+            final DisassociateClientVpnTargetNetworkRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateClientVpnTargetNetworkRequest, DisassociateClientVpnTargetNetworkResult> asyncHandler) {
+        final DisassociateClientVpnTargetNetworkRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateClientVpnTargetNetworkResult>() {
+            @Override
+            public DisassociateClientVpnTargetNetworkResult call() throws Exception {
+                DisassociateClientVpnTargetNetworkResult result = null;
+
+                try {
+                    result = executeDisassociateClientVpnTargetNetwork(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateIamInstanceProfileResult> disassociateIamInstanceProfileAsync(DisassociateIamInstanceProfileRequest request) {
 
         return disassociateIamInstanceProfileAsync(request, null);
@@ -9029,6 +9468,76 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeEnableVpcClassicLinkDnsSupport(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportClientVpnClientCertificateRevocationListResult> exportClientVpnClientCertificateRevocationListAsync(
+            ExportClientVpnClientCertificateRevocationListRequest request) {
+
+        return exportClientVpnClientCertificateRevocationListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportClientVpnClientCertificateRevocationListResult> exportClientVpnClientCertificateRevocationListAsync(
+            final ExportClientVpnClientCertificateRevocationListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportClientVpnClientCertificateRevocationListRequest, ExportClientVpnClientCertificateRevocationListResult> asyncHandler) {
+        final ExportClientVpnClientCertificateRevocationListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportClientVpnClientCertificateRevocationListResult>() {
+            @Override
+            public ExportClientVpnClientCertificateRevocationListResult call() throws Exception {
+                ExportClientVpnClientCertificateRevocationListResult result = null;
+
+                try {
+                    result = executeExportClientVpnClientCertificateRevocationList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportClientVpnClientConfigurationResult> exportClientVpnClientConfigurationAsync(
+            ExportClientVpnClientConfigurationRequest request) {
+
+        return exportClientVpnClientConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportClientVpnClientConfigurationResult> exportClientVpnClientConfigurationAsync(
+            final ExportClientVpnClientConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportClientVpnClientConfigurationRequest, ExportClientVpnClientConfigurationResult> asyncHandler) {
+        final ExportClientVpnClientConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportClientVpnClientConfigurationResult>() {
+            @Override
+            public ExportClientVpnClientConfigurationResult call() throws Exception {
+                ExportClientVpnClientConfigurationResult result = null;
+
+                try {
+                    result = executeExportClientVpnClientConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -9385,6 +9894,41 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<ImportClientVpnClientCertificateRevocationListResult> importClientVpnClientCertificateRevocationListAsync(
+            ImportClientVpnClientCertificateRevocationListRequest request) {
+
+        return importClientVpnClientCertificateRevocationListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportClientVpnClientCertificateRevocationListResult> importClientVpnClientCertificateRevocationListAsync(
+            final ImportClientVpnClientCertificateRevocationListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportClientVpnClientCertificateRevocationListRequest, ImportClientVpnClientCertificateRevocationListResult> asyncHandler) {
+        final ImportClientVpnClientCertificateRevocationListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportClientVpnClientCertificateRevocationListResult>() {
+            @Override
+            public ImportClientVpnClientCertificateRevocationListResult call() throws Exception {
+                ImportClientVpnClientCertificateRevocationListResult result = null;
+
+                try {
+                    result = executeImportClientVpnClientCertificateRevocationList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ImportImageResult> importImageAsync(ImportImageRequest request) {
 
         return importImageAsync(request, null);
@@ -9613,6 +10157,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeModifyCapacityReservation(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClientVpnEndpointResult> modifyClientVpnEndpointAsync(ModifyClientVpnEndpointRequest request) {
+
+        return modifyClientVpnEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyClientVpnEndpointResult> modifyClientVpnEndpointAsync(final ModifyClientVpnEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyClientVpnEndpointRequest, ModifyClientVpnEndpointResult> asyncHandler) {
+        final ModifyClientVpnEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyClientVpnEndpointResult>() {
+            @Override
+            public ModifyClientVpnEndpointResult call() throws Exception {
+                ModifyClientVpnEndpointResult result = null;
+
+                try {
+                    result = executeModifyClientVpnEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -11434,6 +12011,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<RevokeClientVpnIngressResult> revokeClientVpnIngressAsync(RevokeClientVpnIngressRequest request) {
+
+        return revokeClientVpnIngressAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeClientVpnIngressResult> revokeClientVpnIngressAsync(final RevokeClientVpnIngressRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RevokeClientVpnIngressRequest, RevokeClientVpnIngressResult> asyncHandler) {
+        final RevokeClientVpnIngressRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RevokeClientVpnIngressResult>() {
+            @Override
+            public RevokeClientVpnIngressResult call() throws Exception {
+                RevokeClientVpnIngressResult result = null;
+
+                try {
+                    result = executeRevokeClientVpnIngress(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RevokeSecurityGroupEgressResult> revokeSecurityGroupEgressAsync(RevokeSecurityGroupEgressRequest request) {
 
         return revokeSecurityGroupEgressAsync(request, null);
@@ -11674,6 +12284,40 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
 
                 try {
                     result = executeStopInstances(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TerminateClientVpnConnectionsResult> terminateClientVpnConnectionsAsync(TerminateClientVpnConnectionsRequest request) {
+
+        return terminateClientVpnConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TerminateClientVpnConnectionsResult> terminateClientVpnConnectionsAsync(
+            final TerminateClientVpnConnectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TerminateClientVpnConnectionsRequest, TerminateClientVpnConnectionsResult> asyncHandler) {
+        final TerminateClientVpnConnectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TerminateClientVpnConnectionsResult>() {
+            @Override
+            public TerminateClientVpnConnectionsResult call() throws Exception {
+                TerminateClientVpnConnectionsResult result = null;
+
+                try {
+                    result = executeTerminateClientVpnConnections(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

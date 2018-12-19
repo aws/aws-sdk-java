@@ -46,7 +46,11 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
     private java.util.Date sampleTimestamp;
     /**
      * <p>
-     * The retrieved information.
+     * The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.
+     * </p>
+     * <p>
+     * Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to
+     * trusted parties.
      * </p>
      */
     private String message;
@@ -206,11 +210,19 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The retrieved information.
+     * The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.
+     * </p>
+     * <p>
+     * Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to
+     * trusted parties.
      * </p>
      * 
      * @param message
-     *        The retrieved information.
+     *        The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15
+     *        minutes.</p>
+     *        <p>
+     *        Anyone in possession of this URL can access the files before they are deleted. Make the URL available only
+     *        to trusted parties.
      */
 
     public void setMessage(String message) {
@@ -219,10 +231,18 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The retrieved information.
+     * The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.
+     * </p>
+     * <p>
+     * Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to
+     * trusted parties.
      * </p>
      * 
-     * @return The retrieved information.
+     * @return The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15
+     *         minutes.</p>
+     *         <p>
+     *         Anyone in possession of this URL can access the files before they are deleted. Make the URL available
+     *         only to trusted parties.
      */
 
     public String getMessage() {
@@ -231,11 +251,19 @@ public class EnvironmentInfoDescription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The retrieved information.
+     * The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15 minutes.
+     * </p>
+     * <p>
+     * Anyone in possession of this URL can access the files before they are deleted. Make the URL available only to
+     * trusted parties.
      * </p>
      * 
      * @param message
-     *        The retrieved information.
+     *        The retrieved information. Currently contains a presigned Amazon S3 URL. The files are deleted after 15
+     *        minutes.</p>
+     *        <p>
+     *        Anyone in possession of this URL can access the files before they are deleted. Make the URL available only
+     *        to trusted parties.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

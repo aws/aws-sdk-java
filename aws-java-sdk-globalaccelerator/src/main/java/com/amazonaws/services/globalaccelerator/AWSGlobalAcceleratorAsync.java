@@ -29,7 +29,7 @@ import com.amazonaws.services.globalaccelerator.model.*;
  * <p>
  * This is the <i>AWS Global Accelerator API Reference</i>. This guide is for developers who need detailed information
  * about AWS Global Accelerator API actions, data types, and errors. For more information about Global Accelerator
- * features, see the <a href="https://docs.awa.amazon.com/global-accelerator/latest/dg/Welcome.html">AWS Global
+ * features, see the <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/Welcome.html">AWS Global
  * Accelerator Developer Guide</a>.
  * </p>
  * <p>
@@ -57,9 +57,9 @@ import com.amazonaws.services.globalaccelerator.model.*;
  * <dd>
  * <p>
  * AWS Global Accelerator provides you with a set of static IP addresses which are anycast from the AWS edge network and
- * serve as the single fixed points of contact for your clients. If you already have Elastic Load Balancing or Elastic
- * IP address resources set up for your applications, you can easily add those to Global Accelerator to allow the
- * resources to be accessed by a Global Accelerator static IP address.
+ * serve as the single fixed entry points for your clients. If you already have Elastic Load Balancing or Elastic IP
+ * address resources set up for your applications, you can easily add those to Global Accelerator to allow the resources
+ * to be accessed by a Global Accelerator static IP address.
  * </p>
  * </dd>
  * <dt>Accelerator</dt>
@@ -94,8 +94,8 @@ import com.amazonaws.services.globalaccelerator.model.*;
  * <p>
  * Each endpoint group is associated with a specific AWS Region. Endpoint groups include one or more endpoints in the
  * Region. You can increase or reduce the percentage of traffic that would be otherwise directed to an endpoint group by
- * adjusting a setting called a traffic dial. The traffic dial lets you easily do performance testing or blue/green
- * deployment testing for new releases across different AWS Regions, for example.
+ * adjusting a setting called a <i>traffic dial</i>. The traffic dial lets you easily do performance testing or
+ * blue/green deployment testing for new releases across different AWS Regions, for example.
  * </p>
  * </dd>
  * <dt>Endpoint</dt>
@@ -103,7 +103,7 @@ import com.amazonaws.services.globalaccelerator.model.*;
  * <p>
  * An endpoint is an Elastic IP address, Network Load Balancer, or Application Load Balancer. Traffic is routed to
  * endpoints based on several factors, including the geo-proximity to the user, the health of the endpoint, and the
- * configuration options that you choose, such as endpoint weights. You can configure weights for each endpoint, which
+ * configuration options that you choose, such as endpoint weights. For each endpoint, you can configure weights, which
  * are numbers that you can use to specify the proportion of traffic to route to each one. This can be useful, for
  * example, to do performance testing within a Region.
  * </p>
@@ -150,7 +150,7 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
-     * Create an endpoint group for the specified accelerator. An endpoint group is a collection of endpoints in one AWS
+     * Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one AWS
      * Region. To see an AWS CLI example of creating an endpoint group, scroll down to <b>Example</b>.
      * </p>
      * 
@@ -164,7 +164,7 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
-     * Create an endpoint group for the specified accelerator. An endpoint group is a collection of endpoints in one AWS
+     * Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one AWS
      * Region. To see an AWS CLI example of creating an endpoint group, scroll down to <b>Example</b>.
      * </p>
      * 
@@ -218,7 +218,8 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
-     * Delete an accelerator. Note: before you can delete an accelerator, you must disable it.
+     * Delete an accelerator. Note: before you can delete an accelerator, you must disable it and remove all dependent
+     * resources (listeners and endpoint groups).
      * </p>
      * 
      * @param deleteAcceleratorRequest
@@ -231,7 +232,8 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
-     * Delete an accelerator. Note: before you can delete an accelerator, you must disable it.
+     * Delete an accelerator. Note: before you can delete an accelerator, you must disable it and remove all dependent
+     * resources (listeners and endpoint groups).
      * </p>
      * 
      * @param deleteAcceleratorRequest
