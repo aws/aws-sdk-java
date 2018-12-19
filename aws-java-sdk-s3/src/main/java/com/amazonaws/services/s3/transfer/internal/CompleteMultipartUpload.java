@@ -16,7 +16,6 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import static com.amazonaws.event.SDKProgressPublisher.publishProgress;
 
-import com.amazonaws.services.s3.transfer.Transfer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -28,10 +27,8 @@ import com.amazonaws.event.ProgressListenerChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
-import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.model.PartETag;
 import com.amazonaws.services.s3.model.PutObjectRequest;
-import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.transfer.model.UploadResult;
 
 /**

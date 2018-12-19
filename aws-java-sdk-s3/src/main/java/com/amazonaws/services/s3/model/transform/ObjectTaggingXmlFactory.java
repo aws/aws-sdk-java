@@ -18,8 +18,6 @@ import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.model.ObjectTagging;
 import com.amazonaws.services.s3.model.Tag;
 
-import java.util.Map;
-
 public class ObjectTaggingXmlFactory {
     public byte[] convertToXmlByteArray(ObjectTagging tagging) {
         XmlWriter writer = new XmlWriter();

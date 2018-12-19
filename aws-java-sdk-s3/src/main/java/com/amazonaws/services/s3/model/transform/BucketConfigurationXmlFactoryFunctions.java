@@ -15,11 +15,7 @@
 package com.amazonaws.services.s3.model.transform;
 
 import com.amazonaws.services.s3.internal.XmlWriter;
-import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
-import com.amazonaws.services.s3.model.ReplicationRule;
 import com.amazonaws.services.s3.model.Tag;
-import com.amazonaws.services.s3.model.metrics.MetricsFilter;
-import com.amazonaws.services.s3.model.metrics.MetricsFilterPredicate;
 
 /**
  * Common function for  BucketConfigurationXmlFactory and visitor implementations.

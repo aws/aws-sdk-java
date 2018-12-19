@@ -18,8 +18,6 @@ import com.amazonaws.http.HttpResponse;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
 
-import java.util.Map;
-
 /**
  * Handler for retrieving headers from the {@link
  * com.amazonaws.services.s3.model.DeleteObjectTaggingRequest} response.
