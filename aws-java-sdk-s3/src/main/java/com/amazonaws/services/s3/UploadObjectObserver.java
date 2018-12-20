@@ -99,6 +99,7 @@ public class UploadObjectObserver {
             .withCannedACL(req.getCannedAcl())
             .withGeneralProgressListener(req.getGeneralProgressListener())
             .withRequestMetricCollector(req.getRequestMetricCollector())
+            .withRequestCredentialsProvider(req.getRequestCredentialsProvider())
             ;
     }
 
@@ -179,7 +180,9 @@ public class UploadObjectObserver {
     public CompleteMultipartUploadResult onCompletion(List<PartETag> partETags) {
         return s3.completeMultipartUpload(
             new CompleteMultipartUploadRequest(
-                    req.getBucketName(), req.getKey(), uploadId, partETags));
+                req.getBucketName(), req.getKey(), uploadId, partETags)
+            .<CompleteMultipartUploadRequest>
+                withRequestCredentialsProvider(req.getRequestCredentialsProvider()));
     }
 
     /**
@@ -222,6 +225,7 @@ public class UploadObjectObserver {
             .withLastPart(event.isLastPart())
             .withUploadId(uploadId)
             .withObjectMetadata(req.getUploadPartMetadata())
+            .withRequestCredentialsProvider(req.getRequestCredentialsProvider())
             ;
         return reqUploadPart;
     }
