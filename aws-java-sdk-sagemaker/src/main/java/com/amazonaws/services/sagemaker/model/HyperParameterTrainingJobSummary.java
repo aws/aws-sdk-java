@@ -42,7 +42,7 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
     private String trainingJobArn;
     /**
      * <p>
-     * The name of the hyperparameter tuning job that launched this training job.
+     * The HyperParameter tuning job that launched the training job.
      * </p>
      */
     private String tuningJobName;
@@ -201,11 +201,11 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The name of the hyperparameter tuning job that launched this training job.
+     * The HyperParameter tuning job that launched the training job.
      * </p>
      * 
      * @param tuningJobName
-     *        The name of the hyperparameter tuning job that launched this training job.
+     *        The HyperParameter tuning job that launched the training job.
      */
 
     public void setTuningJobName(String tuningJobName) {
@@ -214,10 +214,10 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The name of the hyperparameter tuning job that launched this training job.
+     * The HyperParameter tuning job that launched the training job.
      * </p>
      * 
-     * @return The name of the hyperparameter tuning job that launched this training job.
+     * @return The HyperParameter tuning job that launched the training job.
      */
 
     public String getTuningJobName() {
@@ -226,11 +226,11 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The name of the hyperparameter tuning job that launched this training job.
+     * The HyperParameter tuning job that launched the training job.
      * </p>
      * 
      * @param tuningJobName
-     *        The name of the hyperparameter tuning job that launched this training job.
+     *        The HyperParameter tuning job that launched the training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

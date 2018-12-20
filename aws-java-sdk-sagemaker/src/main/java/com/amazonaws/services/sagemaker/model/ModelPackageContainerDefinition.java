@@ -36,7 +36,7 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
     private String containerHostname;
     /**
      * <p>
-     * The Amazon EC2 Container Registry path where inference code is stored.
+     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.
      * </p>
      * <p>
      * If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference
@@ -62,7 +62,7 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
     private String modelDataUrl;
     /**
      * <p>
-     * The ID of the model package.
+     * The AWS Marketplace product ID of the model package.
      * </p>
      */
     private String productId;
@@ -109,7 +109,7 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry path where inference code is stored.
+     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.
      * </p>
      * <p>
      * If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference
@@ -120,7 +120,7 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
      * </p>
      * 
      * @param image
-     *        The Amazon EC2 Container Registry path where inference code is stored.</p>
+     *        The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
      *        <p>
      *        If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the
      *        inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
@@ -136,7 +136,7 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry path where inference code is stored.
+     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.
      * </p>
      * <p>
      * If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference
@@ -146,7 +146,7 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
      * Algorithms with Amazon SageMaker</a>.
      * </p>
      * 
-     * @return The Amazon EC2 Container Registry path where inference code is stored.</p>
+     * @return The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
      *         <p>
      *         If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the
      *         inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
@@ -162,7 +162,7 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry path where inference code is stored.
+     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.
      * </p>
      * <p>
      * If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference
@@ -173,7 +173,7 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
      * </p>
      * 
      * @param image
-     *        The Amazon EC2 Container Registry path where inference code is stored.</p>
+     *        The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored.</p>
      *        <p>
      *        If you are using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the
      *        inference code must meet Amazon SageMaker requirements. Amazon SageMaker supports both
@@ -277,11 +277,11 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the model package.
+     * The AWS Marketplace product ID of the model package.
      * </p>
      * 
      * @param productId
-     *        The ID of the model package.
+     *        The AWS Marketplace product ID of the model package.
      */
 
     public void setProductId(String productId) {
@@ -290,10 +290,10 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the model package.
+     * The AWS Marketplace product ID of the model package.
      * </p>
      * 
-     * @return The ID of the model package.
+     * @return The AWS Marketplace product ID of the model package.
      */
 
     public String getProductId() {
@@ -302,11 +302,11 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The ID of the model package.
+     * The AWS Marketplace product ID of the model package.
      * </p>
      * 
      * @param productId
-     *        The ID of the model package.
+     *        The AWS Marketplace product ID of the model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

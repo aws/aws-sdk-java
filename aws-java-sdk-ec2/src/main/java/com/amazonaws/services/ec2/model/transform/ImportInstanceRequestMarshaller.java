@@ -151,6 +151,10 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                     request.addParameter("LaunchSpecification.Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
                 }
 
+                if (placement.getPartitionNumber() != null) {
+                    request.addParameter("LaunchSpecification.Placement.PartitionNumber", StringUtils.fromInteger(placement.getPartitionNumber()));
+                }
+
                 if (placement.getHostId() != null) {
                     request.addParameter("LaunchSpecification.Placement.HostId", StringUtils.fromString(placement.getHostId()));
                 }

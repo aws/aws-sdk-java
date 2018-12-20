@@ -30,7 +30,7 @@ public class ChannelSpecification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the channel./sagemaker/eia
+     * The name of the channel.
      * </p>
      */
     private String name;
@@ -75,11 +75,11 @@ public class ChannelSpecification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the channel./sagemaker/eia
+     * The name of the channel.
      * </p>
      * 
      * @param name
-     *        The name of the channel./sagemaker/eia
+     *        The name of the channel.
      */
 
     public void setName(String name) {
@@ -88,10 +88,10 @@ public class ChannelSpecification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the channel./sagemaker/eia
+     * The name of the channel.
      * </p>
      * 
-     * @return The name of the channel./sagemaker/eia
+     * @return The name of the channel.
      */
 
     public String getName() {
@@ -100,11 +100,11 @@ public class ChannelSpecification implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the channel./sagemaker/eia
+     * The name of the channel.
      * </p>
      * 
      * @param name
-     *        The name of the channel./sagemaker/eia
+     *        The name of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

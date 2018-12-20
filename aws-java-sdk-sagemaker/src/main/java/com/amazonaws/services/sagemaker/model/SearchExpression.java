@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A multi-expression that searches for the specified resource or resources. All resource objects that satisfy the
- * expression's condition are included in the search results.
+ * A multi-expression that searches for the specified resource or resources in a search. All resource objects that
+ * satisfy the expression's condition are included in the search results. You must specify at least one subexpression,
+ * filter, or nested filter. A <code>SearchExpression</code> can contain up to twenty elements.
  * </p>
  * <p>
  * A <code>SearchExpression</code> contains the following components:
@@ -40,7 +41,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * A list of <code>SearchExpression</code> objects.
+ * A list of <code>SearchExpression</code> objects. A search expression object can be nested in a list of search
+ * expression objects.
  * </p>
  * </li>
  * <li>
@@ -78,7 +80,8 @@ public class SearchExpression implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists
      * to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single
-     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>.
+     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The
+     * default value is <code>And</code>.
      * </p>
      */
     private String operator;
@@ -297,14 +300,15 @@ public class SearchExpression implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists
      * to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single
-     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>.
+     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The
+     * default value is <code>And</code>.
      * </p>
      * 
      * @param operator
      *        A Boolean operator used to evaluate the search expression. If you want every conditional statement in all
      *        lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a
      *        single conditional statement needs to be true for the entire search expression to be true, specify
-     *        <code>Or</code>.
+     *        <code>Or</code>. The default value is <code>And</code>.
      * @see BooleanOperator
      */
 
@@ -316,13 +320,14 @@ public class SearchExpression implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists
      * to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single
-     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>.
+     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The
+     * default value is <code>And</code>.
      * </p>
      * 
      * @return A Boolean operator used to evaluate the search expression. If you want every conditional statement in all
      *         lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a
      *         single conditional statement needs to be true for the entire search expression to be true, specify
-     *         <code>Or</code>.
+     *         <code>Or</code>. The default value is <code>And</code>.
      * @see BooleanOperator
      */
 
@@ -334,14 +339,15 @@ public class SearchExpression implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists
      * to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single
-     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>.
+     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The
+     * default value is <code>And</code>.
      * </p>
      * 
      * @param operator
      *        A Boolean operator used to evaluate the search expression. If you want every conditional statement in all
      *        lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a
      *        single conditional statement needs to be true for the entire search expression to be true, specify
-     *        <code>Or</code>.
+     *        <code>Or</code>. The default value is <code>And</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BooleanOperator
      */
@@ -355,14 +361,15 @@ public class SearchExpression implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A Boolean operator used to evaluate the search expression. If you want every conditional statement in all lists
      * to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a single
-     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>.
+     * conditional statement needs to be true for the entire search expression to be true, specify <code>Or</code>. The
+     * default value is <code>And</code>.
      * </p>
      * 
      * @param operator
      *        A Boolean operator used to evaluate the search expression. If you want every conditional statement in all
      *        lists to be satisfied for the entire search expression to be true, specify <code>And</code>. If only a
      *        single conditional statement needs to be true for the entire search expression to be true, specify
-     *        <code>Or</code>.
+     *        <code>Or</code>. The default value is <code>And</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BooleanOperator
      */

@@ -27,8 +27,7 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
-     * (hyphen).
+     * The name of the algorithm.
      * </p>
      */
     private String algorithmName;
@@ -122,13 +121,11 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
-     * (hyphen).
+     * The name of the algorithm.
      * </p>
      * 
      * @param algorithmName
-     *        The name of the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and
-     *        - (hyphen).
+     *        The name of the algorithm.
      */
 
     public void setAlgorithmName(String algorithmName) {
@@ -137,12 +134,10 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
-     * (hyphen).
+     * The name of the algorithm.
      * </p>
      * 
-     * @return The name of the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and
-     *         - (hyphen).
+     * @return The name of the algorithm.
      */
 
     public String getAlgorithmName() {
@@ -151,13 +146,11 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
-     * (hyphen).
+     * The name of the algorithm.
      * </p>
      * 
      * @param algorithmName
-     *        The name of the algorithm. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and
-     *        - (hyphen).
+     *        The name of the algorithm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

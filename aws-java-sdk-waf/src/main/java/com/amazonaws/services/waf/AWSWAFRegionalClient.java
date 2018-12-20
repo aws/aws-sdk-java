@@ -333,7 +333,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
 
     /**
      * <p>
-     * Associates a web ACL with a resource.
+     * Associates a web ACL with a resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param associateWebACLRequest
@@ -762,10 +762,10 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
 
     /**
      * <p>
-     * Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow or block based on the IP
-     * addresses that the requests originate from. For example, if you're receiving a lot of requests from one or more
-     * individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can create
-     * an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
+     * Creates an <a>IPSet</a>, which you use to specify which web requests that you want to allow or block based on the
+     * IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or
+     * more individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can
+     * create an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>IPSet</code>, perform the following steps:
@@ -1343,7 +1343,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects,
      * and other predicates that identify the requests that you want to block. If you add more than one predicate to a
      * <code>Rule</code>, a request must match all of the specifications to be allowed or blocked. For example, suppose
-     * you add the following to a <code>Rule</code>:
+     * that you add the following to a <code>Rule</code>:
      * </p>
      * <ul>
      * <li>
@@ -3904,7 +3904,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
 
     /**
      * <p>
-     * Removes a web ACL from the specified resource.
+     * Removes a web ACL from the specified resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param disassociateWebACLRequest
@@ -5111,7 +5111,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
 
     /**
      * <p>
-     * Returns the web ACL for the specified resource.
+     * Returns the web ACL for the specified resource, either an application load balancer or Amazon API Gateway stage.
      * </p>
      * 
      * @param getWebACLForResourceRequest
@@ -8041,7 +8041,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies
      * a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that you want to
      * allow, block, or count. If you add more than one predicate to a <code>Rule</code>, a request must match all of
-     * the specifications to be allowed, blocked, or counted. For example, suppose you add the following to a
+     * the specifications to be allowed, blocked, or counted. For example, suppose that you add the following to a
      * <code>Rule</code>:
      * </p>
      * <ul>
@@ -8804,10 +8804,10 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * </li>
      * </ul>
      * <p>
-     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests you want to allow, block,
-     * or count. For example, if you're receiving requests that contain snippets of SQL code in the query string and you
-     * want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
-     * then configure AWS WAF to block the requests.
+     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests that you want to allow,
+     * block, or count. For example, if you're receiving requests that contain snippets of SQL code in the query string
+     * and you want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable
+     * settings, and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
@@ -9032,8 +9032,8 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * </li>
      * <li>
      * <p>
-     * The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
-     * another, you delete the existing <code>Rule</code> and add the new one.
+     * The <code>Rules</code> that you want to add or delete. If you want to replace one <code>Rule</code> with another,
+     * you delete the existing <code>Rule</code> and add the new one.
      * </p>
      * </li>
      * <li>
@@ -9047,10 +9047,10 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add more
      * than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
      * <code>Rules</code> in order based on the value of <code>Priority</code>. (The <code>Rule</code> that has the
-     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all of the predicates
-     * (such as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes
-     * the corresponding action, allow or block, and doesn't evaluate the request against the remaining
-     * <code>Rules</code> in the <code>WebACL</code>, if any.
+     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all the predicates (such
+     * as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the
+     * corresponding action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
+     * in the <code>WebACL</code>, if any.
      * </p>
      * </li>
      * </ul>
@@ -9087,6 +9087,15 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that you want to include in the
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
      * distribution.
+     * </p>
+     * <p>
+     * The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as your
+     * <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+     * </p>
+     * <p>
+     * If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
+     * request to exclude certain rules from that rule group, you must first remove the rule group from the web ACL, the
+     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a>.
      * </p>
      * </li>
      * </ol>
@@ -9300,7 +9309,7 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * <ul>
      * <li>
      * <p>
-     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change an
      * <code>XssMatchTuple</code>, you delete the existing object and add a new one.
      * </p>
      * </li>
@@ -9321,10 +9330,10 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
      * </li>
      * </ul>
      * <p>
-     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests you want to allow, block, or count.
-     * For example, if you're receiving requests that contain cross-site scripting attacks in the request body and you
-     * want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and then
-     * configure AWS WAF to block the requests.
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests that you want to allow, block, or
+     * count. For example, if you're receiving requests that contain cross-site scripting attacks in the request body
+     * and you want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and
+     * then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:

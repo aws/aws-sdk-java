@@ -33,8 +33,8 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * The Amazon Resource Name (ARN) of a Lambda function implements the logic for annotation consolidation.
      * </p>
      * <p>
-     * Amazon SageMaker Ground Truth provides three annotation consolidation functions that you can choose to use. They
-     * are:
+     * For the built-in bounding box, image classification, semantic segmentation, and text classification task types,
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:
      * </p>
      * <ul>
      * <li>
@@ -43,7 +43,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * boxes.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-BoundingBox</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p>
      * </li>
      * <li>
@@ -52,7 +64,40 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * of an image based on annotations from individual workers.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-ImageMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats pixel
+     * annotations from workers as "votes" for the correct label.
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p>
      * </li>
      * <li>
@@ -61,7 +106,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * of text based on annotations from individual workers.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
      * </ul>
@@ -78,8 +135,8 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * The Amazon Resource Name (ARN) of a Lambda function implements the logic for annotation consolidation.
      * </p>
      * <p>
-     * Amazon SageMaker Ground Truth provides three annotation consolidation functions that you can choose to use. They
-     * are:
+     * For the built-in bounding box, image classification, semantic segmentation, and text classification task types,
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:
      * </p>
      * <ul>
      * <li>
@@ -88,7 +145,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * boxes.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-BoundingBox</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p>
      * </li>
      * <li>
@@ -97,7 +166,40 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * of an image based on annotations from individual workers.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-ImageMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats pixel
+     * annotations from workers as "votes" for the correct label.
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p>
      * </li>
      * <li>
@@ -106,7 +208,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * of text based on annotations from individual workers.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
      * </ul>
@@ -119,8 +233,8 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * @param annotationConsolidationLambdaArn
      *        The Amazon Resource Name (ARN) of a Lambda function implements the logic for annotation consolidation.</p>
      *        <p>
-     *        Amazon SageMaker Ground Truth provides three annotation consolidation functions that you can choose to
-     *        use. They are:
+     *        For the built-in bounding box, image classification, semantic segmentation, and text classification task
+     *        types, Amazon SageMaker Ground Truth provides the following Lambda functions:
      *        </p>
      *        <ul>
      *        <li>
@@ -129,7 +243,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        the boxes.
      *        </p>
      *        <p>
-     *        <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-BoundingBox</code>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      *        </p>
      *        </li>
      *        <li>
@@ -138,7 +264,40 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        class of an image based on annotations from individual workers.
      *        </p>
      *        <p>
-     *        <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-ImageMultiClass</code>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats
+     *        pixel annotations from workers as "votes" for the correct label.
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      *        </p>
      *        </li>
      *        <li>
@@ -147,7 +306,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        class of text based on annotations from individual workers.
      *        </p>
      *        <p>
-     *        <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-TextMultiClass</code>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -166,8 +337,8 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * The Amazon Resource Name (ARN) of a Lambda function implements the logic for annotation consolidation.
      * </p>
      * <p>
-     * Amazon SageMaker Ground Truth provides three annotation consolidation functions that you can choose to use. They
-     * are:
+     * For the built-in bounding box, image classification, semantic segmentation, and text classification task types,
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:
      * </p>
      * <ul>
      * <li>
@@ -176,7 +347,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * boxes.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-BoundingBox</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p>
      * </li>
      * <li>
@@ -185,7 +368,40 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * of an image based on annotations from individual workers.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-ImageMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats pixel
+     * annotations from workers as "votes" for the correct label.
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p>
      * </li>
      * <li>
@@ -194,7 +410,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * of text based on annotations from individual workers.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
      * </ul>
@@ -207,8 +435,8 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * @return The Amazon Resource Name (ARN) of a Lambda function implements the logic for annotation
      *         consolidation.</p>
      *         <p>
-     *         Amazon SageMaker Ground Truth provides three annotation consolidation functions that you can choose to
-     *         use. They are:
+     *         For the built-in bounding box, image classification, semantic segmentation, and text classification task
+     *         types, Amazon SageMaker Ground Truth provides the following Lambda functions:
      *         </p>
      *         <ul>
      *         <li>
@@ -217,7 +445,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         the boxes.
      *         </p>
      *         <p>
-     *         <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-BoundingBox</code>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      *         </p>
      *         </li>
      *         <li>
@@ -226,7 +466,40 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         true class of an image based on annotations from individual workers.
      *         </p>
      *         <p>
-     *         <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-ImageMultiClass</code>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats
+     *         pixel annotations from workers as "votes" for the correct label.
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      *         </p>
      *         </li>
      *         <li>
@@ -235,7 +508,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         class of text based on annotations from individual workers.
      *         </p>
      *         <p>
-     *         <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-TextMultiClass</code>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -254,8 +539,8 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * The Amazon Resource Name (ARN) of a Lambda function implements the logic for annotation consolidation.
      * </p>
      * <p>
-     * Amazon SageMaker Ground Truth provides three annotation consolidation functions that you can choose to use. They
-     * are:
+     * For the built-in bounding box, image classification, semantic segmentation, and text classification task types,
+     * Amazon SageMaker Ground Truth provides the following Lambda functions:
      * </p>
      * <ul>
      * <li>
@@ -264,7 +549,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * boxes.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-BoundingBox</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      * </p>
      * </li>
      * <li>
@@ -273,7 +570,40 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * of an image based on annotations from individual workers.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-ImageMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats pixel
+     * annotations from workers as "votes" for the correct label.
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      * </p>
      * </li>
      * <li>
@@ -282,7 +612,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * of text based on annotations from individual workers.
      * </p>
      * <p>
-     * <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-TextMultiClass</code>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      * </p>
      * </li>
      * </ul>
@@ -295,8 +637,8 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * @param annotationConsolidationLambdaArn
      *        The Amazon Resource Name (ARN) of a Lambda function implements the logic for annotation consolidation.</p>
      *        <p>
-     *        Amazon SageMaker Ground Truth provides three annotation consolidation functions that you can choose to
-     *        use. They are:
+     *        For the built-in bounding box, image classification, semantic segmentation, and text classification task
+     *        types, Amazon SageMaker Ground Truth provides the following Lambda functions:
      *        </p>
      *        <ul>
      *        <li>
@@ -305,7 +647,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        the boxes.
      *        </p>
      *        <p>
-     *        <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-BoundingBox</code>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-BoundingBox</code>
      *        </p>
      *        </li>
      *        <li>
@@ -314,7 +668,40 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        class of an image based on annotations from individual workers.
      *        </p>
      *        <p>
-     *        <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-ImageMultiClass</code>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>Semantic segmentation</i> - Treats each pixel in an image as a multi-class classification and treats
+     *        pixel annotations from workers as "votes" for the correct label.
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-SemanticSegmentation</code>
      *        </p>
      *        </li>
      *        <li>
@@ -323,7 +710,19 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        class of text based on annotations from individual workers.
      *        </p>
      *        <p>
-     *        <code>arn:aws:lambda:<i>region</i>:432418664414:function:ACS-TextMultiClass</code>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-TextMultiClass</code>
      *        </p>
      *        </li>
      *        </ul>

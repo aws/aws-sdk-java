@@ -68,18 +68,17 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * <p>
-     * If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     * If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
-     * <i>Amazon Simple Storage Service Developer Guide.</i>
+     * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
-     * <note>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>
-     * request. <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in
-     * AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTramsformJob</code>
+     * request. For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
-     * </note>
      */
     private String kmsKeyId;
     /**
@@ -130,18 +129,17 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * <p>
-     * If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     * If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
-     * <i>Amazon Simple Storage Service Developer Guide.</i>
+     * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
-     * <note>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>
-     * request. <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in
-     * AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTramsformJob</code>
+     * request. For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @param kmsKeyId
      *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
@@ -182,18 +180,16 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     *        role's account. For more information, see <a
+     *        If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     *        account. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
-     *        Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
-     *        <note>
      *        <p>
      *        The KMS key policy must grant permission to the IAM role that you specify in your
-     *        <code>CreateTrainingJob</code> request. <a
+     *        <code>CreateTramsformJob</code> request. For more information, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
-     *        </p>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -240,18 +236,17 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * <p>
-     * If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     * If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
-     * <i>Amazon Simple Storage Service Developer Guide.</i>
+     * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
-     * <note>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>
-     * request. <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in
-     * AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTramsformJob</code>
+     * request. For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
      *         rest using Amazon S3 server-side encryption. The <code>KmsKeyId</code> can be any of the following
@@ -291,18 +286,16 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
+     *         If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
      *         role's account. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
-     *         Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
+     *         Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *         </p>
-     *         <note>
      *         <p>
      *         The KMS key policy must grant permission to the IAM role that you specify in your
-     *         <code>CreateTrainingJob</code> request. <a
+     *         <code>CreateTramsformJob</code> request. For more information, see <a
      *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *         KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
-     *         </p>
      */
 
     public String getKmsKeyId() {
@@ -349,18 +342,17 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * </li>
      * </ul>
      * <p>
-     * If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     * If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
      * account. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in
-     * <i>Amazon Simple Storage Service Developer Guide.</i>
+     * the <i>Amazon Simple Storage Service Developer Guide.</i>
      * </p>
-     * <note>
      * <p>
-     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>
-     * request. <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in
-     * AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTramsformJob</code>
+     * request. For more information, see <a
+     * href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a>
+     * in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
-     * </note>
      * 
      * @param kmsKeyId
      *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
@@ -401,18 +393,16 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your
-     *        role's account. For more information, see <a
+     *        If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's
+     *        account. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption
-     *        Keys</a> in <i>Amazon Simple Storage Service Developer Guide.</i>
+     *        Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i>
      *        </p>
-     *        <note>
      *        <p>
      *        The KMS key policy must grant permission to the IAM role that you specify in your
-     *        <code>CreateTrainingJob</code> request. <a
+     *        <code>CreateTramsformJob</code> request. For more information, see <a
      *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
      *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

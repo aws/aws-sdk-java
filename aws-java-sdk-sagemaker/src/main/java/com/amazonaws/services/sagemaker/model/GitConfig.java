@@ -36,7 +36,7 @@ public class GitConfig implements Serializable, Cloneable, StructuredPojo {
     private String repositoryUrl;
     /**
      * <p>
-     * The default brach for the git repository.
+     * The default beach for the git repository.
      * </p>
      */
     private String branch;
@@ -94,11 +94,11 @@ public class GitConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default brach for the git repository.
+     * The default beach for the git repository.
      * </p>
      * 
      * @param branch
-     *        The default brach for the git repository.
+     *        The default beach for the git repository.
      */
 
     public void setBranch(String branch) {
@@ -107,10 +107,10 @@ public class GitConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default brach for the git repository.
+     * The default beach for the git repository.
      * </p>
      * 
-     * @return The default brach for the git repository.
+     * @return The default beach for the git repository.
      */
 
     public String getBranch() {
@@ -119,11 +119,11 @@ public class GitConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The default brach for the git repository.
+     * The default beach for the git repository.
      * </p>
      * 
      * @param branch
-     *        The default brach for the git repository.
+     *        The default beach for the git repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

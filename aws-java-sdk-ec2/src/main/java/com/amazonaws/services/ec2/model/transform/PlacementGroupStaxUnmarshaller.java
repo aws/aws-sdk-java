@@ -57,6 +57,11 @@ public class PlacementGroupStaxUnmarshaller implements Unmarshaller<PlacementGro
                     placementGroup.setStrategy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("partitionCount", targetDepth)) {
+                    placementGroup.setPartitionCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return placementGroup;

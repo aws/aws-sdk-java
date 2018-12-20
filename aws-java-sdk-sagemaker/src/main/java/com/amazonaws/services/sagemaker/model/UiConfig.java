@@ -30,18 +30,24 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket location of the UI template.
+     * The Amazon S3 bucket location of the UI template. For more information about the contents of a UI template, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
+     * Labeling Task Template</a>.
      * </p>
      */
     private String uiTemplateS3Uri;
 
     /**
      * <p>
-     * The Amazon S3 bucket location of the UI template.
+     * The Amazon S3 bucket location of the UI template. For more information about the contents of a UI template, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
+     * Labeling Task Template</a>.
      * </p>
      * 
      * @param uiTemplateS3Uri
-     *        The Amazon S3 bucket location of the UI template.
+     *        The Amazon S3 bucket location of the UI template. For more information about the contents of a UI
+     *        template, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     *        Creating Your Custom Labeling Task Template</a>.
      */
 
     public void setUiTemplateS3Uri(String uiTemplateS3Uri) {
@@ -50,10 +56,14 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket location of the UI template.
+     * The Amazon S3 bucket location of the UI template. For more information about the contents of a UI template, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
+     * Labeling Task Template</a>.
      * </p>
      * 
-     * @return The Amazon S3 bucket location of the UI template.
+     * @return The Amazon S3 bucket location of the UI template. For more information about the contents of a UI
+     *         template, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     *         Creating Your Custom Labeling Task Template</a>.
      */
 
     public String getUiTemplateS3Uri() {
@@ -62,11 +72,15 @@ public class UiConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon S3 bucket location of the UI template.
+     * The Amazon S3 bucket location of the UI template. For more information about the contents of a UI template, see
+     * <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html"> Creating Your Custom
+     * Labeling Task Template</a>.
      * </p>
      * 
      * @param uiTemplateS3Uri
-     *        The Amazon S3 bucket location of the UI template.
+     *        The Amazon S3 bucket location of the UI template. For more information about the contents of a UI
+     *        template, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step2.html">
+     *        Creating Your Custom Labeling Task Template</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class ModelPackageStatusDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the validation of the model package.
+     * The validation status of the model package.
      * </p>
      */
     private java.util.List<ModelPackageStatusItem> validationStatuses;
@@ -43,10 +43,10 @@ public class ModelPackageStatusDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the validation of the model package.
+     * The validation status of the model package.
      * </p>
      * 
-     * @return The status of the validation of the model package.
+     * @return The validation status of the model package.
      */
 
     public java.util.List<ModelPackageStatusItem> getValidationStatuses() {
@@ -55,11 +55,11 @@ public class ModelPackageStatusDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the validation of the model package.
+     * The validation status of the model package.
      * </p>
      * 
      * @param validationStatuses
-     *        The status of the validation of the model package.
+     *        The validation status of the model package.
      */
 
     public void setValidationStatuses(java.util.Collection<ModelPackageStatusItem> validationStatuses) {
@@ -73,7 +73,7 @@ public class ModelPackageStatusDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the validation of the model package.
+     * The validation status of the model package.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class ModelPackageStatusDetails implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param validationStatuses
-     *        The status of the validation of the model package.
+     *        The validation status of the model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class ModelPackageStatusDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The status of the validation of the model package.
+     * The validation status of the model package.
      * </p>
      * 
      * @param validationStatuses
-     *        The status of the validation of the model package.
+     *        The validation status of the model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -24,7 +24,6 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
     public static final String API_CALL_ATTEMPT_MONITORING_EVENT_TYPE = "ApiCallAttempt";
 
     private String fqdn;
-    private String userAgent;
     private String accessKey;
     private String sessionToken;
     private Integer httpStatusCode;
@@ -47,6 +46,12 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
     @Override
     public ApiCallAttemptMonitoringEvent withVersion(Integer version) {
         this.version = version;
+        return this;
+    }
+
+    @Override
+    public ApiCallAttemptMonitoringEvent withUserAgent(String userAgent) {
+        this.userAgent = userAgent;
         return this;
     }
 
@@ -101,24 +106,6 @@ public class ApiCallAttemptMonitoringEvent extends ApiMonitoringEvent {
     @Override
     public ApiCallAttemptMonitoringEvent withRegion(String region) {
         this.region = region;
-        return this;
-    }
-
-    /**
-     * @return The full value of the SDK's default user agent header for http requests.
-     */
-    public String getUserAgent() {
-        return userAgent;
-    }
-
-    /**
-     * Sets the userAgent
-     *
-     * @param userAgent The new userAgent value.
-     * @return This object for method chaining.
-     */
-    public ApiCallAttemptMonitoringEvent withUserAgent(String userAgent) {
-        this.userAgent = userAgent;
         return this;
     }
 

@@ -58,6 +58,11 @@ public class PlacementStaxUnmarshaller implements Unmarshaller<Placement, StaxUn
                     continue;
                 }
 
+                if (context.testExpression("partitionNumber", targetDepth)) {
+                    placement.setPartitionNumber(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("hostId", targetDepth)) {
                     placement.setHostId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

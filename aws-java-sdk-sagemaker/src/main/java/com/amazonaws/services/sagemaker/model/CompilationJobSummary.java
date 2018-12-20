@@ -48,6 +48,12 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
     private java.util.Date creationTime;
     /**
      * <p>
+     * The time when the model compilation job started.
+     * </p>
+     */
+    private java.util.Date compilationStartTime;
+    /**
+     * <p>
      * The time when the model compilation job completed.
      * </p>
      */
@@ -188,6 +194,46 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
 
     public CompilationJobSummary withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the model compilation job started.
+     * </p>
+     * 
+     * @param compilationStartTime
+     *        The time when the model compilation job started.
+     */
+
+    public void setCompilationStartTime(java.util.Date compilationStartTime) {
+        this.compilationStartTime = compilationStartTime;
+    }
+
+    /**
+     * <p>
+     * The time when the model compilation job started.
+     * </p>
+     * 
+     * @return The time when the model compilation job started.
+     */
+
+    public java.util.Date getCompilationStartTime() {
+        return this.compilationStartTime;
+    }
+
+    /**
+     * <p>
+     * The time when the model compilation job started.
+     * </p>
+     * 
+     * @param compilationStartTime
+     *        The time when the model compilation job started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CompilationJobSummary withCompilationStartTime(java.util.Date compilationStartTime) {
+        setCompilationStartTime(compilationStartTime);
         return this;
     }
 
@@ -407,6 +453,8 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
             sb.append("CompilationJobArn: ").append(getCompilationJobArn()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getCompilationStartTime() != null)
+            sb.append("CompilationStartTime: ").append(getCompilationStartTime()).append(",");
         if (getCompilationEndTime() != null)
             sb.append("CompilationEndTime: ").append(getCompilationEndTime()).append(",");
         if (getCompilationTargetDevice() != null)
@@ -441,6 +489,10 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getCompilationStartTime() == null ^ this.getCompilationStartTime() == null)
+            return false;
+        if (other.getCompilationStartTime() != null && other.getCompilationStartTime().equals(this.getCompilationStartTime()) == false)
+            return false;
         if (other.getCompilationEndTime() == null ^ this.getCompilationEndTime() == null)
             return false;
         if (other.getCompilationEndTime() != null && other.getCompilationEndTime().equals(this.getCompilationEndTime()) == false)
@@ -468,6 +520,7 @@ public class CompilationJobSummary implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getCompilationJobName() == null) ? 0 : getCompilationJobName().hashCode());
         hashCode = prime * hashCode + ((getCompilationJobArn() == null) ? 0 : getCompilationJobArn().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getCompilationStartTime() == null) ? 0 : getCompilationStartTime().hashCode());
         hashCode = prime * hashCode + ((getCompilationEndTime() == null) ? 0 : getCompilationEndTime().hashCode());
         hashCode = prime * hashCode + ((getCompilationTargetDevice() == null) ? 0 : getCompilationTargetDevice().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());

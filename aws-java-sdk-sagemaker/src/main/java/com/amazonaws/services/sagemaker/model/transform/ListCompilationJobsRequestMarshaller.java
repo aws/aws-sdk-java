@@ -43,6 +43,10 @@ public class ListCompilationJobsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NameContains").build();
     private static final MarshallingInfo<String> STATUSEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusEquals").build();
+    private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortOrder").build();
 
     private static final ListCompilationJobsRequestMarshaller instance = new ListCompilationJobsRequestMarshaller();
 
@@ -68,6 +72,8 @@ public class ListCompilationJobsRequestMarshaller {
             protocolMarshaller.marshall(listCompilationJobsRequest.getLastModifiedTimeBefore(), LASTMODIFIEDTIMEBEFORE_BINDING);
             protocolMarshaller.marshall(listCompilationJobsRequest.getNameContains(), NAMECONTAINS_BINDING);
             protocolMarshaller.marshall(listCompilationJobsRequest.getStatusEquals(), STATUSEQUALS_BINDING);
+            protocolMarshaller.marshall(listCompilationJobsRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(listCompilationJobsRequest.getSortOrder(), SORTORDER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

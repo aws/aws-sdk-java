@@ -19,18 +19,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A <code>NestedFilter</code> is defined by using a resource name under <code>NestedPropertyName</code>, which entries
- * in a list that properties must match to be included in the results. To satisfy the conditions specified in the
- * <code>NestedFilters</code> call, each object in the list must satisfy the conditions of all of the filters.
+ * Defines a list of <code>NestedFilter</code> objects. To satisfy the conditions specified in the
+ * <code>NestedFilters</code> call, a resource must satisfy the conditions of all of the filters.
  * </p>
  * <p>
  * For example, a <code>NestedFilters</code> could be defined using the training job's <code>InputDataConfig</code>
  * property, this would be defined as a list of <code>Channel</code> objects.
  * </p>
  * <p>
- * A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs that have
- * <code>train</code> in their name, and have <code>cat/data</code> in their<code/> <code>S3Uri</code> (under
- * <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specfies the
+ * A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs whose name
+ * contains <code>train</code> and that have <code>cat/data</code> in their <code>S3Uri</code> (specified in
+ * <code>InputDataConfig</code>), you need to create a <code>NestedFilters</code> object that specifies the
  * <code>InputDataConfig</code> property with the following <code>Filter</code> objects:
  * </p>
  * <ul>
@@ -54,26 +53,29 @@ public class NestedFilters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * .The name of the property used in the nested filters.
+     * The name of the property to use in the nested filters. The value must match a listed property name, such as
+     * <code>InputDataConfig</code>.
      * </p>
      */
     private String nestedPropertyName;
     /**
      * <p>
-     * A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might include a
-     * filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code> property:
-     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
+     * A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code> value.
+     * For example, a <code>NestedFilters</code> call might include a filter on the <code>PropertyName</code> parameter
+     * of the <code>InputDataConfig</code> property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      * </p>
      */
     private java.util.List<Filter> filters;
 
     /**
      * <p>
-     * .The name of the property used in the nested filters.
+     * The name of the property to use in the nested filters. The value must match a listed property name, such as
+     * <code>InputDataConfig</code>.
      * </p>
      * 
      * @param nestedPropertyName
-     *        .The name of the property used in the nested filters.
+     *        The name of the property to use in the nested filters. The value must match a listed property name, such
+     *        as <code>InputDataConfig</code>.
      */
 
     public void setNestedPropertyName(String nestedPropertyName) {
@@ -82,10 +84,12 @@ public class NestedFilters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * .The name of the property used in the nested filters.
+     * The name of the property to use in the nested filters. The value must match a listed property name, such as
+     * <code>InputDataConfig</code>.
      * </p>
      * 
-     * @return .The name of the property used in the nested filters.
+     * @return The name of the property to use in the nested filters. The value must match a listed property name, such
+     *         as <code>InputDataConfig</code>.
      */
 
     public String getNestedPropertyName() {
@@ -94,11 +98,13 @@ public class NestedFilters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * .The name of the property used in the nested filters.
+     * The name of the property to use in the nested filters. The value must match a listed property name, such as
+     * <code>InputDataConfig</code>.
      * </p>
      * 
      * @param nestedPropertyName
-     *        .The name of the property used in the nested filters.
+     *        The name of the property to use in the nested filters. The value must match a listed property name, such
+     *        as <code>InputDataConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,14 +115,15 @@ public class NestedFilters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might include a
-     * filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code> property:
-     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
+     * A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code> value.
+     * For example, a <code>NestedFilters</code> call might include a filter on the <code>PropertyName</code> parameter
+     * of the <code>InputDataConfig</code> property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      * </p>
      * 
-     * @return A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might
-     *         include a filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code>
-     *         property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
+     * @return A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code>
+     *         value. For example, a <code>NestedFilters</code> call might include a filter on the
+     *         <code>PropertyName</code> parameter of the <code>InputDataConfig</code> property:
+     *         <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -125,14 +132,15 @@ public class NestedFilters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might include a
-     * filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code> property:
-     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
+     * A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code> value.
+     * For example, a <code>NestedFilters</code> call might include a filter on the <code>PropertyName</code> parameter
+     * of the <code>InputDataConfig</code> property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      * </p>
      * 
      * @param filters
-     *        A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might
-     *        include a filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code> property:
+     *        A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code>
+     *        value. For example, a <code>NestedFilters</code> call might include a filter on the
+     *        <code>PropertyName</code> parameter of the <code>InputDataConfig</code> property:
      *        <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      */
 
@@ -147,9 +155,9 @@ public class NestedFilters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might include a
-     * filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code> property:
-     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
+     * A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code> value.
+     * For example, a <code>NestedFilters</code> call might include a filter on the <code>PropertyName</code> parameter
+     * of the <code>InputDataConfig</code> property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -158,8 +166,9 @@ public class NestedFilters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param filters
-     *        A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might
-     *        include a filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code> property:
+     *        A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code>
+     *        value. For example, a <code>NestedFilters</code> call might include a filter on the
+     *        <code>PropertyName</code> parameter of the <code>InputDataConfig</code> property:
      *        <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -176,14 +185,15 @@ public class NestedFilters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might include a
-     * filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code> property:
-     * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
+     * A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code> value.
+     * For example, a <code>NestedFilters</code> call might include a filter on the <code>PropertyName</code> parameter
+     * of the <code>InputDataConfig</code> property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      * </p>
      * 
      * @param filters
-     *        A list of filters. Each filter acts on a property. For example, a <code>NestedFilters</code> call might
-     *        include a filter on the <code>PropertyName</code> parameter fof the <code>InputDataConfig</code> property:
+     *        A list of filters. Each filter acts on a property. Filters must contain at least one <code>Filters</code>
+     *        value. For example, a <code>NestedFilters</code> call might include a filter on the
+     *        <code>PropertyName</code> parameter of the <code>InputDataConfig</code> property:
      *        <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

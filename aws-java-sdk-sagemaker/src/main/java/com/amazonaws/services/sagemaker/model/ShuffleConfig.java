@@ -41,18 +41,18 @@ public class ShuffleConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the shuffling order in <code>ShuffleConfig</code>. value.
+     * Determines the shuffling order in <code>ShuffleConfig</code> value.
      * </p>
      */
     private Long seed;
 
     /**
      * <p>
-     * Determines the shuffling order in <code>ShuffleConfig</code>. value.
+     * Determines the shuffling order in <code>ShuffleConfig</code> value.
      * </p>
      * 
      * @param seed
-     *        Determines the shuffling order in <code>ShuffleConfig</code>. value.
+     *        Determines the shuffling order in <code>ShuffleConfig</code> value.
      */
 
     public void setSeed(Long seed) {
@@ -61,10 +61,10 @@ public class ShuffleConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the shuffling order in <code>ShuffleConfig</code>. value.
+     * Determines the shuffling order in <code>ShuffleConfig</code> value.
      * </p>
      * 
-     * @return Determines the shuffling order in <code>ShuffleConfig</code>. value.
+     * @return Determines the shuffling order in <code>ShuffleConfig</code> value.
      */
 
     public Long getSeed() {
@@ -73,11 +73,11 @@ public class ShuffleConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the shuffling order in <code>ShuffleConfig</code>. value.
+     * Determines the shuffling order in <code>ShuffleConfig</code> value.
      * </p>
      * 
      * @param seed
-     *        Determines the shuffling order in <code>ShuffleConfig</code>. value.
+     *        Determines the shuffling order in <code>ShuffleConfig</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

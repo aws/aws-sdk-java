@@ -35,18 +35,23 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * A Boolean conditional statement. Resource objects must satisfy this condition to be included in search results.
+     * You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.
      * </p>
      */
     private SearchExpression searchExpression;
     /**
      * <p>
-     * The name of the resource property used to sort the <code>SearchResults</code>.
+     * The name of the resource property used to sort the <code>SearchResults</code>. The default is
+     * <code>LastModifiedTime</code>.
      * </p>
      */
     private String sortBy;
     /**
      * <p>
      * How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>.
+     * The default is <code>Descending</code>.
      * </p>
      */
     private String sortOrder;
@@ -136,11 +141,16 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * A Boolean conditional statement. Resource objects must satisfy this condition to be included in search results.
+     * You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.
      * </p>
      * 
      * @param searchExpression
      *        A Boolean conditional statement. Resource objects must satisfy this condition to be included in search
-     *        results.
+     *        results. You must provide at least one subexpression, filter, or nested filter. The maximum number of
+     *        recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be
+     *        included in a <code>SearchExpression</code> object is 50.
      */
 
     public void setSearchExpression(SearchExpression searchExpression) {
@@ -150,10 +160,15 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * A Boolean conditional statement. Resource objects must satisfy this condition to be included in search results.
+     * You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.
      * </p>
      * 
      * @return A Boolean conditional statement. Resource objects must satisfy this condition to be included in search
-     *         results.
+     *         results. You must provide at least one subexpression, filter, or nested filter. The maximum number of
+     *         recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be
+     *         included in a <code>SearchExpression</code> object is 50.
      */
 
     public SearchExpression getSearchExpression() {
@@ -163,11 +178,16 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * A Boolean conditional statement. Resource objects must satisfy this condition to be included in search results.
+     * You must provide at least one subexpression, filter, or nested filter. The maximum number of recursive
+     * <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be included in a
+     * <code>SearchExpression</code> object is 50.
      * </p>
      * 
      * @param searchExpression
      *        A Boolean conditional statement. Resource objects must satisfy this condition to be included in search
-     *        results.
+     *        results. You must provide at least one subexpression, filter, or nested filter. The maximum number of
+     *        recursive <code>SubExpressions</code>, <code>NestedFilters</code>, and <code>Filters</code> that can be
+     *        included in a <code>SearchExpression</code> object is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +198,13 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The name of the resource property used to sort the <code>SearchResults</code>.
+     * The name of the resource property used to sort the <code>SearchResults</code>. The default is
+     * <code>LastModifiedTime</code>.
      * </p>
      * 
      * @param sortBy
-     *        The name of the resource property used to sort the <code>SearchResults</code>.
+     *        The name of the resource property used to sort the <code>SearchResults</code>. The default is
+     *        <code>LastModifiedTime</code>.
      */
 
     public void setSortBy(String sortBy) {
@@ -191,10 +213,12 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The name of the resource property used to sort the <code>SearchResults</code>.
+     * The name of the resource property used to sort the <code>SearchResults</code>. The default is
+     * <code>LastModifiedTime</code>.
      * </p>
      * 
-     * @return The name of the resource property used to sort the <code>SearchResults</code>.
+     * @return The name of the resource property used to sort the <code>SearchResults</code>. The default is
+     *         <code>LastModifiedTime</code>.
      */
 
     public String getSortBy() {
@@ -203,11 +227,13 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The name of the resource property used to sort the <code>SearchResults</code>.
+     * The name of the resource property used to sort the <code>SearchResults</code>. The default is
+     * <code>LastModifiedTime</code>.
      * </p>
      * 
      * @param sortBy
-     *        The name of the resource property used to sort the <code>SearchResults</code>.
+     *        The name of the resource property used to sort the <code>SearchResults</code>. The default is
+     *        <code>LastModifiedTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +245,12 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>.
+     * The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
      *        How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
-     *        <code>Descending</code>.
+     *        <code>Descending</code>. The default is <code>Descending</code>.
      * @see SearchSortOrder
      */
 
@@ -234,10 +261,11 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>.
+     * The default is <code>Descending</code>.
      * </p>
      * 
      * @return How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
-     *         <code>Descending</code>.
+     *         <code>Descending</code>. The default is <code>Descending</code>.
      * @see SearchSortOrder
      */
 
@@ -248,11 +276,12 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>.
+     * The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
      *        How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
-     *        <code>Descending</code>.
+     *        <code>Descending</code>. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SearchSortOrder
      */
@@ -265,11 +294,12 @@ public class SearchRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     /**
      * <p>
      * How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or <code>Descending</code>.
+     * The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
      *        How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code> or
-     *        <code>Descending</code>.
+     *        <code>Descending</code>. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SearchSortOrder
      */

@@ -60,6 +60,10 @@ public class CompilationJobSummaryJsonUnmarshaller implements Unmarshaller<Compi
                     context.nextToken();
                     compilationJobSummary.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("CompilationStartTime", targetDepth)) {
+                    context.nextToken();
+                    compilationJobSummary.setCompilationStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("CompilationEndTime", targetDepth)) {
                     context.nextToken();
                     compilationJobSummary.setCompilationEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));

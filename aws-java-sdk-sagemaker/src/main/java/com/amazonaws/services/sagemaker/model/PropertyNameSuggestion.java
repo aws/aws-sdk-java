@@ -31,18 +31,18 @@ public class PropertyNameSuggestion implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A suggested property name.
+     * A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.
      * </p>
      */
     private String propertyName;
 
     /**
      * <p>
-     * A suggested property name.
+     * A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.
      * </p>
      * 
      * @param propertyName
-     *        A suggested property name.
+     *        A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.
      */
 
     public void setPropertyName(String propertyName) {
@@ -51,10 +51,11 @@ public class PropertyNameSuggestion implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A suggested property name.
+     * A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.
      * </p>
      * 
-     * @return A suggested property name.
+     * @return A suggested property name based on what you entered in the search textbox in the Amazon SageMaker
+     *         console.
      */
 
     public String getPropertyName() {
@@ -63,11 +64,11 @@ public class PropertyNameSuggestion implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A suggested property name.
+     * A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.
      * </p>
      * 
      * @param propertyName
-     *        A suggested property name.
+     *        A suggested property name based on what you entered in the search textbox in the Amazon SageMaker console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

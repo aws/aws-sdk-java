@@ -43,7 +43,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
     private String changeToken;
     /**
      * <p>
-     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
@@ -154,7 +154,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
@@ -175,7 +175,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * </li>
      * </ul>
      * 
-     * @return An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     * @return An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      *         <a>XssMatchSet</a>. For more information, see the applicable data types:</p>
      *         <ul>
      *         <li>
@@ -201,7 +201,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
@@ -223,7 +223,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param updates
-     *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      *        <a>XssMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
      *        <li>
@@ -254,7 +254,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
@@ -281,7 +281,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param updates
-     *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      *        <a>XssMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
      *        <li>
@@ -314,7 +314,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     * An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      * <a>XssMatchSet</a>. For more information, see the applicable data types:
      * </p>
      * <ul>
@@ -336,7 +336,7 @@ public class UpdateXssMatchSetRequest extends com.amazonaws.AmazonWebServiceRequ
      * </ul>
      * 
      * @param updates
-     *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from a
+     *        An array of <code>XssMatchSetUpdate</code> objects that you want to insert into or delete from an
      *        <a>XssMatchSet</a>. For more information, see the applicable data types:</p>
      *        <ul>
      *        <li>

@@ -37,7 +37,7 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
     private String modelPackageArn;
     /**
      * <p>
-     * A brief summary about the model package.
+     * A brief summary of the model package.
      * </p>
      */
     private String modelPackageDescription;
@@ -166,11 +166,11 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A brief summary about the model package.
+     * A brief summary of the model package.
      * </p>
      * 
      * @param modelPackageDescription
-     *        A brief summary about the model package.
+     *        A brief summary of the model package.
      */
 
     public void setModelPackageDescription(String modelPackageDescription) {
@@ -179,10 +179,10 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A brief summary about the model package.
+     * A brief summary of the model package.
      * </p>
      * 
-     * @return A brief summary about the model package.
+     * @return A brief summary of the model package.
      */
 
     public String getModelPackageDescription() {
@@ -191,11 +191,11 @@ public class DescribeModelPackageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A brief summary about the model package.
+     * A brief summary of the model package.
      * </p>
      * 
      * @param modelPackageDescription
-     *        A brief summary about the model package.
+     *        A brief summary of the model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

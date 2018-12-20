@@ -106,7 +106,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is
      * <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value
-     * <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64 encoding and include the resulting
+     * <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting
      * value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.
      * </p>
      * <p>
@@ -445,7 +445,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is
      * <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value
-     * <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64 encoding and include the resulting
+     * <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting
      * value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.
      * </p>
      * <p>
@@ -537,7 +537,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of
      *        <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for
-     *        the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64 encoding and
+     *        the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and
      *        include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.
      *        </p>
      *        <p>
@@ -621,7 +621,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is
      * <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value
-     * <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64 encoding and include the resulting
+     * <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting
      * value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.
      * </p>
      * <p>
@@ -709,7 +709,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of
      *         <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header
-     *         for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64 encoding and
+     *         for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and
      *         include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.
      *         </p>
      *         <p>
@@ -793,7 +793,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of <code>Data</code> is
      * <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for the value
-     * <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64 encoding and include the resulting
+     * <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and include the resulting
      * value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.
      * </p>
      * <p>
@@ -885,7 +885,7 @@ public class ByteMatchTuple implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the value of
      *        <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code> header for
-     *        the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64 encoding and
+     *        the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using MIME base64-encoding and
      *        include the resulting value, <code>QmFkQm90</code>, in the value of <code>TargetString</code>.
      *        </p>
      *        <p>

@@ -34,7 +34,8 @@ public enum ParameterExceptionField {
     GEO_MATCH_LOCATION_VALUE("GEO_MATCH_LOCATION_VALUE"),
     RATE_KEY("RATE_KEY"),
     RULE_TYPE("RULE_TYPE"),
-    NEXT_MARKER("NEXT_MARKER");
+    NEXT_MARKER("NEXT_MARKER"),
+    RESOURCE_ARN("RESOURCE_ARN");
 
     private String value;
 

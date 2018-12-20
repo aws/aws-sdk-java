@@ -170,6 +170,11 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                                         + ".Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
                             }
 
+                            if (placement.getPartitionNumber() != null) {
+                                request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.PartitionNumber", StringUtils.fromInteger(placement.getPartitionNumber()));
+                            }
+
                             if (placement.getHostId() != null) {
                                 request.addParameter("LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
                                         + ".Placement.HostId", StringUtils.fromString(placement.getHostId()));

@@ -35,7 +35,7 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.
      * </p>
      */
@@ -103,13 +103,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      *        <code>MetricName</code> after you create the <code>WebACL</code>.
      */
 
@@ -120,12 +120,12 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.
      * </p>
      * 
      * @return A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *         alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      *         <code>MetricName</code> after you create the <code>WebACL</code>.
      */
 
@@ -136,13 +136,13 @@ public class CreateWebACLRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     * alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      * <code>MetricName</code> after you create the <code>WebACL</code>.
      * </p>
      * 
      * @param metricName
      *        A friendly name or description for the metrics for this <code>WebACL</code>. The name can contain only
-     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change
+     *        alphanumeric characters (A-Z, a-z, 0-9); the name can't contain white space. You can't change
      *        <code>MetricName</code> after you create the <code>WebACL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

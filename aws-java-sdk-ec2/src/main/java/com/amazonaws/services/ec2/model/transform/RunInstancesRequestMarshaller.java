@@ -164,6 +164,10 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                 request.addParameter("Placement.GroupName", StringUtils.fromString(placement.getGroupName()));
             }
 
+            if (placement.getPartitionNumber() != null) {
+                request.addParameter("Placement.PartitionNumber", StringUtils.fromInteger(placement.getPartitionNumber()));
+            }
+
             if (placement.getHostId() != null) {
                 request.addParameter("Placement.HostId", StringUtils.fromString(placement.getHostId()));
             }

@@ -48,6 +48,10 @@ public class CreatePlacementGroupRequestMarshaller implements Marshaller<Request
             request.addParameter("Strategy", StringUtils.fromString(createPlacementGroupRequest.getStrategy()));
         }
 
+        if (createPlacementGroupRequest.getPartitionCount() != null) {
+            request.addParameter("PartitionCount", StringUtils.fromInteger(createPlacementGroupRequest.getPartitionCount()));
+        }
+
         return request;
     }
 

@@ -42,7 +42,7 @@ public class ModelPackageSummary implements Serializable, Cloneable, StructuredP
     private String modelPackageArn;
     /**
      * <p>
-     * A brief statement describing the model package.
+     * A brief description of the model package.
      * </p>
      */
     private String modelPackageDescription;
@@ -141,11 +141,11 @@ public class ModelPackageSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A brief statement describing the model package.
+     * A brief description of the model package.
      * </p>
      * 
      * @param modelPackageDescription
-     *        A brief statement describing the model package.
+     *        A brief description of the model package.
      */
 
     public void setModelPackageDescription(String modelPackageDescription) {
@@ -154,10 +154,10 @@ public class ModelPackageSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A brief statement describing the model package.
+     * A brief description of the model package.
      * </p>
      * 
-     * @return A brief statement describing the model package.
+     * @return A brief description of the model package.
      */
 
     public String getModelPackageDescription() {
@@ -166,11 +166,11 @@ public class ModelPackageSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A brief statement describing the model package.
+     * A brief description of the model package.
      * </p>
      * 
      * @param modelPackageDescription
-     *        A brief statement describing the model package.
+     *        A brief description of the model package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

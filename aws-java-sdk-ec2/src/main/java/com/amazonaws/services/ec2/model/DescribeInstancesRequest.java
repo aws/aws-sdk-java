@@ -369,6 +369,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>partition-number</code> - The partition in which the instance is located.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>placement-group-name</code> - The name of the placement group for the instance.
      * </p>
      * </li>
@@ -864,6 +869,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>partition-number</code> - The partition in which the instance is located.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>placement-group-name</code> - The name of the placement group for the instance.
      * </p>
      * </li>
@@ -1331,6 +1341,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>owner-id</code> - The AWS account ID of the instance owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>partition-number</code> - The partition in which the instance is located.
      *         </p>
      *         </li>
      *         <li>
@@ -1816,6 +1831,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>partition-number</code> - The partition in which the instance is located.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>placement-group-name</code> - The name of the placement group for the instance.
      * </p>
      * </li>
@@ -2284,6 +2304,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>owner-id</code> - The AWS account ID of the instance owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>partition-number</code> - The partition in which the instance is located.
      *        </p>
      *        </li>
      *        <li>
@@ -2770,6 +2795,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>partition-number</code> - The partition in which the instance is located.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>placement-group-name</code> - The name of the placement group for the instance.
      * </p>
      * </li>
@@ -3243,6 +3273,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>owner-id</code> - The AWS account ID of the instance owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>partition-number</code> - The partition in which the instance is located.
      *        </p>
      *        </li>
      *        <li>
@@ -3731,6 +3766,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>partition-number</code> - The partition in which the instance is located.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>placement-group-name</code> - The name of the placement group for the instance.
      * </p>
      * </li>
@@ -4199,6 +4239,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>owner-id</code> - The AWS account ID of the instance owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>partition-number</code> - The partition in which the instance is located.
      *        </p>
      *        </li>
      *        <li>

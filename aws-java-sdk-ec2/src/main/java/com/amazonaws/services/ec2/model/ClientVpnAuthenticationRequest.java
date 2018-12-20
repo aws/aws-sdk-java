@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * <p>
  * Describes the authentication method to be used by a Client VPN endpoint. Client VPN supports Active Directory and
  * mutual authentication. For more information, see <a
- * href="vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Athentication</a> in the
+ * href="vpn/latest/clientvpn-admin/authentication-authrization.html#client-authentication">Authentication</a> in the
  * <i>AWS Client VPN Admin Guide</i>.
  * </p>
  * 

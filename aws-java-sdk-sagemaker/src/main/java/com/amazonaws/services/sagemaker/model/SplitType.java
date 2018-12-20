@@ -22,7 +22,8 @@ public enum SplitType {
 
     None("None"),
     Line("Line"),
-    RecordIO("RecordIO");
+    RecordIO("RecordIO"),
+    TFRecord("TFRecord");
 
     private String value;
 

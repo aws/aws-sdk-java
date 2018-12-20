@@ -103,6 +103,54 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The S3 location of the JSON file that defines the categories used to label data objects.
      * </p>
+     * <p>
+     * The file is a JSON structure in the following format:
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code> "document-version": "2018-11-28"</code>
+     * </p>
+     * <p>
+     * <code> "labels": [</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 1</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 2</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> ...</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label n</i>"</code>
+     * </p>
+     * <p>
+     * <code> }</code>
+     * </p>
+     * <p>
+     * <code> ]</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      */
     private String labelCategoryConfigS3Uri;
     /**
@@ -666,9 +714,104 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The S3 location of the JSON file that defines the categories used to label data objects.
      * </p>
+     * <p>
+     * The file is a JSON structure in the following format:
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code> "document-version": "2018-11-28"</code>
+     * </p>
+     * <p>
+     * <code> "labels": [</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 1</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 2</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> ...</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label n</i>"</code>
+     * </p>
+     * <p>
+     * <code> }</code>
+     * </p>
+     * <p>
+     * <code> ]</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 location of the JSON file that defines the categories used to label data objects.
+     *        The S3 location of the JSON file that defines the categories used to label data objects.</p>
+     *        <p>
+     *        The file is a JSON structure in the following format:
+     *        </p>
+     *        <p>
+     *        <code>{</code>
+     *        </p>
+     *        <p>
+     *        <code> "document-version": "2018-11-28"</code>
+     *        </p>
+     *        <p>
+     *        <code> "labels": [</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label 1</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> },</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label 2</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> },</code>
+     *        </p>
+     *        <p>
+     *        <code> ...</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label n</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> }</code>
+     *        </p>
+     *        <p>
+     *        <code> ]</code>
+     *        </p>
+     *        <p>
+     *        <code>}</code>
      */
 
     public void setLabelCategoryConfigS3Uri(String labelCategoryConfigS3Uri) {
@@ -679,8 +822,103 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The S3 location of the JSON file that defines the categories used to label data objects.
      * </p>
+     * <p>
+     * The file is a JSON structure in the following format:
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code> "document-version": "2018-11-28"</code>
+     * </p>
+     * <p>
+     * <code> "labels": [</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 1</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 2</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> ...</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label n</i>"</code>
+     * </p>
+     * <p>
+     * <code> }</code>
+     * </p>
+     * <p>
+     * <code> ]</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
-     * @return The S3 location of the JSON file that defines the categories used to label data objects.
+     * @return The S3 location of the JSON file that defines the categories used to label data objects.</p>
+     *         <p>
+     *         The file is a JSON structure in the following format:
+     *         </p>
+     *         <p>
+     *         <code>{</code>
+     *         </p>
+     *         <p>
+     *         <code> "document-version": "2018-11-28"</code>
+     *         </p>
+     *         <p>
+     *         <code> "labels": [</code>
+     *         </p>
+     *         <p>
+     *         <code> {</code>
+     *         </p>
+     *         <p>
+     *         <code> "label": "<i>label 1</i>"</code>
+     *         </p>
+     *         <p>
+     *         <code> },</code>
+     *         </p>
+     *         <p>
+     *         <code> {</code>
+     *         </p>
+     *         <p>
+     *         <code> "label": "<i>label 2</i>"</code>
+     *         </p>
+     *         <p>
+     *         <code> },</code>
+     *         </p>
+     *         <p>
+     *         <code> ...</code>
+     *         </p>
+     *         <p>
+     *         <code> {</code>
+     *         </p>
+     *         <p>
+     *         <code> "label": "<i>label n</i>"</code>
+     *         </p>
+     *         <p>
+     *         <code> }</code>
+     *         </p>
+     *         <p>
+     *         <code> ]</code>
+     *         </p>
+     *         <p>
+     *         <code>}</code>
      */
 
     public String getLabelCategoryConfigS3Uri() {
@@ -691,9 +929,104 @@ public class DescribeLabelingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <p>
      * The S3 location of the JSON file that defines the categories used to label data objects.
      * </p>
+     * <p>
+     * The file is a JSON structure in the following format:
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code> "document-version": "2018-11-28"</code>
+     * </p>
+     * <p>
+     * <code> "labels": [</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 1</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 2</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> ...</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label n</i>"</code>
+     * </p>
+     * <p>
+     * <code> }</code>
+     * </p>
+     * <p>
+     * <code> ]</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 location of the JSON file that defines the categories used to label data objects.
+     *        The S3 location of the JSON file that defines the categories used to label data objects.</p>
+     *        <p>
+     *        The file is a JSON structure in the following format:
+     *        </p>
+     *        <p>
+     *        <code>{</code>
+     *        </p>
+     *        <p>
+     *        <code> "document-version": "2018-11-28"</code>
+     *        </p>
+     *        <p>
+     *        <code> "labels": [</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label 1</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> },</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label 2</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> },</code>
+     *        </p>
+     *        <p>
+     *        <code> ...</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label n</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> }</code>
+     *        </p>
+     *        <p>
+     *        <code> ]</code>
+     *        </p>
+     *        <p>
+     *        <code>}</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

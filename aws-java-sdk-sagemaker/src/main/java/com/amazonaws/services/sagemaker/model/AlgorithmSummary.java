@@ -30,7 +30,7 @@ public class AlgorithmSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the algorithm which is described by the summary.
+     * The name of the algorithm that is described by the summary.
      * </p>
      */
     private String algorithmName;
@@ -42,7 +42,7 @@ public class AlgorithmSummary implements Serializable, Cloneable, StructuredPojo
     private String algorithmArn;
     /**
      * <p>
-     * A brief statement describing the algorithm.
+     * A brief description of the algorithm.
      * </p>
      */
     private String algorithmDescription;
@@ -61,11 +61,11 @@ public class AlgorithmSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the algorithm which is described by the summary.
+     * The name of the algorithm that is described by the summary.
      * </p>
      * 
      * @param algorithmName
-     *        The name of the algorithm which is described by the summary.
+     *        The name of the algorithm that is described by the summary.
      */
 
     public void setAlgorithmName(String algorithmName) {
@@ -74,10 +74,10 @@ public class AlgorithmSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the algorithm which is described by the summary.
+     * The name of the algorithm that is described by the summary.
      * </p>
      * 
-     * @return The name of the algorithm which is described by the summary.
+     * @return The name of the algorithm that is described by the summary.
      */
 
     public String getAlgorithmName() {
@@ -86,11 +86,11 @@ public class AlgorithmSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the algorithm which is described by the summary.
+     * The name of the algorithm that is described by the summary.
      * </p>
      * 
      * @param algorithmName
-     *        The name of the algorithm which is described by the summary.
+     *        The name of the algorithm that is described by the summary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class AlgorithmSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A brief statement describing the algorithm.
+     * A brief description of the algorithm.
      * </p>
      * 
      * @param algorithmDescription
-     *        A brief statement describing the algorithm.
+     *        A brief description of the algorithm.
      */
 
     public void setAlgorithmDescription(String algorithmDescription) {
@@ -154,10 +154,10 @@ public class AlgorithmSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A brief statement describing the algorithm.
+     * A brief description of the algorithm.
      * </p>
      * 
-     * @return A brief statement describing the algorithm.
+     * @return A brief description of the algorithm.
      */
 
     public String getAlgorithmDescription() {
@@ -166,11 +166,11 @@ public class AlgorithmSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A brief statement describing the algorithm.
+     * A brief description of the algorithm.
      * </p>
      * 
      * @param algorithmDescription
-     *        A brief statement describing the algorithm.
+     *        A brief description of the algorithm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

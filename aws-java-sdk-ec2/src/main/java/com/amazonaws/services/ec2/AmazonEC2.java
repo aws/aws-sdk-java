@@ -1517,7 +1517,8 @@ public interface AmazonEC2 {
      * <p>
      * A <code>cluster</code> placement group is a logical grouping of instances within a single Availability Zone that
      * benefit from low network latency, high network throughput. A <code>spread</code> placement group places instances
-     * on distinct hardware.
+     * on distinct hardware. A <code>partition</code> placement group places groups of instances in different
+     * partitions, where instances in one partition do not share the same hardware with instances in another partition.
      * </p>
      * <p>
      * For more information, see <a
@@ -3282,7 +3283,7 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * The results describe all the Dedicated Host reservation offerings, including offerings that may not match the
-     * instance family and region of your Dedicated Hosts. When purchasing an offering, ensure that the instance family
+     * instance family and Region of your Dedicated Hosts. When purchasing an offering, ensure that the instance family
      * and Region of the offering matches that of the Dedicated Hosts with which it is to be associated. For more
      * information about supported instance types, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated Hosts
@@ -3315,7 +3316,7 @@ public interface AmazonEC2 {
      * Describes one or more of your Dedicated Hosts.
      * </p>
      * <p>
-     * The results describe only the Dedicated Hosts in the region you're currently using. All listed instances consume
+     * The results describe only the Dedicated Hosts in the Region you're currently using. All listed instances consume
      * capacity on your Dedicated Host. Dedicated Hosts that have recently been released are listed with the state
      * <code>released</code>.
      * </p>
@@ -5300,9 +5301,9 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Downloads the contents of the client configuration file for the specified Client VPN endpoint. The client
-     * configuration file includes the Client VPN endpoint and certificate information clients need to establish a
-     * connection with the Client VPN endpoint.
+     * Downloads the contents of the Client VPN endpoint configuration file for the specified Client VPN endpoint. The
+     * Client VPN endpoint configuration file includes the Client VPN endpoint and certificate information clients need
+     * to establish a connection with the Client VPN endpoint.
      * </p>
      * 
      * @param exportClientVpnClientConfigurationRequest
@@ -5896,7 +5897,7 @@ public interface AmazonEC2 {
      * Affinity and tenancy can be modified in the same request.
      * </p>
      * <p>
-     * To modify the host ID, tenancy, or placement group for an instance, the instance must be in the
+     * To modify the host ID, tenancy, placement group, or partition for an instance, the instance must be in the
      * <code>stopped</code> state.
      * </p>
      * 

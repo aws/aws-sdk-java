@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains data such as the inputs and targeted instance types that are used in the process of validating the model
+ * Contains data, such as the inputs and targeted instance types that are used in the process of validating the model
  * package.
  * </p>
  * <p>

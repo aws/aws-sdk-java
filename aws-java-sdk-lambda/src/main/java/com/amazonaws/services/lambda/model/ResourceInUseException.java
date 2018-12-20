@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operation conflicts with the resource's availability. For example, you attempted to update an EventSource Mapping
- * in CREATING, or tried to delete a EventSource mapping currently in the UPDATING state.
+ * The operation conflicts with the resource's availability. For example, you attempted to update an EventSoure Mapping
+ * in CREATING, or tried to delete a EventSoure mapping currently in the UPDATING state.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

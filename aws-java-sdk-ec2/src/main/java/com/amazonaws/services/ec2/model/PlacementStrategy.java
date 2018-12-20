@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum PlacementStrategy {
 
     Cluster("cluster"),
-    Spread("spread");
+    Spread("spread"),
+    Partition("partition");
 
     private String value;
 

@@ -28,8 +28,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>FailureReason</code> field.
  * </p>
  * <p>
- * If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as a
- * default.
+ * If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker uses the equals operator as
+ * the default.
  * </p>
  * <p>
  * In search, there are several property types:
@@ -61,7 +61,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <dt>HyperParameters</dt>
  * <dd>
  * <p>
- * To define a hyperparameter filter, enter a value with the form <code>"HyperParamters.&lt;name&gt;"</code>. Decimal
+ * To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>. Decimal
  * hyperparameter values are treated as a decimal in a comparison if the specified <code>Value</code> is also a decimal
  * value. If the specified <code>Value</code> is an integer, the decimal hyperparameter values are treated as integers.
  * For example, the following filter is satisfied by training jobs with a <code>"learning_rate"</code> hyperparameter
@@ -99,8 +99,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A property name. For example, <code>TrainingJobName</code>. See <a>TrainingJob</a> properties for the list of
-     * valid property names for each supported resource.
+     * A property name. For example, <code>TrainingJobName</code>. For the list of valid property names returned in a
+     * search result for each supported resource, see <a>TrainingJob</a> properties. You must specify a valid property
+     * name for the resource.
      * </p>
      */
     private String name;
@@ -158,11 +159,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
+     * </p>
      */
     private String operator;
     /**
      * <p>
-     * A value used with <code>Resource</code> and <code>Operator</code> to determin if objects statisfy the filter's
+     * A value used with <code>Resource</code> and <code>Operator</code> to determine if objects satisfy the filter's
      * condition. For numerical properties, <code>Value</code> must be an integer or floating-point decimal. For
      * timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the following format:
      * <code>YYYY-mm-dd'T'HH:MM:SS</code>.
@@ -172,13 +176,15 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A property name. For example, <code>TrainingJobName</code>. See <a>TrainingJob</a> properties for the list of
-     * valid property names for each supported resource.
+     * A property name. For example, <code>TrainingJobName</code>. For the list of valid property names returned in a
+     * search result for each supported resource, see <a>TrainingJob</a> properties. You must specify a valid property
+     * name for the resource.
      * </p>
      * 
      * @param name
-     *        A property name. For example, <code>TrainingJobName</code>. See <a>TrainingJob</a> properties for the list
-     *        of valid property names for each supported resource.
+     *        A property name. For example, <code>TrainingJobName</code>. For the list of valid property names returned
+     *        in a search result for each supported resource, see <a>TrainingJob</a> properties. You must specify a
+     *        valid property name for the resource.
      */
 
     public void setName(String name) {
@@ -187,12 +193,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A property name. For example, <code>TrainingJobName</code>. See <a>TrainingJob</a> properties for the list of
-     * valid property names for each supported resource.
+     * A property name. For example, <code>TrainingJobName</code>. For the list of valid property names returned in a
+     * search result for each supported resource, see <a>TrainingJob</a> properties. You must specify a valid property
+     * name for the resource.
      * </p>
      * 
-     * @return A property name. For example, <code>TrainingJobName</code>. See <a>TrainingJob</a> properties for the
-     *         list of valid property names for each supported resource.
+     * @return A property name. For example, <code>TrainingJobName</code>. For the list of valid property names returned
+     *         in a search result for each supported resource, see <a>TrainingJob</a> properties. You must specify a
+     *         valid property name for the resource.
      */
 
     public String getName() {
@@ -201,13 +209,15 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A property name. For example, <code>TrainingJobName</code>. See <a>TrainingJob</a> properties for the list of
-     * valid property names for each supported resource.
+     * A property name. For example, <code>TrainingJobName</code>. For the list of valid property names returned in a
+     * search result for each supported resource, see <a>TrainingJob</a> properties. You must specify a valid property
+     * name for the resource.
      * </p>
      * 
      * @param name
-     *        A property name. For example, <code>TrainingJobName</code>. See <a>TrainingJob</a> properties for the list
-     *        of valid property names for each supported resource.
+     *        A property name. For example, <code>TrainingJobName</code>. For the list of valid property names returned
+     *        in a search result for each supported resource, see <a>TrainingJob</a> properties. You must specify a
+     *        valid property name for the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -270,6 +280,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
+     * </p>
      * 
      * @param operator
      *        A Boolean binary operator that is used to evaluate the filter. The operator field contains one of the
@@ -322,6 +335,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <code>Value</code>.
      *        </p>
      *        </dd>
+     *        </dl>
+     *        <p>
+     *        If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
      * @see Operator
      */
 
@@ -383,6 +399,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
+     * </p>
      * 
      * @return A Boolean binary operator that is used to evaluate the filter. The operator field contains one of the
      *         following values:</p>
@@ -434,6 +453,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *         <code>Value</code>.
      *         </p>
      *         </dd>
+     *         </dl>
+     *         <p>
+     *         If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
      * @see Operator
      */
 
@@ -495,6 +517,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
+     * </p>
      * 
      * @param operator
      *        A Boolean binary operator that is used to evaluate the filter. The operator field contains one of the
@@ -547,6 +572,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <code>Value</code>.
      *        </p>
      *        </dd>
+     *        </dl>
+     *        <p>
+     *        If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Operator
      */
@@ -610,6 +638,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </dd>
      * </dl>
+     * <p>
+     * If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
+     * </p>
      * 
      * @param operator
      *        A Boolean binary operator that is used to evaluate the filter. The operator field contains one of the
@@ -662,6 +693,9 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <code>Value</code>.
      *        </p>
      *        </dd>
+     *        </dl>
+     *        <p>
+     *        If you have specified a filter <code>Value</code>, the default is <code>Equals</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Operator
      */
@@ -673,14 +707,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value used with <code>Resource</code> and <code>Operator</code> to determin if objects statisfy the filter's
+     * A value used with <code>Resource</code> and <code>Operator</code> to determine if objects satisfy the filter's
      * condition. For numerical properties, <code>Value</code> must be an integer or floating-point decimal. For
      * timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the following format:
      * <code>YYYY-mm-dd'T'HH:MM:SS</code>.
      * </p>
      * 
      * @param value
-     *        A value used with <code>Resource</code> and <code>Operator</code> to determin if objects statisfy the
+     *        A value used with <code>Resource</code> and <code>Operator</code> to determine if objects satisfy the
      *        filter's condition. For numerical properties, <code>Value</code> must be an integer or floating-point
      *        decimal. For timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the
      *        following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.
@@ -692,13 +726,13 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value used with <code>Resource</code> and <code>Operator</code> to determin if objects statisfy the filter's
+     * A value used with <code>Resource</code> and <code>Operator</code> to determine if objects satisfy the filter's
      * condition. For numerical properties, <code>Value</code> must be an integer or floating-point decimal. For
      * timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the following format:
      * <code>YYYY-mm-dd'T'HH:MM:SS</code>.
      * </p>
      * 
-     * @return A value used with <code>Resource</code> and <code>Operator</code> to determin if objects statisfy the
+     * @return A value used with <code>Resource</code> and <code>Operator</code> to determine if objects satisfy the
      *         filter's condition. For numerical properties, <code>Value</code> must be an integer or floating-point
      *         decimal. For timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the
      *         following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.
@@ -710,14 +744,14 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value used with <code>Resource</code> and <code>Operator</code> to determin if objects statisfy the filter's
+     * A value used with <code>Resource</code> and <code>Operator</code> to determine if objects satisfy the filter's
      * condition. For numerical properties, <code>Value</code> must be an integer or floating-point decimal. For
      * timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the following format:
      * <code>YYYY-mm-dd'T'HH:MM:SS</code>.
      * </p>
      * 
      * @param value
-     *        A value used with <code>Resource</code> and <code>Operator</code> to determin if objects statisfy the
+     *        A value used with <code>Resource</code> and <code>Operator</code> to determine if objects satisfy the
      *        filter's condition. For numerical properties, <code>Value</code> must be an integer or floating-point
      *        decimal. For timestamp properties, <code>Value</code> must be an ISO 8601 date-time string of the
      *        following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.

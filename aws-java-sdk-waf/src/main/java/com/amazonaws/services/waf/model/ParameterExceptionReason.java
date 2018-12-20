@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ParameterExceptionReason {
 
     INVALID_OPTION("INVALID_OPTION"),
-    ILLEGAL_COMBINATION("ILLEGAL_COMBINATION");
+    ILLEGAL_COMBINATION("ILLEGAL_COMBINATION"),
+    ILLEGAL_ARGUMENT("ILLEGAL_ARGUMENT");
 
     private String value;
 

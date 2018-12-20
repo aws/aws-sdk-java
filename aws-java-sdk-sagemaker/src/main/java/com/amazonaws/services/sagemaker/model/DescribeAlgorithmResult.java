@@ -31,7 +31,7 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
     private String algorithmName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the algorithm.&gt;
+     * The Amazon Resource Name (ARN) of the algorithm.
      * </p>
      */
     private String algorithmArn;
@@ -132,11 +132,11 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the algorithm.&gt;
+     * The Amazon Resource Name (ARN) of the algorithm.
      * </p>
      * 
      * @param algorithmArn
-     *        The Amazon Resource Name (ARN) of the algorithm.&gt;
+     *        The Amazon Resource Name (ARN) of the algorithm.
      */
 
     public void setAlgorithmArn(String algorithmArn) {
@@ -145,10 +145,10 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the algorithm.&gt;
+     * The Amazon Resource Name (ARN) of the algorithm.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the algorithm.&gt;
+     * @return The Amazon Resource Name (ARN) of the algorithm.
      */
 
     public String getAlgorithmArn() {
@@ -157,11 +157,11 @@ public class DescribeAlgorithmResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the algorithm.&gt;
+     * The Amazon Resource Name (ARN) of the algorithm.
      * </p>
      * 
      * @param algorithmArn
-     *        The Amazon Resource Name (ARN) of the algorithm.&gt;
+     *        The Amazon Resource Name (ARN) of the algorithm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -74,7 +74,7 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
     private java.util.List<ChannelSpecification> trainingChannels;
     /**
      * <p>
-     * A list of the metrics that the alogorithm emits that can be used as the objective metric in a hyperparameter
+     * A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter
      * tuning job.
      * </p>
      */
@@ -546,11 +546,11 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of the metrics that the alogorithm emits that can be used as the objective metric in a hyperparameter
+     * A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter
      * tuning job.
      * </p>
      * 
-     * @return A list of the metrics that the alogorithm emits that can be used as the objective metric in a
+     * @return A list of the metrics that the algorithm emits that can be used as the objective metric in a
      *         hyperparameter tuning job.
      */
 
@@ -560,12 +560,12 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of the metrics that the alogorithm emits that can be used as the objective metric in a hyperparameter
+     * A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter
      * tuning job.
      * </p>
      * 
      * @param supportedTuningJobObjectiveMetrics
-     *        A list of the metrics that the alogorithm emits that can be used as the objective metric in a
+     *        A list of the metrics that the algorithm emits that can be used as the objective metric in a
      *        hyperparameter tuning job.
      */
 
@@ -580,7 +580,7 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of the metrics that the alogorithm emits that can be used as the objective metric in a hyperparameter
+     * A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter
      * tuning job.
      * </p>
      * <p>
@@ -591,7 +591,7 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param supportedTuningJobObjectiveMetrics
-     *        A list of the metrics that the alogorithm emits that can be used as the objective metric in a
+     *        A list of the metrics that the algorithm emits that can be used as the objective metric in a
      *        hyperparameter tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -608,12 +608,12 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * A list of the metrics that the alogorithm emits that can be used as the objective metric in a hyperparameter
+     * A list of the metrics that the algorithm emits that can be used as the objective metric in a hyperparameter
      * tuning job.
      * </p>
      * 
      * @param supportedTuningJobObjectiveMetrics
-     *        A list of the metrics that the alogorithm emits that can be used as the objective metric in a
+     *        A list of the metrics that the algorithm emits that can be used as the objective metric in a
      *        hyperparameter tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

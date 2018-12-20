@@ -30,7 +30,7 @@ public class AlgorithmStatusItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the algorithm for which the overall status is being repoorted.
+     * The name of the algorithm for which the overall status is being reported.
      * </p>
      */
     private String name;
@@ -42,18 +42,18 @@ public class AlgorithmStatusItem implements Serializable, Cloneable, StructuredP
     private String status;
     /**
      * <p>
-     * The reason for failure, if the overall status is a failed state.
+     * if the overall status is <code>Failed</code>, the reason for the failure.
      * </p>
      */
     private String failureReason;
 
     /**
      * <p>
-     * The name of the algorithm for which the overall status is being repoorted.
+     * The name of the algorithm for which the overall status is being reported.
      * </p>
      * 
      * @param name
-     *        The name of the algorithm for which the overall status is being repoorted.
+     *        The name of the algorithm for which the overall status is being reported.
      */
 
     public void setName(String name) {
@@ -62,10 +62,10 @@ public class AlgorithmStatusItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the algorithm for which the overall status is being repoorted.
+     * The name of the algorithm for which the overall status is being reported.
      * </p>
      * 
-     * @return The name of the algorithm for which the overall status is being repoorted.
+     * @return The name of the algorithm for which the overall status is being reported.
      */
 
     public String getName() {
@@ -74,11 +74,11 @@ public class AlgorithmStatusItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the algorithm for which the overall status is being repoorted.
+     * The name of the algorithm for which the overall status is being reported.
      * </p>
      * 
      * @param name
-     *        The name of the algorithm for which the overall status is being repoorted.
+     *        The name of the algorithm for which the overall status is being reported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +148,11 @@ public class AlgorithmStatusItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reason for failure, if the overall status is a failed state.
+     * if the overall status is <code>Failed</code>, the reason for the failure.
      * </p>
      * 
      * @param failureReason
-     *        The reason for failure, if the overall status is a failed state.
+     *        if the overall status is <code>Failed</code>, the reason for the failure.
      */
 
     public void setFailureReason(String failureReason) {
@@ -161,10 +161,10 @@ public class AlgorithmStatusItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reason for failure, if the overall status is a failed state.
+     * if the overall status is <code>Failed</code>, the reason for the failure.
      * </p>
      * 
-     * @return The reason for failure, if the overall status is a failed state.
+     * @return if the overall status is <code>Failed</code>, the reason for the failure.
      */
 
     public String getFailureReason() {
@@ -173,11 +173,11 @@ public class AlgorithmStatusItem implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The reason for failure, if the overall status is a failed state.
+     * if the overall status is <code>Failed</code>, the reason for the failure.
      * </p>
      * 
      * @param failureReason
-     *        The reason for failure, if the overall status is a failed state.
+     *        if the overall status is <code>Failed</code>, the reason for the failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

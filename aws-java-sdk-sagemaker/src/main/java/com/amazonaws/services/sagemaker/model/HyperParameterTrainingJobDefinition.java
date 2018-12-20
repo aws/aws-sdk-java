@@ -36,8 +36,8 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
     private java.util.Map<String, String> staticHyperParameters;
     /**
      * <p>
-     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the training jobs
-     * that the tuning job launches.
+     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for the
+     * training jobs that the tuning job launches.
      * </p>
      */
     private HyperParameterAlgorithmSpecification algorithmSpecification;
@@ -102,7 +102,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -175,13 +175,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the training jobs
-     * that the tuning job launches.
+     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for the
+     * training jobs that the tuning job launches.
      * </p>
      * 
      * @param algorithmSpecification
-     *        The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the
-     *        training jobs that the tuning job launches.
+     *        The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for
+     *        the training jobs that the tuning job launches.
      */
 
     public void setAlgorithmSpecification(HyperParameterAlgorithmSpecification algorithmSpecification) {
@@ -190,12 +190,12 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the training jobs
-     * that the tuning job launches.
+     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for the
+     * training jobs that the tuning job launches.
      * </p>
      * 
-     * @return The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the
-     *         training jobs that the tuning job launches.
+     * @return The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for
+     *         the training jobs that the tuning job launches.
      */
 
     public HyperParameterAlgorithmSpecification getAlgorithmSpecification() {
@@ -204,13 +204,13 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
 
     /**
      * <p>
-     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the training jobs
-     * that the tuning job launches.
+     * The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for the
+     * training jobs that the tuning job launches.
      * </p>
      * 
      * @param algorithmSpecification
-     *        The <a>HyperParameterAlgorithmSpecification</a> object that specifies the algorithm to use for the
-     *        training jobs that the tuning job launches.
+     *        The <a>HyperParameterAlgorithmSpecification</a> object that specifies the resource algorithm to use for
+     *        the training jobs that the tuning job launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -618,7 +618,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -630,7 +630,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
      *        between peers within a training cluster for distributed training. If network isolation is used for
      *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *        model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *        model artifacts through the specified VPC, but the training container does not have network access.</p>
      *        <note>
      *        <p>
      *        The Semantic Segmentation built-in algorithm does not support network isolation.
@@ -646,7 +646,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -657,7 +657,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
      *         between peers within a training cluster for distributed training. If network isolation is used for
      *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *         model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *         model artifacts through the specified VPC, but the training container does not have network access.</p>
      *         <note>
      *         <p>
      *         The Semantic Segmentation built-in algorithm does not support network isolation.
@@ -673,7 +673,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -685,7 +685,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
      *        between peers within a training cluster for distributed training. If network isolation is used for
      *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *        model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *        model artifacts through the specified VPC, but the training container does not have network access.</p>
      *        <note>
      *        <p>
      *        The Semantic Segmentation built-in algorithm does not support network isolation.
@@ -703,7 +703,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
      * within a training cluster for distributed training. If network isolation is used for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -714,7 +714,7 @@ public class HyperParameterTrainingJobDefinition implements Serializable, Clonea
      * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
      *         between peers within a training cluster for distributed training. If network isolation is used for
      *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *         model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *         model artifacts through the specified VPC, but the training container does not have network access.</p>
      *         <note>
      *         <p>
      *         The Semantic Segmentation built-in algorithm does not support network isolation.

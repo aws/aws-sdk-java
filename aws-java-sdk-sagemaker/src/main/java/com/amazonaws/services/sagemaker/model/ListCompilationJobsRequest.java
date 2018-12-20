@@ -75,6 +75,18 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String statusEquals;
+    /**
+     * <p>
+     * The field by which to sort results. The default is <code>CreationTime</code>.
+     * </p>
+     */
+    private String sortBy;
+    /**
+     * <p>
+     * The sort order for results. The default is <code>Ascending</code>.
+     * </p>
+     */
+    private String sortOrder;
 
     /**
      * <p>
@@ -433,6 +445,124 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The field by which to sort results. The default is <code>CreationTime</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The field by which to sort results. The default is <code>CreationTime</code>.
+     * @see ListCompilationJobsSortBy
+     */
+
+    public void setSortBy(String sortBy) {
+        this.sortBy = sortBy;
+    }
+
+    /**
+     * <p>
+     * The field by which to sort results. The default is <code>CreationTime</code>.
+     * </p>
+     * 
+     * @return The field by which to sort results. The default is <code>CreationTime</code>.
+     * @see ListCompilationJobsSortBy
+     */
+
+    public String getSortBy() {
+        return this.sortBy;
+    }
+
+    /**
+     * <p>
+     * The field by which to sort results. The default is <code>CreationTime</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The field by which to sort results. The default is <code>CreationTime</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ListCompilationJobsSortBy
+     */
+
+    public ListCompilationJobsRequest withSortBy(String sortBy) {
+        setSortBy(sortBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The field by which to sort results. The default is <code>CreationTime</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The field by which to sort results. The default is <code>CreationTime</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ListCompilationJobsSortBy
+     */
+
+    public ListCompilationJobsRequest withSortBy(ListCompilationJobsSortBy sortBy) {
+        this.sortBy = sortBy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sort order for results. The default is <code>Ascending</code>.
+     * </p>
+     * 
+     * @param sortOrder
+     *        The sort order for results. The default is <code>Ascending</code>.
+     * @see SortOrder
+     */
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
+    }
+
+    /**
+     * <p>
+     * The sort order for results. The default is <code>Ascending</code>.
+     * </p>
+     * 
+     * @return The sort order for results. The default is <code>Ascending</code>.
+     * @see SortOrder
+     */
+
+    public String getSortOrder() {
+        return this.sortOrder;
+    }
+
+    /**
+     * <p>
+     * The sort order for results. The default is <code>Ascending</code>.
+     * </p>
+     * 
+     * @param sortOrder
+     *        The sort order for results. The default is <code>Ascending</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SortOrder
+     */
+
+    public ListCompilationJobsRequest withSortOrder(String sortOrder) {
+        setSortOrder(sortOrder);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The sort order for results. The default is <code>Ascending</code>.
+     * </p>
+     * 
+     * @param sortOrder
+     *        The sort order for results. The default is <code>Ascending</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SortOrder
+     */
+
+    public ListCompilationJobsRequest withSortOrder(SortOrder sortOrder) {
+        this.sortOrder = sortOrder.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -459,7 +589,11 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
         if (getNameContains() != null)
             sb.append("NameContains: ").append(getNameContains()).append(",");
         if (getStatusEquals() != null)
-            sb.append("StatusEquals: ").append(getStatusEquals());
+            sb.append("StatusEquals: ").append(getStatusEquals()).append(",");
+        if (getSortBy() != null)
+            sb.append("SortBy: ").append(getSortBy()).append(",");
+        if (getSortOrder() != null)
+            sb.append("SortOrder: ").append(getSortOrder());
         sb.append("}");
         return sb.toString();
     }
@@ -506,6 +640,14 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getStatusEquals() != null && other.getStatusEquals().equals(this.getStatusEquals()) == false)
             return false;
+        if (other.getSortBy() == null ^ this.getSortBy() == null)
+            return false;
+        if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
+            return false;
+        if (other.getSortOrder() == null ^ this.getSortOrder() == null)
+            return false;
+        if (other.getSortOrder() != null && other.getSortOrder().equals(this.getSortOrder()) == false)
+            return false;
         return true;
     }
 
@@ -522,6 +664,8 @@ public class ListCompilationJobsRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getLastModifiedTimeBefore() == null) ? 0 : getLastModifiedTimeBefore().hashCode());
         hashCode = prime * hashCode + ((getNameContains() == null) ? 0 : getNameContains().hashCode());
         hashCode = prime * hashCode + ((getStatusEquals() == null) ? 0 : getStatusEquals().hashCode());
+        hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
+        hashCode = prime * hashCode + ((getSortOrder() == null) ? 0 : getSortOrder().hashCode());
         return hashCode;
     }
 

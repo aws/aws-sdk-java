@@ -34,7 +34,9 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The attribute name to use for the label in the output manifest file. This is the key for the key/value pair
-     * formed with the label that a worker assigns to the object. The name can't end with "-metadata" or "-ref".
+     * formed with the label that a worker assigns to the object. The name can't end with "-metadata". If you are
+     * running a semantic segmentation labeling job, the attribute name must end with "-ref". If you are running any
+     * other kind of labeling job, the attribute name must not end with "-ref".
      * </p>
      */
     private String labelAttributeName;
@@ -63,6 +65,54 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The S3 URL of the file that defines the categories used to label the data objects.
+     * </p>
+     * <p>
+     * The file is a JSON structure in the following format:
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code> "document-version": "2018-11-28"</code>
+     * </p>
+     * <p>
+     * <code> "labels": [</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 1</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 2</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> ...</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label n</i>"</code>
+     * </p>
+     * <p>
+     * <code> }</code>
+     * </p>
+     * <p>
+     * <code> ]</code>
+     * </p>
+     * <p>
+     * <code>}</code>
      * </p>
      */
     private String labelCategoryConfigS3Uri;
@@ -137,13 +187,16 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The attribute name to use for the label in the output manifest file. This is the key for the key/value pair
-     * formed with the label that a worker assigns to the object. The name can't end with "-metadata" or "-ref".
+     * formed with the label that a worker assigns to the object. The name can't end with "-metadata". If you are
+     * running a semantic segmentation labeling job, the attribute name must end with "-ref". If you are running any
+     * other kind of labeling job, the attribute name must not end with "-ref".
      * </p>
      * 
      * @param labelAttributeName
      *        The attribute name to use for the label in the output manifest file. This is the key for the key/value
-     *        pair formed with the label that a worker assigns to the object. The name can't end with "-metadata" or
-     *        "-ref".
+     *        pair formed with the label that a worker assigns to the object. The name can't end with "-metadata". If
+     *        you are running a semantic segmentation labeling job, the attribute name must end with "-ref". If you are
+     *        running any other kind of labeling job, the attribute name must not end with "-ref".
      */
 
     public void setLabelAttributeName(String labelAttributeName) {
@@ -153,12 +206,15 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The attribute name to use for the label in the output manifest file. This is the key for the key/value pair
-     * formed with the label that a worker assigns to the object. The name can't end with "-metadata" or "-ref".
+     * formed with the label that a worker assigns to the object. The name can't end with "-metadata". If you are
+     * running a semantic segmentation labeling job, the attribute name must end with "-ref". If you are running any
+     * other kind of labeling job, the attribute name must not end with "-ref".
      * </p>
      * 
      * @return The attribute name to use for the label in the output manifest file. This is the key for the key/value
-     *         pair formed with the label that a worker assigns to the object. The name can't end with "-metadata" or
-     *         "-ref".
+     *         pair formed with the label that a worker assigns to the object. The name can't end with "-metadata". If
+     *         you are running a semantic segmentation labeling job, the attribute name must end with "-ref". If you are
+     *         running any other kind of labeling job, the attribute name must not end with "-ref".
      */
 
     public String getLabelAttributeName() {
@@ -168,13 +224,16 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The attribute name to use for the label in the output manifest file. This is the key for the key/value pair
-     * formed with the label that a worker assigns to the object. The name can't end with "-metadata" or "-ref".
+     * formed with the label that a worker assigns to the object. The name can't end with "-metadata". If you are
+     * running a semantic segmentation labeling job, the attribute name must end with "-ref". If you are running any
+     * other kind of labeling job, the attribute name must not end with "-ref".
      * </p>
      * 
      * @param labelAttributeName
      *        The attribute name to use for the label in the output manifest file. This is the key for the key/value
-     *        pair formed with the label that a worker assigns to the object. The name can't end with "-metadata" or
-     *        "-ref".
+     *        pair formed with the label that a worker assigns to the object. The name can't end with "-metadata". If
+     *        you are running a semantic segmentation labeling job, the attribute name must end with "-ref". If you are
+     *        running any other kind of labeling job, the attribute name must not end with "-ref".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,9 +390,104 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The S3 URL of the file that defines the categories used to label the data objects.
      * </p>
+     * <p>
+     * The file is a JSON structure in the following format:
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code> "document-version": "2018-11-28"</code>
+     * </p>
+     * <p>
+     * <code> "labels": [</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 1</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 2</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> ...</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label n</i>"</code>
+     * </p>
+     * <p>
+     * <code> }</code>
+     * </p>
+     * <p>
+     * <code> ]</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 URL of the file that defines the categories used to label the data objects.
+     *        The S3 URL of the file that defines the categories used to label the data objects.</p>
+     *        <p>
+     *        The file is a JSON structure in the following format:
+     *        </p>
+     *        <p>
+     *        <code>{</code>
+     *        </p>
+     *        <p>
+     *        <code> "document-version": "2018-11-28"</code>
+     *        </p>
+     *        <p>
+     *        <code> "labels": [</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label 1</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> },</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label 2</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> },</code>
+     *        </p>
+     *        <p>
+     *        <code> ...</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label n</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> }</code>
+     *        </p>
+     *        <p>
+     *        <code> ]</code>
+     *        </p>
+     *        <p>
+     *        <code>}</code>
      */
 
     public void setLabelCategoryConfigS3Uri(String labelCategoryConfigS3Uri) {
@@ -344,8 +498,103 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The S3 URL of the file that defines the categories used to label the data objects.
      * </p>
+     * <p>
+     * The file is a JSON structure in the following format:
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code> "document-version": "2018-11-28"</code>
+     * </p>
+     * <p>
+     * <code> "labels": [</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 1</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 2</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> ...</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label n</i>"</code>
+     * </p>
+     * <p>
+     * <code> }</code>
+     * </p>
+     * <p>
+     * <code> ]</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
-     * @return The S3 URL of the file that defines the categories used to label the data objects.
+     * @return The S3 URL of the file that defines the categories used to label the data objects.</p>
+     *         <p>
+     *         The file is a JSON structure in the following format:
+     *         </p>
+     *         <p>
+     *         <code>{</code>
+     *         </p>
+     *         <p>
+     *         <code> "document-version": "2018-11-28"</code>
+     *         </p>
+     *         <p>
+     *         <code> "labels": [</code>
+     *         </p>
+     *         <p>
+     *         <code> {</code>
+     *         </p>
+     *         <p>
+     *         <code> "label": "<i>label 1</i>"</code>
+     *         </p>
+     *         <p>
+     *         <code> },</code>
+     *         </p>
+     *         <p>
+     *         <code> {</code>
+     *         </p>
+     *         <p>
+     *         <code> "label": "<i>label 2</i>"</code>
+     *         </p>
+     *         <p>
+     *         <code> },</code>
+     *         </p>
+     *         <p>
+     *         <code> ...</code>
+     *         </p>
+     *         <p>
+     *         <code> {</code>
+     *         </p>
+     *         <p>
+     *         <code> "label": "<i>label n</i>"</code>
+     *         </p>
+     *         <p>
+     *         <code> }</code>
+     *         </p>
+     *         <p>
+     *         <code> ]</code>
+     *         </p>
+     *         <p>
+     *         <code>}</code>
      */
 
     public String getLabelCategoryConfigS3Uri() {
@@ -356,9 +605,104 @@ public class CreateLabelingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The S3 URL of the file that defines the categories used to label the data objects.
      * </p>
+     * <p>
+     * The file is a JSON structure in the following format:
+     * </p>
+     * <p>
+     * <code>{</code>
+     * </p>
+     * <p>
+     * <code> "document-version": "2018-11-28"</code>
+     * </p>
+     * <p>
+     * <code> "labels": [</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 1</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label 2</i>"</code>
+     * </p>
+     * <p>
+     * <code> },</code>
+     * </p>
+     * <p>
+     * <code> ...</code>
+     * </p>
+     * <p>
+     * <code> {</code>
+     * </p>
+     * <p>
+     * <code> "label": "<i>label n</i>"</code>
+     * </p>
+     * <p>
+     * <code> }</code>
+     * </p>
+     * <p>
+     * <code> ]</code>
+     * </p>
+     * <p>
+     * <code>}</code>
+     * </p>
      * 
      * @param labelCategoryConfigS3Uri
-     *        The S3 URL of the file that defines the categories used to label the data objects.
+     *        The S3 URL of the file that defines the categories used to label the data objects.</p>
+     *        <p>
+     *        The file is a JSON structure in the following format:
+     *        </p>
+     *        <p>
+     *        <code>{</code>
+     *        </p>
+     *        <p>
+     *        <code> "document-version": "2018-11-28"</code>
+     *        </p>
+     *        <p>
+     *        <code> "labels": [</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label 1</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> },</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label 2</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> },</code>
+     *        </p>
+     *        <p>
+     *        <code> ...</code>
+     *        </p>
+     *        <p>
+     *        <code> {</code>
+     *        </p>
+     *        <p>
+     *        <code> "label": "<i>label n</i>"</code>
+     *        </p>
+     *        <p>
+     *        <code> }</code>
+     *        </p>
+     *        <p>
+     *        <code> ]</code>
+     *        </p>
+     *        <p>
+     *        <code>}</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

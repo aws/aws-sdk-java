@@ -30,7 +30,7 @@ public class AlgorithmStatusDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the validation of the algorithm.
+     * The status of algorithm validation.
      * </p>
      */
     private java.util.List<AlgorithmStatusItem> validationStatuses;
@@ -43,10 +43,10 @@ public class AlgorithmStatusDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the validation of the algorithm.
+     * The status of algorithm validation.
      * </p>
      * 
-     * @return The status of the validation of the algorithm.
+     * @return The status of algorithm validation.
      */
 
     public java.util.List<AlgorithmStatusItem> getValidationStatuses() {
@@ -55,11 +55,11 @@ public class AlgorithmStatusDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the validation of the algorithm.
+     * The status of algorithm validation.
      * </p>
      * 
      * @param validationStatuses
-     *        The status of the validation of the algorithm.
+     *        The status of algorithm validation.
      */
 
     public void setValidationStatuses(java.util.Collection<AlgorithmStatusItem> validationStatuses) {
@@ -73,7 +73,7 @@ public class AlgorithmStatusDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the validation of the algorithm.
+     * The status of algorithm validation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class AlgorithmStatusDetails implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param validationStatuses
-     *        The status of the validation of the algorithm.
+     *        The status of algorithm validation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class AlgorithmStatusDetails implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of the validation of the algorithm.
+     * The status of algorithm validation.
      * </p>
      * 
      * @param validationStatuses
-     *        The status of the validation of the algorithm.
+     *        The status of algorithm validation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

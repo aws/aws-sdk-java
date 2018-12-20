@@ -55,7 +55,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private AlgorithmSpecification algorithmSpecification;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
      * </p>
      * <p>
      * During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a
@@ -356,7 +356,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
      * </p>
      * <p>
      * During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a
@@ -373,7 +373,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
      *        behalf. </p>
      *        <p>
      *        During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket,
@@ -395,7 +395,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
      * </p>
      * <p>
      * During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a
@@ -411,7 +411,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your
+     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
      *         behalf. </p>
      *         <p>
      *         During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket,
@@ -433,7 +433,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your behalf.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.
      * </p>
      * <p>
      * During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a
@@ -450,7 +450,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform tasks on your
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your
      *        behalf. </p>
      *        <p>
      *        During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket,

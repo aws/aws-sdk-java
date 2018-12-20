@@ -303,7 +303,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<SecondaryStatusTransition> secondaryStatusTransitions;
     /**
      * <p>
-     * A list of final metric values that are set when the Training Job completes. Used only if the training job was
+     * A list of final metric values that are set when the training job completes. Used only if the training job was
      * configured to use metrics.
      * </p>
      */
@@ -2441,11 +2441,11 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of final metric values that are set when the Training Job completes. Used only if the training job was
+     * A list of final metric values that are set when the training job completes. Used only if the training job was
      * configured to use metrics.
      * </p>
      * 
-     * @return A list of final metric values that are set when the Training Job completes. Used only if the training job
+     * @return A list of final metric values that are set when the training job completes. Used only if the training job
      *         was configured to use metrics.
      */
 
@@ -2455,12 +2455,12 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of final metric values that are set when the Training Job completes. Used only if the training job was
+     * A list of final metric values that are set when the training job completes. Used only if the training job was
      * configured to use metrics.
      * </p>
      * 
      * @param finalMetricDataList
-     *        A list of final metric values that are set when the Training Job completes. Used only if the training job
+     *        A list of final metric values that are set when the training job completes. Used only if the training job
      *        was configured to use metrics.
      */
 
@@ -2475,7 +2475,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of final metric values that are set when the Training Job completes. Used only if the training job was
+     * A list of final metric values that are set when the training job completes. Used only if the training job was
      * configured to use metrics.
      * </p>
      * <p>
@@ -2485,7 +2485,7 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param finalMetricDataList
-     *        A list of final metric values that are set when the Training Job completes. Used only if the training job
+     *        A list of final metric values that are set when the training job completes. Used only if the training job
      *        was configured to use metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2502,12 +2502,12 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of final metric values that are set when the Training Job completes. Used only if the training job was
+     * A list of final metric values that are set when the training job completes. Used only if the training job was
      * configured to use metrics.
      * </p>
      * 
      * @param finalMetricDataList
-     *        A list of final metric values that are set when the Training Job completes. Used only if the training job
+     *        A list of final metric values that are set when the training job completes. Used only if the training job
      *        was configured to use metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -334,10 +334,10 @@ public interface AWSWAF {
 
     /**
      * <p>
-     * Creates an <a>IPSet</a>, which you use to specify which web requests you want to allow or block based on the IP
-     * addresses that the requests originate from. For example, if you're receiving a lot of requests from one or more
-     * individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can create
-     * an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
+     * Creates an <a>IPSet</a>, which you use to specify which web requests that you want to allow or block based on the
+     * IP addresses that the requests originate from. For example, if you're receiving a lot of requests from one or
+     * more individual IP addresses or one or more ranges of IP addresses and you want to block the requests, you can
+     * create an <code>IPSet</code> that contains those IP addresses and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>IPSet</code>, perform the following steps:
@@ -758,7 +758,7 @@ public interface AWSWAF {
      * Creates a <code>Rule</code>, which contains the <code>IPSet</code> objects, <code>ByteMatchSet</code> objects,
      * and other predicates that identify the requests that you want to block. If you add more than one predicate to a
      * <code>Rule</code>, a request must match all of the specifications to be allowed or blocked. For example, suppose
-     * you add the following to a <code>Rule</code>:
+     * that you add the following to a <code>Rule</code>:
      * </p>
      * <ul>
      * <li>
@@ -3356,23 +3356,20 @@ public interface AWSWAF {
      * <ol>
      * <li>
      * <p>
-     * Create an Amazon Kinesis Data Firehose delivery stream. For more information, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html">Creating an Amazon Kinesis Data
-     * Firehose Delivery Stream</a>.
+     * Create an Amazon Kinesis Data Firehose .
      * </p>
      * </li>
      * <li>
      * <p>
-     * Associate that delivery stream to your web ACL using a <code>PutLoggingConfiguration</code> request.
+     * Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code> request.
      * </p>
      * </li>
      * </ol>
      * <p>
      * When you successfully enable logging using a <code>PutLoggingConfiguration</code> request, AWS WAF will create a
-     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose delivery
-     * stream. For more information, see <a
-     * href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL Traffic Information</a>
-     * in the <i>AWS WAF Developer Guide</i>.
+     * service linked role with the necessary permissions to write logs to the Amazon Kinesis Data Firehose. For more
+     * information, see <a href="http://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging Web ACL
+     * Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
      * </p>
      * 
      * @param putLoggingConfigurationRequest
@@ -3384,6 +3381,14 @@ public interface AWSWAF {
      * @throws WAFStaleDataException
      *         The operation failed because you tried to create, update, or delete an object by using a change token
      *         that has already been used.
+     * @throws WAFServiceLinkedRoleErrorException
+     *         AWS WAF is not able to access the service linked role. This can be caused by a previous
+     *         <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20
+     *         seconds. Please try your request again. The service linked role can also be locked by a previous
+     *         <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you
+     *         recently made a <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again.
+     *         If you receive this same exception again, you will have to wait additional time until the role is
+     *         unlocked.
      * @sample AWSWAF.PutLoggingConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutLoggingConfiguration" target="_top">AWS
      *      API Documentation</a>
@@ -4697,7 +4702,7 @@ public interface AWSWAF {
      * Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code> object identifies
      * a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that specifies the web requests that you want to
      * allow, block, or count. If you add more than one predicate to a <code>Rule</code>, a request must match all of
-     * the specifications to be allowed, blocked, or counted. For example, suppose you add the following to a
+     * the specifications to be allowed, blocked, or counted. For example, suppose that you add the following to a
      * <code>Rule</code>:
      * </p>
      * <ul>
@@ -5341,10 +5346,10 @@ public interface AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests you want to allow, block,
-     * or count. For example, if you're receiving requests that contain snippets of SQL code in the query string and you
-     * want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
-     * then configure AWS WAF to block the requests.
+     * You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests that you want to allow,
+     * block, or count. For example, if you're receiving requests that contain snippets of SQL code in the query string
+     * and you want to block the requests, you can create a <code>SqlInjectionMatchSet</code> with the applicable
+     * settings, and then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure a <code>SqlInjectionMatchSet</code>, perform the following steps:
@@ -5528,8 +5533,8 @@ public interface AWSWAF {
      * </li>
      * <li>
      * <p>
-     * The <code>Rules</code> that you want to add and/or delete. If you want to replace one <code>Rule</code> with
-     * another, you delete the existing <code>Rule</code> and add the new one.
+     * The <code>Rules</code> that you want to add or delete. If you want to replace one <code>Rule</code> with another,
+     * you delete the existing <code>Rule</code> and add the new one.
      * </p>
      * </li>
      * <li>
@@ -5543,10 +5548,10 @@ public interface AWSWAF {
      * The order in which you want AWS WAF to evaluate the <code>Rules</code> in a <code>WebACL</code>. If you add more
      * than one <code>Rule</code> to a <code>WebACL</code>, AWS WAF evaluates each request against the
      * <code>Rules</code> in order based on the value of <code>Priority</code>. (The <code>Rule</code> that has the
-     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all of the predicates
-     * (such as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes
-     * the corresponding action, allow or block, and doesn't evaluate the request against the remaining
-     * <code>Rules</code> in the <code>WebACL</code>, if any.
+     * lowest value for <code>Priority</code> is evaluated first.) When a web request matches all the predicates (such
+     * as <code>ByteMatchSets</code> and <code>IPSets</code>) in a <code>Rule</code>, AWS WAF immediately takes the
+     * corresponding action, allow or block, and doesn't evaluate the request against the remaining <code>Rules</code>
+     * in the <code>WebACL</code>, if any.
      * </p>
      * </li>
      * </ul>
@@ -5583,6 +5588,15 @@ public interface AWSWAF {
      * Submit an <code>UpdateWebACL</code> request to specify the <code>Rules</code> that you want to include in the
      * <code>WebACL</code>, to specify the default action, and to associate the <code>WebACL</code> with a CloudFront
      * distribution.
+     * </p>
+     * <p>
+     * The <code>ActivatedRule</code> can be a rule group. If you specify a rule group as your
+     * <code>ActivatedRule</code>, you can exclude specific rules from that rule group.
+     * </p>
+     * <p>
+     * If you already have a rule group associated with a web ACL and want to submit an <code>UpdateWebACL</code>
+     * request to exclude certain rules from that rule group, you must first remove the rule group from the web ACL, the
+     * re-insert it again, specifying the excluded rules. For details, see <a>ActivatedRule$ExcludedRules</a>.
      * </p>
      * </li>
      * </ol>
@@ -5757,7 +5771,7 @@ public interface AWSWAF {
      * <ul>
      * <li>
      * <p>
-     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change a
+     * <code>Action</code>: Whether to insert the object into or delete the object from the array. To change an
      * <code>XssMatchTuple</code>, you delete the existing object and add a new one.
      * </p>
      * </li>
@@ -5778,10 +5792,10 @@ public interface AWSWAF {
      * </li>
      * </ul>
      * <p>
-     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests you want to allow, block, or count.
-     * For example, if you're receiving requests that contain cross-site scripting attacks in the request body and you
-     * want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and then
-     * configure AWS WAF to block the requests.
+     * You use <code>XssMatchSet</code> objects to specify which CloudFront requests that you want to allow, block, or
+     * count. For example, if you're receiving requests that contain cross-site scripting attacks in the request body
+     * and you want to block the requests, you can create an <code>XssMatchSet</code> with the applicable settings, and
+     * then configure AWS WAF to block the requests.
      * </p>
      * <p>
      * To create and configure an <code>XssMatchSet</code>, perform the following steps:

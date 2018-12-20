@@ -87,7 +87,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      * </p>
      * <p>
-     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      * </p>
      * <p>
      * <code>...</code>
@@ -114,8 +114,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get
-     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and
-     * Pipemodes. Keep this in mind when developing algorithms.
+     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe
+     * modes. Keep this in mind when developing algorithms.
      * </p>
      * <p>
      * In distributed training, where you use multiple ML compute EC2 instances, you might choose
@@ -309,7 +309,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      * </p>
      * <p>
-     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      * </p>
      * <p>
      * <code>...</code>
@@ -363,7 +363,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      *        </p>
      *        <p>
-     *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      *        </p>
      *        <p>
      *        <code>...</code>
@@ -423,7 +423,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      * </p>
      * <p>
-     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      * </p>
      * <p>
      * <code>...</code>
@@ -476,7 +476,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *         <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      *         </p>
      *         <p>
-     *         <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     *         <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      *         </p>
      *         <p>
      *         <code>...</code>
@@ -536,7 +536,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      * </p>
      * <p>
-     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     * <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      * </p>
      * <p>
      * <code>...</code>
@@ -590,7 +590,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
      *        </p>
      *        <p>
-     *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-1</code>
+     *        <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>
      *        </p>
      *        <p>
      *        <code>...</code>
@@ -622,8 +622,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get
-     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and
-     * Pipemodes. Keep this in mind when developing algorithms.
+     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe
+     * modes. Keep this in mind when developing algorithms.
      * </p>
      * <p>
      * In distributed training, where you use multiple ML compute EC2 instances, you might choose
@@ -643,7 +643,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't
      *        get any data and you will pay for nodes that aren't getting any training data. This applies in both File
-     *        and Pipemodes. Keep this in mind when developing algorithms.
+     *        and Pipe modes. Keep this in mind when developing algorithms.
      *        </p>
      *        <p>
      *        In distributed training, where you use multiple ML compute EC2 instances, you might choose
@@ -670,8 +670,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get
-     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and
-     * Pipemodes. Keep this in mind when developing algorithms.
+     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe
+     * modes. Keep this in mind when developing algorithms.
      * </p>
      * <p>
      * In distributed training, where you use multiple ML compute EC2 instances, you might choose
@@ -690,7 +690,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes
      *         won't get any data and you will pay for nodes that aren't getting any training data. This applies in both
-     *         File and Pipemodes. Keep this in mind when developing algorithms.
+     *         File and Pipe modes. Keep this in mind when developing algorithms.
      *         </p>
      *         <p>
      *         In distributed training, where you use multiple ML compute EC2 instances, you might choose
@@ -717,8 +717,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get
-     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and
-     * Pipemodes. Keep this in mind when developing algorithms.
+     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe
+     * modes. Keep this in mind when developing algorithms.
      * </p>
      * <p>
      * In distributed training, where you use multiple ML compute EC2 instances, you might choose
@@ -738,7 +738,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't
      *        get any data and you will pay for nodes that aren't getting any training data. This applies in both File
-     *        and Pipemodes. Keep this in mind when developing algorithms.
+     *        and Pipe modes. Keep this in mind when developing algorithms.
      *        </p>
      *        <p>
      *        In distributed training, where you use multiple ML compute EC2 instances, you might choose
@@ -767,8 +767,8 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get
-     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and
-     * Pipemodes. Keep this in mind when developing algorithms.
+     * any data and you will pay for nodes that aren't getting any training data. This applies in both File and Pipe
+     * modes. Keep this in mind when developing algorithms.
      * </p>
      * <p>
      * In distributed training, where you use multiple ML compute EC2 instances, you might choose
@@ -788,7 +788,7 @@ public class S3DataSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't
      *        get any data and you will pay for nodes that aren't getting any training data. This applies in both File
-     *        and Pipemodes. Keep this in mind when developing algorithms.
+     *        and Pipe modes. Keep this in mind when developing algorithms.
      *        </p>
      *        <p>
      *        In distributed training, where you use multiple ML compute EC2 instances, you might choose

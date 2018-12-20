@@ -63,9 +63,13 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
     private static final String EXCEPTION_KEY = "Exception";
     private static final String CLIENT_ID_KEY = "ClientId";
     private static final String USER_AGENT_KEY = "UserAgent";
+
+    private static final HandlerContextKey<ApiCallAttemptMonitoringEvent> LAST_CALL_ATTEMPT =
+            new HandlerContextKey<ApiCallAttemptMonitoringEvent>("LastCallAttemptMonitoringEvent");
+
     private static final Integer VERSION = 1;
-    private static final List<String> SECURITY_TOKENS = Arrays.asList("x-amz-security-token", SignerConstants
-        .X_AMZ_SECURITY_TOKEN);
+    private static final List<String> SECURITY_TOKENS = Arrays.asList("x-amz-security-token",
+                                                                      SignerConstants.X_AMZ_SECURITY_TOKEN);
 
     private static final Map<String, Integer> ENTRY_TO_MAX_SIZE = new ImmutableMapParameter.Builder<String, Integer>()
         .put(CLIENT_ID_KEY, 255)
@@ -85,6 +89,7 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
     @Override
     public void afterAttempt(HandlerAfterAttemptContext context) {
         ApiCallAttemptMonitoringEvent event = generateApiCallAttemptMonitoringEvent(context);
+        context.getRequest().addHandlerContext(LAST_CALL_ATTEMPT, event);
         handToMonitoringListeners(event);
     }
 
@@ -154,6 +159,7 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
         String apiName = request.getHandlerContext(HandlerContextKey.OPERATION_NAME);
         String serviceId = request.getHandlerContext(HandlerContextKey.SERVICE_ID);
         String region = request.getHandlerContext(HandlerContextKey.SIGNING_REGION);
+        ApiCallAttemptMonitoringEvent lastApiCallAttempt = request.getHandlerContext(LAST_CALL_ATTEMPT);
 
         Long timestamp = null;
         Long latency = null;
@@ -172,15 +178,26 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
             }
         }
 
-        return new ApiCallMonitoringEvent()
-            .withApi(apiName)
-            .withVersion(VERSION)
-            .withRegion(region)
-            .withService(serviceId)
-            .withClientId(clientId)
-            .withAttemptCount(requestCount)
-            .withLatency(latency)
-            .withTimestamp(timestamp);
+        ApiCallMonitoringEvent event = new ApiCallMonitoringEvent()
+                .withApi(apiName)
+                .withVersion(VERSION)
+                .withRegion(region)
+                .withService(serviceId)
+                .withClientId(clientId)
+                .withAttemptCount(requestCount)
+                .withLatency(latency)
+                .withUserAgent(trimValueIfExceedsMaxLength(USER_AGENT_KEY, getDefaultUserAgent(request)))
+                .withTimestamp(timestamp);
+
+        if (lastApiCallAttempt != null) {
+            event.withFinalAwsException(lastApiCallAttempt.getAwsException())
+                 .withFinalAwsExceptionMessage(lastApiCallAttempt.getAwsExceptionMessage())
+                 .withFinalSdkException(lastApiCallAttempt.getSdkException())
+                 .withFinalSdkExceptionMessage(lastApiCallAttempt.getSdkExceptionMessage())
+                 .withFinalHttpStatusCode(lastApiCallAttempt.getHttpStatusCode());
+        }
+
+        return event;
     }
 
     private ApiCallMonitoringEvent generateApiCallMonitoringEvent(Request<?> request, Exception e) {
@@ -339,14 +356,12 @@ public final class ClientSideMonitoringRequestHandler extends RequestHandler2 {
 
             event.withAwsException(trimValueIfExceedsMaxLength(EXCEPTION_KEY, errorCode));
             event.withAwsExceptionMessage(trimValueIfExceedsMaxLength(EXCEPTION_MESSAGE_KEY, errorMessage));
-
         } else {
             String exceptionClassName = exception.getClass().getName();
             String exceptionMessage = getRootCauseMessage(exception);
 
             event.withSdkException(trimValueIfExceedsMaxLength(EXCEPTION_KEY, exceptionClassName));
-            event.withSdkExceptionMessage(trimValueIfExceedsMaxLength(EXCEPTION_MESSAGE_KEY,
-                                                                      exceptionMessage));
+            event.withSdkExceptionMessage(trimValueIfExceedsMaxLength(EXCEPTION_MESSAGE_KEY, exceptionMessage));
         }
     }
 

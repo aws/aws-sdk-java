@@ -26,18 +26,18 @@ public class ExportClientVpnClientConfigurationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * the contents of the client configuration file.
+     * The contents of the Client VPN endpoint configuration file.
      * </p>
      */
     private String clientConfiguration;
 
     /**
      * <p>
-     * the contents of the client configuration file.
+     * The contents of the Client VPN endpoint configuration file.
      * </p>
      * 
      * @param clientConfiguration
-     *        the contents of the client configuration file.
+     *        The contents of the Client VPN endpoint configuration file.
      */
 
     public void setClientConfiguration(String clientConfiguration) {
@@ -46,10 +46,10 @@ public class ExportClientVpnClientConfigurationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * the contents of the client configuration file.
+     * The contents of the Client VPN endpoint configuration file.
      * </p>
      * 
-     * @return the contents of the client configuration file.
+     * @return The contents of the Client VPN endpoint configuration file.
      */
 
     public String getClientConfiguration() {
@@ -58,11 +58,11 @@ public class ExportClientVpnClientConfigurationResult extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * the contents of the client configuration file.
+     * The contents of the Client VPN endpoint configuration file.
      * </p>
      * 
      * @param clientConfiguration
-     *        the contents of the client configuration file.
+     *        The contents of the Client VPN endpoint configuration file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

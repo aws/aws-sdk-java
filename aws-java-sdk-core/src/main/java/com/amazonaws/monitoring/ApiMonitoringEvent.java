@@ -28,6 +28,7 @@ public abstract class ApiMonitoringEvent implements MonitoringEvent {
     protected Long timestamp;
     protected Integer version;
     protected String region;
+    protected String userAgent;
 
     /**
      * @return the operation name for the api call being made.
@@ -122,6 +123,21 @@ public abstract class ApiMonitoringEvent implements MonitoringEvent {
      * @return This object for method chaining.
      */
     public abstract ApiMonitoringEvent withRegion(String region);
+
+    /**
+     * @return The full value of the SDK's default user agent header for http requests.
+     */
+    public String getUserAgent() {
+        return userAgent;
+    }
+
+    /**
+     * Sets the userAgent
+     *
+     * @param userAgent The new userAgent value.
+     * @return This object for method chaining.
+     */
+    public abstract ApiMonitoringEvent withUserAgent(String userAgent);
 
     /**
      * @return the type of the event
