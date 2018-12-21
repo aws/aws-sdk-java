@@ -60,6 +60,10 @@ public class ExtendedS3DestinationConfigurationJsonUnmarshaller implements Unmar
                     context.nextToken();
                     extendedS3DestinationConfiguration.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ErrorOutputPrefix", targetDepth)) {
+                    context.nextToken();
+                    extendedS3DestinationConfiguration.setErrorOutputPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("BufferingHints", targetDepth)) {
                     context.nextToken();
                     extendedS3DestinationConfiguration.setBufferingHints(BufferingHintsJsonUnmarshaller.getInstance().unmarshall(context));

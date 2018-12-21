@@ -65,7 +65,7 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
     private String typeName;
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. The default value is <code>OneDay</code>.
@@ -348,14 +348,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
-     *        The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code>
+     *        The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code>
      *        to facilitate the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *        for the Amazon ES Destination</a>. The default value is <code>OneDay</code>.
@@ -368,14 +368,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
-     * @return The Elasticsearch index rotation period. Index rotation appends a time stamp to the
-     *         <code>IndexName</code> to facilitate the expiration of old data. For more information, see <a
+     * @return The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code>
+     *         to facilitate the expiration of old data. For more information, see <a
      *         href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *         for the Amazon ES Destination</a>. The default value is <code>OneDay</code>.
      * @see ElasticsearchIndexRotationPeriod
@@ -387,14 +387,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
-     *        The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code>
+     *        The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code>
      *        to facilitate the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *        for the Amazon ES Destination</a>. The default value is <code>OneDay</code>.
@@ -409,14 +409,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
-     *        The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code>
+     *        The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code>
      *        to facilitate the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *        for the Amazon ES Destination</a>. The default value is <code>OneDay</code>.
@@ -429,14 +429,14 @@ public class ElasticsearchDestinationConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code> to
+     * The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code> to
      * facilitate the expiration of old data. For more information, see <a
      * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation for the
      * Amazon ES Destination</a>. The default value is <code>OneDay</code>.
      * </p>
      * 
      * @param indexRotationPeriod
-     *        The Elasticsearch index rotation period. Index rotation appends a time stamp to the <code>IndexName</code>
+     *        The Elasticsearch index rotation period. Index rotation appends a timestamp to the <code>IndexName</code>
      *        to facilitate the expiration of old data. For more information, see <a
      *        href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#es-index-rotation">Index Rotation
      *        for the Amazon ES Destination</a>. The default value is <code>OneDay</code>.

@@ -93,6 +93,8 @@ public class H264SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("softness").build();
     private static final MarshallingInfo<String> SPATIALAQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("spatialAq").build();
+    private static final MarshallingInfo<String> SUBGOPLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subgopLength").build();
     private static final MarshallingInfo<String> SYNTAX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("syntax").build();
     private static final MarshallingInfo<String> TEMPORALAQ_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -149,6 +151,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getSlices(), SLICES_BINDING);
             protocolMarshaller.marshall(h264Settings.getSoftness(), SOFTNESS_BINDING);
             protocolMarshaller.marshall(h264Settings.getSpatialAq(), SPATIALAQ_BINDING);
+            protocolMarshaller.marshall(h264Settings.getSubgopLength(), SUBGOPLENGTH_BINDING);
             protocolMarshaller.marshall(h264Settings.getSyntax(), SYNTAX_BINDING);
             protocolMarshaller.marshall(h264Settings.getTemporalAq(), TEMPORALAQ_BINDING);
             protocolMarshaller.marshall(h264Settings.getTimecodeInsertion(), TIMECODEINSERTION_BINDING);

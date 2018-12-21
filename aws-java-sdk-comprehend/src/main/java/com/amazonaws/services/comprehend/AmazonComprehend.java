@@ -178,7 +178,8 @@ public interface AmazonComprehend {
      * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
-     * you can use it to categorize a set of labeled documents into the categories.
+     * you can use it to categorize a set of labeled documents into the categories. For more information, see
+     * <a>how-document-classification</a>.
      * </p>
      * 
      * @param createDocumentClassifierRequest
@@ -1031,6 +1032,60 @@ public interface AmazonComprehend {
      *      target="_top">AWS API Documentation</a>
      */
     StopSentimentDetectionJobResult stopSentimentDetectionJob(StopSentimentDetectionJobRequest stopSentimentDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops a document classifier training job while in progress.
+     * </p>
+     * <p>
+     * If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the
+     * <code>TRAINED</code>; otherwise the training job is stopped and put into the <code>STOPPED</code> state and the
+     * service sends back an HTTP 200 response with an empty HTTP body.
+     * </p>
+     * 
+     * @param stopTrainingDocumentClassifierRequest
+     * @return Result of the StopTrainingDocumentClassifier operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopTrainingDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopTrainingDocumentClassifierResult stopTrainingDocumentClassifier(StopTrainingDocumentClassifierRequest stopTrainingDocumentClassifierRequest);
+
+    /**
+     * <p>
+     * Stops an entity recognizer training job while in progress.
+     * </p>
+     * <p>
+     * If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the
+     * <code>TRAINED</code>; otherwise the training job is stopped and putted into the <code>STOPPED</code> state and
+     * the service sends back an HTTP 200 response with an empty HTTP body.
+     * </p>
+     * 
+     * @param stopTrainingEntityRecognizerRequest
+     * @return Result of the StopTrainingEntityRecognizer operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is invalid.
+     * @throws TooManyRequestsException
+     *         The number of requests exceeds the limit. Resubmit your request later.
+     * @throws ResourceNotFoundException
+     *         The specified resource ARN was not found. Check the ARN and try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonComprehend.StopTrainingEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopTrainingEntityRecognizerResult stopTrainingEntityRecognizer(StopTrainingEntityRecognizerRequest stopTrainingEntityRecognizerRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

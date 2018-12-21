@@ -20,7 +20,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation.
- * Note that en-AU, en-UK, and fr-CA languages are in preview and are only available to whitelisted customers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJob" target="_top">AWS API

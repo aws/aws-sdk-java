@@ -503,6 +503,11 @@ public class AbstractAWSCognitoIdentityProvider implements AWSCognitoIdentityPro
     }
 
     @Override
+    public UpdateUserPoolDomainResult updateUserPoolDomain(UpdateUserPoolDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public VerifySoftwareTokenResult verifySoftwareToken(VerifySoftwareTokenRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

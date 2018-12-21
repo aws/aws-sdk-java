@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ScheduleActionSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /** Settings to emit HLS metadata */
+    private HlsTimedMetadataScheduleActionSettings hlsTimedMetadataSettings;
     /** Settings to switch an input */
     private InputSwitchScheduleActionSettings inputSwitchSettings;
     /** Settings for SCTE-35 return_to_network message */
@@ -38,6 +40,40 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     private StaticImageActivateScheduleActionSettings staticImageActivateSettings;
     /** Settings to deactivate a static image overlay */
     private StaticImageDeactivateScheduleActionSettings staticImageDeactivateSettings;
+
+    /**
+     * Settings to emit HLS metadata
+     * 
+     * @param hlsTimedMetadataSettings
+     *        Settings to emit HLS metadata
+     */
+
+    public void setHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings hlsTimedMetadataSettings) {
+        this.hlsTimedMetadataSettings = hlsTimedMetadataSettings;
+    }
+
+    /**
+     * Settings to emit HLS metadata
+     * 
+     * @return Settings to emit HLS metadata
+     */
+
+    public HlsTimedMetadataScheduleActionSettings getHlsTimedMetadataSettings() {
+        return this.hlsTimedMetadataSettings;
+    }
+
+    /**
+     * Settings to emit HLS metadata
+     * 
+     * @param hlsTimedMetadataSettings
+     *        Settings to emit HLS metadata
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduleActionSettings withHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettings hlsTimedMetadataSettings) {
+        setHlsTimedMetadataSettings(hlsTimedMetadataSettings);
+        return this;
+    }
 
     /**
      * Settings to switch an input
@@ -255,6 +291,8 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getHlsTimedMetadataSettings() != null)
+            sb.append("HlsTimedMetadataSettings: ").append(getHlsTimedMetadataSettings()).append(",");
         if (getInputSwitchSettings() != null)
             sb.append("InputSwitchSettings: ").append(getInputSwitchSettings()).append(",");
         if (getScte35ReturnToNetworkSettings() != null)
@@ -281,6 +319,10 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         if (obj instanceof ScheduleActionSettings == false)
             return false;
         ScheduleActionSettings other = (ScheduleActionSettings) obj;
+        if (other.getHlsTimedMetadataSettings() == null ^ this.getHlsTimedMetadataSettings() == null)
+            return false;
+        if (other.getHlsTimedMetadataSettings() != null && other.getHlsTimedMetadataSettings().equals(this.getHlsTimedMetadataSettings()) == false)
+            return false;
         if (other.getInputSwitchSettings() == null ^ this.getInputSwitchSettings() == null)
             return false;
         if (other.getInputSwitchSettings() != null && other.getInputSwitchSettings().equals(this.getInputSwitchSettings()) == false)
@@ -315,6 +357,7 @@ public class ScheduleActionSettings implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getHlsTimedMetadataSettings() == null) ? 0 : getHlsTimedMetadataSettings().hashCode());
         hashCode = prime * hashCode + ((getInputSwitchSettings() == null) ? 0 : getInputSwitchSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35ReturnToNetworkSettings() == null) ? 0 : getScte35ReturnToNetworkSettings().hashCode());
         hashCode = prime * hashCode + ((getScte35SpliceInsertSettings() == null) ? 0 : getScte35SpliceInsertSettings().hashCode());

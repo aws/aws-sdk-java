@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a summary of information about a transcription job. Note that en-AU, en-UK, and fr-CA languages are in
- * preview and are only available to whitelisted customers.
+ * Provides a summary of information about a transcription job. .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJobSummary" target="_top">AWS

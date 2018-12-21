@@ -42,7 +42,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
      * </p>
      * <p>
-     * Provide this parameter only if you want to use own custom domain for your user pool. Otherwise, you can exclude
+     * Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude
      * this parameter and use the Amazon Cognito hosted domain instead.
      * </p>
      * <p>
@@ -138,7 +138,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
      * </p>
      * <p>
-     * Provide this parameter only if you want to use own custom domain for your user pool. Otherwise, you can exclude
+     * Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude
      * this parameter and use the Amazon Cognito hosted domain instead.
      * </p>
      * <p>
@@ -151,7 +151,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      *        The configuration for a custom domain that hosts the sign-up and sign-in webpages for your
      *        application.</p>
      *        <p>
-     *        Provide this parameter only if you want to use own custom domain for your user pool. Otherwise, you can
+     *        Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can
      *        exclude this parameter and use the Amazon Cognito hosted domain instead.
      *        </p>
      *        <p>
@@ -169,7 +169,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
      * </p>
      * <p>
-     * Provide this parameter only if you want to use own custom domain for your user pool. Otherwise, you can exclude
+     * Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude
      * this parameter and use the Amazon Cognito hosted domain instead.
      * </p>
      * <p>
@@ -181,7 +181,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * @return The configuration for a custom domain that hosts the sign-up and sign-in webpages for your
      *         application.</p>
      *         <p>
-     *         Provide this parameter only if you want to use own custom domain for your user pool. Otherwise, you can
+     *         Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can
      *         exclude this parameter and use the Amazon Cognito hosted domain instead.
      *         </p>
      *         <p>
@@ -199,7 +199,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      * The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application.
      * </p>
      * <p>
-     * Provide this parameter only if you want to use own custom domain for your user pool. Otherwise, you can exclude
+     * Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can exclude
      * this parameter and use the Amazon Cognito hosted domain instead.
      * </p>
      * <p>
@@ -212,7 +212,7 @@ public class CreateUserPoolDomainRequest extends com.amazonaws.AmazonWebServiceR
      *        The configuration for a custom domain that hosts the sign-up and sign-in webpages for your
      *        application.</p>
      *        <p>
-     *        Provide this parameter only if you want to use own custom domain for your user pool. Otherwise, you can
+     *        Provide this parameter only if you want to use a custom domain for your user pool. Otherwise, you can
      *        exclude this parameter and use the Amazon Cognito hosted domain instead.
      *        </p>
      *        <p>

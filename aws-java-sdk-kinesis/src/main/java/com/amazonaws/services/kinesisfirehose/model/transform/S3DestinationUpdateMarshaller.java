@@ -33,6 +33,8 @@ public class S3DestinationUpdateMarshaller {
             .marshallLocationName("BucketARN").build();
     private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Prefix").build();
+    private static final MarshallingInfo<String> ERROROUTPUTPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorOutputPrefix").build();
     private static final MarshallingInfo<StructuredPojo> BUFFERINGHINTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BufferingHints").build();
     private static final MarshallingInfo<String> COMPRESSIONFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +63,7 @@ public class S3DestinationUpdateMarshaller {
             protocolMarshaller.marshall(s3DestinationUpdate.getRoleARN(), ROLEARN_BINDING);
             protocolMarshaller.marshall(s3DestinationUpdate.getBucketARN(), BUCKETARN_BINDING);
             protocolMarshaller.marshall(s3DestinationUpdate.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(s3DestinationUpdate.getErrorOutputPrefix(), ERROROUTPUTPREFIX_BINDING);
             protocolMarshaller.marshall(s3DestinationUpdate.getBufferingHints(), BUFFERINGHINTS_BINDING);
             protocolMarshaller.marshall(s3DestinationUpdate.getCompressionFormat(), COMPRESSIONFORMAT_BINDING);
             protocolMarshaller.marshall(s3DestinationUpdate.getEncryptionConfiguration(), ENCRYPTIONCONFIGURATION_BINDING);

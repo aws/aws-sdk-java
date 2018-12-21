@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Another modification has already happened. Fetch <b>VersionId</b> again and use it to update the destination.
+ * Another modification has already happened. Fetch <code>VersionId</code> again and use it to update the destination.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

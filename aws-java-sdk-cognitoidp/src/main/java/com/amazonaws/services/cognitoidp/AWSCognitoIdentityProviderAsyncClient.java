@@ -3326,6 +3326,39 @@ public class AWSCognitoIdentityProviderAsyncClient extends AWSCognitoIdentityPro
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateUserPoolDomainResult> updateUserPoolDomainAsync(UpdateUserPoolDomainRequest request) {
+
+        return updateUserPoolDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserPoolDomainResult> updateUserPoolDomainAsync(final UpdateUserPoolDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateUserPoolDomainRequest, UpdateUserPoolDomainResult> asyncHandler) {
+        final UpdateUserPoolDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateUserPoolDomainResult>() {
+            @Override
+            public UpdateUserPoolDomainResult call() throws Exception {
+                UpdateUserPoolDomainResult result = null;
+
+                try {
+                    result = executeUpdateUserPoolDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<VerifySoftwareTokenResult> verifySoftwareTokenAsync(VerifySoftwareTokenRequest request) {
 
         return verifySoftwareTokenAsync(request, null);

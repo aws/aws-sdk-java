@@ -50,6 +50,14 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the value of the attribute can be changed.
      * </p>
+     * <p>
+     * For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter to
+     * <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an
+     * identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the
+     * attribute. For more information, see <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
+     * </p>
      */
     private Boolean mutable;
     /**
@@ -241,9 +249,24 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the value of the attribute can be changed.
      * </p>
+     * <p>
+     * For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter to
+     * <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an
+     * identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the
+     * attribute. For more information, see <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
+     * </p>
      * 
      * @param mutable
-     *        Specifies whether the value of the attribute can be changed.
+     *        Specifies whether the value of the attribute can be changed.</p>
+     *        <p>
+     *        For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter
+     *        to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application
+     *        through an identity provider. If an attribute is immutable, Amazon Cognito throws an error when it
+     *        attempts to update the attribute. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *        >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      */
 
     public void setMutable(Boolean mutable) {
@@ -254,8 +277,23 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the value of the attribute can be changed.
      * </p>
+     * <p>
+     * For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter to
+     * <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an
+     * identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the
+     * attribute. For more information, see <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
+     * </p>
      * 
-     * @return Specifies whether the value of the attribute can be changed.
+     * @return Specifies whether the value of the attribute can be changed.</p>
+     *         <p>
+     *         For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter
+     *         to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application
+     *         through an identity provider. If an attribute is immutable, Amazon Cognito throws an error when it
+     *         attempts to update the attribute. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *         >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      */
 
     public Boolean getMutable() {
@@ -266,9 +304,24 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the value of the attribute can be changed.
      * </p>
+     * <p>
+     * For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter to
+     * <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an
+     * identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the
+     * attribute. For more information, see <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
+     * </p>
      * 
      * @param mutable
-     *        Specifies whether the value of the attribute can be changed.
+     *        Specifies whether the value of the attribute can be changed.</p>
+     *        <p>
+     *        For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter
+     *        to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application
+     *        through an identity provider. If an attribute is immutable, Amazon Cognito throws an error when it
+     *        attempts to update the attribute. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *        >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,8 +334,23 @@ public class SchemaAttributeType implements Serializable, Cloneable, StructuredP
      * <p>
      * Specifies whether the value of the attribute can be changed.
      * </p>
+     * <p>
+     * For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter to
+     * <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application through an
+     * identity provider. If an attribute is immutable, Amazon Cognito throws an error when it attempts to update the
+     * attribute. For more information, see <a href=
+     * "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     * >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
+     * </p>
      * 
-     * @return Specifies whether the value of the attribute can be changed.
+     * @return Specifies whether the value of the attribute can be changed.</p>
+     *         <p>
+     *         For any user pool attribute that's mapped to an identity provider attribute, you must set this parameter
+     *         to <code>true</code>. Amazon Cognito updates mapped attributes when users sign in to your application
+     *         through an identity provider. If an attribute is immutable, Amazon Cognito throws an error when it
+     *         attempts to update the attribute. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html"
+     *         >Specifying Identity Provider Attribute Mappings for Your User Pool</a>.
      */
 
     public Boolean isMutable() {

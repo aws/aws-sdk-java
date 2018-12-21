@@ -35,8 +35,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an
-     * audio file. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in preview are not available.
-     * In the console, the vocabulary section will be greyed-out and SDK will return error message.
+     * audio file.
      * </p>
      * 
      * @param createVocabularyRequest
@@ -50,8 +49,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles transcription of an
-     * audio file. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in preview are not available.
-     * In the console, the vocabulary section will be greyed-out and SDK will return error message.
+     * audio file.
      * </p>
      * 
      * @param createVocabularyRequest
@@ -168,9 +166,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in
-     * preview are not available. In the console, the vocabulary section will be greyed-out and SDK will return error
-     * message.
+     * Gets information about a vocabulary.
      * </p>
      * 
      * @param getVocabularyRequest
@@ -183,9 +179,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Gets information about a vocabulary. Note that vocabularies for en-AU, en-UK, and fr-CA languages that are in
-     * preview are not available. In the console, the vocabulary section will be greyed-out and SDK will return error
-     * message.
+     * Gets information about a vocabulary.
      * </p>
      * 
      * @param getVocabularyRequest
@@ -267,8 +261,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Starts an asynchronous job to transcribe speech to text. Note that en-AU, en-UK, and fr-CA languages are in
-     * preview and are only available to whitelisted customers.
+     * Starts an asynchronous job to transcribe speech to text.
      * </p>
      * 
      * @param startTranscriptionJobRequest
@@ -281,8 +274,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Starts an asynchronous job to transcribe speech to text. Note that en-AU, en-UK, and fr-CA languages are in
-     * preview and are only available to whitelisted customers.
+     * Starts an asynchronous job to transcribe speech to text.
      * </p>
      * 
      * @param startTranscriptionJobRequest
@@ -301,9 +293,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
-     * existing information with the values that you provide in the request. Note that vocabularies for en-AU, en-UK,
-     * and fr-CA languages that are in preview are not available. In the console, the vocabulary section will be
-     * greyed-out and SDK will return error message.
+     * existing information with the values that you provide in the request.
      * </p>
      * 
      * @param updateVocabularyRequest
@@ -317,9 +307,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Updates an existing vocabulary with new values. The <code>UpdateVocabulary</code> operation overwrites all of the
-     * existing information with the values that you provide in the request. Note that vocabularies for en-AU, en-UK,
-     * and fr-CA languages that are in preview are not available. In the console, the vocabulary section will be
-     * greyed-out and SDK will return error message.
+     * existing information with the values that you provide in the request.
      * </p>
      * 
      * @param updateVocabularyRequest

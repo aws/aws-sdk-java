@@ -1,3 +1,24 @@
+# __1.11.474__ __2018-12-20__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - This release provides support for ID3 tags and video quality setting for subgop_length.
+
+## __Amazon Cognito Identity Provider__
+  - ### Features
+    - Amazon Cognito now has API support for updating the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.
+
+## __Amazon Comprehend__
+  - ### Features
+    - This SDK release adds functionality to stop training Custom Document Classifier or Custom Entity Recognizer in Amazon Comprehend.
+
+## __Amazon Kinesis Firehose__
+  - ### Features
+    - Support for specifying customized s3 keys and supplying a separate prefix for failed-records
+
+## __Amazon Transcribe Service__
+  - ### Features
+    - With this release, Amazon Transcribe now supports transcriptions from audio sources in Italian (it-IT).
+
 # __1.11.473__ __2018-12-19__
 ## __AWS WAF__
   - ### Features

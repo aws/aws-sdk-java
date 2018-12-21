@@ -205,7 +205,8 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
-     * you can use it to categorize a set of labeled documents into the categories.
+     * you can use it to categorize a set of labeled documents into the categories. For more information, see
+     * <a>how-document-classification</a>.
      * </p>
      * 
      * @param createDocumentClassifierRequest
@@ -220,7 +221,8 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      * <p>
      * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
-     * you can use it to categorize a set of labeled documents into the categories.
+     * you can use it to categorize a set of labeled documents into the categories. For more information, see
+     * <a>how-document-classification</a>.
      * </p>
      * 
      * @param createDocumentClassifierRequest
@@ -1533,5 +1535,99 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     java.util.concurrent.Future<StopSentimentDetectionJobResult> stopSentimentDetectionJobAsync(
             StopSentimentDetectionJobRequest stopSentimentDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopSentimentDetectionJobRequest, StopSentimentDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a document classifier training job while in progress.
+     * </p>
+     * <p>
+     * If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the
+     * <code>TRAINED</code>; otherwise the training job is stopped and put into the <code>STOPPED</code> state and the
+     * service sends back an HTTP 200 response with an empty HTTP body.
+     * </p>
+     * 
+     * @param stopTrainingDocumentClassifierRequest
+     * @return A Java Future containing the result of the StopTrainingDocumentClassifier operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsync.StopTrainingDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopTrainingDocumentClassifierResult> stopTrainingDocumentClassifierAsync(
+            StopTrainingDocumentClassifierRequest stopTrainingDocumentClassifierRequest);
+
+    /**
+     * <p>
+     * Stops a document classifier training job while in progress.
+     * </p>
+     * <p>
+     * If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the
+     * <code>TRAINED</code>; otherwise the training job is stopped and put into the <code>STOPPED</code> state and the
+     * service sends back an HTTP 200 response with an empty HTTP body.
+     * </p>
+     * 
+     * @param stopTrainingDocumentClassifierRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopTrainingDocumentClassifier operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsyncHandler.StopTrainingDocumentClassifier
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingDocumentClassifier"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopTrainingDocumentClassifierResult> stopTrainingDocumentClassifierAsync(
+            StopTrainingDocumentClassifierRequest stopTrainingDocumentClassifierRequest,
+            com.amazonaws.handlers.AsyncHandler<StopTrainingDocumentClassifierRequest, StopTrainingDocumentClassifierResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops an entity recognizer training job while in progress.
+     * </p>
+     * <p>
+     * If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the
+     * <code>TRAINED</code>; otherwise the training job is stopped and putted into the <code>STOPPED</code> state and
+     * the service sends back an HTTP 200 response with an empty HTTP body.
+     * </p>
+     * 
+     * @param stopTrainingEntityRecognizerRequest
+     * @return A Java Future containing the result of the StopTrainingEntityRecognizer operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsync.StopTrainingEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopTrainingEntityRecognizerResult> stopTrainingEntityRecognizerAsync(
+            StopTrainingEntityRecognizerRequest stopTrainingEntityRecognizerRequest);
+
+    /**
+     * <p>
+     * Stops an entity recognizer training job while in progress.
+     * </p>
+     * <p>
+     * If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the
+     * <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the
+     * <code>TRAINED</code>; otherwise the training job is stopped and putted into the <code>STOPPED</code> state and
+     * the service sends back an HTTP 200 response with an empty HTTP body.
+     * </p>
+     * 
+     * @param stopTrainingEntityRecognizerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopTrainingEntityRecognizer operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsyncHandler.StopTrainingEntityRecognizer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopTrainingEntityRecognizer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopTrainingEntityRecognizerResult> stopTrainingEntityRecognizerAsync(
+            StopTrainingEntityRecognizerRequest stopTrainingEntityRecognizerRequest,
+            com.amazonaws.handlers.AsyncHandler<StopTrainingEntityRecognizerRequest, StopTrainingEntityRecognizerResult> asyncHandler);
 
 }

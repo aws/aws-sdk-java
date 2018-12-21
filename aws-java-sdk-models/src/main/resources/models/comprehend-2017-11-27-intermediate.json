@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -347,7 +347,7 @@
       "asyncReturnType" : "CreateDocumentClassifierResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a set of training documents that labeled with the categories that you want to use. After the classifier is trained you can use it to categorize a set of labeled documents into the categories. </p>",
+      "documentation" : "<p>Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a set of training documents that labeled with the categories that you want to use. After the classifier is trained you can use it to categorize a set of labeled documents into the categories. For more information, see <a>how-document-classification</a>.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
@@ -2023,6 +2023,102 @@
         "documentation" : null
       },
       "syncReturnType" : "StopSentimentDetectionJobResult"
+    },
+    "StopTrainingDocumentClassifier" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<StopTrainingDocumentClassifierResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<StopTrainingDocumentClassifierResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopTrainingDocumentClassifierRequest, StopTrainingDocumentClassifierResult>",
+      "asyncReturnType" : "StopTrainingDocumentClassifierResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Stops a document classifier training job while in progress.</p> <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and put into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with an empty HTTP body. </p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The request is invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "TooManyRequestsException",
+        "documentation" : "<p>The number of requests exceeds the limit. Resubmit your request later.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource ARN was not found. Check the ARN and try your request again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p>An internal server error occurred. Retry your request.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "StopTrainingDocumentClassifierRequest",
+        "variableName" : "stopTrainingDocumentClassifierRequest",
+        "variableType" : "StopTrainingDocumentClassifierRequest",
+        "documentation" : "",
+        "simpleType" : "StopTrainingDocumentClassifierRequest",
+        "variableSetterType" : "StopTrainingDocumentClassifierRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "stopTrainingDocumentClassifier",
+      "operationName" : "StopTrainingDocumentClassifier",
+      "returnType" : {
+        "returnType" : "StopTrainingDocumentClassifierResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "StopTrainingDocumentClassifierResult"
+    },
+    "StopTrainingEntityRecognizer" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<StopTrainingEntityRecognizerResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<StopTrainingEntityRecognizerResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<StopTrainingEntityRecognizerRequest, StopTrainingEntityRecognizerResult>",
+      "asyncReturnType" : "StopTrainingEntityRecognizerResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Stops an entity recognizer training job while in progress.</p> <p>If the training job state is <code>TRAINING</code>, the job is marked for termination and put into the <code>STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training job is stopped and putted into the <code>STOPPED</code> state and the service sends back an HTTP 200 response with an empty HTTP body.</p>",
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "InvalidRequestException",
+        "documentation" : "<p>The request is invalid.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "TooManyRequestsException",
+        "documentation" : "<p>The number of requests exceeds the limit. Resubmit your request later.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceNotFoundException",
+        "documentation" : "<p>The specified resource ARN was not found. Check the ARN and try your request again.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InternalServerException",
+        "documentation" : "<p>An internal server error occurred. Retry your request.</p>",
+        "httpStatusCode" : null
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "StopTrainingEntityRecognizerRequest",
+        "variableName" : "stopTrainingEntityRecognizerRequest",
+        "variableType" : "StopTrainingEntityRecognizerRequest",
+        "documentation" : "",
+        "simpleType" : "StopTrainingEntityRecognizerRequest",
+        "variableSetterType" : "StopTrainingEntityRecognizerRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "stopTrainingEntityRecognizer",
+      "operationName" : "StopTrainingEntityRecognizer",
+      "returnType" : {
+        "returnType" : "StopTrainingEntityRecognizerResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "StopTrainingEntityRecognizerResult"
     }
   },
   "shapes" : {
@@ -22156,11 +22252,11 @@
         "c2jName" : "Status",
         "c2jShape" : "ModelStatus",
         "deprecated" : false,
-        "documentation" : "<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>",
+        "documentation" : "<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>",
         "enumType" : "ModelStatus",
-        "fluentSetterDocumentation" : "/**<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ModelStatus*/",
+        "fluentSetterDocumentation" : "/**<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ModelStatus*/",
         "fluentSetterMethodName" : "withStatus",
-        "getterDocumentation" : "/**<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@return The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@see ModelStatus*/",
+        "getterDocumentation" : "/**<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@return The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@see ModelStatus*/",
         "getterMethodName" : "getStatus",
         "getterModel" : {
           "returnType" : "String",
@@ -22193,7 +22289,7 @@
         "marshallingType" : "STRING",
         "name" : "Status",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@see ModelStatus*/",
+        "setterDocumentation" : "/**<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@see ModelStatus*/",
         "setterMethodName" : "setStatus",
         "setterModel" : {
           "timestampFormat" : null,
@@ -22207,13 +22303,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ModelStatus*/",
+        "varargSetterDocumentation" : "/**<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ModelStatus*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "status",
           "variableType" : "String",
-          "documentation" : "<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>",
+          "documentation" : "<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -23221,11 +23317,11 @@
           "c2jName" : "Status",
           "c2jShape" : "ModelStatus",
           "deprecated" : false,
-          "documentation" : "<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>",
+          "documentation" : "<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>",
           "enumType" : "ModelStatus",
-          "fluentSetterDocumentation" : "/**<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ModelStatus*/",
+          "fluentSetterDocumentation" : "/**<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ModelStatus*/",
           "fluentSetterMethodName" : "withStatus",
-          "getterDocumentation" : "/**<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@return The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@see ModelStatus*/",
+          "getterDocumentation" : "/**<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@return The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@see ModelStatus*/",
           "getterMethodName" : "getStatus",
           "getterModel" : {
             "returnType" : "String",
@@ -23258,7 +23354,7 @@
           "marshallingType" : "STRING",
           "name" : "Status",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@see ModelStatus*/",
+          "setterDocumentation" : "/**<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@see ModelStatus*/",
           "setterMethodName" : "setStatus",
           "setterModel" : {
             "timestampFormat" : null,
@@ -23272,13 +23368,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ModelStatus*/",
+          "varargSetterDocumentation" : "/**<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>\n@param status The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ModelStatus*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "status",
             "variableType" : "String",
-            "documentation" : "<p>The status of the document classifier. The the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>",
+            "documentation" : "<p>The status of the document classifier. If the status is <code>TRAINED</code> the classifier is ready to use. If the status is <code>FAILED</code> you can see additional information about why the classifier wasn't trained in the <code>Message</code> field.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -43657,6 +43753,12 @@
         "name" : "DELETING",
         "value" : "DELETING"
       }, {
+        "name" : "STOP_REQUESTED",
+        "value" : "STOP_REQUESTED"
+      }, {
+        "name" : "STOPPED",
+        "value" : "STOPPED"
+      }, {
         "name" : "IN_ERROR",
         "value" : "IN_ERROR"
       }, {
@@ -55821,6 +55923,442 @@
         "documentation" : null,
         "simpleType" : "StopSentimentDetectionJobResult",
         "variableSetterType" : "StopSentimentDetectionJobResult"
+      },
+      "wrapper" : false
+    },
+    "StopTrainingDocumentClassifierRequest" : {
+      "c2jName" : "StopTrainingDocumentClassifierRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "StopTrainingDocumentClassifier",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Comprehend_20171127.StopTrainingDocumentClassifier",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "DocumentClassifierArn",
+        "c2jShape" : "DocumentClassifierArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>\n@param documentClassifierArn The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDocumentClassifierArn",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>\n@return The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.*/",
+        "getterMethodName" : "getDocumentClassifierArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "DocumentClassifierArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DocumentClassifierArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DocumentClassifierArn",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>\n@param documentClassifierArn The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.*/",
+        "setterMethodName" : "setDocumentClassifierArn",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "documentClassifierArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>\n@param documentClassifierArn The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "documentClassifierArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "DocumentClassifierArn" : {
+          "c2jName" : "DocumentClassifierArn",
+          "c2jShape" : "DocumentClassifierArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>\n@param documentClassifierArn The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDocumentClassifierArn",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>\n@return The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.*/",
+          "getterMethodName" : "getDocumentClassifierArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "DocumentClassifierArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DocumentClassifierArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DocumentClassifierArn",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>\n@param documentClassifierArn The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.*/",
+          "setterMethodName" : "setDocumentClassifierArn",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "documentClassifierArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>\n@param documentClassifierArn The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "documentClassifierArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "DocumentClassifierArn" ],
+      "shapeName" : "StopTrainingDocumentClassifierRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "StopTrainingDocumentClassifierRequest",
+        "variableName" : "stopTrainingDocumentClassifierRequest",
+        "variableType" : "StopTrainingDocumentClassifierRequest",
+        "documentation" : null,
+        "simpleType" : "StopTrainingDocumentClassifierRequest",
+        "variableSetterType" : "StopTrainingDocumentClassifierRequest"
+      },
+      "wrapper" : false
+    },
+    "StopTrainingDocumentClassifierResult" : {
+      "c2jName" : "StopTrainingDocumentClassifierResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "StopTrainingDocumentClassifierResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "StopTrainingDocumentClassifierResult",
+        "variableName" : "stopTrainingDocumentClassifierResult",
+        "variableType" : "StopTrainingDocumentClassifierResult",
+        "documentation" : null,
+        "simpleType" : "StopTrainingDocumentClassifierResult",
+        "variableSetterType" : "StopTrainingDocumentClassifierResult"
+      },
+      "wrapper" : false
+    },
+    "StopTrainingEntityRecognizerRequest" : {
+      "c2jName" : "StopTrainingEntityRecognizerRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "StopTrainingEntityRecognizer",
+        "locationName" : null,
+        "requestUri" : "/",
+        "target" : "Comprehend_20171127.StopTrainingEntityRecognizer",
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "EntityRecognizerArn",
+        "c2jShape" : "EntityRecognizerArn",
+        "deprecated" : false,
+        "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>\n@param entityRecognizerArn The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withEntityRecognizerArn",
+        "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>\n@return The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.*/",
+        "getterMethodName" : "getEntityRecognizerArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "EntityRecognizerArn",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "EntityRecognizerArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "EntityRecognizerArn",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>\n@param entityRecognizerArn The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.*/",
+        "setterMethodName" : "setEntityRecognizerArn",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "entityRecognizerArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>\n@param entityRecognizerArn The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "entityRecognizerArn",
+          "variableType" : "String",
+          "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "EntityRecognizerArn" : {
+          "c2jName" : "EntityRecognizerArn",
+          "c2jShape" : "EntityRecognizerArn",
+          "deprecated" : false,
+          "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>\n@param entityRecognizerArn The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withEntityRecognizerArn",
+          "getterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>\n@return The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.*/",
+          "getterMethodName" : "getEntityRecognizerArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "EntityRecognizerArn",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "EntityRecognizerArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "EntityRecognizerArn",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>\n@param entityRecognizerArn The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.*/",
+          "setterMethodName" : "setEntityRecognizerArn",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "entityRecognizerArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>\n@param entityRecognizerArn The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "entityRecognizerArn",
+            "variableType" : "String",
+            "documentation" : "<p>The Amazon Resource Name (ARN) that identifies the entity recognizer currently being trained.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "EntityRecognizerArn" ],
+      "shapeName" : "StopTrainingEntityRecognizerRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "StopTrainingEntityRecognizerRequest",
+        "variableName" : "stopTrainingEntityRecognizerRequest",
+        "variableType" : "StopTrainingEntityRecognizerRequest",
+        "documentation" : null,
+        "simpleType" : "StopTrainingEntityRecognizerRequest",
+        "variableSetterType" : "StopTrainingEntityRecognizerRequest"
+      },
+      "wrapper" : false
+    },
+    "StopTrainingEntityRecognizerResult" : {
+      "c2jName" : "StopTrainingEntityRecognizerResponse",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : null,
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "StopTrainingEntityRecognizerResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "StopTrainingEntityRecognizerResult",
+        "variableName" : "stopTrainingEntityRecognizerResult",
+        "variableType" : "StopTrainingEntityRecognizerResult",
+        "documentation" : null,
+        "simpleType" : "StopTrainingEntityRecognizerResult",
+        "variableSetterType" : "StopTrainingEntityRecognizerResult"
       },
       "wrapper" : false
     },

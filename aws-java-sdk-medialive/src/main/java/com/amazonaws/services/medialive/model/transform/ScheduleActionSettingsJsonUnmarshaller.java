@@ -48,6 +48,11 @@ public class ScheduleActionSettingsJsonUnmarshaller implements Unmarshaller<Sche
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("hlsTimedMetadataSettings", targetDepth)) {
+                    context.nextToken();
+                    scheduleActionSettings
+                            .setHlsTimedMetadataSettings(HlsTimedMetadataScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("inputSwitchSettings", targetDepth)) {
                     context.nextToken();
                     scheduleActionSettings.setInputSwitchSettings(InputSwitchScheduleActionSettingsJsonUnmarshaller.getInstance().unmarshall(context));

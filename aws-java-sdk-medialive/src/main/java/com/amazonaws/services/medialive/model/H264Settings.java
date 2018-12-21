@@ -160,6 +160,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer softness;
     /** If set to enabled, adjust quantization within each frame based on spatial variation of content complexity. */
     private String spatialAq;
+    /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used
+     * for each sub-GOP to improve visual quality.
+     */
+    private String subgopLength;
     /** Produces a bitstream compliant with SMPTE RP-2027. */
     private String syntax;
     /** If set to enabled, adjust quantization within each frame based on temporal variation of content complexity. */
@@ -1865,6 +1870,65 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used
+     * for each sub-GOP to improve visual quality.
+     * 
+     * @param subgopLength
+     *        If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of
+     *        B-frames used for each sub-GOP to improve visual quality.
+     * @see H264SubGopLength
+     */
+
+    public void setSubgopLength(String subgopLength) {
+        this.subgopLength = subgopLength;
+    }
+
+    /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used
+     * for each sub-GOP to improve visual quality.
+     * 
+     * @return If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of
+     *         B-frames used for each sub-GOP to improve visual quality.
+     * @see H264SubGopLength
+     */
+
+    public String getSubgopLength() {
+        return this.subgopLength;
+    }
+
+    /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used
+     * for each sub-GOP to improve visual quality.
+     * 
+     * @param subgopLength
+     *        If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of
+     *        B-frames used for each sub-GOP to improve visual quality.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H264SubGopLength
+     */
+
+    public H264Settings withSubgopLength(String subgopLength) {
+        setSubgopLength(subgopLength);
+        return this;
+    }
+
+    /**
+     * If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of B-frames used
+     * for each sub-GOP to improve visual quality.
+     * 
+     * @param subgopLength
+     *        If set to fixed, use gopNumBFrames B-frames per sub-GOP. If set to dynamic, optimize the number of
+     *        B-frames used for each sub-GOP to improve visual quality.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H264SubGopLength
+     */
+
+    public H264Settings withSubgopLength(H264SubGopLength subgopLength) {
+        this.subgopLength = subgopLength.toString();
+        return this;
+    }
+
+    /**
      * Produces a bitstream compliant with SMPTE RP-2027.
      * 
      * @param syntax
@@ -2111,6 +2175,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("Softness: ").append(getSoftness()).append(",");
         if (getSpatialAq() != null)
             sb.append("SpatialAq: ").append(getSpatialAq()).append(",");
+        if (getSubgopLength() != null)
+            sb.append("SubgopLength: ").append(getSubgopLength()).append(",");
         if (getSyntax() != null)
             sb.append("Syntax: ").append(getSyntax()).append(",");
         if (getTemporalAq() != null)
@@ -2263,6 +2329,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSpatialAq() != null && other.getSpatialAq().equals(this.getSpatialAq()) == false)
             return false;
+        if (other.getSubgopLength() == null ^ this.getSubgopLength() == null)
+            return false;
+        if (other.getSubgopLength() != null && other.getSubgopLength().equals(this.getSubgopLength()) == false)
+            return false;
         if (other.getSyntax() == null ^ this.getSyntax() == null)
             return false;
         if (other.getSyntax() != null && other.getSyntax().equals(this.getSyntax()) == false)
@@ -2316,6 +2386,7 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSlices() == null) ? 0 : getSlices().hashCode());
         hashCode = prime * hashCode + ((getSoftness() == null) ? 0 : getSoftness().hashCode());
         hashCode = prime * hashCode + ((getSpatialAq() == null) ? 0 : getSpatialAq().hashCode());
+        hashCode = prime * hashCode + ((getSubgopLength() == null) ? 0 : getSubgopLength().hashCode());
         hashCode = prime * hashCode + ((getSyntax() == null) ? 0 : getSyntax().hashCode());
         hashCode = prime * hashCode + ((getTemporalAq() == null) ? 0 : getTemporalAq().hashCode());
         hashCode = prime * hashCode + ((getTimecodeInsertion() == null) ? 0 : getTimecodeInsertion().hashCode());

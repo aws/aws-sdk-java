@@ -180,6 +180,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setSpatialAq(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("subgopLength", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setSubgopLength(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("syntax", targetDepth)) {
                     context.nextToken();
                     h264Settings.setSyntax(context.getUnmarshaller(String.class).unmarshall(context));

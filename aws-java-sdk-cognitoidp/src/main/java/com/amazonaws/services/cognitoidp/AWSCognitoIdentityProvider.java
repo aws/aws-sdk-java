@@ -3087,6 +3087,61 @@ public interface AWSCognitoIdentityProvider {
 
     /**
      * <p>
+     * Updates the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.
+     * </p>
+     * <p>
+     * You can use this operation to provide the Amazon Resource Name (ARN) of a new certificate to Amazon Cognito. You
+     * cannot use it to change the domain for a user pool.
+     * </p>
+     * <p>
+     * A custom domain is used to host the Amazon Cognito hosted UI, which provides sign-up and sign-in pages for your
+     * application. When you set up a custom domain, you provide a certificate that you manage with AWS Certificate
+     * Manager (ACM). When necessary, you can use this operation to change the certificate that you applied to your
+     * custom domain.
+     * </p>
+     * <p>
+     * Usually, this is unnecessary following routine certificate renewal with ACM. When you renew your existing
+     * certificate in ACM, the ARN for your certificate remains the same, and your custom domain uses the new
+     * certificate automatically.
+     * </p>
+     * <p>
+     * However, if you replace your existing certificate with a new one, ACM gives the new certificate a new ARN. To
+     * apply the new certificate to your custom domain, you must provide this ARN to Amazon Cognito.
+     * </p>
+     * <p>
+     * When you add your new certificate in ACM, you must choose US East (N. Virginia) as the AWS Region.
+     * </p>
+     * <p>
+     * After you submit your request, Amazon Cognito requires up to 1 hour to distribute your new certificate to your
+     * custom domain.
+     * </p>
+     * <p>
+     * For more information about adding a custom domain to your user pool, see <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.
+     * </p>
+     * 
+     * @param updateUserPoolDomainRequest
+     *        The UpdateUserPoolDomain request input.
+     * @return Result of the UpdateUserPoolDomain operation returned by the service.
+     * @throws InvalidParameterException
+     *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+     * @throws NotAuthorizedException
+     *         This exception is thrown when a user is not authorized.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
+     * @throws TooManyRequestsException
+     *         This exception is thrown when the user has made too many requests for a given operation.
+     * @throws InternalErrorException
+     *         This exception is thrown when Amazon Cognito encounters an internal error.
+     * @sample AWSCognitoIdentityProvider.UpdateUserPoolDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/UpdateUserPoolDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateUserPoolDomainResult updateUserPoolDomain(UpdateUserPoolDomainRequest updateUserPoolDomainRequest);
+
+    /**
+     * <p>
      * Use this API to register a user's entered TOTP code and mark the user's software token MFA status as "verified"
      * if successful. The request takes an access token or a session string, but not both.
      * </p>
