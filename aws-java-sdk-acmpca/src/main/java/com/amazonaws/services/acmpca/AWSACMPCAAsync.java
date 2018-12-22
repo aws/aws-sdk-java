@@ -248,9 +248,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Your private CA is within the restoration period, after which it will be permanently
-     * deleted. The length of time remaining in the CA's restoration period will also be included in this operation's
-     * output.
+     * <code>DELETED</code> - Your private CA is within the restoration period, after which it is permanently deleted.
+     * The length of time remaining in the CA's restoration period is also included in this operation's output.
      * </p>
      * </li>
      * </ul>
@@ -305,9 +304,8 @@ public interface AWSACMPCAAsync extends AWSACMPCA {
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Your private CA is within the restoration period, after which it will be permanently
-     * deleted. The length of time remaining in the CA's restoration period will also be included in this operation's
-     * output.
+     * <code>DELETED</code> - Your private CA is within the restoration period, after which it is permanently deleted.
+     * The length of time remaining in the CA's restoration period is also included in this operation's output.
      * </p>
      * </li>
      * </ul>

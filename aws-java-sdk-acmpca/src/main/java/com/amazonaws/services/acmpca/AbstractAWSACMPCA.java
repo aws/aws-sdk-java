@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.acmpca.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.acmpca.waiters.AWSACMPCAWaiters;
 
 /**
  * Abstract implementation of {@code AWSACMPCA}. Convenient method forms pass through to the corresponding overload that
@@ -119,6 +120,11 @@ public class AbstractAWSACMPCA implements AWSACMPCA {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSACMPCAWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

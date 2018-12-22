@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Contains details about a task submitted to a resource .
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskSubmittedEventDetails" target="_top">AWS
  *      API Documentation</a>
@@ -28,30 +30,30 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      */
     private String resource;
     /**
      * <p>
-     * The response from a connected service when a task has started.
+     * The response from a resource when a task has started.
      * </p>
      */
     private String output;
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the connected service called by a task state.
+     *        The action of the resource called by a task state.
      */
 
     public void setResourceType(String resourceType) {
@@ -60,10 +62,10 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
-     * @return The action of the connected service called by a task state.
+     * @return The action of the resource called by a task state.
      */
 
     public String getResourceType() {
@@ -72,11 +74,11 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the connected service called by a task state.
+     *        The action of the resource called by a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +89,11 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resource
-     *        The service name of the connected service in a task state.
+     *        The service name of the resource in a task state.
      */
 
     public void setResource(String resource) {
@@ -100,10 +102,10 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
-     * @return The service name of the connected service in a task state.
+     * @return The service name of the resource in a task state.
      */
 
     public String getResource() {
@@ -112,11 +114,11 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resource
-     *        The service name of the connected service in a task state.
+     *        The service name of the resource in a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +129,11 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The response from a connected service when a task has started.
+     * The response from a resource when a task has started.
      * </p>
      * 
      * @param output
-     *        The response from a connected service when a task has started.
+     *        The response from a resource when a task has started.
      */
 
     public void setOutput(String output) {
@@ -140,10 +142,10 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The response from a connected service when a task has started.
+     * The response from a resource when a task has started.
      * </p>
      * 
-     * @return The response from a connected service when a task has started.
+     * @return The response from a resource when a task has started.
      */
 
     public String getOutput() {
@@ -152,11 +154,11 @@ public class TaskSubmittedEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The response from a connected service when a task has started.
+     * The response from a resource when a task has started.
      * </p>
      * 
      * @param output
-     *        The response from a connected service when a task has started.
+     *        The response from a resource when a task has started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

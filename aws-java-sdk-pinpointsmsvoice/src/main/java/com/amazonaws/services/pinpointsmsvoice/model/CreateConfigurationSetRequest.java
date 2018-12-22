@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * CreateConfigurationSetRequest
+ * A request to create a new configuration set.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet"
  *      target="_top">AWS API Documentation</a>

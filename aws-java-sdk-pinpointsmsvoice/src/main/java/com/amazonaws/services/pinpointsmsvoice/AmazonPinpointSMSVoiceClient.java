@@ -146,7 +146,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
      * destinations to it.
      * 
      * @param createConfigurationSetRequest
-     *        CreateConfigurationSetRequest
+     *        A request to create a new configuration set.
      * @return Result of the CreateConfigurationSet operation returned by the service.
      * @throws TooManyRequestsException
      *         TooManyRequestsException
@@ -208,7 +208,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
      * Create a new event destination in a configuration set.
      * 
      * @param createConfigurationSetEventDestinationRequest
-     *        CreateConfigurationSetEventDestinationRequest
+     *        Create a new event destination in a configuration set.
      * @return Result of the CreateConfigurationSetEventDestination operation returned by the service.
      * @throws BadRequestException
      *         BadRequestException

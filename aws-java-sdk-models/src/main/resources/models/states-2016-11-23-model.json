@@ -157,7 +157,7 @@
         {"shape":"InvalidArn"},
         {"shape":"InvalidToken"}
       ],
-      "documentation":"<p>Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get the latest events first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+      "documentation":"<p>Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get the latest events first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
     },
     "ListActivities":{
       "name":"ListActivities",
@@ -170,7 +170,7 @@
       "errors":[
         {"shape":"InvalidToken"}
       ],
-      "documentation":"<p>Lists the existing activities.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
+      "documentation":"<p>Lists the existing activities.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "ListExecutions":{
       "name":"ListExecutions",
@@ -185,7 +185,7 @@
         {"shape":"InvalidToken"},
         {"shape":"StateMachineDoesNotExist"}
       ],
-      "documentation":"<p>Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the most recent execution first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
+      "documentation":"<p>Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the most recent execution first.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
     },
     "ListStateMachines":{
       "name":"ListStateMachines",
@@ -198,7 +198,21 @@
       "errors":[
         {"shape":"InvalidToken"}
       ],
-      "documentation":"<p>Lists the existing state machines.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
+      "documentation":"<p>Lists the existing state machines.</p> <p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p> <note> <p>This operation is eventually consistent. The results are best effort and may not reflect very recent updates and changes.</p> </note>"
+    },
+    "ListTagsForResource":{
+      "name":"ListTagsForResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListTagsForResourceInput"},
+      "output":{"shape":"ListTagsForResourceOutput"},
+      "errors":[
+        {"shape":"InvalidArn"},
+        {"shape":"ResourceNotFound"}
+      ],
+      "documentation":"<p>List tags for a given resource.</p>"
     },
     "SendTaskFailure":{
       "name":"SendTaskFailure",
@@ -279,6 +293,35 @@
         {"shape":"InvalidArn"}
       ],
       "documentation":"<p>Stops an execution.</p>"
+    },
+    "TagResource":{
+      "name":"TagResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"TagResourceInput"},
+      "output":{"shape":"TagResourceOutput"},
+      "errors":[
+        {"shape":"InvalidArn"},
+        {"shape":"ResourceNotFound"},
+        {"shape":"TooManyTags"}
+      ],
+      "documentation":"<p>Add a tag to a Step Functions resource.</p>"
+    },
+    "UntagResource":{
+      "name":"UntagResource",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UntagResourceInput"},
+      "output":{"shape":"UntagResourceOutput"},
+      "errors":[
+        {"shape":"InvalidArn"},
+        {"shape":"ResourceNotFound"}
+      ],
+      "documentation":"<p>Remove a tag from a Step Functions resource</p>"
     },
     "UpdateStateMachine":{
       "name":"UpdateStateMachine",
@@ -913,7 +956,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -927,7 +970,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1196,7 +1239,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1210,7 +1253,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1232,7 +1275,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1246,7 +1289,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1259,7 +1302,7 @@
         },
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
         }
       }
     },
@@ -1270,7 +1313,26 @@
         "stateMachines":{"shape":"StateMachineList"},
         "nextToken":{
           "shape":"PageToken",
-          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+          "documentation":"<p>If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination token will return an <i>HTTP 400 InvalidToken</i> error.</p>"
+        }
+      }
+    },
+    "ListTagsForResourceInput":{
+      "type":"structure",
+      "required":["resourceArn"],
+      "members":{
+        "resourceArn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>"
+        }
+      }
+    },
+    "ListTagsForResourceOutput":{
+      "type":"structure",
+      "members":{
+        "tags":{
+          "shape":"TagList",
+          "documentation":"<p>An array of tags associated with the resource.</p>"
         }
       }
     },
@@ -1296,6 +1358,15 @@
       "type":"string",
       "max":1024,
       "min":1
+    },
+    "ResourceNotFound":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"},
+        "resourceName":{"shape":"Arn"}
+      },
+      "documentation":"<p>Could not fine the referenced resource. Only state machine and activity ARNs are supported.</p>",
+      "exception":true
     },
     "ReverseOrder":{"type":"boolean"},
     "SendTaskFailureInput":{
@@ -1534,6 +1605,60 @@
         }
       }
     },
+    "Tag":{
+      "type":"structure",
+      "members":{
+        "key":{
+          "shape":"TagKey",
+          "documentation":"<p>The key of a tag.</p>"
+        },
+        "value":{
+          "shape":"TagValue",
+          "documentation":"<p>The value of a tag.</p>"
+        }
+      },
+      "documentation":"<p>Tags are key-value pairs that can be associated with Step Functions state machines and activities.</p>"
+    },
+    "TagKey":{
+      "type":"string",
+      "max":128,
+      "min":1
+    },
+    "TagKeyList":{
+      "type":"list",
+      "member":{"shape":"TagKey"}
+    },
+    "TagList":{
+      "type":"list",
+      "member":{"shape":"Tag"}
+    },
+    "TagResourceInput":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "tags"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>"
+        },
+        "tags":{
+          "shape":"TagList",
+          "documentation":"<p>The list of tags to add to a resource.</p> <p>Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.</p>"
+        }
+      }
+    },
+    "TagResourceOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "TagValue":{
+      "type":"string",
+      "max":256,
+      "min":0
+    },
     "TaskDoesNotExist":{
       "type":"structure",
       "members":{
@@ -1550,11 +1675,11 @@
       "members":{
         "resourceType":{
           "shape":"Name",
-          "documentation":"<p>The action of the connected service called by a task state.</p>"
+          "documentation":"<p>The action of the resource called by a task state.</p>"
         },
         "resource":{
           "shape":"Name",
-          "documentation":"<p>The service name of the connected service in a task state.</p>"
+          "documentation":"<p>The service name of the resource in a task state.</p>"
         },
         "error":{
           "shape":"SensitiveError",
@@ -1578,16 +1703,19 @@
       "members":{
         "resourceType":{
           "shape":"Name",
-          "documentation":"<p>The action of the connected service called by a task state.</p>"
+          "documentation":"<p>The action of the resource called by a task state.</p>"
         },
         "resource":{
           "shape":"Name",
-          "documentation":"<p>The service name of the connected service in a task state.</p>"
+          "documentation":"<p>The service name of the resource in a task state.</p>"
         },
-        "region":{"shape":"Name"},
+        "region":{
+          "shape":"Name",
+          "documentation":"<p>The region of the scheduled task</p>"
+        },
         "parameters":{
           "shape":"ConnectorParameters",
-          "documentation":"<p>The JSON data passed to the connected service referenced in a task state.</p>"
+          "documentation":"<p>The JSON data passed to the resource referenced in a task state.</p>"
         },
         "timeoutInSeconds":{
           "shape":"TimeoutInSeconds",
@@ -1606,11 +1734,11 @@
       "members":{
         "resourceType":{
           "shape":"Name",
-          "documentation":"<p>The action of the connected service called by a task state.</p>"
+          "documentation":"<p>The action of the resource called by a task state.</p>"
         },
         "resource":{
           "shape":"Name",
-          "documentation":"<p>The service name of the connected service in a task state.</p>"
+          "documentation":"<p>The service name of the resource in a task state.</p>"
         },
         "error":{
           "shape":"SensitiveError",
@@ -1632,11 +1760,11 @@
       "members":{
         "resourceType":{
           "shape":"Name",
-          "documentation":"<p>The action of the connected service called by a task state.</p>"
+          "documentation":"<p>The action of the resource called by a task state.</p>"
         },
         "resource":{
           "shape":"Name",
-          "documentation":"<p>The service name of the connected service in a task state.</p>"
+          "documentation":"<p>The service name of the resource in a task state.</p>"
         }
       },
       "documentation":"<p>Contains details about the start of a task during an execution.</p>"
@@ -1650,11 +1778,11 @@
       "members":{
         "resourceType":{
           "shape":"Name",
-          "documentation":"<p>The action of the connected service called by a task state.</p>"
+          "documentation":"<p>The action of the resource called by a task state.</p>"
         },
         "resource":{
           "shape":"Name",
-          "documentation":"<p>The service name of the connected service in a task state.</p>"
+          "documentation":"<p>The service name of the resource in a task state.</p>"
         },
         "error":{
           "shape":"SensitiveError",
@@ -1665,7 +1793,7 @@
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>Contains details about a task that failed to submit during an execution.</p>"
     },
     "TaskSubmittedEventDetails":{
       "type":"structure",
@@ -1676,18 +1804,18 @@
       "members":{
         "resourceType":{
           "shape":"Name",
-          "documentation":"<p>The action of the connected service called by a task state.</p>"
+          "documentation":"<p>The action of the resource called by a task state.</p>"
         },
         "resource":{
           "shape":"Name",
-          "documentation":"<p>The service name of the connected service in a task state.</p>"
+          "documentation":"<p>The service name of the resource in a task state.</p>"
         },
         "output":{
           "shape":"SensitiveData",
-          "documentation":"<p>The response from a connected service when a task has started.</p>"
+          "documentation":"<p>The response from a resource when a task has started.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>Contains details about a task submitted to a resource .</p>"
     },
     "TaskSucceededEventDetails":{
       "type":"structure",
@@ -1698,18 +1826,18 @@
       "members":{
         "resourceType":{
           "shape":"Name",
-          "documentation":"<p>The action of the connected service called by a task state.</p>"
+          "documentation":"<p>The action of the resource called by a task state.</p>"
         },
         "resource":{
           "shape":"Name",
-          "documentation":"<p>The service name of the connected service in a task state.</p>"
+          "documentation":"<p>The service name of the resource in a task state.</p>"
         },
         "output":{
           "shape":"SensitiveData",
-          "documentation":"<p>The full JSON response from a connected service when a task has succeeded. This response becomes the output of the related task.</p>"
+          "documentation":"<p>The full JSON response from a resource when a task has succeeded. This response becomes the output of the related task.</p>"
         }
       },
-      "documentation":"<p>Contains details about the start of connected service by a task state.</p>"
+      "documentation":"<p>Contains details about the successful completion of a task state.</p>"
     },
     "TaskTimedOut":{
       "type":"structure",
@@ -1727,11 +1855,11 @@
       "members":{
         "resourceType":{
           "shape":"Name",
-          "documentation":"<p>The action of the connected service called by a task state.</p>"
+          "documentation":"<p>The action of the resource called by a task state.</p>"
         },
         "resource":{
           "shape":"Name",
-          "documentation":"<p>The service name of the connected service in a task state.</p>"
+          "documentation":"<p>The service name of the resource in a task state.</p>"
         },
         "error":{
           "shape":"SensitiveError",
@@ -1742,7 +1870,7 @@
           "documentation":"<p>A more detailed explanation of the cause of the failure.</p>"
         }
       },
-      "documentation":"<p>Contains details about a connected service timeout that occured during an execution.</p>"
+      "documentation":"<p>Contains details about a resource timeout that occurred during an execution.</p>"
     },
     "TaskToken":{
       "type":"string",
@@ -1751,6 +1879,37 @@
     },
     "TimeoutInSeconds":{"type":"long"},
     "Timestamp":{"type":"timestamp"},
+    "TooManyTags":{
+      "type":"structure",
+      "members":{
+        "message":{"shape":"ErrorMessage"},
+        "resourceName":{"shape":"Arn"}
+      },
+      "documentation":"<p>You've exceeded the number of tags allowed for a resource. See the <a href=\"http://docs.aws.amazon.com/step-functions/latest/dg/limits.html\"> Limits Topic</a> in the AWS Step Functions Developer Guide.</p>",
+      "exception":true
+    },
+    "UntagResourceInput":{
+      "type":"structure",
+      "required":[
+        "resourceArn",
+        "tagKeys"
+      ],
+      "members":{
+        "resourceArn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the Step Functions state machine or activity.</p>"
+        },
+        "tagKeys":{
+          "shape":"TagKeyList",
+          "documentation":"<p>The list of tags to remove from the resource.</p>"
+        }
+      }
+    },
+    "UntagResourceOutput":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "UpdateStateMachineInput":{
       "type":"structure",
       "required":["stateMachineArn"],

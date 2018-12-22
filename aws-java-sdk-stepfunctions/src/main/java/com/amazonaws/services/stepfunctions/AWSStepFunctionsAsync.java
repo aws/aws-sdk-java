@@ -445,7 +445,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
@@ -466,7 +466,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
@@ -490,7 +490,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -515,7 +515,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -546,7 +546,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -572,7 +572,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -602,7 +602,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -627,7 +627,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -649,6 +649,37 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<ListStateMachinesResult> listStateMachinesAsync(ListStateMachinesRequest listStateMachinesRequest,
             com.amazonaws.handlers.AsyncHandler<ListStateMachinesRequest, ListStateMachinesResult> asyncHandler);
+
+    /**
+     * <p>
+     * List tags for a given resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSStepFunctionsAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * List tags for a given resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -848,6 +879,68 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<StopExecutionResult> stopExecutionAsync(StopExecutionRequest stopExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StopExecutionRequest, StopExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Add a tag to a Step Functions resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSStepFunctionsAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Add a tag to a Step Functions resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove a tag from a Step Functions resource
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSStepFunctionsAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Remove a tag from a Step Functions resource
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

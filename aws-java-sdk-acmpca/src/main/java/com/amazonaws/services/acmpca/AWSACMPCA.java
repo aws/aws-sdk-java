@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.acmpca.model.*;
+import com.amazonaws.services.acmpca.waiters.AWSACMPCAWaiters;
 
 /**
  * Interface for accessing ACM-PCA.
@@ -115,7 +116,7 @@ public interface AWSACMPCA {
      * @throws InvalidArgsException
      *         One or more of the specified arguments was not valid.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @sample AWSACMPCA.CreateCertificateAuthorityAuditReport
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreateCertificateAuthorityAuditReport"
      *      target="_top">AWS API Documentation</a>
@@ -153,7 +154,7 @@ public interface AWSACMPCA {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @sample AWSACMPCA.DeleteCertificateAuthority
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/DeleteCertificateAuthority"
      *      target="_top">AWS API Documentation</a>
@@ -200,9 +201,8 @@ public interface AWSACMPCA {
      * </li>
      * <li>
      * <p>
-     * <code>DELETED</code> - Your private CA is within the restoration period, after which it will be permanently
-     * deleted. The length of time remaining in the CA's restoration period will also be included in this operation's
-     * output.
+     * <code>DELETED</code> - Your private CA is within the restoration period, after which it is permanently deleted.
+     * The length of time remaining in the CA's restoration period is also included in this operation's output.
      * </p>
      * </li>
      * </ul>
@@ -262,7 +262,7 @@ public interface AWSACMPCA {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @sample AWSACMPCA.GetCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -281,7 +281,7 @@ public interface AWSACMPCA {
      * @throws ResourceNotFoundException
      *         A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSACMPCA.GetCertificateAuthorityCertificate
@@ -311,7 +311,7 @@ public interface AWSACMPCA {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @sample AWSACMPCA.GetCertificateAuthorityCsr
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificateAuthorityCsr"
      *      target="_top">AWS API Documentation</a>
@@ -355,7 +355,7 @@ public interface AWSACMPCA {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @throws MalformedCertificateException
      *         One or more fields in the certificate are invalid.
      * @throws CertificateMismatchException
@@ -389,7 +389,7 @@ public interface AWSACMPCA {
      * @throws ResourceNotFoundException
      *         A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidArgsException
@@ -458,7 +458,7 @@ public interface AWSACMPCA {
      * @throws ResourceNotFoundException
      *         A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSACMPCA.RestoreCertificateAuthority
@@ -483,7 +483,7 @@ public interface AWSACMPCA {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @throws ResourceNotFoundException
      *         A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
      * @throws RequestAlreadyProcessedException
@@ -516,7 +516,7 @@ public interface AWSACMPCA {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @throws InvalidTagException
      *         The tag associated with the CA is not valid. The invalid argument is contained in the message field.
      * @throws TooManyTagsException
@@ -543,7 +543,7 @@ public interface AWSACMPCA {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @throws InvalidTagException
      *         The tag associated with the CA is not valid. The invalid argument is contained in the message field.
      * @sample AWSACMPCA.UntagCertificateAuthority
@@ -570,7 +570,7 @@ public interface AWSACMPCA {
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
-     *         The private CA is in a state during which a report cannot be generated.
+     *         The private CA is in a state during which a report or certificate cannot be generated.
      * @throws InvalidPolicyException
      *         The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from and write to the
      *         bucket and find the bucket location.
@@ -602,5 +602,7 @@ public interface AWSACMPCA {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSACMPCAWaiters waiters();
 
 }

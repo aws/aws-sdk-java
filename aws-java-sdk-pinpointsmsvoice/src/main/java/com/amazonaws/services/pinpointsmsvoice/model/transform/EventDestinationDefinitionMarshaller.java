@@ -36,6 +36,8 @@ public class EventDestinationDefinitionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KinesisFirehoseDestination").build();
     private static final MarshallingInfo<List> MATCHINGEVENTTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MatchingEventTypes").build();
+    private static final MarshallingInfo<StructuredPojo> SNSDESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnsDestination").build();
 
     private static final EventDestinationDefinitionMarshaller instance = new EventDestinationDefinitionMarshaller();
 
@@ -57,6 +59,7 @@ public class EventDestinationDefinitionMarshaller {
             protocolMarshaller.marshall(eventDestinationDefinition.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(eventDestinationDefinition.getKinesisFirehoseDestination(), KINESISFIREHOSEDESTINATION_BINDING);
             protocolMarshaller.marshall(eventDestinationDefinition.getMatchingEventTypes(), MATCHINGEVENTTYPES_BINDING);
+            protocolMarshaller.marshall(eventDestinationDefinition.getSnsDestination(), SNSDESTINATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

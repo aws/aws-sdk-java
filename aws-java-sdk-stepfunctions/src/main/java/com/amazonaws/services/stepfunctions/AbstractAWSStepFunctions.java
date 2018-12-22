@@ -103,6 +103,11 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendTaskFailureResult sendTaskFailure(SendTaskFailureRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,16 @@ public class AbstractAWSStepFunctions implements AWSStepFunctions {
 
     @Override
     public StopExecutionResult stopExecution(StopExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

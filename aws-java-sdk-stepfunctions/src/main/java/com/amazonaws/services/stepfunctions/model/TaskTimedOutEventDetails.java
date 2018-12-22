@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains details about a connected service timeout that occured during an execution.
+ * Contains details about a resource timeout that occurred during an execution.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskTimedOutEventDetails" target="_top">AWS
@@ -30,13 +30,13 @@ public class TaskTimedOutEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      */
     private String resource;
@@ -55,11 +55,11 @@ public class TaskTimedOutEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the connected service called by a task state.
+     *        The action of the resource called by a task state.
      */
 
     public void setResourceType(String resourceType) {
@@ -68,10 +68,10 @@ public class TaskTimedOutEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
-     * @return The action of the connected service called by a task state.
+     * @return The action of the resource called by a task state.
      */
 
     public String getResourceType() {
@@ -80,11 +80,11 @@ public class TaskTimedOutEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the connected service called by a task state.
+     *        The action of the resource called by a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class TaskTimedOutEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resource
-     *        The service name of the connected service in a task state.
+     *        The service name of the resource in a task state.
      */
 
     public void setResource(String resource) {
@@ -108,10 +108,10 @@ public class TaskTimedOutEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
-     * @return The service name of the connected service in a task state.
+     * @return The service name of the resource in a task state.
      */
 
     public String getResource() {
@@ -120,11 +120,11 @@ public class TaskTimedOutEventDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resource
-     *        The service name of the connected service in a task state.
+     *        The service name of the resource in a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

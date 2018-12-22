@@ -37,6 +37,8 @@ public class EventDestinationDefinition implements Serializable, Cloneable, Stru
 
     private java.util.List<String> matchingEventTypes;
 
+    private SnsDestination snsDestination;
+
     /**
      * @param cloudWatchLogsDestination
      */
@@ -217,6 +219,32 @@ public class EventDestinationDefinition implements Serializable, Cloneable, Stru
     }
 
     /**
+     * @param snsDestination
+     */
+
+    public void setSnsDestination(SnsDestination snsDestination) {
+        this.snsDestination = snsDestination;
+    }
+
+    /**
+     * @return
+     */
+
+    public SnsDestination getSnsDestination() {
+        return this.snsDestination;
+    }
+
+    /**
+     * @param snsDestination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventDestinationDefinition withSnsDestination(SnsDestination snsDestination) {
+        setSnsDestination(snsDestination);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -235,7 +263,9 @@ public class EventDestinationDefinition implements Serializable, Cloneable, Stru
         if (getKinesisFirehoseDestination() != null)
             sb.append("KinesisFirehoseDestination: ").append(getKinesisFirehoseDestination()).append(",");
         if (getMatchingEventTypes() != null)
-            sb.append("MatchingEventTypes: ").append(getMatchingEventTypes());
+            sb.append("MatchingEventTypes: ").append(getMatchingEventTypes()).append(",");
+        if (getSnsDestination() != null)
+            sb.append("SnsDestination: ").append(getSnsDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -266,6 +296,10 @@ public class EventDestinationDefinition implements Serializable, Cloneable, Stru
             return false;
         if (other.getMatchingEventTypes() != null && other.getMatchingEventTypes().equals(this.getMatchingEventTypes()) == false)
             return false;
+        if (other.getSnsDestination() == null ^ this.getSnsDestination() == null)
+            return false;
+        if (other.getSnsDestination() != null && other.getSnsDestination().equals(this.getSnsDestination()) == false)
+            return false;
         return true;
     }
 
@@ -278,6 +312,7 @@ public class EventDestinationDefinition implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getKinesisFirehoseDestination() == null) ? 0 : getKinesisFirehoseDestination().hashCode());
         hashCode = prime * hashCode + ((getMatchingEventTypes() == null) ? 0 : getMatchingEventTypes().hashCode());
+        hashCode = prime * hashCode + ((getSnsDestination() == null) ? 0 : getSnsDestination().hashCode());
         return hashCode;
     }
 

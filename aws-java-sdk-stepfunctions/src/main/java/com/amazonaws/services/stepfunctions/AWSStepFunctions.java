@@ -330,7 +330,7 @@ public interface AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
@@ -355,7 +355,7 @@ public interface AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -383,7 +383,7 @@ public interface AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -414,7 +414,7 @@ public interface AWSStepFunctions {
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -433,6 +433,23 @@ public interface AWSStepFunctions {
      *      Documentation</a>
      */
     ListStateMachinesResult listStateMachines(ListStateMachinesRequest listStateMachinesRequest);
+
+    /**
+     * <p>
+     * List tags for a given resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @sample AWSStepFunctions.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -557,6 +574,44 @@ public interface AWSStepFunctions {
      *      Documentation</a>
      */
     StopExecutionResult stopExecution(StopExecutionRequest stopExecutionRequest);
+
+    /**
+     * <p>
+     * Add a tag to a Step Functions resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
+     * @sample AWSStepFunctions.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Remove a tag from a Step Functions resource
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @sample AWSStepFunctions.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * Contains details about a task that failed to submit during an execution.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskSubmitFailedEventDetails"
  *      target="_top">AWS API Documentation</a>
@@ -28,13 +30,13 @@ public class TaskSubmitFailedEventDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      */
     private String resource;
@@ -53,11 +55,11 @@ public class TaskSubmitFailedEventDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the connected service called by a task state.
+     *        The action of the resource called by a task state.
      */
 
     public void setResourceType(String resourceType) {
@@ -66,10 +68,10 @@ public class TaskSubmitFailedEventDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
-     * @return The action of the connected service called by a task state.
+     * @return The action of the resource called by a task state.
      */
 
     public String getResourceType() {
@@ -78,11 +80,11 @@ public class TaskSubmitFailedEventDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the connected service called by a task state.
+     *        The action of the resource called by a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +95,11 @@ public class TaskSubmitFailedEventDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resource
-     *        The service name of the connected service in a task state.
+     *        The service name of the resource in a task state.
      */
 
     public void setResource(String resource) {
@@ -106,10 +108,10 @@ public class TaskSubmitFailedEventDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
-     * @return The service name of the connected service in a task state.
+     * @return The service name of the resource in a task state.
      */
 
     public String getResource() {
@@ -118,11 +120,11 @@ public class TaskSubmitFailedEventDetails implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resource
-     *        The service name of the connected service in a task state.
+     *        The service name of the resource in a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

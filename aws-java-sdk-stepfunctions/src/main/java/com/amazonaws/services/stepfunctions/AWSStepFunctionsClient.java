@@ -95,32 +95,17 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("ActivityDoesNotExist").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StateMachineLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidToken").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidTokenException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDefinition").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.InvalidDefinitionException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidName").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.InvalidNameException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOutput").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidOutputException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActivityLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ActivityLimitExceededException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StateMachineAlreadyExists").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExecutionLimitExceeded").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException.class))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidExecutionInput").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArn").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.InvalidArnException.class))
@@ -131,9 +116,6 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("ActivityWorkerLimitExceeded").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TaskDoesNotExist").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TaskTimedOut").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.TaskTimedOutException.class))
                     .addErrorMetadata(
@@ -143,11 +125,35 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                             new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameter").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.MissingRequiredParameterException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExecutionDoesNotExist").withModeledClass(
                                     com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StateMachineLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidToken").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.InvalidTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTags").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.TooManyTagsException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOutput").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.InvalidOutputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ActivityLimitExceeded").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.ActivityLimitExceededException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidExecutionInput").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TaskDoesNotExist").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withModeledClass(
+                                    com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException.class))
                     .withBaseServiceExceptionClass(com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException.class));
 
     /**
@@ -926,7 +932,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * 
@@ -990,7 +996,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -1057,7 +1063,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -1127,7 +1133,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
      * unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+     * Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an expired pagination
      * token will return an <i>HTTP 400 InvalidToken</i> error.
      * </p>
      * <note>
@@ -1176,6 +1182,62 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<ListStateMachinesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStateMachinesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List tags for a given resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @sample AWSStepFunctions.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1495,6 +1557,122 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<StopExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Add a tag to a Step Functions resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
+     * @sample AWSStepFunctions.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove a tag from a Step Functions resource
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws ResourceNotFoundException
+     *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+     * @sample AWSStepFunctions.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

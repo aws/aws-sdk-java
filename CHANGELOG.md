@@ -1,3 +1,20 @@
+# __1.11.475__ __2018-12-21__
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - This release marks the introduction of waiters in ACM PCA, which allow you to control the progression of your code based on the presence or state of certain resources. Waiters can be implemented in the DescribeCertificateAuthorityAuditReport, GetCertificate, and GetCertificateAuthorityCsr API operations.
+
+## __AWS Step Functions__
+  - ### Features
+    - This release adds support for cost allocation tagging. You can now create, delete, and list tags for AWS Step Functions activity and state machine resources. For more information about tagging, see AWS Tagging Strategies.
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Added provisionedThroughPut exception on the request level for transaction APIs.
+
+## __Amazon Pinpoint SMS and Voice Service__
+  - ### Features
+    - Configuration sets can now use Amazon SNS as an event destination.
+
 # __1.11.474__ __2018-12-20__
 ## __AWS Elemental MediaLive__
   - ### Features

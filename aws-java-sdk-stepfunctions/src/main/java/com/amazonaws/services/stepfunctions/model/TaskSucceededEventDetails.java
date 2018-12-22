@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains details about the start of connected service by a task state.
+ * Contains details about the successful completion of a task state.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TaskSucceededEventDetails" target="_top">AWS
@@ -30,31 +30,31 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      */
     private String resource;
     /**
      * <p>
-     * The full JSON response from a connected service when a task has succeeded. This response becomes the output of
-     * the related task.
+     * The full JSON response from a resource when a task has succeeded. This response becomes the output of the related
+     * task.
      * </p>
      */
     private String output;
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the connected service called by a task state.
+     *        The action of the resource called by a task state.
      */
 
     public void setResourceType(String resourceType) {
@@ -63,10 +63,10 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
-     * @return The action of the connected service called by a task state.
+     * @return The action of the resource called by a task state.
      */
 
     public String getResourceType() {
@@ -75,11 +75,11 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action of the connected service called by a task state.
+     * The action of the resource called by a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the connected service called by a task state.
+     *        The action of the resource called by a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resource
-     *        The service name of the connected service in a task state.
+     *        The service name of the resource in a task state.
      */
 
     public void setResource(String resource) {
@@ -103,10 +103,10 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
-     * @return The service name of the connected service in a task state.
+     * @return The service name of the resource in a task state.
      */
 
     public String getResource() {
@@ -115,11 +115,11 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The service name of the connected service in a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resource
-     *        The service name of the connected service in a task state.
+     *        The service name of the resource in a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,13 +130,13 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full JSON response from a connected service when a task has succeeded. This response becomes the output of
-     * the related task.
+     * The full JSON response from a resource when a task has succeeded. This response becomes the output of the related
+     * task.
      * </p>
      * 
      * @param output
-     *        The full JSON response from a connected service when a task has succeeded. This response becomes the
-     *        output of the related task.
+     *        The full JSON response from a resource when a task has succeeded. This response becomes the output of the
+     *        related task.
      */
 
     public void setOutput(String output) {
@@ -145,12 +145,12 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full JSON response from a connected service when a task has succeeded. This response becomes the output of
-     * the related task.
+     * The full JSON response from a resource when a task has succeeded. This response becomes the output of the related
+     * task.
      * </p>
      * 
-     * @return The full JSON response from a connected service when a task has succeeded. This response becomes the
-     *         output of the related task.
+     * @return The full JSON response from a resource when a task has succeeded. This response becomes the output of the
+     *         related task.
      */
 
     public String getOutput() {
@@ -159,13 +159,13 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The full JSON response from a connected service when a task has succeeded. This response becomes the output of
-     * the related task.
+     * The full JSON response from a resource when a task has succeeded. This response becomes the output of the related
+     * task.
      * </p>
      * 
      * @param output
-     *        The full JSON response from a connected service when a task has succeeded. This response becomes the
-     *        output of the related task.
+     *        The full JSON response from a resource when a task has succeeded. This response becomes the output of the
+     *        related task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

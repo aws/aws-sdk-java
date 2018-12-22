@@ -68,6 +68,10 @@ public class EventDestinationJsonUnmarshaller implements Unmarshaller<EventDesti
                     context.nextToken();
                     eventDestination.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("SnsDestination", targetDepth)) {
+                    context.nextToken();
+                    eventDestination.setSnsDestination(SnsDestinationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

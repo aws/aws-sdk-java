@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * An object that contains information about a event destination that sends data to Amazon CloudWatch Logs.
+ * An object that contains information about an event destination that sends data to Amazon CloudWatch Logs.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CloudWatchLogsDestination"
  *      target="_top">AWS API Documentation</a>

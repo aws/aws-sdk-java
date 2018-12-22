@@ -39,6 +39,8 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
     /** A name that identifies the event destination configuration. */
     private String name;
 
+    private SnsDestination snsDestination;
+
     /**
      * @param cloudWatchLogsDestination
      */
@@ -253,6 +255,32 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * @param snsDestination
+     */
+
+    public void setSnsDestination(SnsDestination snsDestination) {
+        this.snsDestination = snsDestination;
+    }
+
+    /**
+     * @return
+     */
+
+    public SnsDestination getSnsDestination() {
+        return this.snsDestination;
+    }
+
+    /**
+     * @param snsDestination
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EventDestination withSnsDestination(SnsDestination snsDestination) {
+        setSnsDestination(snsDestination);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -273,7 +301,9 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
         if (getMatchingEventTypes() != null)
             sb.append("MatchingEventTypes: ").append(getMatchingEventTypes()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getSnsDestination() != null)
+            sb.append("SnsDestination: ").append(getSnsDestination());
         sb.append("}");
         return sb.toString();
     }
@@ -308,6 +338,10 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getSnsDestination() == null ^ this.getSnsDestination() == null)
+            return false;
+        if (other.getSnsDestination() != null && other.getSnsDestination().equals(this.getSnsDestination()) == false)
+            return false;
         return true;
     }
 
@@ -321,6 +355,7 @@ public class EventDestination implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getKinesisFirehoseDestination() == null) ? 0 : getKinesisFirehoseDestination().hashCode());
         hashCode = prime * hashCode + ((getMatchingEventTypes() == null) ? 0 : getMatchingEventTypes().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getSnsDestination() == null) ? 0 : getSnsDestination().hashCode());
         return hashCode;
     }
 

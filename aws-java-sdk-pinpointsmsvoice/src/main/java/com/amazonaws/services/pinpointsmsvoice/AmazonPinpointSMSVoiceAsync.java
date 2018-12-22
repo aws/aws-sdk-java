@@ -35,7 +35,7 @@ public interface AmazonPinpointSMSVoiceAsync extends AmazonPinpointSMSVoice {
      * destinations to it.
      * 
      * @param createConfigurationSetRequest
-     *        CreateConfigurationSetRequest
+     *        A request to create a new configuration set.
      * @return A Java Future containing the result of the CreateConfigurationSet operation returned by the service.
      * @sample AmazonPinpointSMSVoiceAsync.CreateConfigurationSet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSet"
@@ -48,7 +48,7 @@ public interface AmazonPinpointSMSVoiceAsync extends AmazonPinpointSMSVoice {
      * destinations to it.
      * 
      * @param createConfigurationSetRequest
-     *        CreateConfigurationSetRequest
+     *        A request to create a new configuration set.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -65,7 +65,7 @@ public interface AmazonPinpointSMSVoiceAsync extends AmazonPinpointSMSVoice {
      * Create a new event destination in a configuration set.
      * 
      * @param createConfigurationSetEventDestinationRequest
-     *        CreateConfigurationSetEventDestinationRequest
+     *        Create a new event destination in a configuration set.
      * @return A Java Future containing the result of the CreateConfigurationSetEventDestination operation returned by
      *         the service.
      * @sample AmazonPinpointSMSVoiceAsync.CreateConfigurationSetEventDestination
@@ -80,7 +80,7 @@ public interface AmazonPinpointSMSVoiceAsync extends AmazonPinpointSMSVoice {
      * Create a new event destination in a configuration set.
      * 
      * @param createConfigurationSetEventDestinationRequest
-     *        CreateConfigurationSetEventDestinationRequest
+     *        Create a new event destination in a configuration set.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
