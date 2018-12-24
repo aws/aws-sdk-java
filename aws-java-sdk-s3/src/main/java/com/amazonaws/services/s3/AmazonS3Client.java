@@ -254,8 +254,6 @@ import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
-import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
-import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
@@ -274,6 +272,8 @@ import com.amazonaws.services.s3.model.SetObjectRetentionRequest;
 import com.amazonaws.services.s3.model.SetObjectRetentionResult;
 import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.SetRequestPaymentConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.Tag;
@@ -289,6 +289,7 @@ import com.amazonaws.services.s3.model.transform.BucketConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.BucketNotificationConfigurationStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.GetBucketEncryptionStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.GetBucketPolicyStatusStaxUnmarshaller;
+import com.amazonaws.services.s3.model.transform.GetPublicAccessBlockStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.HeadBucketResultHandler;
 import com.amazonaws.services.s3.model.transform.MultiObjectDeleteXmlFactory;
 import com.amazonaws.services.s3.model.transform.ObjectLockConfigurationXmlFactory;
@@ -297,7 +298,6 @@ import com.amazonaws.services.s3.model.transform.ObjectLockRetentionXmlFactory;
 import com.amazonaws.services.s3.model.transform.ObjectTaggingXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestPaymentConfigurationXmlFactory;
 import com.amazonaws.services.s3.model.transform.RequestXmlFactory;
-import com.amazonaws.services.s3.model.transform.GetPublicAccessBlockStaxUnmarshaller;
 import com.amazonaws.services.s3.model.transform.Unmarshallers;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
@@ -341,6 +341,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -3449,7 +3451,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         Request<InitiateMultipartUploadRequest> request = createRequest(initiateMultipartUploadRequest.getBucketName(), initiateMultipartUploadRequest.getKey(), initiateMultipartUploadRequest, HttpMethodName.POST);
         request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultipartUpload");
-        request.addParameter("uploads", null);
+        request.addParameter("uploads", UUID.randomUUID().toString());
 
         if (initiateMultipartUploadRequest.getStorageClass() != null)
             request.addHeader(Headers.STORAGE_CLASS, initiateMultipartUploadRequest.getStorageClass().toString());
@@ -4592,12 +4594,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
+
+
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_DISPLAY_NAME);
         request.setHttpMethod(httpMethod);
         request.addHandlerContext(S3HandlerContextKeys.IS_CHUNKED_ENCODING_DISABLED,
                 Boolean.valueOf(clientOptions.isChunkedEncodingDisabled()));
         request.addHandlerContext(S3HandlerContextKeys.IS_PAYLOAD_SIGNING_ENABLED,
                 Boolean.valueOf(clientOptions.isPayloadSigningEnabled()));
+
+        if ( originalRequest.getCustomRequestHeaders() != null ) {
+        	Set<String> keys = originalRequest.getCustomRequestHeaders().keySet();
+        	for (Iterator<String> iterator = keys.iterator(); iterator.hasNext();) {
+    			String headerKey =  iterator.next();
+    			request.addHeader(headerKey, originalRequest.getCustomRequestHeaders().get(headerKey));
+    		}
+        }
+
         resolveRequestEndpoint(request, bucketName, key, endpoint);
         request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
         request.addHandlerContext(HandlerContextKey.SERVICE_ID, SERVICE_ID);

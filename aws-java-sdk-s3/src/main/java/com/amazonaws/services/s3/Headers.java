@@ -27,6 +27,7 @@ public interface Headers {
     public static final String CONTENT_DISPOSITION = "Content-Disposition";
     public static final String CONTENT_ENCODING = "Content-Encoding";
     public static final String CONTENT_LENGTH = "Content-Length";
+    public static final String X_AMZN_REMAPPED_CONTENT_LENGTH = "x-amzn-Remapped-Content-Length";
     public static final String CONTENT_RANGE = "Content-Range";
     public static final String CONTENT_MD5 = "Content-MD5";
     public static final String CONTENT_TYPE = "Content-Type";
