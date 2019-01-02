@@ -414,6 +414,9 @@ public abstract class AbstractAWSSigner implements Signer {
         String accessKeyId = null;
         String secretKey   = null;
         String token = null;
+        if (credentials == null) {
+             throw new SdkClientException("Please use withCredentials on AmazonS3ClientBuilder");
+        }
         synchronized (credentials) {
             accessKeyId = credentials.getAWSAccessKeyId();
             secretKey   = credentials.getAWSSecretKey();
