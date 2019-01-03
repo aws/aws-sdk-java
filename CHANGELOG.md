@@ -1,3 +1,8 @@
+# __1.11.476__ __2019-01-03__
+## __AWS OpsWorks for Chef Automate__
+  - ### Features
+    - Documentation updates for opsworkscm
+
 # __1.11.475__ __2018-12-21__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class ExportServerEngineAttributeResult extends com.amazonaws.AmazonWebSe
     private EngineAttribute engineAttribute;
     /**
      * <p>
-     * The requested ServerName.
+     * The server name used in the request.
      * </p>
      */
     private String serverName;
@@ -78,11 +78,11 @@ public class ExportServerEngineAttributeResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The requested ServerName.
+     * The server name used in the request.
      * </p>
      * 
      * @param serverName
-     *        The requested ServerName.
+     *        The server name used in the request.
      */
 
     public void setServerName(String serverName) {
@@ -91,10 +91,10 @@ public class ExportServerEngineAttributeResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The requested ServerName.
+     * The server name used in the request.
      * </p>
      * 
-     * @return The requested ServerName.
+     * @return The server name used in the request.
      */
 
     public String getServerName() {
@@ -103,11 +103,11 @@ public class ExportServerEngineAttributeResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The requested ServerName.
+     * The server name used in the request.
      * </p>
      * 
      * @param serverName
-     *        The requested ServerName.
+     *        The server name used in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
