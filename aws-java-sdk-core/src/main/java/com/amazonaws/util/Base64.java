@@ -57,7 +57,7 @@ public enum Base64 {
                              "results of the encodeAsString() method may be incorrect. Implementation: " +
                              inconsistentJaxbImpls.get(className));
                 }
-            } catch (Exception ignored) {
+            } catch (Throwable ignored) {
             }
         } else {
             LOG.warn("JAXB is unavailable. Will fallback to SDK implementation which may be less performant");
