@@ -27,7 +27,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the resource whose tags will be modified.
+     * The ARN of the resource whose tags you want to modify.
      * </p>
      */
     private String resourceArn;
@@ -40,11 +40,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the resource whose tags will be modified.
+     * The ARN of the resource whose tags you want to modify.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource whose tags will be modified.
+     *        The ARN of the resource whose tags you want to modify.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the resource whose tags will be modified.
+     * The ARN of the resource whose tags you want to modify.
      * </p>
      * 
-     * @return The ARN of the resource whose tags will be modified.
+     * @return The ARN of the resource whose tags you want to modify.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN of the resource whose tags will be modified.
+     * The ARN of the resource whose tags you want to modify.
      * </p>
      * 
      * @param resourceArn
-     *        The ARN of the resource whose tags will be modified.
+     *        The ARN of the resource whose tags you want to modify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

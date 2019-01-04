@@ -44,7 +44,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
-
+    /**
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     */
     private java.util.List<DatasetContentDeliveryRule> contentDeliveryRules;
     /**
      * <p>
@@ -242,7 +246,11 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     * 
+     * @return When data set contents are created they are delivered to destinations specified here.
      */
 
     public java.util.List<DatasetContentDeliveryRule> getContentDeliveryRules() {
@@ -250,7 +258,12 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     * 
      * @param contentDeliveryRules
+     *        When data set contents are created they are delivered to destinations specified here.
      */
 
     public void setContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
@@ -264,12 +277,16 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setContentDeliveryRules(java.util.Collection)} or {@link #withContentDeliveryRules(java.util.Collection)}
      * if you want to override the existing values.
      * </p>
      * 
      * @param contentDeliveryRules
+     *        When data set contents are created they are delivered to destinations specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,7 +301,12 @@ public class UpdateDatasetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * When data set contents are created they are delivered to destinations specified here.
+     * </p>
+     * 
      * @param contentDeliveryRules
+     *        When data set contents are created they are delivered to destinations specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

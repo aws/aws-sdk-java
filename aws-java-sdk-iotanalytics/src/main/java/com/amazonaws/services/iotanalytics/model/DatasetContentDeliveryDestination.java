@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The destination to which data set contents are delivered.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentDeliveryDestination"
  *      target="_top">AWS API Documentation</a>
@@ -25,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DatasetContentDeliveryDestination implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Configuration information for delivery of data set contents to AWS IoT Events.
+     * </p>
+     */
     private IotEventsDestinationConfiguration iotEventsDestinationConfiguration;
 
     /**
+     * <p>
+     * Configuration information for delivery of data set contents to AWS IoT Events.
+     * </p>
+     * 
      * @param iotEventsDestinationConfiguration
+     *        Configuration information for delivery of data set contents to AWS IoT Events.
      */
 
     public void setIotEventsDestinationConfiguration(IotEventsDestinationConfiguration iotEventsDestinationConfiguration) {
@@ -36,7 +49,11 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
     }
 
     /**
-     * @return
+     * <p>
+     * Configuration information for delivery of data set contents to AWS IoT Events.
+     * </p>
+     * 
+     * @return Configuration information for delivery of data set contents to AWS IoT Events.
      */
 
     public IotEventsDestinationConfiguration getIotEventsDestinationConfiguration() {
@@ -44,7 +61,12 @@ public class DatasetContentDeliveryDestination implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * Configuration information for delivery of data set contents to AWS IoT Events.
+     * </p>
+     * 
      * @param iotEventsDestinationConfiguration
+     *        Configuration information for delivery of data set contents to AWS IoT Events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

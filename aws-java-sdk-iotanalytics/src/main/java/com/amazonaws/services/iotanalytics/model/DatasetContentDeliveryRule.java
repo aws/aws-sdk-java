@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * When data set contents are created they are delivered to destination specified here.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentDeliveryRule"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DatasetContentDeliveryRule implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the data set content delivery rules entry.
+     * </p>
+     */
     private String entryName;
-
+    /**
+     * <p>
+     * The destination to which data set contents are delivered.
+     * </p>
+     */
     private DatasetContentDeliveryDestination destination;
 
     /**
+     * <p>
+     * The name of the data set content delivery rules entry.
+     * </p>
+     * 
      * @param entryName
+     *        The name of the data set content delivery rules entry.
      */
 
     public void setEntryName(String entryName) {
@@ -38,7 +55,11 @@ public class DatasetContentDeliveryRule implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the data set content delivery rules entry.
+     * </p>
+     * 
+     * @return The name of the data set content delivery rules entry.
      */
 
     public String getEntryName() {
@@ -46,7 +67,12 @@ public class DatasetContentDeliveryRule implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The name of the data set content delivery rules entry.
+     * </p>
+     * 
      * @param entryName
+     *        The name of the data set content delivery rules entry.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class DatasetContentDeliveryRule implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The destination to which data set contents are delivered.
+     * </p>
+     * 
      * @param destination
+     *        The destination to which data set contents are delivered.
      */
 
     public void setDestination(DatasetContentDeliveryDestination destination) {
@@ -64,7 +95,11 @@ public class DatasetContentDeliveryRule implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * The destination to which data set contents are delivered.
+     * </p>
+     * 
+     * @return The destination to which data set contents are delivered.
      */
 
     public DatasetContentDeliveryDestination getDestination() {
@@ -72,7 +107,12 @@ public class DatasetContentDeliveryRule implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * The destination to which data set contents are delivered.
+     * </p>
+     * 
      * @param destination
+     *        The destination to which data set contents are delivered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

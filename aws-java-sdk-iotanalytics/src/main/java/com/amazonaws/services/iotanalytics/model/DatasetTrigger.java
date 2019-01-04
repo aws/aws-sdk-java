@@ -36,7 +36,7 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
     private Schedule schedule;
     /**
      * <p>
-     * The data set whose content creation will trigger the creation of this data set's contents.
+     * The data set whose content creation triggers the creation of this data set's contents.
      * </p>
      */
     private TriggeringDataset dataset;
@@ -83,11 +83,11 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data set whose content creation will trigger the creation of this data set's contents.
+     * The data set whose content creation triggers the creation of this data set's contents.
      * </p>
      * 
      * @param dataset
-     *        The data set whose content creation will trigger the creation of this data set's contents.
+     *        The data set whose content creation triggers the creation of this data set's contents.
      */
 
     public void setDataset(TriggeringDataset dataset) {
@@ -96,10 +96,10 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data set whose content creation will trigger the creation of this data set's contents.
+     * The data set whose content creation triggers the creation of this data set's contents.
      * </p>
      * 
-     * @return The data set whose content creation will trigger the creation of this data set's contents.
+     * @return The data set whose content creation triggers the creation of this data set's contents.
      */
 
     public TriggeringDataset getDataset() {
@@ -108,11 +108,11 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data set whose content creation will trigger the creation of this data set's contents.
+     * The data set whose content creation triggers the creation of this data set's contents.
      * </p>
      * 
      * @param dataset
-     *        The data set whose content creation will trigger the creation of this data set's contents.
+     *        The data set whose content creation triggers the creation of this data set's contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

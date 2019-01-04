@@ -19,11 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * When you create data set contents using message data from a specified time frame, some message data may still be
- * "in flight" when processing begins, and so will not arrive in time to be processed. Use this field to make allowances
- * for the "in flight" time of your message data, so that data not processed from the previous time frame will be
- * included with the next time frame. Without this, missed message data would be excluded from processing during the
- * next time frame as well, because its timestamp places it within the previous time frame.
+ * Used to limit data to that which has arrived since the last execution of the action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DeltaTime" target="_top">AWS API
@@ -34,7 +30,12 @@ public class DeltaTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of seconds of estimated "in flight" lag time of message data.
+     * The number of seconds of estimated "in flight" lag time of message data. When you create data set contents using
+     * message data from a specified time frame, some message data may still be "in flight" when processing begins, and
+     * so will not arrive in time to be processed. Use this field to make allowances for the "in flight" time of your
+     * message data, so that data not processed from a previous time frame will be included with the next time frame.
+     * Without this, missed message data would be excluded from processing during the next time frame as well, because
+     * its timestamp places it within the previous time frame.
      * </p>
      */
     private Integer offsetSeconds;
@@ -48,11 +49,21 @@ public class DeltaTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of seconds of estimated "in flight" lag time of message data.
+     * The number of seconds of estimated "in flight" lag time of message data. When you create data set contents using
+     * message data from a specified time frame, some message data may still be "in flight" when processing begins, and
+     * so will not arrive in time to be processed. Use this field to make allowances for the "in flight" time of your
+     * message data, so that data not processed from a previous time frame will be included with the next time frame.
+     * Without this, missed message data would be excluded from processing during the next time frame as well, because
+     * its timestamp places it within the previous time frame.
      * </p>
      * 
      * @param offsetSeconds
-     *        The number of seconds of estimated "in flight" lag time of message data.
+     *        The number of seconds of estimated "in flight" lag time of message data. When you create data set contents
+     *        using message data from a specified time frame, some message data may still be "in flight" when processing
+     *        begins, and so will not arrive in time to be processed. Use this field to make allowances for the
+     *        "in flight" time of your message data, so that data not processed from a previous time frame will be
+     *        included with the next time frame. Without this, missed message data would be excluded from processing
+     *        during the next time frame as well, because its timestamp places it within the previous time frame.
      */
 
     public void setOffsetSeconds(Integer offsetSeconds) {
@@ -61,10 +72,20 @@ public class DeltaTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of seconds of estimated "in flight" lag time of message data.
+     * The number of seconds of estimated "in flight" lag time of message data. When you create data set contents using
+     * message data from a specified time frame, some message data may still be "in flight" when processing begins, and
+     * so will not arrive in time to be processed. Use this field to make allowances for the "in flight" time of your
+     * message data, so that data not processed from a previous time frame will be included with the next time frame.
+     * Without this, missed message data would be excluded from processing during the next time frame as well, because
+     * its timestamp places it within the previous time frame.
      * </p>
      * 
-     * @return The number of seconds of estimated "in flight" lag time of message data.
+     * @return The number of seconds of estimated "in flight" lag time of message data. When you create data set
+     *         contents using message data from a specified time frame, some message data may still be "in flight" when
+     *         processing begins, and so will not arrive in time to be processed. Use this field to make allowances for
+     *         the "in flight" time of your message data, so that data not processed from a previous time frame will be
+     *         included with the next time frame. Without this, missed message data would be excluded from processing
+     *         during the next time frame as well, because its timestamp places it within the previous time frame.
      */
 
     public Integer getOffsetSeconds() {
@@ -73,11 +94,21 @@ public class DeltaTime implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of seconds of estimated "in flight" lag time of message data.
+     * The number of seconds of estimated "in flight" lag time of message data. When you create data set contents using
+     * message data from a specified time frame, some message data may still be "in flight" when processing begins, and
+     * so will not arrive in time to be processed. Use this field to make allowances for the "in flight" time of your
+     * message data, so that data not processed from a previous time frame will be included with the next time frame.
+     * Without this, missed message data would be excluded from processing during the next time frame as well, because
+     * its timestamp places it within the previous time frame.
      * </p>
      * 
      * @param offsetSeconds
-     *        The number of seconds of estimated "in flight" lag time of message data.
+     *        The number of seconds of estimated "in flight" lag time of message data. When you create data set contents
+     *        using message data from a specified time frame, some message data may still be "in flight" when processing
+     *        begins, and so will not arrive in time to be processed. Use this field to make allowances for the
+     *        "in flight" time of your message data, so that data not processed from a previous time frame will be
+     *        included with the next time frame. Without this, missed message data would be excluded from processing
+     *        during the next time frame as well, because its timestamp places it within the previous time frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

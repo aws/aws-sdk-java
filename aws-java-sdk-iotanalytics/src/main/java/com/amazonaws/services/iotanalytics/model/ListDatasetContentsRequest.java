@@ -43,6 +43,20 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
+     * the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * </p>
+     */
+    private java.util.Date scheduledOnOrAfter;
+    /**
+     * <p>
+     * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
+     * field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * </p>
+     */
+    private java.util.Date scheduledBefore;
 
     /**
      * <p>
@@ -165,6 +179,98 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
+     * the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * </p>
+     * 
+     * @param scheduledOnOrAfter
+     *        A filter to limit results to those data set contents whose creation is scheduled on or after the given
+     *        time. See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     */
+
+    public void setScheduledOnOrAfter(java.util.Date scheduledOnOrAfter) {
+        this.scheduledOnOrAfter = scheduledOnOrAfter;
+    }
+
+    /**
+     * <p>
+     * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
+     * the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * </p>
+     * 
+     * @return A filter to limit results to those data set contents whose creation is scheduled on or after the given
+     *         time. See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     */
+
+    public java.util.Date getScheduledOnOrAfter() {
+        return this.scheduledOnOrAfter;
+    }
+
+    /**
+     * <p>
+     * A filter to limit results to those data set contents whose creation is scheduled on or after the given time. See
+     * the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * </p>
+     * 
+     * @param scheduledOnOrAfter
+     *        A filter to limit results to those data set contents whose creation is scheduled on or after the given
+     *        time. See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDatasetContentsRequest withScheduledOnOrAfter(java.util.Date scheduledOnOrAfter) {
+        setScheduledOnOrAfter(scheduledOnOrAfter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
+     * field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * </p>
+     * 
+     * @param scheduledBefore
+     *        A filter to limit results to those data set contents whose creation is scheduled before the given time.
+     *        See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     */
+
+    public void setScheduledBefore(java.util.Date scheduledBefore) {
+        this.scheduledBefore = scheduledBefore;
+    }
+
+    /**
+     * <p>
+     * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
+     * field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * </p>
+     * 
+     * @return A filter to limit results to those data set contents whose creation is scheduled before the given time.
+     *         See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     */
+
+    public java.util.Date getScheduledBefore() {
+        return this.scheduledBefore;
+    }
+
+    /**
+     * <p>
+     * A filter to limit results to those data set contents whose creation is scheduled before the given time. See the
+     * field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * </p>
+     * 
+     * @param scheduledBefore
+     *        A filter to limit results to those data set contents whose creation is scheduled before the given time.
+     *        See the field <code>triggers.schedule</code> in the CreateDataset request. (timestamp)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDatasetContentsRequest withScheduledBefore(java.util.Date scheduledBefore) {
+        setScheduledBefore(scheduledBefore);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +287,11 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getScheduledOnOrAfter() != null)
+            sb.append("ScheduledOnOrAfter: ").append(getScheduledOnOrAfter()).append(",");
+        if (getScheduledBefore() != null)
+            sb.append("ScheduledBefore: ").append(getScheduledBefore());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +318,14 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getScheduledOnOrAfter() == null ^ this.getScheduledOnOrAfter() == null)
+            return false;
+        if (other.getScheduledOnOrAfter() != null && other.getScheduledOnOrAfter().equals(this.getScheduledOnOrAfter()) == false)
+            return false;
+        if (other.getScheduledBefore() == null ^ this.getScheduledBefore() == null)
+            return false;
+        if (other.getScheduledBefore() != null && other.getScheduledBefore().equals(this.getScheduledBefore()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +337,8 @@ public class ListDatasetContentsRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getScheduledOnOrAfter() == null) ? 0 : getScheduledOnOrAfter().hashCode());
+        hashCode = prime * hashCode + ((getScheduledBefore() == null) ? 0 : getScheduledBefore().hashCode());
         return hashCode;
     }
 

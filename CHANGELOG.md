@@ -1,4 +1,9 @@
-# __1.11.476__ __2019-01-03__
+# __1.11.477__ __2019-01-03__
+## __AWS IoT Analytics__
+  - ### Features
+    - ListDatasetContents now has a filter to limit results by date scheduled.
+
+# __1.11.476__ __2019-01-02__
 ## __AWS OpsWorks for Chef Automate__
   - ### Features
     - Documentation updates for opsworkscm

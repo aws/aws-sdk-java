@@ -35,6 +35,45 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
      * </p>
+     * <p>
+     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with an alphabetic character or single underscore (_).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain hyphens (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be greater than 255 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01":
+     * 29} are invalid in message payloads.
+     * </p>
      */
     private java.util.List<Message> messages;
 
@@ -82,9 +121,86 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
      * </p>
+     * <p>
+     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with an alphabetic character or single underscore (_).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain hyphens (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be greater than 255 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01":
+     * 29} are invalid in message payloads.
+     * </p>
      * 
      * @return The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload":
-     *         "string"}'.
+     *         "string"}'.</p>
+     *         <p>
+     *         Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must begin with an alphabetic character or single underscore (_).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot contain hyphens (-).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot be greater than 255 characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or
+     *         {"__temp_01": 29} are invalid in message payloads.
      */
 
     public java.util.List<Message> getMessages() {
@@ -95,9 +211,87 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
      * </p>
+     * <p>
+     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with an alphabetic character or single underscore (_).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain hyphens (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be greater than 255 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01":
+     * 29} are invalid in message payloads.
+     * </p>
      * 
      * @param messages
-     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
+     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload":
+     *        "string"}'.</p>
+     *        <p>
+     *        Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with an alphabetic character or single underscore (_).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain hyphens (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be greater than 255 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or
+     *        {"__temp_01": 29} are invalid in message payloads.
      */
 
     public void setMessages(java.util.Collection<Message> messages) {
@@ -114,13 +308,91 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
      * </p>
      * <p>
+     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with an alphabetic character or single underscore (_).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain hyphens (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be greater than 255 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01":
+     * 29} are invalid in message payloads.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setMessages(java.util.Collection)} or {@link #withMessages(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param messages
-     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
+     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload":
+     *        "string"}'.</p>
+     *        <p>
+     *        Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with an alphabetic character or single underscore (_).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain hyphens (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be greater than 255 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or
+     *        {"__temp_01": 29} are invalid in message payloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,9 +410,87 @@ public class BatchPutMessageRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
      * </p>
+     * <p>
+     * Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must begin with an alphabetic character or single underscore (_).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot contain hyphens (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot be greater than 255 characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or {"__temp_01":
+     * 29} are invalid in message payloads.
+     * </p>
      * 
      * @param messages
-     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload": "string"}'.
+     *        The list of messages to be sent. Each message has format: '{ "messageId": "string", "payload":
+     *        "string"}'.</p>
+     *        <p>
+     *        Note that the field names of message payloads (data) that you send to AWS IoT Analytics:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must contain only alphanumeric characters and undescores (_); no other special characters are allowed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with an alphabetic character or single underscore (_).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot contain hyphens (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In regular expression terms: "^[A-Za-z_]([A-Za-z0-9]*|[A-Za-z0-9][A-Za-z0-9_]*)$".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot be greater than 255 characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Are case-insensitive. (Fields named "foo" and "FOO" in the same payload are considered duplicates.)
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For example, {"temp_01": 29} or {"_temp_01": 29} are valid, but {"temp-01": 29}, {"01_temp": 29} or
+     *        {"__temp_01": 29} are invalid in message payloads.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

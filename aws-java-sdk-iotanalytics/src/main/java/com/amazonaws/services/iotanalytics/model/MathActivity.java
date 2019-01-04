@@ -36,7 +36,7 @@ public class MathActivity implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The name of the attribute that will contain the result of the math operation.
+     * The name of the attribute that contains the result of the math operation.
      * </p>
      */
     private String attribute;
@@ -95,11 +95,11 @@ public class MathActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the attribute that will contain the result of the math operation.
+     * The name of the attribute that contains the result of the math operation.
      * </p>
      * 
      * @param attribute
-     *        The name of the attribute that will contain the result of the math operation.
+     *        The name of the attribute that contains the result of the math operation.
      */
 
     public void setAttribute(String attribute) {
@@ -108,10 +108,10 @@ public class MathActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the attribute that will contain the result of the math operation.
+     * The name of the attribute that contains the result of the math operation.
      * </p>
      * 
-     * @return The name of the attribute that will contain the result of the math operation.
+     * @return The name of the attribute that contains the result of the math operation.
      */
 
     public String getAttribute() {
@@ -120,11 +120,11 @@ public class MathActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the attribute that will contain the result of the math operation.
+     * The name of the attribute that contains the result of the math operation.
      * </p>
      * 
      * @param attribute
-     *        The name of the attribute that will contain the result of the math operation.
+     *        The name of the attribute that contains the result of the math operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

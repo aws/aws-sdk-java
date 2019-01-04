@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The data set whose latest contents will be used as input to the notebook or application.
+ * The data set whose latest contents are used as input to the notebook or application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetContentVersionValue"
@@ -30,18 +30,18 @@ public class DatasetContentVersionValue implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the data set whose latest contents will be used as input to the notebook or application.
+     * The name of the data set whose latest contents are used as input to the notebook or application.
      * </p>
      */
     private String datasetName;
 
     /**
      * <p>
-     * The name of the data set whose latest contents will be used as input to the notebook or application.
+     * The name of the data set whose latest contents are used as input to the notebook or application.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set whose latest contents will be used as input to the notebook or application.
+     *        The name of the data set whose latest contents are used as input to the notebook or application.
      */
 
     public void setDatasetName(String datasetName) {
@@ -50,10 +50,10 @@ public class DatasetContentVersionValue implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the data set whose latest contents will be used as input to the notebook or application.
+     * The name of the data set whose latest contents are used as input to the notebook or application.
      * </p>
      * 
-     * @return The name of the data set whose latest contents will be used as input to the notebook or application.
+     * @return The name of the data set whose latest contents are used as input to the notebook or application.
      */
 
     public String getDatasetName() {
@@ -62,11 +62,11 @@ public class DatasetContentVersionValue implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The name of the data set whose latest contents will be used as input to the notebook or application.
+     * The name of the data set whose latest contents are used as input to the notebook or application.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set whose latest contents will be used as input to the notebook or application.
+     *        The name of the data set whose latest contents are used as input to the notebook or application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

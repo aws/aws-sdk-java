@@ -30,33 +30,18 @@ public class QueryFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Used to limit data to that which has arrived since the last execution of the action. When you create data set
-     * contents using message data from a specified time frame, some message data may still be "in flight" when
-     * processing begins, and so will not arrive in time to be processed. Use this field to make allowances for the
-     * "in flight" time of you message data, so that data not processed from a previous time frame will be included with
-     * the next time frame. Without this, missed message data would be excluded from processing during the next time
-     * frame as well, because its timestamp places it within the previous time frame.
+     * Used to limit data to that which has arrived since the last execution of the action.
      * </p>
      */
     private DeltaTime deltaTime;
 
     /**
      * <p>
-     * Used to limit data to that which has arrived since the last execution of the action. When you create data set
-     * contents using message data from a specified time frame, some message data may still be "in flight" when
-     * processing begins, and so will not arrive in time to be processed. Use this field to make allowances for the
-     * "in flight" time of you message data, so that data not processed from a previous time frame will be included with
-     * the next time frame. Without this, missed message data would be excluded from processing during the next time
-     * frame as well, because its timestamp places it within the previous time frame.
+     * Used to limit data to that which has arrived since the last execution of the action.
      * </p>
      * 
      * @param deltaTime
-     *        Used to limit data to that which has arrived since the last execution of the action. When you create data
-     *        set contents using message data from a specified time frame, some message data may still be "in flight"
-     *        when processing begins, and so will not arrive in time to be processed. Use this field to make allowances
-     *        for the "in flight" time of you message data, so that data not processed from a previous time frame will
-     *        be included with the next time frame. Without this, missed message data would be excluded from processing
-     *        during the next time frame as well, because its timestamp places it within the previous time frame.
+     *        Used to limit data to that which has arrived since the last execution of the action.
      */
 
     public void setDeltaTime(DeltaTime deltaTime) {
@@ -65,20 +50,10 @@ public class QueryFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Used to limit data to that which has arrived since the last execution of the action. When you create data set
-     * contents using message data from a specified time frame, some message data may still be "in flight" when
-     * processing begins, and so will not arrive in time to be processed. Use this field to make allowances for the
-     * "in flight" time of you message data, so that data not processed from a previous time frame will be included with
-     * the next time frame. Without this, missed message data would be excluded from processing during the next time
-     * frame as well, because its timestamp places it within the previous time frame.
+     * Used to limit data to that which has arrived since the last execution of the action.
      * </p>
      * 
-     * @return Used to limit data to that which has arrived since the last execution of the action. When you create data
-     *         set contents using message data from a specified time frame, some message data may still be "in flight"
-     *         when processing begins, and so will not arrive in time to be processed. Use this field to make allowances
-     *         for the "in flight" time of you message data, so that data not processed from a previous time frame will
-     *         be included with the next time frame. Without this, missed message data would be excluded from processing
-     *         during the next time frame as well, because its timestamp places it within the previous time frame.
+     * @return Used to limit data to that which has arrived since the last execution of the action.
      */
 
     public DeltaTime getDeltaTime() {
@@ -87,21 +62,11 @@ public class QueryFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Used to limit data to that which has arrived since the last execution of the action. When you create data set
-     * contents using message data from a specified time frame, some message data may still be "in flight" when
-     * processing begins, and so will not arrive in time to be processed. Use this field to make allowances for the
-     * "in flight" time of you message data, so that data not processed from a previous time frame will be included with
-     * the next time frame. Without this, missed message data would be excluded from processing during the next time
-     * frame as well, because its timestamp places it within the previous time frame.
+     * Used to limit data to that which has arrived since the last execution of the action.
      * </p>
      * 
      * @param deltaTime
-     *        Used to limit data to that which has arrived since the last execution of the action. When you create data
-     *        set contents using message data from a specified time frame, some message data may still be "in flight"
-     *        when processing begins, and so will not arrive in time to be processed. Use this field to make allowances
-     *        for the "in flight" time of you message data, so that data not processed from a previous time frame will
-     *        be included with the next time frame. Without this, missed message data would be excluded from processing
-     *        during the next time frame as well, because its timestamp places it within the previous time frame.
+     *        Used to limit data to that which has arrived since the last execution of the action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

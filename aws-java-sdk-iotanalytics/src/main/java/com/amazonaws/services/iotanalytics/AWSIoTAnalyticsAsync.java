@@ -185,7 +185,8 @@ public interface AWSIoTAnalyticsAsync extends AWSIoTAnalytics {
 
     /**
      * <p>
-     * Creates the content of a data set by applying a SQL action.
+     * Creates the content of a data set by applying a "queryAction" (a SQL query) or a "containerAction" (executing a
+     * containerized application).
      * </p>
      * 
      * @param createDatasetContentRequest
@@ -198,7 +199,8 @@ public interface AWSIoTAnalyticsAsync extends AWSIoTAnalytics {
 
     /**
      * <p>
-     * Creates the content of a data set by applying a SQL action.
+     * Creates the content of a data set by applying a "queryAction" (a SQL query) or a "containerAction" (executing a
+     * containerized application).
      * </p>
      * 
      * @param createDatasetContentRequest
