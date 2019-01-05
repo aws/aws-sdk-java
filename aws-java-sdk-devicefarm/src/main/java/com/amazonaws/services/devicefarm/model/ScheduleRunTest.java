@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents test settings. This data structure is passed in as the "test" parameter to ScheduleRun. For an example of
- * the JSON request syntax, see <a>ScheduleRun</a>.
+ * Represents test settings. This data structure is passed in as the <code>test</code> parameter to ScheduleRun. For an
+ * example of the JSON request syntax, see <a>ScheduleRun</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunTest" target="_top">AWS API
@@ -65,17 +65,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -167,13 +187,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest", and
-     * "default".
+     * appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and "default".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.7.2).
+     * “latest” will run the latest Appium version supported by Device Farm (1.9.1).
      * </p>
      * </li>
      * <li>
@@ -353,17 +372,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -432,17 +471,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -518,17 +577,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -596,17 +675,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *         APPIUM_NODE: The Appium Node.js type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *         APPIUM_RUBY: The Appium Ruby type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *         APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *         </p>
      *         </li>
      *         <li>
@@ -682,17 +781,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -761,17 +880,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -849,17 +988,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -928,17 +1087,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -1014,17 +1193,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     * APPIUM_NODE: The Appium Node.js type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     * APPIUM_RUBY: The Appium Ruby type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     * APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      * </p>
      * </li>
      * <li>
@@ -1093,17 +1292,37 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for Web apps.
+     *        APPIUM_NODE: The Appium Node.js type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for Web apps.
+     *        APPIUM_RUBY: The Appium Ruby type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        APPIUM_WEB_PYTHON: The Appium Python type for Web apps.
+     *        APPIUM_WEB_JAVA_JUNIT: The Appium Java JUnit type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_JAVA_TESTNG: The Appium Java TestNG type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_PYTHON: The Appium Python type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_NODE: The Appium Node.js type for web apps.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        APPIUM_WEB_RUBY: The Appium Ruby type for web apps.
      *        </p>
      *        </li>
      *        <li>
@@ -1303,13 +1522,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest", and
-     * "default".
+     * appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and "default".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.7.2).
+     * “latest” will run the latest Appium version supported by Device Farm (1.9.1).
      * </p>
      * </li>
      * <li>
@@ -1486,13 +1704,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest",
-     *         and "default".
+     *         appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and
+     *         "default".
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         “latest” will run the latest Appium version supported by Device Farm (1.7.2).
+     *         “latest” will run the latest Appium version supported by Device Farm (1.9.1).
      *         </p>
      *         </li>
      *         <li>
@@ -1676,13 +1894,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest", and
-     * "default".
+     * appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and "default".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.7.2).
+     * “latest” will run the latest Appium version supported by Device Farm (1.9.1).
      * </p>
      * </li>
      * <li>
@@ -1860,13 +2077,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest",
-     *        and "default".
+     *        appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and
+     *        "default".
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        “latest” will run the latest Appium version supported by Device Farm (1.7.2).
+     *        “latest” will run the latest Appium version supported by Device Farm (1.9.1).
      *        </p>
      *        </li>
      *        <li>
@@ -2050,13 +2267,12 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest", and
-     * "default".
+     * appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and "default".
      * </p>
      * <ul>
      * <li>
      * <p>
-     * “latest” will run the latest Appium version supported by Device Farm (1.7.2).
+     * “latest” will run the latest Appium version supported by Device Farm (1.9.1).
      * </p>
      * </li>
      * <li>
@@ -2234,13 +2450,13 @@ public class ScheduleRunTest implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        appium_version: The Appium version. Currently supported values are "1.7.2", "1.7.1", "1.6.5", "latest",
-     *        and "default".
+     *        appium_version: The Appium version. Currently supported values are "1.6.5" (and higher), "latest", and
+     *        "default".
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        “latest” will run the latest Appium version supported by Device Farm (1.7.2).
+     *        “latest” will run the latest Appium version supported by Device Farm (1.9.1).
      *        </p>
      *        </li>
      *        <li>

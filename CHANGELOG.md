@@ -1,3 +1,12 @@
+# __1.11.478__ __2019-01-04__
+## __AWS Device Farm__
+  - ### Features
+    - "This release provides support for running Appium Node.js and Appium Ruby tests on AWS Device Farm.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - Documentation updates for Amazon ECS tagging feature.
+
 # __1.11.477__ __2019-01-03__
 ## __AWS IoT Analytics__
   - ### Features

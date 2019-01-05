@@ -93,12 +93,12 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -154,7 +154,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators take a values array that has one or more elements.
      * </p>
      * </li>
      * <li>
@@ -312,12 +312,12 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -373,7 +373,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators take a values array that has one or more elements.
      * </p>
      * </li>
      * <li>
@@ -442,12 +442,14 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *         "FALSE".
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *         REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *         "FALSE".
      *         </p>
      *         </li>
      *         <li>
@@ -503,7 +505,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <ul>
      *         <li>
      *         <p>
-     *         The IN and NOT operators can take a values array that has more than one element.
+     *         The IN and NOT_IN operators take a values array that has one or more elements.
      *         </p>
      *         </li>
      *         <li>
@@ -577,12 +579,12 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -638,7 +640,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators take a values array that has one or more elements.
      * </p>
      * </li>
      * <li>
@@ -708,12 +710,14 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -769,7 +773,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators take a values array that has one or more elements.
      *        </p>
      *        </li>
      *        <li>
@@ -848,12 +852,12 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -909,7 +913,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators take a values array that has one or more elements.
      * </p>
      * </li>
      * <li>
@@ -984,12 +988,14 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -1045,7 +1051,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators take a values array that has one or more elements.
      *        </p>
      *        </li>
      *        <li>
@@ -1126,12 +1132,12 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -1187,7 +1193,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators take a values array that has one or more elements.
      * </p>
      * </li>
      * <li>
@@ -1257,12 +1263,14 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -1318,7 +1326,7 @@ public class ListDevicesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators take a values array that has one or more elements.
      *        </p>
      *        </li>
      *        <li>

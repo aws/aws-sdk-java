@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Represents the device filters used in a test run as well as the maximum number of devices to be included in the run.
- * It is passed in as the deviceSelectionConfiguration request parameter in <a>ScheduleRun</a>.
+ * It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceSelectionConfiguration"
@@ -37,7 +37,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
+     * <b>Attribute</b>
+     * </p>
+     * <p>
+     * The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -82,12 +85,12 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -109,7 +112,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Operator: The filter operator.
+     * <b>Operator</b>
+     * </p>
+     * <p>
+     * The filter operator.
      * </p>
      * <ul>
      * <li>
@@ -138,12 +144,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Values: An array of one or more filter values.
+     * <b>Values</b>
+     * </p>
+     * <p>
+     * An array of one or more filter values.
+     * </p>
+     * <p class="title">
+     * <b>Operator Values</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -151,10 +163,29 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * The other operators require an array with a single element.
      * </p>
      * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Attribute Values</b>
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     * "TEMPORARY_NOT_AVAILABLE" as values.
+     * The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      * </p>
      * </li>
      * </ul>
@@ -177,7 +208,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
+     * <b>Attribute</b>
+     * </p>
+     * <p>
+     * The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -222,12 +256,12 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -249,7 +283,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Operator: The filter operator.
+     * <b>Operator</b>
+     * </p>
+     * <p>
+     * The filter operator.
      * </p>
      * <ul>
      * <li>
@@ -278,12 +315,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Values: An array of one or more filter values.
+     * <b>Values</b>
+     * </p>
+     * <p>
+     * An array of one or more filter values.
+     * </p>
+     * <p class="title">
+     * <b>Operator Values</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -291,10 +334,29 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * The other operators require an array with a single element.
      * </p>
      * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Attribute Values</b>
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     * "TEMPORARY_NOT_AVAILABLE" as values.
+     * The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      * </p>
      * </li>
      * </ul>
@@ -306,8 +368,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *         <ul>
      *         <li>
      *         <p>
-     *         Attribute: The aspect of a device such as platform or model used as the selection criteria in a device
-     *         filter.
+     *         <b>Attribute</b>
+     *         </p>
+     *         <p>
+     *         The aspect of a device such as platform or model used as the selection criteria in a device filter.
      *         </p>
      *         <p>
      *         Allowed values include:
@@ -352,12 +416,14 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *         </li>
      *         <li>
      *         <p>
-     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *         "FALSE".
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *         REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *         "FALSE".
      *         </p>
      *         </li>
      *         <li>
@@ -379,7 +445,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *         </li>
      *         <li>
      *         <p>
-     *         Operator: The filter operator.
+     *         <b>Operator</b>
+     *         </p>
+     *         <p>
+     *         The filter operator.
      *         </p>
      *         <ul>
      *         <li>
@@ -408,12 +477,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *         </li>
      *         <li>
      *         <p>
-     *         Values: An array of one or more filter values.
+     *         <b>Values</b>
+     *         </p>
+     *         <p>
+     *         An array of one or more filter values.
+     *         </p>
+     *         <p class="title">
+     *         <b>Operator Values</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         The IN and NOT operators can take a values array that has more than one element.
+     *         The IN and NOT_IN operators can take a values array that has more than one element.
      *         </p>
      *         </li>
      *         <li>
@@ -421,10 +496,30 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *         The other operators require an array with a single element.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p class="title">
+     *         <b>Attribute Values</b>
+     *         </p>
+     *         <ul>
      *         <li>
      *         <p>
-     *         In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     *         "TEMPORARY_NOT_AVAILABLE" as values.
+     *         The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     *         "TEMPORARY_NOT_AVAILABLE".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      *         </p>
      *         </li>
      *         </ul>
@@ -443,7 +538,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
+     * <b>Attribute</b>
+     * </p>
+     * <p>
+     * The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -488,12 +586,12 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -515,7 +613,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Operator: The filter operator.
+     * <b>Operator</b>
+     * </p>
+     * <p>
+     * The filter operator.
      * </p>
      * <ul>
      * <li>
@@ -544,12 +645,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Values: An array of one or more filter values.
+     * <b>Values</b>
+     * </p>
+     * <p>
+     * An array of one or more filter values.
+     * </p>
+     * <p class="title">
+     * <b>Operator Values</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -557,10 +664,29 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * The other operators require an array with a single element.
      * </p>
      * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Attribute Values</b>
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     * "TEMPORARY_NOT_AVAILABLE" as values.
+     * The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      * </p>
      * </li>
      * </ul>
@@ -573,8 +699,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        <ul>
      *        <li>
      *        <p>
-     *        Attribute: The aspect of a device such as platform or model used as the selection criteria in a device
-     *        filter.
+     *        <b>Attribute</b>
+     *        </p>
+     *        <p>
+     *        The aspect of a device such as platform or model used as the selection criteria in a device filter.
      *        </p>
      *        <p>
      *        Allowed values include:
@@ -619,12 +747,14 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -646,7 +776,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        Operator: The filter operator.
+     *        <b>Operator</b>
+     *        </p>
+     *        <p>
+     *        The filter operator.
      *        </p>
      *        <ul>
      *        <li>
@@ -675,12 +808,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        Values: An array of one or more filter values.
+     *        <b>Values</b>
+     *        </p>
+     *        <p>
+     *        An array of one or more filter values.
+     *        </p>
+     *        <p class="title">
+     *        <b>Operator Values</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators can take a values array that has more than one element.
      *        </p>
      *        </li>
      *        <li>
@@ -688,10 +827,30 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        The other operators require an array with a single element.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attribute Values</b>
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
-     *        In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     *        "TEMPORARY_NOT_AVAILABLE" as values.
+     *        The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     *        "TEMPORARY_NOT_AVAILABLE".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      *        </p>
      *        </li>
      *        </ul>
@@ -715,7 +874,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
+     * <b>Attribute</b>
+     * </p>
+     * <p>
+     * The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -760,12 +922,12 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -787,7 +949,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Operator: The filter operator.
+     * <b>Operator</b>
+     * </p>
+     * <p>
+     * The filter operator.
      * </p>
      * <ul>
      * <li>
@@ -816,12 +981,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Values: An array of one or more filter values.
+     * <b>Values</b>
+     * </p>
+     * <p>
+     * An array of one or more filter values.
+     * </p>
+     * <p class="title">
+     * <b>Operator Values</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -829,10 +1000,29 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * The other operators require an array with a single element.
      * </p>
      * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Attribute Values</b>
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     * "TEMPORARY_NOT_AVAILABLE" as values.
+     * The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      * </p>
      * </li>
      * </ul>
@@ -850,8 +1040,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        <ul>
      *        <li>
      *        <p>
-     *        Attribute: The aspect of a device such as platform or model used as the selection criteria in a device
-     *        filter.
+     *        <b>Attribute</b>
+     *        </p>
+     *        <p>
+     *        The aspect of a device such as platform or model used as the selection criteria in a device filter.
      *        </p>
      *        <p>
      *        Allowed values include:
@@ -896,12 +1088,14 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -923,7 +1117,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        Operator: The filter operator.
+     *        <b>Operator</b>
+     *        </p>
+     *        <p>
+     *        The filter operator.
      *        </p>
      *        <ul>
      *        <li>
@@ -952,12 +1149,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        Values: An array of one or more filter values.
+     *        <b>Values</b>
+     *        </p>
+     *        <p>
+     *        An array of one or more filter values.
+     *        </p>
+     *        <p class="title">
+     *        <b>Operator Values</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators can take a values array that has more than one element.
      *        </p>
      *        </li>
      *        <li>
@@ -965,10 +1168,30 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        The other operators require an array with a single element.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attribute Values</b>
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
-     *        In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     *        "TEMPORARY_NOT_AVAILABLE" as values.
+     *        The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     *        "TEMPORARY_NOT_AVAILABLE".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      *        </p>
      *        </li>
      *        </ul>
@@ -994,7 +1217,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * <ul>
      * <li>
      * <p>
-     * Attribute: The aspect of a device such as platform or model used as the selection criteria in a device filter.
+     * <b>Attribute</b>
+     * </p>
+     * <p>
+     * The aspect of a device such as platform or model used as the selection criteria in a device filter.
      * </p>
      * <p>
      * Allowed values include:
@@ -1039,12 +1265,12 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -1066,7 +1292,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Operator: The filter operator.
+     * <b>Operator</b>
+     * </p>
+     * <p>
+     * The filter operator.
      * </p>
      * <ul>
      * <li>
@@ -1095,12 +1324,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * </li>
      * <li>
      * <p>
-     * Values: An array of one or more filter values.
+     * <b>Values</b>
+     * </p>
+     * <p>
+     * An array of one or more filter values.
+     * </p>
+     * <p class="title">
+     * <b>Operator Values</b>
      * </p>
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -1108,10 +1343,29 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      * The other operators require an array with a single element.
      * </p>
      * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Attribute Values</b>
+     * </p>
+     * <ul>
      * <li>
      * <p>
-     * In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     * "TEMPORARY_NOT_AVAILABLE" as values.
+     * The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or "TEMPORARY_NOT_AVAILABLE".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      * </p>
      * </li>
      * </ul>
@@ -1124,8 +1378,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        <ul>
      *        <li>
      *        <p>
-     *        Attribute: The aspect of a device such as platform or model used as the selection criteria in a device
-     *        filter.
+     *        <b>Attribute</b>
+     *        </p>
+     *        <p>
+     *        The aspect of a device such as platform or model used as the selection criteria in a device filter.
      *        </p>
      *        <p>
      *        Allowed values include:
@@ -1170,12 +1426,14 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -1197,7 +1455,10 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        Operator: The filter operator.
+     *        <b>Operator</b>
+     *        </p>
+     *        <p>
+     *        The filter operator.
      *        </p>
      *        <ul>
      *        <li>
@@ -1226,12 +1487,18 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        </li>
      *        <li>
      *        <p>
-     *        Values: An array of one or more filter values.
+     *        <b>Values</b>
+     *        </p>
+     *        <p>
+     *        An array of one or more filter values.
+     *        </p>
+     *        <p class="title">
+     *        <b>Operator Values</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators can take a values array that has more than one element.
      *        </p>
      *        </li>
      *        <li>
@@ -1239,10 +1506,30 @@ public class DeviceSelectionConfiguration implements Serializable, Cloneable, St
      *        The other operators require an array with a single element.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p class="title">
+     *        <b>Attribute Values</b>
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
-     *        In a request, the AVAILABILITY attribute takes "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
-     *        "TEMPORARY_NOT_AVAILABLE" as values.
+     *        The PLATFORM attribute can be set to "ANDROID" or "IOS".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The AVAILABILITY attribute can be set to "AVAILABLE", "HIGHLY_AVAILABLE", "BUSY", or
+     *        "TEMPORARY_NOT_AVAILABLE".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The FORM_FACTOR attribute can be set to "PHONE" or "TABLET".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The FLEET_TYPE attribute can be set to "PUBLIC" or "PRIVATE".
      *        </p>
      *        </li>
      *        </ul>

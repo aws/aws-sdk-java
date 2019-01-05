@@ -180,7 +180,8 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DeviceInstance> instances;
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run.
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
      * </p>
      */
     private String availability;
@@ -1397,11 +1398,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run.
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
      * </p>
      * 
      * @param availability
-     *        Reflects how likely a device will be available for a test run.
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
      * @see DeviceAvailability
      */
 
@@ -1411,10 +1414,12 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run.
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
      * </p>
      * 
-     * @return Reflects how likely a device will be available for a test run.
+     * @return Reflects how likely a device will be available for a test run. It is currently available in the
+     *         ListDevices and GetDevice API methods.
      * @see DeviceAvailability
      */
 
@@ -1424,11 +1429,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run.
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
      * </p>
      * 
      * @param availability
-     *        Reflects how likely a device will be available for a test run.
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceAvailability
      */
@@ -1440,11 +1447,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run.
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
      * </p>
      * 
      * @param availability
-     *        Reflects how likely a device will be available for a test run.
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
      * @see DeviceAvailability
      */
 
@@ -1454,11 +1463,13 @@ public class Device implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Reflects how likely a device will be available for a test run.
+     * Reflects how likely a device will be available for a test run. It is currently available in the ListDevices and
+     * GetDevice API methods.
      * </p>
      * 
      * @param availability
-     *        Reflects how likely a device will be available for a test run.
+     *        Reflects how likely a device will be available for a test run. It is currently available in the
+     *        ListDevices and GetDevice API methods.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeviceAvailability
      */

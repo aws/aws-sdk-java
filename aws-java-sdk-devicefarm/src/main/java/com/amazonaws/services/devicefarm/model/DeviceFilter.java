@@ -20,12 +20,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Represents a device filter used to select a set of devices to be included in a test run. This data structure is
- * passed in as the "deviceSelectionConfiguration" parameter to ScheduleRun. For an example of the JSON request syntax,
- * see <a>ScheduleRun</a>.
+ * passed in as the <code>deviceSelectionConfiguration</code> parameter to ScheduleRun. For an example of the JSON
+ * request syntax, see <a>ScheduleRun</a>.
  * </p>
  * <p>
- * It is also passed in as the "filters" parameter to ListDevices. For an example of the JSON request syntax, see
- * <a>ListDevices</a>.
+ * It is also passed in as the <code>filters</code> parameter to ListDevices. For an example of the JSON request syntax,
+ * see <a>ListDevices</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/DeviceFilter" target="_top">AWS API
@@ -81,12 +81,12 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -147,7 +147,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -231,12 +231,12 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -301,12 +301,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -378,12 +380,12 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -447,12 +449,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *         REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *         "FALSE".
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *         REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *         "FALSE".
      *         </p>
      *         </li>
      *         <li>
@@ -524,12 +528,12 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -594,12 +598,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -673,12 +679,12 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
      * <p>
-     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     * REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or "FALSE".
      * </p>
      * </li>
      * <li>
@@ -743,12 +749,14 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.
+     *        REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging.
+     *        REMOTE_DEBUG_ENABLED: Whether the device is enabled for remote debugging. Valid values are "TRUE" or
+     *        "FALSE".
      *        </p>
      *        </li>
      *        <li>
@@ -1032,7 +1040,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -1074,7 +1082,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         The IN and NOT operators can take a values array that has more than one element.
+     *         The IN and NOT_IN operators can take a values array that has more than one element.
      *         </p>
      *         </li>
      *         <li>
@@ -1124,7 +1132,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -1167,7 +1175,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators can take a values array that has more than one element.
      *        </p>
      *        </li>
      *        <li>
@@ -1222,7 +1230,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -1270,7 +1278,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators can take a values array that has more than one element.
      *        </p>
      *        </li>
      *        <li>
@@ -1327,7 +1335,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * The IN and NOT operators can take a values array that has more than one element.
+     * The IN and NOT_IN operators can take a values array that has more than one element.
      * </p>
      * </li>
      * <li>
@@ -1370,7 +1378,7 @@ public class DeviceFilter implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        The IN and NOT operators can take a values array that has more than one element.
+     *        The IN and NOT_IN operators can take a values array that has more than one element.
      *        </p>
      *        </li>
      *        <li>
