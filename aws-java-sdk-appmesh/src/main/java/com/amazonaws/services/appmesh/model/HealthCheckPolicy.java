@@ -21,11 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An object representing the health check policy for a virtual node's listener.
  * </p>
- * <note>
- * <p>
- * Listener health checks are not available during the App Mesh preview.
- * </p>
- * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2018-10-01/HealthCheckPolicy" target="_top">AWS API
  *      Documentation</a>
@@ -47,13 +42,15 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
     private Long intervalMillis;
     /**
      * <p>
-     * The destination path for the health check request.
+     * The destination path for the health check request. This is only required if the specified protocol is HTTP; if
+     * the protocol is TCP, then this parameter is ignored.
      * </p>
      */
     private String path;
     /**
      * <p>
-     * The destination port for the health check request.
+     * The destination port for the health check request. This port must match the port defined in the
+     * <a>PortMapping</a> for the listener.
      * </p>
      */
     private Integer port;
@@ -158,11 +155,13 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination path for the health check request.
+     * The destination path for the health check request. This is only required if the specified protocol is HTTP; if
+     * the protocol is TCP, then this parameter is ignored.
      * </p>
      * 
      * @param path
-     *        The destination path for the health check request.
+     *        The destination path for the health check request. This is only required if the specified protocol is
+     *        HTTP; if the protocol is TCP, then this parameter is ignored.
      */
 
     public void setPath(String path) {
@@ -171,10 +170,12 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination path for the health check request.
+     * The destination path for the health check request. This is only required if the specified protocol is HTTP; if
+     * the protocol is TCP, then this parameter is ignored.
      * </p>
      * 
-     * @return The destination path for the health check request.
+     * @return The destination path for the health check request. This is only required if the specified protocol is
+     *         HTTP; if the protocol is TCP, then this parameter is ignored.
      */
 
     public String getPath() {
@@ -183,11 +184,13 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination path for the health check request.
+     * The destination path for the health check request. This is only required if the specified protocol is HTTP; if
+     * the protocol is TCP, then this parameter is ignored.
      * </p>
      * 
      * @param path
-     *        The destination path for the health check request.
+     *        The destination path for the health check request. This is only required if the specified protocol is
+     *        HTTP; if the protocol is TCP, then this parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,11 +201,13 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination port for the health check request.
+     * The destination port for the health check request. This port must match the port defined in the
+     * <a>PortMapping</a> for the listener.
      * </p>
      * 
      * @param port
-     *        The destination port for the health check request.
+     *        The destination port for the health check request. This port must match the port defined in the
+     *        <a>PortMapping</a> for the listener.
      */
 
     public void setPort(Integer port) {
@@ -211,10 +216,12 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination port for the health check request.
+     * The destination port for the health check request. This port must match the port defined in the
+     * <a>PortMapping</a> for the listener.
      * </p>
      * 
-     * @return The destination port for the health check request.
+     * @return The destination port for the health check request. This port must match the port defined in the
+     *         <a>PortMapping</a> for the listener.
      */
 
     public Integer getPort() {
@@ -223,11 +230,13 @@ public class HealthCheckPolicy implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The destination port for the health check request.
+     * The destination port for the health check request. This port must match the port defined in the
+     * <a>PortMapping</a> for the listener.
      * </p>
      * 
      * @param port
-     *        The destination port for the health check request.
+     *        The destination port for the health check request. This port must match the port defined in the
+     *        <a>PortMapping</a> for the listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -49,13 +49,13 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
     private String arn;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp in seconds for when the resource was created.
      * </p>
      */
     private java.util.Date createdAt;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was last updated.
+     * The Unix epoch timestamp in seconds for when the resource was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -187,11 +187,11 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the cluster was created.
+     *        The Unix epoch timestamp in seconds for when the resource was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -200,10 +200,10 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp in seconds for when the resource was created.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the cluster was created.
+     * @return The Unix epoch timestamp in seconds for when the resource was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -212,11 +212,11 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was created.
+     * The Unix epoch timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the cluster was created.
+     *        The Unix epoch timestamp in seconds for when the resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was last updated.
+     * The Unix epoch timestamp in seconds for when the resource was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The Unix epoch timestamp in seconds for when the cluster was last updated.
+     *        The Unix epoch timestamp in seconds for when the resource was last updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -240,10 +240,10 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was last updated.
+     * The Unix epoch timestamp in seconds for when the resource was last updated.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the cluster was last updated.
+     * @return The Unix epoch timestamp in seconds for when the resource was last updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -252,11 +252,11 @@ public class ResourceMetadata implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the cluster was last updated.
+     * The Unix epoch timestamp in seconds for when the resource was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The Unix epoch timestamp in seconds for when the cluster was last updated.
+     *        The Unix epoch timestamp in seconds for when the resource was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

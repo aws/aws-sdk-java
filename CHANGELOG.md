@@ -1,3 +1,8 @@
+# __1.11.479__ __2019-01-07__
+## __AWS App Mesh__
+  - ### Features
+    - AWS App Mesh now supports active health checks. You can specify TCP or HTTP health checks with custom thresholds and intervals on your VirtualNode definitions. See the AWS App Mesh HealthCheckPolicy documentation for more information.
+
 # __1.11.478__ __2019-01-04__
 ## __AWS Device Farm__
   - ### Features

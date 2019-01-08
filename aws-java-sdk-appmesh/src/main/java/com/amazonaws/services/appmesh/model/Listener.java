@@ -32,11 +32,6 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The health check information for the listener.
      * </p>
-     * <note>
-     * <p>
-     * Listener health checks are not available during the App Mesh preview.
-     * </p>
-     * </note>
      */
     private HealthCheckPolicy healthCheck;
     /**
@@ -50,17 +45,9 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The health check information for the listener.
      * </p>
-     * <note>
-     * <p>
-     * Listener health checks are not available during the App Mesh preview.
-     * </p>
-     * </note>
      * 
      * @param healthCheck
-     *        The health check information for the listener.</p> <note>
-     *        <p>
-     *        Listener health checks are not available during the App Mesh preview.
-     *        </p>
+     *        The health check information for the listener.
      */
 
     public void setHealthCheck(HealthCheckPolicy healthCheck) {
@@ -71,16 +58,8 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The health check information for the listener.
      * </p>
-     * <note>
-     * <p>
-     * Listener health checks are not available during the App Mesh preview.
-     * </p>
-     * </note>
      * 
-     * @return The health check information for the listener.</p> <note>
-     *         <p>
-     *         Listener health checks are not available during the App Mesh preview.
-     *         </p>
+     * @return The health check information for the listener.
      */
 
     public HealthCheckPolicy getHealthCheck() {
@@ -91,17 +70,9 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The health check information for the listener.
      * </p>
-     * <note>
-     * <p>
-     * Listener health checks are not available during the App Mesh preview.
-     * </p>
-     * </note>
      * 
      * @param healthCheck
-     *        The health check information for the listener.</p> <note>
-     *        <p>
-     *        Listener health checks are not available during the App Mesh preview.
-     *        </p>
+     *        The health check information for the listener.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

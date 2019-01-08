@@ -40,7 +40,7 @@ import com.amazonaws.services.appmesh.model.*;
  * App Mesh supports containerized microservice applications that use service discovery naming for their components. To
  * use App Mesh, you must have a containerized application running on Amazon EC2 instances, hosted in either Amazon ECS,
  * Amazon EKS, or Kubernetes on AWS. For more information about service discovery on Amazon ECS, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideservice-discovery.html">Service Discovery</a> in the
+ * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service Discovery</a> in the
  * <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes <code>kube-dns</code> is supported. For more
  * information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS for Services
  * and Pods</a> in the Kubernetes documentation.
@@ -352,7 +352,7 @@ public interface AWSAppMesh {
 
     /**
      * <p>
-     * Describes an existing cluster.
+     * Describes an existing service mesh.
      * </p>
      * 
      * @param describeMeshRequest
