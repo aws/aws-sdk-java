@@ -1,3 +1,12 @@
+# __1.11.480__ __2019-01-09__
+## __Amazon DocumentDB with MongoDB compatibility__
+  - ### Features
+    - Amazon DocumentDB (with MongoDB compatibility) is a fast, reliable, and fully-managed database service. Amazon DocumentDB makes it easy for developers to set up, run, and scale MongoDB-compatible databases in the cloud.
+
+## __Amazon Redshift__
+  - ### Features
+    - DescribeSnapshotSchedules returns a list of snapshot schedules. With this release, this API will have a list of clusters and number of clusters associated with the schedule.
+
 # __1.11.479__ __2019-01-07__
 ## __AWS App Mesh__
   - ### Features

@@ -85,6 +85,21 @@ public class SnapshotScheduleStaxUnmarshaller implements Unmarshaller<SnapshotSc
                     continue;
                 }
 
+                if (context.testExpression("AssociatedClusterCount", targetDepth)) {
+                    snapshotSchedule.setAssociatedClusterCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AssociatedClusters", targetDepth)) {
+                    snapshotSchedule.withAssociatedClusters(new ArrayList<ClusterAssociatedToSchedule>());
+                    continue;
+                }
+
+                if (context.testExpression("AssociatedClusters/ClusterAssociatedToSchedule", targetDepth)) {
+                    snapshotSchedule.withAssociatedClusters(ClusterAssociatedToScheduleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return snapshotSchedule;

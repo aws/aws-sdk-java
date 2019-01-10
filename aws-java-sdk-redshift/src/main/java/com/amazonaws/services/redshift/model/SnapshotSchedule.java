@@ -54,6 +54,10 @@ public class SnapshotSchedule implements Serializable, Cloneable {
 
     private com.amazonaws.internal.SdkInternalList<java.util.Date> nextInvocations;
 
+    private Integer associatedClusterCount;
+
+    private com.amazonaws.internal.SdkInternalList<ClusterAssociatedToSchedule> associatedClusters;
+
     /**
      * <p>
      * A list of ScheduleDefinitions
@@ -336,6 +340,87 @@ public class SnapshotSchedule implements Serializable, Cloneable {
     }
 
     /**
+     * @param associatedClusterCount
+     */
+
+    public void setAssociatedClusterCount(Integer associatedClusterCount) {
+        this.associatedClusterCount = associatedClusterCount;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getAssociatedClusterCount() {
+        return this.associatedClusterCount;
+    }
+
+    /**
+     * @param associatedClusterCount
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SnapshotSchedule withAssociatedClusterCount(Integer associatedClusterCount) {
+        setAssociatedClusterCount(associatedClusterCount);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.List<ClusterAssociatedToSchedule> getAssociatedClusters() {
+        if (associatedClusters == null) {
+            associatedClusters = new com.amazonaws.internal.SdkInternalList<ClusterAssociatedToSchedule>();
+        }
+        return associatedClusters;
+    }
+
+    /**
+     * @param associatedClusters
+     */
+
+    public void setAssociatedClusters(java.util.Collection<ClusterAssociatedToSchedule> associatedClusters) {
+        if (associatedClusters == null) {
+            this.associatedClusters = null;
+            return;
+        }
+
+        this.associatedClusters = new com.amazonaws.internal.SdkInternalList<ClusterAssociatedToSchedule>(associatedClusters);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociatedClusters(java.util.Collection)} or {@link #withAssociatedClusters(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param associatedClusters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SnapshotSchedule withAssociatedClusters(ClusterAssociatedToSchedule... associatedClusters) {
+        if (this.associatedClusters == null) {
+            setAssociatedClusters(new com.amazonaws.internal.SdkInternalList<ClusterAssociatedToSchedule>(associatedClusters.length));
+        }
+        for (ClusterAssociatedToSchedule ele : associatedClusters) {
+            this.associatedClusters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param associatedClusters
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SnapshotSchedule withAssociatedClusters(java.util.Collection<ClusterAssociatedToSchedule> associatedClusters) {
+        setAssociatedClusters(associatedClusters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -356,7 +441,11 @@ public class SnapshotSchedule implements Serializable, Cloneable {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getNextInvocations() != null)
-            sb.append("NextInvocations: ").append(getNextInvocations());
+            sb.append("NextInvocations: ").append(getNextInvocations()).append(",");
+        if (getAssociatedClusterCount() != null)
+            sb.append("AssociatedClusterCount: ").append(getAssociatedClusterCount()).append(",");
+        if (getAssociatedClusters() != null)
+            sb.append("AssociatedClusters: ").append(getAssociatedClusters());
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +480,14 @@ public class SnapshotSchedule implements Serializable, Cloneable {
             return false;
         if (other.getNextInvocations() != null && other.getNextInvocations().equals(this.getNextInvocations()) == false)
             return false;
+        if (other.getAssociatedClusterCount() == null ^ this.getAssociatedClusterCount() == null)
+            return false;
+        if (other.getAssociatedClusterCount() != null && other.getAssociatedClusterCount().equals(this.getAssociatedClusterCount()) == false)
+            return false;
+        if (other.getAssociatedClusters() == null ^ this.getAssociatedClusters() == null)
+            return false;
+        if (other.getAssociatedClusters() != null && other.getAssociatedClusters().equals(this.getAssociatedClusters()) == false)
+            return false;
         return true;
     }
 
@@ -404,6 +501,8 @@ public class SnapshotSchedule implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getScheduleDescription() == null) ? 0 : getScheduleDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getNextInvocations() == null) ? 0 : getNextInvocations().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedClusterCount() == null) ? 0 : getAssociatedClusterCount().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedClusters() == null) ? 0 : getAssociatedClusters().hashCode());
         return hashCode;
     }
 

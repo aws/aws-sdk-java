@@ -85,6 +85,21 @@ public class CreateSnapshotScheduleResultStaxUnmarshaller implements Unmarshalle
                     continue;
                 }
 
+                if (context.testExpression("AssociatedClusterCount", targetDepth)) {
+                    createSnapshotScheduleResult.setAssociatedClusterCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AssociatedClusters", targetDepth)) {
+                    createSnapshotScheduleResult.withAssociatedClusters(new ArrayList<ClusterAssociatedToSchedule>());
+                    continue;
+                }
+
+                if (context.testExpression("AssociatedClusters/ClusterAssociatedToSchedule", targetDepth)) {
+                    createSnapshotScheduleResult.withAssociatedClusters(ClusterAssociatedToScheduleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return createSnapshotScheduleResult;

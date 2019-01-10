@@ -121,33 +121,9 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
-     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not specified,
-     * all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a
-     * deleted cluster, snapshots associated with that cluster are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an
-     * existing cluster, no snapshots are returned.
-     * </p>
-     * </li>
-     * </ul>
      */
     private Boolean clusterExists;
 
@@ -831,62 +807,14 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
-     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not specified,
-     * all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a
-     * deleted cluster, snapshots associated with that cluster are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an
-     * existing cluster, no snapshots are returned.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param clusterExists
      *        A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can
      *        be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
      *        If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not
-     *        specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified
-     *        for a deleted cluster, snapshots associated with that cluster are returned.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified
-     *        for an existing cluster, no snapshots are returned.
-     *        </p>
-     *        </li>
      */
 
     public void setClusterExists(Boolean clusterExists) {
@@ -896,61 +824,13 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
-     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not specified,
-     * all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a
-     * deleted cluster, snapshots associated with that cluster are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an
-     * existing cluster, no snapshots are returned.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can
      *         be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
      *         If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not
-     *         specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is
-     *         specified for a deleted cluster, snapshots associated with that cluster are returned.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is
-     *         specified for an existing cluster, no snapshots are returned.
-     *         </p>
-     *         </li>
      */
 
     public Boolean getClusterExists() {
@@ -960,62 +840,14 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
-     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not specified,
-     * all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a
-     * deleted cluster, snapshots associated with that cluster are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an
-     * existing cluster, no snapshots are returned.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param clusterExists
      *        A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can
      *        be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
      *        If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not
-     *        specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified
-     *        for a deleted cluster, snapshots associated with that cluster are returned.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified
-     *        for an existing cluster, no snapshots are returned.
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1027,61 +859,13 @@ public class DescribeClusterSnapshotsRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can be
-     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
+     * performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted. If
+     * <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not specified,
-     * all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for a
-     * deleted cluster, snapshots associated with that cluster are returned.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is specified for an
-     * existing cluster, no snapshots are returned.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return A value that indicates whether to return snapshots only for an existing cluster. Table-level restore can
      *         be performed only using a snapshot of an existing cluster, that is, a cluster that has not been deleted.
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
      *         If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code> is required.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is not
-     *         specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is
-     *         specified for a deleted cluster, snapshots associated with that cluster are returned.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code> is
-     *         specified for an existing cluster, no snapshots are returned.
-     *         </p>
-     *         </li>
      */
 
     public Boolean isClusterExists() {
