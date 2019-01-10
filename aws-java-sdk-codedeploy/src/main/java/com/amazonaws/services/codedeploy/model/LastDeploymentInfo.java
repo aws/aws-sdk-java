@@ -42,13 +42,13 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
     private String status;
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group completed.
+     * A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group started.
+     * A timestamp that indicates when the most recent deployment to the deployment group started.
      * </p>
      */
     private java.util.Date createTime;
@@ -168,11 +168,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group completed.
+     * A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * </p>
      * 
      * @param endTime
-     *        A timestamp indicating when the most recent deployment to the deployment group completed.
+     *        A timestamp that indicates when the most recent deployment to the deployment group was complete.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -181,10 +181,10 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group completed.
+     * A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * </p>
      * 
-     * @return A timestamp indicating when the most recent deployment to the deployment group completed.
+     * @return A timestamp that indicates when the most recent deployment to the deployment group was complete.
      */
 
     public java.util.Date getEndTime() {
@@ -193,11 +193,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group completed.
+     * A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * </p>
      * 
      * @param endTime
-     *        A timestamp indicating when the most recent deployment to the deployment group completed.
+     *        A timestamp that indicates when the most recent deployment to the deployment group was complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +208,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group started.
+     * A timestamp that indicates when the most recent deployment to the deployment group started.
      * </p>
      * 
      * @param createTime
-     *        A timestamp indicating when the most recent deployment to the deployment group started.
+     *        A timestamp that indicates when the most recent deployment to the deployment group started.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -221,10 +221,10 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group started.
+     * A timestamp that indicates when the most recent deployment to the deployment group started.
      * </p>
      * 
-     * @return A timestamp indicating when the most recent deployment to the deployment group started.
+     * @return A timestamp that indicates when the most recent deployment to the deployment group started.
      */
 
     public java.util.Date getCreateTime() {
@@ -233,11 +233,11 @@ public class LastDeploymentInfo implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * A timestamp indicating when the most recent deployment to the deployment group started.
+     * A timestamp that indicates when the most recent deployment to the deployment group started.
      * </p>
      * 
      * @param createTime
-     *        A timestamp indicating when the most recent deployment to the deployment group started.
+     *        A timestamp that indicates when the most recent deployment to the deployment group started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

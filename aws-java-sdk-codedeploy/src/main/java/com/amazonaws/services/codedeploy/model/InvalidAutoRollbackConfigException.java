@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled
+ * The automatic rollback configuration was specified in an invalid format. For example, automatic rollback is enabled,
  * but an invalid triggering event type or no event types were listed.
  * </p>
  */

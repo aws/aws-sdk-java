@@ -51,18 +51,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * </ul>
@@ -174,18 +175,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * </ul>
@@ -206,18 +208,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      *         </li>
      *         <li>
      *         <p>
+     *         <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     *         <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     *         <code>failed</code> | <code>rejected</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>transit-gateway-id</code> - The ID of the transit gateway.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code>
-     *         | <code>deleting</code> | <code>deleted</code>).
      *         </p>
      *         </li>
      */
@@ -248,18 +251,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * </ul>
@@ -281,18 +285,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
+     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>failed</code> | <code>rejected</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      */
@@ -325,18 +330,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * </ul>
@@ -363,18 +369,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
+     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>failed</code> | <code>rejected</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -409,18 +416,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      * </li>
      * <li>
      * <p>
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * </ul>
@@ -442,18 +450,19 @@ public class DescribeTransitGatewayRouteTablesRequest extends AmazonWebServiceRe
      *        </li>
      *        <li>
      *        <p>
+     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>failed</code> | <code>rejected</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route table.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-table-state</code> - The state (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -19,12 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Defines a list of <code>NestedFilter</code> objects. To satisfy the conditions specified in the
+ * Defines a list of <code>NestedFilters</code> objects. To satisfy the conditions specified in the
  * <code>NestedFilters</code> call, a resource must satisfy the conditions of all of the filters.
  * </p>
  * <p>
- * For example, a <code>NestedFilters</code> could be defined using the training job's <code>InputDataConfig</code>
- * property, this would be defined as a list of <code>Channel</code> objects.
+ * For example, you could define a <code>NestedFilters</code> using the training job's <code>InputDataConfig</code>
+ * property to filter on <code>Channel</code> objects.
  * </p>
  * <p>
  * A <code>NestedFilters</code> object contains multiple filters. For example, to find all training jobs whose name

@@ -34,7 +34,7 @@ public class BatchGetApplicationRevisionsResult extends com.amazonaws.AmazonWebS
     private String applicationName;
     /**
      * <p>
-     * Information about errors that may have occurred during the API call.
+     * Information about errors that might have occurred during the API call.
      * </p>
      */
     private String errorMessage;
@@ -87,11 +87,11 @@ public class BatchGetApplicationRevisionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about errors that may have occurred during the API call.
+     * Information about errors that might have occurred during the API call.
      * </p>
      * 
      * @param errorMessage
-     *        Information about errors that may have occurred during the API call.
+     *        Information about errors that might have occurred during the API call.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -100,10 +100,10 @@ public class BatchGetApplicationRevisionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about errors that may have occurred during the API call.
+     * Information about errors that might have occurred during the API call.
      * </p>
      * 
-     * @return Information about errors that may have occurred during the API call.
+     * @return Information about errors that might have occurred during the API call.
      */
 
     public String getErrorMessage() {
@@ -112,11 +112,11 @@ public class BatchGetApplicationRevisionsResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Information about errors that may have occurred during the API call.
+     * Information about errors that might have occurred during the API call.
      * </p>
      * 
      * @param errorMessage
-     *        Information about errors that may have occurred during the API call.
+     *        Information about errors that might have occurred during the API call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

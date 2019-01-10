@@ -27,7 +27,7 @@ public class UpdateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the git repository to update.
+     * The name of the Git repository to update.
      * </p>
      */
     private String codeRepositoryName;
@@ -45,11 +45,11 @@ public class UpdateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the git repository to update.
+     * The name of the Git repository to update.
      * </p>
      * 
      * @param codeRepositoryName
-     *        The name of the git repository to update.
+     *        The name of the Git repository to update.
      */
 
     public void setCodeRepositoryName(String codeRepositoryName) {
@@ -58,10 +58,10 @@ public class UpdateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the git repository to update.
+     * The name of the Git repository to update.
      * </p>
      * 
-     * @return The name of the git repository to update.
+     * @return The name of the Git repository to update.
      */
 
     public String getCodeRepositoryName() {
@@ -70,11 +70,11 @@ public class UpdateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the git repository to update.
+     * The name of the Git repository to update.
      * </p>
      * 
      * @param codeRepositoryName
-     *        The name of the git repository to update.
+     *        The name of the Git repository to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

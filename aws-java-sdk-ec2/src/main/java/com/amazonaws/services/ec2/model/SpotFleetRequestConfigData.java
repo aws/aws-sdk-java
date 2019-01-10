@@ -125,9 +125,10 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to
      * maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative
-     * Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet places the
-     * required requests to meet capacity and automatically replenishes any interrupted instances. Default:
-     * <code>maintain</code>.
+     * Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the
+     * target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any
+     * interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.
      * </p>
      */
     private String type;
@@ -1010,18 +1011,20 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to
      * maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative
-     * Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet places the
-     * required requests to meet capacity and automatically replenishes any interrupted instances. Default:
-     * <code>maintain</code>.
+     * Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the
+     * target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any
+     * interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.
      * </p>
      * 
      * @param type
      *        The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts
      *        to maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests.
      *        It does not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in
-     *        alternative Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet
-     *        places the required requests to meet capacity and automatically replenishes any interrupted instances.
-     *        Default: <code>maintain</code>.
+     *        alternative Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot
+     *        Fleet maintains the target capacity. The Spot Fleet places the required requests to meet capacity and
+     *        automatically replenishes any interrupted instances. Default: <code>maintain</code>. <code>instant</code>
+     *        is listed but is not used by Spot Fleet.
      * @see FleetType
      */
 
@@ -1034,17 +1037,19 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to
      * maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative
-     * Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet places the
-     * required requests to meet capacity and automatically replenishes any interrupted instances. Default:
-     * <code>maintain</code>.
+     * Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the
+     * target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any
+     * interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.
      * </p>
      * 
      * @return The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts
      *         to maintain it. When this value is <code>request</code>, the Spot Fleet only places the required
      *         requests. It does not attempt to replenish Spot Instances if capacity is diminished, nor does it submit
-     *         requests in alternative Spot pools if capacity is not available. To maintain a certain target capacity,
-     *         the Spot Fleet places the required requests to meet capacity and automatically replenishes any
-     *         interrupted instances. Default: <code>maintain</code>.
+     *         requests in alternative Spot pools if capacity is not available. When this value is <code>maintain</code>
+     *         , the Spot Fleet maintains the target capacity. The Spot Fleet places the required requests to meet
+     *         capacity and automatically replenishes any interrupted instances. Default: <code>maintain</code>.
+     *         <code>instant</code> is listed but is not used by Spot Fleet.
      * @see FleetType
      */
 
@@ -1057,18 +1062,20 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to
      * maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative
-     * Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet places the
-     * required requests to meet capacity and automatically replenishes any interrupted instances. Default:
-     * <code>maintain</code>.
+     * Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the
+     * target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any
+     * interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.
      * </p>
      * 
      * @param type
      *        The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts
      *        to maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests.
      *        It does not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in
-     *        alternative Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet
-     *        places the required requests to meet capacity and automatically replenishes any interrupted instances.
-     *        Default: <code>maintain</code>.
+     *        alternative Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot
+     *        Fleet maintains the target capacity. The Spot Fleet places the required requests to meet capacity and
+     *        automatically replenishes any interrupted instances. Default: <code>maintain</code>. <code>instant</code>
+     *        is listed but is not used by Spot Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1083,18 +1090,20 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to
      * maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative
-     * Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet places the
-     * required requests to meet capacity and automatically replenishes any interrupted instances. Default:
-     * <code>maintain</code>.
+     * Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the
+     * target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any
+     * interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.
      * </p>
      * 
      * @param type
      *        The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts
      *        to maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests.
      *        It does not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in
-     *        alternative Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet
-     *        places the required requests to meet capacity and automatically replenishes any interrupted instances.
-     *        Default: <code>maintain</code>.
+     *        alternative Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot
+     *        Fleet maintains the target capacity. The Spot Fleet places the required requests to meet capacity and
+     *        automatically replenishes any interrupted instances. Default: <code>maintain</code>. <code>instant</code>
+     *        is listed but is not used by Spot Fleet.
      * @see FleetType
      */
 
@@ -1107,18 +1116,20 @@ public class SpotFleetRequestConfigData implements Serializable, Cloneable {
      * The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts to
      * maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests. It does
      * not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in alternative
-     * Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet places the
-     * required requests to meet capacity and automatically replenishes any interrupted instances. Default:
-     * <code>maintain</code>.
+     * Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot Fleet maintains the
+     * target capacity. The Spot Fleet places the required requests to meet capacity and automatically replenishes any
+     * interrupted instances. Default: <code>maintain</code>. <code>instant</code> is listed but is not used by Spot
+     * Fleet.
      * </p>
      * 
      * @param type
      *        The type of request. Indicates whether the Spot Fleet only requests the target capacity or also attempts
      *        to maintain it. When this value is <code>request</code>, the Spot Fleet only places the required requests.
      *        It does not attempt to replenish Spot Instances if capacity is diminished, nor does it submit requests in
-     *        alternative Spot pools if capacity is not available. To maintain a certain target capacity, the Spot Fleet
-     *        places the required requests to meet capacity and automatically replenishes any interrupted instances.
-     *        Default: <code>maintain</code>.
+     *        alternative Spot pools if capacity is not available. When this value is <code>maintain</code>, the Spot
+     *        Fleet maintains the target capacity. The Spot Fleet places the required requests to meet capacity and
+     *        automatically replenishes any interrupted instances. Default: <code>maintain</code>. <code>instant</code>
+     *        is listed but is not used by Spot Fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */

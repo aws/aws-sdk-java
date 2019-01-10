@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified on-premises instance name was specified in an invalid format.
+ * The on-premises instance name was specified in an invalid format.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

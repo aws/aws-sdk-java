@@ -136,7 +136,7 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances
-     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.
      * </p>
      */
     private EC2TagSet ec2TagSet;
@@ -156,9 +156,9 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     private String computePlatform;
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ECSService> ecsServices;
@@ -1000,12 +1000,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances
-     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.
      * </p>
      * 
      * @param ec2TagSet
      *        Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2
-     *        instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     *        instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.
      */
 
     public void setEc2TagSet(EC2TagSet ec2TagSet) {
@@ -1015,11 +1015,11 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances
-     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.
      * </p>
      * 
      * @return Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2
-     *         instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     *         instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.
      */
 
     public EC2TagSet getEc2TagSet() {
@@ -1029,12 +1029,12 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2 instances
-     * identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     * identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.
      * </p>
      * 
      * @param ec2TagSet
      *        Information about groups of tags applied to an EC2 instance. The deployment group includes only EC2
-     *        instances identified by all the tag groups. Cannot be used in the same call as ec2TagFilters.
+     *        instances identified by all of the tag groups. Cannot be used in the same call as ec2TagFilters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1156,14 +1156,14 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      * 
-     * @return The target ECS services in the deployment group. This only applies to deployment groups that use the
-     *         Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
-     *         pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * @return The target Amazon ECS services in the deployment group. This applies only to deployment groups that use
+     *         the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and
+     *         service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      */
 
     public java.util.List<ECSService> getEcsServices() {
@@ -1175,15 +1175,15 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      * 
      * @param ecsServices
-     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
-     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
-     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     *        The target Amazon ECS services in the deployment group. This applies only to deployment groups that use
+     *        the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and
+     *        service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      */
 
     public void setEcsServices(java.util.Collection<ECSService> ecsServices) {
@@ -1197,9 +1197,9 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1208,9 +1208,9 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param ecsServices
-     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
-     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
-     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     *        The target Amazon ECS services in the deployment group. This applies only to deployment groups that use
+     *        the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and
+     *        service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1226,15 +1226,15 @@ public class DeploymentGroupInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      * 
      * @param ecsServices
-     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
-     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
-     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     *        The target Amazon ECS services in the deployment group. This applies only to deployment groups that use
+     *        the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and
+     *        service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

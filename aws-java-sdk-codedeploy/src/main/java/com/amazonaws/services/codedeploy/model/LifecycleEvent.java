@@ -43,13 +43,13 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
     private Diagnostics diagnostics;
     /**
      * <p>
-     * A timestamp indicating when the deployment lifecycle event started.
+     * A timestamp that indicates when the deployment lifecycle event started.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * A timestamp indicating when the deployment lifecycle event ended.
+     * A timestamp that indicates when the deployment lifecycle event ended.
      * </p>
      */
     private java.util.Date endTime;
@@ -180,11 +180,11 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment lifecycle event started.
+     * A timestamp that indicates when the deployment lifecycle event started.
      * </p>
      * 
      * @param startTime
-     *        A timestamp indicating when the deployment lifecycle event started.
+     *        A timestamp that indicates when the deployment lifecycle event started.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -193,10 +193,10 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment lifecycle event started.
+     * A timestamp that indicates when the deployment lifecycle event started.
      * </p>
      * 
-     * @return A timestamp indicating when the deployment lifecycle event started.
+     * @return A timestamp that indicates when the deployment lifecycle event started.
      */
 
     public java.util.Date getStartTime() {
@@ -205,11 +205,11 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment lifecycle event started.
+     * A timestamp that indicates when the deployment lifecycle event started.
      * </p>
      * 
      * @param startTime
-     *        A timestamp indicating when the deployment lifecycle event started.
+     *        A timestamp that indicates when the deployment lifecycle event started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +220,11 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment lifecycle event ended.
+     * A timestamp that indicates when the deployment lifecycle event ended.
      * </p>
      * 
      * @param endTime
-     *        A timestamp indicating when the deployment lifecycle event ended.
+     *        A timestamp that indicates when the deployment lifecycle event ended.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -233,10 +233,10 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment lifecycle event ended.
+     * A timestamp that indicates when the deployment lifecycle event ended.
      * </p>
      * 
-     * @return A timestamp indicating when the deployment lifecycle event ended.
+     * @return A timestamp that indicates when the deployment lifecycle event ended.
      */
 
     public java.util.Date getEndTime() {
@@ -245,11 +245,11 @@ public class LifecycleEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A timestamp indicating when the deployment lifecycle event ended.
+     * A timestamp that indicates when the deployment lifecycle event ended.
      * </p>
      * 
      * @param endTime
-     *        A timestamp indicating when the deployment lifecycle event ended.
+     *        A timestamp that indicates when the deployment lifecycle event ended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

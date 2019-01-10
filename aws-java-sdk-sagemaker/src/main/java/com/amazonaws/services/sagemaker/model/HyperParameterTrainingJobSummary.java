@@ -60,7 +60,10 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
     private java.util.Date trainingStartTime;
     /**
      * <p>
-     * The date and time that the training job ended.
+     * Specifies the time when the training job ends on training instances. You are billed for the time interval between
+     * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
+     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+     * failure.
      * </p>
      */
     private java.util.Date trainingEndTime;
@@ -321,11 +324,17 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date and time that the training job ended.
+     * Specifies the time when the training job ends on training instances. You are billed for the time interval between
+     * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
+     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+     * failure.
      * </p>
      * 
      * @param trainingEndTime
-     *        The date and time that the training job ended.
+     *        Specifies the time when the training job ends on training instances. You are billed for the time interval
+     *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     *        SageMaker detects a job failure.
      */
 
     public void setTrainingEndTime(java.util.Date trainingEndTime) {
@@ -334,10 +343,16 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date and time that the training job ended.
+     * Specifies the time when the training job ends on training instances. You are billed for the time interval between
+     * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
+     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+     * failure.
      * </p>
      * 
-     * @return The date and time that the training job ended.
+     * @return Specifies the time when the training job ends on training instances. You are billed for the time interval
+     *         between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
+     *         this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     *         SageMaker detects a job failure.
      */
 
     public java.util.Date getTrainingEndTime() {
@@ -346,11 +361,17 @@ public class HyperParameterTrainingJobSummary implements Serializable, Cloneable
 
     /**
      * <p>
-     * The date and time that the training job ended.
+     * Specifies the time when the training job ends on training instances. You are billed for the time interval between
+     * the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs, this is the time
+     * after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job
+     * failure.
      * </p>
      * 
      * @param trainingEndTime
-     *        The date and time that the training job ended.
+     *        Specifies the time when the training job ends on training instances. You are billed for the time interval
+     *        between the value of <code>TrainingStartTime</code> and this time. For successful jobs and stopped jobs,
+     *        this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     *        SageMaker detects a job failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

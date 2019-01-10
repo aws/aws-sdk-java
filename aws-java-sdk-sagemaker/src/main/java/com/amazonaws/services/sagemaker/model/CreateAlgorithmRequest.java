@@ -114,7 +114,7 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
     private AlgorithmValidationSpecification validationSpecification;
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      * </p>
      */
     private Boolean certifyForMarketplace;
@@ -661,11 +661,11 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     *        Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      */
 
     public void setCertifyForMarketplace(Boolean certifyForMarketplace) {
@@ -674,10 +674,10 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      * </p>
      * 
-     * @return Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     * @return Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      */
 
     public Boolean getCertifyForMarketplace() {
@@ -686,11 +686,11 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     *        Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -701,10 +701,10 @@ public class CreateAlgorithmRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     * Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      * </p>
      * 
-     * @return Whether to certify the algorithm so that it can be listed in AWS Marektplace.
+     * @return Whether to certify the algorithm so that it can be listed in AWS Marketplace.
      */
 
     public Boolean isCertifyForMarketplace() {

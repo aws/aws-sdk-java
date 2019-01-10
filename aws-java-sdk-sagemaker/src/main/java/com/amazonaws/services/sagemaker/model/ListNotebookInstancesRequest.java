@@ -104,14 +104,14 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
     private String notebookInstanceLifecycleConfigNameContains;
     /**
      * <p>
-     * A string in the name or URL of a git repository associated with this notebook instance. This filter returns only
+     * A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only
      * notebook instances associated with a git repository with a name that contains the specified string.
      * </p>
      */
     private String defaultCodeRepositoryContains;
     /**
      * <p>
-     * A filter that returns only notebook instances with associated with the specified git respository.
+     * A filter that returns only notebook instances with associated with the specified git repository.
      * </p>
      */
     private String additionalCodeRepositoryEquals;
@@ -675,12 +675,12 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string in the name or URL of a git repository associated with this notebook instance. This filter returns only
+     * A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only
      * notebook instances associated with a git repository with a name that contains the specified string.
      * </p>
      * 
      * @param defaultCodeRepositoryContains
-     *        A string in the name or URL of a git repository associated with this notebook instance. This filter
+     *        A string in the name or URL of a Git repository associated with this notebook instance. This filter
      *        returns only notebook instances associated with a git repository with a name that contains the specified
      *        string.
      */
@@ -691,11 +691,11 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string in the name or URL of a git repository associated with this notebook instance. This filter returns only
+     * A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only
      * notebook instances associated with a git repository with a name that contains the specified string.
      * </p>
      * 
-     * @return A string in the name or URL of a git repository associated with this notebook instance. This filter
+     * @return A string in the name or URL of a Git repository associated with this notebook instance. This filter
      *         returns only notebook instances associated with a git repository with a name that contains the specified
      *         string.
      */
@@ -706,12 +706,12 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string in the name or URL of a git repository associated with this notebook instance. This filter returns only
+     * A string in the name or URL of a Git repository associated with this notebook instance. This filter returns only
      * notebook instances associated with a git repository with a name that contains the specified string.
      * </p>
      * 
      * @param defaultCodeRepositoryContains
-     *        A string in the name or URL of a git repository associated with this notebook instance. This filter
+     *        A string in the name or URL of a Git repository associated with this notebook instance. This filter
      *        returns only notebook instances associated with a git repository with a name that contains the specified
      *        string.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -724,11 +724,11 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A filter that returns only notebook instances with associated with the specified git respository.
+     * A filter that returns only notebook instances with associated with the specified git repository.
      * </p>
      * 
      * @param additionalCodeRepositoryEquals
-     *        A filter that returns only notebook instances with associated with the specified git respository.
+     *        A filter that returns only notebook instances with associated with the specified git repository.
      */
 
     public void setAdditionalCodeRepositoryEquals(String additionalCodeRepositoryEquals) {
@@ -737,10 +737,10 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A filter that returns only notebook instances with associated with the specified git respository.
+     * A filter that returns only notebook instances with associated with the specified git repository.
      * </p>
      * 
-     * @return A filter that returns only notebook instances with associated with the specified git respository.
+     * @return A filter that returns only notebook instances with associated with the specified git repository.
      */
 
     public String getAdditionalCodeRepositoryEquals() {
@@ -749,11 +749,11 @@ public class ListNotebookInstancesRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A filter that returns only notebook instances with associated with the specified git respository.
+     * A filter that returns only notebook instances with associated with the specified git repository.
      * </p>
      * 
      * @param additionalCodeRepositoryEquals
-     *        A filter that returns only notebook instances with associated with the specified git respository.
+     *        A filter that returns only notebook instances with associated with the specified git repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

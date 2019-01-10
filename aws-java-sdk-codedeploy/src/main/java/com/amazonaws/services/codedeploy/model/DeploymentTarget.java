@@ -30,7 +30,7 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type which is specific to the deployment's compute platform.
+     * The deployment type that is specific to the deployment's compute platform.
      * </p>
      */
     private String deploymentTargetType;
@@ -55,11 +55,11 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type which is specific to the deployment's compute platform.
+     * The deployment type that is specific to the deployment's compute platform.
      * </p>
      * 
      * @param deploymentTargetType
-     *        The deployment type which is specific to the deployment's compute platform.
+     *        The deployment type that is specific to the deployment's compute platform.
      * @see DeploymentTargetType
      */
 
@@ -69,10 +69,10 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type which is specific to the deployment's compute platform.
+     * The deployment type that is specific to the deployment's compute platform.
      * </p>
      * 
-     * @return The deployment type which is specific to the deployment's compute platform.
+     * @return The deployment type that is specific to the deployment's compute platform.
      * @see DeploymentTargetType
      */
 
@@ -82,11 +82,11 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type which is specific to the deployment's compute platform.
+     * The deployment type that is specific to the deployment's compute platform.
      * </p>
      * 
      * @param deploymentTargetType
-     *        The deployment type which is specific to the deployment's compute platform.
+     *        The deployment type that is specific to the deployment's compute platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentTargetType
      */
@@ -98,11 +98,11 @@ public class DeploymentTarget implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The deployment type which is specific to the deployment's compute platform.
+     * The deployment type that is specific to the deployment's compute platform.
      * </p>
      * 
      * @param deploymentTargetType
-     *        The deployment type which is specific to the deployment's compute platform.
+     *        The deployment type that is specific to the deployment's compute platform.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentTargetType
      */

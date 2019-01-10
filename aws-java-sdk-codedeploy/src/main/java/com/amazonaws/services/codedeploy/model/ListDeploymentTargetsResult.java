@@ -31,8 +31,8 @@ public class ListDeploymentTargetsResult extends com.amazonaws.AmazonWebServiceR
     private com.amazonaws.internal.SdkInternalList<String> targetIds;
     /**
      * <p>
-     * If a large amount of information is returned, a token identifier will also be returned. It can be used in a
-     * subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.
+     * If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent
+     * <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.
      * </p>
      */
     private String nextToken;
@@ -112,13 +112,13 @@ public class ListDeploymentTargetsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If a large amount of information is returned, a token identifier will also be returned. It can be used in a
-     * subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.
+     * If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent
+     * <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.
      * </p>
      * 
      * @param nextToken
-     *        If a large amount of information is returned, a token identifier will also be returned. It can be used in
-     *        a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the
+     *        If a large amount of information is returned, a token identifier is also returned. It can be used in a
+     *        subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the
      *        list.
      */
 
@@ -128,12 +128,12 @@ public class ListDeploymentTargetsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If a large amount of information is returned, a token identifier will also be returned. It can be used in a
-     * subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.
+     * If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent
+     * <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.
      * </p>
      * 
-     * @return If a large amount of information is returned, a token identifier will also be returned. It can be used in
-     *         a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the
+     * @return If a large amount of information is returned, a token identifier is also returned. It can be used in a
+     *         subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the
      *         list.
      */
 
@@ -143,13 +143,13 @@ public class ListDeploymentTargetsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * If a large amount of information is returned, a token identifier will also be returned. It can be used in a
-     * subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.
+     * If a large amount of information is returned, a token identifier is also returned. It can be used in a subsequent
+     * <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the list.
      * </p>
      * 
      * @param nextToken
-     *        If a large amount of information is returned, a token identifier will also be returned. It can be used in
-     *        a subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the
+     *        If a large amount of information is returned, a token identifier is also returned. It can be used in a
+     *        subsequent <code>ListDeploymentTargets</code> call to return the next set of deployment targets in the
      *        list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

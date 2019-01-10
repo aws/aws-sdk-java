@@ -39,14 +39,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-state</code> - The state of the attachment (<code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      * </p>
      * </li>
      * <li>
@@ -156,14 +156,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-state</code> - The state of the attachment (<code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      * </p>
      * </li>
      * <li>
@@ -182,14 +182,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     *         <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     *         <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     *         <code>failed</code> | <code>rejected</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>transit-gateway-attachment-state</code> - The state of the attachment (
-     *         <code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     *         <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     *         <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      *         </p>
      *         </li>
      *         <li>
@@ -218,14 +218,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-state</code> - The state of the attachment (<code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      * </p>
      * </li>
      * <li>
@@ -245,14 +245,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>failed</code> | <code>rejected</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-attachment-state</code> - The state of the attachment (
-     *        <code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     *        <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     *        <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      *        </p>
      *        </li>
      *        <li>
@@ -283,14 +283,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-state</code> - The state of the attachment (<code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      * </p>
      * </li>
      * <li>
@@ -315,14 +315,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>failed</code> | <code>rejected</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-attachment-state</code> - The state of the attachment (
-     *        <code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     *        <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     *        <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      *        </p>
      *        </li>
      *        <li>
@@ -355,14 +355,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>failed</code> | <code>rejected</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-attachment-state</code> - The state of the attachment (<code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>available</code> | <code>modifying</code> | <code>deleting</code> |
-     * <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     * <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      * </p>
      * </li>
      * <li>
@@ -382,14 +382,14 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
+     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>failed</code> | <code>rejected</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-attachment-state</code> - The state of the attachment (
-     *        <code>pendingAcceptance</code> | <code>pending</code> | <code>available</code> | <code>modifying</code> |
-     *        <code>deleting</code> | <code>deleted</code> | <code>failed</code> | <code>rejected</code>).
+     *        <code>transit-gateway-attachment-id</code> - The ID of the attachment.
      *        </p>
      *        </li>
      *        <li>

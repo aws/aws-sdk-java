@@ -84,14 +84,14 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Create a git repository as a resource in your Amazon SageMaker account. You can associate the repository with
-     * notebook instances so that you can use git source control for the notebooks you create. The git repository is a
+     * Creates a Git repository as a resource in your Amazon SageMaker account. You can associate the repository with
+     * notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a
      * resource in your Amazon SageMaker account, so it can be associated with more than one notebook instance, and it
      * persists independently from the lifecycle of any notebook instances it is associated with.
      * </p>
      * <p>
      * The repository can be hosted either in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other git
+     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
      * repository.
      * </p>
      * 
@@ -684,7 +684,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Deletes the specified git repository from your account.
+     * Deletes the specified Git repository from your account.
      * </p>
      * 
      * @param deleteCodeRepositoryRequest
@@ -847,7 +847,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Gets details about the specified git repository.
+     * Gets details about the specified Git repository.
      * </p>
      * 
      * @param describeCodeRepositoryRequest
@@ -1084,7 +1084,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Gets a list of the git repositories in your account.
+     * Gets a list of the Git repositories in your account.
      * </p>
      * 
      * @param listCodeRepositoriesRequest
@@ -1497,7 +1497,7 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Updates the specified git repository with the specified values.
+     * Updates the specified Git repository with the specified values.
      * </p>
      * 
      * @param updateCodeRepositoryRequest

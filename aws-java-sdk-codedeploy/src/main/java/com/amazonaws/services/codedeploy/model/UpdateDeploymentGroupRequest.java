@@ -30,7 +30,7 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The application name corresponding to the deployment group to update.
+     * The application name that corresponds to the deployment group to update.
      * </p>
      */
     private String applicationName;
@@ -121,22 +121,22 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
     private LoadBalancerInfo loadBalancerInfo;
     /**
      * <p>
-     * Information about groups of tags applied to on-premises instances. The deployment group will include only EC2
+     * Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
      * instances identified by all the tag groups.
      * </p>
      */
     private EC2TagSet ec2TagSet;
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ECSService> ecsServices;
     /**
      * <p>
-     * Information about an on-premises instance tag set. The deployment group will include only on-premises instances
+     * Information about an on-premises instance tag set. The deployment group includes only on-premises instances
      * identified by all the tag groups.
      * </p>
      */
@@ -144,11 +144,11 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The application name corresponding to the deployment group to update.
+     * The application name that corresponds to the deployment group to update.
      * </p>
      * 
      * @param applicationName
-     *        The application name corresponding to the deployment group to update.
+     *        The application name that corresponds to the deployment group to update.
      */
 
     public void setApplicationName(String applicationName) {
@@ -157,10 +157,10 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The application name corresponding to the deployment group to update.
+     * The application name that corresponds to the deployment group to update.
      * </p>
      * 
-     * @return The application name corresponding to the deployment group to update.
+     * @return The application name that corresponds to the deployment group to update.
      */
 
     public String getApplicationName() {
@@ -169,11 +169,11 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The application name corresponding to the deployment group to update.
+     * The application name that corresponds to the deployment group to update.
      * </p>
      * 
      * @param applicationName
-     *        The application name corresponding to the deployment group to update.
+     *        The application name that corresponds to the deployment group to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -893,13 +893,13 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to on-premises instances. The deployment group will include only EC2
+     * Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
      * instances identified by all the tag groups.
      * </p>
      * 
      * @param ec2TagSet
-     *        Information about groups of tags applied to on-premises instances. The deployment group will include only
-     *        EC2 instances identified by all the tag groups.
+     *        Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
+     *        instances identified by all the tag groups.
      */
 
     public void setEc2TagSet(EC2TagSet ec2TagSet) {
@@ -908,12 +908,12 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to on-premises instances. The deployment group will include only EC2
+     * Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
      * instances identified by all the tag groups.
      * </p>
      * 
-     * @return Information about groups of tags applied to on-premises instances. The deployment group will include only
-     *         EC2 instances identified by all the tag groups.
+     * @return Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
+     *         instances identified by all the tag groups.
      */
 
     public EC2TagSet getEc2TagSet() {
@@ -922,13 +922,13 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about groups of tags applied to on-premises instances. The deployment group will include only EC2
+     * Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
      * instances identified by all the tag groups.
      * </p>
      * 
      * @param ec2TagSet
-     *        Information about groups of tags applied to on-premises instances. The deployment group will include only
-     *        EC2 instances identified by all the tag groups.
+     *        Information about groups of tags applied to on-premises instances. The deployment group includes only EC2
+     *        instances identified by all the tag groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -939,14 +939,14 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      * 
-     * @return The target ECS services in the deployment group. This only applies to deployment groups that use the
-     *         Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
-     *         pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * @return The target Amazon ECS services in the deployment group. This applies only to deployment groups that use
+     *         the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and
+     *         service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      */
 
     public java.util.List<ECSService> getEcsServices() {
@@ -958,15 +958,15 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      * 
      * @param ecsServices
-     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
-     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
-     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     *        The target Amazon ECS services in the deployment group. This applies only to deployment groups that use
+     *        the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and
+     *        service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      */
 
     public void setEcsServices(java.util.Collection<ECSService> ecsServices) {
@@ -980,9 +980,9 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -991,9 +991,9 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param ecsServices
-     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
-     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
-     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     *        The target Amazon ECS services in the deployment group. This applies only to deployment groups that use
+     *        the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and
+     *        service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1009,15 +1009,15 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The target ECS services in the deployment group. This only applies to deployment groups that use the Amazon ECS
-     * compute platform. A target ECS service is specified as an Amazon ECS cluster and service name pair using the
-     * format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     * The target Amazon ECS services in the deployment group. This applies only to deployment groups that use the
+     * Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and service name
+     * pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * </p>
      * 
      * @param ecsServices
-     *        The target ECS services in the deployment group. This only applies to deployment groups that use the
-     *        Amazon ECS compute platform. A target ECS service is specified as an Amazon ECS cluster and service name
-     *        pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+     *        The target Amazon ECS services in the deployment group. This applies only to deployment groups that use
+     *        the Amazon ECS compute platform. A target Amazon ECS service is specified as an Amazon ECS cluster and
+     *        service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1028,12 +1028,12 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about an on-premises instance tag set. The deployment group will include only on-premises instances
+     * Information about an on-premises instance tag set. The deployment group includes only on-premises instances
      * identified by all the tag groups.
      * </p>
      * 
      * @param onPremisesTagSet
-     *        Information about an on-premises instance tag set. The deployment group will include only on-premises
+     *        Information about an on-premises instance tag set. The deployment group includes only on-premises
      *        instances identified by all the tag groups.
      */
 
@@ -1043,11 +1043,11 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about an on-premises instance tag set. The deployment group will include only on-premises instances
+     * Information about an on-premises instance tag set. The deployment group includes only on-premises instances
      * identified by all the tag groups.
      * </p>
      * 
-     * @return Information about an on-premises instance tag set. The deployment group will include only on-premises
+     * @return Information about an on-premises instance tag set. The deployment group includes only on-premises
      *         instances identified by all the tag groups.
      */
 
@@ -1057,12 +1057,12 @@ public class UpdateDeploymentGroupRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Information about an on-premises instance tag set. The deployment group will include only on-premises instances
+     * Information about an on-premises instance tag set. The deployment group includes only on-premises instances
      * identified by all the tag groups.
      * </p>
      * 
      * @param onPremisesTagSet
-     *        Information about an on-premises instance tag set. The deployment group will include only on-premises
+     *        Information about an on-premises instance tag set. The deployment group includes only on-premises
      *        instances identified by all the tag groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -27,7 +27,7 @@ public class CreateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     * The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
      */
@@ -42,12 +42,12 @@ public class CreateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     * The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
      * 
      * @param codeRepositoryName
-     *        The name of the git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
+     *        The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
      *        and - (hyphen).
      */
 
@@ -57,11 +57,11 @@ public class CreateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     * The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
      * 
-     * @return The name of the git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z,
+     * @return The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z,
      *         0-9, and - (hyphen).
      */
 
@@ -71,12 +71,12 @@ public class CreateCodeRepositoryRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
+     * The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
      * 
      * @param codeRepositoryName
-     *        The name of the git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
+     *        The name of the Git repository. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
      *        and - (hyphen).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

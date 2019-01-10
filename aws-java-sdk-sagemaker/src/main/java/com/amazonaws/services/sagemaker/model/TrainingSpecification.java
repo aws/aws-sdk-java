@@ -30,7 +30,7 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Amazon ECR registry path of the Docker image that contains the training algorithm.
+     * The Amazon ECR registry path of the Docker image that contains the training algorithm.
      * </p>
      */
     private String trainingImage;
@@ -82,11 +82,11 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Amazon ECR registry path of the Docker image that contains the training algorithm.
+     * The Amazon ECR registry path of the Docker image that contains the training algorithm.
      * </p>
      * 
      * @param trainingImage
-     *        The Amazon Amazon ECR registry path of the Docker image that contains the training algorithm.
+     *        The Amazon ECR registry path of the Docker image that contains the training algorithm.
      */
 
     public void setTrainingImage(String trainingImage) {
@@ -95,10 +95,10 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Amazon ECR registry path of the Docker image that contains the training algorithm.
+     * The Amazon ECR registry path of the Docker image that contains the training algorithm.
      * </p>
      * 
-     * @return The Amazon Amazon ECR registry path of the Docker image that contains the training algorithm.
+     * @return The Amazon ECR registry path of the Docker image that contains the training algorithm.
      */
 
     public String getTrainingImage() {
@@ -107,11 +107,11 @@ public class TrainingSpecification implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Amazon ECR registry path of the Docker image that contains the training algorithm.
+     * The Amazon ECR registry path of the Docker image that contains the training algorithm.
      * </p>
      * 
      * @param trainingImage
-     *        The Amazon Amazon ECR registry path of the Docker image that contains the training algorithm.
+     *        The Amazon ECR registry path of the Docker image that contains the training algorithm.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

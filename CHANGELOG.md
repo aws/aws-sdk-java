@@ -1,3 +1,20 @@
+# __1.11.481__ __2019-01-10__
+## __AWS CodeDeploy__
+  - ### Features
+    - Documentation updates for codedeploy
+
+## __AWS IoT__
+  - ### Features
+    - This release adds tagging support for rules of AWS IoT Rules Engine. Tags enable you to categorize your rules in different ways, for example, by purpose, owner, or environment. For more information about tagging, see AWS Tagging Strategies (https://aws.amazon.com/answers/account-management/aws-tagging-strategies/). For technical documentation, look for the tagging operations in the AWS IoT Core API reference or User Guide (https://docs.aws.amazon.com/iot/latest/developerguide/tagging-iot.html).
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - EC2 Spot: a) CreateFleet support for Single AvailabilityZone requests and b) support for paginated DescribeSpotInstanceRequests.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - SageMaker Training Jobs now support Inter-Container traffic encryption.
+
 # __1.11.480__ __2019-01-09__
 ## __Amazon DocumentDB with MongoDB compatibility__
   - ### Features

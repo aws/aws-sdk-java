@@ -60,7 +60,7 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
     private String computePlatform;
     /**
      * <p>
-     * The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda compute
+     * The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda compute
      * platform can specify this.
      * </p>
      */
@@ -287,12 +287,12 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda compute
+     * The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda compute
      * platform can specify this.
      * </p>
      * 
      * @param trafficRoutingConfig
-     *        The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda
+     *        The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda
      *        compute platform can specify this.
      */
 
@@ -302,11 +302,11 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda compute
+     * The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda compute
      * platform can specify this.
      * </p>
      * 
-     * @return The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda
+     * @return The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda
      *         compute platform can specify this.
      */
 
@@ -316,12 +316,12 @@ public class DeploymentConfigInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda compute
+     * The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda compute
      * platform can specify this.
      * </p>
      * 
      * @param trafficRoutingConfig
-     *        The configuration specifying how the deployment traffic will be routed. Only deployments with a Lambda
+     *        The configuration that specifies how the deployment traffic is routed. Only deployments with a Lambda
      *        compute platform can specify this.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

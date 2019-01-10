@@ -40,12 +40,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      * </p>
      * </li>
      * <li>
      * <p>
-     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      * </p>
      * </li>
      * </ul>
@@ -89,12 +89,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      * </p>
      * </li>
      * <li>
      * <p>
-     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      * </p>
      * </li>
      * </ul>
@@ -109,12 +109,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     *        GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     *        String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      *        </p>
      *        </li>
      * @see RevisionLocationType
@@ -136,12 +136,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      * </p>
      * </li>
      * <li>
      * <p>
-     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      * </p>
      * </li>
      * </ul>
@@ -155,12 +155,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     *         GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     *         String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      *         </p>
      *         </li>
      * @see RevisionLocationType
@@ -182,12 +182,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      * </p>
      * </li>
      * <li>
      * <p>
-     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      * </p>
      * </li>
      * </ul>
@@ -202,12 +202,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     *        GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     *        String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -231,12 +231,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      * </p>
      * </li>
      * <li>
      * <p>
-     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      * </p>
      * </li>
      * </ul>
@@ -251,12 +251,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     *        GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     *        String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      *        </p>
      *        </li>
      * @see RevisionLocationType
@@ -278,12 +278,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     * GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      * </p>
      * </li>
      * <li>
      * <p>
-     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     * String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      * </p>
      * </li>
      * </ul>
@@ -298,12 +298,12 @@ public class RevisionLocation implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        GitHub: An application revision stored in GitHub (EC2/On-premises deployments only)
+     *        GitHub: An application revision stored in GitHub (EC2/On-premises deployments only).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only)
+     *        String: A YAML-formatted or JSON-formatted string (AWS Lambda deployments only).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

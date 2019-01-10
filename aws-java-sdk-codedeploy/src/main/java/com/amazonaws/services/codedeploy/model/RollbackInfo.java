@@ -43,8 +43,8 @@ public class RollbackInfo implements Serializable, Cloneable, StructuredPojo {
     private String rollbackTriggeringDeploymentId;
     /**
      * <p>
-     * Information describing the status of a deployment rollback; for example, whether the deployment can't be rolled
-     * back, is in progress, failed, or succeeded.
+     * Information that describes the status of a deployment rollback (for example, whether the deployment can't be
+     * rolled back, is in progress, failed, or succeeded).
      * </p>
      */
     private String rollbackMessage;
@@ -137,13 +137,13 @@ public class RollbackInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information describing the status of a deployment rollback; for example, whether the deployment can't be rolled
-     * back, is in progress, failed, or succeeded.
+     * Information that describes the status of a deployment rollback (for example, whether the deployment can't be
+     * rolled back, is in progress, failed, or succeeded).
      * </p>
      * 
      * @param rollbackMessage
-     *        Information describing the status of a deployment rollback; for example, whether the deployment can't be
-     *        rolled back, is in progress, failed, or succeeded.
+     *        Information that describes the status of a deployment rollback (for example, whether the deployment can't
+     *        be rolled back, is in progress, failed, or succeeded).
      */
 
     public void setRollbackMessage(String rollbackMessage) {
@@ -152,12 +152,12 @@ public class RollbackInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information describing the status of a deployment rollback; for example, whether the deployment can't be rolled
-     * back, is in progress, failed, or succeeded.
+     * Information that describes the status of a deployment rollback (for example, whether the deployment can't be
+     * rolled back, is in progress, failed, or succeeded).
      * </p>
      * 
-     * @return Information describing the status of a deployment rollback; for example, whether the deployment can't be
-     *         rolled back, is in progress, failed, or succeeded.
+     * @return Information that describes the status of a deployment rollback (for example, whether the deployment can't
+     *         be rolled back, is in progress, failed, or succeeded).
      */
 
     public String getRollbackMessage() {
@@ -166,13 +166,13 @@ public class RollbackInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information describing the status of a deployment rollback; for example, whether the deployment can't be rolled
-     * back, is in progress, failed, or succeeded.
+     * Information that describes the status of a deployment rollback (for example, whether the deployment can't be
+     * rolled back, is in progress, failed, or succeeded).
      * </p>
      * 
      * @param rollbackMessage
-     *        Information describing the status of a deployment rollback; for example, whether the deployment can't be
-     *        rolled back, is in progress, failed, or succeeded.
+     *        Information that describes the status of a deployment rollback (for example, whether the deployment can't
+     *        be rolled back, is in progress, failed, or succeeded).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

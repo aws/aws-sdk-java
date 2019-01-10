@@ -44,6 +44,12 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
     private Boolean singleInstanceType;
     /**
      * <p>
+     * Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     * </p>
+     */
+    private Boolean singleAvailabilityZone;
+    /**
+     * <p>
      * The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached,
      * the fleet launches no instances.
      * </p>
@@ -195,6 +201,58 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     * </p>
+     * 
+     * @param singleAvailabilityZone
+     *        Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     */
+
+    public void setSingleAvailabilityZone(Boolean singleAvailabilityZone) {
+        this.singleAvailabilityZone = singleAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     * </p>
+     * 
+     * @return Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     */
+
+    public Boolean getSingleAvailabilityZone() {
+        return this.singleAvailabilityZone;
+    }
+
+    /**
+     * <p>
+     * Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     * </p>
+     * 
+     * @param singleAvailabilityZone
+     *        Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OnDemandOptionsRequest withSingleAvailabilityZone(Boolean singleAvailabilityZone) {
+        setSingleAvailabilityZone(singleAvailabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     * </p>
+     * 
+     * @return Indicates that the fleet launches all On-Demand Instances into a single Availability Zone.
+     */
+
+    public Boolean isSingleAvailabilityZone() {
+        return this.singleAvailabilityZone;
+    }
+
+    /**
+     * <p>
      * The minimum target capacity for On-Demand Instances in the fleet. If the minimum target capacity is not reached,
      * the fleet launches no instances.
      * </p>
@@ -255,6 +313,8 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
             sb.append("AllocationStrategy: ").append(getAllocationStrategy()).append(",");
         if (getSingleInstanceType() != null)
             sb.append("SingleInstanceType: ").append(getSingleInstanceType()).append(",");
+        if (getSingleAvailabilityZone() != null)
+            sb.append("SingleAvailabilityZone: ").append(getSingleAvailabilityZone()).append(",");
         if (getMinTargetCapacity() != null)
             sb.append("MinTargetCapacity: ").append(getMinTargetCapacity());
         sb.append("}");
@@ -279,6 +339,10 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
             return false;
         if (other.getSingleInstanceType() != null && other.getSingleInstanceType().equals(this.getSingleInstanceType()) == false)
             return false;
+        if (other.getSingleAvailabilityZone() == null ^ this.getSingleAvailabilityZone() == null)
+            return false;
+        if (other.getSingleAvailabilityZone() != null && other.getSingleAvailabilityZone().equals(this.getSingleAvailabilityZone()) == false)
+            return false;
         if (other.getMinTargetCapacity() == null ^ this.getMinTargetCapacity() == null)
             return false;
         if (other.getMinTargetCapacity() != null && other.getMinTargetCapacity().equals(this.getMinTargetCapacity()) == false)
@@ -293,6 +357,7 @@ public class OnDemandOptionsRequest implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
         hashCode = prime * hashCode + ((getSingleInstanceType() == null) ? 0 : getSingleInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getSingleAvailabilityZone() == null) ? 0 : getSingleAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getMinTargetCapacity() == null) ? 0 : getMinTargetCapacity().hashCode());
         return hashCode;
     }

@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A set of Amazon ECS tasks. A task set runs a specified number of instances of a task definition simultaneously inside
- * an Amazon ECS service. Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS
- * task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set
- * serves production traffic or not.
+ * Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details
+ * such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.
+ * An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an
+ * Amazon ECS service as a task set.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/ECSTaskSet" target="_top">AWS API
@@ -39,9 +39,9 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
     private String identifer;
     /**
      * <p>
-     * The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy asks
-     * Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated
-     * task set is created, CodeDeploy shifts traffic to the new task set.
+     * The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy
+     * instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After
+     * the updated task set is created, CodeDeploy shifts traffic to the new task set.
      * </p>
      */
     private Long desiredCount;
@@ -68,17 +68,17 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PRIMARY</code> - indicates the task set is serving production traffic.
+     * <code>PRIMARY</code>: Indicates the task set is serving production traffic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - indicates the task set is not serving production traffic.
+     * <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DRAINING</code> - indicates the tasks in the task set are being stopped and their corresponding targets are
+     * <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are
      * being deregistered from their target group.
      * </p>
      * </li>
@@ -148,15 +148,15 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy asks
-     * Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated
-     * task set is created, CodeDeploy shifts traffic to the new task set.
+     * The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy
+     * instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After
+     * the updated task set is created, CodeDeploy shifts traffic to the new task set.
      * </p>
      * 
      * @param desiredCount
      *        The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy
-     *        asks Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After
-     *        the updated task set is created, CodeDeploy shifts traffic to the new task set.
+     *        instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create.
+     *        After the updated task set is created, CodeDeploy shifts traffic to the new task set.
      */
 
     public void setDesiredCount(Long desiredCount) {
@@ -165,14 +165,14 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy asks
-     * Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated
-     * task set is created, CodeDeploy shifts traffic to the new task set.
+     * The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy
+     * instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After
+     * the updated task set is created, CodeDeploy shifts traffic to the new task set.
      * </p>
      * 
      * @return The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy
-     *         asks Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After
-     *         the updated task set is created, CodeDeploy shifts traffic to the new task set.
+     *         instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create.
+     *         After the updated task set is created, CodeDeploy shifts traffic to the new task set.
      */
 
     public Long getDesiredCount() {
@@ -181,15 +181,15 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy asks
-     * Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After the updated
-     * task set is created, CodeDeploy shifts traffic to the new task set.
+     * The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy
+     * instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After
+     * the updated task set is created, CodeDeploy shifts traffic to the new task set.
      * </p>
      * 
      * @param desiredCount
      *        The number of tasks in a task set. During a deployment that uses the Amazon ECS compute type, CodeDeploy
-     *        asks Amazon ECS to create a new task set and uses this value to determine how many tasks to create. After
-     *        the updated task set is created, CodeDeploy shifts traffic to the new task set.
+     *        instructs Amazon ECS to create a new task set and uses this value to determine how many tasks to create.
+     *        After the updated task set is created, CodeDeploy shifts traffic to the new task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,17 +309,17 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PRIMARY</code> - indicates the task set is serving production traffic.
+     * <code>PRIMARY</code>: Indicates the task set is serving production traffic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - indicates the task set is not serving production traffic.
+     * <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DRAINING</code> - indicates the tasks in the task set are being stopped and their corresponding targets are
+     * <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are
      * being deregistered from their target group.
      * </p>
      * </li>
@@ -330,17 +330,17 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIMARY</code> - indicates the task set is serving production traffic.
+     *        <code>PRIMARY</code>: Indicates the task set is serving production traffic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> - indicates the task set is not serving production traffic.
+     *        <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DRAINING</code> - indicates the tasks in the task set are being stopped and their corresponding
+     *        <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding
      *        targets are being deregistered from their target group.
      *        </p>
      *        </li>
@@ -357,17 +357,17 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PRIMARY</code> - indicates the task set is serving production traffic.
+     * <code>PRIMARY</code>: Indicates the task set is serving production traffic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - indicates the task set is not serving production traffic.
+     * <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DRAINING</code> - indicates the tasks in the task set are being stopped and their corresponding targets are
+     * <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are
      * being deregistered from their target group.
      * </p>
      * </li>
@@ -377,17 +377,17 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>PRIMARY</code> - indicates the task set is serving production traffic.
+     *         <code>PRIMARY</code>: Indicates the task set is serving production traffic.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ACTIVE</code> - indicates the task set is not serving production traffic.
+     *         <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DRAINING</code> - indicates the tasks in the task set are being stopped and their corresponding
+     *         <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding
      *         targets are being deregistered from their target group.
      *         </p>
      *         </li>
@@ -404,17 +404,17 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>PRIMARY</code> - indicates the task set is serving production traffic.
+     * <code>PRIMARY</code>: Indicates the task set is serving production traffic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ACTIVE</code> - indicates the task set is not serving production traffic.
+     * <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DRAINING</code> - indicates the tasks in the task set are being stopped and their corresponding targets are
+     * <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding targets are
      * being deregistered from their target group.
      * </p>
      * </li>
@@ -425,17 +425,17 @@ public class ECSTaskSet implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>PRIMARY</code> - indicates the task set is serving production traffic.
+     *        <code>PRIMARY</code>: Indicates the task set is serving production traffic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ACTIVE</code> - indicates the task set is not serving production traffic.
+     *        <code>ACTIVE</code>: Indicates the task set is not serving production traffic.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DRAINING</code> - indicates the tasks in the task set are being stopped and their corresponding
+     *        <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and their corresponding
      *        targets are being deregistered from their target group.
      *        </p>
      *        </li>

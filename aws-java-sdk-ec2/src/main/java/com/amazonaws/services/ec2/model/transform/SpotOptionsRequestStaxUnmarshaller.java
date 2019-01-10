@@ -63,6 +63,11 @@ public class SpotOptionsRequestStaxUnmarshaller implements Unmarshaller<SpotOpti
                     continue;
                 }
 
+                if (context.testExpression("SingleAvailabilityZone", targetDepth)) {
+                    spotOptionsRequest.setSingleAvailabilityZone(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("MinTargetCapacity", targetDepth)) {
                     spotOptionsRequest.setMinTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -42,7 +42,7 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The maximum length of time, in seconds, that the training job can run. If model training does not complete during
-     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.
      * </p>
      */
@@ -51,14 +51,14 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The maximum length of time, in seconds, that the training job can run. If model training does not complete during
-     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.
      * </p>
      * 
      * @param maxRuntimeInSeconds
      *        The maximum length of time, in seconds, that the training job can run. If model training does not complete
      *        during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day.
-     *        Maximum value is 5 days.
+     *        Maximum value is 28 days.
      */
 
     public void setMaxRuntimeInSeconds(Integer maxRuntimeInSeconds) {
@@ -68,13 +68,13 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The maximum length of time, in seconds, that the training job can run. If model training does not complete during
-     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.
      * </p>
      * 
      * @return The maximum length of time, in seconds, that the training job can run. If model training does not
      *         complete during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1
-     *         day. Maximum value is 5 days.
+     *         day. Maximum value is 28 days.
      */
 
     public Integer getMaxRuntimeInSeconds() {
@@ -84,14 +84,14 @@ public class StoppingCondition implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The maximum length of time, in seconds, that the training job can run. If model training does not complete during
-     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5
+     * this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 28
      * days.
      * </p>
      * 
      * @param maxRuntimeInSeconds
      *        The maximum length of time, in seconds, that the training job can run. If model training does not complete
      *        during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day.
-     *        Maximum value is 5 days.
+     *        Maximum value is 28 days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

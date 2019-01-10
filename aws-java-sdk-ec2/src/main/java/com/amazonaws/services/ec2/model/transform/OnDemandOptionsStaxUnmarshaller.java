@@ -53,6 +53,11 @@ public class OnDemandOptionsStaxUnmarshaller implements Unmarshaller<OnDemandOpt
                     continue;
                 }
 
+                if (context.testExpression("singleAvailabilityZone", targetDepth)) {
+                    onDemandOptions.setSingleAvailabilityZone(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("minTargetCapacity", targetDepth)) {
                     onDemandOptions.setMinTargetCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

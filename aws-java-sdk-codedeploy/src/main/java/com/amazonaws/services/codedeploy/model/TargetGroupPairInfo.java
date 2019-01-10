@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about two target groups and how traffic routes during an Amazon ECS deployment. An optional test traffic
- * route can be specified.
+ * Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test
+ * traffic route can be specified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/TargetGroupPairInfo" target="_top">AWS API
@@ -31,8 +31,8 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One pair of target groups. One is associated with the original task set. The second target is associated with the
-     * task set that serves traffic after the deployment completes.
+     * One pair of target groups. One is associated with the original task set. The second is associated with the task
+     * set that serves traffic after the deployment is complete.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TargetGroupInfo> targetGroups;
@@ -45,19 +45,19 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can
-     * happen while test traffic is served during a deployment.
+     * occur while test traffic is served during a deployment.
      * </p>
      */
     private TrafficRoute testTrafficRoute;
 
     /**
      * <p>
-     * One pair of target groups. One is associated with the original task set. The second target is associated with the
-     * task set that serves traffic after the deployment completes.
+     * One pair of target groups. One is associated with the original task set. The second is associated with the task
+     * set that serves traffic after the deployment is complete.
      * </p>
      * 
-     * @return One pair of target groups. One is associated with the original task set. The second target is associated
-     *         with the task set that serves traffic after the deployment completes.
+     * @return One pair of target groups. One is associated with the original task set. The second is associated with
+     *         the task set that serves traffic after the deployment is complete.
      */
 
     public java.util.List<TargetGroupInfo> getTargetGroups() {
@@ -69,13 +69,13 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One pair of target groups. One is associated with the original task set. The second target is associated with the
-     * task set that serves traffic after the deployment completes.
+     * One pair of target groups. One is associated with the original task set. The second is associated with the task
+     * set that serves traffic after the deployment is complete.
      * </p>
      * 
      * @param targetGroups
-     *        One pair of target groups. One is associated with the original task set. The second target is associated
-     *        with the task set that serves traffic after the deployment completes.
+     *        One pair of target groups. One is associated with the original task set. The second is associated with the
+     *        task set that serves traffic after the deployment is complete.
      */
 
     public void setTargetGroups(java.util.Collection<TargetGroupInfo> targetGroups) {
@@ -89,8 +89,8 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One pair of target groups. One is associated with the original task set. The second target is associated with the
-     * task set that serves traffic after the deployment completes.
+     * One pair of target groups. One is associated with the original task set. The second is associated with the task
+     * set that serves traffic after the deployment is complete.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -99,8 +99,8 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param targetGroups
-     *        One pair of target groups. One is associated with the original task set. The second target is associated
-     *        with the task set that serves traffic after the deployment completes.
+     *        One pair of target groups. One is associated with the original task set. The second is associated with the
+     *        task set that serves traffic after the deployment is complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,13 +116,13 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * One pair of target groups. One is associated with the original task set. The second target is associated with the
-     * task set that serves traffic after the deployment completes.
+     * One pair of target groups. One is associated with the original task set. The second is associated with the task
+     * set that serves traffic after the deployment is complete.
      * </p>
      * 
      * @param targetGroups
-     *        One pair of target groups. One is associated with the original task set. The second target is associated
-     *        with the task set that serves traffic after the deployment completes.
+     *        One pair of target groups. One is associated with the original task set. The second is associated with the
+     *        task set that serves traffic after the deployment is complete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,12 +174,12 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can
-     * happen while test traffic is served during a deployment.
+     * occur while test traffic is served during a deployment.
      * </p>
      * 
      * @param testTrafficRoute
      *        An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation
-     *        can happen while test traffic is served during a deployment.
+     *        can occur while test traffic is served during a deployment.
      */
 
     public void setTestTrafficRoute(TrafficRoute testTrafficRoute) {
@@ -189,11 +189,11 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can
-     * happen while test traffic is served during a deployment.
+     * occur while test traffic is served during a deployment.
      * </p>
      * 
      * @return An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation
-     *         can happen while test traffic is served during a deployment.
+     *         can occur while test traffic is served during a deployment.
      */
 
     public TrafficRoute getTestTrafficRoute() {
@@ -203,12 +203,12 @@ public class TargetGroupPairInfo implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation can
-     * happen while test traffic is served during a deployment.
+     * occur while test traffic is served during a deployment.
      * </p>
      * 
      * @param testTrafficRoute
      *        An optional path used by a load balancer to route test traffic after an Amazon ECS deployment. Validation
-     *        can happen while test traffic is served during a deployment.
+     *        can occur while test traffic is served during a deployment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

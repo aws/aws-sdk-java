@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The service role ARN was specified in an invalid format. Or, if an Auto Scaling group was specified, the specified
- * service role does not grant the appropriate permissions to Auto Scaling.
+ * service role does not grant the appropriate permissions to Amazon EC2 Auto Scaling.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

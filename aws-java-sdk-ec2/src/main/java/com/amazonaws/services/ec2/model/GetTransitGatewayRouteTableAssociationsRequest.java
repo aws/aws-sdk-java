@@ -39,11 +39,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>association-id</code> - The ID of the association.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>resource-id</code> - The ID of the resource.
      * </p>
      * </li>
@@ -121,11 +116,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>association-id</code> - The ID of the association.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>resource-id</code> - The ID of the resource.
      * </p>
      * </li>
@@ -143,11 +133,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * 
      * @return One or more filters. The possible values are:</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>association-id</code> - The ID of the association.
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>resource-id</code> - The ID of the resource.
@@ -179,11 +164,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>association-id</code> - The ID of the association.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>resource-id</code> - The ID of the resource.
      * </p>
      * </li>
@@ -202,11 +182,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * @param filters
      *        One or more filters. The possible values are:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>association-id</code> - The ID of the association.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>resource-id</code> - The ID of the resource.
@@ -240,11 +215,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>association-id</code> - The ID of the association.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>resource-id</code> - The ID of the resource.
      * </p>
      * </li>
@@ -268,11 +238,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * @param filters
      *        One or more filters. The possible values are:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>association-id</code> - The ID of the association.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>resource-id</code> - The ID of the resource.
@@ -308,11 +273,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * <ul>
      * <li>
      * <p>
-     * <code>association-id</code> - The ID of the association.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>resource-id</code> - The ID of the resource.
      * </p>
      * </li>
@@ -331,11 +291,6 @@ public class GetTransitGatewayRouteTableAssociationsRequest extends AmazonWebSer
      * @param filters
      *        One or more filters. The possible values are:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>association-id</code> - The ID of the association.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>resource-id</code> - The ID of the resource.

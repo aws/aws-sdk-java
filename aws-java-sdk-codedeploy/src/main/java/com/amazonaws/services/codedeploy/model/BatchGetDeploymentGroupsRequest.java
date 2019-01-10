@@ -36,7 +36,7 @@ public class BatchGetDeploymentGroupsRequest extends com.amazonaws.AmazonWebServ
     private String applicationName;
     /**
      * <p>
-     * The deployment groups' names.
+     * The names of the deployment groups.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> deploymentGroupNames;
@@ -83,10 +83,10 @@ public class BatchGetDeploymentGroupsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The deployment groups' names.
+     * The names of the deployment groups.
      * </p>
      * 
-     * @return The deployment groups' names.
+     * @return The names of the deployment groups.
      */
 
     public java.util.List<String> getDeploymentGroupNames() {
@@ -98,11 +98,11 @@ public class BatchGetDeploymentGroupsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The deployment groups' names.
+     * The names of the deployment groups.
      * </p>
      * 
      * @param deploymentGroupNames
-     *        The deployment groups' names.
+     *        The names of the deployment groups.
      */
 
     public void setDeploymentGroupNames(java.util.Collection<String> deploymentGroupNames) {
@@ -116,7 +116,7 @@ public class BatchGetDeploymentGroupsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The deployment groups' names.
+     * The names of the deployment groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,7 +125,7 @@ public class BatchGetDeploymentGroupsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param deploymentGroupNames
-     *        The deployment groups' names.
+     *        The names of the deployment groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class BatchGetDeploymentGroupsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The deployment groups' names.
+     * The names of the deployment groups.
      * </p>
      * 
      * @param deploymentGroupNames
-     *        The deployment groups' names.
+     *        The names of the deployment groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

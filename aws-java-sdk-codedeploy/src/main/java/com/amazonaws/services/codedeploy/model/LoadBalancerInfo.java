@@ -30,7 +30,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic
      * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * <note>
@@ -42,8 +42,8 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
     private com.amazonaws.internal.SdkInternalList<ELBInfo> elbInfoList;
     /**
      * <p>
-     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
-     * Balancing, target groups are used with Application Load Balancers.
+     * An array that contains information about the target group to use for load balancing in a deployment. In Elastic
+     * Load Balancing, target groups are used with Application Load Balancers.
      * </p>
      * <note>
      * <p>
@@ -62,7 +62,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic
      * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * <note>
@@ -71,7 +71,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * </note>
      * 
-     * @return An array containing information about the load balancer to use for load balancing in a deployment. In
+     * @return An array that contains information about the load balancer to use for load balancing in a deployment. In
      *         Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note>
      *         <p>
      *         Adding more than one load balancer to the array is not supported.
@@ -87,7 +87,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic
      * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * <note>
@@ -97,7 +97,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </note>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer to use for load balancing in a deployment. In
+     *        An array that contains information about the load balancer to use for load balancing in a deployment. In
      *        Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note>
      *        <p>
      *        Adding more than one load balancer to the array is not supported.
@@ -115,7 +115,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic
      * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * <note>
@@ -130,7 +130,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer to use for load balancing in a deployment. In
+     *        An array that contains information about the load balancer to use for load balancing in a deployment. In
      *        Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note>
      *        <p>
      *        Adding more than one load balancer to the array is not supported.
@@ -150,7 +150,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the load balancer to use for load balancing in a deployment. In Elastic
+     * An array that contains information about the load balancer to use for load balancing in a deployment. In Elastic
      * Load Balancing, load balancers are used with Classic Load Balancers.
      * </p>
      * <note>
@@ -160,7 +160,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </note>
      * 
      * @param elbInfoList
-     *        An array containing information about the load balancer to use for load balancing in a deployment. In
+     *        An array that contains information about the load balancer to use for load balancing in a deployment. In
      *        Elastic Load Balancing, load balancers are used with Classic Load Balancers.</p> <note>
      *        <p>
      *        Adding more than one load balancer to the array is not supported.
@@ -175,8 +175,8 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
-     * Balancing, target groups are used with Application Load Balancers.
+     * An array that contains information about the target group to use for load balancing in a deployment. In Elastic
+     * Load Balancing, target groups are used with Application Load Balancers.
      * </p>
      * <note>
      * <p>
@@ -184,7 +184,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * </note>
      * 
-     * @return An array containing information about the target group to use for load balancing in a deployment. In
+     * @return An array that contains information about the target group to use for load balancing in a deployment. In
      *         Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note>
      *         <p>
      *         Adding more than one target group to the array is not supported.
@@ -200,8 +200,8 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
-     * Balancing, target groups are used with Application Load Balancers.
+     * An array that contains information about the target group to use for load balancing in a deployment. In Elastic
+     * Load Balancing, target groups are used with Application Load Balancers.
      * </p>
      * <note>
      * <p>
@@ -210,7 +210,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </note>
      * 
      * @param targetGroupInfoList
-     *        An array containing information about the target group to use for load balancing in a deployment. In
+     *        An array that contains information about the target group to use for load balancing in a deployment. In
      *        Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note>
      *        <p>
      *        Adding more than one target group to the array is not supported.
@@ -228,8 +228,8 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
-     * Balancing, target groups are used with Application Load Balancers.
+     * An array that contains information about the target group to use for load balancing in a deployment. In Elastic
+     * Load Balancing, target groups are used with Application Load Balancers.
      * </p>
      * <note>
      * <p>
@@ -243,7 +243,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param targetGroupInfoList
-     *        An array containing information about the target group to use for load balancing in a deployment. In
+     *        An array that contains information about the target group to use for load balancing in a deployment. In
      *        Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note>
      *        <p>
      *        Adding more than one target group to the array is not supported.
@@ -263,8 +263,8 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array containing information about the target group to use for load balancing in a deployment. In Elastic Load
-     * Balancing, target groups are used with Application Load Balancers.
+     * An array that contains information about the target group to use for load balancing in a deployment. In Elastic
+     * Load Balancing, target groups are used with Application Load Balancers.
      * </p>
      * <note>
      * <p>
@@ -273,7 +273,7 @@ public class LoadBalancerInfo implements Serializable, Cloneable, StructuredPojo
      * </note>
      * 
      * @param targetGroupInfoList
-     *        An array containing information about the target group to use for load balancing in a deployment. In
+     *        An array that contains information about the target group to use for load balancing in a deployment. In
      *        Elastic Load Balancing, target groups are used with Application Load Balancers.</p> <note>
      *        <p>
      *        Adding more than one target group to the array is not supported.

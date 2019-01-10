@@ -85,6 +85,14 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements
             }
         }
 
+        if (describeSpotInstanceRequestsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeSpotInstanceRequestsRequest.getNextToken()));
+        }
+
+        if (describeSpotInstanceRequestsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeSpotInstanceRequestsRequest.getMaxResults()));
+        }
+
         return request;
     }
 

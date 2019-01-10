@@ -63,14 +63,15 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     private Integer maxConcurrentTransforms;
     /**
      * <p>
-     * The maximum payload size , in MB used in the transform job.
+     * The maximum payload size, in MB, used in the transform job.
      * </p>
      */
     private Integer maxPayloadInMB;
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
-     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
+     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
+     * <code>MultiRecord</code>.S
      * </p>
      */
     private String batchStrategy;
@@ -109,8 +110,8 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
     private java.util.Date transformStartTime;
     /**
      * <p>
-     * Indicates when the transform job is <code>Completed</code>, <code>Stopped</code>, or <code>Failed</code>. You are
-     * billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+     * Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time
+     * interval between this time and the value of <code>TransformStartTime</code>.
      * </p>
      */
     private java.util.Date transformEndTime;
@@ -397,11 +398,11 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum payload size , in MB used in the transform job.
+     * The maximum payload size, in MB, used in the transform job.
      * </p>
      * 
      * @param maxPayloadInMB
-     *        The maximum payload size , in MB used in the transform job.
+     *        The maximum payload size, in MB, used in the transform job.
      */
 
     public void setMaxPayloadInMB(Integer maxPayloadInMB) {
@@ -410,10 +411,10 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum payload size , in MB used in the transform job.
+     * The maximum payload size, in MB, used in the transform job.
      * </p>
      * 
-     * @return The maximum payload size , in MB used in the transform job.
+     * @return The maximum payload size, in MB, used in the transform job.
      */
 
     public Integer getMaxPayloadInMB() {
@@ -422,11 +423,11 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum payload size , in MB used in the transform job.
+     * The maximum payload size, in MB, used in the transform job.
      * </p>
      * 
      * @param maxPayloadInMB
-     *        The maximum payload size , in MB used in the transform job.
+     *        The maximum payload size, in MB, used in the transform job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,13 +438,15 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
-     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
+     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
+     * <code>MultiRecord</code>.S
      * </p>
      * 
      * @param batchStrategy
-     *        SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained
-     *        as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     *        If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches
+     *        to contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter,
+     *        specify <code>MultiRecord</code>.S
      * @see BatchStrategy
      */
 
@@ -453,12 +456,14 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
-     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
+     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
+     * <code>MultiRecord</code>.S
      * </p>
      * 
-     * @return SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained
-     *         as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * @return If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want
+     *         batches to contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code>
+     *         parameter, specify <code>MultiRecord</code>.S
      * @see BatchStrategy
      */
 
@@ -468,13 +473,15 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
-     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
+     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
+     * <code>MultiRecord</code>.S
      * </p>
      * 
      * @param batchStrategy
-     *        SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained
-     *        as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     *        If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches
+     *        to contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter,
+     *        specify <code>MultiRecord</code>.S
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchStrategy
      */
@@ -486,13 +493,15 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained as many
-     * records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     * If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches to
+     * contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter, specify
+     * <code>MultiRecord</code>.S
      * </p>
      * 
      * @param batchStrategy
-     *        SingleRecord means only one record was used per a batch. <code>MultiRecord</code> means batches contained
-     *        as many records that could possibly fit within the <code>MaxPayloadInMB</code> limit.
+     *        If you want to include only one record in a batch, specify <code>SingleRecord</code>.. If you want batches
+     *        to contain a maximum of the number of records specified in the <code>MaxPayloadInMB</code> parameter,
+     *        specify <code>MultiRecord</code>.S
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BatchStrategy
      */
@@ -766,13 +775,13 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates when the transform job is <code>Completed</code>, <code>Stopped</code>, or <code>Failed</code>. You are
-     * billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+     * Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time
+     * interval between this time and the value of <code>TransformStartTime</code>.
      * </p>
      * 
      * @param transformEndTime
-     *        Indicates when the transform job is <code>Completed</code>, <code>Stopped</code>, or <code>Failed</code>.
-     *        You are billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+     *        Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time
+     *        interval between this time and the value of <code>TransformStartTime</code>.
      */
 
     public void setTransformEndTime(java.util.Date transformEndTime) {
@@ -781,12 +790,12 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates when the transform job is <code>Completed</code>, <code>Stopped</code>, or <code>Failed</code>. You are
-     * billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+     * Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time
+     * interval between this time and the value of <code>TransformStartTime</code>.
      * </p>
      * 
-     * @return Indicates when the transform job is <code>Completed</code>, <code>Stopped</code>, or <code>Failed</code>.
-     *         You are billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+     * @return Indicates when the transform job has been completed, or has stopped or failed. You are billed for the
+     *         time interval between this time and the value of <code>TransformStartTime</code>.
      */
 
     public java.util.Date getTransformEndTime() {
@@ -795,13 +804,13 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Indicates when the transform job is <code>Completed</code>, <code>Stopped</code>, or <code>Failed</code>. You are
-     * billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+     * Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time
+     * interval between this time and the value of <code>TransformStartTime</code>.
      * </p>
      * 
      * @param transformEndTime
-     *        Indicates when the transform job is <code>Completed</code>, <code>Stopped</code>, or <code>Failed</code>.
-     *        You are billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+     *        Indicates when the transform job has been completed, or has stopped or failed. You are billed for the time
+     *        interval between this time and the value of <code>TransformStartTime</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

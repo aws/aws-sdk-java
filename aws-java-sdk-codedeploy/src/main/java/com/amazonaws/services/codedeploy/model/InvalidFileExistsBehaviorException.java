@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * An invalid fileExistsBehavior option was specified to determine how AWS CodeDeploy handles files or directories that
- * already exist in a deployment target location but weren't part of the previous successful deployment. Valid values
- * include "DISALLOW", "OVERWRITE", and "RETAIN".
+ * already exist in a deployment target location, but weren't part of the previous successful deployment. Valid values
+ * include "DISALLOW," "OVERWRITE," and "RETAIN."
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

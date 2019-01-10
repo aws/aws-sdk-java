@@ -141,9 +141,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
-     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * within a training cluster for distributed training. If you enable network isolation for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -152,6 +152,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      */
     private Boolean enableNetworkIsolation;
+    /**
+     * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>,.
+     * Encryption provides greater security for distributed training, but training can take longer because of additional
+     * communications between ML compute instances.
+     * </p>
+     */
+    private Boolean enableInterContainerTrafficEncryption;
 
     /**
      * <p>
@@ -972,9 +980,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
-     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * within a training cluster for distributed training. If you enable network isolation for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -984,9 +992,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param enableNetworkIsolation
      *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
-     *        between peers within a training cluster for distributed training. If network isolation is used for
+     *        between peers within a training cluster for distributed training. If you enable network isolation for
      *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *        model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *        model artifacts through the specified VPC, but the training container does not have network access.</p>
      *        <note>
      *        <p>
      *        The Semantic Segmentation built-in algorithm does not support network isolation.
@@ -1000,9 +1008,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
-     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * within a training cluster for distributed training. If you enable network isolation for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -1011,9 +1019,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
-     *         between peers within a training cluster for distributed training. If network isolation is used for
+     *         between peers within a training cluster for distributed training. If you enable network isolation for
      *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *         model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *         model artifacts through the specified VPC, but the training container does not have network access.</p>
      *         <note>
      *         <p>
      *         The Semantic Segmentation built-in algorithm does not support network isolation.
@@ -1027,9 +1035,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
-     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * within a training cluster for distributed training. If you enable network isolation for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -1039,9 +1047,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param enableNetworkIsolation
      *        Isolates the training container. No inbound or outbound network calls can be made, except for calls
-     *        between peers within a training cluster for distributed training. If network isolation is used for
+     *        between peers within a training cluster for distributed training. If you enable network isolation for
      *        training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *        model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *        model artifacts through the specified VPC, but the training container does not have network access.</p>
      *        <note>
      *        <p>
      *        The Semantic Segmentation built-in algorithm does not support network isolation.
@@ -1057,9 +1065,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * Isolates the training container. No inbound or outbound network calls can be made, except for calls between peers
-     * within a training cluster for distributed training. If network isolation is used for training jobs that are
+     * within a training cluster for distributed training. If you enable network isolation for training jobs that are
      * configured to use a VPC, Amazon SageMaker downloads and uploads customer data and model artifacts through the
-     * specifed VPC, but the training container does not have network access.
+     * specified VPC, but the training container does not have network access.
      * </p>
      * <note>
      * <p>
@@ -1068,9 +1076,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @return Isolates the training container. No inbound or outbound network calls can be made, except for calls
-     *         between peers within a training cluster for distributed training. If network isolation is used for
+     *         between peers within a training cluster for distributed training. If you enable network isolation for
      *         training jobs that are configured to use a VPC, Amazon SageMaker downloads and uploads customer data and
-     *         model artifacts through the specifed VPC, but the training container does not have network access.</p>
+     *         model artifacts through the specified VPC, but the training container does not have network access.</p>
      *         <note>
      *         <p>
      *         The Semantic Segmentation built-in algorithm does not support network isolation.
@@ -1079,6 +1087,74 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     public Boolean isEnableNetworkIsolation() {
         return this.enableNetworkIsolation;
+    }
+
+    /**
+     * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>,.
+     * Encryption provides greater security for distributed training, but training can take longer because of additional
+     * communications between ML compute instances.
+     * </p>
+     * 
+     * @param enableInterContainerTrafficEncryption
+     *        To encrypt all communications between ML compute instances in distributed training, choose
+     *        <code>True</code>,. Encryption provides greater security for distributed training, but training can take
+     *        longer because of additional communications between ML compute instances.
+     */
+
+    public void setEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
+        this.enableInterContainerTrafficEncryption = enableInterContainerTrafficEncryption;
+    }
+
+    /**
+     * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>,.
+     * Encryption provides greater security for distributed training, but training can take longer because of additional
+     * communications between ML compute instances.
+     * </p>
+     * 
+     * @return To encrypt all communications between ML compute instances in distributed training, choose
+     *         <code>True</code>,. Encryption provides greater security for distributed training, but training can take
+     *         longer because of additional communications between ML compute instances.
+     */
+
+    public Boolean getEnableInterContainerTrafficEncryption() {
+        return this.enableInterContainerTrafficEncryption;
+    }
+
+    /**
+     * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>,.
+     * Encryption provides greater security for distributed training, but training can take longer because of additional
+     * communications between ML compute instances.
+     * </p>
+     * 
+     * @param enableInterContainerTrafficEncryption
+     *        To encrypt all communications between ML compute instances in distributed training, choose
+     *        <code>True</code>,. Encryption provides greater security for distributed training, but training can take
+     *        longer because of additional communications between ML compute instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withEnableInterContainerTrafficEncryption(Boolean enableInterContainerTrafficEncryption) {
+        setEnableInterContainerTrafficEncryption(enableInterContainerTrafficEncryption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To encrypt all communications between ML compute instances in distributed training, choose <code>True</code>,.
+     * Encryption provides greater security for distributed training, but training can take longer because of additional
+     * communications between ML compute instances.
+     * </p>
+     * 
+     * @return To encrypt all communications between ML compute instances in distributed training, choose
+     *         <code>True</code>,. Encryption provides greater security for distributed training, but training can take
+     *         longer because of additional communications between ML compute instances.
+     */
+
+    public Boolean isEnableInterContainerTrafficEncryption() {
+        return this.enableInterContainerTrafficEncryption;
     }
 
     /**
@@ -1114,7 +1190,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getEnableNetworkIsolation() != null)
-            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation());
+            sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation()).append(",");
+        if (getEnableInterContainerTrafficEncryption() != null)
+            sb.append("EnableInterContainerTrafficEncryption: ").append(getEnableInterContainerTrafficEncryption());
         sb.append("}");
         return sb.toString();
     }
@@ -1173,6 +1251,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEnableNetworkIsolation() != null && other.getEnableNetworkIsolation().equals(this.getEnableNetworkIsolation()) == false)
             return false;
+        if (other.getEnableInterContainerTrafficEncryption() == null ^ this.getEnableInterContainerTrafficEncryption() == null)
+            return false;
+        if (other.getEnableInterContainerTrafficEncryption() != null
+                && other.getEnableInterContainerTrafficEncryption().equals(this.getEnableInterContainerTrafficEncryption()) == false)
+            return false;
         return true;
     }
 
@@ -1192,6 +1275,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getStoppingCondition() == null) ? 0 : getStoppingCondition().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
+        hashCode = prime * hashCode + ((getEnableInterContainerTrafficEncryption() == null) ? 0 : getEnableInterContainerTrafficEncryption().hashCode());
         return hashCode;
     }
 

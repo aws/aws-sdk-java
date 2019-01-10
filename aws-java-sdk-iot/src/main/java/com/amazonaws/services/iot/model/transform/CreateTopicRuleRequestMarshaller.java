@@ -31,6 +31,8 @@ public class CreateTopicRuleRequestMarshaller {
             .marshallLocationName("ruleName").build();
     private static final MarshallingInfo<StructuredPojo> TOPICRULEPAYLOAD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).build();
+    private static final MarshallingInfo<String> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.HEADER)
+            .marshallLocationName("x-amz-tagging").build();
 
     private static final CreateTopicRuleRequestMarshaller instance = new CreateTopicRuleRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class CreateTopicRuleRequestMarshaller {
         try {
             protocolMarshaller.marshall(createTopicRuleRequest.getRuleName(), RULENAME_BINDING);
             protocolMarshaller.marshall(createTopicRuleRequest.getTopicRulePayload(), TOPICRULEPAYLOAD_BINDING);
+            protocolMarshaller.marshall(createTopicRuleRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

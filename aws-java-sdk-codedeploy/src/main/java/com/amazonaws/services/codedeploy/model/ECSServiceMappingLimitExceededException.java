@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Amazon ECS service is associated with more than one deployment groups. An ECS service can only be associated with
- * one deployment group.
+ * The Amazon ECS service is associated with more than one deployment groups. An Amazon ECS service can be associated
+ * with only one deployment group.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

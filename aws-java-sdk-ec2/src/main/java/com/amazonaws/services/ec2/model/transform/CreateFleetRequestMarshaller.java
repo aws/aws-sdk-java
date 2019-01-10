@@ -63,6 +63,10 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
                 request.addParameter("SpotOptions.SingleInstanceType", StringUtils.fromBoolean(spotOptions.getSingleInstanceType()));
             }
 
+            if (spotOptions.getSingleAvailabilityZone() != null) {
+                request.addParameter("SpotOptions.SingleAvailabilityZone", StringUtils.fromBoolean(spotOptions.getSingleAvailabilityZone()));
+            }
+
             if (spotOptions.getMinTargetCapacity() != null) {
                 request.addParameter("SpotOptions.MinTargetCapacity", StringUtils.fromInteger(spotOptions.getMinTargetCapacity()));
             }
@@ -77,6 +81,10 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
 
             if (onDemandOptions.getSingleInstanceType() != null) {
                 request.addParameter("OnDemandOptions.SingleInstanceType", StringUtils.fromBoolean(onDemandOptions.getSingleInstanceType()));
+            }
+
+            if (onDemandOptions.getSingleAvailabilityZone() != null) {
+                request.addParameter("OnDemandOptions.SingleAvailabilityZone", StringUtils.fromBoolean(onDemandOptions.getSingleAvailabilityZone()));
             }
 
             if (onDemandOptions.getMinTargetCapacity() != null) {

@@ -27,37 +27,37 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were created after the specified time.
+     * A filter that returns only Git repositories that were created after the specified time.
      * </p>
      */
     private java.util.Date creationTimeAfter;
     /**
      * <p>
-     * A filter that returns only git repositories that were created before the specified time.
+     * A filter that returns only Git repositories that were created before the specified time.
      * </p>
      */
     private java.util.Date creationTimeBefore;
     /**
      * <p>
-     * A filter that returns only git repositories that were last modified after the specified time.
+     * A filter that returns only Git repositories that were last modified after the specified time.
      * </p>
      */
     private java.util.Date lastModifiedTimeAfter;
     /**
      * <p>
-     * A filter that returns only git repositories that were last modified before the specified time.
+     * A filter that returns only Git repositories that were last modified before the specified time.
      * </p>
      */
     private java.util.Date lastModifiedTimeBefore;
     /**
      * <p>
-     * The maximum number of git repositories to return in the response.
+     * The maximum number of Git repositories to return in the response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * A string in the git repositories name. This filter returns only repositories whose name contains the specified
+     * A string in the Git repositories name. This filter returns only repositories whose name contains the specified
      * string.
      * </p>
      */
@@ -65,7 +65,7 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     * <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     * <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * </p>
      */
     private String nextToken;
@@ -84,11 +84,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were created after the specified time.
+     * A filter that returns only Git repositories that were created after the specified time.
      * </p>
      * 
      * @param creationTimeAfter
-     *        A filter that returns only git repositories that were created after the specified time.
+     *        A filter that returns only Git repositories that were created after the specified time.
      */
 
     public void setCreationTimeAfter(java.util.Date creationTimeAfter) {
@@ -97,10 +97,10 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were created after the specified time.
+     * A filter that returns only Git repositories that were created after the specified time.
      * </p>
      * 
-     * @return A filter that returns only git repositories that were created after the specified time.
+     * @return A filter that returns only Git repositories that were created after the specified time.
      */
 
     public java.util.Date getCreationTimeAfter() {
@@ -109,11 +109,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were created after the specified time.
+     * A filter that returns only Git repositories that were created after the specified time.
      * </p>
      * 
      * @param creationTimeAfter
-     *        A filter that returns only git repositories that were created after the specified time.
+     *        A filter that returns only Git repositories that were created after the specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were created before the specified time.
+     * A filter that returns only Git repositories that were created before the specified time.
      * </p>
      * 
      * @param creationTimeBefore
-     *        A filter that returns only git repositories that were created before the specified time.
+     *        A filter that returns only Git repositories that were created before the specified time.
      */
 
     public void setCreationTimeBefore(java.util.Date creationTimeBefore) {
@@ -137,10 +137,10 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were created before the specified time.
+     * A filter that returns only Git repositories that were created before the specified time.
      * </p>
      * 
-     * @return A filter that returns only git repositories that were created before the specified time.
+     * @return A filter that returns only Git repositories that were created before the specified time.
      */
 
     public java.util.Date getCreationTimeBefore() {
@@ -149,11 +149,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were created before the specified time.
+     * A filter that returns only Git repositories that were created before the specified time.
      * </p>
      * 
      * @param creationTimeBefore
-     *        A filter that returns only git repositories that were created before the specified time.
+     *        A filter that returns only Git repositories that were created before the specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +164,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were last modified after the specified time.
+     * A filter that returns only Git repositories that were last modified after the specified time.
      * </p>
      * 
      * @param lastModifiedTimeAfter
-     *        A filter that returns only git repositories that were last modified after the specified time.
+     *        A filter that returns only Git repositories that were last modified after the specified time.
      */
 
     public void setLastModifiedTimeAfter(java.util.Date lastModifiedTimeAfter) {
@@ -177,10 +177,10 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were last modified after the specified time.
+     * A filter that returns only Git repositories that were last modified after the specified time.
      * </p>
      * 
-     * @return A filter that returns only git repositories that were last modified after the specified time.
+     * @return A filter that returns only Git repositories that were last modified after the specified time.
      */
 
     public java.util.Date getLastModifiedTimeAfter() {
@@ -189,11 +189,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were last modified after the specified time.
+     * A filter that returns only Git repositories that were last modified after the specified time.
      * </p>
      * 
      * @param lastModifiedTimeAfter
-     *        A filter that returns only git repositories that were last modified after the specified time.
+     *        A filter that returns only Git repositories that were last modified after the specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +204,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were last modified before the specified time.
+     * A filter that returns only Git repositories that were last modified before the specified time.
      * </p>
      * 
      * @param lastModifiedTimeBefore
-     *        A filter that returns only git repositories that were last modified before the specified time.
+     *        A filter that returns only Git repositories that were last modified before the specified time.
      */
 
     public void setLastModifiedTimeBefore(java.util.Date lastModifiedTimeBefore) {
@@ -217,10 +217,10 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were last modified before the specified time.
+     * A filter that returns only Git repositories that were last modified before the specified time.
      * </p>
      * 
-     * @return A filter that returns only git repositories that were last modified before the specified time.
+     * @return A filter that returns only Git repositories that were last modified before the specified time.
      */
 
     public java.util.Date getLastModifiedTimeBefore() {
@@ -229,11 +229,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A filter that returns only git repositories that were last modified before the specified time.
+     * A filter that returns only Git repositories that were last modified before the specified time.
      * </p>
      * 
      * @param lastModifiedTimeBefore
-     *        A filter that returns only git repositories that were last modified before the specified time.
+     *        A filter that returns only Git repositories that were last modified before the specified time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,11 +244,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of git repositories to return in the response.
+     * The maximum number of Git repositories to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of git repositories to return in the response.
+     *        The maximum number of Git repositories to return in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -257,10 +257,10 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of git repositories to return in the response.
+     * The maximum number of Git repositories to return in the response.
      * </p>
      * 
-     * @return The maximum number of git repositories to return in the response.
+     * @return The maximum number of Git repositories to return in the response.
      */
 
     public Integer getMaxResults() {
@@ -269,11 +269,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of git repositories to return in the response.
+     * The maximum number of Git repositories to return in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of git repositories to return in the response.
+     *        The maximum number of Git repositories to return in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,12 +284,12 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A string in the git repositories name. This filter returns only repositories whose name contains the specified
+     * A string in the Git repositories name. This filter returns only repositories whose name contains the specified
      * string.
      * </p>
      * 
      * @param nameContains
-     *        A string in the git repositories name. This filter returns only repositories whose name contains the
+     *        A string in the Git repositories name. This filter returns only repositories whose name contains the
      *        specified string.
      */
 
@@ -299,11 +299,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A string in the git repositories name. This filter returns only repositories whose name contains the specified
+     * A string in the Git repositories name. This filter returns only repositories whose name contains the specified
      * string.
      * </p>
      * 
-     * @return A string in the git repositories name. This filter returns only repositories whose name contains the
+     * @return A string in the Git repositories name. This filter returns only repositories whose name contains the
      *         specified string.
      */
 
@@ -313,12 +313,12 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A string in the git repositories name. This filter returns only repositories whose name contains the specified
+     * A string in the Git repositories name. This filter returns only repositories whose name contains the specified
      * string.
      * </p>
      * 
      * @param nameContains
-     *        A string in the git repositories name. This filter returns only repositories whose name contains the
+     *        A string in the Git repositories name. This filter returns only repositories whose name contains the
      *        specified string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -331,12 +331,12 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     * <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     * <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * </p>
      * 
      * @param nextToken
      *        If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     *        <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     *        <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      */
 
     public void setNextToken(String nextToken) {
@@ -346,11 +346,11 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     * <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     * <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * </p>
      * 
      * @return If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     *         <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     *         <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      */
 
     public String getNextToken() {
@@ -360,12 +360,12 @@ public class ListCodeRepositoriesRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     * <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     * <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * </p>
      * 
      * @param nextToken
      *        If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     *        <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     *        <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

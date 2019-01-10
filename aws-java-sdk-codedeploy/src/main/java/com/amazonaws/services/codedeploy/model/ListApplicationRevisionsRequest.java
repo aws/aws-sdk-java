@@ -30,7 +30,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      */
     private String applicationName;
@@ -56,7 +56,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified or set to null, the results will be returned in an arbitrary order.
+     * If not specified or set to null, the results are returned in an arbitrary order.
      * </p>
      */
     private String sortBy;
@@ -77,10 +77,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified, the results will be sorted in ascending order.
+     * If not specified, the results are sorted in ascending order.
      * </p>
      * <p>
-     * If set to null, the results will be sorted in an arbitrary order.
+     * If set to null, the results are sorted in an arbitrary order.
      * </p>
      */
     private String sortOrder;
@@ -132,11 +132,11 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      */
 
     public void setApplicationName(String applicationName) {
@@ -145,10 +145,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
-     * @return The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * @return The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      */
 
     public String getApplicationName() {
@@ -157,11 +157,11 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     * The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * </p>
      * 
      * @param applicationName
-     *        The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.
+     *        The name of an AWS CodeDeploy application associated with the IAM user or AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,7 +192,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified or set to null, the results will be returned in an arbitrary order.
+     * If not specified or set to null, the results are returned in an arbitrary order.
      * </p>
      * 
      * @param sortBy
@@ -215,7 +215,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        If not specified or set to null, the results will be returned in an arbitrary order.
+     *        If not specified or set to null, the results are returned in an arbitrary order.
      * @see ApplicationRevisionSortBy
      */
 
@@ -245,7 +245,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified or set to null, the results will be returned in an arbitrary order.
+     * If not specified or set to null, the results are returned in an arbitrary order.
      * </p>
      * 
      * @return The column name to use to sort the list results:</p>
@@ -267,7 +267,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         </ul>
      *         <p>
-     *         If not specified or set to null, the results will be returned in an arbitrary order.
+     *         If not specified or set to null, the results are returned in an arbitrary order.
      * @see ApplicationRevisionSortBy
      */
 
@@ -297,7 +297,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified or set to null, the results will be returned in an arbitrary order.
+     * If not specified or set to null, the results are returned in an arbitrary order.
      * </p>
      * 
      * @param sortBy
@@ -320,7 +320,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        If not specified or set to null, the results will be returned in an arbitrary order.
+     *        If not specified or set to null, the results are returned in an arbitrary order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationRevisionSortBy
      */
@@ -352,7 +352,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified or set to null, the results will be returned in an arbitrary order.
+     * If not specified or set to null, the results are returned in an arbitrary order.
      * </p>
      * 
      * @param sortBy
@@ -375,7 +375,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        If not specified or set to null, the results will be returned in an arbitrary order.
+     *        If not specified or set to null, the results are returned in an arbitrary order.
      * @see ApplicationRevisionSortBy
      */
 
@@ -405,7 +405,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified or set to null, the results will be returned in an arbitrary order.
+     * If not specified or set to null, the results are returned in an arbitrary order.
      * </p>
      * 
      * @param sortBy
@@ -428,7 +428,7 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        If not specified or set to null, the results will be returned in an arbitrary order.
+     *        If not specified or set to null, the results are returned in an arbitrary order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationRevisionSortBy
      */
@@ -455,10 +455,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified, the results will be sorted in ascending order.
+     * If not specified, the results are sorted in ascending order.
      * </p>
      * <p>
-     * If set to null, the results will be sorted in an arbitrary order.
+     * If set to null, the results are sorted in an arbitrary order.
      * </p>
      * 
      * @param sortOrder
@@ -476,10 +476,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        If not specified, the results will be sorted in ascending order.
+     *        If not specified, the results are sorted in ascending order.
      *        </p>
      *        <p>
-     *        If set to null, the results will be sorted in an arbitrary order.
+     *        If set to null, the results are sorted in an arbitrary order.
      * @see SortOrder
      */
 
@@ -504,10 +504,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified, the results will be sorted in ascending order.
+     * If not specified, the results are sorted in ascending order.
      * </p>
      * <p>
-     * If set to null, the results will be sorted in an arbitrary order.
+     * If set to null, the results are sorted in an arbitrary order.
      * </p>
      * 
      * @return The order in which to sort the list results: </p>
@@ -524,10 +524,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *         </li>
      *         </ul>
      *         <p>
-     *         If not specified, the results will be sorted in ascending order.
+     *         If not specified, the results are sorted in ascending order.
      *         </p>
      *         <p>
-     *         If set to null, the results will be sorted in an arbitrary order.
+     *         If set to null, the results are sorted in an arbitrary order.
      * @see SortOrder
      */
 
@@ -552,10 +552,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified, the results will be sorted in ascending order.
+     * If not specified, the results are sorted in ascending order.
      * </p>
      * <p>
-     * If set to null, the results will be sorted in an arbitrary order.
+     * If set to null, the results are sorted in an arbitrary order.
      * </p>
      * 
      * @param sortOrder
@@ -573,10 +573,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        If not specified, the results will be sorted in ascending order.
+     *        If not specified, the results are sorted in ascending order.
      *        </p>
      *        <p>
-     *        If set to null, the results will be sorted in an arbitrary order.
+     *        If set to null, the results are sorted in an arbitrary order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -603,10 +603,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified, the results will be sorted in ascending order.
+     * If not specified, the results are sorted in ascending order.
      * </p>
      * <p>
-     * If set to null, the results will be sorted in an arbitrary order.
+     * If set to null, the results are sorted in an arbitrary order.
      * </p>
      * 
      * @param sortOrder
@@ -624,10 +624,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        If not specified, the results will be sorted in ascending order.
+     *        If not specified, the results are sorted in ascending order.
      *        </p>
      *        <p>
-     *        If set to null, the results will be sorted in an arbitrary order.
+     *        If set to null, the results are sorted in an arbitrary order.
      * @see SortOrder
      */
 
@@ -652,10 +652,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * <p>
-     * If not specified, the results will be sorted in ascending order.
+     * If not specified, the results are sorted in ascending order.
      * </p>
      * <p>
-     * If set to null, the results will be sorted in an arbitrary order.
+     * If set to null, the results are sorted in an arbitrary order.
      * </p>
      * 
      * @param sortOrder
@@ -673,10 +673,10 @@ public class ListApplicationRevisionsRequest extends com.amazonaws.AmazonWebServ
      *        </li>
      *        </ul>
      *        <p>
-     *        If not specified, the results will be sorted in ascending order.
+     *        If not specified, the results are sorted in ascending order.
      *        </p>
      *        <p>
-     *        If set to null, the results will be sorted in an arbitrary order.
+     *        If set to null, the results are sorted in an arbitrary order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */

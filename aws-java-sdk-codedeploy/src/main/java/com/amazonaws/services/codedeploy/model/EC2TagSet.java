@@ -30,20 +30,20 @@ public class EC2TagSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment
+     * group, it must be identified by all of the tag groups in the list.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<java.util.List<EC2TagFilter>> ec2TagSetList;
 
     /**
      * <p>
-     * A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment
+     * group, it must be identified by all of the tag groups in the list.
      * </p>
      * 
-     * @return A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     *         deployment group, it must be identified by all the tag groups in the list.
+     * @return A list that contains other lists of EC2 instance tag groups. For an instance to be included in the
+     *         deployment group, it must be identified by all of the tag groups in the list.
      */
 
     public java.util.List<java.util.List<EC2TagFilter>> getEc2TagSetList() {
@@ -55,13 +55,13 @@ public class EC2TagSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment
+     * group, it must be identified by all of the tag groups in the list.
      * </p>
      * 
      * @param ec2TagSetList
-     *        A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     *        deployment group, it must be identified by all the tag groups in the list.
+     *        A list that contains other lists of EC2 instance tag groups. For an instance to be included in the
+     *        deployment group, it must be identified by all of the tag groups in the list.
      */
 
     public void setEc2TagSetList(java.util.Collection<java.util.List<EC2TagFilter>> ec2TagSetList) {
@@ -75,8 +75,8 @@ public class EC2TagSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment
+     * group, it must be identified by all of the tag groups in the list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,8 +85,8 @@ public class EC2TagSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param ec2TagSetList
-     *        A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     *        deployment group, it must be identified by all the tag groups in the list.
+     *        A list that contains other lists of EC2 instance tag groups. For an instance to be included in the
+     *        deployment group, it must be identified by all of the tag groups in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,13 +102,13 @@ public class EC2TagSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     * deployment group, it must be identified by all the tag groups in the list.
+     * A list that contains other lists of EC2 instance tag groups. For an instance to be included in the deployment
+     * group, it must be identified by all of the tag groups in the list.
      * </p>
      * 
      * @param ec2TagSetList
-     *        A list containing other lists of EC2 instance tag groups. In order for an instance to be included in the
-     *        deployment group, it must be identified by all the tag groups in the list.
+     *        A list that contains other lists of EC2 instance tag groups. For an instance to be included in the
+     *        deployment group, it must be identified by all of the tag groups in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,18 +25,18 @@ public class UpdateCodeRepositoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the git repository.
+     * The ARN of the Git repository.
      * </p>
      */
     private String codeRepositoryArn;
 
     /**
      * <p>
-     * The ARN of the git repository.
+     * The ARN of the Git repository.
      * </p>
      * 
      * @param codeRepositoryArn
-     *        The ARN of the git repository.
+     *        The ARN of the Git repository.
      */
 
     public void setCodeRepositoryArn(String codeRepositoryArn) {
@@ -45,10 +45,10 @@ public class UpdateCodeRepositoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the git repository.
+     * The ARN of the Git repository.
      * </p>
      * 
-     * @return The ARN of the git repository.
+     * @return The ARN of the Git repository.
      */
 
     public String getCodeRepositoryArn() {
@@ -57,11 +57,11 @@ public class UpdateCodeRepositoryResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ARN of the git repository.
+     * The ARN of the Git repository.
      * </p>
      * 
      * @param codeRepositoryArn
-     *        The ARN of the git repository.
+     *        The ARN of the Git repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

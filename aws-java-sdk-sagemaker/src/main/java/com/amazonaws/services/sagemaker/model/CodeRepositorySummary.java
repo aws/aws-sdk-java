@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies summary information about a git repository.
+ * Specifies summary information about a Git repository.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CodeRepositorySummary" target="_top">AWS
@@ -30,31 +30,31 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the git repository.
+     * The name of the Git repository.
      * </p>
      */
     private String codeRepositoryName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the git repository.
+     * The Amazon Resource Name (ARN) of the Git repository.
      * </p>
      */
     private String codeRepositoryArn;
     /**
      * <p>
-     * The date and time that the git repository was created.
+     * The date and time that the Git repository was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The date and time that the git repository was last modified.
+     * The date and time that the Git repository was last modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * Configuration details for the git repository, including the URL where it is located and the ARN of the AWS
+     * Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
      * Secrets Manager secret that contains the credentials used to access the repository.
      * </p>
      */
@@ -62,11 +62,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the git repository.
+     * The name of the Git repository.
      * </p>
      * 
      * @param codeRepositoryName
-     *        The name of the git repository.
+     *        The name of the Git repository.
      */
 
     public void setCodeRepositoryName(String codeRepositoryName) {
@@ -75,10 +75,10 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the git repository.
+     * The name of the Git repository.
      * </p>
      * 
-     * @return The name of the git repository.
+     * @return The name of the Git repository.
      */
 
     public String getCodeRepositoryName() {
@@ -87,11 +87,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the git repository.
+     * The name of the Git repository.
      * </p>
      * 
      * @param codeRepositoryName
-     *        The name of the git repository.
+     *        The name of the Git repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the git repository.
+     * The Amazon Resource Name (ARN) of the Git repository.
      * </p>
      * 
      * @param codeRepositoryArn
-     *        The Amazon Resource Name (ARN) of the git repository.
+     *        The Amazon Resource Name (ARN) of the Git repository.
      */
 
     public void setCodeRepositoryArn(String codeRepositoryArn) {
@@ -115,10 +115,10 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the git repository.
+     * The Amazon Resource Name (ARN) of the Git repository.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the git repository.
+     * @return The Amazon Resource Name (ARN) of the Git repository.
      */
 
     public String getCodeRepositoryArn() {
@@ -127,11 +127,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the git repository.
+     * The Amazon Resource Name (ARN) of the Git repository.
      * </p>
      * 
      * @param codeRepositoryArn
-     *        The Amazon Resource Name (ARN) of the git repository.
+     *        The Amazon Resource Name (ARN) of the Git repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time that the git repository was created.
+     * The date and time that the Git repository was created.
      * </p>
      * 
      * @param creationTime
-     *        The date and time that the git repository was created.
+     *        The date and time that the Git repository was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -155,10 +155,10 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time that the git repository was created.
+     * The date and time that the Git repository was created.
      * </p>
      * 
-     * @return The date and time that the git repository was created.
+     * @return The date and time that the Git repository was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -167,11 +167,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time that the git repository was created.
+     * The date and time that the Git repository was created.
      * </p>
      * 
      * @param creationTime
-     *        The date and time that the git repository was created.
+     *        The date and time that the Git repository was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time that the git repository was last modified.
+     * The date and time that the Git repository was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the git repository was last modified.
+     *        The date and time that the Git repository was last modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -195,10 +195,10 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time that the git repository was last modified.
+     * The date and time that the Git repository was last modified.
      * </p>
      * 
-     * @return The date and time that the git repository was last modified.
+     * @return The date and time that the Git repository was last modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -207,11 +207,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The date and time that the git repository was last modified.
+     * The date and time that the Git repository was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time that the git repository was last modified.
+     *        The date and time that the Git repository was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,12 +222,12 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Configuration details for the git repository, including the URL where it is located and the ARN of the AWS
+     * Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
      * Secrets Manager secret that contains the credentials used to access the repository.
      * </p>
      * 
      * @param gitConfig
-     *        Configuration details for the git repository, including the URL where it is located and the ARN of the AWS
+     *        Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
      *        Secrets Manager secret that contains the credentials used to access the repository.
      */
 
@@ -237,11 +237,11 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Configuration details for the git repository, including the URL where it is located and the ARN of the AWS
+     * Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
      * Secrets Manager secret that contains the credentials used to access the repository.
      * </p>
      * 
-     * @return Configuration details for the git repository, including the URL where it is located and the ARN of the
+     * @return Configuration details for the Git repository, including the URL where it is located and the ARN of the
      *         AWS Secrets Manager secret that contains the credentials used to access the repository.
      */
 
@@ -251,12 +251,12 @@ public class CodeRepositorySummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Configuration details for the git repository, including the URL where it is located and the ARN of the AWS
+     * Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
      * Secrets Manager secret that contains the credentials used to access the repository.
      * </p>
      * 
      * @param gitConfig
-     *        Configuration details for the git repository, including the URL where it is located and the ARN of the AWS
+     *        Configuration details for the Git repository, including the URL where it is located and the ARN of the AWS
      *        Secrets Manager secret that contains the credentials used to access the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

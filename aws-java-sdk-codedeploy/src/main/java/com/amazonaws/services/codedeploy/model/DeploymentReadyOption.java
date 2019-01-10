@@ -52,8 +52,8 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
     private String actionOnTimeout;
     /**
      * <p>
-     * The number of minutes to wait before the status of a blue/green deployment changed to Stopped if rerouting is not
-     * started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
+     * The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is
+     * not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
      * </p>
      */
     private Integer waitTimeInMinutes;
@@ -288,13 +288,13 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of minutes to wait before the status of a blue/green deployment changed to Stopped if rerouting is not
-     * started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
+     * The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is
+     * not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
      * </p>
      * 
      * @param waitTimeInMinutes
-     *        The number of minutes to wait before the status of a blue/green deployment changed to Stopped if rerouting
-     *        is not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
+     *        The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if
+     *        rerouting is not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
      */
 
     public void setWaitTimeInMinutes(Integer waitTimeInMinutes) {
@@ -303,11 +303,11 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of minutes to wait before the status of a blue/green deployment changed to Stopped if rerouting is not
-     * started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
+     * The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is
+     * not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
      * </p>
      * 
-     * @return The number of minutes to wait before the status of a blue/green deployment changed to Stopped if
+     * @return The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if
      *         rerouting is not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
      */
 
@@ -317,13 +317,13 @@ public class DeploymentReadyOption implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The number of minutes to wait before the status of a blue/green deployment changed to Stopped if rerouting is not
-     * started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
+     * The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if rerouting is
+     * not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
      * </p>
      * 
      * @param waitTimeInMinutes
-     *        The number of minutes to wait before the status of a blue/green deployment changed to Stopped if rerouting
-     *        is not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
+     *        The number of minutes to wait before the status of a blue/green deployment is changed to Stopped if
+     *        rerouting is not started manually. Applies only to the STOP_DEPLOYMENT option for actionOnTimeout
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -57,11 +57,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
-     * </p>
-     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
@@ -137,11 +132,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return One or more filters. The possible values are:</p>
@@ -165,11 +155,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         <li>
      *         <p>
      *         <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
      *         </p>
      *         </li>
      */
@@ -206,11 +191,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param filters
@@ -235,11 +215,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
      *        </p>
      *        </li>
      */
@@ -278,11 +253,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
-     * </p>
-     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -312,11 +282,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -357,11 +322,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param filters
@@ -386,11 +346,6 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <li>
      *        <p>
      *        <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

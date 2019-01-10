@@ -25,7 +25,7 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Gets a list of summaries of the git repositories. Each summary specifies the following values for the repository:
+     * Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:
      * </p>
      * <ul>
      * <li>
@@ -54,22 +54,20 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      * secret that contains the credentials used to access the repository.
      * </p>
      * </li>
-     * <li>
-     * <p/></li>
      * </ul>
      */
     private java.util.List<CodeRepositorySummary> codeRepositorySummaryList;
     /**
      * <p>
      * If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     * <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     * <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Gets a list of summaries of the git repositories. Each summary specifies the following values for the repository:
+     * Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:
      * </p>
      * <ul>
      * <li>
@@ -98,11 +96,9 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      * secret that contains the credentials used to access the repository.
      * </p>
      * </li>
-     * <li>
-     * <p/></li>
      * </ul>
      * 
-     * @return Gets a list of summaries of the git repositories. Each summary specifies the following values for the
+     * @return Gets a list of summaries of the Git repositories. Each summary specifies the following values for the
      *         repository: </p>
      *         <ul>
      *         <li>
@@ -131,8 +127,6 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      *         Manager secret that contains the credentials used to access the repository.
      *         </p>
      *         </li>
-     *         <li>
-     *         <p/></li>
      */
 
     public java.util.List<CodeRepositorySummary> getCodeRepositorySummaryList() {
@@ -141,7 +135,7 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Gets a list of summaries of the git repositories. Each summary specifies the following values for the repository:
+     * Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:
      * </p>
      * <ul>
      * <li>
@@ -170,12 +164,10 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      * secret that contains the credentials used to access the repository.
      * </p>
      * </li>
-     * <li>
-     * <p/></li>
      * </ul>
      * 
      * @param codeRepositorySummaryList
-     *        Gets a list of summaries of the git repositories. Each summary specifies the following values for the
+     *        Gets a list of summaries of the Git repositories. Each summary specifies the following values for the
      *        repository: </p>
      *        <ul>
      *        <li>
@@ -204,8 +196,6 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      *        Manager secret that contains the credentials used to access the repository.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p/></li>
      */
 
     public void setCodeRepositorySummaryList(java.util.Collection<CodeRepositorySummary> codeRepositorySummaryList) {
@@ -219,7 +209,7 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Gets a list of summaries of the git repositories. Each summary specifies the following values for the repository:
+     * Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:
      * </p>
      * <ul>
      * <li>
@@ -248,8 +238,6 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      * secret that contains the credentials used to access the repository.
      * </p>
      * </li>
-     * <li>
-     * <p/></li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -258,7 +246,7 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param codeRepositorySummaryList
-     *        Gets a list of summaries of the git repositories. Each summary specifies the following values for the
+     *        Gets a list of summaries of the Git repositories. Each summary specifies the following values for the
      *        repository: </p>
      *        <ul>
      *        <li>
@@ -287,8 +275,6 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      *        Manager secret that contains the credentials used to access the repository.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p/></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,7 +290,7 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Gets a list of summaries of the git repositories. Each summary specifies the following values for the repository:
+     * Gets a list of summaries of the Git repositories. Each summary specifies the following values for the repository:
      * </p>
      * <ul>
      * <li>
@@ -333,12 +319,10 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      * secret that contains the credentials used to access the repository.
      * </p>
      * </li>
-     * <li>
-     * <p/></li>
      * </ul>
      * 
      * @param codeRepositorySummaryList
-     *        Gets a list of summaries of the git repositories. Each summary specifies the following values for the
+     *        Gets a list of summaries of the Git repositories. Each summary specifies the following values for the
      *        repository: </p>
      *        <ul>
      *        <li>
@@ -367,8 +351,6 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
      *        Manager secret that contains the credentials used to access the repository.
      *        </p>
      *        </li>
-     *        <li>
-     *        <p/></li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,12 +362,12 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     * <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     * <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * </p>
      * 
      * @param nextToken
      *        If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     *        <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     *        <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      */
 
     public void setNextToken(String nextToken) {
@@ -395,11 +377,11 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     * <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     * <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * </p>
      * 
      * @return If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     *         <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     *         <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      */
 
     public String getNextToken() {
@@ -409,12 +391,12 @@ public class ListCodeRepositoriesResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     * <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     * <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * </p>
      * 
      * @param nextToken
      *        If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated, the response includes a
-     *        <code>NextToken</code>. To get the next set of git repositories, use the token in the next request.
+     *        <code>NextToken</code>. To get the next set of Git repositories, use the token in the next request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

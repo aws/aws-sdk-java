@@ -30,24 +30,24 @@ public class ECSService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target ECS service.
+     * The name of the target Amazon ECS service.
      * </p>
      */
     private String serviceName;
     /**
      * <p>
-     * The name of the cluster that the ECS service is associated with.
+     * The name of the cluster that the Amazon ECS service is associated with.
      * </p>
      */
     private String clusterName;
 
     /**
      * <p>
-     * The name of the target ECS service.
+     * The name of the target Amazon ECS service.
      * </p>
      * 
      * @param serviceName
-     *        The name of the target ECS service.
+     *        The name of the target Amazon ECS service.
      */
 
     public void setServiceName(String serviceName) {
@@ -56,10 +56,10 @@ public class ECSService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target ECS service.
+     * The name of the target Amazon ECS service.
      * </p>
      * 
-     * @return The name of the target ECS service.
+     * @return The name of the target Amazon ECS service.
      */
 
     public String getServiceName() {
@@ -68,11 +68,11 @@ public class ECSService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target ECS service.
+     * The name of the target Amazon ECS service.
      * </p>
      * 
      * @param serviceName
-     *        The name of the target ECS service.
+     *        The name of the target Amazon ECS service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class ECSService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster that the ECS service is associated with.
+     * The name of the cluster that the Amazon ECS service is associated with.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster that the ECS service is associated with.
+     *        The name of the cluster that the Amazon ECS service is associated with.
      */
 
     public void setClusterName(String clusterName) {
@@ -96,10 +96,10 @@ public class ECSService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster that the ECS service is associated with.
+     * The name of the cluster that the Amazon ECS service is associated with.
      * </p>
      * 
-     * @return The name of the cluster that the ECS service is associated with.
+     * @return The name of the cluster that the Amazon ECS service is associated with.
      */
 
     public String getClusterName() {
@@ -108,11 +108,11 @@ public class ECSService implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the cluster that the ECS service is associated with.
+     * The name of the cluster that the Amazon ECS service is associated with.
      * </p>
      * 
      * @param clusterName
-     *        The name of the cluster that the ECS service is associated with.
+     *        The name of the cluster that the Amazon ECS service is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

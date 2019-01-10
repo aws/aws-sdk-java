@@ -51,13 +51,13 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
     private HyperParameterTrainingJobDefinition trainingJobDefinition;
     /**
      * <p>
-     * Specifies configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a
-     * starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
+     * Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as
+     * a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
      * search over in the new tuning job.
      * </p>
      * <p>
      * All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If
-     * you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> for the warm start
+     * you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start
      * configuration, the training job that performs the best in the new tuning job is compared to the best training
      * jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the
      * objective metric is returned as the overall best training job.
@@ -243,13 +243,13 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a
-     * starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
+     * Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as
+     * a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
      * search over in the new tuning job.
      * </p>
      * <p>
      * All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If
-     * you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> for the warm start
+     * you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start
      * configuration, the training job that performs the best in the new tuning job is compared to the best training
      * jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the
      * objective metric is returned as the overall best training job.
@@ -262,15 +262,15 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * </note>
      * 
      * @param warmStartConfig
-     *        Specifies configuration for starting the hyperparameter tuning job using one or more previous tuning jobs
-     *        as a starting point. The results of previous tuning jobs are used to inform which combinations of
+     *        Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning
+     *        jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of
      *        hyperparameters to search over in the new tuning job.</p>
      *        <p>
      *        All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective
-     *        metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> for the
-     *        warm start configuration, the training job that performs the best in the new tuning job is compared to the
-     *        best training jobs from the parent tuning jobs. From these, the training job that performs the best as
-     *        measured by the objective metric is returned as the overall best training job.
+     *        metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value
+     *        for the warm start configuration, the training job that performs the best in the new tuning job is
+     *        compared to the best training jobs from the parent tuning jobs. From these, the training job that performs
+     *        the best as measured by the objective metric is returned as the overall best training job.
      *        </p>
      *        <note>
      *        <p>
@@ -285,13 +285,13 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a
-     * starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
+     * Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as
+     * a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
      * search over in the new tuning job.
      * </p>
      * <p>
      * All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If
-     * you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> for the warm start
+     * you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start
      * configuration, the training job that performs the best in the new tuning job is compared to the best training
      * jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the
      * objective metric is returned as the overall best training job.
@@ -303,15 +303,15 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * </p>
      * </note>
      * 
-     * @return Specifies configuration for starting the hyperparameter tuning job using one or more previous tuning jobs
-     *         as a starting point. The results of previous tuning jobs are used to inform which combinations of
+     * @return Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning
+     *         jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of
      *         hyperparameters to search over in the new tuning job.</p>
      *         <p>
      *         All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective
-     *         metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> for
-     *         the warm start configuration, the training job that performs the best in the new tuning job is compared
-     *         to the best training jobs from the parent tuning jobs. From these, the training job that performs the
-     *         best as measured by the objective metric is returned as the overall best training job.
+     *         metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value
+     *         for the warm start configuration, the training job that performs the best in the new tuning job is
+     *         compared to the best training jobs from the parent tuning jobs. From these, the training job that
+     *         performs the best as measured by the objective metric is returned as the overall best training job.
      *         </p>
      *         <note>
      *         <p>
@@ -326,13 +326,13 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as a
-     * starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
+     * Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning jobs as
+     * a starting point. The results of previous tuning jobs are used to inform which combinations of hyperparameters to
      * search over in the new tuning job.
      * </p>
      * <p>
      * All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective metric. If
-     * you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> for the warm start
+     * you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value for the warm start
      * configuration, the training job that performs the best in the new tuning job is compared to the best training
      * jobs from the parent tuning jobs. From these, the training job that performs the best as measured by the
      * objective metric is returned as the overall best training job.
@@ -345,15 +345,15 @@ public class CreateHyperParameterTuningJobRequest extends com.amazonaws.AmazonWe
      * </note>
      * 
      * @param warmStartConfig
-     *        Specifies configuration for starting the hyperparameter tuning job using one or more previous tuning jobs
-     *        as a starting point. The results of previous tuning jobs are used to inform which combinations of
+     *        Specifies the configuration for starting the hyperparameter tuning job using one or more previous tuning
+     *        jobs as a starting point. The results of previous tuning jobs are used to inform which combinations of
      *        hyperparameters to search over in the new tuning job.</p>
      *        <p>
      *        All training jobs launched by the new hyperparameter tuning job are evaluated by using the objective
-     *        metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> for the
-     *        warm start configuration, the training job that performs the best in the new tuning job is compared to the
-     *        best training jobs from the parent tuning jobs. From these, the training job that performs the best as
-     *        measured by the objective metric is returned as the overall best training job.
+     *        metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as the <code>WarmStartType</code> value
+     *        for the warm start configuration, the training job that performs the best in the new tuning job is
+     *        compared to the best training jobs from the parent tuning jobs. From these, the training job that performs
+     *        the best as measured by the objective metric is returned as the overall best training job.
      *        </p>
      *        <note>
      *        <p>

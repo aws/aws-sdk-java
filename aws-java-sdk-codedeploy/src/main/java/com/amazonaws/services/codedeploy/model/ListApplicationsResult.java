@@ -35,7 +35,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
-     * applications call to return the next set of applications, will also be returned. in the list.
+     * applications call to return the next set of applications in the list.
      * </p>
      */
     private String nextToken;
@@ -116,13 +116,12 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
-     * applications call to return the next set of applications, will also be returned. in the list.
+     * applications call to return the next set of applications in the list.
      * </p>
      * 
      * @param nextToken
      *        If a large amount of information is returned, an identifier is also returned. It can be used in a
-     *        subsequent list applications call to return the next set of applications, will also be returned. in the
-     *        list.
+     *        subsequent list applications call to return the next set of applications in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -132,12 +131,11 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
-     * applications call to return the next set of applications, will also be returned. in the list.
+     * applications call to return the next set of applications in the list.
      * </p>
      * 
      * @return If a large amount of information is returned, an identifier is also returned. It can be used in a
-     *         subsequent list applications call to return the next set of applications, will also be returned. in the
-     *         list.
+     *         subsequent list applications call to return the next set of applications in the list.
      */
 
     public String getNextToken() {
@@ -147,13 +145,12 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If a large amount of information is returned, an identifier is also returned. It can be used in a subsequent list
-     * applications call to return the next set of applications, will also be returned. in the list.
+     * applications call to return the next set of applications in the list.
      * </p>
      * 
      * @param nextToken
      *        If a large amount of information is returned, an identifier is also returned. It can be used in a
-     *        subsequent list applications call to return the next set of applications, will also be returned. in the
-     *        list.
+     *        subsequent list applications call to return the next set of applications in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

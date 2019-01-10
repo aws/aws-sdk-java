@@ -27,7 +27,7 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A <code>Template</code>object containing the worker UI template to render.
+     * A <code>Template</code> object containing the worker UI template to render.
      * </p>
      */
     private UiTemplate uiTemplate;
@@ -46,11 +46,11 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A <code>Template</code>object containing the worker UI template to render.
+     * A <code>Template</code> object containing the worker UI template to render.
      * </p>
      * 
      * @param uiTemplate
-     *        A <code>Template</code>object containing the worker UI template to render.
+     *        A <code>Template</code> object containing the worker UI template to render.
      */
 
     public void setUiTemplate(UiTemplate uiTemplate) {
@@ -59,10 +59,10 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A <code>Template</code>object containing the worker UI template to render.
+     * A <code>Template</code> object containing the worker UI template to render.
      * </p>
      * 
-     * @return A <code>Template</code>object containing the worker UI template to render.
+     * @return A <code>Template</code> object containing the worker UI template to render.
      */
 
     public UiTemplate getUiTemplate() {
@@ -71,11 +71,11 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A <code>Template</code>object containing the worker UI template to render.
+     * A <code>Template</code> object containing the worker UI template to render.
      * </p>
      * 
      * @param uiTemplate
-     *        A <code>Template</code>object containing the worker UI template to render.
+     *        A <code>Template</code> object containing the worker UI template to render.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
