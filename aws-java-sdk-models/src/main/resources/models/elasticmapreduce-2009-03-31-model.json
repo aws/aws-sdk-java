@@ -10,7 +10,6 @@
     "serviceId":"EMR",
     "signatureVersion":"v4",
     "targetPrefix":"ElasticMapReduce",
-    "timestampFormat":"unixTimestamp",
     "uid":"elasticmapreduce-2009-03-31"
   },
   "operations":{
@@ -525,7 +524,7 @@
           "documentation":"<p>This option is for advanced users only. This is meta information about third-party applications that third-party vendors use for testing purposes.</p>"
         }
       },
-      "documentation":"<p>An application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument. For more information, see <a href=\"http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-mapr.html\">Using the MapR Distribution for Hadoop</a>. Currently supported values are:</p> <ul> <li> <p>\"mapr-m3\" - launch the cluster using MapR M3 Edition.</p> </li> <li> <p>\"mapr-m5\" - launch the cluster using MapR M5 Edition.</p> </li> <li> <p>\"mapr\" with the user arguments specifying \"--edition,m3\" or \"--edition,m5\" - launch the cluster using MapR M3 or M5 Edition, respectively.</p> </li> </ul> <note> <p>In Amazon EMR releases 4.x and later, the only accepted parameter is the application name. To pass arguments to applications, you supply a configuration for each application.</p> </note>"
+      "documentation":"<p>With Amazon EMR release version 4.0 and later, the only accepted parameter is the application name. To pass arguments to applications, you use configuration classifications specified using configuration JSON objects. For more information, see <a href=\"http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html\">Configuring Applications</a>.</p> <p>With earlier Amazon EMR releases, the application is any Amazon or third-party software that you can add to the cluster. This structure contains a list of strings that indicates the software to use with the cluster and accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action argument.</p>"
     },
     "ApplicationList":{
       "type":"list",
@@ -1286,7 +1285,7 @@
         },
         "EmrManagedSlaveSecurityGroup":{
           "shape":"String",
-          "documentation":"<p>The identifier of the Amazon EC2 security group for the slave nodes.</p>"
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>"
         },
         "ServiceAccessSecurityGroup":{
           "shape":"String",
@@ -1298,7 +1297,7 @@
         },
         "AdditionalSlaveSecurityGroups":{
           "shape":"StringList",
-          "documentation":"<p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>"
+          "documentation":"<p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>"
         }
       },
       "documentation":"<p>Provides information about the EC2 instances in a cluster grouped by category. For example, key name, subnet ID, IAM instance profile, and so on.</p>"
@@ -2290,7 +2289,7 @@
         },
         "SlaveInstanceType":{
           "shape":"InstanceType",
-          "documentation":"<p>The EC2 instance type of the slave nodes.</p>"
+          "documentation":"<p>The EC2 instance type of the core and task nodes.</p>"
         },
         "InstanceCount":{
           "shape":"Integer",
@@ -2338,7 +2337,7 @@
         },
         "EmrManagedSlaveSecurityGroup":{
           "shape":"XmlStringMaxLen256",
-          "documentation":"<p>The identifier of the Amazon EC2 security group for the slave nodes.</p>"
+          "documentation":"<p>The identifier of the Amazon EC2 security group for the core and task nodes.</p>"
         },
         "ServiceAccessSecurityGroup":{
           "shape":"XmlStringMaxLen256",
@@ -2350,7 +2349,7 @@
         },
         "AdditionalSlaveSecurityGroups":{
           "shape":"SecurityGroupsList",
-          "documentation":"<p>A list of additional Amazon EC2 security group IDs for the slave nodes.</p>"
+          "documentation":"<p>A list of additional Amazon EC2 security group IDs for the core and task nodes.</p>"
         }
       },
       "documentation":"<p>A description of the Amazon EC2 instance on which the cluster (job flow) runs. A valid JobFlowInstancesConfig must contain either InstanceGroups or InstanceFleets, which is the recommended configuration. They cannot be used together. You may also have MasterInstanceType, SlaveInstanceType, and InstanceCount (all three must be present), but we don't recommend this configuration.</p>"
@@ -2377,11 +2376,11 @@
         },
         "SlaveInstanceType":{
           "shape":"InstanceType",
-          "documentation":"<p>The Amazon EC2 slave node instance type.</p>"
+          "documentation":"<p>The Amazon EC2 core and task node instance type.</p>"
         },
         "InstanceCount":{
           "shape":"Integer",
-          "documentation":"<p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and slave node. If the value is greater than 1, one instance is the master node and all others are slave nodes.</p>"
+          "documentation":"<p>The number of Amazon EC2 instances in the cluster. If the value is 1, the same instance serves as both the master and core and task node. If the value is greater than 1, one instance is the master node and all others are core and task nodes.</p>"
         },
         "InstanceGroups":{
           "shape":"InstanceGroupDetailList",
@@ -2916,7 +2915,7 @@
         },
         "Applications":{
           "shape":"ApplicationList",
-          "documentation":"<p>For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: \"Hadoop\", \"Hive\", \"Mahout\", \"Pig\", and \"Spark.\" They are case insensitive.</p>"
+          "documentation":"<p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the <a href=\"http://docs.aws.amazon.com/emr/latest/ReleaseGuide/\">Amazon EMR Release Guide</a>.</p>"
         },
         "Configurations":{
           "shape":"ConfigurationList",
@@ -3180,7 +3179,7 @@
         },
         "TimeoutAction":{
           "shape":"SpotProvisioningTimeoutAction",
-          "documentation":"<p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired. Spot instances are not uprovisioned within the Spot provisioining timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>"
+          "documentation":"<p>The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available, On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.</p>"
         },
         "BlockDurationMinutes":{
           "shape":"WholeNumber",
@@ -3223,7 +3222,7 @@
         },
         "ActionOnFailure":{
           "shape":"ActionOnFailure",
-          "documentation":"<p>This specifies what action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.</p>"
+          "documentation":"<p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>"
         },
         "Status":{
           "shape":"StepStatus",
@@ -3245,7 +3244,7 @@
         },
         "ActionOnFailure":{
           "shape":"ActionOnFailure",
-          "documentation":"<p>The action to take if the step fails.</p>"
+          "documentation":"<p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is provided for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>"
         },
         "HadoopJarStep":{
           "shape":"HadoopJarStepConfig",
@@ -3400,7 +3399,7 @@
         },
         "ActionOnFailure":{
           "shape":"ActionOnFailure",
-          "documentation":"<p>This specifies what action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE.</p>"
+          "documentation":"<p>The action to take when the cluster step fails. Possible values are TERMINATE_CLUSTER, CANCEL_AND_WAIT, and CONTINUE. TERMINATE_JOB_FLOW is available for backward compatibility. We recommend using TERMINATE_CLUSTER instead.</p>"
         },
         "Status":{
           "shape":"StepStatus",

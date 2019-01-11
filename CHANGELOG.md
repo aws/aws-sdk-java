@@ -1,3 +1,12 @@
+# __1.11.482__ __2019-01-11__
+## __AWS RDS DataService__
+  - ### Features
+    - Documentation updates for RDS Data API.
+
+## __Amazon Elastic MapReduce__
+  - ### Features
+    - Documentation updates for Amazon EMR
+
 # __1.11.481__ __2019-01-10__
 ## __AWS CodeDeploy__
   - ### Features

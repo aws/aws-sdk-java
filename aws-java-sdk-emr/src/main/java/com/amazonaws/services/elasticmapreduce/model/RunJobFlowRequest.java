@@ -169,8 +169,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private com.amazonaws.internal.SdkInternalList<SupportedProductConfig> newSupportedProducts;
     /**
      * <p>
-     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
-     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     * Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install
+     * and configure when launching the cluster. For a list of applications available for each Amazon EMR release
+     * version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Application> applications;
@@ -1455,12 +1456,15 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
-     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     * Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install
+     * and configure when launching the cluster. For a list of applications available for each Amazon EMR release
+     * version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.
      * </p>
      * 
-     * @return For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are:
-     *         "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     * @return Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to
+     *         install and configure when launching the cluster. For a list of applications available for each Amazon
+     *         EMR release version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     *         Release Guide</a>.
      */
 
     public java.util.List<Application> getApplications() {
@@ -1472,13 +1476,16 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
-     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     * Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install
+     * and configure when launching the cluster. For a list of applications available for each Amazon EMR release
+     * version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.
      * </p>
      * 
      * @param applications
-     *        For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
-     *        "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     *        Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to
+     *        install and configure when launching the cluster. For a list of applications available for each Amazon EMR
+     *        release version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
+     *        Guide</a>.
      */
 
     public void setApplications(java.util.Collection<Application> applications) {
@@ -1492,8 +1499,9 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
-     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     * Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install
+     * and configure when launching the cluster. For a list of applications available for each Amazon EMR release
+     * version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1502,8 +1510,10 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param applications
-     *        For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
-     *        "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     *        Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to
+     *        install and configure when launching the cluster. For a list of applications available for each Amazon EMR
+     *        release version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
+     *        Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1519,13 +1529,16 @@ public class RunJobFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
-     * "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     * Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install
+     * and configure when launching the cluster. For a list of applications available for each Amazon EMR release
+     * version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release Guide</a>.
      * </p>
      * 
      * @param applications
-     *        For Amazon EMR releases 4.0 and later. A list of applications for the cluster. Valid values are: "Hadoop",
-     *        "Hive", "Mahout", "Pig", and "Spark." They are case insensitive.
+     *        Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to
+     *        install and configure when launching the cluster. For a list of applications available for each Amazon EMR
+     *        release version, see the <a href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR Release
+     *        Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

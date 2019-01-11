@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -2100,7 +2100,7 @@
       },
       "members" : [ {
         "c2jName" : "awsSecretStoreArn",
-        "c2jShape" : "String",
+        "c2jShape" : "Arn",
         "deprecated" : false,
         "documentation" : "ARN of the db credentials in AWS Secret Store or the friendly secret name",
         "enumType" : null,
@@ -2166,7 +2166,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "database",
-        "c2jShape" : "String",
+        "c2jShape" : "DbName",
         "deprecated" : false,
         "documentation" : "Target DB name",
         "enumType" : null,
@@ -2232,7 +2232,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "dbClusterOrInstanceArn",
-        "c2jShape" : "String",
+        "c2jShape" : "Arn",
         "deprecated" : false,
         "documentation" : "ARN of the target db cluster or instance",
         "enumType" : null,
@@ -2298,7 +2298,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "schema",
-        "c2jShape" : "String",
+        "c2jShape" : "DbName",
         "deprecated" : false,
         "documentation" : "Target Schema name",
         "enumType" : null,
@@ -2364,7 +2364,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "sqlStatements",
-        "c2jShape" : "String",
+        "c2jShape" : "SqlStatement",
         "deprecated" : false,
         "documentation" : "SQL statement(s) to be executed. Statements can be chained by using semicolons",
         "enumType" : null,
@@ -2432,7 +2432,7 @@
       "membersAsMap" : {
         "AwsSecretStoreArn" : {
           "c2jName" : "awsSecretStoreArn",
-          "c2jShape" : "String",
+          "c2jShape" : "Arn",
           "deprecated" : false,
           "documentation" : "ARN of the db credentials in AWS Secret Store or the friendly secret name",
           "enumType" : null,
@@ -2499,7 +2499,7 @@
         },
         "Database" : {
           "c2jName" : "database",
-          "c2jShape" : "String",
+          "c2jShape" : "DbName",
           "deprecated" : false,
           "documentation" : "Target DB name",
           "enumType" : null,
@@ -2566,7 +2566,7 @@
         },
         "DbClusterOrInstanceArn" : {
           "c2jName" : "dbClusterOrInstanceArn",
-          "c2jShape" : "String",
+          "c2jShape" : "Arn",
           "deprecated" : false,
           "documentation" : "ARN of the target db cluster or instance",
           "enumType" : null,
@@ -2633,7 +2633,7 @@
         },
         "Schema" : {
           "c2jName" : "schema",
-          "c2jShape" : "String",
+          "c2jShape" : "DbName",
           "deprecated" : false,
           "documentation" : "Target Schema name",
           "enumType" : null,
@@ -2700,7 +2700,7 @@
         },
         "SqlStatements" : {
           "c2jName" : "sqlStatements",
-          "c2jShape" : "String",
+          "c2jShape" : "SqlStatement",
           "deprecated" : false,
           "documentation" : "SQL statement(s) to be executed. Statements can be chained by using semicolons",
           "enumType" : null,
