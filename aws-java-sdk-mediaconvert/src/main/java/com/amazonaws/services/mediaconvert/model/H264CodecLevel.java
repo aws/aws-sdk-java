@@ -15,7 +15,8 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * H.264 Level.
+ * Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify,
+ * choose Auto (AUTO).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264CodecLevel {

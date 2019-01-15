@@ -103,6 +103,10 @@ public class InputJsonUnmarshaller implements Unmarshaller<Input, JsonUnmarshall
                     context.nextToken();
                     input.setPsiControl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("supplementalImps", targetDepth)) {
+                    context.nextToken();
+                    input.setSupplementalImps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("timecodeSource", targetDepth)) {
                     context.nextToken();
                     input.setTimecodeSource(context.getUnmarshaller(String.class).unmarshall(context));

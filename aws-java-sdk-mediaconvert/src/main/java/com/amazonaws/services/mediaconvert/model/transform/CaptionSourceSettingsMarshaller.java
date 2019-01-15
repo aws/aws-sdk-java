@@ -39,6 +39,8 @@ public class CaptionSourceSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceType").build();
     private static final MarshallingInfo<StructuredPojo> TELETEXTSOURCESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("teletextSourceSettings").build();
+    private static final MarshallingInfo<StructuredPojo> TRACKSOURCESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trackSourceSettings").build();
 
     private static final CaptionSourceSettingsMarshaller instance = new CaptionSourceSettingsMarshaller();
 
@@ -62,6 +64,7 @@ public class CaptionSourceSettingsMarshaller {
             protocolMarshaller.marshall(captionSourceSettings.getFileSourceSettings(), FILESOURCESETTINGS_BINDING);
             protocolMarshaller.marshall(captionSourceSettings.getSourceType(), SOURCETYPE_BINDING);
             protocolMarshaller.marshall(captionSourceSettings.getTeletextSourceSettings(), TELETEXTSOURCESETTINGS_BINDING);
+            protocolMarshaller.marshall(captionSourceSettings.getTrackSourceSettings(), TRACKSOURCESETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

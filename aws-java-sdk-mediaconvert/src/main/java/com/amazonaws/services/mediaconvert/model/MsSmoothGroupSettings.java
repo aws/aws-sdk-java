@@ -37,7 +37,7 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
     private MsSmoothEncryptionSettings encryption;
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     * compatible with GOP size and framerate.
+     * compatible with GOP size and frame rate.
      */
     private Integer fragmentLength;
 
@@ -160,11 +160,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     * compatible with GOP size and framerate.
+     * compatible with GOP size and frame rate.
      * 
      * @param fragmentLength
      *        Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     *        compatible with GOP size and framerate.
+     *        compatible with GOP size and frame rate.
      */
 
     public void setFragmentLength(Integer fragmentLength) {
@@ -173,10 +173,10 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     * compatible with GOP size and framerate.
+     * compatible with GOP size and frame rate.
      * 
      * @return Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must
-     *         be compatible with GOP size and framerate.
+     *         be compatible with GOP size and frame rate.
      */
 
     public Integer getFragmentLength() {
@@ -185,11 +185,11 @@ public class MsSmoothGroupSettings implements Serializable, Cloneable, Structure
 
     /**
      * Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     * compatible with GOP size and framerate.
+     * compatible with GOP size and frame rate.
      * 
      * @param fragmentLength
      *        Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be
-     *        compatible with GOP size and framerate.
+     *        compatible with GOP size and frame rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

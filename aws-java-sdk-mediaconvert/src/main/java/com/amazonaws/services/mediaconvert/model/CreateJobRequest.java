@@ -25,6 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** This is a beta feature. If you are interested in using this feature, please contact AWS customer support. */
+    private AccelerationSettings accelerationSettings;
+
     private String billingTagsSource;
     /** Idempotency token for CreateJob operation. */
     private String clientRequestToken;
@@ -48,6 +51,40 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * pairs.
      */
     private java.util.Map<String, String> userMetadata;
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * 
+     * @param accelerationSettings
+     *        This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     */
+
+    public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
+        this.accelerationSettings = accelerationSettings;
+    }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * 
+     * @return This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     */
+
+    public AccelerationSettings getAccelerationSettings() {
+        return this.accelerationSettings;
+    }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * 
+     * @param accelerationSettings
+     *        This is a beta feature. If you are interested in using this feature, please contact AWS customer support.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withAccelerationSettings(AccelerationSettings accelerationSettings) {
+        setAccelerationSettings(accelerationSettings);
+        return this;
+    }
 
     /**
      * @param billingTagsSource
@@ -345,6 +382,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccelerationSettings() != null)
+            sb.append("AccelerationSettings: ").append(getAccelerationSettings()).append(",");
         if (getBillingTagsSource() != null)
             sb.append("BillingTagsSource: ").append(getBillingTagsSource()).append(",");
         if (getClientRequestToken() != null)
@@ -373,6 +412,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (obj instanceof CreateJobRequest == false)
             return false;
         CreateJobRequest other = (CreateJobRequest) obj;
+        if (other.getAccelerationSettings() == null ^ this.getAccelerationSettings() == null)
+            return false;
+        if (other.getAccelerationSettings() != null && other.getAccelerationSettings().equals(this.getAccelerationSettings()) == false)
+            return false;
         if (other.getBillingTagsSource() == null ^ this.getBillingTagsSource() == null)
             return false;
         if (other.getBillingTagsSource() != null && other.getBillingTagsSource().equals(this.getBillingTagsSource()) == false)
@@ -409,6 +452,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccelerationSettings() == null) ? 0 : getAccelerationSettings().hashCode());
         hashCode = prime * hashCode + ((getBillingTagsSource() == null) ? 0 : getBillingTagsSource().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getJobTemplate() == null) ? 0 : getJobTemplate().hashCode());

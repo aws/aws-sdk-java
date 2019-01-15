@@ -54,6 +54,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private String volumeStatus;
     /**
      * <p>
+     * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
+     * from a gateway.
+     * </p>
+     */
+    private String volumeAttachmentStatus;
+    /**
+     * <p>
      * The size of the volume in bytes.
      * </p>
      */
@@ -113,6 +120,15 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private Long volumeUsedInBytes;
 
     private String kMSKey;
+    /**
+     * <p>
+     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
+     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * .
+     * </p>
+     */
+    private String targetName;
 
     /**
      * <p>
@@ -271,6 +287,52 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     public StorediSCSIVolume withVolumeStatus(String volumeStatus) {
         setVolumeStatus(volumeStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
+     * from a gateway.
+     * </p>
+     * 
+     * @param volumeAttachmentStatus
+     *        A value that indicates whether a storage volume is attached to, detached from, or is in the process of
+     *        detaching from a gateway.
+     */
+
+    public void setVolumeAttachmentStatus(String volumeAttachmentStatus) {
+        this.volumeAttachmentStatus = volumeAttachmentStatus;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
+     * from a gateway.
+     * </p>
+     * 
+     * @return A value that indicates whether a storage volume is attached to, detached from, or is in the process of
+     *         detaching from a gateway.
+     */
+
+    public String getVolumeAttachmentStatus() {
+        return this.volumeAttachmentStatus;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
+     * from a gateway.
+     * </p>
+     * 
+     * @param volumeAttachmentStatus
+     *        A value that indicates whether a storage volume is attached to, detached from, or is in the process of
+     *        detaching from a gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StorediSCSIVolume withVolumeAttachmentStatus(String volumeAttachmentStatus) {
+        setVolumeAttachmentStatus(volumeAttachmentStatus);
         return this;
     }
 
@@ -703,6 +765,67 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
+     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * .
+     * </p>
+     * 
+     * @param targetName
+     *        The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
+     *        the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
+     *        ARN of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        .
+     */
+
+    public void setTargetName(String targetName) {
+        this.targetName = targetName;
+    }
+
+    /**
+     * <p>
+     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
+     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * .
+     * </p>
+     * 
+     * @return The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
+     *         the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
+     *         ARN of
+     *         <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *         .
+     */
+
+    public String getTargetName() {
+        return this.targetName;
+    }
+
+    /**
+     * <p>
+     * The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for the
+     * target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     * .
+     * </p>
+     * 
+     * @param targetName
+     *        The name of the iSCSI target that is used by an initiator to connect to a volume and used as a suffix for
+     *        the target ARN. For example, specifying <code>TargetName</code> as <i>myvolume</i> results in the target
+     *        ARN of
+     *        <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StorediSCSIVolume withTargetName(String targetName) {
+        setTargetName(targetName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -722,6 +845,8 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
             sb.append("VolumeType: ").append(getVolumeType()).append(",");
         if (getVolumeStatus() != null)
             sb.append("VolumeStatus: ").append(getVolumeStatus()).append(",");
+        if (getVolumeAttachmentStatus() != null)
+            sb.append("VolumeAttachmentStatus: ").append(getVolumeAttachmentStatus()).append(",");
         if (getVolumeSizeInBytes() != null)
             sb.append("VolumeSizeInBytes: ").append(getVolumeSizeInBytes()).append(",");
         if (getVolumeProgress() != null)
@@ -739,7 +864,9 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
         if (getVolumeUsedInBytes() != null)
             sb.append("VolumeUsedInBytes: ").append(getVolumeUsedInBytes()).append(",");
         if (getKMSKey() != null)
-            sb.append("KMSKey: ").append(getKMSKey());
+            sb.append("KMSKey: ").append(getKMSKey()).append(",");
+        if (getTargetName() != null)
+            sb.append("TargetName: ").append(getTargetName());
         sb.append("}");
         return sb.toString();
     }
@@ -769,6 +896,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
         if (other.getVolumeStatus() == null ^ this.getVolumeStatus() == null)
             return false;
         if (other.getVolumeStatus() != null && other.getVolumeStatus().equals(this.getVolumeStatus()) == false)
+            return false;
+        if (other.getVolumeAttachmentStatus() == null ^ this.getVolumeAttachmentStatus() == null)
+            return false;
+        if (other.getVolumeAttachmentStatus() != null && other.getVolumeAttachmentStatus().equals(this.getVolumeAttachmentStatus()) == false)
             return false;
         if (other.getVolumeSizeInBytes() == null ^ this.getVolumeSizeInBytes() == null)
             return false;
@@ -806,6 +937,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getKMSKey() != null && other.getKMSKey().equals(this.getKMSKey()) == false)
             return false;
+        if (other.getTargetName() == null ^ this.getTargetName() == null)
+            return false;
+        if (other.getTargetName() != null && other.getTargetName().equals(this.getTargetName()) == false)
+            return false;
         return true;
     }
 
@@ -818,6 +953,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode());
         hashCode = prime * hashCode + ((getVolumeStatus() == null) ? 0 : getVolumeStatus().hashCode());
+        hashCode = prime * hashCode + ((getVolumeAttachmentStatus() == null) ? 0 : getVolumeAttachmentStatus().hashCode());
         hashCode = prime * hashCode + ((getVolumeSizeInBytes() == null) ? 0 : getVolumeSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getVolumeProgress() == null) ? 0 : getVolumeProgress().hashCode());
         hashCode = prime * hashCode + ((getVolumeDiskId() == null) ? 0 : getVolumeDiskId().hashCode());
@@ -827,6 +963,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
         hashCode = prime * hashCode + ((getVolumeUsedInBytes() == null) ? 0 : getVolumeUsedInBytes().hashCode());
         hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
+        hashCode = prime * hashCode + ((getTargetName() == null) ? 0 : getTargetName().hashCode());
         return hashCode;
     }
 

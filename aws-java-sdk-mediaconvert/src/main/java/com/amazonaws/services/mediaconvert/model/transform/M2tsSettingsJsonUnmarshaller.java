@@ -100,6 +100,10 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                     context.nextToken();
                     m2tsSettings.setEsRateInPes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("forceTsVideoEbpOrder", targetDepth)) {
+                    context.nextToken();
+                    m2tsSettings.setForceTsVideoEbpOrder(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("fragmentTime", targetDepth)) {
                     context.nextToken();
                     m2tsSettings.setFragmentTime(context.getUnmarshaller(Double.class).unmarshall(context));

@@ -15,7 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * When set to INTERPOLATE, produces smoother motion during framerate conversion.
+ * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264FramerateConversionAlgorithm {

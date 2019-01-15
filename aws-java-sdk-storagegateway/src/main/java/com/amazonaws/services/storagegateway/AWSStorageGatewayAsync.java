@@ -473,6 +473,45 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Connects a volume to an iSCSI connection and then attaches the volume to the specified gateway. Detaching and
+     * attaching a volume enables you to recover your data from one gateway to a different gateway without creating a
+     * snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
+     * Amazon EC2 instance.
+     * </p>
+     * 
+     * @param attachVolumeRequest
+     *        AttachVolumeInput
+     * @return A Java Future containing the result of the AttachVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsync.AttachVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest attachVolumeRequest);
+
+    /**
+     * <p>
+     * Connects a volume to an iSCSI connection and then attaches the volume to the specified gateway. Detaching and
+     * attaching a volume enables you to recover your data from one gateway to a different gateway without creating a
+     * snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
+     * Amazon EC2 instance.
+     * </p>
+     * 
+     * @param attachVolumeRequest
+     *        AttachVolumeInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.AttachVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachVolumeResult> attachVolumeAsync(AttachVolumeRequest attachVolumeRequest,
+            com.amazonaws.handlers.AsyncHandler<AttachVolumeRequest, AttachVolumeResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated.
      * This operation is only supported in the tape gateway type.
      * </p>
@@ -2205,6 +2244,45 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
+     * Disconnects a volume from an iSCSI connection and then detaches the volume from the specified gateway. Detaching
+     * and attaching a volume enables you to recover your data from one gateway to a different gateway without creating
+     * a snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
+     * Amazon EC2 instance.
+     * </p>
+     * 
+     * @param detachVolumeRequest
+     *        AttachVolumeInput
+     * @return A Java Future containing the result of the DetachVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsync.DetachVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachVolumeResult> detachVolumeAsync(DetachVolumeRequest detachVolumeRequest);
+
+    /**
+     * <p>
+     * Disconnects a volume from an iSCSI connection and then detaches the volume from the specified gateway. Detaching
+     * and attaching a volume enables you to recover your data from one gateway to a different gateway without creating
+     * a snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an
+     * Amazon EC2 instance.
+     * </p>
+     * 
+     * @param detachVolumeRequest
+     *        AttachVolumeInput
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachVolume operation returned by the service.
+     * @sample AWSStorageGatewayAsyncHandler.DetachVolume
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachVolumeResult> detachVolumeAsync(DetachVolumeRequest detachVolumeRequest,
+            com.amazonaws.handlers.AsyncHandler<DetachVolumeRequest, DetachVolumeResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables a tape gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged,
      * you can disable the gateway so you can recover virtual tapes.
      * </p>
@@ -2816,6 +2894,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * 
      * @param refreshCacheRequest
+     *        RefreshCacheInput
      * @return A Java Future containing the result of the RefreshCache operation returned by the service.
      * @sample AWSStorageGatewayAsync.RefreshCache
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache" target="_top">AWS
@@ -2834,6 +2913,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * </p>
      * 
      * @param refreshCacheRequest
+     *        RefreshCacheInput
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or

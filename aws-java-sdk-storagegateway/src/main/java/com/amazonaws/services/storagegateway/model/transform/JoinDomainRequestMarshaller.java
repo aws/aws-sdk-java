@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.storagegateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,10 @@ public class JoinDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
     private static final MarshallingInfo<String> DOMAINNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
+    private static final MarshallingInfo<String> ORGANIZATIONALUNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationalUnit").build();
+    private static final MarshallingInfo<List> DOMAINCONTROLLERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainControllers").build();
     private static final MarshallingInfo<String> USERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UserName").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +59,8 @@ public class JoinDomainRequestMarshaller {
         try {
             protocolMarshaller.marshall(joinDomainRequest.getGatewayARN(), GATEWAYARN_BINDING);
             protocolMarshaller.marshall(joinDomainRequest.getDomainName(), DOMAINNAME_BINDING);
+            protocolMarshaller.marshall(joinDomainRequest.getOrganizationalUnit(), ORGANIZATIONALUNIT_BINDING);
+            protocolMarshaller.marshall(joinDomainRequest.getDomainControllers(), DOMAINCONTROLLERS_BINDING);
             protocolMarshaller.marshall(joinDomainRequest.getUserName(), USERNAME_BINDING);
             protocolMarshaller.marshall(joinDomainRequest.getPassword(), PASSWORD_BINDING);
         } catch (Exception e) {

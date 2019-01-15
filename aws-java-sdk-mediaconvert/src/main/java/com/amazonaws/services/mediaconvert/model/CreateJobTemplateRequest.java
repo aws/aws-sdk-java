@@ -25,6 +25,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** This is a beta feature. If you are interested in using this feature please contact AWS customer support. */
+    private AccelerationSettings accelerationSettings;
     /** Optional. A category for the job template you are creating */
     private String category;
     /** Optional. A description of the job template you are creating. */
@@ -40,6 +42,40 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     private JobTemplateSettings settings;
     /** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
     private java.util.Map<String, String> tags;
+
+    /**
+     * This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     * 
+     * @param accelerationSettings
+     *        This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     */
+
+    public void setAccelerationSettings(AccelerationSettings accelerationSettings) {
+        this.accelerationSettings = accelerationSettings;
+    }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     * 
+     * @return This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     */
+
+    public AccelerationSettings getAccelerationSettings() {
+        return this.accelerationSettings;
+    }
+
+    /**
+     * This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     * 
+     * @param accelerationSettings
+     *        This is a beta feature. If you are interested in using this feature please contact AWS customer support.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobTemplateRequest withAccelerationSettings(AccelerationSettings accelerationSettings) {
+        setAccelerationSettings(accelerationSettings);
+        return this;
+    }
 
     /**
      * Optional. A category for the job template you are creating
@@ -279,6 +315,8 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccelerationSettings() != null)
+            sb.append("AccelerationSettings: ").append(getAccelerationSettings()).append(",");
         if (getCategory() != null)
             sb.append("Category: ").append(getCategory()).append(",");
         if (getDescription() != null)
@@ -305,6 +343,10 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof CreateJobTemplateRequest == false)
             return false;
         CreateJobTemplateRequest other = (CreateJobTemplateRequest) obj;
+        if (other.getAccelerationSettings() == null ^ this.getAccelerationSettings() == null)
+            return false;
+        if (other.getAccelerationSettings() != null && other.getAccelerationSettings().equals(this.getAccelerationSettings()) == false)
+            return false;
         if (other.getCategory() == null ^ this.getCategory() == null)
             return false;
         if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
@@ -337,6 +379,7 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccelerationSettings() == null) ? 0 : getAccelerationSettings().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

@@ -43,13 +43,16 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, CaptionSelector> captionSelectors;
 
     private String deblockFilter;
-    /** If the input file is encrypted, decryption settings to decrypt the media file */
+    /** Settings for decrypting any input files that are encrypted. */
     private InputDecryptionSettings decryptionSettings;
 
     private String denoiseFilter;
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There can be multiple inputs in a job.
-     * These inputs are concantenated, in the order they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
+     * concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input
+     * format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the
+     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental
+     * IMPs that contain assets referenced by the CPL.
      */
     private String fileInput;
 
@@ -60,8 +63,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer filterStrength;
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each input individually. This setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
      */
     private ImageInserter imageInserter;
     /**
@@ -80,6 +83,13 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private Integer programNumber;
 
     private String psiControl;
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for
+     * your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the
+     * ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the
+     * IMP that contains your input CPL, because the service automatically detects it.
+     */
+    private java.util.List<String> supplementalImps;
 
     private String timecodeSource;
 
@@ -309,10 +319,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If the input file is encrypted, decryption settings to decrypt the media file
+     * Settings for decrypting any input files that are encrypted.
      * 
      * @param decryptionSettings
-     *        If the input file is encrypted, decryption settings to decrypt the media file
+     *        Settings for decrypting any input files that are encrypted.
      */
 
     public void setDecryptionSettings(InputDecryptionSettings decryptionSettings) {
@@ -320,9 +330,9 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If the input file is encrypted, decryption settings to decrypt the media file
+     * Settings for decrypting any input files that are encrypted.
      * 
-     * @return If the input file is encrypted, decryption settings to decrypt the media file
+     * @return Settings for decrypting any input files that are encrypted.
      */
 
     public InputDecryptionSettings getDecryptionSettings() {
@@ -330,10 +340,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If the input file is encrypted, decryption settings to decrypt the media file
+     * Settings for decrypting any input files that are encrypted.
      * 
      * @param decryptionSettings
-     *        If the input file is encrypted, decryption settings to decrypt the media file
+     *        Settings for decrypting any input files that are encrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,12 +393,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There can be multiple inputs in a job.
-     * These inputs are concantenated, in the order they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
+     * concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input
+     * format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the
+     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental
+     * IMPs that contain assets referenced by the CPL.
      * 
      * @param fileInput
-     *        Use Input (fileInput) to define the source file used in the transcode job. There can be multiple inputs in
-     *        a job. These inputs are concantenated, in the order they are specified in the job, to create the output.
+     *        Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
+     *        concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your
+     *        input format is IMF, specify your input by providing the path to your CPL. For example,
+     *        "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs*
+     *        (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
      */
 
     public void setFileInput(String fileInput) {
@@ -396,12 +412,17 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There can be multiple inputs in a job.
-     * These inputs are concantenated, in the order they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
+     * concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input
+     * format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the
+     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental
+     * IMPs that contain assets referenced by the CPL.
      * 
-     * @return Use Input (fileInput) to define the source file used in the transcode job. There can be multiple inputs
-     *         in a job. These inputs are concantenated, in the order they are specified in the job, to create the
-     *         output.
+     * @return Specify the source file for your transcoding job. You can use multiple inputs in a single job. The
+     *         service concatenates these inputs, in the order that you specify them in the job, to create the outputs.
+     *         If your input format is IMF, specify your input by providing the path to your CPL. For example,
+     *         "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs*
+     *         (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
      */
 
     public String getFileInput() {
@@ -409,12 +430,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Input (fileInput) to define the source file used in the transcode job. There can be multiple inputs in a job.
-     * These inputs are concantenated, in the order they are specified in the job, to create the output.
+     * Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
+     * concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your input
+     * format is IMF, specify your input by providing the path to your CPL. For example, "s3://bucket/vf/cpl.xml". If the
+     * CPL is in an incomplete IMP, make sure to use *Supplemental IMPs* (SupplementalImps) to specify any supplemental
+     * IMPs that contain assets referenced by the CPL.
      * 
      * @param fileInput
-     *        Use Input (fileInput) to define the source file used in the transcode job. There can be multiple inputs in
-     *        a job. These inputs are concantenated, in the order they are specified in the job, to create the output.
+     *        Specify the source file for your transcoding job. You can use multiple inputs in a single job. The service
+     *        concatenates these inputs, in the order that you specify them in the job, to create the outputs. If your
+     *        input format is IMF, specify your input by providing the path to your CPL. For example,
+     *        "s3://bucket/vf/cpl.xml". If the CPL is in an incomplete IMP, make sure to use *Supplemental IMPs*
+     *        (SupplementalImps) to specify any supplemental IMPs that contain assets referenced by the CPL.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,12 +531,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each input individually. This setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
      * 
      * @param imageInserter
-     *        Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *        disable this feature for each input individually. This setting is disabled by default.
+     *        Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *        feature for each input individually. This setting is disabled by default.
      */
 
     public void setImageInserter(ImageInserter imageInserter) {
@@ -517,11 +544,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each input individually. This setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
      * 
-     * @return Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *         disable this feature for each input individually. This setting is disabled by default.
+     * @return Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *         feature for each input individually. This setting is disabled by default.
      */
 
     public ImageInserter getImageInserter() {
@@ -529,12 +556,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each input individually. This setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
      * 
      * @param imageInserter
-     *        Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *        disable this feature for each input individually. This setting is disabled by default.
+     *        Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *        feature for each input individually. This setting is disabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -724,6 +751,93 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for
+     * your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the
+     * ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the
+     * IMP that contains your input CPL, because the service automatically detects it.
+     * 
+     * @return Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're
+     *         using for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a
+     *         trailing slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/",
+     *         "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the IMP that contains your input CPL, because
+     *         the service automatically detects it.
+     */
+
+    public java.util.List<String> getSupplementalImps() {
+        return supplementalImps;
+    }
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for
+     * your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the
+     * ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the
+     * IMP that contains your input CPL, because the service automatically detects it.
+     * 
+     * @param supplementalImps
+     *        Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using
+     *        for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing
+     *        slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     *        don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+     */
+
+    public void setSupplementalImps(java.util.Collection<String> supplementalImps) {
+        if (supplementalImps == null) {
+            this.supplementalImps = null;
+            return;
+        }
+
+        this.supplementalImps = new java.util.ArrayList<String>(supplementalImps);
+    }
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for
+     * your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the
+     * ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the
+     * IMP that contains your input CPL, because the service automatically detects it.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupplementalImps(java.util.Collection)} or {@link #withSupplementalImps(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param supplementalImps
+     *        Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using
+     *        for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing
+     *        slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     *        don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withSupplementalImps(String... supplementalImps) {
+        if (this.supplementalImps == null) {
+            setSupplementalImps(new java.util.ArrayList<String>(supplementalImps.length));
+        }
+        for (String ele : supplementalImps) {
+            this.supplementalImps.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using for
+     * your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing slash or the
+     * ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You don't need to specify the
+     * IMP that contains your input CPL, because the service automatically detects it.
+     * 
+     * @param supplementalImps
+     *        Provide a list of any necessary supplemental IMPs. You need supplemental IMPs if the CPL that you're using
+     *        for your input is in an incomplete IMP. Specify either the supplemental IMP directories with a trailing
+     *        slash or the ASSETMAP.xml files. For example ["s3://bucket/ov/", "s3://bucket/vf2/ASSETMAP.xml"]. You
+     *        don't need to specify the IMP that contains your input CPL, because the service automatically detects it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withSupplementalImps(java.util.Collection<String> supplementalImps) {
+        setSupplementalImps(supplementalImps);
+        return this;
+    }
+
+    /**
      * @param timecodeSource
      * @see InputTimecodeSource
      */
@@ -827,6 +941,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
         if (getPsiControl() != null)
             sb.append("PsiControl: ").append(getPsiControl()).append(",");
+        if (getSupplementalImps() != null)
+            sb.append("SupplementalImps: ").append(getSupplementalImps()).append(",");
         if (getTimecodeSource() != null)
             sb.append("TimecodeSource: ").append(getTimecodeSource()).append(",");
         if (getVideoSelector() != null)
@@ -897,6 +1013,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPsiControl() != null && other.getPsiControl().equals(this.getPsiControl()) == false)
             return false;
+        if (other.getSupplementalImps() == null ^ this.getSupplementalImps() == null)
+            return false;
+        if (other.getSupplementalImps() != null && other.getSupplementalImps().equals(this.getSupplementalImps()) == false)
+            return false;
         if (other.getTimecodeSource() == null ^ this.getTimecodeSource() == null)
             return false;
         if (other.getTimecodeSource() != null && other.getTimecodeSource().equals(this.getTimecodeSource()) == false)
@@ -926,6 +1046,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInputClippings() == null) ? 0 : getInputClippings().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
         hashCode = prime * hashCode + ((getPsiControl() == null) ? 0 : getPsiControl().hashCode());
+        hashCode = prime * hashCode + ((getSupplementalImps() == null) ? 0 : getSupplementalImps().hashCode());
         hashCode = prime * hashCode + ((getTimecodeSource() == null) ? 0 : getTimecodeSource().hashCode());
         hashCode = prime * hashCode + ((getVideoSelector() == null) ? 0 : getVideoSelector().hashCode());
         return hashCode;

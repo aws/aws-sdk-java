@@ -32,7 +32,10 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     private String colorSpaceConversion;
     /** Contrast level. */
     private Integer contrast;
-
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. Note
+     * that these settings are not color correction.
+     */
     private Hdr10Metadata hdr10Metadata;
     /** Hue in degrees. */
     private Integer hue;
@@ -148,7 +151,12 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. Note
+     * that these settings are not color correction.
+     * 
      * @param hdr10Metadata
+     *        Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     *        metadata. Note that these settings are not color correction.
      */
 
     public void setHdr10Metadata(Hdr10Metadata hdr10Metadata) {
@@ -156,7 +164,11 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. Note
+     * that these settings are not color correction.
+     * 
+     * @return Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     *         metadata. Note that these settings are not color correction.
      */
 
     public Hdr10Metadata getHdr10Metadata() {
@@ -164,7 +176,12 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing metadata. Note
+     * that these settings are not color correction.
+     * 
      * @param hdr10Metadata
+     *        Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or to provide missing
+     *        metadata. Note that these settings are not color correction.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

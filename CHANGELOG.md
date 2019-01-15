@@ -1,3 +1,12 @@
+# __1.11.483__ __2019-01-14__
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - IMF decode from a Composition Playlist for IMF specializations App [#2](https://github.com/aws/aws-sdk-java/issues/2) and App [#2](https://github.com/aws/aws-sdk-java/issues/2)e; up to 99 input clippings; caption channel selection for MXF; and updated rate control for CBR jobs. Added support for acceleration in preview
+
+## __AWS Storage Gateway__
+  - ### Features
+    - JoinDomain API supports two more  parameters: organizational unit(OU) and domain controllers.  Two new APIs are introduced: DetachVolume and AttachVolume.
+
 # __1.11.482__ __2019-01-11__
 ## __AWS RDS DataService__
   - ### Features

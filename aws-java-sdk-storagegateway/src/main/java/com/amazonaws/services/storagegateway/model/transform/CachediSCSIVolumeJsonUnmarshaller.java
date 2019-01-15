@@ -64,6 +64,10 @@ public class CachediSCSIVolumeJsonUnmarshaller implements Unmarshaller<CachediSC
                     context.nextToken();
                     cachediSCSIVolume.setVolumeStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("VolumeAttachmentStatus", targetDepth)) {
+                    context.nextToken();
+                    cachediSCSIVolume.setVolumeAttachmentStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
                     context.nextToken();
                     cachediSCSIVolume.setVolumeSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
@@ -91,6 +95,10 @@ public class CachediSCSIVolumeJsonUnmarshaller implements Unmarshaller<CachediSC
                 if (context.testExpression("KMSKey", targetDepth)) {
                     context.nextToken();
                     cachediSCSIVolume.setKMSKey(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TargetName", targetDepth)) {
+                    context.nextToken();
+                    cachediSCSIVolume.setTargetName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

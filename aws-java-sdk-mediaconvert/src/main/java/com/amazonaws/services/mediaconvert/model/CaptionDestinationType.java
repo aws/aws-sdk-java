@@ -15,8 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Type of Caption output, including Burn-In, Embedded (with or without SCTE20), SCC, SMI, SRT, TTML, WebVTT, DVB-Sub,
- * Teletext.
+ * Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other
+ * options are embedded with SCTE-20, burn-in, DVB-sub, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20,
+ * choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To
+ * create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20
+ * (EMBEDDED_PLUS_SCTE20).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CaptionDestinationType {

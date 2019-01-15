@@ -60,6 +60,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private String ebpPlacement;
 
     private String esRateInPes;
+
+    private String forceTsVideoEbpOrder;
     /** The length in seconds of each fragment. Only used with EBP markers. */
     private Double fragmentTime;
     /** Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream. */
@@ -638,6 +640,46 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     public M2tsSettings withEsRateInPes(M2tsEsRateInPes esRateInPes) {
         this.esRateInPes = esRateInPes.toString();
+        return this;
+    }
+
+    /**
+     * @param forceTsVideoEbpOrder
+     * @see M2tsForceTsVideoEbpOrder
+     */
+
+    public void setForceTsVideoEbpOrder(String forceTsVideoEbpOrder) {
+        this.forceTsVideoEbpOrder = forceTsVideoEbpOrder;
+    }
+
+    /**
+     * @return
+     * @see M2tsForceTsVideoEbpOrder
+     */
+
+    public String getForceTsVideoEbpOrder() {
+        return this.forceTsVideoEbpOrder;
+    }
+
+    /**
+     * @param forceTsVideoEbpOrder
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M2tsForceTsVideoEbpOrder
+     */
+
+    public M2tsSettings withForceTsVideoEbpOrder(String forceTsVideoEbpOrder) {
+        setForceTsVideoEbpOrder(forceTsVideoEbpOrder);
+        return this;
+    }
+
+    /**
+     * @param forceTsVideoEbpOrder
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see M2tsForceTsVideoEbpOrder
+     */
+
+    public M2tsSettings withForceTsVideoEbpOrder(M2tsForceTsVideoEbpOrder forceTsVideoEbpOrder) {
+        this.forceTsVideoEbpOrder = forceTsVideoEbpOrder.toString();
         return this;
     }
 
@@ -1465,6 +1507,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("EbpPlacement: ").append(getEbpPlacement()).append(",");
         if (getEsRateInPes() != null)
             sb.append("EsRateInPes: ").append(getEsRateInPes()).append(",");
+        if (getForceTsVideoEbpOrder() != null)
+            sb.append("ForceTsVideoEbpOrder: ").append(getForceTsVideoEbpOrder()).append(",");
         if (getFragmentTime() != null)
             sb.append("FragmentTime: ").append(getFragmentTime()).append(",");
         if (getMaxPcrInterval() != null)
@@ -1573,6 +1617,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEsRateInPes() != null && other.getEsRateInPes().equals(this.getEsRateInPes()) == false)
             return false;
+        if (other.getForceTsVideoEbpOrder() == null ^ this.getForceTsVideoEbpOrder() == null)
+            return false;
+        if (other.getForceTsVideoEbpOrder() != null && other.getForceTsVideoEbpOrder().equals(this.getForceTsVideoEbpOrder()) == false)
+            return false;
         if (other.getFragmentTime() == null ^ this.getFragmentTime() == null)
             return false;
         if (other.getFragmentTime() != null && other.getFragmentTime().equals(this.getFragmentTime()) == false)
@@ -1678,6 +1726,7 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEbpAudioInterval() == null) ? 0 : getEbpAudioInterval().hashCode());
         hashCode = prime * hashCode + ((getEbpPlacement() == null) ? 0 : getEbpPlacement().hashCode());
         hashCode = prime * hashCode + ((getEsRateInPes() == null) ? 0 : getEsRateInPes().hashCode());
+        hashCode = prime * hashCode + ((getForceTsVideoEbpOrder() == null) ? 0 : getForceTsVideoEbpOrder().hashCode());
         hashCode = prime * hashCode + ((getFragmentTime() == null) ? 0 : getFragmentTime().hashCode());
         hashCode = prime * hashCode + ((getMaxPcrInterval() == null) ? 0 : getMaxPcrInterval().hashCode());
         hashCode = prime * hashCode + ((getMinEbpInterval() == null) ? 0 : getMinEbpInterval().hashCode());

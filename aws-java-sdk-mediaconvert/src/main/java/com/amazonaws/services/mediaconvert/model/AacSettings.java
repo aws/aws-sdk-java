@@ -31,7 +31,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class AacSettings implements Serializable, Cloneable, StructuredPojo {
 
     private String audioDescriptionBroadcasterMix;
-    /** Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile. */
+    /**
+     * Average bitrate in bits/second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000,
+     * 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000,
+     * 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set
+     * is also constrained by the values you choose for Profile (codecProfile), Bitrate control mode (codingMode), and
+     * Sample rate (sampleRate). Default values depend on Bitrate control mode and Profile.
+     */
     private Integer bitrate;
 
     private String codecProfile;
@@ -89,10 +95,19 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
+     * Average bitrate in bits/second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000,
+     * 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000,
+     * 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set
+     * is also constrained by the values you choose for Profile (codecProfile), Bitrate control mode (codingMode), and
+     * Sample rate (sampleRate). Default values depend on Bitrate control mode and Profile.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
+     *        Average bitrate in bits/second. The set of valid values for this setting is: 6000, 8000, 10000, 12000,
+     *        14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000,
+     *        160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000,
+     *        1024000. The value you set is also constrained by the values you choose for Profile (codecProfile),
+     *        Bitrate control mode (codingMode), and Sample rate (sampleRate). Default values depend on Bitrate control
+     *        mode and Profile.
      */
 
     public void setBitrate(Integer bitrate) {
@@ -100,9 +115,18 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
+     * Average bitrate in bits/second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000,
+     * 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000,
+     * 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set
+     * is also constrained by the values you choose for Profile (codecProfile), Bitrate control mode (codingMode), and
+     * Sample rate (sampleRate). Default values depend on Bitrate control mode and Profile.
      * 
-     * @return Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
+     * @return Average bitrate in bits/second. The set of valid values for this setting is: 6000, 8000, 10000, 12000,
+     *         14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000,
+     *         160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000,
+     *         1024000. The value you set is also constrained by the values you choose for Profile (codecProfile),
+     *         Bitrate control mode (codingMode), and Sample rate (sampleRate). Default values depend on Bitrate control
+     *         mode and Profile.
      */
 
     public Integer getBitrate() {
@@ -110,10 +134,19 @@ public class AacSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
+     * Average bitrate in bits/second. The set of valid values for this setting is: 6000, 8000, 10000, 12000, 14000,
+     * 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000, 160000, 192000,
+     * 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000, 1024000. The value you set
+     * is also constrained by the values you choose for Profile (codecProfile), Bitrate control mode (codingMode), and
+     * Sample rate (sampleRate). Default values depend on Bitrate control mode and Profile.
      * 
      * @param bitrate
-     *        Average bitrate in bits/second. Defaults and valid values depend on rate control mode and profile.
+     *        Average bitrate in bits/second. The set of valid values for this setting is: 6000, 8000, 10000, 12000,
+     *        14000, 16000, 20000, 24000, 28000, 32000, 40000, 48000, 56000, 64000, 80000, 96000, 112000, 128000,
+     *        160000, 192000, 224000, 256000, 288000, 320000, 384000, 448000, 512000, 576000, 640000, 768000, 896000,
+     *        1024000. The value you set is also constrained by the values you choose for Profile (codecProfile),
+     *        Bitrate control mode (codingMode), and Sample rate (sampleRate). Default values depend on Bitrate control
+     *        mode and Profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

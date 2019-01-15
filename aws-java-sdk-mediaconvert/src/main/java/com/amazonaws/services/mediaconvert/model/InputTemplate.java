@@ -53,8 +53,8 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer filterStrength;
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each input individually. This setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
      */
     private ImageInserter imageInserter;
     /**
@@ -422,12 +422,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each input individually. This setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
      * 
      * @param imageInserter
-     *        Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *        disable this feature for each input individually. This setting is disabled by default.
+     *        Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *        feature for each input individually. This setting is disabled by default.
      */
 
     public void setImageInserter(ImageInserter imageInserter) {
@@ -435,11 +435,11 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each input individually. This setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
      * 
-     * @return Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *         disable this feature for each input individually. This setting is disabled by default.
+     * @return Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *         feature for each input individually. This setting is disabled by default.
      */
 
     public ImageInserter getImageInserter() {
@@ -447,12 +447,12 @@ public class InputTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or disable
-     * this feature for each input individually. This setting is disabled by default.
+     * Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for
+     * each input individually. This setting is disabled by default.
      * 
      * @param imageInserter
-     *        Enable the Image inserter (ImageInserter) feature to include a graphic overlay on your video. Enable or
-     *        disable this feature for each input individually. This setting is disabled by default.
+     *        Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this
+     *        feature for each input individually. This setting is disabled by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

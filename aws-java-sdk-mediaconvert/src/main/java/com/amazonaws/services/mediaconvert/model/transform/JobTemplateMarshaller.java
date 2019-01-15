@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class JobTemplateMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ACCELERATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accelerationSettings").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
     private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +64,7 @@ public class JobTemplateMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(jobTemplate.getAccelerationSettings(), ACCELERATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(jobTemplate.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(jobTemplate.getCategory(), CATEGORY_BINDING);
             protocolMarshaller.marshall(jobTemplate.getCreatedAt(), CREATEDAT_BINDING);

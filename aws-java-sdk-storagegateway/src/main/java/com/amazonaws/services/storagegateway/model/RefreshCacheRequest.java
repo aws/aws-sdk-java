@@ -18,6 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * <p>
+ * RefreshCacheInput
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/RefreshCache" target="_top">AWS API
  *      Documentation</a>
@@ -25,8 +28,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the file share you want to refresh.
+     * </p>
+     */
     private String fileShareARN;
-
+    /**
+     * <p>
+     * A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The
+     * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
+     * "true", the entire S3 bucket that the file share has access to is refreshed.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> folderList;
     /**
      * <p>
@@ -40,7 +54,12 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
     private Boolean recursive;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the file share you want to refresh.
+     * </p>
+     * 
      * @param fileShareARN
+     *        The Amazon Resource Name (ARN) of the file share you want to refresh.
      */
 
     public void setFileShareARN(String fileShareARN) {
@@ -48,7 +67,11 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the file share you want to refresh.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the file share you want to refresh.
      */
 
     public String getFileShareARN() {
@@ -56,7 +79,12 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the file share you want to refresh.
+     * </p>
+     * 
      * @param fileShareARN
+     *        The Amazon Resource Name (ARN) of the file share you want to refresh.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,7 +94,16 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The
+     * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
+     * "true", the entire S3 bucket that the file share has access to is refreshed.
+     * </p>
+     * 
+     * @return A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>
+     *         ]. The default refreshes objects and folders at the root of the Amazon S3 bucket. If
+     *         <code>Recursive</code> is set to "true", the entire S3 bucket that the file share has access to is
+     *         refreshed.
      */
 
     public java.util.List<String> getFolderList() {
@@ -77,7 +114,16 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The
+     * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
+     * "true", the entire S3 bucket that the file share has access to is refreshed.
+     * </p>
+     * 
      * @param folderList
+     *        A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>].
+     *        The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code>
+     *        is set to "true", the entire S3 bucket that the file share has access to is refreshed.
      */
 
     public void setFolderList(java.util.Collection<String> folderList) {
@@ -91,12 +137,20 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The
+     * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
+     * "true", the entire S3 bucket that the file share has access to is refreshed.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFolderList(java.util.Collection)} or {@link #withFolderList(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param folderList
+     *        A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>].
+     *        The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code>
+     *        is set to "true", the entire S3 bucket that the file share has access to is refreshed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,7 +165,16 @@ public class RefreshCacheRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>]. The
+     * default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code> is set to
+     * "true", the entire S3 bucket that the file share has access to is refreshed.
+     * </p>
+     * 
      * @param folderList
+     *        A comma-separated list of the paths of folders to refresh in the cache. The default is [<code>"/"</code>].
+     *        The default refreshes objects and folders at the root of the Amazon S3 bucket. If <code>Recursive</code>
+     *        is set to "true", the entire S3 bucket that the file share has access to is refreshed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -72,6 +72,10 @@ public class DvbSubDestinationSettingsJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     dvbSubDestinationSettings.setFontResolution(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("fontScript", targetDepth)) {
+                    context.nextToken();
+                    dvbSubDestinationSettings.setFontScript(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("fontSize", targetDepth)) {
                     context.nextToken();
                     dvbSubDestinationSettings.setFontSize(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -39,6 +39,8 @@ public class VolumeInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeType").build();
     private static final MarshallingInfo<Long> VOLUMESIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeSizeInBytes").build();
+    private static final MarshallingInfo<String> VOLUMEATTACHMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeAttachmentStatus").build();
 
     private static final VolumeInfoMarshaller instance = new VolumeInfoMarshaller();
 
@@ -62,6 +64,7 @@ public class VolumeInfoMarshaller {
             protocolMarshaller.marshall(volumeInfo.getGatewayId(), GATEWAYID_BINDING);
             protocolMarshaller.marshall(volumeInfo.getVolumeType(), VOLUMETYPE_BINDING);
             protocolMarshaller.marshall(volumeInfo.getVolumeSizeInBytes(), VOLUMESIZEINBYTES_BINDING);
+            protocolMarshaller.marshall(volumeInfo.getVolumeAttachmentStatus(), VOLUMEATTACHMENTSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

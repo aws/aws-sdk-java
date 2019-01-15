@@ -72,6 +72,10 @@ public class BurninDestinationSettingsJsonUnmarshaller implements Unmarshaller<B
                     context.nextToken();
                     burninDestinationSettings.setFontResolution(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("fontScript", targetDepth)) {
+                    context.nextToken();
+                    burninDestinationSettings.setFontScript(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("fontSize", targetDepth)) {
                     context.nextToken();
                     burninDestinationSettings.setFontSize(context.getUnmarshaller(Integer.class).unmarshall(context));

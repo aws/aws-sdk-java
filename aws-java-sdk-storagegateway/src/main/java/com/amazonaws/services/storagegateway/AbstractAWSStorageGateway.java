@@ -63,6 +63,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
     }
 
     @Override
+    public AttachVolumeResult attachVolume(AttachVolumeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelArchivalResult cancelArchival(CancelArchivalRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -239,6 +244,11 @@ public class AbstractAWSStorageGateway implements AWSStorageGateway {
 
     @Override
     public DescribeWorkingStorageResult describeWorkingStorage(DescribeWorkingStorageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetachVolumeResult detachVolume(DetachVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

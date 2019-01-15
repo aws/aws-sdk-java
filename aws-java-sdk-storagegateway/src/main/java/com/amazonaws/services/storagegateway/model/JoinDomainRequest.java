@@ -30,7 +30,8 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
+     * The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of
+     * gateways for your account and region.
      * </p>
      */
     private String gatewayARN;
@@ -40,6 +41,20 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String domainName;
+    /**
+     * <p>
+     * The organizational unit (OU) is a container with an Active Directory that can hold users, groups, computers, and
+     * other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
+     * </p>
+     */
+    private String organizationalUnit;
+    /**
+     * <p>
+     * List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port
+     * number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> domainControllers;
     /**
      * <p>
      * Sets the user name of user who has permission to add the gateway to the Active Directory domain.
@@ -55,11 +70,13 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
+     * The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of
+     * gateways for your account and region.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
+     *        The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a
+     *        list of gateways for your account and region.
      */
 
     public void setGatewayARN(String gatewayARN) {
@@ -68,10 +85,12 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
+     * The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of
+     * gateways for your account and region.
      * </p>
      * 
-     * @return The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
+     * @return The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a
+     *         list of gateways for your account and region.
      */
 
     public String getGatewayARN() {
@@ -80,11 +99,13 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
+     * The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of
+     * gateways for your account and region.
      * </p>
      * 
      * @param gatewayARN
-     *        The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain.
+     *        The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a
+     *        list of gateways for your account and region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,6 +151,136 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public JoinDomainRequest withDomainName(String domainName) {
         setDomainName(domainName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The organizational unit (OU) is a container with an Active Directory that can hold users, groups, computers, and
+     * other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
+     * </p>
+     * 
+     * @param organizationalUnit
+     *        The organizational unit (OU) is a container with an Active Directory that can hold users, groups,
+     *        computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD
+     *        domain.
+     */
+
+    public void setOrganizationalUnit(String organizationalUnit) {
+        this.organizationalUnit = organizationalUnit;
+    }
+
+    /**
+     * <p>
+     * The organizational unit (OU) is a container with an Active Directory that can hold users, groups, computers, and
+     * other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
+     * </p>
+     * 
+     * @return The organizational unit (OU) is a container with an Active Directory that can hold users, groups,
+     *         computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD
+     *         domain.
+     */
+
+    public String getOrganizationalUnit() {
+        return this.organizationalUnit;
+    }
+
+    /**
+     * <p>
+     * The organizational unit (OU) is a container with an Active Directory that can hold users, groups, computers, and
+     * other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
+     * </p>
+     * 
+     * @param organizationalUnit
+     *        The organizational unit (OU) is a container with an Active Directory that can hold users, groups,
+     *        computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD
+     *        domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JoinDomainRequest withOrganizationalUnit(String organizationalUnit) {
+        setOrganizationalUnit(organizationalUnit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port
+     * number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     * </p>
+     * 
+     * @return List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the
+     *         port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     */
+
+    public java.util.List<String> getDomainControllers() {
+        if (domainControllers == null) {
+            domainControllers = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return domainControllers;
+    }
+
+    /**
+     * <p>
+     * List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port
+     * number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     * </p>
+     * 
+     * @param domainControllers
+     *        List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the
+     *        port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     */
+
+    public void setDomainControllers(java.util.Collection<String> domainControllers) {
+        if (domainControllers == null) {
+            this.domainControllers = null;
+            return;
+        }
+
+        this.domainControllers = new com.amazonaws.internal.SdkInternalList<String>(domainControllers);
+    }
+
+    /**
+     * <p>
+     * List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port
+     * number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDomainControllers(java.util.Collection)} or {@link #withDomainControllers(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param domainControllers
+     *        List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the
+     *        port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JoinDomainRequest withDomainControllers(String... domainControllers) {
+        if (this.domainControllers == null) {
+            setDomainControllers(new com.amazonaws.internal.SdkInternalList<String>(domainControllers.length));
+        }
+        for (String ele : domainControllers) {
+            this.domainControllers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the port
+     * number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     * </p>
+     * 
+     * @param domainControllers
+     *        List of IPv4 addresses, NetBIOS names, or host names of your domain server. If you need to specify the
+     *        port number include it after the colon (“:”). For example, <code>mydc.mydomain.com:389</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JoinDomainRequest withDomainControllers(java.util.Collection<String> domainControllers) {
+        setDomainControllers(domainControllers);
         return this;
     }
 
@@ -229,6 +380,10 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
             sb.append("GatewayARN: ").append(getGatewayARN()).append(",");
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
+        if (getOrganizationalUnit() != null)
+            sb.append("OrganizationalUnit: ").append(getOrganizationalUnit()).append(",");
+        if (getDomainControllers() != null)
+            sb.append("DomainControllers: ").append(getDomainControllers()).append(",");
         if (getUserName() != null)
             sb.append("UserName: ").append(getUserName()).append(",");
         if (getPassword() != null)
@@ -255,6 +410,14 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
+        if (other.getOrganizationalUnit() == null ^ this.getOrganizationalUnit() == null)
+            return false;
+        if (other.getOrganizationalUnit() != null && other.getOrganizationalUnit().equals(this.getOrganizationalUnit()) == false)
+            return false;
+        if (other.getDomainControllers() == null ^ this.getDomainControllers() == null)
+            return false;
+        if (other.getDomainControllers() != null && other.getDomainControllers().equals(this.getDomainControllers()) == false)
+            return false;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
@@ -273,6 +436,8 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
         hashCode = prime * hashCode + ((getGatewayARN() == null) ? 0 : getGatewayARN().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationalUnit() == null) ? 0 : getOrganizationalUnit().hashCode());
+        hashCode = prime * hashCode + ((getDomainControllers() == null) ? 0 : getDomainControllers().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         return hashCode;

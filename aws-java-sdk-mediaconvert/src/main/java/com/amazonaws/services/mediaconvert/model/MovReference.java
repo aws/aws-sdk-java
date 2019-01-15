@@ -15,8 +15,7 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * A value of 'external' creates separate media files and the wrapper file (.mov) contains references to these media
- * files. A value of 'self_contained' creates only a wrapper (.mov) file and this file contains all of the media.
+ * Always keep the default value (SELF_CONTAINED) for this setting.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum MovReference {

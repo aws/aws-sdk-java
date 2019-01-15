@@ -30,7 +30,8 @@ public enum CaptionSourceType {
     SRT("SRT"),
     SMI("SMI"),
     TELETEXT("TELETEXT"),
-    NULL_SOURCE("NULL_SOURCE");
+    NULL_SOURCE("NULL_SOURCE"),
+    IMSC("IMSC");
 
     private String value;
 

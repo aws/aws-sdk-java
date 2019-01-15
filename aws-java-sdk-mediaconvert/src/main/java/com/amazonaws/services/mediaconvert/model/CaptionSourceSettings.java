@@ -38,6 +38,8 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
 
     private TeletextSourceSettings teletextSourceSettings;
 
+    private TrackSourceSettings trackSourceSettings;
+
     /**
      * @param ancillarySourceSettings
      */
@@ -209,6 +211,32 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * @param trackSourceSettings
+     */
+
+    public void setTrackSourceSettings(TrackSourceSettings trackSourceSettings) {
+        this.trackSourceSettings = trackSourceSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public TrackSourceSettings getTrackSourceSettings() {
+        return this.trackSourceSettings;
+    }
+
+    /**
+     * @param trackSourceSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionSourceSettings withTrackSourceSettings(TrackSourceSettings trackSourceSettings) {
+        setTrackSourceSettings(trackSourceSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -231,7 +259,9 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
         if (getSourceType() != null)
             sb.append("SourceType: ").append(getSourceType()).append(",");
         if (getTeletextSourceSettings() != null)
-            sb.append("TeletextSourceSettings: ").append(getTeletextSourceSettings());
+            sb.append("TeletextSourceSettings: ").append(getTeletextSourceSettings()).append(",");
+        if (getTrackSourceSettings() != null)
+            sb.append("TrackSourceSettings: ").append(getTrackSourceSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -270,6 +300,10 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
             return false;
         if (other.getTeletextSourceSettings() != null && other.getTeletextSourceSettings().equals(this.getTeletextSourceSettings()) == false)
             return false;
+        if (other.getTrackSourceSettings() == null ^ this.getTrackSourceSettings() == null)
+            return false;
+        if (other.getTrackSourceSettings() != null && other.getTrackSourceSettings().equals(this.getTrackSourceSettings()) == false)
+            return false;
         return true;
     }
 
@@ -284,6 +318,7 @@ public class CaptionSourceSettings implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getFileSourceSettings() == null) ? 0 : getFileSourceSettings().hashCode());
         hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode());
         hashCode = prime * hashCode + ((getTeletextSourceSettings() == null) ? 0 : getTeletextSourceSettings().hashCode());
+        hashCode = prime * hashCode + ((getTrackSourceSettings() == null) ? 0 : getTrackSourceSettings().hashCode());
         return hashCode;
     }
 

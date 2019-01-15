@@ -54,6 +54,8 @@ public class M2tsSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ebpPlacement").build();
     private static final MarshallingInfo<String> ESRATEINPES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("esRateInPes").build();
+    private static final MarshallingInfo<String> FORCETSVIDEOEBPORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("forceTsVideoEbpOrder").build();
     private static final MarshallingInfo<Double> FRAGMENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fragmentTime").build();
     private static final MarshallingInfo<Integer> MAXPCRINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -126,6 +128,7 @@ public class M2tsSettingsMarshaller {
             protocolMarshaller.marshall(m2tsSettings.getEbpAudioInterval(), EBPAUDIOINTERVAL_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getEbpPlacement(), EBPPLACEMENT_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getEsRateInPes(), ESRATEINPES_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getForceTsVideoEbpOrder(), FORCETSVIDEOEBPORDER_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getFragmentTime(), FRAGMENTTIME_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getMaxPcrInterval(), MAXPCRINTERVAL_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getMinEbpInterval(), MINEBPINTERVAL_BINDING);

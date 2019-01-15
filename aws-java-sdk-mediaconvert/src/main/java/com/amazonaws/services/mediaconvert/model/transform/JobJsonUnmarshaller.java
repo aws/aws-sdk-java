@@ -48,6 +48,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("accelerationSettings", targetDepth)) {
+                    context.nextToken();
+                    job.setAccelerationSettings(AccelerationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     job.setArn(context.getUnmarshaller(String.class).unmarshall(context));

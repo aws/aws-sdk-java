@@ -14,8 +14,11 @@
  */
 package com.amazonaws.services.s3.transfer.internal;
 
+import static com.amazonaws.services.s3.Headers.SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY;
+
 import com.amazonaws.internal.ReleasableInputStream;
 import com.amazonaws.services.s3.internal.InputSubstream;
+import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.SSECustomerKey;
 import com.amazonaws.services.s3.model.UploadPartRequest;
@@ -97,6 +100,23 @@ public class UploadPartRequestFactory {
                 .withPartNumber(partNumber++)
                 .withPartSize(partSize);
         }
+
+        // Copying the SSE-C metadata if it's using SSE-C, which is required for each UploadPart Request.
+        // See https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadUploadPart.html, https://github.com/aws/aws-sdk-java/issues/1840
+        ObjectMetadata origReqMetadata = origReq.getMetadata();
+        if (origReqMetadata.getRawMetadataValue(SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY) != null &&
+            origReqMetadata.getSSECustomerAlgorithm() != null &&
+            origReqMetadata.getSSECustomerKeyMd5() != null) {
+
+            ObjectMetadata metadata = new ObjectMetadata();
+            metadata.setHeader(SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY,
+                               origReqMetadata.getRawMetadataValue(SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY));
+            metadata.setSSECustomerAlgorithm(origReqMetadata.getSSECustomerAlgorithm());
+            metadata.setSSECustomerKeyMd5(origReqMetadata.getSSECustomerKeyMd5());
+
+            req.withObjectMetadata(metadata);
+        }
+
         req.withRequesterPays(origReq.isRequesterPays());
         TransferManager.appendMultipartUserAgent(req);
 

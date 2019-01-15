@@ -18,9 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * For motion overlays that don't have a built-in framerate, specify the framerate of the overlay in frames per second,
- * as a fraction. For example, specify 24 fps as 24/1. The overlay framerate doesn't need to match the framerate of the
- * underlying video.
+ * For motion overlays that don't have a built-in frame rate, specify the frame rate of the overlay in frames per
+ * second, as a fraction. For example, specify 24 fps as 24/1. The overlay frame rate doesn't need to match the frame
+ * rate of the underlying video.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MotionImageInsertionFramerate"
  *      target="_top">AWS API Documentation</a>
@@ -29,22 +29,22 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class MotionImageInsertionFramerate implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The bottom of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps, set
+     * The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set
      * this value to 1.
      */
     private Integer framerateDenominator;
     /**
-     * The top of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps, set this
-     * value to 24.
+     * The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set
+     * this value to 24.
      */
     private Integer framerateNumerator;
 
     /**
-     * The bottom of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps, set
+     * The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set
      * this value to 1.
      * 
      * @param framerateDenominator
-     *        The bottom of the fraction that expresses your overlay framerate. For example, if your framerate is 24
+     *        The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24
      *        fps, set this value to 1.
      */
 
@@ -53,10 +53,10 @@ public class MotionImageInsertionFramerate implements Serializable, Cloneable, S
     }
 
     /**
-     * The bottom of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps, set
+     * The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set
      * this value to 1.
      * 
-     * @return The bottom of the fraction that expresses your overlay framerate. For example, if your framerate is 24
+     * @return The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24
      *         fps, set this value to 1.
      */
 
@@ -65,11 +65,11 @@ public class MotionImageInsertionFramerate implements Serializable, Cloneable, S
     }
 
     /**
-     * The bottom of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps, set
+     * The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set
      * this value to 1.
      * 
      * @param framerateDenominator
-     *        The bottom of the fraction that expresses your overlay framerate. For example, if your framerate is 24
+     *        The bottom of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24
      *        fps, set this value to 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -80,11 +80,11 @@ public class MotionImageInsertionFramerate implements Serializable, Cloneable, S
     }
 
     /**
-     * The top of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps, set this
-     * value to 24.
+     * The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set
+     * this value to 24.
      * 
      * @param framerateNumerator
-     *        The top of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps,
+     *        The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps,
      *        set this value to 24.
      */
 
@@ -93,11 +93,11 @@ public class MotionImageInsertionFramerate implements Serializable, Cloneable, S
     }
 
     /**
-     * The top of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps, set this
-     * value to 24.
+     * The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set
+     * this value to 24.
      * 
-     * @return The top of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps,
-     *         set this value to 24.
+     * @return The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24
+     *         fps, set this value to 24.
      */
 
     public Integer getFramerateNumerator() {
@@ -105,11 +105,11 @@ public class MotionImageInsertionFramerate implements Serializable, Cloneable, S
     }
 
     /**
-     * The top of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps, set this
-     * value to 24.
+     * The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps, set
+     * this value to 24.
      * 
      * @param framerateNumerator
-     *        The top of the fraction that expresses your overlay framerate. For example, if your framerate is 24 fps,
+     *        The top of the fraction that expresses your overlay frame rate. For example, if your frame rate is 24 fps,
      *        set this value to 24.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
