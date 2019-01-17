@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum BackupType {
 
     USER("USER"),
-    SYSTEM("SYSTEM");
+    SYSTEM("SYSTEM"),
+    AWS_BACKUP("AWS_BACKUP");
 
     private String value;
 

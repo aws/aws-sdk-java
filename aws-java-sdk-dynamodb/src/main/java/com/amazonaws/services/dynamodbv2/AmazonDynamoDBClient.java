@@ -1497,6 +1497,10 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     }
 
     /**
+     * <p>
+     * Returns the regional endpoint information.
+     * </p>
+     * 
      * @param describeEndpointsRequest
      * @return Result of the DescribeEndpoints operation returned by the service.
      * @sample AmazonDynamoDB.DescribeEndpoints
@@ -3148,49 +3152,66 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws TransactionCanceledException
      *         The entire transaction request was rejected.</p>
      *         <p>
-     *         DynamoDB will reject the entire <code>TransactWriteItems</code> request if any of the following is true:
+     *         DynamoDB rejects a <code>TransactWriteItems</code> request under the following circumstances:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         A table in the <code>TransactWriteItems</code> request does not exist.
+     *         A condition in one of the condition expressions is not met.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A table in the <code>TransactWriteItems</code> request is on a different account or region.
+     *         A table in the <code>TransactWriteItems</code> request is in a different account or region.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Operations contain item schema violations.
+     *         More than one action in the <code>TransactWriteItems</code> operation targets the same item.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         More than one write operation (<code>UpdateItem</code>, <code>PutItem</code>, <code>DeleteItem</code>)
-     *         operates on the same item.
+     *         There is insufficient provisioned capacity for the transaction to be completed.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         More than one check operation operates on the same item.
+     *         An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large,
+     *         or a similar validation error occurs because of changes made by the transaction.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The number of operations sent in the <code>TransactWriteItems</code> request is 0 or greater than 10.
+     *         There is a user error, such as an invalid data format.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         DynamoDB rejects a <code>TransactGetItems</code> request under the following circumstances:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent
+     *         <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code>
+     *         request. In this case the <code>TransactGetItems</code> operation fails with a
+     *         <code>TransactionCanceledException</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A <code>TransactWriteItems</code> request exceeds the maximum 4 MB request size.
+     *         A table in the <code>TransactGetItems</code> request is in a different account or region.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Any operation in the <code>TransactWriteItems</code> request would cause an item to become larger than
-     *         400KB.
+     *         There is insufficient provisioned capacity for the transaction to be completed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         There is a user error, such as an invalid data format.
      *         </p>
      *         </li>
      * @throws ProvisionedThroughputExceededException
@@ -3337,49 +3358,66 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws TransactionCanceledException
      *         The entire transaction request was rejected.</p>
      *         <p>
-     *         DynamoDB will reject the entire <code>TransactWriteItems</code> request if any of the following is true:
+     *         DynamoDB rejects a <code>TransactWriteItems</code> request under the following circumstances:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         A table in the <code>TransactWriteItems</code> request does not exist.
+     *         A condition in one of the condition expressions is not met.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A table in the <code>TransactWriteItems</code> request is on a different account or region.
+     *         A table in the <code>TransactWriteItems</code> request is in a different account or region.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Operations contain item schema violations.
+     *         More than one action in the <code>TransactWriteItems</code> operation targets the same item.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         More than one write operation (<code>UpdateItem</code>, <code>PutItem</code>, <code>DeleteItem</code>)
-     *         operates on the same item.
+     *         There is insufficient provisioned capacity for the transaction to be completed.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         More than one check operation operates on the same item.
+     *         An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large,
+     *         or a similar validation error occurs because of changes made by the transaction.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         The number of operations sent in the <code>TransactWriteItems</code> request is 0 or greater than 10.
+     *         There is a user error, such as an invalid data format.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         DynamoDB rejects a <code>TransactGetItems</code> request under the following circumstances:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent
+     *         <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code>
+     *         request. In this case the <code>TransactGetItems</code> operation fails with a
+     *         <code>TransactionCanceledException</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A <code>TransactWriteItems</code> request exceeds the maximum 4 MB request size.
+     *         A table in the <code>TransactGetItems</code> request is in a different account or region.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Any operation in the <code>TransactWriteItems</code> request would cause an item to become larger than
-     *         400KB.
+     *         There is insufficient provisioned capacity for the transaction to be completed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         There is a user error, such as an invalid data format.
      *         </p>
      *         </li>
      * @throws TransactionInProgressException

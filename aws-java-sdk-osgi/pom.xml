@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.484-SNAPSHOT</version>
+    <version>1.11.484</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,12 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-backup</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-docdb</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -1142,6 +1148,10 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS Backup</title>
+                                  <packages>com.amazonaws.services.backup*</packages>
+                              </group>
                               <group>
                                   <title>Amazon DocumentDB with MongoDB compatibility</title>
                                   <packages>com.amazonaws.services.docdb*</packages>

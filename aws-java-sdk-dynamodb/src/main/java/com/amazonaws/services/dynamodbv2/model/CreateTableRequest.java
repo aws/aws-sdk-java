@@ -104,7 +104,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<KeySchemaElement> keySchema;
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -157,7 +157,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -168,8 +168,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<LocalSecondaryIndex> localSecondaryIndexes;
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -216,7 +216,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1110,7 +1110,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -1163,7 +1163,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1171,9 +1171,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return One or more local secondary indexes (the maximum is five) to be created on the table. Each index is
-     *         scoped to a given partition key value. There is a 10 GB size limit per partition key value; otherwise,
-     *         the size of a local secondary index is unconstrained.</p>
+     * @return One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped
+     *         to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size
+     *         of a local secondary index is unconstrained.</p>
      *         <p>
      *         Each local secondary index in the array includes the following:
      *         </p>
@@ -1223,7 +1223,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *         secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *         all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *         all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *         indexes, this counts as two distinct attributes when determining the total.
      *         </p>
      *         </li>
@@ -1237,7 +1237,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -1290,7 +1290,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1299,9 +1299,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param localSecondaryIndexes
-     *        One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped
-     *        to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size
-     *        of a local secondary index is unconstrained.</p>
+     *        One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to
+     *        a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a
+     *        local secondary index is unconstrained.</p>
      *        <p>
      *        Each local secondary index in the array includes the following:
      *        </p>
@@ -1351,7 +1351,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -1370,7 +1370,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -1423,7 +1423,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1437,9 +1437,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param localSecondaryIndexes
-     *        One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped
-     *        to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size
-     *        of a local secondary index is unconstrained.</p>
+     *        One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to
+     *        a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a
+     *        local secondary index is unconstrained.</p>
      *        <p>
      *        Each local secondary index in the array includes the following:
      *        </p>
@@ -1489,7 +1489,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -1510,7 +1510,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped to a
+     * One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to a
      * given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a local
      * secondary index is unconstrained.
      * </p>
@@ -1563,7 +1563,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1572,9 +1572,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param localSecondaryIndexes
-     *        One or more local secondary indexes (the maximum is five) to be created on the table. Each index is scoped
-     *        to a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size
-     *        of a local secondary index is unconstrained.</p>
+     *        One or more local secondary indexes (the maximum is 5) to be created on the table. Each index is scoped to
+     *        a given partition key value. There is a 10 GB size limit per partition key value; otherwise, the size of a
+     *        local secondary index is unconstrained.</p>
      *        <p>
      *        Each local secondary index in the array includes the following:
      *        </p>
@@ -1624,7 +1624,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -1640,8 +1640,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -1688,7 +1688,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1702,7 +1702,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * </ul>
      * 
-     * @return One or more global secondary indexes (the maximum is five) to be created on the table. Each global
+     * @return One or more global secondary indexes (the maximum is 20) to be created on the table. Each global
      *         secondary index in the array includes the following:</p>
      *         <ul>
      *         <li>
@@ -1749,7 +1749,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *         secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *         all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *         all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *         indexes, this counts as two distinct attributes when determining the total.
      *         </p>
      *         </li>
@@ -1769,8 +1769,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -1817,7 +1817,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1832,8 +1832,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param globalSecondaryIndexes
-     *        One or more global secondary indexes (the maximum is five) to be created on the table. Each global
-     *        secondary index in the array includes the following:</p>
+     *        One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary
+     *        index in the array includes the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1879,7 +1879,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -1904,8 +1904,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -1952,7 +1952,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -1972,8 +1972,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param globalSecondaryIndexes
-     *        One or more global secondary indexes (the maximum is five) to be created on the table. Each global
-     *        secondary index in the array includes the following:</p>
+     *        One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary
+     *        index in the array includes the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2019,7 +2019,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>
@@ -2046,8 +2046,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * One or more global secondary indexes (the maximum is five) to be created on the table. Each global secondary
-     * index in the array includes the following:
+     * One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary index
+     * in the array includes the following:
      * </p>
      * <ul>
      * <li>
@@ -2094,7 +2094,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      * secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across all of
-     * the secondary indexes, must not exceed 20. If you project the same attribute into two different indexes, this
+     * the secondary indexes, must not exceed 100. If you project the same attribute into two different indexes, this
      * counts as two distinct attributes when determining the total.
      * </p>
      * </li>
@@ -2109,8 +2109,8 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      * 
      * @param globalSecondaryIndexes
-     *        One or more global secondary indexes (the maximum is five) to be created on the table. Each global
-     *        secondary index in the array includes the following:</p>
+     *        One or more global secondary indexes (the maximum is 20) to be created on the table. Each global secondary
+     *        index in the array includes the following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2156,7 +2156,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that are projected into the
      *        secondary index. The total count of attributes provided in <code>NonKeyAttributes</code>, summed across
-     *        all of the secondary indexes, must not exceed 20. If you project the same attribute into two different
+     *        all of the secondary indexes, must not exceed 100. If you project the same attribute into two different
      *        indexes, this counts as two distinct attributes when determining the total.
      *        </p>
      *        </li>

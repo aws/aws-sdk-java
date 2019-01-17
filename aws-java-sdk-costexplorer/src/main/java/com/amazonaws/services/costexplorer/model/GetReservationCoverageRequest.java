@@ -90,11 +90,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * TAG
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * TENANCY
      * </p>
      * </li>
@@ -322,11 +317,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * TAG
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * TENANCY
      * </p>
      * </li>
@@ -377,11 +367,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *         <li>
      *         <p>
      *         REGION
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         TAG
      *         </p>
      *         </li>
      *         <li>
@@ -447,11 +432,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * TAG
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * TENANCY
      * </p>
      * </li>
@@ -503,11 +483,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        REGION
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        TAG
      *        </p>
      *        </li>
      *        <li>
@@ -578,11 +553,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * TAG
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * TENANCY
      * </p>
      * </li>
@@ -639,11 +609,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        REGION
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        TAG
      *        </p>
      *        </li>
      *        <li>
@@ -716,11 +681,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * TAG
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * TENANCY
      * </p>
      * </li>
@@ -772,11 +732,6 @@ public class GetReservationCoverageRequest extends com.amazonaws.AmazonWebServic
      *        <li>
      *        <p>
      *        REGION
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        TAG
      *        </p>
      *        </li>
      *        <li>

@@ -23,10 +23,19 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeEndpointsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * List of endpoints.
+     * </p>
+     */
     private java.util.List<Endpoint> endpoints;
 
     /**
-     * @return
+     * <p>
+     * List of endpoints.
+     * </p>
+     * 
+     * @return List of endpoints.
      */
 
     public java.util.List<Endpoint> getEndpoints() {
@@ -34,7 +43,12 @@ public class DescribeEndpointsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * List of endpoints.
+     * </p>
+     * 
      * @param endpoints
+     *        List of endpoints.
      */
 
     public void setEndpoints(java.util.Collection<Endpoint> endpoints) {
@@ -48,12 +62,16 @@ public class DescribeEndpointsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
+     * List of endpoints.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEndpoints(java.util.Collection)} or {@link #withEndpoints(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param endpoints
+     *        List of endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +86,12 @@ public class DescribeEndpointsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * List of endpoints.
+     * </p>
+     * 
      * @param endpoints
+     *        List of endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -22,6 +22,7 @@ public enum BackupTypeFilter {
 
     USER("USER"),
     SYSTEM("SYSTEM"),
+    AWS_BACKUP("AWS_BACKUP"),
     ALL("ALL");
 
     private String value;

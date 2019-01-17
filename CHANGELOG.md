@@ -1,3 +1,16 @@
+# __1.11.484__ __2019-01-16__
+## __AWS Backup__
+  - ### Features
+    - AWS Backup is a unified backup service designed to protect AWS services and their associated data. AWS Backup simplifies the creation, migration, restoration, and deletion of backups, while also providing reporting and auditing
+
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Removed Tags from the list of GroupBy dimensions available for GetReservationCoverage.
+
+## __Amazon DynamoDB__
+  - ### Features
+    - Amazon DynamoDB now integrates with AWS Backup, a centralized backup service that makes it easy for customers to configure and audit the AWS resources they want to backup, automate backup scheduling, set retention policies, and monitor all recent backup and restore activity. AWS Backup provides a fully managed, policy-based backup solution, simplifying your backup management, and helping you meet your business and regulatory backup compliance requirements. For more information, see the Amazon DynamoDB Developer Guide.
+
 # __1.11.483__ __2019-01-14__
 ## __AWS Elemental MediaConvert__
   - ### Features

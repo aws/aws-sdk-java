@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * An endpoint information details.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Endpoint" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * IP address of the endpoint.
+     * </p>
+     */
     private String address;
-
+    /**
+     * <p>
+     * Endpoint cache time to live (TTL) value.
+     * </p>
+     */
     private Long cachePeriodInMinutes;
 
     /**
+     * <p>
+     * IP address of the endpoint.
+     * </p>
+     * 
      * @param address
+     *        IP address of the endpoint.
      */
 
     public void setAddress(String address) {
@@ -38,7 +55,11 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * IP address of the endpoint.
+     * </p>
+     * 
+     * @return IP address of the endpoint.
      */
 
     public String getAddress() {
@@ -46,7 +67,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * IP address of the endpoint.
+     * </p>
+     * 
      * @param address
+     *        IP address of the endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Endpoint cache time to live (TTL) value.
+     * </p>
+     * 
      * @param cachePeriodInMinutes
+     *        Endpoint cache time to live (TTL) value.
      */
 
     public void setCachePeriodInMinutes(Long cachePeriodInMinutes) {
@@ -64,7 +95,11 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Endpoint cache time to live (TTL) value.
+     * </p>
+     * 
+     * @return Endpoint cache time to live (TTL) value.
      */
 
     public Long getCachePeriodInMinutes() {
@@ -72,7 +107,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Endpoint cache time to live (TTL) value.
+     * </p>
+     * 
      * @param cachePeriodInMinutes
+     *        Endpoint cache time to live (TTL) value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

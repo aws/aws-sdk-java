@@ -130,6 +130,7 @@ import org.apache.http.StatusLine;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.impl.execchain.RequestAbortedException;
 import org.apache.http.pool.ConnPoolControl;
 import org.apache.http.pool.PoolStats;
 import org.apache.http.protocol.HttpContext;
@@ -1296,7 +1297,12 @@ public class AmazonHttpClient {
                 if (executionContext.getClientExecutionTrackerTask().hasTimeoutExpired()) {
                     throw new InterruptedException();
                 } else if (requestAbortTaskTracker.httpRequestAborted()) {
-                    throw new HttpRequestTimeoutException(ioe);
+                    // Interrupt flag can leak from apache when aborting the request
+                    // https://issues.apache.org/jira/browse/HTTPCLIENT-1958, TT0174038332
+                    if (ioe instanceof RequestAbortedException) {
+                        Thread.interrupted();
+                    }
+                     throw new HttpRequestTimeoutException(ioe);
                 } else {
                     throw ioe;
                 }
