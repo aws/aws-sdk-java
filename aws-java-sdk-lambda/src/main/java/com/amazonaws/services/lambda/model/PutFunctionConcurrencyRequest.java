@@ -35,17 +35,17 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -57,7 +57,7 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
     private String functionName;
     /**
      * <p>
-     * The concurrent execution limit reserved for this function.
+     * The number of simultaneous executions to reserve for the function.
      * </p>
      */
     private Integer reservedConcurrentExecutions;
@@ -72,17 +72,17 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -99,17 +99,17 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> - <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -132,17 +132,17 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -158,17 +158,17 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         <b>Function name</b> - <code>my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -191,17 +191,17 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -218,17 +218,17 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> - <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -245,11 +245,11 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The concurrent execution limit reserved for this function.
+     * The number of simultaneous executions to reserve for the function.
      * </p>
      * 
      * @param reservedConcurrentExecutions
-     *        The concurrent execution limit reserved for this function.
+     *        The number of simultaneous executions to reserve for the function.
      */
 
     public void setReservedConcurrentExecutions(Integer reservedConcurrentExecutions) {
@@ -258,10 +258,10 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The concurrent execution limit reserved for this function.
+     * The number of simultaneous executions to reserve for the function.
      * </p>
      * 
-     * @return The concurrent execution limit reserved for this function.
+     * @return The number of simultaneous executions to reserve for the function.
      */
 
     public Integer getReservedConcurrentExecutions() {
@@ -270,11 +270,11 @@ public class PutFunctionConcurrencyRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The concurrent execution limit reserved for this function.
+     * The number of simultaneous executions to reserve for the function.
      * </p>
      * 
      * @param reservedConcurrentExecutions
-     *        The concurrent execution limit reserved for this function.
+     *        The number of simultaneous executions to reserve for the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

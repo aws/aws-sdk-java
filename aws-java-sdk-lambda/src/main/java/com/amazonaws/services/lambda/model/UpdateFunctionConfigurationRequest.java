@@ -35,17 +35,17 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -132,10 +132,8 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private TracingConfig tracingConfig;
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     * function that has changed since you last read it.
      * </p>
      */
     private String revisionId;
@@ -157,17 +155,17 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -184,17 +182,17 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> - <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -217,17 +215,17 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -243,17 +241,17 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         <b>Function name</b> - <code>my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -276,17 +274,17 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -303,17 +301,17 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> - <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -860,17 +858,13 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     * function that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     *        Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     *        function that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -879,16 +873,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     * function that has changed since you last read it.
      * </p>
      * 
-     * @return An optional value you can use to ensure you are updating the latest update of the function version or
-     *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *         function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *         version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * @return Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying
+     *         a function that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -897,17 +887,13 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     * function that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     *        Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     *        function that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

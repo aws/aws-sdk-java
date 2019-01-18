@@ -32,6 +32,8 @@ public class CreateDiskSnapshotRequestMarshaller {
             .marshallLocationName("diskName").build();
     private static final MarshallingInfo<String> DISKSNAPSHOTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("diskSnapshotName").build();
+    private static final MarshallingInfo<String> INSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -53,6 +55,7 @@ public class CreateDiskSnapshotRequestMarshaller {
         try {
             protocolMarshaller.marshall(createDiskSnapshotRequest.getDiskName(), DISKNAME_BINDING);
             protocolMarshaller.marshall(createDiskSnapshotRequest.getDiskSnapshotName(), DISKSNAPSHOTNAME_BINDING);
+            protocolMarshaller.marshall(createDiskSnapshotRequest.getInstanceName(), INSTANCENAME_BINDING);
             protocolMarshaller.marshall(createDiskSnapshotRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

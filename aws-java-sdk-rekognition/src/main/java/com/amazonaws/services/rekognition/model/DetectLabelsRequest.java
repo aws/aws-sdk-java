@@ -41,7 +41,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 50 percent.
+     * than or equal to 55 percent.
      * </p>
      */
     private Float minConfidence;
@@ -145,7 +145,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 50 percent.
+     * than or equal to 55 percent.
      * </p>
      * 
      * @param minConfidence
@@ -153,7 +153,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        labels with confidence lower than this specified value.</p>
      *        <p>
      *        If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *        greater than or equal to 50 percent.
+     *        greater than or equal to 55 percent.
      */
 
     public void setMinConfidence(Float minConfidence) {
@@ -167,14 +167,14 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 50 percent.
+     * than or equal to 55 percent.
      * </p>
      * 
      * @return Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any
      *         labels with confidence lower than this specified value.</p>
      *         <p>
      *         If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *         greater than or equal to 50 percent.
+     *         greater than or equal to 55 percent.
      */
 
     public Float getMinConfidence() {
@@ -188,7 +188,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values greater
-     * than or equal to 50 percent.
+     * than or equal to 55 percent.
      * </p>
      * 
      * @param minConfidence
@@ -196,7 +196,7 @@ public class DetectLabelsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        labels with confidence lower than this specified value.</p>
      *        <p>
      *        If <code>MinConfidence</code> is not specified, the operation returns labels with a confidence values
-     *        greater than or equal to 50 percent.
+     *        greater than or equal to 55 percent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,8 +27,14 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The unique name of the source disk (e.g., <code>my-source-disk</code>).
+     * The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).
      * </p>
+     * <note>
+     * <p>
+     * This parameter cannot be defined together with the <code>instance name</code> parameter. The
+     * <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.
+     * </p>
+     * </note>
      */
     private String diskName;
     /**
@@ -37,6 +43,19 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String diskSnapshotName;
+    /**
+     * <p>
+     * The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined,
+     * a snapshot of the instance's system volume is created.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter cannot be defined together with the <code>disk name</code> parameter. The
+     * <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.
+     * </p>
+     * </note>
+     */
+    private String instanceName;
     /**
      * <p>
      * The tag keys and optional values to add to the resource during create.
@@ -49,11 +68,21 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The unique name of the source disk (e.g., <code>my-source-disk</code>).
+     * The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).
      * </p>
+     * <note>
+     * <p>
+     * This parameter cannot be defined together with the <code>instance name</code> parameter. The
+     * <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.
+     * </p>
+     * </note>
      * 
      * @param diskName
-     *        The unique name of the source disk (e.g., <code>my-source-disk</code>).
+     *        The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>instance name</code> parameter. The
+     *        <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.
+     *        </p>
      */
 
     public void setDiskName(String diskName) {
@@ -62,10 +91,20 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The unique name of the source disk (e.g., <code>my-source-disk</code>).
+     * The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).
      * </p>
+     * <note>
+     * <p>
+     * This parameter cannot be defined together with the <code>instance name</code> parameter. The
+     * <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.
+     * </p>
+     * </note>
      * 
-     * @return The unique name of the source disk (e.g., <code>my-source-disk</code>).
+     * @return The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+     *         <p>
+     *         This parameter cannot be defined together with the <code>instance name</code> parameter. The
+     *         <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.
+     *         </p>
      */
 
     public String getDiskName() {
@@ -74,11 +113,21 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The unique name of the source disk (e.g., <code>my-source-disk</code>).
+     * The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).
      * </p>
+     * <note>
+     * <p>
+     * This parameter cannot be defined together with the <code>instance name</code> parameter. The
+     * <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.
+     * </p>
+     * </note>
      * 
      * @param diskName
-     *        The unique name of the source disk (e.g., <code>my-source-disk</code>).
+     *        The unique name of the source disk (e.g., <code>Disk-Virginia-1</code>).</p> <note>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>instance name</code> parameter. The
+     *        <code>disk name</code> and <code>instance name</code> parameters are mutually exclusive.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,6 +173,82 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
     public CreateDiskSnapshotRequest withDiskSnapshotName(String diskSnapshotName) {
         setDiskSnapshotName(diskSnapshotName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined,
+     * a snapshot of the instance's system volume is created.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter cannot be defined together with the <code>disk name</code> parameter. The
+     * <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.
+     * </p>
+     * </note>
+     * 
+     * @param instanceName
+     *        The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is
+     *        defined, a snapshot of the instance's system volume is created.</p> <note>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>disk name</code> parameter. The
+     *        <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.
+     *        </p>
+     */
+
+    public void setInstanceName(String instanceName) {
+        this.instanceName = instanceName;
+    }
+
+    /**
+     * <p>
+     * The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined,
+     * a snapshot of the instance's system volume is created.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter cannot be defined together with the <code>disk name</code> parameter. The
+     * <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.
+     * </p>
+     * </note>
+     * 
+     * @return The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is
+     *         defined, a snapshot of the instance's system volume is created.</p> <note>
+     *         <p>
+     *         This parameter cannot be defined together with the <code>disk name</code> parameter. The
+     *         <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.
+     *         </p>
+     */
+
+    public String getInstanceName() {
+        return this.instanceName;
+    }
+
+    /**
+     * <p>
+     * The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is defined,
+     * a snapshot of the instance's system volume is created.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter cannot be defined together with the <code>disk name</code> parameter. The
+     * <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.
+     * </p>
+     * </note>
+     * 
+     * @param instanceName
+     *        The unique name of the source instance (e.g., <code>Amazon_Linux-512MB-Virginia-1</code>). When this is
+     *        defined, a snapshot of the instance's system volume is created.</p> <note>
+     *        <p>
+     *        This parameter cannot be defined together with the <code>disk name</code> parameter. The
+     *        <code>instance name</code> and <code>disk name</code> parameters are mutually exclusive.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDiskSnapshotRequest withInstanceName(String instanceName) {
+        setInstanceName(instanceName);
         return this;
     }
 
@@ -233,6 +358,8 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("DiskName: ").append(getDiskName()).append(",");
         if (getDiskSnapshotName() != null)
             sb.append("DiskSnapshotName: ").append(getDiskSnapshotName()).append(",");
+        if (getInstanceName() != null)
+            sb.append("InstanceName: ").append(getInstanceName()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -257,6 +384,10 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getDiskSnapshotName() != null && other.getDiskSnapshotName().equals(this.getDiskSnapshotName()) == false)
             return false;
+        if (other.getInstanceName() == null ^ this.getInstanceName() == null)
+            return false;
+        if (other.getInstanceName() != null && other.getInstanceName().equals(this.getInstanceName()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -271,6 +402,7 @@ public class CreateDiskSnapshotRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getDiskName() == null) ? 0 : getDiskName().hashCode());
         hashCode = prime * hashCode + ((getDiskSnapshotName() == null) ? 0 : getDiskSnapshotName().hashCode());
+        hashCode = prime * hashCode + ((getInstanceName() == null) ? 0 : getInstanceName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

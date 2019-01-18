@@ -51,6 +51,12 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private java.util.List<LabelDetection> labels;
+    /**
+     * <p>
+     * Version number of the label detection model that was used to detect labels.
+     * </p>
+     */
+    private String labelModelVersion;
 
     /**
      * <p>
@@ -322,6 +328,46 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Version number of the label detection model that was used to detect labels.
+     * </p>
+     * 
+     * @param labelModelVersion
+     *        Version number of the label detection model that was used to detect labels.
+     */
+
+    public void setLabelModelVersion(String labelModelVersion) {
+        this.labelModelVersion = labelModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the label detection model that was used to detect labels.
+     * </p>
+     * 
+     * @return Version number of the label detection model that was used to detect labels.
+     */
+
+    public String getLabelModelVersion() {
+        return this.labelModelVersion;
+    }
+
+    /**
+     * <p>
+     * Version number of the label detection model that was used to detect labels.
+     * </p>
+     * 
+     * @param labelModelVersion
+     *        Version number of the label detection model that was used to detect labels.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLabelDetectionResult withLabelModelVersion(String labelModelVersion) {
+        setLabelModelVersion(labelModelVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -342,7 +388,9 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getLabels() != null)
-            sb.append("Labels: ").append(getLabels());
+            sb.append("Labels: ").append(getLabels()).append(",");
+        if (getLabelModelVersion() != null)
+            sb.append("LabelModelVersion: ").append(getLabelModelVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -377,6 +425,10 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
             return false;
+        if (other.getLabelModelVersion() == null ^ this.getLabelModelVersion() == null)
+            return false;
+        if (other.getLabelModelVersion() != null && other.getLabelModelVersion().equals(this.getLabelModelVersion()) == false)
+            return false;
         return true;
     }
 
@@ -390,6 +442,7 @@ public class GetLabelDetectionResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getVideoMetadata() == null) ? 0 : getVideoMetadata().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getLabelModelVersion() == null) ? 0 : getLabelModelVersion().hashCode());
         return hashCode;
     }
 

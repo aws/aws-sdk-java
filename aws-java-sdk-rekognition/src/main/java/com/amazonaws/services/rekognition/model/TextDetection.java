@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a word or line of text detected by .
+ * Information about a word or line of text detected by <a>DetectText</a>.
  * </p>
  * <p>
  * The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image.

@@ -46,11 +46,11 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
     private VideoMetadata videoMetadata;
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      */
     private java.util.List<PersonMatch> persons;
@@ -248,18 +248,19 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      * 
-     * @return An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection.
-     *         It also includes time information for when persons are matched in the video. You specify the input
-     *         collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     *         a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the
-     *         collection, and person information (<code>Person</code>) for the matched person.
+     * @return An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon
+     *         Rekognition collection. It also includes time information for when persons are matched in the video. You
+     *         specify the input collection in an initial call to <code>StartFaceSearch</code>. Each
+     *         <code>Persons</code> element includes a time the person was matched, face match details (
+     *         <code>FaceMatches</code>) for matching faces in the collection, and person information (
+     *         <code>Person</code>) for the matched person.
      */
 
     public java.util.List<PersonMatch> getPersons() {
@@ -268,19 +269,19 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      * 
      * @param persons
-     *        An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection.
-     *        It also includes time information for when persons are matched in the video. You specify the input
-     *        collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     *        a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the
-     *        collection, and person information (<code>Person</code>) for the matched person.
+     *        An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon
+     *        Rekognition collection. It also includes time information for when persons are matched in the video. You
+     *        specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     *        element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching
+     *        faces in the collection, and person information (<code>Person</code>) for the matched person.
      */
 
     public void setPersons(java.util.Collection<PersonMatch> persons) {
@@ -294,11 +295,11 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -307,11 +308,11 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param persons
-     *        An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection.
-     *        It also includes time information for when persons are matched in the video. You specify the input
-     *        collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     *        a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the
-     *        collection, and person information (<code>Person</code>) for the matched person.
+     *        An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon
+     *        Rekognition collection. It also includes time information for when persons are matched in the video. You
+     *        specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     *        element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching
+     *        faces in the collection, and person information (<code>Person</code>) for the matched person.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,19 +328,19 @@ public class GetFaceSearchResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection. It also
-     * includes time information for when persons are matched in the video. You specify the input collection in an
-     * initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time the person was
-     * matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and person
-     * information (<code>Person</code>) for the matched person.
+     * An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon Rekognition
+     * collection. It also includes time information for when persons are matched in the video. You specify the input
+     * collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes a time
+     * the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the collection, and
+     * person information (<code>Person</code>) for the matched person.
      * </p>
      * 
      * @param persons
-     *        An array of persons, , in the video whose face(s) match the face(s) in an Amazon Rekognition collection.
-     *        It also includes time information for when persons are matched in the video. You specify the input
-     *        collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     *        a time the person was matched, face match details (<code>FaceMatches</code>) for matching faces in the
-     *        collection, and person information (<code>Person</code>) for the matched person.
+     *        An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the face(s) in an Amazon
+     *        Rekognition collection. It also includes time information for when persons are matched in the video. You
+     *        specify the input collection in an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     *        element includes a time the person was matched, face match details (<code>FaceMatches</code>) for matching
+     *        faces in the collection, and person information (<code>Person</code>) for the matched person.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

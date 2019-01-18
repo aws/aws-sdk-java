@@ -22,18 +22,18 @@ public class StopStreamProcessorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a stream processor created by .
+     * The name of a stream processor created by <a>CreateStreamProcessor</a>.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The name of a stream processor created by .
+     * The name of a stream processor created by <a>CreateStreamProcessor</a>.
      * </p>
      * 
      * @param name
-     *        The name of a stream processor created by .
+     *        The name of a stream processor created by <a>CreateStreamProcessor</a>.
      */
 
     public void setName(String name) {
@@ -42,10 +42,10 @@ public class StopStreamProcessorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a stream processor created by .
+     * The name of a stream processor created by <a>CreateStreamProcessor</a>.
      * </p>
      * 
-     * @return The name of a stream processor created by .
+     * @return The name of a stream processor created by <a>CreateStreamProcessor</a>.
      */
 
     public String getName() {
@@ -54,11 +54,11 @@ public class StopStreamProcessorRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of a stream processor created by .
+     * The name of a stream processor created by <a>CreateStreamProcessor</a>.
      * </p>
      * 
      * @param name
-     *        The name of a stream processor created by .
+     *        The name of a stream processor created by <a>CreateStreamProcessor</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -66655,7 +66655,6 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "customAuthorizers" : { },
   "examples" : {
     "examples" : {
       "CloneReceiptRuleSet" : [ {

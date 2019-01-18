@@ -506,6 +506,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * snapshot status is pending.
      * </p>
      * <p>
+     * You can also use this operation to create a snapshot of an instance's system volume. You might want to do this,
+     * for example, to recover data from the system volume of a botched instance or to create a backup of the system
+     * volume like you would for a block storage disk. To create a snapshot of a system volume, just define the
+     * <code>instance name</code> parameter when issuing the snapshot command, and a snapshot of the defined instance's
+     * system volume will be created. After the snapshot is available, you can create a block storage disk from the
+     * snapshot and attach it to a running instance to access the data on the disk.
+     * </p>
+     * <p>
      * The <code>create disk snapshot</code> operation supports tag-based access control via request tags. For more
      * information, see the <a
      * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags"
@@ -533,6 +541,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * should unmount the disk from within the Lightsail instance, issue the create disk snapshot command, and then
      * remount the disk to ensure a consistent and complete snapshot. You may remount and use your disk while the
      * snapshot status is pending.
+     * </p>
+     * <p>
+     * You can also use this operation to create a snapshot of an instance's system volume. You might want to do this,
+     * for example, to recover data from the system volume of a botched instance or to create a backup of the system
+     * volume like you would for a block storage disk. To create a snapshot of a system volume, just define the
+     * <code>instance name</code> parameter when issuing the snapshot command, and a snapshot of the defined instance's
+     * system volume will be created. After the snapshot is available, you can create a block storage disk from the
+     * snapshot and attach it to a running instance to access the data on the disk.
      * </p>
      * <p>
      * The <code>create disk snapshot</code> operation supports tag-based access control via request tags. For more
@@ -1756,7 +1772,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2).
+     * Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2).
      * This operation results in an export snapshot record that can be used with the
      * <code>create cloud formation stack</code> operation to create new Amazon EC2 instances.
      * </p>
@@ -1790,7 +1806,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Exports a Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2).
+     * Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2).
      * This operation results in an export snapshot record that can be used with the
      * <code>create cloud formation stack</code> operation to create new Amazon EC2 instances.
      * </p>
@@ -3515,9 +3531,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Restarts a specific instance. When your Amazon Lightsail instance is finished rebooting, Lightsail assigns a new
-     * public IP address. To use the same IP address after restarting, create a static IP address and attach it to the
-     * instance.
+     * Restarts a specific instance.
      * </p>
      * <p>
      * The <code>reboot instance</code> operation supports tag-based access control via resource tags applied to the
@@ -3536,9 +3550,7 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Restarts a specific instance. When your Amazon Lightsail instance is finished rebooting, Lightsail assigns a new
-     * public IP address. To use the same IP address after restarting, create a static IP address and attach it to the
-     * instance.
+     * Restarts a specific instance.
      * </p>
      * <p>
      * The <code>reboot instance</code> operation supports tag-based access control via resource tags applied to the
@@ -3636,9 +3648,17 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the reboot instance
-     * operation.
+     * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
+     * <code>reboot instance</code> operation.
      * </p>
+     * <note>
+     * <p>
+     * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
+     * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
      * <p>
      * The <code>start instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by instanceName. For more information, see the <a
@@ -3656,9 +3676,17 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
 
     /**
      * <p>
-     * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the reboot instance
-     * operation.
+     * Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance, use the
+     * <code>reboot instance</code> operation.
      * </p>
+     * <note>
+     * <p>
+     * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
+     * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
      * <p>
      * The <code>start instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by instanceName. For more information, see the <a
@@ -3728,6 +3756,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Stops a specific Amazon Lightsail instance that is currently running.
      * </p>
+     * <note>
+     * <p>
+     * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
+     * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
      * <p>
      * The <code>stop instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by instanceName. For more information, see the <a
@@ -3747,6 +3783,14 @@ public interface AmazonLightsailAsync extends AmazonLightsail {
      * <p>
      * Stops a specific Amazon Lightsail instance that is currently running.
      * </p>
+     * <note>
+     * <p>
+     * When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To use the same IP
+     * address after stopping and starting an instance, create a static IP address and attach it to the instance. For
+     * more information, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.
+     * </p>
+     * </note>
      * <p>
      * The <code>stop instance</code> operation supports tag-based access control via resource tags applied to the
      * resource identified by instanceName. For more information, see the <a

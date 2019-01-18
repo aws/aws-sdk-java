@@ -26,6 +26,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Event implements Serializable, Cloneable, StructuredPojo {
 
+    /** The package name associated with the app that's recording the event. */
+    private String appPackageName;
+    /** The title of the app that's recording the event. */
+    private String appTitle;
+    /** The version number of the app that's recording the event. */
+    private String appVersionCode;
     /** Custom attributes that are associated with the event you're adding or updating. */
     private java.util.Map<String, String> attributes;
     /** The version of the SDK that's running on the client device. */
@@ -34,10 +40,114 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     private String eventType;
     /** Custom metrics related to the event. */
     private java.util.Map<String, Double> metrics;
+    /** The name of the SDK that's being used to record the event. */
+    private String sdkName;
     /** Information about the session in which the event occurred. */
     private Session session;
     /** The date and time when the event occurred, in ISO 8601 format. */
     private String timestamp;
+
+    /**
+     * The package name associated with the app that's recording the event.
+     * 
+     * @param appPackageName
+     *        The package name associated with the app that's recording the event.
+     */
+
+    public void setAppPackageName(String appPackageName) {
+        this.appPackageName = appPackageName;
+    }
+
+    /**
+     * The package name associated with the app that's recording the event.
+     * 
+     * @return The package name associated with the app that's recording the event.
+     */
+
+    public String getAppPackageName() {
+        return this.appPackageName;
+    }
+
+    /**
+     * The package name associated with the app that's recording the event.
+     * 
+     * @param appPackageName
+     *        The package name associated with the app that's recording the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withAppPackageName(String appPackageName) {
+        setAppPackageName(appPackageName);
+        return this;
+    }
+
+    /**
+     * The title of the app that's recording the event.
+     * 
+     * @param appTitle
+     *        The title of the app that's recording the event.
+     */
+
+    public void setAppTitle(String appTitle) {
+        this.appTitle = appTitle;
+    }
+
+    /**
+     * The title of the app that's recording the event.
+     * 
+     * @return The title of the app that's recording the event.
+     */
+
+    public String getAppTitle() {
+        return this.appTitle;
+    }
+
+    /**
+     * The title of the app that's recording the event.
+     * 
+     * @param appTitle
+     *        The title of the app that's recording the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withAppTitle(String appTitle) {
+        setAppTitle(appTitle);
+        return this;
+    }
+
+    /**
+     * The version number of the app that's recording the event.
+     * 
+     * @param appVersionCode
+     *        The version number of the app that's recording the event.
+     */
+
+    public void setAppVersionCode(String appVersionCode) {
+        this.appVersionCode = appVersionCode;
+    }
+
+    /**
+     * The version number of the app that's recording the event.
+     * 
+     * @return The version number of the app that's recording the event.
+     */
+
+    public String getAppVersionCode() {
+        return this.appVersionCode;
+    }
+
+    /**
+     * The version number of the app that's recording the event.
+     * 
+     * @param appVersionCode
+     *        The version number of the app that's recording the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withAppVersionCode(String appVersionCode) {
+        setAppVersionCode(appVersionCode);
+        return this;
+    }
 
     /**
      * Custom attributes that are associated with the event you're adding or updating.
@@ -218,6 +328,40 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The name of the SDK that's being used to record the event.
+     * 
+     * @param sdkName
+     *        The name of the SDK that's being used to record the event.
+     */
+
+    public void setSdkName(String sdkName) {
+        this.sdkName = sdkName;
+    }
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     * 
+     * @return The name of the SDK that's being used to record the event.
+     */
+
+    public String getSdkName() {
+        return this.sdkName;
+    }
+
+    /**
+     * The name of the SDK that's being used to record the event.
+     * 
+     * @param sdkName
+     *        The name of the SDK that's being used to record the event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Event withSdkName(String sdkName) {
+        setSdkName(sdkName);
+        return this;
+    }
+
+    /**
      * Information about the session in which the event occurred.
      * 
      * @param session
@@ -297,6 +441,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAppPackageName() != null)
+            sb.append("AppPackageName: ").append(getAppPackageName()).append(",");
+        if (getAppTitle() != null)
+            sb.append("AppTitle: ").append(getAppTitle()).append(",");
+        if (getAppVersionCode() != null)
+            sb.append("AppVersionCode: ").append(getAppVersionCode()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
         if (getClientSdkVersion() != null)
@@ -305,6 +455,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
             sb.append("EventType: ").append(getEventType()).append(",");
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
+        if (getSdkName() != null)
+            sb.append("SdkName: ").append(getSdkName()).append(",");
         if (getSession() != null)
             sb.append("Session: ").append(getSession()).append(",");
         if (getTimestamp() != null)
@@ -323,6 +475,18 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Event == false)
             return false;
         Event other = (Event) obj;
+        if (other.getAppPackageName() == null ^ this.getAppPackageName() == null)
+            return false;
+        if (other.getAppPackageName() != null && other.getAppPackageName().equals(this.getAppPackageName()) == false)
+            return false;
+        if (other.getAppTitle() == null ^ this.getAppTitle() == null)
+            return false;
+        if (other.getAppTitle() != null && other.getAppTitle().equals(this.getAppTitle()) == false)
+            return false;
+        if (other.getAppVersionCode() == null ^ this.getAppVersionCode() == null)
+            return false;
+        if (other.getAppVersionCode() != null && other.getAppVersionCode().equals(this.getAppVersionCode()) == false)
+            return false;
         if (other.getAttributes() == null ^ this.getAttributes() == null)
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
@@ -338,6 +502,10 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         if (other.getMetrics() == null ^ this.getMetrics() == null)
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
+        if (other.getSdkName() == null ^ this.getSdkName() == null)
+            return false;
+        if (other.getSdkName() != null && other.getSdkName().equals(this.getSdkName()) == false)
             return false;
         if (other.getSession() == null ^ this.getSession() == null)
             return false;
@@ -355,10 +523,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAppPackageName() == null) ? 0 : getAppPackageName().hashCode());
+        hashCode = prime * hashCode + ((getAppTitle() == null) ? 0 : getAppTitle().hashCode());
+        hashCode = prime * hashCode + ((getAppVersionCode() == null) ? 0 : getAppVersionCode().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
         hashCode = prime * hashCode + ((getClientSdkVersion() == null) ? 0 : getClientSdkVersion().hashCode());
         hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getSdkName() == null) ? 0 : getSdkName().hashCode());
         hashCode = prime * hashCode + ((getSession() == null) ? 0 : getSession().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         return hashCode;

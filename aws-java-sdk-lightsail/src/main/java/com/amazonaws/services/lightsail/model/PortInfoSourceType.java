@@ -22,7 +22,8 @@ public enum PortInfoSourceType {
 
     DEFAULT("DEFAULT"),
     INSTANCE("INSTANCE"),
-    NONE("NONE");
+    NONE("NONE"),
+    CLOSED("CLOSED");
 
     private String value;
 

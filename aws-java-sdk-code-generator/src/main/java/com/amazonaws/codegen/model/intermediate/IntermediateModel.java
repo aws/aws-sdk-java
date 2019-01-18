@@ -46,6 +46,7 @@ public class IntermediateModel {
 
     private final ServiceExamples examples;
 
+    @JsonIgnore
     private final Map<String, AuthorizerModel> customAuthorizers;
 
     @JsonIgnore

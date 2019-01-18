@@ -27,7 +27,7 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -35,23 +35,23 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-     * characters in length.
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
@@ -69,17 +69,15 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     private String qualifier;
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
+     * that has changed since you last read it.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -87,50 +85,50 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-     * characters in length.
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name of the Lambda function, version, or alias.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -139,7 +137,7 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -147,49 +145,49 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-     * characters in length.
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return The name of the Lambda function.</p>
+     * @return The name of the Lambda function, version, or alias.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *         to 64 characters in length.
+     *         You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *         full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -198,7 +196,7 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the Lambda function.
+     * The name of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -206,50 +204,50 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-     * characters in length.
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the Lambda function.</p>
+     *        The name of the Lambda function, version, or alias.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,17 +338,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
+     * that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     *        Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
+     *        policy that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -359,16 +353,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
+     * that has changed since you last read it.
      * </p>
      * 
-     * @return An optional value you can use to ensure you are updating the latest update of the function version or
-     *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *         function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *         version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * @return Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
+     *         policy that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -377,17 +367,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you to retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
+     * that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you to retrieve the latest function
-     *        version or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     *        Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
+     *        policy that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

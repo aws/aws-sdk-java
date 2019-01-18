@@ -442,7 +442,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Creates a collection in an AWS Region. You can add faces to the collection using the operation.
+     * Creates a collection in an AWS Region. You can add faces to the collection using the <a>IndexFaces</a> operation.
      * </p>
      * <p>
      * For example, you might create collections, one for each of your application users. A user can then index faces
@@ -533,11 +533,11 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * stream. You also specify the face recognition criteria in <code>Settings</code>. For example, the collection
      * containing faces that you want to recognize. Use <code>Name</code> to assign an identifier for the stream
      * processor. You use <code>Name</code> to manage the stream processor. For example, you can start processing the
-     * source video by calling with the <code>Name</code> field.
+     * source video by calling <a>StartStreamProcessor</a> with the <code>Name</code> field.
      * </p>
      * <p>
-     * After you have finished analyzing a streaming video, use to stop processing. You can delete the stream processor
-     * by calling .
+     * After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing. You can
+     * delete the stream processor by calling <a>DeleteStreamProcessor</a>.
      * </p>
      * 
      * @param createStreamProcessorRequest
@@ -740,8 +740,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
     /**
      * <p>
      * Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you
-     * create the stream processor with . You might not be able to use the same name for a stream processor for a few
-     * seconds after calling <code>DeleteStreamProcessor</code>.
+     * create the stream processor with <a>CreateStreamProcessor</a>. You might not be able to use the same name for a
+     * stream processor for a few seconds after calling <code>DeleteStreamProcessor</code>.
      * </p>
      * 
      * @param deleteStreamProcessorRequest
@@ -873,9 +873,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Provides information about a stream processor created by . You can get information about the input and output
-     * streams, the input parameters for the face recognition being performed, and the current status of the stream
-     * processor.
+     * Provides information about a stream processor created by <a>CreateStreamProcessor</a>. You can get information
+     * about the input and output streams, the input parameters for the face recognition being performed, and the
+     * current status of the stream processor.
      * </p>
      * 
      * @param describeStreamProcessorRequest
@@ -1084,7 +1084,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <p>
      * In response, the API returns an array of labels. In addition, the response also includes the orientation
      * correction. Optionally, you can specify <code>MinConfidence</code> to control the confidence threshold for the
-     * labels returned. The default is 50%. You can also add the <code>MaxLabels</code> parameter to limit the number of
+     * labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of
      * labels returned.
      * </p>
      * <note>
@@ -1094,9 +1094,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * </note>
      * <p>
-     * <code>DetectLabels</code> returns bounding boxes for instances of common object labels in an array of objects. An
-     * <code>Instance</code> object contains a object, for the location of the label on the image. It also includes the
-     * confidence by which the bounding box was detected.
+     * <code>DetectLabels</code> returns bounding boxes for instances of common object labels in an array of
+     * <a>Instance</a> objects. An <code>Instance</code> object contains a <a>BoundingBox</a> object, for the location
+     * of the label on the image. It also includes the confidence by which the bounding box was detected.
      * </p>
      * <p>
      * <code>DetectLabels</code> also returns a hierarchical taxonomy of detected labels. For example, a detected car
@@ -1269,9 +1269,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * formatted file.
      * </p>
      * <p>
-     * The <code>DetectText</code> operation returns text in an array of elements, <code>TextDetections</code>. Each
-     * <code>TextDetection</code> element provides information about a single word or line of text that was detected in
-     * the image.
+     * The <code>DetectText</code> operation returns text in an array of <a>TextDetection</a> elements,
+     * <code>TextDetections</code>. Each <code>TextDetection</code> element provides information about a single word or
+     * line of text that was detected in the image.
      * </p>
      * <p>
      * A word is one or more ISO basic latin script characters that are not separated by spaces. <code>DetectText</code>
@@ -1432,24 +1432,26 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets the celebrity recognition results for a Amazon Rekognition Video analysis started by .
+     * Gets the celebrity recognition results for a Amazon Rekognition Video analysis started by
+     * <a>StartCelebrityRecognition</a>.
      * </p>
      * <p>
-     * Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call to which returns a
-     * job identifier (<code>JobId</code>). When the celebrity recognition operation finishes, Amazon Rekognition Video
-     * publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to
-     * <code>StartCelebrityRecognition</code>. To get the results of the celebrity recognition analysis, first check
-     * that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
-     * <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
-     * <code>StartCelebrityDetection</code>.
+     * Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call to
+     * <a>StartCelebrityRecognition</a> which returns a job identifier (<code>JobId</code>). When the celebrity
+     * recognition operation finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple
+     * Notification Service topic registered in the initial call to <code>StartCelebrityRecognition</code>. To get the
+     * results of the celebrity recognition analysis, first check that the status value published to the Amazon SNS
+     * topic is <code>SUCCEEDED</code>. If so, call <code>GetCelebrityDetection</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartCelebrityDetection</code>.
      * </p>
      * <p>
      * For more information, see Working With Stored Videos in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
      * <code>GetCelebrityRecognition</code> returns detected celebrities and the time(s) they are detected in an array (
-     * <code>Celebrities</code>) of objects. Each <code>CelebrityRecognition</code> contains information about the
-     * celebrity in a object and the time, <code>Timestamp</code>, the celebrity was detected.
+     * <code>Celebrities</code>) of <a>CelebrityRecognition</a> objects. Each <code>CelebrityRecognition</code> contains
+     * information about the celebrity in a <a>CelebrityDetail</a> object and the time, <code>Timestamp</code>, the
+     * celebrity was detected.
      * </p>
      * <note>
      * <p>
@@ -1466,7 +1468,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * The <code>CelebrityDetail</code> object includes the celebrity identifer and additional information urls. If you
-     * don't store the additional information urls, you can get them later by calling with the celebrity identifer.
+     * don't store the additional information urls, you can get them later by calling <a>GetCelebrityInfo</a> with the
+     * celebrity identifer.
      * </p>
      * <p>
      * No information is returned for faces not recognized as celebrities.
@@ -1543,15 +1546,16 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets the content moderation analysis results for a Amazon Rekognition Video analysis started by .
+     * Gets the content moderation analysis results for a Amazon Rekognition Video analysis started by
+     * <a>StartContentModeration</a>.
      * </p>
      * <p>
-     * Content moderation analysis of a video is an asynchronous operation. You start analysis by calling . which
-     * returns a job identifier (<code>JobId</code>). When analysis finishes, Amazon Rekognition Video publishes a
-     * completion status to the Amazon Simple Notification Service topic registered in the initial call to
-     * <code>StartContentModeration</code>. To get the results of the content moderation analysis, first check that the
-     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call
-     * <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * Content moderation analysis of a video is an asynchronous operation. You start analysis by calling
+     * <a>StartContentModeration</a>. which returns a job identifier (<code>JobId</code>). When analysis finishes,
+     * Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered
+     * in the initial call to <code>StartContentModeration</code>. To get the results of the content moderation
+     * analysis, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+     * call <code>GetCelebrityDetection</code> and pass the job identifier (<code>JobId</code>) from the initial call to
      * <code>StartCelebrityDetection</code>.
      * </p>
      * <p>
@@ -1559,7 +1563,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * <code>GetContentModeration</code> returns detected content moderation labels, and the time they are detected, in
-     * an array, <code>ModerationLabels</code>, of objects.
+     * an array, <code>ModerationLabels</code>, of <a>ContentModerationDetection</a> objects.
      * </p>
      * <p>
      * By default, the moderated labels are returned sorted by time, in milliseconds from the start of the video. You
@@ -1640,15 +1644,16 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets face detection results for a Amazon Rekognition Video analysis started by .
+     * Gets face detection results for a Amazon Rekognition Video analysis started by <a>StartFaceDetection</a>.
      * </p>
      * <p>
      * Face detection with Amazon Rekognition Video is an asynchronous operation. You start face detection by calling
-     * which returns a job identifier (<code>JobId</code>). When the face detection operation finishes, Amazon
-     * Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the
-     * initial call to <code>StartFaceDetection</code>. To get the results of the face detection operation, first check
-     * that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job
-     * identifier (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
+     * <a>StartFaceDetection</a> which returns a job identifier (<code>JobId</code>). When the face detection operation
+     * finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic
+     * registered in the initial call to <code>StartFaceDetection</code>. To get the results of the face detection
+     * operation, first check that the status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so,
+     * call <a>GetFaceDetection</a> and pass the job identifier (<code>JobId</code>) from the initial call to
+     * <code>StartFaceDetection</code>.
      * </p>
      * <p>
      * <code>GetFaceDetection</code> returns an array of detected faces (<code>Faces</code>) sorted by the time the
@@ -1724,14 +1729,14 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets the face search results for Amazon Rekognition Video face search started by . The search returns faces in a
-     * collection that match the faces of persons detected in a video. It also includes the time(s) that faces are
-     * matched in the video.
+     * Gets the face search results for Amazon Rekognition Video face search started by <a>StartFaceSearch</a>. The
+     * search returns faces in a collection that match the faces of persons detected in a video. It also includes the
+     * time(s) that faces are matched in the video.
      * </p>
      * <p>
-     * Face search in a video is an asynchronous operation. You start face search by calling to which returns a job
-     * identifier (<code>JobId</code>). When the search operation finishes, Amazon Rekognition Video publishes a
-     * completion status to the Amazon Simple Notification Service topic registered in the initial call to
+     * Face search in a video is an asynchronous operation. You start face search by calling to <a>StartFaceSearch</a>
+     * which returns a job identifier (<code>JobId</code>). When the search operation finishes, Amazon Rekognition Video
+     * publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to
      * <code>StartFaceSearch</code>. To get the search results, first check that the status value published to the
      * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <code>GetFaceSearch</code> and pass the job identifier (
      * <code>JobId</code>) from the initial call to <code>StartFaceSearch</code>.
@@ -1740,9 +1745,10 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * The search results are retured in an array, <code>Persons</code>, of objects. Each<code>PersonMatch</code>
-     * element contains details about the matching faces in the input collection, person information (facial attributes,
-     * bounding boxes, and person identifer) for the matched person, and the time the person was matched in the video.
+     * The search results are retured in an array, <code>Persons</code>, of <a>PersonMatch</a> objects. Each
+     * <code>PersonMatch</code> element contains details about the matching faces in the input collection, person
+     * information (facial attributes, bounding boxes, and person identifer) for the matched person, and the time the
+     * person was matched in the video.
      * </p>
      * <note>
      * <p>
@@ -1820,15 +1826,15 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets the label detection results of a Amazon Rekognition Video analysis started by .
+     * Gets the label detection results of a Amazon Rekognition Video analysis started by <a>StartLabelDetection</a>.
      * </p>
      * <p>
-     * The label detection operation is started by a call to which returns a job identifier (<code>JobId</code>). When
-     * the label detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple
-     * Notification Service topic registered in the initial call to <code>StartlabelDetection</code>. To get the results
-     * of the label detection operation, first check that the status value published to the Amazon SNS topic is
-     * <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the initial call to
-     * <code>StartLabelDetection</code>.
+     * The label detection operation is started by a call to <a>StartLabelDetection</a> which returns a job identifier (
+     * <code>JobId</code>). When the label detection operation finishes, Amazon Rekognition publishes a completion
+     * status to the Amazon Simple Notification Service topic registered in the initial call to
+     * <code>StartlabelDetection</code>. To get the results of the label detection operation, first check that the
+     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a>
+     * and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
      * </p>
      * <p>
      * <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time the
@@ -1840,19 +1846,16 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * the time the label was detected in the video.
      * </p>
      * <p>
+     * The returned labels also include bounding box information for common objects, a hierarchical taxonomy of detected
+     * labels, and the version of the label model used for detection.
+     * </p>
+     * <p>
      * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
      * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
      * token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code>
      * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
      * <code>GetLabelDetection</code>.
      * </p>
-     * <note>
-     * <p>
-     * <code>GetLabelDetection</code> doesn't return a hierarchical taxonomy, or bounding box information, for detected
-     * labels. <code>GetLabelDetection</code> returns <code>null</code> for the <code>Parents</code> and
-     * <code>Instances</code> attributes of the object which is returned in the <code>Labels</code> array.
-     * </p>
-     * </note>
      * 
      * @param getLabelDetectionRequest
      * @return Result of the GetLabelDetection operation returned by the service.
@@ -1916,7 +1919,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets the path tracking results of a Amazon Rekognition Video analysis started by .
+     * Gets the path tracking results of a Amazon Rekognition Video analysis started by <a>StartPersonTracking</a>.
      * </p>
      * <p>
      * The person path tracking operation is started by a call to <code>StartPersonTracking</code> which returns a job
@@ -1926,8 +1929,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * To get the results of the person path tracking operation, first check that the status value published to the
-     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
-     * initial call to <code>StartPersonTracking</code>.
+     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetPersonTracking</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
      * </p>
      * <p>
      * <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked persons and the time(s) their
@@ -2023,13 +2026,13 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * Amazon Rekognition doesn't save the actual faces that are detected. Instead, the underlying detection algorithm
      * first detects the faces in the input image. For each face, the algorithm extracts facial features into a feature
      * vector, and stores it in the backend database. Amazon Rekognition uses feature vectors when it performs face
-     * match and search operations using the and operations.
+     * match and search operations using the <a>SearchFaces</a> and <a>SearchFacesByImage</a> operations.
      * </p>
      * <p>
      * For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * To get the number of faces in a collection, call .
+     * To get the number of faces in a collection, call <a>DescribeCollection</a>.
      * </p>
      * <p>
      * If you're using version 1.0 of the face detection model, <code>IndexFaces</code> indexes the 15 largest faces in
@@ -2040,17 +2043,18 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <code>OrientationCorrection</code> field.
      * </p>
      * <p>
-     * To determine which version of the model you're using, call and supply the collection ID. You can also get the
-     * model version from the value of <code>FaceModelVersion</code> in the response from <code>IndexFaces</code>
+     * To determine which version of the model you're using, call <a>DescribeCollection</a> and supply the collection
+     * ID. You can also get the model version from the value of <code>FaceModelVersion</code> in the response from
+     * <code>IndexFaces</code>
      * </p>
      * <p>
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
      * If you provide the optional <code>ExternalImageID</code> for the input image you provided, Amazon Rekognition
-     * associates this ID with all faces that it detects. When you call the operation, the response returns the external
-     * ID. You can use this external image ID to create a client-side index to associate the faces with each image. You
-     * can then use the index to find all faces in an image.
+     * associates this ID with all faces that it detects. When you call the <a>ListFaces</a> operation, the response
+     * returns the external ID. You can use this external image ID to create a client-side index to associate the faces
+     * with each image. You can then use the index to find all faces in an image.
      * </p>
      * <p>
      * You can specify the maximum number of faces to index with the <code>MaxFaces</code> input parameter. This is
@@ -2067,12 +2071,12 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <note>
      * <p>
      * To use quality filtering, you need a collection associated with version 3 of the face model. To get the version
-     * of the face model associated with a collection, call .
+     * of the face model associated with a collection, call <a>DescribeCollection</a>.
      * </p>
      * </note>
      * <p>
-     * Information about faces detected in an image, but not indexed, is returned in an array of objects,
-     * <code>UnindexedFaces</code>. Faces aren't indexed for reasons such as:
+     * Information about faces detected in an image, but not indexed, is returned in an array of <a>UnindexedFace</a>
+     * objects, <code>UnindexedFaces</code>. Faces aren't indexed for reasons such as:
      * </p>
      * <ul>
      * <li>
@@ -2354,7 +2358,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets a list of stream processors that you have created with .
+     * Gets a list of stream processors that you have created with <a>CreateStreamProcessor</a>.
      * </p>
      * 
      * @param listStreamProcessorsRequest
@@ -2435,7 +2439,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * Amazon Rekognition doesn't retain information about which images a celebrity has been recognized in. Your
      * application must store this information and use the <code>Celebrity</code> ID property as a unique identifier for
      * the celebrity. If you don't store the celebrity name or additional information URLs returned by
-     * <code>RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to the operation.
+     * <code>RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to the
+     * <a>GetCelebrityInfo</a> operation.
      * </p>
      * <p>
      * You pass the input image either as base64-encoded image bytes or as a reference to an image in an Amazon S3
@@ -2603,8 +2608,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <note>
      * <p>
-     * To search for all faces in an input image, you might first call the operation, and then use the face IDs returned
-     * in subsequent calls to the operation.
+     * To search for all faces in an input image, you might first call the <a>IndexFaces</a> operation, and then use the
+     * face IDs returned in subsequent calls to the <a>SearchFaces</a> operation.
      * </p>
      * <p>
      * You can also call the <code>DetectFaces</code> operation and use the bounding boxes in the response to make face
@@ -2706,8 +2711,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * recognition analysis is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple
      * Notification Service topic that you specify in <code>NotificationChannel</code>. To get the results of the
      * celebrity recognition analysis, first check that the status value published to the Amazon SNS topic is
-     * <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the initial call to
-     * <code>StartCelebrityRecognition</code>.
+     * <code>SUCCEEDED</code>. If so, call <a>GetCelebrityRecognition</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartCelebrityRecognition</code>.
      * </p>
      * <p>
      * For more information, see Recognizing Celebrities in the Amazon Rekognition Developer Guide.
@@ -2797,8 +2802,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * To get the results of the content moderation analysis, first check that the status value published to the Amazon
-     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
-     * initial call to <code>StartContentModeration</code>.
+     * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetContentModeration</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartContentModeration</code>.
      * </p>
      * <p>
      * For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.
@@ -2884,8 +2889,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * <code>JobId</code>) that you use to get the results of the operation. When face detection is finished, Amazon
      * Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic that you specify
      * in <code>NotificationChannel</code>. To get the results of the face detection operation, first check that the
-     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier
-     * (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
+     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetFaceDetection</a> and
+     * pass the job identifier (<code>JobId</code>) from the initial call to <code>StartFaceDetection</code>.
      * </p>
      * <p>
      * For more information, see Detecting Faces in a Stored Video in the Amazon Rekognition Developer Guide.
@@ -2971,8 +2976,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * search results once the search has completed. When searching is finished, Amazon Rekognition Video publishes a
      * completion status to the Amazon Simple Notification Service topic that you specify in
      * <code>NotificationChannel</code>. To get the search results, first check that the status value published to the
-     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
-     * initial call to <code>StartFaceSearch</code>. For more information, see <a>procedure-person-search-videos</a>.
+     * Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetFaceSearch</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartFaceSearch</code>. For more information, see
+     * <a>procedure-person-search-videos</a>.
      * </p>
      * 
      * @param startFaceSearchRequest
@@ -3063,8 +3069,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * To get the results of the label detection operation, first check that the status value published to the Amazon
-     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
-     * initial call to <code>StartLabelDetection</code>.
+     * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
      * </p>
      * <p/>
      * 
@@ -3150,8 +3156,8 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </p>
      * <p>
      * To get the results of the person detection operation, first check that the status value published to the Amazon
-     * SNS topic is <code>SUCCEEDED</code>. If so, call and pass the job identifier (<code>JobId</code>) from the
-     * initial call to <code>StartPersonTracking</code>.
+     * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetPersonTracking</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
      * </p>
      * 
      * @param startPersonTrackingRequest
@@ -3225,9 +3231,9 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Starts processing a stream processor. You create a stream processor by calling . To tell
-     * <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code> field
-     * specified in the call to <code>CreateStreamProcessor</code>.
+     * Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>. To
+     * tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code>
+     * field specified in the call to <code>CreateStreamProcessor</code>.
      * </p>
      * 
      * @param startStreamProcessorRequest
@@ -3291,7 +3297,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Stops a running stream processor that was created by .
+     * Stops a running stream processor that was created by <a>CreateStreamProcessor</a>.
      * </p>
      * 
      * @param stopStreamProcessorRequest

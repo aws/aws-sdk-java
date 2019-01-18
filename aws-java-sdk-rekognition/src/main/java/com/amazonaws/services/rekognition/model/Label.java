@@ -19,13 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Structure containing details about the detected label, including the name, and level of confidence.
+ * Structure containing details about the detected label, including the name, detected instances, parent labels, and
+ * level of confidence.
  * </p>
  * <p>
- * The Amazon Rekognition Image operation operation returns a hierarchical taxonomy (<code>Parents</code>) for detected
- * labels and also bounding box information (<code>Instances</code>) for detected labels. Amazon Rekognition Video
- * doesn't return this information and returns <code>null</code> for the <code>Parents</code> and <code>Instances</code>
- * attributes.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -49,24 +46,12 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture,
      * apparel or pets.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     * <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      */
     private java.util.List<Instance> instances;
     /**
      * <p>
      * The parent labels for a label. The response includes all ancestor labels.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     * <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      */
     private java.util.List<Parent> parents;
 
@@ -156,20 +141,10 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture,
      * apparel or pets.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     * <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      * 
      * @return If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each
      *         instance of the detected object. Bounding boxes are returned for common object labels such as people,
-     *         cars, furniture, apparel or pets.</p> <note>
-     *         <p>
-     *         Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     *         <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     *         </p>
+     *         cars, furniture, apparel or pets.
      */
 
     public java.util.List<Instance> getInstances() {
@@ -182,21 +157,11 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture,
      * apparel or pets.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     * <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      * 
      * @param instances
      *        If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each
      *        instance of the detected object. Bounding boxes are returned for common object labels such as people,
-     *        cars, furniture, apparel or pets.</p> <note>
-     *        <p>
-     *        Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     *        <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     *        </p>
+     *        cars, furniture, apparel or pets.
      */
 
     public void setInstances(java.util.Collection<Instance> instances) {
@@ -214,12 +179,6 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture,
      * apparel or pets.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     * <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstances(java.util.Collection)} or {@link #withInstances(java.util.Collection)} if you want to
@@ -229,11 +188,7 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * @param instances
      *        If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each
      *        instance of the detected object. Bounding boxes are returned for common object labels such as people,
-     *        cars, furniture, apparel or pets.</p> <note>
-     *        <p>
-     *        Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     *        <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     *        </p>
+     *        cars, furniture, apparel or pets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,21 +208,11 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * of the detected object. Bounding boxes are returned for common object labels such as people, cars, furniture,
      * apparel or pets.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     * <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      * 
      * @param instances
      *        If <code>Label</code> represents an object, <code>Instances</code> contains the bounding boxes for each
      *        instance of the detected object. Bounding boxes are returned for common object labels such as people,
-     *        cars, furniture, apparel or pets.</p> <note>
-     *        <p>
-     *        Amazon Rekognition Video does not support bounding box information for detected labels. The value of
-     *        <code>Instances</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     *        </p>
+     *        cars, furniture, apparel or pets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,18 +225,8 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The parent labels for a label. The response includes all ancestor labels.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     * <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      * 
-     * @return The parent labels for a label. The response includes all ancestor labels.</p> <note>
-     *         <p>
-     *         Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     *         <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     *         </p>
+     * @return The parent labels for a label. The response includes all ancestor labels.
      */
 
     public java.util.List<Parent> getParents() {
@@ -302,19 +237,9 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The parent labels for a label. The response includes all ancestor labels.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     * <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      * 
      * @param parents
-     *        The parent labels for a label. The response includes all ancestor labels.</p> <note>
-     *        <p>
-     *        Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     *        <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     *        </p>
+     *        The parent labels for a label. The response includes all ancestor labels.
      */
 
     public void setParents(java.util.Collection<Parent> parents) {
@@ -330,12 +255,6 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The parent labels for a label. The response includes all ancestor labels.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     * <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParents(java.util.Collection)} or {@link #withParents(java.util.Collection)} if you want to override
@@ -343,11 +262,7 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param parents
-     *        The parent labels for a label. The response includes all ancestor labels.</p> <note>
-     *        <p>
-     *        Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     *        <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     *        </p>
+     *        The parent labels for a label. The response includes all ancestor labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,19 +280,9 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The parent labels for a label. The response includes all ancestor labels.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     * <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     * </p>
-     * </note>
      * 
      * @param parents
-     *        The parent labels for a label. The response includes all ancestor labels.</p> <note>
-     *        <p>
-     *        Amazon Rekognition Video does not support a hierarchical taxonomy of detected labels. The value of
-     *        <code>Parents</code> is returned as <code>null</code> by <code>GetLabelDetection</code>.
-     *        </p>
+     *        The parent labels for a label. The response includes all ancestor labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

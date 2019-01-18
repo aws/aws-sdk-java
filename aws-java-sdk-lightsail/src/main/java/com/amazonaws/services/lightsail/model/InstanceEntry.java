@@ -69,6 +69,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * NONE — Default to Amazon EC2.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CLOSED — All ports closed.
+     * </p>
+     * </li>
      * </ul>
      */
     private String portInfoSource;
@@ -222,6 +227,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * NONE — Default to Amazon EC2.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CLOSED — All ports closed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param portInfoSource
@@ -243,6 +253,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        NONE — Default to Amazon EC2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CLOSED — All ports closed.
      *        </p>
      *        </li>
      * @see PortInfoSourceType
@@ -275,6 +290,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * NONE — Default to Amazon EC2.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CLOSED — All ports closed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The port configuration to use for the new Amazon EC2 instance.</p>
@@ -295,6 +315,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         NONE — Default to Amazon EC2.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CLOSED — All ports closed.
      *         </p>
      *         </li>
      * @see PortInfoSourceType
@@ -327,6 +352,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * NONE — Default to Amazon EC2.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CLOSED — All ports closed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param portInfoSource
@@ -348,6 +378,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        NONE — Default to Amazon EC2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CLOSED — All ports closed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -382,6 +417,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      * NONE — Default to Amazon EC2.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CLOSED — All ports closed.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param portInfoSource
@@ -403,6 +443,11 @@ public class InstanceEntry implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        NONE — Default to Amazon EC2.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CLOSED — All ports closed.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

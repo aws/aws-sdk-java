@@ -57,28 +57,26 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String functionName;
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      */
     private String functionVersion;
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
-     * Using Aliases</a>.
+     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      */
     private AliasRoutingConfiguration routingConfig;
@@ -266,11 +264,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Name for the alias you are creating.
+     *        The name of the alias.
      */
 
     public void setName(String name) {
@@ -279,10 +277,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
-     * @return Name for the alias you are creating.
+     * @return The name of the alias.
      */
 
     public String getName() {
@@ -291,11 +289,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Name for the alias you are creating.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Name for the alias you are creating.
+     *        The name of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,11 +304,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Lambda function version for which you are creating the alias.
+     *        The function version that the alias invokes.
      */
 
     public void setFunctionVersion(String functionVersion) {
@@ -319,10 +317,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
-     * @return Lambda function version for which you are creating the alias.
+     * @return The function version that the alias invokes.
      */
 
     public String getFunctionVersion() {
@@ -331,11 +329,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Lambda function version for which you are creating the alias.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Lambda function version for which you are creating the alias.
+     *        The function version that the alias invokes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,11 +344,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Description of the alias.
+     *        A description of the alias.
      */
 
     public void setDescription(String description) {
@@ -359,10 +357,10 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
-     * @return Description of the alias.
+     * @return A description of the alias.
      */
 
     public String getDescription() {
@@ -371,11 +369,11 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Description of the alias.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        Description of the alias.
+     *        A description of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,17 +384,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
-     * Using Aliases</a>.
+     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
-     *        Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     *        Shifting Using Aliases</a>.
+     *        The <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
      */
 
     public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
@@ -405,16 +400,13 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
-     * Using Aliases</a>.
+     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
-     * @return Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *         traffic will invoke each version. For more information, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     *         Shifting Using Aliases</a>.
+     * @return The <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *         configuration</a> of the alias.
      */
 
     public AliasRoutingConfiguration getRoutingConfig() {
@@ -423,17 +415,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
-     * Using Aliases</a>.
+     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
-     *        Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     *        Shifting Using Aliases</a>.
+     *        The <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

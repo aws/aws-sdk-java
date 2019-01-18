@@ -92,16 +92,28 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
     private String progress;
     /**
      * <p>
-     * The unique name of the source disk from which you are creating the disk snapshot.
+     * The unique name of the source disk from which the disk snapshot was created.
      * </p>
      */
     private String fromDiskName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source disk from which you are creating the disk snapshot.
+     * The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.
      * </p>
      */
     private String fromDiskArn;
+    /**
+     * <p>
+     * The unique name of the source instance from which the disk (system volume) snapshot was created.
+     * </p>
+     */
+    private String fromInstanceName;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.
+     * </p>
+     */
+    private String fromInstanceArn;
 
     /**
      * <p>
@@ -594,11 +606,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique name of the source disk from which you are creating the disk snapshot.
+     * The unique name of the source disk from which the disk snapshot was created.
      * </p>
      * 
      * @param fromDiskName
-     *        The unique name of the source disk from which you are creating the disk snapshot.
+     *        The unique name of the source disk from which the disk snapshot was created.
      */
 
     public void setFromDiskName(String fromDiskName) {
@@ -607,10 +619,10 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique name of the source disk from which you are creating the disk snapshot.
+     * The unique name of the source disk from which the disk snapshot was created.
      * </p>
      * 
-     * @return The unique name of the source disk from which you are creating the disk snapshot.
+     * @return The unique name of the source disk from which the disk snapshot was created.
      */
 
     public String getFromDiskName() {
@@ -619,11 +631,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique name of the source disk from which you are creating the disk snapshot.
+     * The unique name of the source disk from which the disk snapshot was created.
      * </p>
      * 
      * @param fromDiskName
-     *        The unique name of the source disk from which you are creating the disk snapshot.
+     *        The unique name of the source disk from which the disk snapshot was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -634,11 +646,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source disk from which you are creating the disk snapshot.
+     * The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.
      * </p>
      * 
      * @param fromDiskArn
-     *        The Amazon Resource Name (ARN) of the source disk from which you are creating the disk snapshot.
+     *        The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.
      */
 
     public void setFromDiskArn(String fromDiskArn) {
@@ -647,10 +659,10 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source disk from which you are creating the disk snapshot.
+     * The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the source disk from which you are creating the disk snapshot.
+     * @return The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.
      */
 
     public String getFromDiskArn() {
@@ -659,16 +671,99 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the source disk from which you are creating the disk snapshot.
+     * The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.
      * </p>
      * 
      * @param fromDiskArn
-     *        The Amazon Resource Name (ARN) of the source disk from which you are creating the disk snapshot.
+     *        The Amazon Resource Name (ARN) of the source disk from which the disk snapshot was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DiskSnapshot withFromDiskArn(String fromDiskArn) {
         setFromDiskArn(fromDiskArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique name of the source instance from which the disk (system volume) snapshot was created.
+     * </p>
+     * 
+     * @param fromInstanceName
+     *        The unique name of the source instance from which the disk (system volume) snapshot was created.
+     */
+
+    public void setFromInstanceName(String fromInstanceName) {
+        this.fromInstanceName = fromInstanceName;
+    }
+
+    /**
+     * <p>
+     * The unique name of the source instance from which the disk (system volume) snapshot was created.
+     * </p>
+     * 
+     * @return The unique name of the source instance from which the disk (system volume) snapshot was created.
+     */
+
+    public String getFromInstanceName() {
+        return this.fromInstanceName;
+    }
+
+    /**
+     * <p>
+     * The unique name of the source instance from which the disk (system volume) snapshot was created.
+     * </p>
+     * 
+     * @param fromInstanceName
+     *        The unique name of the source instance from which the disk (system volume) snapshot was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskSnapshot withFromInstanceName(String fromInstanceName) {
+        setFromInstanceName(fromInstanceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.
+     * </p>
+     * 
+     * @param fromInstanceArn
+     *        The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was
+     *        created.
+     */
+
+    public void setFromInstanceArn(String fromInstanceArn) {
+        this.fromInstanceArn = fromInstanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was
+     *         created.
+     */
+
+    public String getFromInstanceArn() {
+        return this.fromInstanceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was created.
+     * </p>
+     * 
+     * @param fromInstanceArn
+     *        The Amazon Resource Name (ARN) of the source instance from which the disk (system volume) snapshot was
+     *        created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiskSnapshot withFromInstanceArn(String fromInstanceArn) {
+        setFromInstanceArn(fromInstanceArn);
         return this;
     }
 
@@ -707,7 +802,11 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
         if (getFromDiskName() != null)
             sb.append("FromDiskName: ").append(getFromDiskName()).append(",");
         if (getFromDiskArn() != null)
-            sb.append("FromDiskArn: ").append(getFromDiskArn());
+            sb.append("FromDiskArn: ").append(getFromDiskArn()).append(",");
+        if (getFromInstanceName() != null)
+            sb.append("FromInstanceName: ").append(getFromInstanceName()).append(",");
+        if (getFromInstanceArn() != null)
+            sb.append("FromInstanceArn: ").append(getFromInstanceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -770,6 +869,14 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFromDiskArn() != null && other.getFromDiskArn().equals(this.getFromDiskArn()) == false)
             return false;
+        if (other.getFromInstanceName() == null ^ this.getFromInstanceName() == null)
+            return false;
+        if (other.getFromInstanceName() != null && other.getFromInstanceName().equals(this.getFromInstanceName()) == false)
+            return false;
+        if (other.getFromInstanceArn() == null ^ this.getFromInstanceArn() == null)
+            return false;
+        if (other.getFromInstanceArn() != null && other.getFromInstanceArn().equals(this.getFromInstanceArn()) == false)
+            return false;
         return true;
     }
 
@@ -790,6 +897,8 @@ public class DiskSnapshot implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         hashCode = prime * hashCode + ((getFromDiskName() == null) ? 0 : getFromDiskName().hashCode());
         hashCode = prime * hashCode + ((getFromDiskArn() == null) ? 0 : getFromDiskArn().hashCode());
+        hashCode = prime * hashCode + ((getFromInstanceName() == null) ? 0 : getFromInstanceName().hashCode());
+        hashCode = prime * hashCode + ((getFromInstanceArn() == null) ? 0 : getFromInstanceArn().hashCode());
         return hashCode;
     }
 

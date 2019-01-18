@@ -57,37 +57,33 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String functionName;
     /**
      * <p>
-     * The alias name.
+     * The name of the alias.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Using this parameter you can change the Lambda function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      */
     private String functionVersion;
     /**
      * <p>
-     * You can change the description of the alias using this parameter.
+     * A description of the alias.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
-     * Using Aliases</a>.
+     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      */
     private AliasRoutingConfiguration routingConfig;
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an alias
+     * that has changed since you last read it.
      * </p>
      */
     private String revisionId;
@@ -275,11 +271,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias name.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        The alias name.
+     *        The name of the alias.
      */
 
     public void setName(String name) {
@@ -288,10 +284,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias name.
+     * The name of the alias.
      * </p>
      * 
-     * @return The alias name.
+     * @return The name of the alias.
      */
 
     public String getName() {
@@ -300,11 +296,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The alias name.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        The alias name.
+     *        The name of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,11 +311,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Using this parameter you can change the Lambda function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Using this parameter you can change the Lambda function version to which the alias points.
+     *        The function version that the alias invokes.
      */
 
     public void setFunctionVersion(String functionVersion) {
@@ -328,10 +324,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Using this parameter you can change the Lambda function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
-     * @return Using this parameter you can change the Lambda function version to which the alias points.
+     * @return The function version that the alias invokes.
      */
 
     public String getFunctionVersion() {
@@ -340,11 +336,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Using this parameter you can change the Lambda function version to which the alias points.
+     * The function version that the alias invokes.
      * </p>
      * 
      * @param functionVersion
-     *        Using this parameter you can change the Lambda function version to which the alias points.
+     *        The function version that the alias invokes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +351,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * You can change the description of the alias using this parameter.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        You can change the description of the alias using this parameter.
+     *        A description of the alias.
      */
 
     public void setDescription(String description) {
@@ -368,10 +364,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * You can change the description of the alias using this parameter.
+     * A description of the alias.
      * </p>
      * 
-     * @return You can change the description of the alias using this parameter.
+     * @return A description of the alias.
      */
 
     public String getDescription() {
@@ -380,11 +376,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * You can change the description of the alias using this parameter.
+     * A description of the alias.
      * </p>
      * 
      * @param description
-     *        You can change the description of the alias using this parameter.
+     *        A description of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,17 +391,14 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
-     * Using Aliases</a>.
+     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
-     *        Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     *        Shifting Using Aliases</a>.
+     *        The <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
      */
 
     public void setRoutingConfig(AliasRoutingConfiguration routingConfig) {
@@ -414,16 +407,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
-     * Using Aliases</a>.
+     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
-     * @return Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *         traffic will invoke each version. For more information, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     *         Shifting Using Aliases</a>.
+     * @return The <a
+     *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *         configuration</a> of the alias.
      */
 
     public AliasRoutingConfiguration getRoutingConfig() {
@@ -432,17 +422,14 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies an additional version your alias can point to, allowing you to dictate what percentage of traffic will
-     * invoke each version. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting
-     * Using Aliases</a>.
+     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
-     *        Specifies an additional version your alias can point to, allowing you to dictate what percentage of
-     *        traffic will invoke each version. For more information, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic
-     *        Shifting Using Aliases</a>.
+     *        The <a
+     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        configuration</a> of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,17 +440,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an alias
+     * that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you retrieve the latest function version
-     *        or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     *        Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an
+     *        alias that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -472,16 +455,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an alias
+     * that has changed since you last read it.
      * </p>
      * 
-     * @return An optional value you can use to ensure you are updating the latest update of the function version or
-     *         alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *         function or alias, it will fail with an error message, advising you retrieve the latest function version
-     *         or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * @return Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an
+     *         alias that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -490,17 +469,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An optional value you can use to ensure you are updating the latest update of the function version or alias. If
-     * the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the function or alias,
-     * it will fail with an error message, advising you retrieve the latest function version or alias
-     * <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     * Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an alias
+     * that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        An optional value you can use to ensure you are updating the latest update of the function version or
-     *        alias. If the <code>RevisionID</code> you pass doesn't match the latest <code>RevisionId</code> of the
-     *        function or alias, it will fail with an error message, advising you retrieve the latest function version
-     *        or alias <code>RevisionID</code> using either <a>GetFunction</a> or <a>GetAlias</a>.
+     *        Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an
+     *        alias that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

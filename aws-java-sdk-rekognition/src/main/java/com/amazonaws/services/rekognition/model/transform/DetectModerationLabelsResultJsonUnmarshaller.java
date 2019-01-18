@@ -53,6 +53,10 @@ public class DetectModerationLabelsResultJsonUnmarshaller implements Unmarshalle
                     detectModerationLabelsResult.setModerationLabels(new ListUnmarshaller<ModerationLabel>(ModerationLabelJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("ModerationModelVersion", targetDepth)) {
+                    context.nextToken();
+                    detectModerationLabelsResult.setModerationModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

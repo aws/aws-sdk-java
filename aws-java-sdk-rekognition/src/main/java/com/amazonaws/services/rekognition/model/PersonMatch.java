@@ -20,8 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information
- * about the faces in the Amazon Rekognition collection (), information about the person (<a>PersonDetail</a>), and the
- * time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by .
+ * about the faces in the Amazon Rekognition collection (<a>FaceMatch</a>), information about the person
+ * (<a>PersonDetail</a>), and the time stamp for when the person was detected in a video. An array of
+ * <code>PersonMatch</code> objects is returned by <a>GetFaceSearch</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

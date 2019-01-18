@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a celebrity recognized by the operation.
+ * Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -27356,7 +27356,6 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "customAuthorizers" : { },
   "examples" : {
     "examples" : {
       "CancelCluster" : [ {

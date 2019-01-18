@@ -38318,7 +38318,6 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "customAuthorizers" : { },
   "examples" : {
     "examples" : {
       "AcceptHandshake" : [ {

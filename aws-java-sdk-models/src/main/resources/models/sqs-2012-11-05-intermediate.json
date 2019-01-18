@@ -22078,7 +22078,6 @@
     }
   },
   "clientConfigFactory" : "com.amazonaws.services.sqs.AmazonSQSClientConfigurationFactory",
-  "customAuthorizers" : { },
   "examples" : {
     "examples" : { },
     "version" : "1.0"

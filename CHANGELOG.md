@@ -1,3 +1,20 @@
+# __1.11.485__ __2019-01-17__
+## __AWS Lambda__
+  - ### Features
+    - Documentation updates for AWS Lambda
+
+## __Amazon Lightsail__
+  - ### Features
+    - This release adds functionality to the CreateDiskSnapshot API that allows users to snapshot instance root volumes. It also adds various documentation updates.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release updates the PutEvents operation. AppPackageName, AppTitle, AppVersionCode, SdkName fields will now be accepted as a part of the event when submitting events.
+
+## __Amazon Rekognition__
+  - ### Features
+    - GetLabelDetection now returns bounding box information for common objects and a hierarchical taxonomy of detected labels. The version of the model used for video label detection is also returned. DetectModerationLabels now returns the version of the model used for detecting unsafe content.
+
 # __1.11.484__ __2019-01-16__
 ## __AWS Backup__
   - ### Features

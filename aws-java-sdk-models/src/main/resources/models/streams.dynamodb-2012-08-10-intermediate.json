@@ -11792,7 +11792,6 @@
     }
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
-  "customAuthorizers" : { },
   "examples" : {
     "examples" : {
       "DescribeStream" : [ {

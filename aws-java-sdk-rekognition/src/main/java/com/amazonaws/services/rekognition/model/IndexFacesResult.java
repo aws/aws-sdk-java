@@ -55,7 +55,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </ul>
      * <p>
      * Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face
-     * detection model by calling .
+     * detection model by calling <a>DescribeCollection</a>.
      * </p>
      */
     private String orientationCorrection;
@@ -183,7 +183,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </ul>
      * <p>
      * Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face
-     * detection model by calling .
+     * detection model by calling <a>DescribeCollection</a>.
      * </p>
      * 
      * @param orientationCorrection
@@ -214,7 +214,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        </ul>
      *        <p>
      *        Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the
-     *        face detection model by calling .
+     *        face detection model by calling <a>DescribeCollection</a>.
      * @see OrientationCorrection
      */
 
@@ -252,7 +252,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </ul>
      * <p>
      * Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face
-     * detection model by calling .
+     * detection model by calling <a>DescribeCollection</a>.
      * </p>
      * 
      * @return If your collection is associated with a face detection model that's later than version 3.0, the value of
@@ -282,7 +282,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *         </ul>
      *         <p>
      *         Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of
-     *         the face detection model by calling .
+     *         the face detection model by calling <a>DescribeCollection</a>.
      * @see OrientationCorrection
      */
 
@@ -320,7 +320,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </ul>
      * <p>
      * Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face
-     * detection model by calling .
+     * detection model by calling <a>DescribeCollection</a>.
      * </p>
      * 
      * @param orientationCorrection
@@ -351,7 +351,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        </ul>
      *        <p>
      *        Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the
-     *        face detection model by calling .
+     *        face detection model by calling <a>DescribeCollection</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
      */
@@ -391,7 +391,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </ul>
      * <p>
      * Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face
-     * detection model by calling .
+     * detection model by calling <a>DescribeCollection</a>.
      * </p>
      * 
      * @param orientationCorrection
@@ -422,7 +422,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        </ul>
      *        <p>
      *        Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the
-     *        face detection model by calling .
+     *        face detection model by calling <a>DescribeCollection</a>.
      * @see OrientationCorrection
      */
 
@@ -460,7 +460,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </ul>
      * <p>
      * Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the face
-     * detection model by calling .
+     * detection model by calling <a>DescribeCollection</a>.
      * </p>
      * 
      * @param orientationCorrection
@@ -491,7 +491,7 @@ public class IndexFacesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      *        </ul>
      *        <p>
      *        Bounding box information is returned in the <code>FaceRecords</code> array. You can get the version of the
-     *        face detection model by calling .
+     *        face detection model by calling <a>DescribeCollection</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrientationCorrection
      */

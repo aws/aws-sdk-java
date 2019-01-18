@@ -25,7 +25,7 @@ public class ListVersionsByFunctionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string, present if there are more function versions.
+     * Pagination token included if more results are available.
      * </p>
      */
     private String nextMarker;
@@ -38,11 +38,11 @@ public class ListVersionsByFunctionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string, present if there are more function versions.
+     * Pagination token included if more results are available.
      * </p>
      * 
      * @param nextMarker
-     *        A string, present if there are more function versions.
+     *        Pagination token included if more results are available.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -51,10 +51,10 @@ public class ListVersionsByFunctionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string, present if there are more function versions.
+     * Pagination token included if more results are available.
      * </p>
      * 
-     * @return A string, present if there are more function versions.
+     * @return Pagination token included if more results are available.
      */
 
     public String getNextMarker() {
@@ -63,11 +63,11 @@ public class ListVersionsByFunctionResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A string, present if there are more function versions.
+     * Pagination token included if more results are available.
      * </p>
      * 
      * @param nextMarker
-     *        A string, present if there are more function versions.
+     *        Pagination token included if more results are available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

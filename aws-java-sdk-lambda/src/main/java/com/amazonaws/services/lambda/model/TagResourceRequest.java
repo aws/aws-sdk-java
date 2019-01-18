@@ -27,32 +27,24 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the Lambda function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
-     * Developer Guide</b>.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      */
     private String resource;
     /**
      * <p>
-     * The list of tags (key-value pairs) you are assigning to the Lambda function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
-     * Developer Guide</b>.
+     * A list of tags to apply to the function.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> tags;
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the Lambda function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
-     * Developer Guide</b>.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param resource
-     *        The ARN (Amazon Resource Name) of the Lambda function. For more information, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
-     *        Lambda Developer Guide</b>.
+     *        The function's Amazon Resource Name (ARN).
      */
 
     public void setResource(String resource) {
@@ -61,14 +53,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the Lambda function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
-     * Developer Guide</b>.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The ARN (Amazon Resource Name) of the Lambda function. For more information, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the
-     *         <b>AWS Lambda Developer Guide</b>.
+     * @return The function's Amazon Resource Name (ARN).
      */
 
     public String getResource() {
@@ -77,15 +65,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARN (Amazon Resource Name) of the Lambda function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
-     * Developer Guide</b>.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param resource
-     *        The ARN (Amazon Resource Name) of the Lambda function. For more information, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
-     *        Lambda Developer Guide</b>.
+     *        The function's Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,14 +80,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags (key-value pairs) you are assigning to the Lambda function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
-     * Developer Guide</b>.
+     * A list of tags to apply to the function.
      * </p>
      * 
-     * @return The list of tags (key-value pairs) you are assigning to the Lambda function. For more information, see <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the
-     *         <b>AWS Lambda Developer Guide</b>.
+     * @return A list of tags to apply to the function.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -115,15 +95,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags (key-value pairs) you are assigning to the Lambda function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
-     * Developer Guide</b>.
+     * A list of tags to apply to the function.
      * </p>
      * 
      * @param tags
-     *        The list of tags (key-value pairs) you are assigning to the Lambda function. For more information, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
-     *        Lambda Developer Guide</b>.
+     *        A list of tags to apply to the function.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -132,15 +108,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of tags (key-value pairs) you are assigning to the Lambda function. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS Lambda
-     * Developer Guide</b>.
+     * A list of tags to apply to the function.
      * </p>
      * 
      * @param tags
-     *        The list of tags (key-value pairs) you are assigning to the Lambda function. For more information, see <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging Lambda Functions</a> in the <b>AWS
-     *        Lambda Developer Guide</b>.
+     *        A list of tags to apply to the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

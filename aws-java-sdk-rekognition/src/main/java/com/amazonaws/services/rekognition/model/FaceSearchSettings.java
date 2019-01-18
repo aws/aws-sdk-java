@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is
- * a request parameter for .
+ * a request parameter for <a>CreateStreamProcessor</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

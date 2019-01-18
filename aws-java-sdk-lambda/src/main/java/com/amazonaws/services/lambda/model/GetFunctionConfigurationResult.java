@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A Lambda function's configuration settings.
+ * Details about a function's configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration" target="_top">AWS
@@ -34,7 +34,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     private String functionName;
     /**
      * <p>
-     * The function's Amazon Resource Name.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      */
     private String functionArn;
@@ -132,7 +132,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     private TracingConfigResponse tracingConfig;
     /**
      * <p>
-     * The ARN of the master function.
+     * For Lambda@Edge functions, the ARN of the master function.
      * </p>
      */
     private String masterArn;
@@ -144,7 +144,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
     private String revisionId;
     /**
      * <p>
-     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Layer> layers;
@@ -191,11 +191,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The function's Amazon Resource Name.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param functionArn
-     *        The function's Amazon Resource Name.
+     *        The function's Amazon Resource Name (ARN).
      */
 
     public void setFunctionArn(String functionArn) {
@@ -204,10 +204,10 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The function's Amazon Resource Name.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
-     * @return The function's Amazon Resource Name.
+     * @return The function's Amazon Resource Name (ARN).
      */
 
     public String getFunctionArn() {
@@ -216,11 +216,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The function's Amazon Resource Name.
+     * The function's Amazon Resource Name (ARN).
      * </p>
      * 
      * @param functionArn
-     *        The function's Amazon Resource Name.
+     *        The function's Amazon Resource Name (ARN).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -876,11 +876,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the master function.
+     * For Lambda@Edge functions, the ARN of the master function.
      * </p>
      * 
      * @param masterArn
-     *        The ARN of the master function.
+     *        For Lambda@Edge functions, the ARN of the master function.
      */
 
     public void setMasterArn(String masterArn) {
@@ -889,10 +889,10 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the master function.
+     * For Lambda@Edge functions, the ARN of the master function.
      * </p>
      * 
-     * @return The ARN of the master function.
+     * @return For Lambda@Edge functions, the ARN of the master function.
      */
 
     public String getMasterArn() {
@@ -901,11 +901,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ARN of the master function.
+     * For Lambda@Edge functions, the ARN of the master function.
      * </p>
      * 
      * @param masterArn
-     *        The ARN of the master function.
+     *        For Lambda@Edge functions, the ARN of the master function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -956,11 +956,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
      * </p>
      * 
-     * @return A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     *         layers</a>.
+     * @return The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *         layers</a>
      */
 
     public java.util.List<Layer> getLayers() {
@@ -972,12 +972,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
      * </p>
      * 
      * @param layers
-     *        A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     *        layers</a>.
+     *        The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
      */
 
     public void setLayers(java.util.Collection<Layer> layers) {
@@ -991,7 +990,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1000,8 +999,7 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param layers
-     *        A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     *        layers</a>.
+     *        The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1017,12 +1015,11 @@ public class GetFunctionConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function layers</a>.
+     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
      * </p>
      * 
      * @param layers
-     *        A list of <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">function
-     *        layers</a>.
+     *        The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

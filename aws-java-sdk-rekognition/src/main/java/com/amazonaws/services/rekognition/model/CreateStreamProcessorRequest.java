@@ -37,7 +37,8 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor.
-     * For example, you can get the current status of the stream processor by calling . <code>Name</code> is idempotent.
+     * For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
+     * <code>Name</code> is idempotent.
      * </p>
      */
     private String name;
@@ -150,13 +151,14 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor.
-     * For example, you can get the current status of the stream processor by calling . <code>Name</code> is idempotent.
+     * For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
+     * <code>Name</code> is idempotent.
      * </p>
      * 
      * @param name
      *        An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream
-     *        processor. For example, you can get the current status of the stream processor by calling .
-     *        <code>Name</code> is idempotent.
+     *        processor. For example, you can get the current status of the stream processor by calling
+     *        <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent.
      */
 
     public void setName(String name) {
@@ -166,12 +168,13 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor.
-     * For example, you can get the current status of the stream processor by calling . <code>Name</code> is idempotent.
+     * For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
+     * <code>Name</code> is idempotent.
      * </p>
      * 
      * @return An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream
-     *         processor. For example, you can get the current status of the stream processor by calling .
-     *         <code>Name</code> is idempotent.
+     *         processor. For example, you can get the current status of the stream processor by calling
+     *         <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent.
      */
 
     public String getName() {
@@ -181,13 +184,14 @@ public class CreateStreamProcessorRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream processor.
-     * For example, you can get the current status of the stream processor by calling . <code>Name</code> is idempotent.
+     * For example, you can get the current status of the stream processor by calling <a>DescribeStreamProcessor</a>.
+     * <code>Name</code> is idempotent.
      * </p>
      * 
      * @param name
      *        An identifier you assign to the stream processor. You can use <code>Name</code> to manage the stream
-     *        processor. For example, you can get the current status of the stream processor by calling .
-     *        <code>Name</code> is idempotent.
+     *        processor. For example, you can get the current status of the stream processor by calling
+     *        <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

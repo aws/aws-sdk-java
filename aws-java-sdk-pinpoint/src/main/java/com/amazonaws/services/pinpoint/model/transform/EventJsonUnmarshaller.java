@@ -48,6 +48,18 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AppPackageName", targetDepth)) {
+                    context.nextToken();
+                    event.setAppPackageName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AppTitle", targetDepth)) {
+                    context.nextToken();
+                    event.setAppTitle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AppVersionCode", targetDepth)) {
+                    context.nextToken();
+                    event.setAppVersionCode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
                     event.setAttributes(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
@@ -65,6 +77,10 @@ public class EventJsonUnmarshaller implements Unmarshaller<Event, JsonUnmarshall
                     context.nextToken();
                     event.setMetrics(new MapUnmarshaller<String, Double>(context.getUnmarshaller(String.class), context.getUnmarshaller(Double.class))
                             .unmarshall(context));
+                }
+                if (context.testExpression("SdkName", targetDepth)) {
+                    context.nextToken();
+                    event.setSdkName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Session", targetDepth)) {
                     context.nextToken();

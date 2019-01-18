@@ -20,7 +20,8 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * The number of faces that are indexed into the collection. To index faces into a collection, use
+     * <a>IndexFaces</a>.
      * </p>
      */
     private Long faceCount;
@@ -49,11 +50,13 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * The number of faces that are indexed into the collection. To index faces into a collection, use
+     * <a>IndexFaces</a>.
      * </p>
      * 
      * @param faceCount
-     *        The number of faces that are indexed into the collection. To index faces into a collection, use .
+     *        The number of faces that are indexed into the collection. To index faces into a collection, use
+     *        <a>IndexFaces</a>.
      */
 
     public void setFaceCount(Long faceCount) {
@@ -62,10 +65,12 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * The number of faces that are indexed into the collection. To index faces into a collection, use
+     * <a>IndexFaces</a>.
      * </p>
      * 
-     * @return The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * @return The number of faces that are indexed into the collection. To index faces into a collection, use
+     *         <a>IndexFaces</a>.
      */
 
     public Long getFaceCount() {
@@ -74,11 +79,13 @@ public class DescribeCollectionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The number of faces that are indexed into the collection. To index faces into a collection, use .
+     * The number of faces that are indexed into the collection. To index faces into a collection, use
+     * <a>IndexFaces</a>.
      * </p>
      * 
      * @param faceCount
-     *        The number of faces that are indexed into the collection. To index faces into a collection, use .
+     *        The number of faces that are indexed into the collection. To index faces into a collection, use
+     *        <a>IndexFaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

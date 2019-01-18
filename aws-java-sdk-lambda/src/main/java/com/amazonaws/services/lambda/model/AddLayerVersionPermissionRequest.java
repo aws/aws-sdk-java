@@ -27,7 +27,7 @@ public class AddLayerVersionPermissionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the layer.
+     * The name or Amazon Resource Name (ARN) of the layer.
      * </p>
      */
     private String layerName;
@@ -71,11 +71,11 @@ public class AddLayerVersionPermissionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the layer.
+     * The name or Amazon Resource Name (ARN) of the layer.
      * </p>
      * 
      * @param layerName
-     *        The name of the layer.
+     *        The name or Amazon Resource Name (ARN) of the layer.
      */
 
     public void setLayerName(String layerName) {
@@ -84,10 +84,10 @@ public class AddLayerVersionPermissionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the layer.
+     * The name or Amazon Resource Name (ARN) of the layer.
      * </p>
      * 
-     * @return The name of the layer.
+     * @return The name or Amazon Resource Name (ARN) of the layer.
      */
 
     public String getLayerName() {
@@ -96,11 +96,11 @@ public class AddLayerVersionPermissionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The name of the layer.
+     * The name or Amazon Resource Name (ARN) of the layer.
      * </p>
      * 
      * @param layerName
-     *        The name of the layer.
+     *        The name or Amazon Resource Name (ARN) of the layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

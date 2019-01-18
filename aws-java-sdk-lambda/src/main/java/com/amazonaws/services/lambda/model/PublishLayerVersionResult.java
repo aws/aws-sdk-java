@@ -31,7 +31,7 @@ public class PublishLayerVersionResult extends com.amazonaws.AmazonWebServiceRes
     private LayerVersionContentOutput content;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the function layer.
+     * The ARN of the layer.
      * </p>
      */
     private String layerArn;
@@ -115,11 +115,11 @@ public class PublishLayerVersionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the function layer.
+     * The ARN of the layer.
      * </p>
      * 
      * @param layerArn
-     *        The Amazon Resource Name (ARN) of the function layer.
+     *        The ARN of the layer.
      */
 
     public void setLayerArn(String layerArn) {
@@ -128,10 +128,10 @@ public class PublishLayerVersionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the function layer.
+     * The ARN of the layer.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the function layer.
+     * @return The ARN of the layer.
      */
 
     public String getLayerArn() {
@@ -140,11 +140,11 @@ public class PublishLayerVersionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the function layer.
+     * The ARN of the layer.
      * </p>
      * 
      * @param layerArn
-     *        The Amazon Resource Name (ARN) of the function layer.
+     *        The ARN of the layer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

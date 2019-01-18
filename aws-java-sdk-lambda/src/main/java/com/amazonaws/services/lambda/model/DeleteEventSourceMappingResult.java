@@ -52,7 +52,7 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private String functionArn;
     /**
      * <p>
-     * The date that the event source mapping was last updated, in Unix time seconds.
+     * The date that the event source mapping was last updated.
      * </p>
      */
     private java.util.Date lastModified;
@@ -239,11 +239,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date that the event source mapping was last updated, in Unix time seconds.
+     * The date that the event source mapping was last updated.
      * </p>
      * 
      * @param lastModified
-     *        The date that the event source mapping was last updated, in Unix time seconds.
+     *        The date that the event source mapping was last updated.
      */
 
     public void setLastModified(java.util.Date lastModified) {
@@ -252,10 +252,10 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date that the event source mapping was last updated, in Unix time seconds.
+     * The date that the event source mapping was last updated.
      * </p>
      * 
-     * @return The date that the event source mapping was last updated, in Unix time seconds.
+     * @return The date that the event source mapping was last updated.
      */
 
     public java.util.Date getLastModified() {
@@ -264,11 +264,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The date that the event source mapping was last updated, in Unix time seconds.
+     * The date that the event source mapping was last updated.
      * </p>
      * 
      * @param lastModified
-     *        The date that the event source mapping was last updated, in Unix time seconds.
+     *        The date that the event source mapping was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

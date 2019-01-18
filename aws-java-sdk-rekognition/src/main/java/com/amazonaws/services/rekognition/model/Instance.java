@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An instance of a label detected by .
+ * An instance of a label returned by Amazon Rekognition Image (<a>DetectLabels</a>) or by Amazon Rekognition Video
+ * (<a>GetLabelDetection</a>).
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -33,7 +34,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private BoundingBox boundingBox;
     /**
      * <p>
-     * The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
+     * The confidence that Amazon Rekognition has in the accuracy of the bounding box.
      * </p>
      */
     private Float confidence;
@@ -80,11 +81,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
+     * The confidence that Amazon Rekognition has in the accuracy of the bounding box.
      * </p>
      * 
      * @param confidence
-     *        The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
+     *        The confidence that Amazon Rekognition has in the accuracy of the bounding box.
      */
 
     public void setConfidence(Float confidence) {
@@ -93,10 +94,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
+     * The confidence that Amazon Rekognition has in the accuracy of the bounding box.
      * </p>
      * 
-     * @return The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
+     * @return The confidence that Amazon Rekognition has in the accuracy of the bounding box.
      */
 
     public Float getConfidence() {
@@ -105,11 +106,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
+     * The confidence that Amazon Rekognition has in the accuracy of the bounding box.
      * </p>
      * 
      * @param confidence
-     *        The confidence that Amazon Rekognition Image has in the accuracy of the bounding box.
+     *        The confidence that Amazon Rekognition has in the accuracy of the bounding box.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

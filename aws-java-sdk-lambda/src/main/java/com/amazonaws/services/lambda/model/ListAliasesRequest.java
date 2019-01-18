@@ -57,22 +57,19 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String functionName;
     /**
      * <p>
-     * If you specify this optional parameter, the API returns only the aliases that are pointing to the specific Lambda
-     * function version, otherwise the API returns all of the aliases created for the Lambda function.
+     * Specify a function version to only list aliases that invoke that version.
      * </p>
      */
     private String functionVersion;
     /**
      * <p>
-     * Optional string. An opaque pagination token returned from a previous <code>ListAliases</code> operation. If
-     * present, indicates where to continue the listing.
+     * Specify the pagination token returned by a previous request to retrieve the next page of results.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of aliases to return in response. This parameter value must be
-     * greater than 0.
+     * Limit the number of aliases returned.
      * </p>
      */
     private Integer maxItems;
@@ -260,13 +257,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If you specify this optional parameter, the API returns only the aliases that are pointing to the specific Lambda
-     * function version, otherwise the API returns all of the aliases created for the Lambda function.
+     * Specify a function version to only list aliases that invoke that version.
      * </p>
      * 
      * @param functionVersion
-     *        If you specify this optional parameter, the API returns only the aliases that are pointing to the specific
-     *        Lambda function version, otherwise the API returns all of the aliases created for the Lambda function.
+     *        Specify a function version to only list aliases that invoke that version.
      */
 
     public void setFunctionVersion(String functionVersion) {
@@ -275,13 +270,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If you specify this optional parameter, the API returns only the aliases that are pointing to the specific Lambda
-     * function version, otherwise the API returns all of the aliases created for the Lambda function.
+     * Specify a function version to only list aliases that invoke that version.
      * </p>
      * 
-     * @return If you specify this optional parameter, the API returns only the aliases that are pointing to the
-     *         specific Lambda function version, otherwise the API returns all of the aliases created for the Lambda
-     *         function.
+     * @return Specify a function version to only list aliases that invoke that version.
      */
 
     public String getFunctionVersion() {
@@ -290,13 +282,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * If you specify this optional parameter, the API returns only the aliases that are pointing to the specific Lambda
-     * function version, otherwise the API returns all of the aliases created for the Lambda function.
+     * Specify a function version to only list aliases that invoke that version.
      * </p>
      * 
      * @param functionVersion
-     *        If you specify this optional parameter, the API returns only the aliases that are pointing to the specific
-     *        Lambda function version, otherwise the API returns all of the aliases created for the Lambda function.
+     *        Specify a function version to only list aliases that invoke that version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,13 +297,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Optional string. An opaque pagination token returned from a previous <code>ListAliases</code> operation. If
-     * present, indicates where to continue the listing.
+     * Specify the pagination token returned by a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param marker
-     *        Optional string. An opaque pagination token returned from a previous <code>ListAliases</code> operation.
-     *        If present, indicates where to continue the listing.
+     *        Specify the pagination token returned by a previous request to retrieve the next page of results.
      */
 
     public void setMarker(String marker) {
@@ -322,12 +310,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Optional string. An opaque pagination token returned from a previous <code>ListAliases</code> operation. If
-     * present, indicates where to continue the listing.
+     * Specify the pagination token returned by a previous request to retrieve the next page of results.
      * </p>
      * 
-     * @return Optional string. An opaque pagination token returned from a previous <code>ListAliases</code> operation.
-     *         If present, indicates where to continue the listing.
+     * @return Specify the pagination token returned by a previous request to retrieve the next page of results.
      */
 
     public String getMarker() {
@@ -336,13 +322,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Optional string. An opaque pagination token returned from a previous <code>ListAliases</code> operation. If
-     * present, indicates where to continue the listing.
+     * Specify the pagination token returned by a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param marker
-     *        Optional string. An opaque pagination token returned from a previous <code>ListAliases</code> operation.
-     *        If present, indicates where to continue the listing.
+     *        Specify the pagination token returned by a previous request to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,13 +337,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of aliases to return in response. This parameter value must be
-     * greater than 0.
+     * Limit the number of aliases returned.
      * </p>
      * 
      * @param maxItems
-     *        Optional integer. Specifies the maximum number of aliases to return in response. This parameter value must
-     *        be greater than 0.
+     *        Limit the number of aliases returned.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -368,12 +350,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of aliases to return in response. This parameter value must be
-     * greater than 0.
+     * Limit the number of aliases returned.
      * </p>
      * 
-     * @return Optional integer. Specifies the maximum number of aliases to return in response. This parameter value
-     *         must be greater than 0.
+     * @return Limit the number of aliases returned.
      */
 
     public Integer getMaxItems() {
@@ -382,13 +362,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Optional integer. Specifies the maximum number of aliases to return in response. This parameter value must be
-     * greater than 0.
+     * Limit the number of aliases returned.
      * </p>
      * 
      * @param maxItems
-     *        Optional integer. Specifies the maximum number of aliases to return in response. This parameter value must
-     *        be greater than 0.
+     *        Limit the number of aliases returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as use <code>Video</code> to
- * specify a video for analysis. The supported file formats are .mp4, .mov and .avi.
+ * Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as
+ * <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are
+ * .mp4, .mov and .avi.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

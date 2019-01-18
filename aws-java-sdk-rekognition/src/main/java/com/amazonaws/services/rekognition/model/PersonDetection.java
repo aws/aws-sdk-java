@@ -24,7 +24,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * time a person's path is tracked in a video.
  * </p>
  * <p>
- * For more information, see API_GetPersonTracking in the Amazon Rekognition Developer Guide.
+ * For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

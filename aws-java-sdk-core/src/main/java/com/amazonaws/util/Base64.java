@@ -58,6 +58,9 @@ public enum Base64 {
                              inconsistentJaxbImpls.get(className));
                 }
             } catch (Exception ignored) {
+                // ignore
+            } catch (NoClassDefFoundError error){
+                // ignore
             }
         } else {
             LOG.warn("JAXB is unavailable. Will fallback to SDK implementation which may be less performant");

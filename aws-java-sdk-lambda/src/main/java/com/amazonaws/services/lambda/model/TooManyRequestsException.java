@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Request throughput limit exceeded
+ * Request throughput limit exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

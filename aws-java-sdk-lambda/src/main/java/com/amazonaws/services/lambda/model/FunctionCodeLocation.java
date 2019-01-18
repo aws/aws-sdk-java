@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The object for the Lambda function location.
+ * Details about a function's deployment package.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCodeLocation" target="_top">AWS API
@@ -30,25 +30,24 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The repository from which you can download the function.
+     * The service hosting the file.
      * </p>
      */
     private String repositoryType;
     /**
      * <p>
-     * The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid
-     * for up to 10 minutes.
+     * A pre-signed URL that you can use to download the deployment package.
      * </p>
      */
     private String location;
 
     /**
      * <p>
-     * The repository from which you can download the function.
+     * The service hosting the file.
      * </p>
      * 
      * @param repositoryType
-     *        The repository from which you can download the function.
+     *        The service hosting the file.
      */
 
     public void setRepositoryType(String repositoryType) {
@@ -57,10 +56,10 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The repository from which you can download the function.
+     * The service hosting the file.
      * </p>
      * 
-     * @return The repository from which you can download the function.
+     * @return The service hosting the file.
      */
 
     public String getRepositoryType() {
@@ -69,11 +68,11 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The repository from which you can download the function.
+     * The service hosting the file.
      * </p>
      * 
      * @param repositoryType
-     *        The repository from which you can download the function.
+     *        The service hosting the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,13 +83,11 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid
-     * for up to 10 minutes.
+     * A pre-signed URL that you can use to download the deployment package.
      * </p>
      * 
      * @param location
-     *        The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL
-     *        is valid for up to 10 minutes.
+     *        A pre-signed URL that you can use to download the deployment package.
      */
 
     public void setLocation(String location) {
@@ -99,12 +96,10 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid
-     * for up to 10 minutes.
+     * A pre-signed URL that you can use to download the deployment package.
      * </p>
      * 
-     * @return The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL
-     *         is valid for up to 10 minutes.
+     * @return A pre-signed URL that you can use to download the deployment package.
      */
 
     public String getLocation() {
@@ -113,13 +108,11 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid
-     * for up to 10 minutes.
+     * A pre-signed URL that you can use to download the deployment package.
      * </p>
      * 
      * @param location
-     *        The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL
-     *        is valid for up to 10 minutes.
+     *        A pre-signed URL that you can use to download the deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

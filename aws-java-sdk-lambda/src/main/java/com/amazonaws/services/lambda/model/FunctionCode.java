@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The code for the Lambda function. You can specify either an S3 location, or upload a deployment package directly.
+ * The code for the Lambda function. You can specify either an object in Amazon S3, or upload a deployment package
+ * directly.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/FunctionCode" target="_top">AWS API
@@ -30,14 +31,13 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI clients
-     * handle the encoding for you.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function.
+     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
      * </p>
      */
     private String s3Bucket;
@@ -56,8 +56,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI clients
-     * handle the encoding for you.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -71,8 +70,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI
-     *        clients handle the encoding for you.
+     *        The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
+     *        you.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -81,8 +80,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI clients
-     * handle the encoding for you.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -92,8 +90,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI
-     *         clients handle the encoding for you.
+     * @return The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding
+     *         for you.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -102,8 +100,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI clients
-     * handle the encoding for you.
+     * The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -117,8 +114,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of your zip file containing your deployment package. AWS SDK and AWS CLI
-     *        clients handle the encoding for you.
+     *        The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
+     *        you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +126,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function.
+     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket in the same region as your function.
+     *        An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -142,10 +139,10 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function.
+     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
-     * @return An Amazon S3 bucket in the same region as your function.
+     * @return An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
      */
 
     public String getS3Bucket() {
@@ -154,11 +151,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function.
+     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket in the same region as your function.
+     *        An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

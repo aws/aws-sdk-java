@@ -57,7 +57,7 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String functionName;
     /**
      * <p>
-     * Name of the alias for which you want to retrieve information.
+     * The name of the alias.
      * </p>
      */
     private String name;
@@ -245,11 +245,11 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Name of the alias for which you want to retrieve information.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Name of the alias for which you want to retrieve information.
+     *        The name of the alias.
      */
 
     public void setName(String name) {
@@ -258,10 +258,10 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Name of the alias for which you want to retrieve information.
+     * The name of the alias.
      * </p>
      * 
-     * @return Name of the alias for which you want to retrieve information.
+     * @return The name of the alias.
      */
 
     public String getName() {
@@ -270,11 +270,11 @@ public class GetAliasRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Name of the alias for which you want to retrieve information.
+     * The name of the alias.
      * </p>
      * 
      * @param name
-     *        Name of the alias for which you want to retrieve information.
+     *        The name of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

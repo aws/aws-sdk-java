@@ -121,8 +121,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private String startingPosition;
     /**
      * <p>
-     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to start
-     * reading.
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
      * </p>
      */
     private java.util.Date startingPositionTimestamp;
@@ -754,13 +753,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to start
-     * reading.
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
      * </p>
      * 
      * @param startingPositionTimestamp
-     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which
-     *        to start reading.
+     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
      */
 
     public void setStartingPositionTimestamp(java.util.Date startingPositionTimestamp) {
@@ -769,12 +766,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to start
-     * reading.
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
      * </p>
      * 
-     * @return With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which
-     *         to start reading.
+     * @return With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
+     *         reading.
      */
 
     public java.util.Date getStartingPositionTimestamp() {
@@ -783,13 +779,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which to start
-     * reading.
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
      * </p>
      * 
      * @param startingPositionTimestamp
-     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the Unix time in seconds from which
-     *        to start reading.
+     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

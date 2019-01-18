@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A face that detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face
- * wasn't indexed.
+ * A face that <a>IndexFaces</a> detected, but didn't index. Use the <code>Reasons</code> response attribute to
+ * determine why a face wasn't indexed.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

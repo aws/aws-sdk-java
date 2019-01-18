@@ -27,7 +27,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -35,38 +35,36 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-     * characters in length.
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      */
     private String functionName;
     /**
      * <p>
-     * You can specify this optional query parameter to specify a function version or an alias name in which case this
-     * API will return all permissions associated with the specific qualified ARN. If you don't provide this parameter,
-     * the API will return permissions that apply to the unqualified function ARN.
+     * Specify a version or alias to get the policy for that resource.
      * </p>
      */
     private String qualifier;
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -74,50 +72,50 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-     * characters in length.
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function, version, or alias.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public void setFunctionName(String functionName) {
@@ -126,7 +124,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -134,49 +132,49 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-     * characters in length.
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
-     * @return The name of the lambda function.</p>
+     * @return The name of the Lambda function, version, or alias.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>MyFunction</code>.
+     *         <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *         to 64 characters in length.
+     *         You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *         full ARN. If you specify only the function name, it is limited to 64 characters in length.
      */
 
     public String getFunctionName() {
@@ -185,7 +183,7 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function, version, or alias.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -193,50 +191,50 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>MyFunction</code>.
+     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64
-     * characters in length.
+     * You can append a version number or alias to any of the formats. The length constraint applies only to the full
+     * ARN. If you specify only the function name, it is limited to 64 characters in length.
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function, version, or alias.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>MyFunction</code>.
+     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.
+     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        The length constraint applies only to the full ARN. If you specify only the function name, it is limited
-     *        to 64 characters in length.
+     *        You can append a version number or alias to any of the formats. The length constraint applies only to the
+     *        full ARN. If you specify only the function name, it is limited to 64 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,15 +245,11 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * You can specify this optional query parameter to specify a function version or an alias name in which case this
-     * API will return all permissions associated with the specific qualified ARN. If you don't provide this parameter,
-     * the API will return permissions that apply to the unqualified function ARN.
+     * Specify a version or alias to get the policy for that resource.
      * </p>
      * 
      * @param qualifier
-     *        You can specify this optional query parameter to specify a function version or an alias name in which case
-     *        this API will return all permissions associated with the specific qualified ARN. If you don't provide this
-     *        parameter, the API will return permissions that apply to the unqualified function ARN.
+     *        Specify a version or alias to get the policy for that resource.
      */
 
     public void setQualifier(String qualifier) {
@@ -264,14 +258,10 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * You can specify this optional query parameter to specify a function version or an alias name in which case this
-     * API will return all permissions associated with the specific qualified ARN. If you don't provide this parameter,
-     * the API will return permissions that apply to the unqualified function ARN.
+     * Specify a version or alias to get the policy for that resource.
      * </p>
      * 
-     * @return You can specify this optional query parameter to specify a function version or an alias name in which
-     *         case this API will return all permissions associated with the specific qualified ARN. If you don't
-     *         provide this parameter, the API will return permissions that apply to the unqualified function ARN.
+     * @return Specify a version or alias to get the policy for that resource.
      */
 
     public String getQualifier() {
@@ -280,15 +270,11 @@ public class GetPolicyRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * You can specify this optional query parameter to specify a function version or an alias name in which case this
-     * API will return all permissions associated with the specific qualified ARN. If you don't provide this parameter,
-     * the API will return permissions that apply to the unqualified function ARN.
+     * Specify a version or alias to get the policy for that resource.
      * </p>
      * 
      * @param qualifier
-     *        You can specify this optional query parameter to specify a function version or an alias name in which case
-     *        this API will return all permissions associated with the specific qualified ARN. If you don't provide this
-     *        parameter, the API will return permissions that apply to the unqualified function ARN.
+     *        Specify a version or alias to get the policy for that resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

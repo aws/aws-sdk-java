@@ -25,27 +25,24 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The resource policy associated with the specified function. The response returns the same as a string using a
-     * backslash ("\") as an escape character in the JSON.
+     * The resource-based policy.
      * </p>
      */
     private String policy;
     /**
      * <p>
-     * Represents the latest updated revision of the function or alias.
+     * A unique identifier for the current revision of the policy.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The resource policy associated with the specified function. The response returns the same as a string using a
-     * backslash ("\") as an escape character in the JSON.
+     * The resource-based policy.
      * </p>
      * 
      * @param policy
-     *        The resource policy associated with the specified function. The response returns the same as a string
-     *        using a backslash ("\") as an escape character in the JSON.
+     *        The resource-based policy.
      */
 
     public void setPolicy(String policy) {
@@ -54,12 +51,10 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The resource policy associated with the specified function. The response returns the same as a string using a
-     * backslash ("\") as an escape character in the JSON.
+     * The resource-based policy.
      * </p>
      * 
-     * @return The resource policy associated with the specified function. The response returns the same as a string
-     *         using a backslash ("\") as an escape character in the JSON.
+     * @return The resource-based policy.
      */
 
     public String getPolicy() {
@@ -68,13 +63,11 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The resource policy associated with the specified function. The response returns the same as a string using a
-     * backslash ("\") as an escape character in the JSON.
+     * The resource-based policy.
      * </p>
      * 
      * @param policy
-     *        The resource policy associated with the specified function. The response returns the same as a string
-     *        using a backslash ("\") as an escape character in the JSON.
+     *        The resource-based policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,11 +78,11 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Represents the latest updated revision of the function or alias.
+     * A unique identifier for the current revision of the policy.
      * </p>
      * 
      * @param revisionId
-     *        Represents the latest updated revision of the function or alias.
+     *        A unique identifier for the current revision of the policy.
      */
 
     public void setRevisionId(String revisionId) {
@@ -98,10 +91,10 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Represents the latest updated revision of the function or alias.
+     * A unique identifier for the current revision of the policy.
      * </p>
      * 
-     * @return Represents the latest updated revision of the function or alias.
+     * @return A unique identifier for the current revision of the policy.
      */
 
     public String getRevisionId() {
@@ -110,11 +103,11 @@ public class GetPolicyResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Represents the latest updated revision of the function or alias.
+     * A unique identifier for the current revision of the policy.
      * </p>
      * 
      * @param revisionId
-     *        Represents the latest updated revision of the function or alias.
+     *        A unique identifier for the current revision of the policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
