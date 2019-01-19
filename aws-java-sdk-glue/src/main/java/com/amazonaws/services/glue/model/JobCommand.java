@@ -30,7 +30,8 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job command: this must be <code>glueetl</code>.
+     * The name of the job command: this must be <code>glueetl</code>, for an Apache Spark ETL job, or
+     * <code>pythonshell</code>, for a Python shell job.
      * </p>
      */
     private String name;
@@ -43,11 +44,13 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job command: this must be <code>glueetl</code>.
+     * The name of the job command: this must be <code>glueetl</code>, for an Apache Spark ETL job, or
+     * <code>pythonshell</code>, for a Python shell job.
      * </p>
      * 
      * @param name
-     *        The name of the job command: this must be <code>glueetl</code>.
+     *        The name of the job command: this must be <code>glueetl</code>, for an Apache Spark ETL job, or
+     *        <code>pythonshell</code>, for a Python shell job.
      */
 
     public void setName(String name) {
@@ -56,10 +59,12 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job command: this must be <code>glueetl</code>.
+     * The name of the job command: this must be <code>glueetl</code>, for an Apache Spark ETL job, or
+     * <code>pythonshell</code>, for a Python shell job.
      * </p>
      * 
-     * @return The name of the job command: this must be <code>glueetl</code>.
+     * @return The name of the job command: this must be <code>glueetl</code>, for an Apache Spark ETL job, or
+     *         <code>pythonshell</code>, for a Python shell job.
      */
 
     public String getName() {
@@ -68,11 +73,13 @@ public class JobCommand implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the job command: this must be <code>glueetl</code>.
+     * The name of the job command: this must be <code>glueetl</code>, for an Apache Spark ETL job, or
+     * <code>pythonshell</code>, for a Python shell job.
      * </p>
      * 
      * @param name
-     *        The name of the job command: this must be <code>glueetl</code>.
+     *        The name of the job command: this must be <code>glueetl</code>, for an Apache Spark ETL job, or
+     *        <code>pythonshell</code>, for a Python shell job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

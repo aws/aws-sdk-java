@@ -115,12 +115,16 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<Predecessor> predecessorRuns;
     /**
      * <p>
+     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * </p>
+     * <p>
      * The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be
      * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
      * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
      * Glue pricing page</a>.
      * </p>
      */
+    @Deprecated
     private Integer allocatedCapacity;
     /**
      * <p>
@@ -136,6 +140,14 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer timeout;
+    /**
+     * <p>
+     * AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing as low
+     * as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any other way
+     * cannot have fractional DPU allocations.
+     * </p>
+     */
+    private Double maxCapacity;
     /**
      * <p>
      * Specifies configuration properties of a job run notification.
@@ -795,6 +807,9 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * </p>
+     * <p>
      * The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be
      * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
      * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
@@ -802,35 +817,45 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param allocatedCapacity
+     *        This field is deprecated, use <code>MaxCapacity</code> instead.</p>
+     *        <p>
      *        The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be
      *        allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *        compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      */
-
+    @Deprecated
     public void setAllocatedCapacity(Integer allocatedCapacity) {
         this.allocatedCapacity = allocatedCapacity;
     }
 
     /**
      * <p>
+     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * </p>
+     * <p>
      * The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be
      * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
      * capacity and 16 GB of memory. For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS
      * Glue pricing page</a>.
      * </p>
      * 
-     * @return The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be
+     * @return This field is deprecated, use <code>MaxCapacity</code> instead.</p>
+     *         <p>
+     *         The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be
      *         allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *         compute capacity and 16 GB of memory. For more information, see the <a
      *         href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      */
-
+    @Deprecated
     public Integer getAllocatedCapacity() {
         return this.allocatedCapacity;
     }
 
     /**
+     * <p>
+     * This field is deprecated, use <code>MaxCapacity</code> instead.
+     * </p>
      * <p>
      * The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be
      * allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute
@@ -839,13 +864,15 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param allocatedCapacity
+     *        This field is deprecated, use <code>MaxCapacity</code> instead.</p>
+     *        <p>
      *        The number of AWS Glue data processing units (DPUs) allocated to this JobRun. From 2 to 100 DPUs can be
      *        allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of
      *        compute capacity and 16 GB of memory. For more information, see the <a
      *        href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public JobRun withAllocatedCapacity(Integer allocatedCapacity) {
         setAllocatedCapacity(allocatedCapacity);
         return this;
@@ -940,6 +967,58 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
 
     public JobRun withTimeout(Integer timeout) {
         setTimeout(timeout);
+        return this;
+    }
+
+    /**
+     * <p>
+     * AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing as low
+     * as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any other way
+     * cannot have fractional DPU allocations.
+     * </p>
+     * 
+     * @param maxCapacity
+     *        AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing
+     *        as low as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any
+     *        other way cannot have fractional DPU allocations.
+     */
+
+    public void setMaxCapacity(Double maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    /**
+     * <p>
+     * AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing as low
+     * as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any other way
+     * cannot have fractional DPU allocations.
+     * </p>
+     * 
+     * @return AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing
+     *         as low as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any
+     *         other way cannot have fractional DPU allocations.
+     */
+
+    public Double getMaxCapacity() {
+        return this.maxCapacity;
+    }
+
+    /**
+     * <p>
+     * AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing as low
+     * as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any other way
+     * cannot have fractional DPU allocations.
+     * </p>
+     * 
+     * @param maxCapacity
+     *        AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing
+     *        as low as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any
+     *        other way cannot have fractional DPU allocations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobRun withMaxCapacity(Double maxCapacity) {
+        setMaxCapacity(maxCapacity);
         return this;
     }
 
@@ -1129,6 +1208,8 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             sb.append("ExecutionTime: ").append(getExecutionTime()).append(",");
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
+        if (getMaxCapacity() != null)
+            sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getNotificationProperty() != null)
             sb.append("NotificationProperty: ").append(getNotificationProperty()).append(",");
         if (getSecurityConfiguration() != null)
@@ -1209,6 +1290,10 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
+        if (other.getMaxCapacity() == null ^ this.getMaxCapacity() == null)
+            return false;
+        if (other.getMaxCapacity() != null && other.getMaxCapacity().equals(this.getMaxCapacity()) == false)
+            return false;
         if (other.getNotificationProperty() == null ^ this.getNotificationProperty() == null)
             return false;
         if (other.getNotificationProperty() != null && other.getNotificationProperty().equals(this.getNotificationProperty()) == false)
@@ -1244,6 +1329,7 @@ public class JobRun implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAllocatedCapacity() == null) ? 0 : getAllocatedCapacity().hashCode());
         hashCode = prime * hashCode + ((getExecutionTime() == null) ? 0 : getExecutionTime().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
+        hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getNotificationProperty() == null) ? 0 : getNotificationProperty().hashCode());
         hashCode = prime * hashCode + ((getSecurityConfiguration() == null) ? 0 : getSecurityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());

@@ -89,6 +89,10 @@ public class JobUpdateJsonUnmarshaller implements Unmarshaller<JobUpdate, JsonUn
                     context.nextToken();
                     jobUpdate.setTimeout(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MaxCapacity", targetDepth)) {
+                    context.nextToken();
+                    jobUpdate.setMaxCapacity(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("NotificationProperty", targetDepth)) {
                     context.nextToken();
                     jobUpdate.setNotificationProperty(NotificationPropertyJsonUnmarshaller.getInstance().unmarshall(context));

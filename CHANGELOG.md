@@ -1,3 +1,12 @@
+# __1.11.486__ __2019-01-18__
+## __AWS Glue__
+  - ### Features
+    - AllocatedCapacity field is being deprecated and replaced with MaxCapacity field
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Adjust EC2's available instance types.
+
 # __1.11.485__ __2019-01-17__
 ## __AWS Lambda__
   - ### Features
