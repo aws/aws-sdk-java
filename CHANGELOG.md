@@ -1,3 +1,24 @@
+# __1.11.487__ __2019-01-21__
+## __AWS Application Discovery Service__
+  - ### Features
+    - The Application Discovery Service's import APIs allow you to import information about your on-premises servers and applications into ADS so that you can track the status of your migrations through the Migration Hub console.
+
+## __AWS Database Migration Service__
+  - ### Features
+    - Update for DMS TestConnectionSucceeds waiter
+
+## __Amazon AppStream__
+  - ### Features
+    - This API update includes support for tagging Stack, Fleet, and ImageBuilder resources at creation time.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager State Manager now supports configuration management of all AWS resources through integration with Automation. 
+
+## __Firewall Management Service__
+  - ### Features
+    - This release provides support for cleaning up web ACLs during Firewall Management policy deletion. You can now enable the DeleteAllPolicyResources flag and it will delete all system-generated web ACLs.
+
 # __1.11.486__ __2019-01-18__
 ## __AWS Glue__
   - ### Features

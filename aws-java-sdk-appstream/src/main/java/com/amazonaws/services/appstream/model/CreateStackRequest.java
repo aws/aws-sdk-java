@@ -33,13 +33,13 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      */
     private String displayName;
@@ -77,6 +77,21 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private ApplicationSettings applicationSettings;
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -120,11 +135,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -133,10 +148,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -145,11 +160,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +175,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The stack name for display.
+     *        The stack name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -173,10 +188,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
-     * @return The stack name for display.
+     * @return The stack name to display.
      */
 
     public String getDisplayName() {
@@ -185,11 +200,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The stack name for display.
+     *        The stack name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,6 +500,118 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @return The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
+     *         Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *         <p>
+     *         If you do not specify a value, we set the value to an empty string.
+     *         </p>
+     *         <p>
+     *         For more information about tags, see <a
+     *         href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *         Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
+     *        Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, we set the value to an empty string.
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
+     *        Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, we set the value to an empty string.
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateStackRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStackRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -511,7 +638,9 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getUserSettings() != null)
             sb.append("UserSettings: ").append(getUserSettings()).append(",");
         if (getApplicationSettings() != null)
-            sb.append("ApplicationSettings: ").append(getApplicationSettings());
+            sb.append("ApplicationSettings: ").append(getApplicationSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -558,6 +687,10 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getApplicationSettings() != null && other.getApplicationSettings().equals(this.getApplicationSettings()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -574,6 +707,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getFeedbackURL() == null) ? 0 : getFeedbackURL().hashCode());
         hashCode = prime * hashCode + ((getUserSettings() == null) ? 0 : getUserSettings().hashCode());
         hashCode = prime * hashCode + ((getApplicationSettings() == null) ? 0 : getApplicationSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -82,11 +82,6 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * </important>
  * <p>
- * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
- * is true for AWS partners and customers alike. To request access, <a
- * href="http://aws.amazon.com/application-discovery/">sign up for Application Discovery Service</a>.
- * </p>
- * <p>
  * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
  * Application Discovery Service. The topic for each action shows the API request parameters and the response.
  * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
@@ -328,6 +323,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
 
                 try {
                     result = executeAssociateConfigurationItemsToApplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(BatchDeleteImportDataRequest request) {
+
+        return batchDeleteImportDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(final BatchDeleteImportDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteImportDataRequest, BatchDeleteImportDataResult> asyncHandler) {
+        final BatchDeleteImportDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteImportDataResult>() {
+            @Override
+            public BatchDeleteImportDataResult call() throws Exception {
+                BatchDeleteImportDataResult result = null;
+
+                try {
+                    result = executeBatchDeleteImportData(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -643,6 +671,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeImportTasksResult> describeImportTasksAsync(DescribeImportTasksRequest request) {
+
+        return describeImportTasksAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeImportTasksResult> describeImportTasksAsync(final DescribeImportTasksRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeImportTasksRequest, DescribeImportTasksResult> asyncHandler) {
+        final DescribeImportTasksRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeImportTasksResult>() {
+            @Override
+            public DescribeImportTasksResult call() throws Exception {
+                DescribeImportTasksResult result = null;
+
+                try {
+                    result = executeDescribeImportTasks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTagsResult> describeTagsAsync(DescribeTagsRequest request) {
 
         return describeTagsAsync(request, null);
@@ -929,6 +990,39 @@ public class AWSApplicationDiscoveryAsyncClient extends AWSApplicationDiscoveryC
 
                 try {
                     result = executeStartExportTask(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportTaskResult> startImportTaskAsync(StartImportTaskRequest request) {
+
+        return startImportTaskAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartImportTaskResult> startImportTaskAsync(final StartImportTaskRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartImportTaskRequest, StartImportTaskResult> asyncHandler) {
+        final StartImportTaskRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartImportTaskResult>() {
+            @Override
+            public StartImportTaskResult call() throws Exception {
+                StartImportTaskResult result = null;
+
+                try {
+                    result = executeStartImportTask(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

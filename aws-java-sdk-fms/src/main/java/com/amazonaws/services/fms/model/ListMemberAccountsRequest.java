@@ -39,8 +39,7 @@ public class ListMemberAccountsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you
      * have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a
-     * <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for
-     * <code>MaxResults</code> is 100.
+     * <code>NextToken</code> value that you can use to get another batch of member account IDs.
      * </p>
      */
     private Integer maxResults;
@@ -113,15 +112,13 @@ public class ListMemberAccountsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you
      * have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a
-     * <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for
-     * <code>MaxResults</code> is 100.
+     * <code>NextToken</code> value that you can use to get another batch of member account IDs.
      * </p>
      * 
      * @param maxResults
      *        Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request.
      *        If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a
-     *        <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum
-     *        value for <code>MaxResults</code> is 100.
+     *        <code>NextToken</code> value that you can use to get another batch of member account IDs.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -132,14 +129,12 @@ public class ListMemberAccountsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you
      * have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a
-     * <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for
-     * <code>MaxResults</code> is 100.
+     * <code>NextToken</code> value that you can use to get another batch of member account IDs.
      * </p>
      * 
      * @return Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request.
      *         If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes
-     *         a <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum
-     *         value for <code>MaxResults</code> is 100.
+     *         a <code>NextToken</code> value that you can use to get another batch of member account IDs.
      */
 
     public Integer getMaxResults() {
@@ -150,15 +145,13 @@ public class ListMemberAccountsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request. If you
      * have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a
-     * <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum value for
-     * <code>MaxResults</code> is 100.
+     * <code>NextToken</code> value that you can use to get another batch of member account IDs.
      * </p>
      * 
      * @param maxResults
      *        Specifies the number of member account IDs that you want AWS Firewall Manager to return for this request.
      *        If you have more IDs than the number that you specify for <code>MaxResults</code>, the response includes a
-     *        <code>NextToken</code> value that you can use to get another batch of member account IDs. The maximum
-     *        value for <code>MaxResults</code> is 100.
+     *        <code>NextToken</code> value that you can use to get another batch of member account IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

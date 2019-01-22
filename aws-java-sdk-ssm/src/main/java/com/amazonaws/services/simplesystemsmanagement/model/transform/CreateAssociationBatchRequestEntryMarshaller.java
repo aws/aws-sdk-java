@@ -35,6 +35,8 @@ public class CreateAssociationBatchRequestEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceId").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Parameters").build();
+    private static final MarshallingInfo<String> AUTOMATIONTARGETPARAMETERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationTargetParameterName").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
     private static final MarshallingInfo<List> TARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,6 +73,7 @@ public class CreateAssociationBatchRequestEntryMarshaller {
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(createAssociationBatchRequestEntry.getAutomationTargetParameterName(), AUTOMATIONTARGETPARAMETERNAME_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getTargets(), TARGETS_BINDING);
             protocolMarshaller.marshall(createAssociationBatchRequestEntry.getScheduleExpression(), SCHEDULEEXPRESSION_BINDING);

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.appstream.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -47,6 +49,8 @@ public class CreateImageBuilderRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainJoinInfo").build();
     private static final MarshallingInfo<String> APPSTREAMAGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppstreamAgentVersion").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateImageBuilderRequestMarshaller instance = new CreateImageBuilderRequestMarshaller();
 
@@ -74,6 +78,7 @@ public class CreateImageBuilderRequestMarshaller {
             protocolMarshaller.marshall(createImageBuilderRequest.getEnableDefaultInternetAccess(), ENABLEDEFAULTINTERNETACCESS_BINDING);
             protocolMarshaller.marshall(createImageBuilderRequest.getDomainJoinInfo(), DOMAINJOININFO_BINDING);
             protocolMarshaller.marshall(createImageBuilderRequest.getAppstreamAgentVersion(), APPSTREAMAGENTVERSION_BINDING);
+            protocolMarshaller.marshall(createImageBuilderRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

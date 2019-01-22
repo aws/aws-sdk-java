@@ -27,13 +27,13 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
@@ -64,7 +64,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String redirectURL;
     /**
      * <p>
-     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send
      * Feedback link is displayed.
      * </p>
      */
@@ -93,11 +93,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The stack name for display.
+     *        The stack name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -106,10 +106,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
-     * @return The stack name for display.
+     * @return The stack name to display.
      */
 
     public String getDisplayName() {
@@ -118,11 +118,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The stack name for display.
+     *        The stack name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +133,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -146,10 +146,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -158,11 +158,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,12 +375,12 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send
      * Feedback link is displayed.
      * </p>
      * 
      * @param feedbackURL
-     *        The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     *        The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no
      *        Send Feedback link is displayed.
      */
 
@@ -390,11 +390,11 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send
      * Feedback link is displayed.
      * </p>
      * 
-     * @return The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     * @return The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no
      *         Send Feedback link is displayed.
      */
 
@@ -404,12 +404,12 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send
+     * The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no Send
      * Feedback link is displayed.
      * </p>
      * 
      * @param feedbackURL
-     *        The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no
+     *        The URL that users are redirected to after they choose the Send Feedback link. If no URL is specified, no
      *        Send Feedback link is displayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

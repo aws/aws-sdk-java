@@ -69,8 +69,8 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * non-compliant. The details include the name of the dependent service and the error message recieved indicating
-     * the problem with the service.
+     * non-compliant. The details include the name of the dependent service and the error message received that
+     * indicates the problem with the service.
      * </p>
      */
     private java.util.Map<String, String> issueInfoMap;
@@ -360,13 +360,13 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * non-compliant. The details include the name of the dependent service and the error message recieved indicating
-     * the problem with the service.
+     * non-compliant. The details include the name of the dependent service and the error message received that
+     * indicates the problem with the service.
      * </p>
      * 
      * @return Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a
      *         resource to be non-compliant. The details include the name of the dependent service and the error message
-     *         recieved indicating the problem with the service.
+     *         received that indicates the problem with the service.
      */
 
     public java.util.Map<String, String> getIssueInfoMap() {
@@ -376,14 +376,14 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * non-compliant. The details include the name of the dependent service and the error message recieved indicating
-     * the problem with the service.
+     * non-compliant. The details include the name of the dependent service and the error message received that
+     * indicates the problem with the service.
      * </p>
      * 
      * @param issueInfoMap
      *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
-     *        to be non-compliant. The details include the name of the dependent service and the error message recieved
-     *        indicating the problem with the service.
+     *        to be non-compliant. The details include the name of the dependent service and the error message received
+     *        that indicates the problem with the service.
      */
 
     public void setIssueInfoMap(java.util.Map<String, String> issueInfoMap) {
@@ -393,14 +393,14 @@ public class PolicyComplianceDetail implements Serializable, Cloneable, Structur
     /**
      * <p>
      * Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource to be
-     * non-compliant. The details include the name of the dependent service and the error message recieved indicating
-     * the problem with the service.
+     * non-compliant. The details include the name of the dependent service and the error message received that
+     * indicates the problem with the service.
      * </p>
      * 
      * @param issueInfoMap
      *        Details about problems with dependent services, such as AWS WAF or AWS Config, that are causing a resource
-     *        to be non-compliant. The details include the name of the dependent service and the error message recieved
-     *        indicating the problem with the service.
+     *        to be non-compliant. The details include the name of the dependent service and the error message received
+     *        that indicates the problem with the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

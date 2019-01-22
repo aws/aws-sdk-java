@@ -77,11 +77,6 @@ import com.amazonaws.services.applicationdiscovery.model.*;
  * </p>
  * </important>
  * <p>
- * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
- * is true for AWS partners and customers alike. To request access, <a
- * href="http://aws.amazon.com/application-discovery/">sign up for Application Discovery Service</a>.
- * </p>
- * <p>
  * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
  * Application Discovery Service. The topic for each action shows the API request parameters and the response.
  * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
@@ -125,6 +120,47 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
     java.util.concurrent.Future<AssociateConfigurationItemsToApplicationResult> associateConfigurationItemsToApplicationAsync(
             AssociateConfigurationItemsToApplicationRequest associateConfigurationItemsToApplicationRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateConfigurationItemsToApplicationRequest, AssociateConfigurationItemsToApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records
+     * that can identify servers or applications.
+     * </p>
+     * <p>
+     * AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match
+     * existing entries that you've previously discovered, the information for the already-existing discovered server is
+     * updated. When you delete an import task that contains records that were used to match, the information in those
+     * matched records that comes from the deleted records will also be deleted.
+     * </p>
+     * 
+     * @param batchDeleteImportDataRequest
+     * @return A Java Future containing the result of the BatchDeleteImportData operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsync.BatchDeleteImportData
+     */
+    java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(BatchDeleteImportDataRequest batchDeleteImportDataRequest);
+
+    /**
+     * <p>
+     * Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records
+     * that can identify servers or applications.
+     * </p>
+     * <p>
+     * AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match
+     * existing entries that you've previously discovered, the information for the already-existing discovered server is
+     * updated. When you delete an import task that contains records that were used to match, the information in those
+     * matched records that comes from the deleted records will also be deleted.
+     * </p>
+     * 
+     * @param batchDeleteImportDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDeleteImportData operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsyncHandler.BatchDeleteImportData
+     */
+    java.util.concurrent.Future<BatchDeleteImportDataResult> batchDeleteImportDataAsync(BatchDeleteImportDataRequest batchDeleteImportDataRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteImportDataRequest, BatchDeleteImportDataResult> asyncHandler);
 
     /**
      * <p>
@@ -273,7 +309,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * </p>
      * <note>
      * <p>
-     * All of the supplied IDs must be for the same asset type from one of the follwoing:
+     * All of the supplied IDs must be for the same asset type from one of the following:
      * </p>
      * <ul>
      * <li>
@@ -321,7 +357,7 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * </p>
      * <note>
      * <p>
-     * All of the supplied IDs must be for the same asset type from one of the follwoing:
+     * All of the supplied IDs must be for the same asset type from one of the following:
      * </p>
      * <ul>
      * <li>
@@ -468,6 +504,35 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      */
     java.util.concurrent.Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeExportTasksRequest, DescribeExportTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object
+     * URL for the import file, and more.
+     * </p>
+     * 
+     * @param describeImportTasksRequest
+     * @return A Java Future containing the result of the DescribeImportTasks operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsync.DescribeImportTasks
+     */
+    java.util.concurrent.Future<DescribeImportTasksResult> describeImportTasksAsync(DescribeImportTasksRequest describeImportTasksRequest);
+
+    /**
+     * <p>
+     * Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object
+     * URL for the import file, and more.
+     * </p>
+     * 
+     * @param describeImportTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeImportTasks operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsyncHandler.DescribeImportTasks
+     */
+    java.util.concurrent.Future<DescribeImportTasksResult> describeImportTasksAsync(DescribeImportTasksRequest describeImportTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeImportTasksRequest, DescribeImportTasksResult> asyncHandler);
 
     /**
      * <p>
@@ -813,6 +878,123 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      */
     java.util.concurrent.Future<StartExportTaskResult> startExportTaskAsync(StartExportTaskRequest startExportTaskRequest,
             com.amazonaws.handlers.AsyncHandler<StartExportTaskRequest, StartExportTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an import task, which allows you to import details of your on-premises environment directly into AWS
+     * without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery
+     * Agent. This gives you the option to perform migration assessment and planning directly from your imported data,
+     * including the ability to group your devices as applications and track their migration status.
+     * </p>
+     * <p>
+     * To start an import request, do this:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Download the specially formatted comma separated value (CSV) import template, which you can find here: <a
+     * href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv"
+     * >https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fill out the template with your server and application data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in
+     * the CSV format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the
+     * records from your file.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information, including step-by-step procedures, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
+     * Import</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * There are limits to the number of import tasks you can create (and delete) in an AWS account. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
+     * Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param startImportTaskRequest
+     * @return A Java Future containing the result of the StartImportTask operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsync.StartImportTask
+     */
+    java.util.concurrent.Future<StartImportTaskResult> startImportTaskAsync(StartImportTaskRequest startImportTaskRequest);
+
+    /**
+     * <p>
+     * Starts an import task, which allows you to import details of your on-premises environment directly into AWS
+     * without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery
+     * Agent. This gives you the option to perform migration assessment and planning directly from your imported data,
+     * including the ability to group your devices as applications and track their migration status.
+     * </p>
+     * <p>
+     * To start an import request, do this:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Download the specially formatted comma separated value (CSV) import template, which you can find here: <a
+     * href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv"
+     * >https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fill out the template with your server and application data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in
+     * the CSV format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the
+     * records from your file.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information, including step-by-step procedures, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
+     * Import</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * There are limits to the number of import tasks you can create (and delete) in an AWS account. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
+     * Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param startImportTaskRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartImportTask operation returned by the service.
+     * @sample AWSApplicationDiscoveryAsyncHandler.StartImportTask
+     */
+    java.util.concurrent.Future<StartImportTaskResult> startImportTaskAsync(StartImportTaskRequest startImportTaskRequest,
+            com.amazonaws.handlers.AsyncHandler<StartImportTaskRequest, StartImportTaskResult> asyncHandler);
 
     /**
      * <p>

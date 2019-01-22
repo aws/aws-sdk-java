@@ -29,6 +29,8 @@ public class DeletePolicyRequestMarshaller {
 
     private static final MarshallingInfo<String> POLICYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("PolicyId").build();
+    private static final MarshallingInfo<Boolean> DELETEALLPOLICYRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeleteAllPolicyResources").build();
 
     private static final DeletePolicyRequestMarshaller instance = new DeletePolicyRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class DeletePolicyRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(deletePolicyRequest.getPolicyId(), POLICYID_BINDING);
+            protocolMarshaller.marshall(deletePolicyRequest.getDeleteAllPolicyResources(), DELETEALLPOLICYRESOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

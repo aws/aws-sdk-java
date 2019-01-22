@@ -33,7 +33,7 @@ public class DeleteImagePermissionsRequest extends com.amazonaws.AmazonWebServic
     private String name;
     /**
      * <p>
-     * The 12-digit ID of the AWS account for which to delete image permissions.
+     * The 12-digit identifier of the AWS account for which to delete image permissions.
      * </p>
      */
     private String sharedAccountId;
@@ -80,11 +80,11 @@ public class DeleteImagePermissionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The 12-digit ID of the AWS account for which to delete image permissions.
+     * The 12-digit identifier of the AWS account for which to delete image permissions.
      * </p>
      * 
      * @param sharedAccountId
-     *        The 12-digit ID of the AWS account for which to delete image permissions.
+     *        The 12-digit identifier of the AWS account for which to delete image permissions.
      */
 
     public void setSharedAccountId(String sharedAccountId) {
@@ -93,10 +93,10 @@ public class DeleteImagePermissionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The 12-digit ID of the AWS account for which to delete image permissions.
+     * The 12-digit identifier of the AWS account for which to delete image permissions.
      * </p>
      * 
-     * @return The 12-digit ID of the AWS account for which to delete image permissions.
+     * @return The 12-digit identifier of the AWS account for which to delete image permissions.
      */
 
     public String getSharedAccountId() {
@@ -105,11 +105,11 @@ public class DeleteImagePermissionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The 12-digit ID of the AWS account for which to delete image permissions.
+     * The 12-digit identifier of the AWS account for which to delete image permissions.
      * </p>
      * 
      * @param sharedAccountId
-     *        The 12-digit ID of the AWS account for which to delete image permissions.
+     *        The 12-digit identifier of the AWS account for which to delete image permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

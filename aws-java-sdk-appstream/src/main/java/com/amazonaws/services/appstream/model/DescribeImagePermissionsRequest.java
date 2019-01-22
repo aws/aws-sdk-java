@@ -39,7 +39,7 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
     private Integer maxResults;
     /**
      * <p>
-     * The 12-digit ID of one or more AWS accounts with which the image is shared.
+     * The 12-digit identifier of one or more AWS accounts with which the image is shared.
      * </p>
      */
     private java.util.List<String> sharedAwsAccountIds;
@@ -133,10 +133,10 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit ID of one or more AWS accounts with which the image is shared.
+     * The 12-digit identifier of one or more AWS accounts with which the image is shared.
      * </p>
      * 
-     * @return The 12-digit ID of one or more AWS accounts with which the image is shared.
+     * @return The 12-digit identifier of one or more AWS accounts with which the image is shared.
      */
 
     public java.util.List<String> getSharedAwsAccountIds() {
@@ -145,11 +145,11 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit ID of one or more AWS accounts with which the image is shared.
+     * The 12-digit identifier of one or more AWS accounts with which the image is shared.
      * </p>
      * 
      * @param sharedAwsAccountIds
-     *        The 12-digit ID of one or more AWS accounts with which the image is shared.
+     *        The 12-digit identifier of one or more AWS accounts with which the image is shared.
      */
 
     public void setSharedAwsAccountIds(java.util.Collection<String> sharedAwsAccountIds) {
@@ -163,7 +163,7 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit ID of one or more AWS accounts with which the image is shared.
+     * The 12-digit identifier of one or more AWS accounts with which the image is shared.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -172,7 +172,7 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param sharedAwsAccountIds
-     *        The 12-digit ID of one or more AWS accounts with which the image is shared.
+     *        The 12-digit identifier of one or more AWS accounts with which the image is shared.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,11 +188,11 @@ public class DescribeImagePermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The 12-digit ID of one or more AWS accounts with which the image is shared.
+     * The 12-digit identifier of one or more AWS accounts with which the image is shared.
      * </p>
      * 
      * @param sharedAwsAccountIds
-     *        The 12-digit ID of one or more AWS accounts with which the image is shared.
+     *        The 12-digit identifier of one or more AWS accounts with which the image is shared.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

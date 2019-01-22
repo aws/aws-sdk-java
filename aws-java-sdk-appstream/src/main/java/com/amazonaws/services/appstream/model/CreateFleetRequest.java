@@ -201,13 +201,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer disconnectTimeoutInSeconds;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The fleet name for display.
+     * The fleet name to display.
      * </p>
      */
     private String displayName;
@@ -219,10 +219,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean enableDefaultInternetAccess;
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
      * </p>
      */
     private DomainJoinInfo domainJoinInfo;
+    /**
+     * <p>
+     * The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -1354,11 +1370,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -1367,10 +1383,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -1379,11 +1395,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1394,11 +1410,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The fleet name for display.
+     * The fleet name to display.
      * </p>
      * 
      * @param displayName
-     *        The fleet name for display.
+     *        The fleet name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -1407,10 +1423,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The fleet name for display.
+     * The fleet name to display.
      * </p>
      * 
-     * @return The fleet name for display.
+     * @return The fleet name to display.
      */
 
     public String getDisplayName() {
@@ -1419,11 +1435,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The fleet name for display.
+     * The fleet name to display.
      * </p>
      * 
      * @param displayName
-     *        The fleet name for display.
+     *        The fleet name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1486,11 +1502,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed to join a Microsoft Active Directory domain.
+     *        The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *        Directory domain.
      */
 
     public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
@@ -1499,10 +1517,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
      * </p>
      * 
-     * @return The information needed to join a Microsoft Active Directory domain.
+     * @return The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *         Directory domain.
      */
 
     public DomainJoinInfo getDomainJoinInfo() {
@@ -1511,16 +1531,130 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed to join a Microsoft Active Directory domain.
+     *        The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *        Directory domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFleetRequest withDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
         setDomainJoinInfo(domainJoinInfo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @return The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
+     *         Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *         <p>
+     *         If you do not specify a value, we set the value to an empty string.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *         Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
+     *        Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, we set the value to an empty string.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
+     *        Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, we set the value to an empty string.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateFleetRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -1561,7 +1695,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getEnableDefaultInternetAccess() != null)
             sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess()).append(",");
         if (getDomainJoinInfo() != null)
-            sb.append("DomainJoinInfo: ").append(getDomainJoinInfo());
+            sb.append("DomainJoinInfo: ").append(getDomainJoinInfo()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1628,6 +1764,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDomainJoinInfo() != null && other.getDomainJoinInfo().equals(this.getDomainJoinInfo()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1649,6 +1789,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

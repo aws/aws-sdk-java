@@ -80,6 +80,10 @@ public class AssociationDescriptionJsonUnmarshaller implements Unmarshaller<Asso
                     context.nextToken();
                     associationDescription.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AutomationTargetParameterName", targetDepth)) {
+                    context.nextToken();
+                    associationDescription.setAutomationTargetParameterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     associationDescription.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),

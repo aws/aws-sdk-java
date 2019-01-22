@@ -75,6 +75,13 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String associationName;
     /**
      * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     */
+    private String automationTargetParameterName;
+    /**
+     * <p>
      * The number of errors that are allowed before the system stops sending requests to run the association on
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
@@ -488,6 +495,52 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @param automationTargetParameterName
+     *        Specify the target for the association. This target is required for associations that use an Automation
+     *        document and target resources by using rate controls.
+     */
+
+    public void setAutomationTargetParameterName(String automationTargetParameterName) {
+        this.automationTargetParameterName = automationTargetParameterName;
+    }
+
+    /**
+     * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @return Specify the target for the association. This target is required for associations that use an Automation
+     *         document and target resources by using rate controls.
+     */
+
+    public String getAutomationTargetParameterName() {
+        return this.automationTargetParameterName;
+    }
+
+    /**
+     * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @param automationTargetParameterName
+     *        Specify the target for the association. This target is required for associations that use an Automation
+     *        document and target resources by using rate controls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAssociationRequest withAutomationTargetParameterName(String automationTargetParameterName) {
+        setAutomationTargetParameterName(automationTargetParameterName);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of errors that are allowed before the system stops sending requests to run the association on
      * additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the
      * target set, for example 10%. If you specify 3, for example, the system stops sending requests when the fourth
@@ -749,6 +802,8 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("OutputLocation: ").append(getOutputLocation()).append(",");
         if (getAssociationName() != null)
             sb.append("AssociationName: ").append(getAssociationName()).append(",");
+        if (getAutomationTargetParameterName() != null)
+            sb.append("AutomationTargetParameterName: ").append(getAutomationTargetParameterName()).append(",");
         if (getMaxErrors() != null)
             sb.append("MaxErrors: ").append(getMaxErrors()).append(",");
         if (getMaxConcurrency() != null)
@@ -801,6 +856,11 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAssociationName() != null && other.getAssociationName().equals(this.getAssociationName()) == false)
             return false;
+        if (other.getAutomationTargetParameterName() == null ^ this.getAutomationTargetParameterName() == null)
+            return false;
+        if (other.getAutomationTargetParameterName() != null
+                && other.getAutomationTargetParameterName().equals(this.getAutomationTargetParameterName()) == false)
+            return false;
         if (other.getMaxErrors() == null ^ this.getMaxErrors() == null)
             return false;
         if (other.getMaxErrors() != null && other.getMaxErrors().equals(this.getMaxErrors()) == false)
@@ -829,6 +889,7 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getScheduleExpression() == null) ? 0 : getScheduleExpression().hashCode());
         hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
         hashCode = prime * hashCode + ((getAssociationName() == null) ? 0 : getAssociationName().hashCode());
+        hashCode = prime * hashCode + ((getAutomationTargetParameterName() == null) ? 0 : getAutomationTargetParameterName().hashCode());
         hashCode = prime * hashCode + ((getMaxErrors() == null) ? 0 : getMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrency() == null) ? 0 : getMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getComplianceSeverity() == null) ? 0 : getComplianceSeverity().hashCode());

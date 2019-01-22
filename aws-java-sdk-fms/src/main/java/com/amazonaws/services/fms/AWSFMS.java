@@ -120,8 +120,8 @@ public interface AWSFMS {
 
     /**
      * <p>
-     * Disassociates the account that has been set as the AWS Firewall Manager administrator account. You will need to
-     * submit an <code>AssociateAdminAccount</code> request to set a new account as the AWS Firewall administrator.
+     * Disassociates the account that has been set as the AWS Firewall Manager administrator account. To set a different
+     * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request .
      * </p>
      * 
      * @param disassociateAdminAccountRequest

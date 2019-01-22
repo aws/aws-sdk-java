@@ -87,8 +87,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the
-     * AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in
-     * <code>IncludeMap</code> will be included in the policy.
+     * organization in AWS Organizations are included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> are included in the policy.
      * </p>
      * <p>
      * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
@@ -99,8 +99,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first,
-     * with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code>
-     * are removed, resulting in the final list of accounts to add to the policy.
+     * with all the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are
+     * removed, resulting in the final list of accounts to add to the policy.
      * </p>
      * <p>
      * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
@@ -544,8 +544,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the
-     * AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in
-     * <code>IncludeMap</code> will be included in the policy.
+     * organization in AWS Organizations are included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> are included in the policy.
      * </p>
      * <p>
      * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
@@ -553,8 +553,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts
-     *         in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values
-     *         listed in <code>IncludeMap</code> will be included in the policy.</p>
+     *         in the organization in AWS Organizations are included in the policy. If <code>IncludeMap</code> is not
+     *         null, only values listed in <code>IncludeMap</code> are included in the policy.</p>
      *         <p>
      *         The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
      *         <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
@@ -567,8 +567,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the
-     * AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in
-     * <code>IncludeMap</code> will be included in the policy.
+     * organization in AWS Organizations are included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> are included in the policy.
      * </p>
      * <p>
      * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
@@ -577,8 +577,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param includeMap
      *        Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts
-     *        in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values
-     *        listed in <code>IncludeMap</code> will be included in the policy.</p>
+     *        in the organization in AWS Organizations are included in the policy. If <code>IncludeMap</code> is not
+     *        null, only values listed in <code>IncludeMap</code> are included in the policy.</p>
      *        <p>
      *        The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
      *        <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
@@ -591,8 +591,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts in the
-     * AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values listed in
-     * <code>IncludeMap</code> will be included in the policy.
+     * organization in AWS Organizations are included in the policy. If <code>IncludeMap</code> is not null, only values
+     * listed in <code>IncludeMap</code> are included in the policy.
      * </p>
      * <p>
      * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
@@ -601,8 +601,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param includeMap
      *        Specifies the AWS account IDs to include in the policy. If <code>IncludeMap</code> is null, all accounts
-     *        in the AWS Organization are included in the policy. If <code>IncludeMap</code> is not null, only values
-     *        listed in <code>IncludeMap</code> will be included in the policy.</p>
+     *        in the organization in AWS Organizations are included in the policy. If <code>IncludeMap</code> is not
+     *        null, only values listed in <code>IncludeMap</code> are included in the policy.</p>
      *        <p>
      *        The key to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code> would be
      *        <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
@@ -638,8 +638,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first,
-     * with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code>
-     * are removed, resulting in the final list of accounts to add to the policy.
+     * with all the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are
+     * removed, resulting in the final list of accounts to add to the policy.
      * </p>
      * <p>
      * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
@@ -647,7 +647,7 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are
-     *         evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in
+     *         evaluated first, with all the appropriate account IDs added to the policy. Then the accounts listed in
      *         <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>
      *         <p>
      *         The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
@@ -661,8 +661,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first,
-     * with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code>
-     * are removed, resulting in the final list of accounts to add to the policy.
+     * with all the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are
+     * removed, resulting in the final list of accounts to add to the policy.
      * </p>
      * <p>
      * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
@@ -671,7 +671,7 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param excludeMap
      *        Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated
-     *        first, with all of the appropriate account IDs added to the policy. Then the accounts listed in
+     *        first, with all the appropriate account IDs added to the policy. Then the accounts listed in
      *        <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>
      *        <p>
      *        The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
@@ -685,8 +685,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated first,
-     * with all of the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code>
-     * are removed, resulting in the final list of accounts to add to the policy.
+     * with all the appropriate account IDs added to the policy. Then the accounts listed in <code>ExcludeMap</code> are
+     * removed, resulting in the final list of accounts to add to the policy.
      * </p>
      * <p>
      * The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be
@@ -695,7 +695,7 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param excludeMap
      *        Specifies the AWS account IDs to exclude from the policy. The <code>IncludeMap</code> values are evaluated
-     *        first, with all of the appropriate account IDs added to the policy. Then the accounts listed in
+     *        first, with all the appropriate account IDs added to the policy. Then the accounts listed in
      *        <code>ExcludeMap</code> are removed, resulting in the final list of accounts to add to the policy.</p>
      *        <p>
      *        The key to the map is <code>ACCOUNT</code>. For example, a valid <code>ExcludeMap</code> would be

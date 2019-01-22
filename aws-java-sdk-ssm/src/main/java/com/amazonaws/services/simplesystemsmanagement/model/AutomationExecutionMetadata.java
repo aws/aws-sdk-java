@@ -156,8 +156,8 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
     private String target;
     /**
      * <p>
-     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
-     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount. CrossAccount is
+     * an Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
      * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
      * Guide</i>.
@@ -1160,15 +1160,15 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
-     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount. CrossAccount is
+     * an Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
      * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
      * Guide</i>.
      * </p>
      * 
      * @param automationType
-     *        Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *        Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount.
      *        CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
      *        see <a href=
      *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
@@ -1183,14 +1183,14 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
-     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount. CrossAccount is
+     * an Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
      * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
      * Guide</i>.
      * </p>
      * 
-     * @return Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     * @return Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount.
      *         CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
      *         see <a href=
      *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
@@ -1205,15 +1205,15 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
-     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount. CrossAccount is
+     * an Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
      * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
      * Guide</i>.
      * </p>
      * 
      * @param automationType
-     *        Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *        Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount.
      *        CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
      *        see <a href=
      *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
@@ -1230,15 +1230,15 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
-     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount. CrossAccount is
+     * an Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
      * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
      * Guide</i>.
      * </p>
      * 
      * @param automationType
-     *        Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *        Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount.
      *        CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
      *        see <a href=
      *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
@@ -1253,15 +1253,15 @@ public class AutomationExecutionMetadata implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount. CrossAccount is an
-     * Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
+     * Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount. CrossAccount is
+     * an Automation that executes in multiple AWS Regions and accounts. For more information, see <a href=
      * "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"
      * >Concurrently Executing Automations in Multiple AWS Regions and Accounts</a> in the <i>AWS Systems Manager User
      * Guide</i>.
      * </p>
      * 
      * @param automationType
-     *        Use this filter with <a>DescribeAutomationExecution</a>. Specify either Local of CrossAccount.
+     *        Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or CrossAccount.
      *        CrossAccount is an Automation that executes in multiple AWS Regions and accounts. For more information,
      *        see <a href=
      *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html"

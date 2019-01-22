@@ -78,6 +78,13 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
     private String documentVersion;
     /**
      * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     */
+    private String automationTargetParameterName;
+    /**
+     * <p>
      * A description of the parameters for a document.
      * </p>
      */
@@ -477,6 +484,52 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
 
     public AssociationDescription withDocumentVersion(String documentVersion) {
         setDocumentVersion(documentVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @param automationTargetParameterName
+     *        Specify the target for the association. This target is required for associations that use an Automation
+     *        document and target resources by using rate controls.
+     */
+
+    public void setAutomationTargetParameterName(String automationTargetParameterName) {
+        this.automationTargetParameterName = automationTargetParameterName;
+    }
+
+    /**
+     * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @return Specify the target for the association. This target is required for associations that use an Automation
+     *         document and target resources by using rate controls.
+     */
+
+    public String getAutomationTargetParameterName() {
+        return this.automationTargetParameterName;
+    }
+
+    /**
+     * <p>
+     * Specify the target for the association. This target is required for associations that use an Automation document
+     * and target resources by using rate controls.
+     * </p>
+     * 
+     * @param automationTargetParameterName
+     *        Specify the target for the association. This target is required for associations that use an Automation
+     *        document and target resources by using rate controls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssociationDescription withAutomationTargetParameterName(String automationTargetParameterName) {
+        setAutomationTargetParameterName(automationTargetParameterName);
         return this;
     }
 
@@ -1117,6 +1170,8 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
             sb.append("Overview: ").append(getOverview()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
+        if (getAutomationTargetParameterName() != null)
+            sb.append("AutomationTargetParameterName: ").append(getAutomationTargetParameterName()).append(",");
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getAssociationId() != null)
@@ -1185,6 +1240,11 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
             return false;
         if (other.getDocumentVersion() != null && other.getDocumentVersion().equals(this.getDocumentVersion()) == false)
             return false;
+        if (other.getAutomationTargetParameterName() == null ^ this.getAutomationTargetParameterName() == null)
+            return false;
+        if (other.getAutomationTargetParameterName() != null
+                && other.getAutomationTargetParameterName().equals(this.getAutomationTargetParameterName()) == false)
+            return false;
         if (other.getParameters() == null ^ this.getParameters() == null)
             return false;
         if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
@@ -1245,6 +1305,7 @@ public class AssociationDescription implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getOverview() == null) ? 0 : getOverview().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
+        hashCode = prime * hashCode + ((getAutomationTargetParameterName() == null) ? 0 : getAutomationTargetParameterName().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
         hashCode = prime * hashCode + ((getTargets() == null) ? 0 : getTargets().hashCode());

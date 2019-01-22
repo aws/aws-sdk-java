@@ -42,13 +42,13 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      */
     private String displayName;
@@ -179,11 +179,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -192,10 +192,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -204,11 +204,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +219,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The stack name for display.
+     *        The stack name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -232,10 +232,10 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
-     * @return The stack name for display.
+     * @return The stack name to display.
      */
 
     public String getDisplayName() {
@@ -244,11 +244,11 @@ public class Stack implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The stack name for display.
+     * The stack name to display.
      * </p>
      * 
      * @param displayName
-     *        The stack name for display.
+     *        The stack name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

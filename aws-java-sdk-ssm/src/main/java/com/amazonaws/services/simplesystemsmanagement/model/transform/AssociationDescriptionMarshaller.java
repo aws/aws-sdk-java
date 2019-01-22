@@ -45,6 +45,8 @@ public class AssociationDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Overview").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentVersion").build();
+    private static final MarshallingInfo<String> AUTOMATIONTARGETPARAMETERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutomationTargetParameterName").build();
     private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Parameters").build();
     private static final MarshallingInfo<String> ASSOCIATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -92,6 +94,7 @@ public class AssociationDescriptionMarshaller {
             protocolMarshaller.marshall(associationDescription.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(associationDescription.getOverview(), OVERVIEW_BINDING);
             protocolMarshaller.marshall(associationDescription.getDocumentVersion(), DOCUMENTVERSION_BINDING);
+            protocolMarshaller.marshall(associationDescription.getAutomationTargetParameterName(), AUTOMATIONTARGETPARAMETERNAME_BINDING);
             protocolMarshaller.marshall(associationDescription.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(associationDescription.getAssociationId(), ASSOCIATIONID_BINDING);
             protocolMarshaller.marshall(associationDescription.getTargets(), TARGETS_BINDING);

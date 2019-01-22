@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration information for the directory used to join domains.
+ * Describes the configuration information for the directory used to join a streaming instance to a Microsoft Active
+ * Directory domain.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DirectoryConfig" target="_top">AWS API

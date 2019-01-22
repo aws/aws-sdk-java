@@ -27,6 +27,8 @@ public enum DiscoveryActions implements Action {
 
     /** Action for the AssociateConfigurationItemsToApplication operation. */
     AssociateConfigurationItemsToApplication("discovery:AssociateConfigurationItemsToApplication"),
+    /** Action for the BatchDeleteImportData operation. */
+    BatchDeleteImportData("discovery:BatchDeleteImportData"),
     /** Action for the CreateApplication operation. */
     CreateApplication("discovery:CreateApplication"),
     /** Action for the CreateTags operation. */
@@ -45,6 +47,8 @@ public enum DiscoveryActions implements Action {
     DescribeExportConfigurations("discovery:DescribeExportConfigurations"),
     /** Action for the DescribeExportTasks operation. */
     DescribeExportTasks("discovery:DescribeExportTasks"),
+    /** Action for the DescribeImportTasks operation. */
+    DescribeImportTasks("discovery:DescribeImportTasks"),
     /** Action for the DescribeTags operation. */
     DescribeTags("discovery:DescribeTags"),
     /** Action for the DisassociateConfigurationItemsFromApplication operation. */
@@ -63,6 +67,8 @@ public enum DiscoveryActions implements Action {
     StartDataCollectionByAgentIds("discovery:StartDataCollectionByAgentIds"),
     /** Action for the StartExportTask operation. */
     StartExportTask("discovery:StartExportTask"),
+    /** Action for the StartImportTask operation. */
+    StartImportTask("discovery:StartImportTask"),
     /** Action for the StopContinuousExport operation. */
     StopContinuousExport("discovery:StopContinuousExport"),
     /** Action for the StopDataCollectionByAgentIds operation. */

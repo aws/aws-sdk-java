@@ -43,6 +43,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
     }
 
     @Override
+    public BatchDeleteImportDataResult batchDeleteImportData(BatchDeleteImportDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateApplicationResult createApplication(CreateApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -85,6 +90,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
 
     @Override
     public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeImportTasksResult describeImportTasks(DescribeImportTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -132,6 +142,11 @@ public class AbstractAWSApplicationDiscovery implements AWSApplicationDiscovery 
 
     @Override
     public StartExportTaskResult startExportTask(StartExportTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartImportTaskResult startImportTask(StartImportTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

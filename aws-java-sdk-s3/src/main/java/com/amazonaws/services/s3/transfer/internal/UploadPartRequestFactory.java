@@ -104,7 +104,8 @@ public class UploadPartRequestFactory {
         // Copying the SSE-C metadata if it's using SSE-C, which is required for each UploadPart Request.
         // See https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadUploadPart.html, https://github.com/aws/aws-sdk-java/issues/1840
         ObjectMetadata origReqMetadata = origReq.getMetadata();
-        if (origReqMetadata.getRawMetadataValue(SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY) != null &&
+        if (origReqMetadata != null &&
+            origReqMetadata.getRawMetadataValue(SERVER_SIDE_ENCRYPTION_CUSTOMER_KEY) != null &&
             origReqMetadata.getSSECustomerAlgorithm() != null &&
             origReqMetadata.getSSECustomerKeyMd5() != null) {
 

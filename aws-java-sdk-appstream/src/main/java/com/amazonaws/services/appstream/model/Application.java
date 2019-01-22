@@ -36,7 +36,7 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The application name for display.
+     * The application name to display.
      * </p>
      */
     private String displayName;
@@ -113,11 +113,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application name for display.
+     * The application name to display.
      * </p>
      * 
      * @param displayName
-     *        The application name for display.
+     *        The application name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -126,10 +126,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application name for display.
+     * The application name to display.
      * </p>
      * 
-     * @return The application name for display.
+     * @return The application name to display.
      */
 
     public String getDisplayName() {
@@ -138,11 +138,11 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application name for display.
+     * The application name to display.
      * </p>
      * 
      * @param displayName
-     *        The application name for display.
+     *        The application name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

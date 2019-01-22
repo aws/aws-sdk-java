@@ -61,6 +61,10 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                     createAssociationBatchRequestEntry.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
                             new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
                 }
+                if (context.testExpression("AutomationTargetParameterName", targetDepth)) {
+                    context.nextToken();
+                    createAssociationBatchRequestEntry.setAutomationTargetParameterName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchRequestEntry.setDocumentVersion(context.getUnmarshaller(String.class).unmarshall(context));

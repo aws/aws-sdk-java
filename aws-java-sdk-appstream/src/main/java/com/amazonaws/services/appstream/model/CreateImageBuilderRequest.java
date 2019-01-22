@@ -33,7 +33,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     private String name;
     /**
      * <p>
-     * The name of the image used to create the builder.
+     * The name of the image used to create the image builder.
      * </p>
      */
     private String imageName;
@@ -51,13 +51,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     private String instanceType;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The image builder name for display.
+     * The image builder name to display.
      * </p>
      */
     private String displayName;
@@ -75,7 +75,8 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean enableDefaultInternetAccess;
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+     * Directory domain.
      * </p>
      */
     private DomainJoinInfo domainJoinInfo;
@@ -86,6 +87,21 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private String appstreamAgentVersion;
+    /**
+     * <p>
+     * The tags to associate with the image builder. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -129,11 +145,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the image used to create the builder.
+     * The name of the image used to create the image builder.
      * </p>
      * 
      * @param imageName
-     *        The name of the image used to create the builder.
+     *        The name of the image used to create the image builder.
      */
 
     public void setImageName(String imageName) {
@@ -142,10 +158,10 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the image used to create the builder.
+     * The name of the image used to create the image builder.
      * </p>
      * 
-     * @return The name of the image used to create the builder.
+     * @return The name of the image used to create the image builder.
      */
 
     public String getImageName() {
@@ -154,11 +170,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the image used to create the builder.
+     * The name of the image used to create the image builder.
      * </p>
      * 
      * @param imageName
-     *        The name of the image used to create the builder.
+     *        The name of the image used to create the image builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,11 +265,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -262,10 +278,10 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -274,11 +290,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -289,11 +305,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The image builder name for display.
+     * The image builder name to display.
      * </p>
      * 
      * @param displayName
-     *        The image builder name for display.
+     *        The image builder name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -302,10 +318,10 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The image builder name for display.
+     * The image builder name to display.
      * </p>
      * 
-     * @return The image builder name for display.
+     * @return The image builder name to display.
      */
 
     public String getDisplayName() {
@@ -314,11 +330,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The image builder name for display.
+     * The image builder name to display.
      * </p>
      * 
      * @param displayName
-     *        The image builder name for display.
+     *        The image builder name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -421,11 +437,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+     * Directory domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed to join a Microsoft Active Directory domain.
+     *        The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft
+     *        Active Directory domain.
      */
 
     public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
@@ -434,10 +452,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+     * Directory domain.
      * </p>
      * 
-     * @return The information needed to join a Microsoft Active Directory domain.
+     * @return The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft
+     *         Active Directory domain.
      */
 
     public DomainJoinInfo getDomainJoinInfo() {
@@ -446,11 +466,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft Active
+     * Directory domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed to join a Microsoft Active Directory domain.
+     *        The name of the directory and organizational unit (OU) to use to join the image builder to a Microsoft
+     *        Active Directory domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,6 +528,118 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The tags to associate with the image builder. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @return The tags to associate with the image builder. A tag is a key-value pair (the value is optional). For
+     *         example, Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *         <p>
+     *         If you do not specify a value, we set the value to an empty string.
+     *         </p>
+     *         <p>
+     *         For more information about tags, see <a
+     *         href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *         Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the image builder. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the image builder. A tag is a key-value pair (the value is optional). For
+     *        example, Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, we set the value to an empty string.
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags to associate with the image builder. A tag is a key-value pair (the value is optional). For example,
+     * Environment=Test, or, if you do not specify a value, Environment=.
+     * </p>
+     * <p>
+     * If you do not specify a value, we set the value to an empty string.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to associate with the image builder. A tag is a key-value pair (the value is optional). For
+     *        example, Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        <p>
+     *        If you do not specify a value, we set the value to an empty string.
+     *        </p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageBuilderRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateImageBuilderRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageBuilderRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -536,7 +670,9 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
         if (getDomainJoinInfo() != null)
             sb.append("DomainJoinInfo: ").append(getDomainJoinInfo()).append(",");
         if (getAppstreamAgentVersion() != null)
-            sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion());
+            sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -591,6 +727,10 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getAppstreamAgentVersion() != null && other.getAppstreamAgentVersion().equals(this.getAppstreamAgentVersion()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -609,6 +749,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

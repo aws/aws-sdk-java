@@ -48,7 +48,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String baseImageArn;
     /**
      * <p>
-     * The image name for display.
+     * The image name to display.
      * </p>
      */
     private String displayName;
@@ -79,7 +79,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
     private String platform;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
@@ -243,11 +243,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image name for display.
+     * The image name to display.
      * </p>
      * 
      * @param displayName
-     *        The image name for display.
+     *        The image name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -256,10 +256,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image name for display.
+     * The image name to display.
      * </p>
      * 
-     * @return The image name for display.
+     * @return The image name to display.
      */
 
     public String getDisplayName() {
@@ -268,11 +268,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The image name for display.
+     * The image name to display.
      * </p>
      * 
      * @param displayName
-     *        The image name for display.
+     *        The image name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,11 +564,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -577,10 +577,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -589,11 +589,11 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

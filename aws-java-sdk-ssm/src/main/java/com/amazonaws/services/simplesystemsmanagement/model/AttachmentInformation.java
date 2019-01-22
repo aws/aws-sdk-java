@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An attribute of an attachment, such as the attachment name or size.
+ * An attribute of an attachment, such as the attachment name.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AttachmentInformation" target="_top">AWS API
@@ -28,10 +28,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AttachmentInformation implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the attachment.
+     * </p>
+     */
     private String name;
 
     /**
+     * <p>
+     * The name of the attachment.
+     * </p>
+     * 
      * @param name
+     *        The name of the attachment.
      */
 
     public void setName(String name) {
@@ -39,7 +49,11 @@ public class AttachmentInformation implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the attachment.
+     * </p>
+     * 
+     * @return The name of the attachment.
      */
 
     public String getName() {
@@ -47,7 +61,12 @@ public class AttachmentInformation implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The name of the attachment.
+     * </p>
+     * 
      * @param name
+     *        The name of the attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

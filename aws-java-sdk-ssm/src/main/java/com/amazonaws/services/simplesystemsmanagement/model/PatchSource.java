@@ -48,10 +48,10 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * The value of the yum repo configuration. For example:
      * </p>
      * <p>
-     * <code>cachedir=/var/cache/yum/$basesearch</code>
+     * <code>[main]</code>
      * </p>
      * <p>
-     * <code>$releasever</code>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      * </p>
      * <p>
      * <code>keepcache=0</code>
@@ -196,10 +196,10 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * The value of the yum repo configuration. For example:
      * </p>
      * <p>
-     * <code>cachedir=/var/cache/yum/$basesearch</code>
+     * <code>[main]</code>
      * </p>
      * <p>
-     * <code>$releasever</code>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      * </p>
      * <p>
      * <code>keepcache=0</code>
@@ -211,10 +211,10 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * @param configuration
      *        The value of the yum repo configuration. For example:</p>
      *        <p>
-     *        <code>cachedir=/var/cache/yum/$basesearch</code>
+     *        <code>[main]</code>
      *        </p>
      *        <p>
-     *        <code>$releasever</code>
+     *        <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      *        </p>
      *        <p>
      *        <code>keepcache=0</code>
@@ -232,10 +232,10 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * The value of the yum repo configuration. For example:
      * </p>
      * <p>
-     * <code>cachedir=/var/cache/yum/$basesearch</code>
+     * <code>[main]</code>
      * </p>
      * <p>
-     * <code>$releasever</code>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      * </p>
      * <p>
      * <code>keepcache=0</code>
@@ -246,10 +246,10 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The value of the yum repo configuration. For example:</p>
      *         <p>
-     *         <code>cachedir=/var/cache/yum/$basesearch</code>
+     *         <code>[main]</code>
      *         </p>
      *         <p>
-     *         <code>$releasever</code>
+     *         <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      *         </p>
      *         <p>
      *         <code>keepcache=0</code>
@@ -267,10 +267,10 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * The value of the yum repo configuration. For example:
      * </p>
      * <p>
-     * <code>cachedir=/var/cache/yum/$basesearch</code>
+     * <code>[main]</code>
      * </p>
      * <p>
-     * <code>$releasever</code>
+     * <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      * </p>
      * <p>
      * <code>keepcache=0</code>
@@ -282,10 +282,10 @@ public class PatchSource implements Serializable, Cloneable, StructuredPojo {
      * @param configuration
      *        The value of the yum repo configuration. For example:</p>
      *        <p>
-     *        <code>cachedir=/var/cache/yum/$basesearch</code>
+     *        <code>[main]</code>
      *        </p>
      *        <p>
-     *        <code>$releasever</code>
+     *        <code>cachedir=/var/cache/yum/$basesearch$releasever</code>
      *        </p>
      *        <p>
      *        <code>keepcache=0</code>

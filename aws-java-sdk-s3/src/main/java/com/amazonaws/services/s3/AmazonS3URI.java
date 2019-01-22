@@ -124,7 +124,7 @@ public class AmazonS3URI {
             // bucket name if we have not performed full URL encoding
             String path = urlEncode ? uri.getPath() : uri.getRawPath();
 
-            if ("/".equals(path)) {
+            if ("".equals(path) || "/".equals(path)) {
                 this.bucket = null;
                 this.key = null;
             } else {

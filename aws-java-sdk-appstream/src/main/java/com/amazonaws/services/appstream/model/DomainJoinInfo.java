@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the information needed to join a Microsoft Active Directory domain.
+ * Describes the configuration information required to join fleets and image builders to Microsoft Active Directory
+ * domains.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DomainJoinInfo" target="_top">AWS API

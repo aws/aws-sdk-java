@@ -102,11 +102,6 @@ import com.amazonaws.services.applicationdiscovery.model.transform.*;
  * </p>
  * </important>
  * <p>
- * Your AWS account must be granted access to Application Discovery Service, a process called <i>whitelisting</i>. This
- * is true for AWS partners and customers alike. To request access, <a
- * href="http://aws.amazon.com/application-discovery/">sign up for Application Discovery Service</a>.
- * </p>
- * <p>
  * This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for
  * Application Discovery Service. The topic for each action shows the API request parameters and the response.
  * Alternatively, you can use one of the AWS SDKs to access an API that is tailored to the programming language or
@@ -432,6 +427,72 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records
+     * that can identify servers or applications.
+     * </p>
+     * <p>
+     * AWS Application Discovery Service has built-in matching logic that will identify when discovered servers match
+     * existing entries that you've previously discovered, the information for the already-existing discovered server is
+     * updated. When you delete an import task that contains records that were used to match, the information in those
+     * matched records that comes from the deleted records will also be deleted.
+     * </p>
+     * 
+     * @param batchDeleteImportDataRequest
+     * @return Result of the BatchDeleteImportData operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.BatchDeleteImportData
+     */
+    @Override
+    public BatchDeleteImportDataResult batchDeleteImportData(BatchDeleteImportDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteImportData(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteImportDataResult executeBatchDeleteImportData(BatchDeleteImportDataRequest batchDeleteImportDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteImportDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteImportDataRequest> request = null;
+        Response<BatchDeleteImportDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteImportDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteImportDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteImportData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteImportDataResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new BatchDeleteImportDataResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an application with the given name and description.
      * </p>
      * 
@@ -743,7 +804,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * </p>
      * <note>
      * <p>
-     * All of the supplied IDs must be for the same asset type from one of the follwoing:
+     * All of the supplied IDs must be for the same asset type from one of the following:
      * </p>
      * <ul>
      * <li>
@@ -1022,6 +1083,65 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeExportTasksResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeExportTasksResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object
+     * URL for the import file, and more.
+     * </p>
+     * 
+     * @param describeImportTasksRequest
+     * @return Result of the DescribeImportTasks operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.DescribeImportTasks
+     */
+    @Override
+    public DescribeImportTasksResult describeImportTasks(DescribeImportTasksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeImportTasks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeImportTasksResult executeDescribeImportTasks(DescribeImportTasksRequest describeImportTasksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeImportTasksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeImportTasksRequest> request = null;
+        Response<DescribeImportTasksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeImportTasksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeImportTasksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeImportTasks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeImportTasksResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeImportTasksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1459,6 +1579,10 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @throws OperationNotPermittedException
      *         This operation is not permitted.
      * @throws ResourceInUseException
+     *         This issue occurs when the same <code>clientRequestToken</code> is used with the
+     *         <code>StartImportTask</code> action, but with different parameters. For example, you use the same request
+     *         token but have two different import URLs, you can encounter this issue. If the import tasks are meant to
+     *         be different, use a different <code>clientRequestToken</code>, and try again.
      * @sample AWSApplicationDiscovery.StartContinuousExport
      */
     @Override
@@ -1640,6 +1764,114 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Starts an import task, which allows you to import details of your on-premises environment directly into AWS
+     * without having to use the Application Discovery Service (ADS) tools such as the Discovery Connector or Discovery
+     * Agent. This gives you the option to perform migration assessment and planning directly from your imported data,
+     * including the ability to group your devices as applications and track their migration status.
+     * </p>
+     * <p>
+     * To start an import request, do this:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Download the specially formatted comma separated value (CSV) import template, which you can find here: <a
+     * href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv"
+     * >https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Fill out the template with your server and application data.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Upload your import file to an Amazon S3 bucket, and make a note of it's Object URL. Your import file must be in
+     * the CSV format.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use the console or the <code>StartImportTask</code> command with the AWS CLI or one of the AWS SDKs to import the
+     * records from your file.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * For more information, including step-by-step procedures, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
+     * Import</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * There are limits to the number of import tasks you can create (and delete) in an AWS account. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
+     * Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param startImportTaskRequest
+     * @return Result of the StartImportTask operation returned by the service.
+     * @throws ResourceInUseException
+     *         This issue occurs when the same <code>clientRequestToken</code> is used with the
+     *         <code>StartImportTask</code> action, but with different parameters. For example, you use the same request
+     *         token but have two different import URLs, you can encounter this issue. If the import tasks are meant to
+     *         be different, use a different <code>clientRequestToken</code>, and try again.
+     * @throws AuthorizationErrorException
+     *         The AWS user account does not have permission to perform the action. Check the IAM policy associated with
+     *         this account.
+     * @throws InvalidParameterValueException
+     *         The value of one or more parameters are either invalid or out of range. Verify the parameter values and
+     *         try again.
+     * @throws ServerInternalErrorException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSApplicationDiscovery.StartImportTask
+     */
+    @Override
+    public StartImportTaskResult startImportTask(StartImportTaskRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartImportTask(request);
+    }
+
+    @SdkInternalApi
+    final StartImportTaskResult executeStartImportTask(StartImportTaskRequest startImportTaskRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startImportTaskRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartImportTaskRequest> request = null;
+        Response<StartImportTaskResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartImportTaskRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startImportTaskRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Discovery Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartImportTask");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartImportTaskResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartImportTaskResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stop the continuous flow of agent's discovered data into Amazon Athena.
      * </p>
      * 
@@ -1660,6 +1892,10 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
      * @throws ResourceNotFoundException
      *         The specified configuration ID was not located. Verify the configuration ID and try again.
      * @throws ResourceInUseException
+     *         This issue occurs when the same <code>clientRequestToken</code> is used with the
+     *         <code>StartImportTask</code> action, but with different parameters. For example, you use the same request
+     *         token but have two different import URLs, you can encounter this issue. If the import tasks are meant to
+     *         be different, use a different <code>clientRequestToken</code>, and try again.
      * @sample AWSApplicationDiscovery.StopContinuousExport
      */
     @Override

@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the parameters for a fleet.
+ * Describes the parameters for a fleet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Fleet" target="_top">AWS API
@@ -42,13 +42,13 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The fleet name for display.
+     * The fleet name to display.
      * </p>
      */
     private String displayName;
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      */
     private String description;
@@ -144,7 +144,8 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     private Boolean enableDefaultInternetAccess;
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
      * </p>
      */
     private DomainJoinInfo domainJoinInfo;
@@ -231,11 +232,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fleet name for display.
+     * The fleet name to display.
      * </p>
      * 
      * @param displayName
-     *        The fleet name for display.
+     *        The fleet name to display.
      */
 
     public void setDisplayName(String displayName) {
@@ -244,10 +245,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fleet name for display.
+     * The fleet name to display.
      * </p>
      * 
-     * @return The fleet name for display.
+     * @return The fleet name to display.
      */
 
     public String getDisplayName() {
@@ -256,11 +257,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The fleet name for display.
+     * The fleet name to display.
      * </p>
      * 
      * @param displayName
-     *        The fleet name for display.
+     *        The fleet name to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,11 +272,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      */
 
     public void setDescription(String description) {
@@ -284,10 +285,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
-     * @return The description for display.
+     * @return The description to display.
      */
 
     public String getDescription() {
@@ -296,11 +297,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description for display.
+     * The description to display.
      * </p>
      * 
      * @param description
-     *        The description for display.
+     *        The description to display.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1071,11 +1072,13 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed to join a Microsoft Active Directory domain.
+     *        The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *        Directory domain.
      */
 
     public void setDomainJoinInfo(DomainJoinInfo domainJoinInfo) {
@@ -1084,10 +1087,12 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
      * </p>
      * 
-     * @return The information needed to join a Microsoft Active Directory domain.
+     * @return The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *         Directory domain.
      */
 
     public DomainJoinInfo getDomainJoinInfo() {
@@ -1096,11 +1101,13 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The information needed to join a Microsoft Active Directory domain.
+     * The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active Directory
+     * domain.
      * </p>
      * 
      * @param domainJoinInfo
-     *        The information needed to join a Microsoft Active Directory domain.
+     *        The name of the directory and organizational unit (OU) to use to join the fleet to a Microsoft Active
+     *        Directory domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -14,9 +14,27 @@
 /**
  * <fullname>Amazon AppStream 2.0</fullname>
  * <p>
- * You can use Amazon AppStream 2.0 to stream desktop applications to any device running a web browser, without
- * rewriting them.
+ * This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and syntax for each of the actions
+ * and data types in AppStream 2.0. AppStream 2.0 is a fully managed application streaming service. You centrally manage
+ * your desktop applications on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages the AWS
+ * resources required to host and run your applications, scales automatically, and provides access to your users on
+ * demand.
  * </p>
+ * <p>
+ * To learn more about AppStream 2.0, see the following resources:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/appstream2">Amazon AppStream 2.0 product page</a>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a href="http://aws.amazon.com/documentation/appstream2">Amazon AppStream 2.0 documentation</a>
+ * </p>
+ * </li>
+ * </ul>
  */
 package com.amazonaws.services.appstream;
 

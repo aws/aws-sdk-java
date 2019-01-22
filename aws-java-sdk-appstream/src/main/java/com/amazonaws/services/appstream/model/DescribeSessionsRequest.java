@@ -39,7 +39,7 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
     private String fleetName;
     /**
      * <p>
-     * The user ID.
+     * The user identifier.
      * </p>
      */
     private String userId;
@@ -146,11 +146,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user ID.
+     * The user identifier.
      * </p>
      * 
      * @param userId
-     *        The user ID.
+     *        The user identifier.
      */
 
     public void setUserId(String userId) {
@@ -159,10 +159,10 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user ID.
+     * The user identifier.
      * </p>
      * 
-     * @return The user ID.
+     * @return The user identifier.
      */
 
     public String getUserId() {
@@ -171,11 +171,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user ID.
+     * The user identifier.
      * </p>
      * 
      * @param userId
-     *        The user ID.
+     *        The user identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
