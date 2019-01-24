@@ -57,6 +57,12 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String idempotencyToken;
+    /**
+     * <p>
+     * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -286,6 +292,80 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
+     * </p>
+     * 
+     * @return Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a
+     *         private CA.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a
+     *        private CA.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a
+     *        private CA.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCertificateAuthorityRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a private CA.
+     * </p>
+     * 
+     * @param tags
+     *        Key-value pairs that will be attached to the new private CA. You can associate up to 50 tags with a
+     *        private CA.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCertificateAuthorityRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -304,7 +384,9 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
         if (getCertificateAuthorityType() != null)
             sb.append("CertificateAuthorityType: ").append(getCertificateAuthorityType()).append(",");
         if (getIdempotencyToken() != null)
-            sb.append("IdempotencyToken: ").append(getIdempotencyToken());
+            sb.append("IdempotencyToken: ").append(getIdempotencyToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -336,6 +418,10 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getIdempotencyToken() != null && other.getIdempotencyToken().equals(this.getIdempotencyToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -348,6 +434,7 @@ public class CreateCertificateAuthorityRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getRevocationConfiguration() == null) ? 0 : getRevocationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCertificateAuthorityType() == null) ? 0 : getCertificateAuthorityType().hashCode());
         hashCode = prime * hashCode + ((getIdempotencyToken() == null) ? 0 : getIdempotencyToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

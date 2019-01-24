@@ -77,10 +77,16 @@ import com.amazonaws.services.acmpca.model.transform.*;
  * specify a bucket policy that grants ACM PCA write permission.
  * </p>
  * <p>
- * You can also call the <a>CreateCertificateAuthorityAuditReport</a> to create an optional audit report that lists
- * every time the CA private key is used. The private key is used for signing when the <b>IssueCertificate</b> or
- * <b>RevokeCertificate</b> operation is called.
+ * You can also call the <a>CreateCertificateAuthorityAuditReport</a> to create an optional audit report, which
+ * enumerates all of the issued, valid, expired, and revoked certificates from the CA.
  * </p>
+ * <note>
+ * <p>
+ * Each ACM PCA API operation has a throttling limit which determines the number of times the operation can be called
+ * per second. For more information, see <a href="acm-pca/latest/userguide/PcaLimits.html#PcaLimits-api">API Rate Limits
+ * in ACM PCA</a> in the ACM PCA user guide.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -220,6 +226,8 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
      * @throws InvalidPolicyException
      *         The S3 bucket policy is not valid. The policy must give ACM PCA rights to read from and write to the
      *         bucket and find the bucket location.
+     * @throws InvalidTagException
+     *         The tag associated with the CA is not valid. The invalid argument is contained in the message field.
      * @throws LimitExceededException
      *         An ACM PCA limit has been exceeded. See the exception message returned to determine the limit that was
      *         exceeded.
@@ -1144,6 +1152,9 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @throws InvalidStateException
      *         The private CA is in a state during which a report or certificate cannot be generated.
+     * @throws LimitExceededException
+     *         An ACM PCA limit has been exceeded. See the exception message returned to determine the limit that was
+     *         exceeded.
      * @throws ResourceNotFoundException
      *         A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
      * @throws RequestAlreadyProcessedException

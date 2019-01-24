@@ -64,7 +64,8 @@ public class AWSACMPCAWaiters {
     public Waiter<DescribeCertificateAuthorityAuditReportRequest> auditReportCreated() {
 
         return new WaiterBuilder<DescribeCertificateAuthorityAuditReportRequest, DescribeCertificateAuthorityAuditReportResult>()
-                .withSdkFunction(new DescribeCertificateAuthorityAuditReportFunction(client)).withAcceptors(new AuditReportCreated.IsSUCCESSMatcher())
+                .withSdkFunction(new DescribeCertificateAuthorityAuditReportFunction(client))
+                .withAcceptors(new AuditReportCreated.IsSUCCESSMatcher(), new AuditReportCreated.IsFAILEDMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(3)))
                 .withExecutorService(executorService).build();
     }

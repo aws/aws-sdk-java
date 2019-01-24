@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.acmpca.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,8 @@ public class CreateCertificateAuthorityRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateAuthorityType").build();
     private static final MarshallingInfo<String> IDEMPOTENCYTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateCertificateAuthorityRequestMarshaller instance = new CreateCertificateAuthorityRequestMarshaller();
 
@@ -56,6 +59,7 @@ public class CreateCertificateAuthorityRequestMarshaller {
             protocolMarshaller.marshall(createCertificateAuthorityRequest.getRevocationConfiguration(), REVOCATIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createCertificateAuthorityRequest.getCertificateAuthorityType(), CERTIFICATEAUTHORITYTYPE_BINDING);
             protocolMarshaller.marshall(createCertificateAuthorityRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
+            protocolMarshaller.marshall(createCertificateAuthorityRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

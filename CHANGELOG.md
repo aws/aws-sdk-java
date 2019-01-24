@@ -1,3 +1,16 @@
+# __1.11.488__ __2019-01-23__
+## __AWS Certificate Manager Private Certificate Authority__
+  - ### Features
+    - Added TagOnCreate parameter to the CreateCertificateAuthority operation, updated the Tag regex pattern to align with AWS tagging APIs, and added RevokeCertificate limit.
+
+## __Amazon WorkLink__
+  - ### Features
+    - This is the initial SDK release for Amazon WorkLink. Amazon WorkLink is a fully managed, cloud-based service that enables secure, one-click access to internal websites and web apps from mobile phones. With Amazon WorkLink, employees can access internal websites as seamlessly as they access any other website. IT administrators can manage users, devices, and domains by enforcing their own security and access policies via the AWS Console or the AWS SDK.
+
+## __AmazonApiGatewayManagementApi__
+  - ### Features
+    - Fixes a typo in the 'max' constraint.
+
 # __1.11.487__ __2019-01-21__
 ## __AWS Application Discovery Service__
   - ### Features

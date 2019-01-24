@@ -68,4 +68,43 @@ class AuditReportCreated {
             return WaiterState.SUCCESS;
         }
     }
+
+    static class IsFAILEDMatcher extends WaiterAcceptor<DescribeCertificateAuthorityAuditReportResult> {
+        private static final JsonNode expectedResult;
+
+        static {
+            try {
+                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"FAILED\"");
+            } catch (IOException ioe) {
+                throw new RuntimeException(ioe);
+            }
+        }
+
+        private static final JmesPathExpression ast = new JmesPathField("AuditReportStatus");
+
+        /**
+         * Takes the result and determines whether the state of the resource matches the expected state. To determine
+         * the current state of the resource, JmesPath expression is evaluated and compared against the expected result.
+         * 
+         * @param result
+         *        Corresponding result of the operation
+         * @return True if current state of the resource matches the expected state, False otherwise
+         */
+        @Override
+        public boolean matches(DescribeCertificateAuthorityAuditReportResult result) {
+            JsonNode queryNode = ObjectMapperSingleton.getObjectMapper().valueToTree(result);
+            JsonNode finalResult = ast.accept(new JmesPathEvaluationVisitor(), queryNode);
+            return AcceptorPathMatcher.path(expectedResult, finalResult);
+        }
+
+        /**
+         * Represents the current waiter state in the case where resource state matches the expected state
+         * 
+         * @return Corresponding state of the waiter
+         */
+        @Override
+        public WaiterState getState() {
+            return WaiterState.FAILURE;
+        }
+    }
 }
