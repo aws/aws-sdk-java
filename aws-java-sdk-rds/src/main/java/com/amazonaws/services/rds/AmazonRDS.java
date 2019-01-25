@@ -164,9 +164,10 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">
-     * Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
+     * Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
      * 
@@ -185,6 +186,28 @@ public interface AmazonRDS {
      *      Documentation</a>
      */
     AddRoleToDBClusterResult addRoleToDBCluster(AddRoleToDBClusterRequest addRoleToDBClusterRequest);
+
+    /**
+     * <p>
+     * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+     * </p>
+     * 
+     * @param addRoleToDBInstanceRequest
+     * @return Result of the AddRoleToDBInstance operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws DBInstanceRoleAlreadyExistsException
+     *         The specified <i>RoleArn</i> or <i>FeatureName</i> value is already associated with the DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws DBInstanceRoleQuotaExceededException
+     *         You can't associate any more AWS Identity and Access Management (IAM) roles with the DB instance because
+     *         the quota has been reached.
+     * @sample AmazonRDS.AddRoleToDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AddRoleToDBInstanceResult addRoleToDBInstance(AddRoleToDBInstanceRequest addRoleToDBInstanceRequest);
 
     /**
      * <p>
@@ -710,6 +733,7 @@ public interface AmazonRDS {
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @sample AmazonRDS.CreateDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2309,6 +2333,7 @@ public interface AmazonRDS {
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @sample AmazonRDS.ModifyDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -2614,9 +2639,10 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">
-     * Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
+     * Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
      * 
@@ -2633,6 +2659,25 @@ public interface AmazonRDS {
      *      API Documentation</a>
      */
     RemoveRoleFromDBClusterResult removeRoleFromDBCluster(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest);
+
+    /**
+     * <p>
+     * Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+     * </p>
+     * 
+     * @param removeRoleFromDBInstanceRequest
+     * @return Result of the RemoveRoleFromDBInstance operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws DBInstanceRoleNotFoundException
+     *         The specified <i>RoleArn</i> value doesn't match the specifed feature for the DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.RemoveRoleFromDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RemoveRoleFromDBInstanceResult removeRoleFromDBInstance(RemoveRoleFromDBInstanceRequest removeRoleFromDBInstanceRequest);
 
     /**
      * <p>
@@ -2983,6 +3028,7 @@ public interface AmazonRDS {
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -3040,6 +3086,7 @@ public interface AmazonRDS {
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an AWS KMS key.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @sample AmazonRDS.RestoreDBInstanceFromS3
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
      *      API Documentation</a>
@@ -3112,6 +3159,7 @@ public interface AmazonRDS {
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws DBInstanceAutomatedBackupNotFoundException

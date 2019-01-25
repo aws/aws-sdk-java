@@ -346,6 +346,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
     }
 
     @Override
+    public java.util.concurrent.Future<AddRoleToDBInstanceResult> addRoleToDBInstanceAsync(AddRoleToDBInstanceRequest request) {
+
+        return addRoleToDBInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddRoleToDBInstanceResult> addRoleToDBInstanceAsync(final AddRoleToDBInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddRoleToDBInstanceRequest, AddRoleToDBInstanceResult> asyncHandler) {
+        final AddRoleToDBInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddRoleToDBInstanceResult>() {
+            @Override
+            public AddRoleToDBInstanceResult call() throws Exception {
+                AddRoleToDBInstanceResult result = null;
+
+                try {
+                    result = executeAddRoleToDBInstance(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(AddSourceIdentifierToSubscriptionRequest request) {
 
         return addSourceIdentifierToSubscriptionAsync(request, null);
@@ -3814,6 +3847,39 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient implements AmazonRDSAs
 
                 try {
                     result = executeRemoveRoleFromDBCluster(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveRoleFromDBInstanceResult> removeRoleFromDBInstanceAsync(RemoveRoleFromDBInstanceRequest request) {
+
+        return removeRoleFromDBInstanceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveRoleFromDBInstanceResult> removeRoleFromDBInstanceAsync(final RemoveRoleFromDBInstanceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveRoleFromDBInstanceRequest, RemoveRoleFromDBInstanceResult> asyncHandler) {
+        final RemoveRoleFromDBInstanceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveRoleFromDBInstanceResult>() {
+            @Override
+            public RemoveRoleFromDBInstanceResult call() throws Exception {
+                RemoveRoleFromDBInstanceResult result = null;
+
+                try {
+                    result = executeRemoveRoleFromDBInstance(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

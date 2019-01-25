@@ -232,6 +232,39 @@ public class AmazonPinpointSMSVoiceAsyncClient extends AmazonPinpointSMSVoiceCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request) {
+
+        return listConfigurationSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(final ListConfigurationSetsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler) {
+        final ListConfigurationSetsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListConfigurationSetsResult>() {
+            @Override
+            public ListConfigurationSetsResult call() throws Exception {
+                ListConfigurationSetsResult result = null;
+
+                try {
+                    result = executeListConfigurationSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SendVoiceMessageResult> sendVoiceMessageAsync(SendVoiceMessageRequest request) {
 
         return sendVoiceMessageAsync(request, null);

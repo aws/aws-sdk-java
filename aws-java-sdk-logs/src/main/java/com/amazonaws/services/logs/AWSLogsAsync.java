@@ -1618,8 +1618,8 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Schedules a query of a log group using CloudWatch Logs Insights. You specify the log group to query, the query
-     * string to use, and the time to query.
+     * Schedules a query of a log group using CloudWatch Logs Insights. You specify the log group and time range to
+     * query, and the query string to use.
      * </p>
      * <p>
      * For more information, see <a
@@ -1637,8 +1637,8 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Schedules a query of a log group using CloudWatch Logs Insights. You specify the log group to query, the query
-     * string to use, and the time to query.
+     * Schedules a query of a log group using CloudWatch Logs Insights. You specify the log group and time range to
+     * query, and the query string to use.
      * </p>
      * <p>
      * For more information, see <a

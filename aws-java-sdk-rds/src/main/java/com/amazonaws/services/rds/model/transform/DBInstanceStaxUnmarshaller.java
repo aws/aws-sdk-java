@@ -370,6 +370,16 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     continue;
                 }
 
+                if (context.testExpression("AssociatedRoles", targetDepth)) {
+                    dBInstance.withAssociatedRoles(new ArrayList<DBInstanceRole>());
+                    continue;
+                }
+
+                if (context.testExpression("AssociatedRoles/DBInstanceRole", targetDepth)) {
+                    dBInstance.withAssociatedRoles(DBInstanceRoleStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ListenerEndpoint", targetDepth)) {
                     dBInstance.setListenerEndpoint(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

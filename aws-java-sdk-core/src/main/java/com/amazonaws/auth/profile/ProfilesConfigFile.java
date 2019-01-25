@@ -23,13 +23,13 @@ import com.amazonaws.auth.profile.internal.BasicProfile;
 import com.amazonaws.auth.profile.internal.BasicProfileConfigLoader;
 import com.amazonaws.auth.profile.internal.Profile;
 import com.amazonaws.auth.profile.internal.ProfileAssumeRoleCredentialsProvider;
+import com.amazonaws.auth.profile.internal.ProfileProcessCredentialsProvider;
 import com.amazonaws.auth.profile.internal.ProfileStaticCredentialsProvider;
 import com.amazonaws.auth.profile.internal.securitytoken.ProfileCredentialsService;
 import com.amazonaws.auth.profile.internal.securitytoken.STSProfileCredentialsServiceLoader;
 import com.amazonaws.internal.StaticCredentialsProvider;
 import com.amazonaws.profile.path.AwsProfileFileLocationProvider;
 import com.amazonaws.util.ValidationUtils;
-
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
@@ -203,6 +203,8 @@ public class ProfilesConfigFile {
         if (profile.isRoleBasedProfile()) {
             return new ProfileAssumeRoleCredentialsProvider(profileCredentialsService, allProfiles,
                                                             profile);
+        } else if (profile.isProcessBasedProfile()) {
+            return new ProfileProcessCredentialsProvider(profile);
         } else {
             return new ProfileStaticCredentialsProvider(profile);
         }

@@ -41,14 +41,14 @@ public class Action implements Serializable, Cloneable {
     private String targetGroupArn;
     /**
      * <p>
-     * [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify
+     * [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify
      * only when <code>Type</code> is <code>authenticate-oidc</code>.
      * </p>
      */
     private AuthenticateOidcActionConfig authenticateOidcConfig;
     /**
      * <p>
-     * [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code>
+     * [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code>
      * is <code>authenticate-cognito</code>.
      * </p>
      */
@@ -204,12 +204,12 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify
+     * [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify
      * only when <code>Type</code> is <code>authenticate-oidc</code>.
      * </p>
      * 
      * @param authenticateOidcConfig
-     *        [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect (OIDC).
+     *        [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC).
      *        Specify only when <code>Type</code> is <code>authenticate-oidc</code>.
      */
 
@@ -219,11 +219,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify
+     * [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify
      * only when <code>Type</code> is <code>authenticate-oidc</code>.
      * </p>
      * 
-     * @return [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect (OIDC).
+     * @return [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC).
      *         Specify only when <code>Type</code> is <code>authenticate-oidc</code>.
      */
 
@@ -233,12 +233,12 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify
+     * [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify
      * only when <code>Type</code> is <code>authenticate-oidc</code>.
      * </p>
      * 
      * @param authenticateOidcConfig
-     *        [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect (OIDC).
+     *        [HTTPS listeners] Information about an identity provider that is compliant with OpenID Connect (OIDC).
      *        Specify only when <code>Type</code> is <code>authenticate-oidc</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -250,12 +250,12 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code>
+     * [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code>
      * is <code>authenticate-cognito</code>.
      * </p>
      * 
      * @param authenticateCognitoConfig
-     *        [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when
+     *        [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when
      *        <code>Type</code> is <code>authenticate-cognito</code>.
      */
 
@@ -265,11 +265,11 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code>
+     * [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code>
      * is <code>authenticate-cognito</code>.
      * </p>
      * 
-     * @return [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when
+     * @return [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when
      *         <code>Type</code> is <code>authenticate-cognito</code>.
      */
 
@@ -279,12 +279,12 @@ public class Action implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code>
+     * [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when <code>Type</code>
      * is <code>authenticate-cognito</code>.
      * </p>
      * 
      * @param authenticateCognitoConfig
-     *        [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when
+     *        [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify only when
      *        <code>Type</code> is <code>authenticate-cognito</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

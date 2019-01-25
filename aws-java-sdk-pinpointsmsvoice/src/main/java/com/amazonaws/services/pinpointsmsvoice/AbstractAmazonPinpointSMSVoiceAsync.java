@@ -99,6 +99,19 @@ public class AbstractAmazonPinpointSMSVoiceAsync extends AbstractAmazonPinpointS
     }
 
     @Override
+    public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request) {
+
+        return listConfigurationSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SendVoiceMessageResult> sendVoiceMessageAsync(SendVoiceMessageRequest request) {
 
         return sendVoiceMessageAsync(request, null);

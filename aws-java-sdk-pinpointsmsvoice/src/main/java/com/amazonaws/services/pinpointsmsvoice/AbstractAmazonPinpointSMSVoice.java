@@ -53,6 +53,11 @@ public class AbstractAmazonPinpointSMSVoice implements AmazonPinpointSMSVoice {
     }
 
     @Override
+    public ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SendVoiceMessageResult sendVoiceMessage(SendVoiceMessageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

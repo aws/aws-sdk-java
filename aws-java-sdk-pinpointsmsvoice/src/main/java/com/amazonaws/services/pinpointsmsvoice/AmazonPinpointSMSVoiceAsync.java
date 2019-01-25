@@ -192,6 +192,33 @@ public interface AmazonPinpointSMSVoiceAsync extends AmazonPinpointSMSVoice {
             com.amazonaws.handlers.AsyncHandler<GetConfigurationSetEventDestinationsRequest, GetConfigurationSetEventDestinationsResult> asyncHandler);
 
     /**
+     * List all of the configuration sets associated with your Amazon Pinpoint account in the current region.
+     * 
+     * @param listConfigurationSetsRequest
+     * @return A Java Future containing the result of the ListConfigurationSets operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceAsync.ListConfigurationSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest listConfigurationSetsRequest);
+
+    /**
+     * List all of the configuration sets associated with your Amazon Pinpoint account in the current region.
+     * 
+     * @param listConfigurationSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConfigurationSets operation returned by the service.
+     * @sample AmazonPinpointSMSVoiceAsyncHandler.ListConfigurationSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListConfigurationSetsResult> listConfigurationSetsAsync(ListConfigurationSetsRequest listConfigurationSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConfigurationSetsRequest, ListConfigurationSetsResult> asyncHandler);
+
+    /**
      * Create a new voice message and send it to a recipient's phone number.
      * 
      * @param sendVoiceMessageRequest

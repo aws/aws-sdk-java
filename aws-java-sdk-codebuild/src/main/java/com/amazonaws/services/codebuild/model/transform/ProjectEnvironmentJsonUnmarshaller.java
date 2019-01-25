@@ -73,6 +73,14 @@ public class ProjectEnvironmentJsonUnmarshaller implements Unmarshaller<ProjectE
                     context.nextToken();
                     projectEnvironment.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("registryCredential", targetDepth)) {
+                    context.nextToken();
+                    projectEnvironment.setRegistryCredential(RegistryCredentialJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("imagePullCredentialsType", targetDepth)) {
+                    context.nextToken();
+                    projectEnvironment.setImagePullCredentialsType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

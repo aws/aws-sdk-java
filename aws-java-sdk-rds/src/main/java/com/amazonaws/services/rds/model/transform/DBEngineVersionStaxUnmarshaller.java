@@ -135,6 +135,16 @@ public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVer
                     continue;
                 }
 
+                if (context.testExpression("SupportedFeatureNames", targetDepth)) {
+                    dBEngineVersion.withSupportedFeatureNames(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("SupportedFeatureNames/member", targetDepth)) {
+                    dBEngineVersion.withSupportedFeatureNames(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return dBEngineVersion;

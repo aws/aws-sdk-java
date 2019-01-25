@@ -67,8 +67,8 @@ import com.amazonaws.services.elasticloadbalancingv2.model.transform.*;
  * </p>
  * <p>
  * An Application Load Balancer makes routing and load balancing decisions at the application layer (HTTP/HTTPS). A
- * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP). Both Application Load
- * Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
+ * Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP/TLS). Both Application
+ * Load Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container
  * instance in your virtual private cloud (VPC).
  * </p>
  * <p>
@@ -390,7 +390,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Adds the specified certificate to the specified secure listener.
+     * Adds the specified certificate to the specified HTTPS listener.
      * </p>
      * <p>
      * If the certificate was already added, the call is successful but the certificate is not added again.
@@ -1252,7 +1252,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Describes the certificates for the specified secure listener.
+     * Describes the certificates for the specified HTTPS listener.
      * </p>
      * 
      * @param describeListenerCertificatesRequest
@@ -1850,8 +1850,9 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
      * </p>
      * <p>
      * Any properties that you do not specify retain their current values. However, changing the protocol from HTTPS to
-     * HTTP removes the security policy and SSL certificate properties. If you change the protocol from HTTP to HTTPS,
-     * you must add the security policy and server certificate.
+     * HTTP, or from TLS to TCP, removes the security policy and server certificate properties. If you change the
+     * protocol from HTTP to HTTPS, or from TCP to TLS, you must add the security policy and server certificate
+     * properties.
      * </p>
      * 
      * @param modifyListenerRequest
@@ -2264,7 +2265,7 @@ public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Removes the specified certificate from the specified secure listener.
+     * Removes the specified certificate from the specified HTTPS listener.
      * </p>
      * <p>
      * You can't remove the default certificate for a listener. To replace the default certificate, call

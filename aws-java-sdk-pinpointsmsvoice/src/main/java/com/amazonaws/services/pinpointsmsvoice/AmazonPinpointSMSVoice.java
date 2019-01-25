@@ -151,6 +151,23 @@ public interface AmazonPinpointSMSVoice {
             GetConfigurationSetEventDestinationsRequest getConfigurationSetEventDestinationsRequest);
 
     /**
+     * List all of the configuration sets associated with your Amazon Pinpoint account in the current region.
+     * 
+     * @param listConfigurationSetsRequest
+     * @return Result of the ListConfigurationSets operation returned by the service.
+     * @throws TooManyRequestsException
+     *         TooManyRequestsException
+     * @throws BadRequestException
+     *         BadRequestException
+     * @throws InternalServiceErrorException
+     *         InternalServiceErrorException
+     * @sample AmazonPinpointSMSVoice.ListConfigurationSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/ListConfigurationSets"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListConfigurationSetsResult listConfigurationSets(ListConfigurationSetsRequest listConfigurationSetsRequest);
+
+    /**
      * Create a new voice message and send it to a recipient's phone number.
      * 
      * @param sendVoiceMessageRequest

@@ -33,14 +33,15 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String logGroupName;
     /**
      * <p>
-     * The time to start the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
+     * The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * The time to end this query, if it is still running. Specified as epoch time, the number of seconds since January
-     * 1, 1970, 00:00:00 UTC.
+     * The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.
      * </p>
      */
     private Long endTime;
@@ -102,12 +103,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The time to start the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
+     * The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.
      * </p>
      * 
      * @param startTime
-     *        The time to start the query. Specified as epoch time, the number of seconds since January 1, 1970,
-     *        00:00:00 UTC.
+     *        The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1,
+     *        1970, 00:00:00 UTC.
      */
 
     public void setStartTime(Long startTime) {
@@ -116,11 +118,12 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The time to start the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
+     * The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.
      * </p>
      * 
-     * @return The time to start the query. Specified as epoch time, the number of seconds since January 1, 1970,
-     *         00:00:00 UTC.
+     * @return The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1,
+     *         1970, 00:00:00 UTC.
      */
 
     public Long getStartTime() {
@@ -129,12 +132,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The time to start the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
+     * The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.
      * </p>
      * 
      * @param startTime
-     *        The time to start the query. Specified as epoch time, the number of seconds since January 1, 1970,
-     *        00:00:00 UTC.
+     *        The beginning of the time range to query. Specified as epoch time, the number of seconds since January 1,
+     *        1970, 00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,13 +149,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The time to end this query, if it is still running. Specified as epoch time, the number of seconds since January
-     * 1, 1970, 00:00:00 UTC.
+     * The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.
      * </p>
      * 
      * @param endTime
-     *        The time to end this query, if it is still running. Specified as epoch time, the number of seconds since
-     *        January 1, 1970, 00:00:00 UTC.
+     *        The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     *        00:00:00 UTC.
      */
 
     public void setEndTime(Long endTime) {
@@ -160,12 +164,12 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The time to end this query, if it is still running. Specified as epoch time, the number of seconds since January
-     * 1, 1970, 00:00:00 UTC.
+     * The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.
      * </p>
      * 
-     * @return The time to end this query, if it is still running. Specified as epoch time, the number of seconds since
-     *         January 1, 1970, 00:00:00 UTC.
+     * @return The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     *         00:00:00 UTC.
      */
 
     public Long getEndTime() {
@@ -174,13 +178,13 @@ public class StartQueryRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The time to end this query, if it is still running. Specified as epoch time, the number of seconds since January
-     * 1, 1970, 00:00:00 UTC.
+     * The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     * 00:00:00 UTC.
      * </p>
      * 
      * @param endTime
-     *        The time to end this query, if it is still running. Specified as epoch time, the number of seconds since
-     *        January 1, 1970, 00:00:00 UTC.
+     *        The end of the time range to query. Specified as epoch time, the number of seconds since January 1, 1970,
+     *        00:00:00 UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -102,15 +102,16 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
+     * Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
-     * pools supported by Amazon Cognito.
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
      * </p>
      * <p>
      * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
@@ -707,15 +708,16 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
+     * Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
-     * pools supported by Amazon Cognito.
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
      * </p>
      * <p>
      * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
@@ -729,14 +731,15 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @return The actions.</p>
      *         <p>
      *         If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *         must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     *         must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
+     *         TLS for a Network Load Balancer.
      *         </p>
      *         <p>
-     *         [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *         [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
      *         identity provider that is OpenID Connect (OIDC) compliant.
      *         </p>
      *         <p>
-     *         [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *         [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
      *         the user pools supported by Amazon Cognito.
      *         </p>
      *         <p>
@@ -758,15 +761,16 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
+     * Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
-     * pools supported by Amazon Cognito.
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
      * </p>
      * <p>
      * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
@@ -781,14 +785,15 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The actions.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
+     *        TLS for a Network Load Balancer.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
      *        identity provider that is OpenID Connect (OIDC) compliant.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
      *        the user pools supported by Amazon Cognito.
      *        </p>
      *        <p>
@@ -815,15 +820,16 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
+     * Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
-     * pools supported by Amazon Cognito.
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
      * </p>
      * <p>
      * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
@@ -843,14 +849,15 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The actions.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
+     *        TLS for a Network Load Balancer.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
      *        identity provider that is OpenID Connect (OIDC) compliant.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
      *        the user pools supported by Amazon Cognito.
      *        </p>
      *        <p>
@@ -879,15 +886,16 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * If the action type is <code>forward</code>, you specify a target group. The protocol of the target group must be
-     * HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     * HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or TLS for a Network
+     * Load Balancer.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an identity
-     * provider that is OpenID Connect (OIDC) compliant.
+     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     * identity provider that is OpenID Connect (OIDC) compliant.
      * </p>
      * <p>
-     * [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through the user
-     * pools supported by Amazon Cognito.
+     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
+     * user pools supported by Amazon Cognito.
      * </p>
      * <p>
      * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
@@ -902,14 +910,15 @@ public class ModifyRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The actions.</p>
      *        <p>
      *        If the action type is <code>forward</code>, you specify a target group. The protocol of the target group
-     *        must be HTTP or HTTPS for an Application Load Balancer or TCP for a Network Load Balancer.
+     *        must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP or
+     *        TLS for a Network Load Balancer.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
+     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
      *        identity provider that is OpenID Connect (OIDC) compliant.
      *        </p>
      *        <p>
-     *        [HTTPS listener] If the action type is <code>authenticate-cognito</code>, you authenticate users through
+     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
      *        the user pools supported by Amazon Cognito.
      *        </p>
      *        <p>

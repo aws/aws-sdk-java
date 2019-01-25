@@ -402,10 +402,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBInstanceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new GlobalClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SharedSnapshotQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBInstanceRoleQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterEndpointStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidGlobalClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceAutomatedBackupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ReservedDBInstanceQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBInstanceRoleNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidVPCNetworkStateExceptionUnmarshaller());
@@ -414,6 +416,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new SubscriptionAlreadyExistExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBInstanceRoleAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidDBClusterSnapshotStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupAlreadyExistsExceptionUnmarshaller());
@@ -440,9 +443,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">
-     * Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
+     * Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
      * 
@@ -491,6 +495,67 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<AddRoleToDBClusterResult> responseHandler = new StaxResponseHandler<AddRoleToDBClusterResult>(
                     new AddRoleToDBClusterResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+     * </p>
+     * 
+     * @param addRoleToDBInstanceRequest
+     * @return Result of the AddRoleToDBInstance operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws DBInstanceRoleAlreadyExistsException
+     *         The specified <i>RoleArn</i> or <i>FeatureName</i> value is already associated with the DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws DBInstanceRoleQuotaExceededException
+     *         You can't associate any more AWS Identity and Access Management (IAM) roles with the DB instance because
+     *         the quota has been reached.
+     * @sample AmazonRDS.AddRoleToDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AddRoleToDBInstanceResult addRoleToDBInstance(AddRoleToDBInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddRoleToDBInstance(request);
+    }
+
+    @SdkInternalApi
+    final AddRoleToDBInstanceResult executeAddRoleToDBInstance(AddRoleToDBInstanceRequest addRoleToDBInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addRoleToDBInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddRoleToDBInstanceRequest> request = null;
+        Response<AddRoleToDBInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddRoleToDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(addRoleToDBInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddRoleToDBInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AddRoleToDBInstanceResult> responseHandler = new StaxResponseHandler<AddRoleToDBInstanceResult>(
+                    new AddRoleToDBInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1563,6 +1628,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @sample AmazonRDS.CreateDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -5571,6 +5637,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @sample AmazonRDS.ModifyDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -6373,9 +6440,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">
-     * Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
+     * Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
      * 
@@ -6422,6 +6490,64 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<RemoveRoleFromDBClusterResult> responseHandler = new StaxResponseHandler<RemoveRoleFromDBClusterResult>(
                     new RemoveRoleFromDBClusterResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+     * </p>
+     * 
+     * @param removeRoleFromDBInstanceRequest
+     * @return Result of the RemoveRoleFromDBInstance operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <i>DBInstanceIdentifier</i> doesn't refer to an existing DB instance.
+     * @throws DBInstanceRoleNotFoundException
+     *         The specified <i>RoleArn</i> value doesn't match the specifed feature for the DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.RemoveRoleFromDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public RemoveRoleFromDBInstanceResult removeRoleFromDBInstance(RemoveRoleFromDBInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveRoleFromDBInstance(request);
+    }
+
+    @SdkInternalApi
+    final RemoveRoleFromDBInstanceResult executeRemoveRoleFromDBInstance(RemoveRoleFromDBInstanceRequest removeRoleFromDBInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeRoleFromDBInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveRoleFromDBInstanceRequest> request = null;
+        Response<RemoveRoleFromDBInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveRoleFromDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(removeRoleFromDBInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRoleFromDBInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<RemoveRoleFromDBInstanceResult> responseHandler = new StaxResponseHandler<RemoveRoleFromDBInstanceResult>(
+                    new RemoveRoleFromDBInstanceResultStaxUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7052,6 +7178,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -7147,6 +7274,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an AWS KMS key.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @sample AmazonRDS.RestoreDBInstanceFromS3
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3" target="_top">AWS
      *      API Documentation</a>
@@ -7257,6 +7385,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DomainNotFoundException
      *         <i>Domain</i> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
+     *         The backup policy was not found.
      * @throws DBParameterGroupNotFoundException
      *         <i>DBParameterGroupName</i> doesn't refer to an existing DB parameter group.
      * @throws DBInstanceAutomatedBackupNotFoundException

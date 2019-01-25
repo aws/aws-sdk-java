@@ -15,7 +15,9 @@ package com.amazonaws.services.rds.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * The backup policy was not found.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BackupPolicyNotFoundException extends com.amazonaws.services.rds.model.AmazonRDSException {

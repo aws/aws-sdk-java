@@ -1,3 +1,32 @@
+# __1.11.489__ __2019-01-24__
+## __AWS CodeBuild__
+  - ### Features
+    - This release adds support for cross-account ECR images and private registry authentication. 
+
+## __AWS SDK for Java__
+  - ### Features
+    - Added support for 'credential_process' profile attribute: https://docs.aws.amazon.com/cli/latest/topic/config-vars.html#sourcing-credentials-from-external-processes
+
+## __Amazon CloudWatch Logs__
+  - ### Features
+    - Documentation updates for CloudWatch Logs
+
+## __Amazon EC2 Container Registry__
+  - ### Features
+    - Amazon ECR updated the default endpoint URL to support AWS Private Link.
+
+## __Amazon Pinpoint SMS and Voice Service__
+  - ### Features
+    - Added the ListConfigurationSets operation, which returns a list of the configuration sets that are associated with your account.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - The Amazon RDS API allows you to add or remove Identity and Access Management (IAM) role associated with a specific feature name with an RDS database instance. This helps with capabilities such as invoking Lambda functions from within a trigger in the database, load data from Amazon S3 and so on
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Elastic Load Balancing now supports TLS termination on Network Load Balancers. With this launch, you can offload the decryption/encryption of TLS traffic from your application servers to the Network Load Balancer. This enables you to run your backend servers optimally and keep your workloads secure. Additionally, Network Load Balancers preserve the source IP of the clients to the back-end applications, while terminating TLS on the load balancer.  When TLS is enabled on an NLB, Access Logs can be enabled for the load balancer, and log entries will be emitted for all TLS connections.
+
 # __1.11.488__ __2019-01-23__
 ## __AWS Certificate Manager Private Certificate Authority__
   - ### Features

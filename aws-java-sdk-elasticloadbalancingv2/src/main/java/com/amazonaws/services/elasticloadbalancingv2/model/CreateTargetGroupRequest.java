@@ -38,8 +38,8 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
-     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is a Lambda
-     * function, this parameter does not apply.
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the target is a
+     * Lambda function, this parameter does not apply.
      * </p>
      */
     private String protocol;
@@ -59,9 +59,9 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String vpcId;
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
-     * Balancers, the default is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is supported for health checks
+     * only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for health checks.
      * </p>
      */
     private String healthCheckProtocol;
@@ -216,14 +216,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
-     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is a Lambda
-     * function, this parameter does not apply.
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the target is a
+     * Lambda function, this parameter does not apply.
      * </p>
      * 
      * @param protocol
      *        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
-     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is
-     *        a Lambda function, this parameter does not apply.
+     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the
+     *        target is a Lambda function, this parameter does not apply.
      * @see ProtocolEnum
      */
 
@@ -234,13 +234,13 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
-     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is a Lambda
-     * function, this parameter does not apply.
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the target is a
+     * Lambda function, this parameter does not apply.
      * </p>
      * 
      * @return The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
-     *         protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is
-     *         a Lambda function, this parameter does not apply.
+     *         protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the
+     *         target is a Lambda function, this parameter does not apply.
      * @see ProtocolEnum
      */
 
@@ -251,14 +251,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
-     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is a Lambda
-     * function, this parameter does not apply.
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the target is a
+     * Lambda function, this parameter does not apply.
      * </p>
      * 
      * @param protocol
      *        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
-     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is
-     *        a Lambda function, this parameter does not apply.
+     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the
+     *        target is a Lambda function, this parameter does not apply.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -271,14 +271,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
-     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is a Lambda
-     * function, this parameter does not apply.
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the target is a
+     * Lambda function, this parameter does not apply.
      * </p>
      * 
      * @param protocol
      *        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
-     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is
-     *        a Lambda function, this parameter does not apply.
+     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the
+     *        target is a Lambda function, this parameter does not apply.
      * @see ProtocolEnum
      */
 
@@ -289,14 +289,14 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols
-     * are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is a Lambda
-     * function, this parameter does not apply.
+     * are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the target is a
+     * Lambda function, this parameter does not apply.
      * </p>
      * 
      * @param protocol
      *        The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported
-     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP. If the target is
-     *        a Lambda function, this parameter does not apply.
+     *        protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP and TLS. If the
+     *        target is a Lambda function, this parameter does not apply.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -400,15 +400,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
-     * Balancers, the default is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is supported for health checks
+     * only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for health checks.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
-     *        HTTP. For Network Load Balancers, the default is TCP.
+     *        The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *        Balancers, the default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.
      * @see ProtocolEnum
      */
 
@@ -418,14 +419,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
-     * Balancers, the default is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is supported for health checks
+     * only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for health checks.
      * </p>
      * 
-     * @return The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *         supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
-     *         HTTP. For Network Load Balancers, the default is TCP.
+     * @return The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *         Balancers, the default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is
+     *         supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *         not supported for health checks.
      * @see ProtocolEnum
      */
 
@@ -435,15 +437,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
-     * Balancers, the default is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is supported for health checks
+     * only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for health checks.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
-     *        HTTP. For Network Load Balancers, the default is TCP.
+     *        The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *        Balancers, the default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -455,15 +458,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
-     * Balancers, the default is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is supported for health checks
+     * only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for health checks.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
-     *        HTTP. For Network Load Balancers, the default is TCP.
+     *        The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *        Balancers, the default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.
      * @see ProtocolEnum
      */
 
@@ -473,15 +477,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load
-     * Balancers, the default is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the
+     * default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is supported for health checks
+     * only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for health checks.
      * </p>
      * 
      * @param healthCheckProtocol
-     *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is
-     *        HTTP. For Network Load Balancers, the default is TCP.
+     *        The protocol the load balancer uses when performing health checks on targets. For Application Load
+     *        Balancers, the default is HTTP. For Network Load Balancers, the default is TCP. The TCP protocol is
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */

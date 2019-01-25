@@ -42,15 +42,15 @@ public interface AmazonECR {
      *
      * @see RegionUtils#getRegionsForService(String)
      */
-    String ENDPOINT_PREFIX = "ecr";
+    String ENDPOINT_PREFIX = "api.ecr";
 
     /**
-     * Overrides the default endpoint for this client ("ecr.us-east-1.amazonaws.com"). Callers can use this method to
-     * control which AWS region they want to work with.
+     * Overrides the default endpoint for this client ("api.ecr.us-east-1.amazonaws.com"). Callers can use this method
+     * to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "ecr.us-east-1.amazonaws.com") or a full URL, including the protocol
-     * (ex: "ecr.us-east-1.amazonaws.com"). If the protocol is not specified here, the default protocol from this
-     * client's {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * Callers can pass in just the endpoint (ex: "api.ecr.us-east-1.amazonaws.com") or a full URL, including the
+     * protocol (ex: "api.ecr.us-east-1.amazonaws.com"). If the protocol is not specified here, the default protocol
+     * from this client's {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and a complete list of all available
      * endpoints for all AWS services, see: <a href=
@@ -63,8 +63,8 @@ public interface AmazonECR {
      * transit or retrying.</b>
      *
      * @param endpoint
-     *        The endpoint (ex: "ecr.us-east-1.amazonaws.com") or a full URL, including the protocol (ex:
-     *        "ecr.us-east-1.amazonaws.com") of the region specific AWS endpoint this client will communicate with.
+     *        The endpoint (ex: "api.ecr.us-east-1.amazonaws.com") or a full URL, including the protocol (ex:
+     *        "api.ecr.us-east-1.amazonaws.com") of the region specific AWS endpoint this client will communicate with.
      * @deprecated use {@link AwsClientBuilder#setEndpointConfiguration(AwsClientBuilder.EndpointConfiguration)} for
      *             example:
      *             {@code builder.setEndpointConfiguration(new EndpointConfiguration(endpoint, signingRegion));}

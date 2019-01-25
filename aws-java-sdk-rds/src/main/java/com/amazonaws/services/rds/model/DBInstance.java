@@ -433,6 +433,12 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean deletionProtection;
     /**
      * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DBInstanceRole> associatedRoles;
+    /**
+     * <p>
      * Specifies the listener connection endpoint for SQL Server Always On.
      * </p>
      */
@@ -3569,6 +3575,79 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     * 
+     * @return The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     */
+
+    public java.util.List<DBInstanceRole> getAssociatedRoles() {
+        if (associatedRoles == null) {
+            associatedRoles = new com.amazonaws.internal.SdkInternalList<DBInstanceRole>();
+        }
+        return associatedRoles;
+    }
+
+    /**
+     * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     */
+
+    public void setAssociatedRoles(java.util.Collection<DBInstanceRole> associatedRoles) {
+        if (associatedRoles == null) {
+            this.associatedRoles = null;
+            return;
+        }
+
+        this.associatedRoles = new com.amazonaws.internal.SdkInternalList<DBInstanceRole>(associatedRoles);
+    }
+
+    /**
+     * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssociatedRoles(java.util.Collection)} or {@link #withAssociatedRoles(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withAssociatedRoles(DBInstanceRole... associatedRoles) {
+        if (this.associatedRoles == null) {
+            setAssociatedRoles(new com.amazonaws.internal.SdkInternalList<DBInstanceRole>(associatedRoles.length));
+        }
+        for (DBInstanceRole ele : associatedRoles) {
+            this.associatedRoles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * </p>
+     * 
+     * @param associatedRoles
+     *        The AWS Identity and Access Management (IAM) roles associated with the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withAssociatedRoles(java.util.Collection<DBInstanceRole> associatedRoles) {
+        setAssociatedRoles(associatedRoles);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the listener connection endpoint for SQL Server Always On.
      * </p>
      * 
@@ -3729,6 +3808,8 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("ProcessorFeatures: ").append(getProcessorFeatures()).append(",");
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getAssociatedRoles() != null)
+            sb.append("AssociatedRoles: ").append(getAssociatedRoles()).append(",");
         if (getListenerEndpoint() != null)
             sb.append("ListenerEndpoint: ").append(getListenerEndpoint());
         sb.append("}");
@@ -3971,6 +4052,10 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getAssociatedRoles() == null ^ this.getAssociatedRoles() == null)
+            return false;
+        if (other.getAssociatedRoles() != null && other.getAssociatedRoles().equals(this.getAssociatedRoles()) == false)
+            return false;
         if (other.getListenerEndpoint() == null ^ this.getListenerEndpoint() == null)
             return false;
         if (other.getListenerEndpoint() != null && other.getListenerEndpoint().equals(this.getListenerEndpoint()) == false)
@@ -4038,6 +4123,7 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEnabledCloudwatchLogsExports() == null) ? 0 : getEnabledCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
         hashCode = prime * hashCode + ((getListenerEndpoint() == null) ? 0 : getListenerEndpoint().hashCode());
         return hashCode;
     }

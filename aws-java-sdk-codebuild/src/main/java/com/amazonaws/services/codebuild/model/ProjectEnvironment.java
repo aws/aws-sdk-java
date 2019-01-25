@@ -36,8 +36,24 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     private String type;
     /**
      * <p>
-     * The ID of the Docker image to use for this build project.
+     * The image tag or image digest that identifies the Docker image to use for this build project. Use the following
+     * formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
+     * use <code>registry/repository:latest</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String image;
     /**
@@ -98,6 +114,35 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String certificate;
+    /**
+     * <p>
+     * The credentials for access to a private registry.
+     * </p>
+     */
+    private RegistryCredential registryCredential;
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     */
+    private String imagePullCredentialsType;
 
     /**
      * <p>
@@ -174,11 +219,42 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Docker image to use for this build project.
+     * The image tag or image digest that identifies the Docker image to use for this build project. Use the following
+     * formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
+     * use <code>registry/repository:latest</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param image
-     *        The ID of the Docker image to use for this build project.
+     *        The image tag or image digest that identifies the Docker image to use for this build project. Use the
+     *        following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
+     *        "latest," use <code>registry/repository:latest</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
+     *        digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *        <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setImage(String image) {
@@ -187,10 +263,41 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Docker image to use for this build project.
+     * The image tag or image digest that identifies the Docker image to use for this build project. Use the following
+     * formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
+     * use <code>registry/repository:latest</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the Docker image to use for this build project.
+     * @return The image tag or image digest that identifies the Docker image to use for this build project. Use the
+     *         following formats:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
+     *         "latest," use <code>registry/repository:latest</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
+     *         digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *         <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *         </p>
+     *         </li>
      */
 
     public String getImage() {
@@ -199,11 +306,42 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The ID of the Docker image to use for this build project.
+     * The image tag or image digest that identifies the Docker image to use for this build project. Use the following
+     * formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
+     * use <code>registry/repository:latest</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
+     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param image
-     *        The ID of the Docker image to use for this build project.
+     *        The image tag or image digest that identifies the Docker image to use for this build project. Use the
+     *        following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
+     *        "latest," use <code>registry/repository:latest</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
+     *        digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *        <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -753,6 +891,284 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The credentials for access to a private registry.
+     * </p>
+     * 
+     * @param registryCredential
+     *        The credentials for access to a private registry.
+     */
+
+    public void setRegistryCredential(RegistryCredential registryCredential) {
+        this.registryCredential = registryCredential;
+    }
+
+    /**
+     * <p>
+     * The credentials for access to a private registry.
+     * </p>
+     * 
+     * @return The credentials for access to a private registry.
+     */
+
+    public RegistryCredential getRegistryCredential() {
+        return this.registryCredential;
+    }
+
+    /**
+     * <p>
+     * The credentials for access to a private registry.
+     * </p>
+     * 
+     * @param registryCredential
+     *        The credentials for access to a private registry.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectEnvironment withRegistryCredential(RegistryCredential registryCredential) {
+        setRegistryCredential(registryCredential);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @param imagePullCredentialsType
+     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *        modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *        use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @see ImagePullCredentialsType
+     */
+
+    public void setImagePullCredentialsType(String imagePullCredentialsType) {
+        this.imagePullCredentialsType = imagePullCredentialsType;
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @return The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *         modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *         use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @see ImagePullCredentialsType
+     */
+
+    public String getImagePullCredentialsType() {
+        return this.imagePullCredentialsType;
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @param imagePullCredentialsType
+     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *        modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *        use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImagePullCredentialsType
+     */
+
+    public ProjectEnvironment withImagePullCredentialsType(String imagePullCredentialsType) {
+        setImagePullCredentialsType(imagePullCredentialsType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @param imagePullCredentialsType
+     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *        modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *        use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @see ImagePullCredentialsType
+     */
+
+    public void setImagePullCredentialsType(ImagePullCredentialsType imagePullCredentialsType) {
+        withImagePullCredentialsType(imagePullCredentialsType);
+    }
+
+    /**
+     * <p>
+     * The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you modify your
+     * ECR repository policy to trust AWS CodeBuild's service principal.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you use an
+     * AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * </p>
+     * 
+     * @param imagePullCredentialsType
+     *        The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid values: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This requires that you
+     *        modify your ECR repository policy to trust AWS CodeBuild's service principal.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's service role.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        When you use a cross-account or private registry image, you must use SERVICE_ROLE credentials. When you
+     *        use an AWS CodeBuild curated image, you must use CODEBUILD credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImagePullCredentialsType
+     */
+
+    public ProjectEnvironment withImagePullCredentialsType(ImagePullCredentialsType imagePullCredentialsType) {
+        this.imagePullCredentialsType = imagePullCredentialsType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -775,7 +1191,11 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
         if (getPrivilegedMode() != null)
             sb.append("PrivilegedMode: ").append(getPrivilegedMode()).append(",");
         if (getCertificate() != null)
-            sb.append("Certificate: ").append(getCertificate());
+            sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getRegistryCredential() != null)
+            sb.append("RegistryCredential: ").append(getRegistryCredential()).append(",");
+        if (getImagePullCredentialsType() != null)
+            sb.append("ImagePullCredentialsType: ").append(getImagePullCredentialsType());
         sb.append("}");
         return sb.toString();
     }
@@ -814,6 +1234,14 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
             return false;
+        if (other.getRegistryCredential() == null ^ this.getRegistryCredential() == null)
+            return false;
+        if (other.getRegistryCredential() != null && other.getRegistryCredential().equals(this.getRegistryCredential()) == false)
+            return false;
+        if (other.getImagePullCredentialsType() == null ^ this.getImagePullCredentialsType() == null)
+            return false;
+        if (other.getImagePullCredentialsType() != null && other.getImagePullCredentialsType().equals(this.getImagePullCredentialsType()) == false)
+            return false;
         return true;
     }
 
@@ -828,6 +1256,8 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getPrivilegedMode() == null) ? 0 : getPrivilegedMode().hashCode());
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getRegistryCredential() == null) ? 0 : getRegistryCredential().hashCode());
+        hashCode = prime * hashCode + ((getImagePullCredentialsType() == null) ? 0 : getImagePullCredentialsType().hashCode());
         return hashCode;
     }
 

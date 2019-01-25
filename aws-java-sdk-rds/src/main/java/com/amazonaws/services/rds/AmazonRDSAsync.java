@@ -103,9 +103,10 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">
-     * Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
+     * Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
      * 
@@ -119,9 +120,10 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Associates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">
-     * Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
+     * Associates an Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf</a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
      * 
@@ -137,6 +139,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<AddRoleToDBClusterResult> addRoleToDBClusterAsync(AddRoleToDBClusterRequest addRoleToDBClusterRequest,
             com.amazonaws.handlers.AsyncHandler<AddRoleToDBClusterRequest, AddRoleToDBClusterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+     * </p>
+     * 
+     * @param addRoleToDBInstanceRequest
+     * @return A Java Future containing the result of the AddRoleToDBInstance operation returned by the service.
+     * @sample AmazonRDSAsync.AddRoleToDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddRoleToDBInstanceResult> addRoleToDBInstanceAsync(AddRoleToDBInstanceRequest addRoleToDBInstanceRequest);
+
+    /**
+     * <p>
+     * Associates an AWS Identity and Access Management (IAM) role with a DB instance.
+     * </p>
+     * 
+     * @param addRoleToDBInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddRoleToDBInstance operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.AddRoleToDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddRoleToDBInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddRoleToDBInstanceResult> addRoleToDBInstanceAsync(AddRoleToDBInstanceRequest addRoleToDBInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<AddRoleToDBInstanceRequest, AddRoleToDBInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -4439,9 +4472,10 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">
-     * Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
+     * Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
      * 
@@ -4455,9 +4489,10 @@ public interface AmazonRDSAsync extends AmazonRDS {
 
     /**
      * <p>
-     * Disassociates an Identity and Access Management (IAM) role from an Aurora DB cluster. For more information, see
-     * <a href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html">
-     * Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
+     * Disassociates an AWS Identity and Access Management (IAM) role from an Amazon Aurora DB cluster. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Integrating.Authorizing.html"
+     * >Authorizing Amazon Aurora MySQL to Access Other AWS Services on Your Behalf </a> in the <i>Amazon Aurora User
      * Guide</i>.
      * </p>
      * 
@@ -4473,6 +4508,37 @@ public interface AmazonRDSAsync extends AmazonRDS {
      */
     java.util.concurrent.Future<RemoveRoleFromDBClusterResult> removeRoleFromDBClusterAsync(RemoveRoleFromDBClusterRequest removeRoleFromDBClusterRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveRoleFromDBClusterRequest, RemoveRoleFromDBClusterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+     * </p>
+     * 
+     * @param removeRoleFromDBInstanceRequest
+     * @return A Java Future containing the result of the RemoveRoleFromDBInstance operation returned by the service.
+     * @sample AmazonRDSAsync.RemoveRoleFromDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveRoleFromDBInstanceResult> removeRoleFromDBInstanceAsync(RemoveRoleFromDBInstanceRequest removeRoleFromDBInstanceRequest);
+
+    /**
+     * <p>
+     * Disassociates an AWS Identity and Access Management (IAM) role from a DB instance.
+     * </p>
+     * 
+     * @param removeRoleFromDBInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveRoleFromDBInstance operation returned by the service.
+     * @sample AmazonRDSAsyncHandler.RemoveRoleFromDBInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveRoleFromDBInstance" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveRoleFromDBInstanceResult> removeRoleFromDBInstanceAsync(RemoveRoleFromDBInstanceRequest removeRoleFromDBInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveRoleFromDBInstanceRequest, RemoveRoleFromDBInstanceResult> asyncHandler);
 
     /**
      * <p>

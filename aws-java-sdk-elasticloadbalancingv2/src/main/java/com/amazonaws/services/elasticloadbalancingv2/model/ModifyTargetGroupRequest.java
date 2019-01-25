@@ -33,8 +33,9 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String targetGroupArn;
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
      * </p>
      * <p>
      * If the protocol of the target group is TCP, you can't modify this setting.
@@ -143,8 +144,9 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
      * </p>
      * <p>
      * If the protocol of the target group is TCP, you can't modify this setting.
@@ -152,7 +154,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP.</p>
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.</p>
      *        <p>
      *        If the protocol of the target group is TCP, you can't modify this setting.
      * @see ProtocolEnum
@@ -164,15 +167,17 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
      * </p>
      * <p>
      * If the protocol of the target group is TCP, you can't modify this setting.
      * </p>
      * 
      * @return The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *         supported only if the protocol of the target group is TCP.</p>
+     *         supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *         not supported for health checks.</p>
      *         <p>
      *         If the protocol of the target group is TCP, you can't modify this setting.
      * @see ProtocolEnum
@@ -184,8 +189,9 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
      * </p>
      * <p>
      * If the protocol of the target group is TCP, you can't modify this setting.
@@ -193,7 +199,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP.</p>
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.</p>
      *        <p>
      *        If the protocol of the target group is TCP, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -207,8 +214,9 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
      * </p>
      * <p>
      * If the protocol of the target group is TCP, you can't modify this setting.
@@ -216,7 +224,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP.</p>
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.</p>
      *        <p>
      *        If the protocol of the target group is TCP, you can't modify this setting.
      * @see ProtocolEnum
@@ -228,8 +237,9 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only
-     * if the protocol of the target group is TCP.
+     * The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported for
+     * health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is not supported for
+     * health checks.
      * </p>
      * <p>
      * If the protocol of the target group is TCP, you can't modify this setting.
@@ -237,7 +247,8 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param healthCheckProtocol
      *        The protocol the load balancer uses when performing health checks on targets. The TCP protocol is
-     *        supported only if the protocol of the target group is TCP.</p>
+     *        supported for health checks only if the protocol of the target group is TCP or TLS. The TLS protocol is
+     *        not supported for health checks.</p>
      *        <p>
      *        If the protocol of the target group is TCP, you can't modify this setting.
      * @return Returns a reference to this object so that method calls can be chained together.
