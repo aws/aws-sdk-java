@@ -29,6 +29,8 @@ public class OutputGroupSettingsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> ARCHIVEGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("archiveGroupSettings").build();
+    private static final MarshallingInfo<StructuredPojo> FRAMECAPTUREGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frameCaptureGroupSettings").build();
     private static final MarshallingInfo<StructuredPojo> HLSGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hlsGroupSettings").build();
     private static final MarshallingInfo<StructuredPojo> MSSMOOTHGROUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -55,6 +57,7 @@ public class OutputGroupSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(outputGroupSettings.getArchiveGroupSettings(), ARCHIVEGROUPSETTINGS_BINDING);
+            protocolMarshaller.marshall(outputGroupSettings.getFrameCaptureGroupSettings(), FRAMECAPTUREGROUPSETTINGS_BINDING);
             protocolMarshaller.marshall(outputGroupSettings.getHlsGroupSettings(), HLSGROUPSETTINGS_BINDING);
             protocolMarshaller.marshall(outputGroupSettings.getMsSmoothGroupSettings(), MSSMOOTHGROUPSETTINGS_BINDING);
             protocolMarshaller.marshall(outputGroupSettings.getRtmpGroupSettings(), RTMPGROUPSETTINGS_BINDING);

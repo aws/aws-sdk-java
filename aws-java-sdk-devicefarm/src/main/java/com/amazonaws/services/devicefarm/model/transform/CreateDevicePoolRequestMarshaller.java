@@ -36,6 +36,8 @@ public class CreateDevicePoolRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rules").build();
+    private static final MarshallingInfo<Integer> MAXDEVICES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxDevices").build();
 
     private static final CreateDevicePoolRequestMarshaller instance = new CreateDevicePoolRequestMarshaller();
 
@@ -57,6 +59,7 @@ public class CreateDevicePoolRequestMarshaller {
             protocolMarshaller.marshall(createDevicePoolRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createDevicePoolRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createDevicePoolRequest.getRules(), RULES_BINDING);
+            protocolMarshaller.marshall(createDevicePoolRequest.getMaxDevices(), MAXDEVICES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

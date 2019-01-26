@@ -10,28 +10,23 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.devicefarm.model;
+package com.amazonaws.services.medialive.model;
 
 import javax.annotation.Generated;
 
 /**
- * 
+ * When set to "standard", an I-Frame only playlist will be written out for each video output in the output group. This
+ * I-Frame only playlist will contain byte range offsets pointing to the I-frame(s) in each segment.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public enum DeviceFilterOperator {
+public enum IFrameOnlyPlaylistType {
 
-    EQUALS("EQUALS"),
-    LESS_THAN("LESS_THAN"),
-    LESS_THAN_OR_EQUALS("LESS_THAN_OR_EQUALS"),
-    GREATER_THAN("GREATER_THAN"),
-    GREATER_THAN_OR_EQUALS("GREATER_THAN_OR_EQUALS"),
-    IN("IN"),
-    NOT_IN("NOT_IN"),
-    CONTAINS("CONTAINS");
+    DISABLED("DISABLED"),
+    STANDARD("STANDARD");
 
     private String value;
 
-    private DeviceFilterOperator(String value) {
+    private IFrameOnlyPlaylistType(String value) {
         this.value = value;
     }
 
@@ -45,17 +40,17 @@ public enum DeviceFilterOperator {
      *
      * @param value
      *        real value
-     * @return DeviceFilterOperator corresponding to the value
+     * @return IFrameOnlyPlaylistType corresponding to the value
      *
      * @throws IllegalArgumentException
      *         If the specified value does not map to one of the known values in this enum.
      */
-    public static DeviceFilterOperator fromValue(String value) {
+    public static IFrameOnlyPlaylistType fromValue(String value) {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         }
 
-        for (DeviceFilterOperator enumEntry : DeviceFilterOperator.values()) {
+        for (IFrameOnlyPlaylistType enumEntry : IFrameOnlyPlaylistType.values()) {
             if (enumEntry.toString().equals(value)) {
                 return enumEntry;
             }

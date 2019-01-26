@@ -208,7 +208,7 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * The billing method of the remote access session. Possible values include <code>METERED</code> or
      * <code>UNMETERED</code>. For more information about metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
      * Farm terminology</a>."
      * </p>
      */
@@ -1806,14 +1806,14 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * The billing method of the remote access session. Possible values include <code>METERED</code> or
      * <code>UNMETERED</code>. For more information about metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
      * Farm terminology</a>."
      * </p>
      * 
      * @param billingMethod
      *        The billing method of the remote access session. Possible values include <code>METERED</code> or
      *        <code>UNMETERED</code>. For more information about metered devices, see <a
-     *        href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      *        Device Farm terminology</a>."
      * @see BillingMethod
      */
@@ -1826,13 +1826,13 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * The billing method of the remote access session. Possible values include <code>METERED</code> or
      * <code>UNMETERED</code>. For more information about metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
      * Farm terminology</a>."
      * </p>
      * 
      * @return The billing method of the remote access session. Possible values include <code>METERED</code> or
      *         <code>UNMETERED</code>. For more information about metered devices, see <a
-     *         href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     *         href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      *         Device Farm terminology</a>."
      * @see BillingMethod
      */
@@ -1845,14 +1845,14 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * The billing method of the remote access session. Possible values include <code>METERED</code> or
      * <code>UNMETERED</code>. For more information about metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
      * Farm terminology</a>."
      * </p>
      * 
      * @param billingMethod
      *        The billing method of the remote access session. Possible values include <code>METERED</code> or
      *        <code>UNMETERED</code>. For more information about metered devices, see <a
-     *        href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      *        Device Farm terminology</a>."
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod
@@ -1867,14 +1867,14 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * The billing method of the remote access session. Possible values include <code>METERED</code> or
      * <code>UNMETERED</code>. For more information about metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
      * Farm terminology</a>."
      * </p>
      * 
      * @param billingMethod
      *        The billing method of the remote access session. Possible values include <code>METERED</code> or
      *        <code>UNMETERED</code>. For more information about metered devices, see <a
-     *        href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      *        Device Farm terminology</a>."
      * @see BillingMethod
      */
@@ -1887,14 +1887,14 @@ public class RemoteAccessSession implements Serializable, Cloneable, StructuredP
      * <p>
      * The billing method of the remote access session. Possible values include <code>METERED</code> or
      * <code>UNMETERED</code>. For more information about metered devices, see <a
-     * href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
+     * href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS Device
      * Farm terminology</a>."
      * </p>
      * 
      * @param billingMethod
      *        The billing method of the remote access session. Possible values include <code>METERED</code> or
      *        <code>UNMETERED</code>. For more information about metered devices, see <a
-     *        href="http://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+     *        href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
      *        Device Farm terminology</a>."
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BillingMethod

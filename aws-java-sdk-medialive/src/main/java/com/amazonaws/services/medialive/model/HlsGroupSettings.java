@@ -72,6 +72,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     private String encryptionType;
     /** Parameters that control interactions with the CDN. */
     private HlsCdnSettings hlsCdnSettings;
+    /** If enabled, writes out I-Frame only playlists in addition to media playlists. */
+    private String iFrameOnlyPlaylists;
     /**
      * If mode is "live", the number of segments to retain in the manifest (.m3u8) file. This number must be less than
      * or equal to keepSegments. If mode is "vod", this parameter has no effect.
@@ -822,6 +824,57 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
 
     public HlsGroupSettings withHlsCdnSettings(HlsCdnSettings hlsCdnSettings) {
         setHlsCdnSettings(hlsCdnSettings);
+        return this;
+    }
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     * 
+     * @param iFrameOnlyPlaylists
+     *        If enabled, writes out I-Frame only playlists in addition to media playlists.
+     * @see IFrameOnlyPlaylistType
+     */
+
+    public void setIFrameOnlyPlaylists(String iFrameOnlyPlaylists) {
+        this.iFrameOnlyPlaylists = iFrameOnlyPlaylists;
+    }
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     * 
+     * @return If enabled, writes out I-Frame only playlists in addition to media playlists.
+     * @see IFrameOnlyPlaylistType
+     */
+
+    public String getIFrameOnlyPlaylists() {
+        return this.iFrameOnlyPlaylists;
+    }
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     * 
+     * @param iFrameOnlyPlaylists
+     *        If enabled, writes out I-Frame only playlists in addition to media playlists.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IFrameOnlyPlaylistType
+     */
+
+    public HlsGroupSettings withIFrameOnlyPlaylists(String iFrameOnlyPlaylists) {
+        setIFrameOnlyPlaylists(iFrameOnlyPlaylists);
+        return this;
+    }
+
+    /**
+     * If enabled, writes out I-Frame only playlists in addition to media playlists.
+     * 
+     * @param iFrameOnlyPlaylists
+     *        If enabled, writes out I-Frame only playlists in addition to media playlists.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IFrameOnlyPlaylistType
+     */
+
+    public HlsGroupSettings withIFrameOnlyPlaylists(IFrameOnlyPlaylistType iFrameOnlyPlaylists) {
+        this.iFrameOnlyPlaylists = iFrameOnlyPlaylists.toString();
         return this;
     }
 
@@ -2054,6 +2107,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("EncryptionType: ").append(getEncryptionType()).append(",");
         if (getHlsCdnSettings() != null)
             sb.append("HlsCdnSettings: ").append(getHlsCdnSettings()).append(",");
+        if (getIFrameOnlyPlaylists() != null)
+            sb.append("IFrameOnlyPlaylists: ").append(getIFrameOnlyPlaylists()).append(",");
         if (getIndexNSegments() != null)
             sb.append("IndexNSegments: ").append(getIndexNSegments()).append(",");
         if (getInputLossAction() != null)
@@ -2163,6 +2218,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getHlsCdnSettings() == null ^ this.getHlsCdnSettings() == null)
             return false;
         if (other.getHlsCdnSettings() != null && other.getHlsCdnSettings().equals(this.getHlsCdnSettings()) == false)
+            return false;
+        if (other.getIFrameOnlyPlaylists() == null ^ this.getIFrameOnlyPlaylists() == null)
+            return false;
+        if (other.getIFrameOnlyPlaylists() != null && other.getIFrameOnlyPlaylists().equals(this.getIFrameOnlyPlaylists()) == false)
             return false;
         if (other.getIndexNSegments() == null ^ this.getIndexNSegments() == null)
             return false;
@@ -2280,6 +2339,7 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDirectoryStructure() == null) ? 0 : getDirectoryStructure().hashCode());
         hashCode = prime * hashCode + ((getEncryptionType() == null) ? 0 : getEncryptionType().hashCode());
         hashCode = prime * hashCode + ((getHlsCdnSettings() == null) ? 0 : getHlsCdnSettings().hashCode());
+        hashCode = prime * hashCode + ((getIFrameOnlyPlaylists() == null) ? 0 : getIFrameOnlyPlaylists().hashCode());
         hashCode = prime * hashCode + ((getIndexNSegments() == null) ? 0 : getIndexNSegments().hashCode());
         hashCode = prime * hashCode + ((getInputLossAction() == null) ? 0 : getInputLossAction().hashCode());
         hashCode = prime * hashCode + ((getIvInManifest() == null) ? 0 : getIvInManifest().hashCode());

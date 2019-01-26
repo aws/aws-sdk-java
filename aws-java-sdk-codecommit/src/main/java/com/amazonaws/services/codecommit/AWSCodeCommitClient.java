@@ -395,6 +395,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("ReferenceTypeNotSupportedException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.ReferenceTypeNotSupportedException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FilePathConflictsWithSubmodulePathException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.FilePathConflictsWithSubmodulePathException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerEventsListRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.RepositoryTriggerEventsListRequiredException.class))
                     .addErrorMetadata(
@@ -439,6 +442,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidClientRequestTokenException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FolderContentSizeLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.FolderContentSizeLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryNameRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.RepositoryNameRequiredException.class))
@@ -3368,6 +3374,11 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws FileContentSizeLimitExceededException
      *         The file cannot be added because it is too large. The maximum file size that can be added using PutFile
      *         is 6 MB. For files larger than 6 MB but smaller than 2 GB, add them using a Git client.
+     * @throws FolderContentSizeLimitExceededException
+     *         The specified file is in a folder that exceeds the folder content size limit. Either save the file in a
+     *         folder that has less content, or remove files or subfolders from the folder so it does not exceed the
+     *         size limit. For more information about limits in AWS CodeCommit, see <a
+     *         href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
      * @throws PathRequiredException
      *         The folderPath for a location cannot be null.
      * @throws InvalidPathException
@@ -3415,6 +3426,10 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         A file cannot be added to the repository because the specified path name has the same name as a file that
      *         already exists in this repository. Either provide a different name for the file, or specify a different
      *         path for the file.
+     * @throws FilePathConflictsWithSubmodulePathException
+     *         The specified file path or folder has the same path as a submodule in this repository. Either provide a
+     *         different name for the file, or save the file in a directory that does not conflict with the submodule
+     *         path.
      * @sample AWSCodeCommit.PutFile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile" target="_top">AWS API
      *      Documentation</a>

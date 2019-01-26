@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents test settings. This data structure is passed in as the <code>test</code> parameter to ScheduleRun. For an
- * example of the JSON request syntax, see <a>ScheduleRun</a>.
+ * Represents test settings. This data structure is passed in as the "test" parameter to ScheduleRun. For an example of
+ * the JSON request syntax, see <a>ScheduleRun</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ScheduleRunTest" target="_top">AWS API

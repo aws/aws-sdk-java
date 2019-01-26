@@ -52,6 +52,10 @@ public class OutputSettingsJsonUnmarshaller implements Unmarshaller<OutputSettin
                     context.nextToken();
                     outputSettings.setArchiveOutputSettings(ArchiveOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("frameCaptureOutputSettings", targetDepth)) {
+                    context.nextToken();
+                    outputSettings.setFrameCaptureOutputSettings(FrameCaptureOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("hlsOutputSettings", targetDepth)) {
                     context.nextToken();
                     outputSettings.setHlsOutputSettings(HlsOutputSettingsJsonUnmarshaller.getInstance().unmarshall(context));

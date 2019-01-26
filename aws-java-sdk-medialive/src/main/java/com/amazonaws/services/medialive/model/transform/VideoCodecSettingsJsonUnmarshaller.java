@@ -48,6 +48,10 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("frameCaptureSettings", targetDepth)) {
+                    context.nextToken();
+                    videoCodecSettings.setFrameCaptureSettings(FrameCaptureSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("h264Settings", targetDepth)) {
                     context.nextToken();
                     videoCodecSettings.setH264Settings(H264SettingsJsonUnmarshaller.getInstance().unmarshall(context));

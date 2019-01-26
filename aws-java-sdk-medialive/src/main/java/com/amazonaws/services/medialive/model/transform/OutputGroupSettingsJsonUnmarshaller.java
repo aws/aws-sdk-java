@@ -52,6 +52,10 @@ public class OutputGroupSettingsJsonUnmarshaller implements Unmarshaller<OutputG
                     context.nextToken();
                     outputGroupSettings.setArchiveGroupSettings(ArchiveGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("frameCaptureGroupSettings", targetDepth)) {
+                    context.nextToken();
+                    outputGroupSettings.setFrameCaptureGroupSettings(FrameCaptureGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("hlsGroupSettings", targetDepth)) {
                     context.nextToken();
                     outputGroupSettings.setHlsGroupSettings(HlsGroupSettingsJsonUnmarshaller.getInstance().unmarshall(context));

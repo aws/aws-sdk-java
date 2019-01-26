@@ -68,6 +68,10 @@ public class DevicePoolJsonUnmarshaller implements Unmarshaller<DevicePool, Json
                     context.nextToken();
                     devicePool.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("maxDevices", targetDepth)) {
+                    context.nextToken();
+                    devicePool.setMaxDevices(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

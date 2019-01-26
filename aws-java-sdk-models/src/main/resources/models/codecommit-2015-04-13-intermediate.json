@@ -2523,6 +2523,10 @@
         "documentation" : "<p>The file cannot be added because it is too large. The maximum file size that can be added using PutFile is 6 MB. For files larger than 6 MB but smaller than 2 GB, add them using a Git client.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "FolderContentSizeLimitExceededException",
+        "documentation" : "<p>The specified file is in a folder that exceeds the folder content size limit. Either save the file in a folder that has less content, or remove files or subfolders from the folder so it does not exceed the size limit. For more information about limits in AWS CodeCommit, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">AWS CodeCommit User Guide</a>.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "PathRequiredException",
         "documentation" : "<p>The folderPath for a location cannot be null.</p>",
         "httpStatusCode" : null
@@ -2597,6 +2601,10 @@
       }, {
         "exceptionName" : "DirectoryNameConflictsWithFileNameException",
         "documentation" : "<p>A file cannot be added to the repository because the specified path name has the same name as a file that already exists in this repository. Either provide a different name for the file, or specify a different path for the file.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "FilePathConflictsWithSubmodulePathException",
+        "documentation" : "<p>The specified file path or folder has the same path as a submodule in this repository. Either provide a different name for the file, or save the file in a directory that does not conflict with the submodule path.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -17874,6 +17882,43 @@
       },
       "wrapper" : false
     },
+    "FilePathConflictsWithSubmodulePathException" : {
+      "c2jName" : "FilePathConflictsWithSubmodulePathException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The specified file path or folder has the same path as a submodule in this repository. Either provide a different name for the file, or save the file in a directory that does not conflict with the submodule path.</p>",
+      "enums" : null,
+      "errorCode" : "FilePathConflictsWithSubmodulePathException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "FilePathConflictsWithSubmodulePathException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "FilePathConflictsWithSubmodulePathException",
+        "variableName" : "filePathConflictsWithSubmodulePathException",
+        "variableType" : "FilePathConflictsWithSubmodulePathException",
+        "documentation" : null,
+        "simpleType" : "FilePathConflictsWithSubmodulePathException",
+        "variableSetterType" : "FilePathConflictsWithSubmodulePathException"
+      },
+      "wrapper" : false
+    },
     "FileTooLargeException" : {
       "c2jName" : "FileTooLargeException",
       "customization" : {
@@ -18348,6 +18393,43 @@
         "documentation" : null,
         "simpleType" : "Folder",
         "variableSetterType" : "Folder"
+      },
+      "wrapper" : false
+    },
+    "FolderContentSizeLimitExceededException" : {
+      "c2jName" : "FolderContentSizeLimitExceededException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The specified file is in a folder that exceeds the folder content size limit. Either save the file in a folder that has less content, or remove files or subfolders from the folder so it does not exceed the size limit. For more information about limits in AWS CodeCommit, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">AWS CodeCommit User Guide</a>.</p>",
+      "enums" : null,
+      "errorCode" : "FolderContentSizeLimitExceededException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "FolderContentSizeLimitExceededException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "FolderContentSizeLimitExceededException",
+        "variableName" : "folderContentSizeLimitExceededException",
+        "variableType" : "FolderContentSizeLimitExceededException",
+        "documentation" : null,
+        "simpleType" : "FolderContentSizeLimitExceededException",
+        "variableSetterType" : "FolderContentSizeLimitExceededException"
       },
       "wrapper" : false
     },

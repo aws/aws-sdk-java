@@ -52,6 +52,17 @@ public class CreateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<Rule> rules;
+    /**
+     * <p>
+     * The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available
+     * and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices
+     * meet these constraints, your device pool might contain fewer devices than the value for this parameter.
+     * </p>
+     * <p>
+     * By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * </p>
+     */
+    private Integer maxDevices;
 
     /**
      * <p>
@@ -244,6 +255,76 @@ public class CreateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available
+     * and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices
+     * meet these constraints, your device pool might contain fewer devices than the value for this parameter.
+     * </p>
+     * <p>
+     * By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * </p>
+     * 
+     * @param maxDevices
+     *        The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
+     *        available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on
+     *        how many devices meet these constraints, your device pool might contain fewer devices than the value for
+     *        this parameter.</p>
+     *        <p>
+     *        By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     */
+
+    public void setMaxDevices(Integer maxDevices) {
+        this.maxDevices = maxDevices;
+    }
+
+    /**
+     * <p>
+     * The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available
+     * and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices
+     * meet these constraints, your device pool might contain fewer devices than the value for this parameter.
+     * </p>
+     * <p>
+     * By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * </p>
+     * 
+     * @return The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
+     *         available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on
+     *         how many devices meet these constraints, your device pool might contain fewer devices than the value for
+     *         this parameter.</p>
+     *         <p>
+     *         By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     */
+
+    public Integer getMaxDevices() {
+        return this.maxDevices;
+    }
+
+    /**
+     * <p>
+     * The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are available
+     * and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on how many devices
+     * meet these constraints, your device pool might contain fewer devices than the value for this parameter.
+     * </p>
+     * <p>
+     * By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * </p>
+     * 
+     * @param maxDevices
+     *        The number of devices that Device Farm can add to your device pool. Device Farm adds devices that are
+     *        available and that meet the criteria that you assign for the <code>rules</code> parameter. Depending on
+     *        how many devices meet these constraints, your device pool might contain fewer devices than the value for
+     *        this parameter.</p>
+     *        <p>
+     *        By specifying the maximum number of devices, you can control the costs that you incur by running tests.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDevicePoolRequest withMaxDevices(Integer maxDevices) {
+        setMaxDevices(maxDevices);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +343,9 @@ public class CreateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getRules() != null)
-            sb.append("Rules: ").append(getRules());
+            sb.append("Rules: ").append(getRules()).append(",");
+        if (getMaxDevices() != null)
+            sb.append("MaxDevices: ").append(getMaxDevices());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +376,10 @@ public class CreateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getMaxDevices() == null ^ this.getMaxDevices() == null)
+            return false;
+        if (other.getMaxDevices() != null && other.getMaxDevices().equals(this.getMaxDevices()) == false)
+            return false;
         return true;
     }
 
@@ -305,6 +392,7 @@ public class CreateDevicePoolRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getMaxDevices() == null) ? 0 : getMaxDevices().hashCode());
         return hashCode;
     }
 

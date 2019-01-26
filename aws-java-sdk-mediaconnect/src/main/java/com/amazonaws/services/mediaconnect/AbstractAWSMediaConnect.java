@@ -63,6 +63,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RemoveFlowOutputResult removeFlowOutput(RemoveFlowOutputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +84,16 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
 
     @Override
     public StopFlowResult stopFlow(StopFlowRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

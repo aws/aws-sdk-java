@@ -26,7 +26,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class VideoCodecSettings implements Serializable, Cloneable, StructuredPojo {
 
+    private FrameCaptureSettings frameCaptureSettings;
+
     private H264Settings h264Settings;
+
+    /**
+     * @param frameCaptureSettings
+     */
+
+    public void setFrameCaptureSettings(FrameCaptureSettings frameCaptureSettings) {
+        this.frameCaptureSettings = frameCaptureSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public FrameCaptureSettings getFrameCaptureSettings() {
+        return this.frameCaptureSettings;
+    }
+
+    /**
+     * @param frameCaptureSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoCodecSettings withFrameCaptureSettings(FrameCaptureSettings frameCaptureSettings) {
+        setFrameCaptureSettings(frameCaptureSettings);
+        return this;
+    }
 
     /**
      * @param h264Settings
@@ -66,6 +94,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getFrameCaptureSettings() != null)
+            sb.append("FrameCaptureSettings: ").append(getFrameCaptureSettings()).append(",");
         if (getH264Settings() != null)
             sb.append("H264Settings: ").append(getH264Settings());
         sb.append("}");
@@ -82,6 +112,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         if (obj instanceof VideoCodecSettings == false)
             return false;
         VideoCodecSettings other = (VideoCodecSettings) obj;
+        if (other.getFrameCaptureSettings() == null ^ this.getFrameCaptureSettings() == null)
+            return false;
+        if (other.getFrameCaptureSettings() != null && other.getFrameCaptureSettings().equals(this.getFrameCaptureSettings()) == false)
+            return false;
         if (other.getH264Settings() == null ^ this.getH264Settings() == null)
             return false;
         if (other.getH264Settings() != null && other.getH264Settings().equals(this.getH264Settings()) == false)
@@ -94,6 +128,7 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getFrameCaptureSettings() == null) ? 0 : getFrameCaptureSettings().hashCode());
         hashCode = prime * hashCode + ((getH264Settings() == null) ? 0 : getH264Settings().hashCode());
         return hashCode;
     }

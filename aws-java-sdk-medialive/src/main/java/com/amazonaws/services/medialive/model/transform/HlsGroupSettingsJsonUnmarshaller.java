@@ -97,6 +97,10 @@ public class HlsGroupSettingsJsonUnmarshaller implements Unmarshaller<HlsGroupSe
                     context.nextToken();
                     hlsGroupSettings.setHlsCdnSettings(HlsCdnSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("iFrameOnlyPlaylists", targetDepth)) {
+                    context.nextToken();
+                    hlsGroupSettings.setIFrameOnlyPlaylists(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("indexNSegments", targetDepth)) {
                     context.nextToken();
                     hlsGroupSettings.setIndexNSegments(context.getUnmarshaller(Integer.class).unmarshall(context));

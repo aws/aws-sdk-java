@@ -746,6 +746,7 @@
         {"shape":"ParentCommitIdOutdatedException"},
         {"shape":"FileContentRequiredException"},
         {"shape":"FileContentSizeLimitExceededException"},
+        {"shape":"FolderContentSizeLimitExceededException"},
         {"shape":"PathRequiredException"},
         {"shape":"InvalidPathException"},
         {"shape":"BranchNameRequiredException"},
@@ -764,7 +765,8 @@
         {"shape":"EncryptionKeyUnavailableException"},
         {"shape":"SameFileContentException"},
         {"shape":"FileNameConflictsWithDirectoryNameException"},
-        {"shape":"DirectoryNameConflictsWithFileNameException"}
+        {"shape":"DirectoryNameConflictsWithFileNameException"},
+        {"shape":"FilePathConflictsWithSubmodulePathException"}
       ],
       "documentation":"<p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in the specified branch.</p>"
     },
@@ -1765,6 +1767,13 @@
       "documentation":"<p>A file cannot be added to the repository because the specified file name has the same name as a directory in this repository. Either provide another name for the file, or add the file in a directory that does not match the file name.</p>",
       "exception":true
     },
+    "FilePathConflictsWithSubmodulePathException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The specified file path or folder has the same path as a submodule in this repository. Either provide a different name for the file, or save the file in a directory that does not conflict with the submodule path.</p>",
+      "exception":true
+    },
     "FileTooLargeException":{
       "type":"structure",
       "members":{
@@ -1789,6 +1798,13 @@
         }
       },
       "documentation":"<p>Returns information about a folder in a repository.</p>"
+    },
+    "FolderContentSizeLimitExceededException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The specified file is in a folder that exceeds the folder content size limit. Either save the file in a folder that has less content, or remove files or subfolders from the folder so it does not exceed the size limit. For more information about limits in AWS CodeCommit, see <a href=\"http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html\">AWS CodeCommit User Guide</a>.</p>",
+      "exception":true
     },
     "FolderDoesNotExistException":{
       "type":"structure",
