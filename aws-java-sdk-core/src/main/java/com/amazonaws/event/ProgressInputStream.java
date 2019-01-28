@@ -164,7 +164,7 @@ public abstract class ProgressInputStream extends SdkFilterInputStream {
     }
 
     @Override
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         super.reset();
         onReset();
         unnotifiedByteCount = 0;

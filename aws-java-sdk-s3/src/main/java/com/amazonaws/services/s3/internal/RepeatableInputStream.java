@@ -82,7 +82,7 @@ public class RepeatableInputStream extends SdkInputStream {
      *             When the available buffer size has been exceeded, in which
      *             case the input stream data cannot be repeated.
      */
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         abortIfNeeded();
         if (bytesReadPastMark <= bufferSize) {
             if (log.isDebugEnabled()) {
@@ -108,7 +108,7 @@ public class RepeatableInputStream extends SdkInputStream {
      * stream than fits into the buffer. The readLimit parameter is ignored
      * entirely.
      */
-    public void mark(int readlimit) {
+    public synchronized void mark(int readlimit) {
         abortIfNeeded();
         if (log.isDebugEnabled()) {
             log.debug("Input stream marked at " + bytesReadPastMark + " bytes");

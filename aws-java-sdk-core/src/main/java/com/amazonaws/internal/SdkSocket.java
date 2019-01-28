@@ -56,7 +56,7 @@ public class SdkSocket extends DelegateSocket {
     }
 
     @Override
-    public void close() throws IOException {
+    public synchronized void close() throws IOException {
         if (log.isDebugEnabled())
             log.debug("closing " + endpoint());
         sock.close();

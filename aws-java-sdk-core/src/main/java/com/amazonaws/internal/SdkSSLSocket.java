@@ -57,7 +57,7 @@ public class SdkSSLSocket extends DelegateSSLSocket {
     }
 
     @Override
-    public void close() throws IOException {
+    public synchronized void close() throws IOException {
         if (log.isDebugEnabled())
             log.debug("closing " + endpoint());
         sock.close();

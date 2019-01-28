@@ -181,7 +181,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
     }
 
     @Override
-    public void mark(int readlimit) {
+    public synchronized void mark(int readlimit) {
         abortIfNeeded();
         in.mark(readlimit);
         cipherLite.mark();
@@ -194,7 +194,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
      * states consistent.  REF: TT0036173414, ISSUE-JAVA-547.
      */
     @Override
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         abortIfNeeded();
         in.reset();
         cipherLite.reset();

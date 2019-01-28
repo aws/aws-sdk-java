@@ -140,7 +140,7 @@ public class ResettableInputStream extends ReleasableInputStream {
      *            ignored
      */
     @Override
-    public void mark(int _) {
+    public synchronized void mark(int _) {
         abortIfNeeded();
         try {
             markPos = fileChannel.position();
@@ -169,7 +169,7 @@ public class ResettableInputStream extends ReleasableInputStream {
      * becomes the only way to truly close the opened file.
      */
     @Override
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         abortIfNeeded();
         fileChannel.position(markPos);
         if (log.isTraceEnabled())

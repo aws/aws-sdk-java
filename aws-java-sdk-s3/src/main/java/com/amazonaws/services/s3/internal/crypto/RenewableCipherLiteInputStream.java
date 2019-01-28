@@ -66,7 +66,7 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
      *             if mark is called after this stream has been accessed.
      */
     @Override
-    public void mark(final int readlimit) {
+    public synchronized void mark(final int readlimit) {
         abortIfNeeded();
         if (hasBeenAccessed) {
             throw new UnsupportedOperationException(
@@ -85,7 +85,7 @@ public final class RenewableCipherLiteInputStream extends CipherLiteInputStream 
      * stream (but not anywhere else).
      */
     @Override
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         abortIfNeeded();
         in.reset();
         renewCipherLite();

@@ -339,7 +339,7 @@ public class AWSJavaMailTransport extends Transport {
     }
 
     @Override
-    public void close() throws MessagingException {
+    public synchronized void close() throws MessagingException {
         super.close();
         this.emailService = null;
     }

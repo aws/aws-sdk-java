@@ -81,7 +81,7 @@ public class RepeatableFileInputStream extends SdkInputStream {
      *             when the FileInputStream cannot be re-created.
      */
     @Override
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         this.fis.close();
         abortIfNeeded();
         this.fis = new FileInputStream(file);
@@ -106,7 +106,7 @@ public class RepeatableFileInputStream extends SdkInputStream {
     }
 
     @Override
-    public void mark(int readlimit) {
+    public synchronized void mark(int readlimit) {
         abortIfNeeded();
         this.markPoint += bytesReadPastMarkPoint;
         this.bytesReadPastMarkPoint = 0;

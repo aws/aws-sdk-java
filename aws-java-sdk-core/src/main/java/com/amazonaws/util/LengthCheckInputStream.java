@@ -111,7 +111,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
     }
 
     @Override
-    public void mark(int readlimit) {
+    public synchronized void mark(int readlimit) {
         if (markSupported()) {
             super.mark(readlimit);
             marked = dataLength;
@@ -121,7 +121,7 @@ public class LengthCheckInputStream extends SdkFilterInputStream {
     }
 
     @Override
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         if (markSupported()) {
             super.reset();
             dataLength = marked;

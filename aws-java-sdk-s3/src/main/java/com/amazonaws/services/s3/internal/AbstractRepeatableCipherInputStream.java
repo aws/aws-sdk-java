@@ -80,7 +80,7 @@ public abstract class AbstractRepeatableCipherInputStream<T>
     }
     
     @Override
-    public void mark(final int readlimit) {
+    public synchronized void mark(final int readlimit) {
         abortIfNeeded();
         if (hasBeenAccessed) {
             throw new UnsupportedOperationException(
@@ -92,7 +92,7 @@ public abstract class AbstractRepeatableCipherInputStream<T>
     }
 
     @Override
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         abortIfNeeded();
         unencryptedDataStream.reset();
         in = createCipherInputStream(unencryptedDataStream, cipherFactory);

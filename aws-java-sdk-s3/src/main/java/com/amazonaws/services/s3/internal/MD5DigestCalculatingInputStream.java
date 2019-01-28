@@ -89,7 +89,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
     }
 
     @Override
-    public void mark(int readlimit) {
+    public synchronized void mark(int readlimit) {
         if (markSupported()) {
             super.mark(readlimit);
             digestLastMarked = cloneFrom(digest);
@@ -100,7 +100,7 @@ public class MD5DigestCalculatingInputStream extends SdkFilterInputStream {
      * Resets the wrapped input stream and the in progress message digest.
      */
     @Override
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         if (markSupported()) {
             super.reset();
 

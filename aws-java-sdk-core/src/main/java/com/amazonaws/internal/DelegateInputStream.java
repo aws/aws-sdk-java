@@ -52,10 +52,10 @@ public class DelegateInputStream extends InputStream {
         in.close();
     }
 
-    public void mark(int readlimit) {
+    public synchronized void mark(int readlimit) {
         in.mark(readlimit);
     }
-    public void reset() throws IOException {
+    public synchronized void reset() throws IOException {
         in.reset();
     }
 
