@@ -22,8 +22,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.concurrent.TimeUnit;
-import org.joda.time.DateTime;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -87,7 +87,7 @@ public class ProcessCredentialsProviderTest {
         ProcessCredentialsProvider credentialsProvider =
                 ProcessCredentialsProvider.builder()
                                           .withCommand(scriptLocation + " SESSION_CREDENTIALS")
-                                          .withCredentialExpirationBuffer(0, TimeUnit.SECONDS)
+                                          .withCredentialExpirationBuffer(0, ChronoUnit.SECONDS)
                                           .build();
 
         AWSCredentials credentials = credentialsProvider.getCredentials();
@@ -99,7 +99,7 @@ public class ProcessCredentialsProviderTest {
         Assert.assertEquals("accessKeyId", sessionCredentials.getAWSAccessKeyId());
         Assert.assertEquals("secretAccessKey", sessionCredentials.getAWSSecretKey());
         Assert.assertEquals("sessionToken", sessionCredentials.getSessionToken());
-        Assert.assertTrue(DateTime.parse("2018-12-11T17:46:28Z")
+        Assert.assertTrue(ZonedDateTime.parse("2018-12-11T17:46:28Z")
                                   .isEqual(credentialsProvider.getCredentialExpirationTime()));
     }
 
@@ -108,11 +108,11 @@ public class ProcessCredentialsProviderTest {
         ProcessCredentialsProvider credentialsProvider =
                 ProcessCredentialsProvider.builder()
                                           .withCommand(scriptLocation + " SESSION_CREDENTIALS")
-                                          .withCredentialExpirationBuffer(10, TimeUnit.SECONDS)
+                                          .withCredentialExpirationBuffer(10, ChronoUnit.SECONDS)
                                           .build();
         credentialsProvider.getCredentials();
 
-        Assert.assertTrue(DateTime.parse("2018-12-11T17:46:28Z").minusSeconds(10)
+        Assert.assertTrue(ZonedDateTime.parse("2018-12-11T17:46:28Z").minusSeconds(10)
                                   .isEqual(credentialsProvider.getCredentialExpirationTime()));
     }
 

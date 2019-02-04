@@ -26,6 +26,8 @@ import static org.junit.Assert.fail;
 import java.nio.charset.Charset;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.Locale;
 import java.util.SimpleTimeZone;
@@ -34,8 +36,6 @@ import com.amazonaws.protocol.json.SdkJsonGenerator;
 import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.fasterxml.jackson.core.JsonFactory;
 
-import org.joda.time.DateTime;
-import org.joda.time.IllegalFieldValueException;
 import org.junit.Test;
 
 public class DateUtilsTest {
@@ -103,7 +103,7 @@ public class DateUtilsTest {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         sdf.setTimeZone(new SimpleTimeZone(0, "GMT"));
         String formatted = sdf.format(date);
-        String alternative = DateUtils.iso8601DateFormat.print(date.getTime());
+        String alternative = DateUtils.formatDate(date, DateUtils.iso8601DateFormat);
         assertEquals(formatted, alternative);
 
         Date expectedDate = sdf.parse(formatted);
@@ -117,7 +117,7 @@ public class DateUtilsTest {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         sdf.setTimeZone(new SimpleTimeZone(0, "GMT"));
         String formatted = sdf.format(date);
-        String alternative = DateUtils.alternateIso8601DateFormat.print(date.getTime());
+        String alternative = DateUtils.formatDate(date, DateUtils.alternateIso8601DateFormat);
         assertEquals(formatted, alternative);
 
         Date expectedDate = sdf.parse(formatted);
@@ -131,12 +131,21 @@ public class DateUtilsTest {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         sdf.setTimeZone(new SimpleTimeZone(0, "GMT"));
         String expected = sdf.format(date);
-        String actual = DateUtils.alternateIso8601DateFormat.print(date.getTime());
+        String actual = DateUtils.formatDate(date, DateUtils.alternateIso8601DateFormat);
         assertEquals(expected, actual);
 
         Date expectedDate = sdf.parse(expected);
-        DateTime actualDateTime = DateUtils.alternateIso8601DateFormat.parseDateTime(actual);
-        assertEquals(expectedDate, new Date(actualDateTime.getMillis()));
+        Instant actualDateTime = DateUtils.parseInstant(actual, DateUtils.alternateIso8601DateFormat);
+        assertEquals(expectedDate, new Date(actualDateTime.toEpochMilli()));
+    }
+
+    @Test
+    public void testParseISO8601DateWith0000TimeZone() {
+        String expected = "2014-03-06T14:28:58.000Z";
+        String input = "2014-03-06T14:28:58+0000";
+        Date parsed = DateUtils.parseISO8601Date(input);
+        String actual = DateUtils.formatISO8601Date(parsed);
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -147,16 +156,16 @@ public class DateUtilsTest {
         sdf.parse(input);
     }
 
-    @Test(expected=IllegalArgumentException.class)
-    public void invalidDate() throws ParseException {
+    @Test(expected=DateTimeParseException.class)
+    public void invalidDate() {
         final String input = "2014-03-06T14:28:58.000Z.000Z";
         DateUtils.parseISO8601Date(input);
     }
     @Test
-    public void test() throws ParseException {
+    public void test() {
         Date date = new Date();
         System.out.println("         formatISO8601Date: " + DateUtils.formatISO8601Date(date));
-        System.out.println("alternateIso8601DateFormat: " + DateUtils.alternateIso8601DateFormat.print(date.getTime()));
+        System.out.println("alternateIso8601DateFormat: " + DateUtils.formatDate(date, DateUtils.alternateIso8601DateFormat));
     }
 
     @Test
@@ -180,15 +189,15 @@ public class DateUtilsTest {
         assertEquals(edgeCase, reformatted);
     }
 
-    @Test(expected=IllegalFieldValueException.class)
-    public void testIssue233JodaTimeLimit() throws ParseException {
+    @Test(expected=DateTimeParseException.class)
+    public void testIssue233JodaTimeLimit() {
         // https://github.com/aws/aws-sdk-java/issues/233
-        String s = DateUtils.iso8601DateFormat.print(Long.MAX_VALUE);
+        String s = DateUtils.iso8601DateFormat.format(Instant.ofEpochMilli(Long.MAX_VALUE));
         System.out.println("s: " + s);
         try {
-            DateTime dt = DateUtils.iso8601DateFormat.parseDateTime(s);
+            Instant dt = DateUtils.parseInstant(s, DateUtils.alternateIso8601DateFormat);
             fail("Unexpected success: " + dt);
-        } catch(IllegalFieldValueException ex) {
+        } catch(DateTimeParseException ex) {
             // expected
             throw ex;
         }
@@ -221,7 +230,7 @@ public class DateUtilsTest {
             } catch (IllegalArgumentException ex) {
                 String msg = ex.getMessage();
                 assertTrue(msg
-                        .contains("must be in the range [-292275054,292278993]"));
+                        .contains("java.lang.ArithmeticException: long overflow"));
             }
         }
     }

@@ -29,10 +29,11 @@ import com.amazonaws.internal.auth.SignerProvider;
 import com.amazonaws.regions.Region;
 import com.amazonaws.util.ImmutableMapParameter;
 
-import org.joda.time.DateTime;
-
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.Date;
 
@@ -104,7 +105,9 @@ public class RdsIamAuthTokenGenerator {
     }
 
     private Date getExpirationDate() {
-        return new DateTime(clock.currentTimeMillis()).plusMinutes(DEFAULT_EXPIRATION_IN_MINUTES).toDate();
+        Instant instant = Instant.ofEpochMilli(clock.currentTimeMillis());
+        ZonedDateTime dateTime = ZonedDateTime.ofInstant(instant, ZoneId.systemDefault()).plusMinutes(DEFAULT_EXPIRATION_IN_MINUTES);
+        return Date.from(dateTime.toInstant());
     }
 
     public static Builder builder() {

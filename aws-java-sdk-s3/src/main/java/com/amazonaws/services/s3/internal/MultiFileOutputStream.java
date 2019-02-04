@@ -18,12 +18,12 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 import java.util.concurrent.Semaphore;
 
 import org.apache.commons.logging.LogFactory;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
 
 import com.amazonaws.AbortedException;
 import com.amazonaws.services.s3.OnFileDelete;
@@ -35,6 +35,7 @@ import com.amazonaws.services.s3.UploadObjectObserver;
  */
 public class MultiFileOutputStream extends OutputStream implements OnFileDelete {
     static final int DEFAULT_PART_SIZE = 5 << 20; // 5MB
+    static final DateTimeFormatter TIMESTAMP_FORMATTER = DateTimeFormatter.ofPattern("yyMMdd-hhmmss");
     private final File root;
     private final String namePrefix;
     private int filesCreated;
@@ -63,7 +64,7 @@ public class MultiFileOutputStream extends OutputStream implements OnFileDelete 
      */
     public MultiFileOutputStream() {
         root = new File(System.getProperty("java.io.tmpdir"));
-        namePrefix = yyMMdd_hhmmss() + "." + UUID.randomUUID();
+        namePrefix = getPrefixTimestamp() + "." + UUID.randomUUID();
     }
 
     /**
@@ -272,8 +273,8 @@ public class MultiFileOutputStream extends OutputStream implements OnFileDelete 
         return totalBytesWritten;
     }
 
-    static String yyMMdd_hhmmss() {
-        return DateTimeFormat.forPattern("yyMMdd-hhmmss").print(new DateTime());
+    static String getPrefixTimestamp() {
+        return TIMESTAMP_FORMATTER.format(ZonedDateTime.now());
     }
 
     public boolean isClosed() {

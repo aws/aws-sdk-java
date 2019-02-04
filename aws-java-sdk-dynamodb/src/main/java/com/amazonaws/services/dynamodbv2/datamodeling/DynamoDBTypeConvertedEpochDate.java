@@ -20,7 +20,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Annotation to convert a date object ({@link java.util.Date}, {@link java.util.Calendar}, {@link org.joda.time.DateTime})
+ * Annotation to convert a date object ({@link java.util.Date}, {@link java.util.Calendar}, {@link java.time.ZonedDateTime})
  * to a {@link com.amazonaws.services.dynamodbv2.model.ScalarAttributeType#N} stored as epoch time.
  *
  * <p>Alternately, the {@link DynamoDBTyped} annotation may be used,</p>

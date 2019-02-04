@@ -50,10 +50,6 @@
                     </artifactSet>
                     <relocations>
                         <relocation>
-                            <pattern>org.joda</pattern>
-                            <shadedPattern>com.amazonaws.thirdparty.joda</shadedPattern>
-                        </relocation>
-                        <relocation>
                             <pattern>com.fasterxml.jackson</pattern>
                             <shadedPattern>com.amazonaws.thirdparty.jackson</shadedPattern>
                         </relocation>

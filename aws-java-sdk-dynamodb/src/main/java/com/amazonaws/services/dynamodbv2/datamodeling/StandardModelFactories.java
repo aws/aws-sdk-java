@@ -26,9 +26,9 @@ import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.joda.time.DateTime;
 
 import java.nio.ByteBuffer;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
@@ -297,7 +297,7 @@ final class StandardModelFactories {
             }
             @Override
             public boolean isAssignableFrom(ConvertibleType<?> type) {
-                return (type.is(Date.class) || type.is(Calendar.class) || type.is(DateTime.class))
+                return (type.is(Date.class) || type.is(Calendar.class) || type.is(ZonedDateTime.class))
                        && super.isAssignableFrom(type) && (type.attributeType() != null || type.is(N));
             }
             @Override

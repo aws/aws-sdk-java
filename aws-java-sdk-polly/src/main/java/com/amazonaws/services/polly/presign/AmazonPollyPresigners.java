@@ -26,8 +26,10 @@ import com.amazonaws.services.polly.AmazonPolly;
 import com.amazonaws.services.polly.model.SynthesizeSpeechRequest;
 import java.net.URI;
 import java.net.URL;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Date;
-import org.joda.time.DateTime;
 
 /**
  * Presigning extensions methods for {@link AmazonPolly}.
@@ -106,9 +108,9 @@ public final class AmazonPollyPresigners {
     }
 
     private Date getDefaultExpirationDate() {
-        return new DateTime(clock.currentTimeMillis())
-                .plusMinutes(SYNTHESIZE_SPEECH_DEFAULT_EXPIRATION_MINUTES)
-                .toDate();
+        Instant instant = Instant.ofEpochMilli(clock.currentTimeMillis());
+        ZonedDateTime dateTime = ZonedDateTime.ofInstant(instant, ZoneId.systemDefault()).plusMinutes(SYNTHESIZE_SPEECH_DEFAULT_EXPIRATION_MINUTES);
+        return Date.from(dateTime.toInstant());
     }
 
 }

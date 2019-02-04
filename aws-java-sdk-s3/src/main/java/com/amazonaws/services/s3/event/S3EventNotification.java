@@ -14,10 +14,13 @@
  */
 package com.amazonaws.services.s3.event;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
+import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.SdkHttpUtils;
-import org.joda.time.DateTime;
 
 import com.amazonaws.internal.DateTimeJsonSerializer;
 import com.amazonaws.util.json.Jackson;
@@ -302,7 +305,7 @@ public class S3EventNotification {
     }
 
     public static class RestoreEventDataEntity {
-        private DateTime lifecycleRestorationExpiryTime;
+        private ZonedDateTime lifecycleRestorationExpiryTime;
         private final String lifecycleRestoreStorageClass;
 
         @JsonCreator
@@ -311,13 +314,14 @@ public class S3EventNotification {
                 @JsonProperty("lifecycleRestoreStorageClass") String lifecycleRestoreStorageClass)
         {
             if (lifecycleRestorationExpiryTime != null) {
-                this.lifecycleRestorationExpiryTime = DateTime.parse(lifecycleRestorationExpiryTime);
+                Instant instant = DateUtils.parseISO8601Instant(lifecycleRestorationExpiryTime);
+                this.lifecycleRestorationExpiryTime = ZonedDateTime.ofInstant(instant, ZoneId.systemDefault());
             }
             this.lifecycleRestoreStorageClass = lifecycleRestoreStorageClass;
         }
 
         @JsonSerialize(using=DateTimeJsonSerializer.class)
-        public DateTime getLifecycleRestorationExpiryTime() {
+        public ZonedDateTime getLifecycleRestorationExpiryTime() {
             return lifecycleRestorationExpiryTime;
         }
 
@@ -331,7 +335,7 @@ public class S3EventNotification {
         private final String awsRegion;
         private final String eventName;
         private final String eventSource;
-        private DateTime eventTime;
+        private ZonedDateTime eventTime;
         private final String eventVersion;
         private final RequestParametersEntity requestParameters;
         private final ResponseElementsEntity responseElements;
@@ -382,7 +386,8 @@ public class S3EventNotification {
 
             if (eventTime != null)
             {
-                this.eventTime = DateTime.parse(eventTime);
+                Instant instant = DateUtils.parseISO8601Instant(eventTime);
+                this.eventTime = ZonedDateTime.ofInstant(instant, ZoneId.systemDefault());
             }
 
             this.eventVersion = eventVersion;
@@ -406,7 +411,7 @@ public class S3EventNotification {
         }
 
         @JsonSerialize(using=DateTimeJsonSerializer.class)
-        public DateTime getEventTime() {
+        public ZonedDateTime getEventTime() {
             return eventTime;
         }
 

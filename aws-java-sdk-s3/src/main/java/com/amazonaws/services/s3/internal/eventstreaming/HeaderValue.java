@@ -24,10 +24,12 @@ import com.amazonaws.util.ValidationUtils;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.UUID;
-import org.joda.time.DateTime;
 
 /**
  * A typed header value. The underlying value can be obtained by calling the
@@ -69,12 +71,13 @@ public abstract class HeaderValue {
         return new StringValue(string);
     }
 
-    public static HeaderValue fromTimestamp(DateTime value) {
+    public static HeaderValue fromTimestamp(ZonedDateTime value) {
         return new TimestampValue(value);
     }
 
     public static HeaderValue fromDate(Date value) {
-        return new TimestampValue(new DateTime(value));
+        Instant instant = Instant.ofEpochMilli(value.getTime());
+        return new TimestampValue(ZonedDateTime.ofInstant(instant, ZoneId.systemDefault()));
     }
 
     public static HeaderValue fromUuid(UUID value) {
@@ -117,12 +120,12 @@ public abstract class HeaderValue {
         throw new IllegalStateException();
     }
 
-    public DateTime getTimestamp() {
+    public ZonedDateTime getTimestamp() {
         throw new IllegalStateException("Expected timestamp, but type was " + getType().name());
     }
 
     public Date getDate() {
-        return getTimestamp().toDate();
+        return Date.from(getTimestamp().toInstant());
     }
 
     public UUID getUuid() {
@@ -468,15 +471,16 @@ public abstract class HeaderValue {
     }
 
     private static final class TimestampValue extends HeaderValue {
-        private final DateTime value;
+        private final ZonedDateTime value;
 
-        private TimestampValue(DateTime value) {
+        private TimestampValue(ZonedDateTime value) {
             this.value = ValidationUtils.assertNotNull(value, "value");
         }
 
         static TimestampValue decode(ByteBuffer buf) {
             long epochMillis = buf.getLong();
-            return new TimestampValue(new DateTime(epochMillis));
+            ZonedDateTime dateTime = ZonedDateTime.ofInstant(Instant.ofEpochMilli(epochMillis), ZoneId.systemDefault());
+            return new TimestampValue(dateTime);
         }
 
         @Override
@@ -485,13 +489,13 @@ public abstract class HeaderValue {
         }
 
         @Override
-        public DateTime getTimestamp() {
+        public ZonedDateTime getTimestamp() {
             return value;
         }
 
         @Override
         void encodeValue(DataOutputStream dos) throws IOException {
-            dos.writeLong(value.getMillis());
+            dos.writeLong(value.toInstant().toEpochMilli());
         }
 
         @Override

@@ -27,7 +27,7 @@ import java.util.jar.Attributes;
 import java.util.jar.JarFile;
 import java.util.jar.Manifest;
 
-import org.joda.time.DateTimeZone;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 
 public class ClassesTest {
@@ -44,7 +44,7 @@ public class ClassesTest {
     
     @Test
     public void jarFileOf() throws IOException {
-        JarFile jf = Classes.jarFileOf(DateTimeZone.class);
+        JarFile jf = Classes.jarFileOf(ObjectMapper.class);
         Manifest mf = jf.getManifest();
         Attributes attrs = mf.getMainAttributes();
         String name = attrs.getValue("Bundle-Name");

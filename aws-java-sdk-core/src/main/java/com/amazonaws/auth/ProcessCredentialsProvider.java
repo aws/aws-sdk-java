@@ -23,11 +23,13 @@ import com.amazonaws.util.json.Jackson;
 import com.fasterxml.jackson.databind.JsonNode;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
-import org.joda.time.DateTime;
 
 /**
  * A credentials provider that can load credentials from an external process. This is used to support the credential_process
@@ -49,13 +51,13 @@ import org.joda.time.DateTime;
 public final class ProcessCredentialsProvider implements AWSCredentialsProvider {
     private final List<String> command;
     private final int expirationBufferValue;
-    private final TimeUnit expirationBufferUnit;
+    private final TemporalUnit expirationBufferUnit;
     private final long processOutputLimit;
 
     private final Object credentialLock = new Object();
 
     private volatile AWSCredentials credentials = null;
-    private volatile DateTime credentialExpirationTime = DateTime.now();
+    private volatile ZonedDateTime credentialExpirationTime = ZonedDateTime.now();
 
     /**
      * @see #builder()
@@ -108,7 +110,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
             JsonNode credentialsJson = parseProcessOutput(processOutput);
 
             AWSCredentials credentials = credentials(credentialsJson);
-            DateTime credentialExpirationTime = credentialExpirationTime(credentialsJson);
+            ZonedDateTime credentialExpirationTime = credentialExpirationTime(credentialsJson);
 
             this.credentials = credentials;
             this.credentialExpirationTime = credentialExpirationTime;
@@ -124,7 +126,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
      * Get the time at which this credentials provider will block to refresh the credentials. This is usually the expiration time
      * returned by the credentials process, minus the configured expiration buffer.
      */
-    public DateTime getCredentialExpirationTime() {
+    public ZonedDateTime getCredentialExpirationTime() {
         return credentialExpirationTime;
     }
 
@@ -132,7 +134,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
      * Determine whether the current state of the credentials warrant refreshing.
      */
     private boolean credentialsNeedUpdating() {
-        return credentials == null || credentialExpirationTime.isBeforeNow();
+        return credentials == null || credentialExpirationTime.isBefore(ZonedDateTime.now());
     }
 
     /**
@@ -173,15 +175,15 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
     /**
      * Parse the process output to retrieve the expiration date and time. The result includes any configured expiration buffer.
      */
-    private DateTime credentialExpirationTime(JsonNode credentialsJson) {
+    private ZonedDateTime credentialExpirationTime(JsonNode credentialsJson) {
         String expiration = getText(credentialsJson, "Expiration");
 
         if (expiration != null) {
-            DateTime credentialExpiration = new DateTime(DateUtils.parseISO8601Date(expiration));
-            credentialExpiration = credentialExpiration.minus(expirationBufferUnit.toMillis(expirationBufferValue));
+            ZonedDateTime credentialExpiration = ZonedDateTime.ofInstant(DateUtils.parseISO8601Instant(expiration), ZoneId.systemDefault());
+            credentialExpiration = credentialExpiration.minus(expirationBufferValue, expirationBufferUnit);
             return credentialExpiration;
         } else {
-            return DateTime.now().plusYears(9999);
+            return ZonedDateTime.now().plusYears(9999);
         }
     }
 
@@ -233,7 +235,7 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
     public static class Builder {
         private String command;
         private int expirationBufferValue = 15;
-        private TimeUnit expirationBufferUnit = TimeUnit.SECONDS;
+        private TemporalUnit expirationBufferUnit = ChronoUnit.SECONDS;
         private long processOutputLimit = 1024;
 
         /**
@@ -262,15 +264,15 @@ public final class ProcessCredentialsProvider implements AWSCredentialsProvider 
          *
          * Default: 15 seconds.
          */
-        public void setCredentialExpirationBuffer(int value, TimeUnit unit) {
+        public void setCredentialExpirationBuffer(int value, TemporalUnit unit) {
             this.expirationBufferValue = value;
             this.expirationBufferUnit = unit;
         }
 
         /**
-         * @see #setCredentialExpirationBuffer(int, TimeUnit)
+         * @see #setCredentialExpirationBuffer(int, TemporalUnit)
          */
-        public Builder withCredentialExpirationBuffer(int value, TimeUnit unit) {
+        public Builder withCredentialExpirationBuffer(int value, TemporalUnit unit) {
             setCredentialExpirationBuffer(value, unit);
             return this;
         }

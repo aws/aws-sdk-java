@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.stepfunctions.builder.internal;
 
+import com.amazonaws.util.DateUtils;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
@@ -21,11 +22,6 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
-
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
 
 import java.io.IOException;
 import java.util.Date;
@@ -35,7 +31,6 @@ import java.util.Date;
  */
 public class DateModule {
 
-    private static final DateTimeFormatter FORMATTER = ISODateTimeFormat.dateTime();
     public static final SimpleModule INSTANCE = new SimpleModule();
 
     static {
@@ -43,9 +38,8 @@ public class DateModule {
             @Override
             public void serialize(Date date,
                                   JsonGenerator jsonGenerator,
-                                  SerializerProvider serializerProvider) throws
-                                                                         IOException {
-                jsonGenerator.writeString(FORMATTER.print(new DateTime(date, DateTimeZone.UTC)));
+                                  SerializerProvider serializerProvider) throws IOException {
+                jsonGenerator.writeString(DateUtils.formatISO8601Date(date));
             }
         });
         INSTANCE.addDeserializer(Date.class, new StdDeserializer<Date>(Date.class) {
@@ -59,7 +53,7 @@ public class DateModule {
     }
 
     public static Date fromJson(String jsonText) {
-        return FORMATTER.parseDateTime(jsonText).toDate();
+        return DateUtils.parseISO8601Date(jsonText);
     }
 
 }

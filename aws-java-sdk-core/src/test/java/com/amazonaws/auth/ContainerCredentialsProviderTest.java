@@ -25,7 +25,7 @@ import static org.junit.Assert.fail;
 import java.net.URI;
 import java.net.URISyntaxException;
 
-import org.joda.time.DateTime;
+import com.amazonaws.util.DateUtils;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -90,7 +90,7 @@ public class ContainerCredentialsProviderTest {
         Assert.assertEquals(ACCESS_KEY_ID, credentials.getAWSAccessKeyId());
         Assert.assertEquals(SECRET_ACCESS_KEY, credentials.getAWSSecretKey());
         Assert.assertEquals(TOKEN, credentials.getSessionToken());
-        Assert.assertEquals(new DateTime(EXPIRATION_DATE).toDate(), containerCredentialsProvider.getCredentialsExpiration());
+        Assert.assertEquals(DateUtils.parseISO8601Date(EXPIRATION_DATE), containerCredentialsProvider.getCredentialsExpiration());
     }
 
     /**
