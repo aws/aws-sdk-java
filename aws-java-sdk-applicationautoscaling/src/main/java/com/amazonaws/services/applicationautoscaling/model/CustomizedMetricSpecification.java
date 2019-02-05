@@ -19,7 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures a customized metric for a target tracking policy.
+ * Configures a customized metric for a target tracking policy to use with Application Auto Scaling.
+ * </p>
+ * <p>
+ * For information about terminology, see <a
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch
+ * Concepts</a>.
  * </p>
  * 
  * @see <a

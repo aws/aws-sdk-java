@@ -1,3 +1,20 @@
+# __1.11.491__ __2019-02-04__
+## __AWS CodeCommit__
+  - ### Features
+    - This release supports a more graceful handling of the error case when a repository is not associated with a pull request ID in a merge request in AWS CodeCommit.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) introduces support for GPU workloads by enabling you to create clusters with GPU-enabled container instances.
+
+## __Amazon WorkSpaces__
+  - ### Features
+    - This release sets ClientProperties as a required parameter.
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for application-autoscaling
+
 # __1.11.490__ __2019-01-25__
 ## __AWS CodeCommit__
   - ### Features

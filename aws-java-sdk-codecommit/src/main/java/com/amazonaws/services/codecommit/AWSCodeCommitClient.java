@@ -2960,6 +2960,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified reference does not exist. You must provide a full commit ID.
      * @throws InvalidCommitIdException
      *         The specified commit ID is not valid.
+     * @throws RepositoryNotAssociatedWithPullRequestException
+     *         The repository does not contain any pull requests with that pull request ID. Check to make sure you have
+     *         provided the correct repository name for the pull request.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws InvalidRepositoryNameException

@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * A per-account resource limit is exceeded. For more information, see <a
- * href="http://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
+ * href="https://docs.aws.amazon.com/ApplicationAutoScaling/latest/userguide/application-auto-scaling-limits.html"
  * >Application Auto Scaling Limits</a>.
  * </p>
  */

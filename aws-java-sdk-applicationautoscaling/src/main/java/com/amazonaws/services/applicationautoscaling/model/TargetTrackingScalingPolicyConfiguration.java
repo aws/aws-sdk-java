@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a target tracking scaling policy configuration.
+ * Represents a target tracking scaling policy configuration to use with Application Auto Scaling.
  * </p>
  * 
  * @see <a

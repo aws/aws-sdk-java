@@ -84,6 +84,31 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String healthStatus;
+    /**
+     * <p>
+     * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
+     * container definition when the task definition was registered.
+     * </p>
+     */
+    private String cpu;
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory set for the container.
+     * </p>
+     */
+    private String memory;
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory set for the container.
+     * </p>
+     */
+    private String memoryReservation;
+    /**
+     * <p>
+     * The IDs of each GPU assigned to the container.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> gpuIds;
 
     /**
      * <p>
@@ -545,6 +570,205 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
+     * container definition when the task definition was registered.
+     * </p>
+     * 
+     * @param cpu
+     *        The number of CPU units set for the container. The value will be <code>0</code> if no value was specified
+     *        in the container definition when the task definition was registered.
+     */
+
+    public void setCpu(String cpu) {
+        this.cpu = cpu;
+    }
+
+    /**
+     * <p>
+     * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
+     * container definition when the task definition was registered.
+     * </p>
+     * 
+     * @return The number of CPU units set for the container. The value will be <code>0</code> if no value was specified
+     *         in the container definition when the task definition was registered.
+     */
+
+    public String getCpu() {
+        return this.cpu;
+    }
+
+    /**
+     * <p>
+     * The number of CPU units set for the container. The value will be <code>0</code> if no value was specified in the
+     * container definition when the task definition was registered.
+     * </p>
+     * 
+     * @param cpu
+     *        The number of CPU units set for the container. The value will be <code>0</code> if no value was specified
+     *        in the container definition when the task definition was registered.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withCpu(String cpu) {
+        setCpu(cpu);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory set for the container.
+     * </p>
+     * 
+     * @param memory
+     *        The hard limit (in MiB) of memory set for the container.
+     */
+
+    public void setMemory(String memory) {
+        this.memory = memory;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory set for the container.
+     * </p>
+     * 
+     * @return The hard limit (in MiB) of memory set for the container.
+     */
+
+    public String getMemory() {
+        return this.memory;
+    }
+
+    /**
+     * <p>
+     * The hard limit (in MiB) of memory set for the container.
+     * </p>
+     * 
+     * @param memory
+     *        The hard limit (in MiB) of memory set for the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withMemory(String memory) {
+        setMemory(memory);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory set for the container.
+     * </p>
+     * 
+     * @param memoryReservation
+     *        The soft limit (in MiB) of memory set for the container.
+     */
+
+    public void setMemoryReservation(String memoryReservation) {
+        this.memoryReservation = memoryReservation;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory set for the container.
+     * </p>
+     * 
+     * @return The soft limit (in MiB) of memory set for the container.
+     */
+
+    public String getMemoryReservation() {
+        return this.memoryReservation;
+    }
+
+    /**
+     * <p>
+     * The soft limit (in MiB) of memory set for the container.
+     * </p>
+     * 
+     * @param memoryReservation
+     *        The soft limit (in MiB) of memory set for the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withMemoryReservation(String memoryReservation) {
+        setMemoryReservation(memoryReservation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of each GPU assigned to the container.
+     * </p>
+     * 
+     * @return The IDs of each GPU assigned to the container.
+     */
+
+    public java.util.List<String> getGpuIds() {
+        if (gpuIds == null) {
+            gpuIds = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return gpuIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of each GPU assigned to the container.
+     * </p>
+     * 
+     * @param gpuIds
+     *        The IDs of each GPU assigned to the container.
+     */
+
+    public void setGpuIds(java.util.Collection<String> gpuIds) {
+        if (gpuIds == null) {
+            this.gpuIds = null;
+            return;
+        }
+
+        this.gpuIds = new com.amazonaws.internal.SdkInternalList<String>(gpuIds);
+    }
+
+    /**
+     * <p>
+     * The IDs of each GPU assigned to the container.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGpuIds(java.util.Collection)} or {@link #withGpuIds(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param gpuIds
+     *        The IDs of each GPU assigned to the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withGpuIds(String... gpuIds) {
+        if (this.gpuIds == null) {
+            setGpuIds(new com.amazonaws.internal.SdkInternalList<String>(gpuIds.length));
+        }
+        for (String ele : gpuIds) {
+            this.gpuIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IDs of each GPU assigned to the container.
+     * </p>
+     * 
+     * @param gpuIds
+     *        The IDs of each GPU assigned to the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withGpuIds(java.util.Collection<String> gpuIds) {
+        setGpuIds(gpuIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -573,7 +797,15 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         if (getNetworkInterfaces() != null)
             sb.append("NetworkInterfaces: ").append(getNetworkInterfaces()).append(",");
         if (getHealthStatus() != null)
-            sb.append("HealthStatus: ").append(getHealthStatus());
+            sb.append("HealthStatus: ").append(getHealthStatus()).append(",");
+        if (getCpu() != null)
+            sb.append("Cpu: ").append(getCpu()).append(",");
+        if (getMemory() != null)
+            sb.append("Memory: ").append(getMemory()).append(",");
+        if (getMemoryReservation() != null)
+            sb.append("MemoryReservation: ").append(getMemoryReservation()).append(",");
+        if (getGpuIds() != null)
+            sb.append("GpuIds: ").append(getGpuIds());
         sb.append("}");
         return sb.toString();
     }
@@ -624,6 +856,22 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHealthStatus() != null && other.getHealthStatus().equals(this.getHealthStatus()) == false)
             return false;
+        if (other.getCpu() == null ^ this.getCpu() == null)
+            return false;
+        if (other.getCpu() != null && other.getCpu().equals(this.getCpu()) == false)
+            return false;
+        if (other.getMemory() == null ^ this.getMemory() == null)
+            return false;
+        if (other.getMemory() != null && other.getMemory().equals(this.getMemory()) == false)
+            return false;
+        if (other.getMemoryReservation() == null ^ this.getMemoryReservation() == null)
+            return false;
+        if (other.getMemoryReservation() != null && other.getMemoryReservation().equals(this.getMemoryReservation()) == false)
+            return false;
+        if (other.getGpuIds() == null ^ this.getGpuIds() == null)
+            return false;
+        if (other.getGpuIds() != null && other.getGpuIds().equals(this.getGpuIds()) == false)
+            return false;
         return true;
     }
 
@@ -641,6 +889,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNetworkBindings() == null) ? 0 : getNetworkBindings().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode());
         hashCode = prime * hashCode + ((getHealthStatus() == null) ? 0 : getHealthStatus().hashCode());
+        hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
+        hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
+        hashCode = prime * hashCode + ((getMemoryReservation() == null) ? 0 : getMemoryReservation().hashCode());
+        hashCode = prime * hashCode + ((getGpuIds() == null) ? 0 : getGpuIds().hashCode());
         return hashCode;
     }
 

@@ -74,6 +74,12 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
     private com.amazonaws.internal.SdkInternalList<Attribute> attributes;
     /**
      * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PlatformDevice> platformDevices;
+    /**
+     * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
      * of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
      * characters, and tag values can have a maximum length of 256 characters.
@@ -462,6 +468,79 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     * 
+     * @return The devices that are available on the container instance. The only supported device type is a GPU.
+     */
+
+    public java.util.List<PlatformDevice> getPlatformDevices() {
+        if (platformDevices == null) {
+            platformDevices = new com.amazonaws.internal.SdkInternalList<PlatformDevice>();
+        }
+        return platformDevices;
+    }
+
+    /**
+     * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     * 
+     * @param platformDevices
+     *        The devices that are available on the container instance. The only supported device type is a GPU.
+     */
+
+    public void setPlatformDevices(java.util.Collection<PlatformDevice> platformDevices) {
+        if (platformDevices == null) {
+            this.platformDevices = null;
+            return;
+        }
+
+        this.platformDevices = new com.amazonaws.internal.SdkInternalList<PlatformDevice>(platformDevices);
+    }
+
+    /**
+     * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPlatformDevices(java.util.Collection)} or {@link #withPlatformDevices(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param platformDevices
+     *        The devices that are available on the container instance. The only supported device type is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterContainerInstanceRequest withPlatformDevices(PlatformDevice... platformDevices) {
+        if (this.platformDevices == null) {
+            setPlatformDevices(new com.amazonaws.internal.SdkInternalList<PlatformDevice>(platformDevices.length));
+        }
+        for (PlatformDevice ele : platformDevices) {
+            this.platformDevices.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The devices that are available on the container instance. The only supported device type is a GPU.
+     * </p>
+     * 
+     * @param platformDevices
+     *        The devices that are available on the container instance. The only supported device type is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterContainerInstanceRequest withPlatformDevices(java.util.Collection<PlatformDevice> platformDevices) {
+        setPlatformDevices(platformDevices);
+        return this;
+    }
+
+    /**
+     * <p>
      * The metadata that you apply to the container instance to help you categorize and organize them. Each tag consists
      * of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128
      * characters, and tag values can have a maximum length of 256 characters.
@@ -575,6 +654,8 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
             sb.append("ContainerInstanceArn: ").append(getContainerInstanceArn()).append(",");
         if (getAttributes() != null)
             sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getPlatformDevices() != null)
+            sb.append("PlatformDevices: ").append(getPlatformDevices()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -620,6 +701,10 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getPlatformDevices() == null ^ this.getPlatformDevices() == null)
+            return false;
+        if (other.getPlatformDevices() != null && other.getPlatformDevices().equals(this.getPlatformDevices()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -639,6 +724,7 @@ public class RegisterContainerInstanceRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getVersionInfo() == null) ? 0 : getVersionInfo().hashCode());
         hashCode = prime * hashCode + ((getContainerInstanceArn() == null) ? 0 : getContainerInstanceArn().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getPlatformDevices() == null) ? 0 : getPlatformDevices().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

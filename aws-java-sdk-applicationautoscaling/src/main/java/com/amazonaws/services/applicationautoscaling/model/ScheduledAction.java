@@ -56,17 +56,17 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
+     * At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"
      * </p>
      * </li>
      * <li>
      * <p>
-     * Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code>
+     * Rate expressions - "<code>rate(<i>value</i> <i>unit</i>)</code>"
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cron expressions - <code>cron(<i>fields</i>)</code>
+     * Cron expressions - "<code>cron(<i>fields</i>)</code>"
      * </p>
      * </li>
      * </ul>
@@ -79,7 +79,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      */
@@ -142,7 +142,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code>
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
-     * service provider.
+     * service provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      * </p>
      * </li>
      * </ul>
@@ -198,7 +199,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
@@ -413,17 +414,17 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
+     * At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"
      * </p>
      * </li>
      * <li>
      * <p>
-     * Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code>
+     * Rate expressions - "<code>rate(<i>value</i> <i>unit</i>)</code>"
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cron expressions - <code>cron(<i>fields</i>)</code>
+     * Cron expressions - "<code>cron(<i>fields</i>)</code>"
      * </p>
      * </li>
      * </ul>
@@ -436,7 +437,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
@@ -445,17 +446,17 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
+     *        At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code>
+     *        Rate expressions - "<code>rate(<i>value</i> <i>unit</i>)</code>"
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cron expressions - <code>cron(<i>fields</i>)</code>
+     *        Cron expressions - "<code>cron(<i>fields</i>)</code>"
      *        </p>
      *        </li>
      *        </ul>
@@ -468,8 +469,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <p>
      *        For more information about cron expressions, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     *        Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
+     *        >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public void setSchedule(String schedule) {
@@ -483,17 +484,17 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
+     * At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"
      * </p>
      * </li>
      * <li>
      * <p>
-     * Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code>
+     * Rate expressions - "<code>rate(<i>value</i> <i>unit</i>)</code>"
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cron expressions - <code>cron(<i>fields</i>)</code>
+     * Cron expressions - "<code>cron(<i>fields</i>)</code>"
      * </p>
      * </li>
      * </ul>
@@ -506,7 +507,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
@@ -514,17 +515,17 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
+     *         At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code>
+     *         Rate expressions - "<code>rate(<i>value</i> <i>unit</i>)</code>"
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Cron expressions - <code>cron(<i>fields</i>)</code>
+     *         Cron expressions - "<code>cron(<i>fields</i>)</code>"
      *         </p>
      *         </li>
      *         </ul>
@@ -537,7 +538,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         </p>
      *         <p>
      *         For more information about cron expressions, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
      *         >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
@@ -552,17 +553,17 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
+     * At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"
      * </p>
      * </li>
      * <li>
      * <p>
-     * Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code>
+     * Rate expressions - "<code>rate(<i>value</i> <i>unit</i>)</code>"
      * </p>
      * </li>
      * <li>
      * <p>
-     * Cron expressions - <code>cron(<i>fields</i>)</code>
+     * Cron expressions - "<code>cron(<i>fields</i>)</code>"
      * </p>
      * </li>
      * </ul>
@@ -575,7 +576,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about cron expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
@@ -584,17 +585,17 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        At expressions - <code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>
+     *        At expressions - "<code>at(<i>yyyy</i>-<i>mm</i>-<i>dd</i>T<i>hh</i>:<i>mm</i>:<i>ss</i>)</code>"
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Rate expressions - <code>rate(<i>value</i> <i>unit</i>)</code>
+     *        Rate expressions - "<code>rate(<i>value</i> <i>unit</i>)</code>"
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Cron expressions - <code>cron(<i>fields</i>)</code>
+     *        Cron expressions - "<code>cron(<i>fields</i>)</code>"
      *        </p>
      *        </li>
      *        </ul>
@@ -607,8 +608,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        </p>
      *        <p>
      *        For more information about cron expressions, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
-     *        Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions"
+     *        >Cron Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,7 +676,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code>
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
-     * service provider.
+     * service provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      * </p>
      * </li>
      * </ul>
@@ -736,7 +738,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Custom resources are not supported with a resource type. This parameter must specify the
      *        <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
-     *        identifier is defined by the service provider.
+     *        identifier is defined by the service provider. More information is available in our <a
+     *        href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      *        </p>
      *        </li>
      */
@@ -803,7 +806,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code>
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
-     * service provider.
+     * service provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      * </p>
      * </li>
      * </ul>
@@ -864,7 +868,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         <p>
      *         Custom resources are not supported with a resource type. This parameter must specify the
      *         <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
-     *         identifier is defined by the service provider.
+     *         identifier is defined by the service provider. More information is available in our <a
+     *         href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      *         </p>
      *         </li>
      */
@@ -931,7 +936,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Custom resources are not supported with a resource type. This parameter must specify the <code>OutputValue</code>
      * from the CloudFormation template stack used to access the resources. The unique identifier is defined by the
-     * service provider.
+     * service provider. More information is available in our <a
+     * href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      * </p>
      * </li>
      * </ul>
@@ -992,7 +998,8 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <p>
      *        Custom resources are not supported with a resource type. This parameter must specify the
      *        <code>OutputValue</code> from the CloudFormation template stack used to access the resources. The unique
-     *        identifier is defined by the service provider.
+     *        identifier is defined by the service provider. More information is available in our <a
+     *        href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1053,7 +1060,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
@@ -1119,7 +1126,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      *        <li>
@@ -1191,7 +1198,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
@@ -1256,7 +1263,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *         Available for Aurora MySQL-compatible edition.
+     *         Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *         </p>
      *         </li>
      *         <li>
@@ -1328,7 +1335,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
@@ -1394,7 +1401,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      *        <li>
@@ -1468,7 +1475,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster. Available for
-     * Aurora MySQL-compatible edition.
+     * Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      * </p>
      * </li>
      * <li>
@@ -1534,7 +1541,7 @@ public class ScheduledAction implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora DB cluster.
-     *        Available for Aurora MySQL-compatible edition.
+     *        Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible edition.
      *        </p>
      *        </li>
      *        <li>

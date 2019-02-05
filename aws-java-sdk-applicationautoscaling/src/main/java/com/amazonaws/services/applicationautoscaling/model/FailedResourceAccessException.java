@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * Failed access to resources caused an exception. This exception is thrown when Application Auto Scaling is unable to
  * retrieve the alarms associated with a scaling policy due to a client error, for example, if the role ARN specified
  * for a scalable target does not have permission to call the CloudWatch <a
- * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on
+ * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a> on
  * your behalf.
  * </p>
  */

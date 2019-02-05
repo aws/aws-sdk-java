@@ -648,6 +648,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<SystemControl> systemControls;
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ResourceRequirement> resourceRequirements;
 
     /**
      * <p>
@@ -5440,6 +5446,79 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @return The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     */
+
+    public java.util.List<ResourceRequirement> getResourceRequirements() {
+        if (resourceRequirements == null) {
+            resourceRequirements = new com.amazonaws.internal.SdkInternalList<ResourceRequirement>();
+        }
+        return resourceRequirements;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     */
+
+    public void setResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
+        if (resourceRequirements == null) {
+            this.resourceRequirements = null;
+            return;
+        }
+
+        this.resourceRequirements = new com.amazonaws.internal.SdkInternalList<ResourceRequirement>(resourceRequirements);
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceRequirements(java.util.Collection)} or {@link #withResourceRequirements(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withResourceRequirements(ResourceRequirement... resourceRequirements) {
+        if (this.resourceRequirements == null) {
+            setResourceRequirements(new com.amazonaws.internal.SdkInternalList<ResourceRequirement>(resourceRequirements.length));
+        }
+        for (ResourceRequirement ele : resourceRequirements) {
+            this.resourceRequirements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
+        setResourceRequirements(resourceRequirements);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5516,7 +5595,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (getHealthCheck() != null)
             sb.append("HealthCheck: ").append(getHealthCheck()).append(",");
         if (getSystemControls() != null)
-            sb.append("SystemControls: ").append(getSystemControls());
+            sb.append("SystemControls: ").append(getSystemControls()).append(",");
+        if (getResourceRequirements() != null)
+            sb.append("ResourceRequirements: ").append(getResourceRequirements());
         sb.append("}");
         return sb.toString();
     }
@@ -5663,6 +5744,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getSystemControls() != null && other.getSystemControls().equals(this.getSystemControls()) == false)
             return false;
+        if (other.getResourceRequirements() == null ^ this.getResourceRequirements() == null)
+            return false;
+        if (other.getResourceRequirements() != null && other.getResourceRequirements().equals(this.getResourceRequirements()) == false)
+            return false;
         return true;
     }
 
@@ -5704,6 +5789,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getLogConfiguration() == null) ? 0 : getLogConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode());
         hashCode = prime * hashCode + ((getSystemControls() == null) ? 0 : getSystemControls().hashCode());
+        hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
         return hashCode;
     }
 

@@ -21438,7 +21438,7 @@
       },
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "ResourceId" ],
+      "required" : [ "ResourceId", "ClientProperties" ],
       "shapeName" : "ModifyClientPropertiesRequest",
       "signerAware" : false,
       "signerType" : null,

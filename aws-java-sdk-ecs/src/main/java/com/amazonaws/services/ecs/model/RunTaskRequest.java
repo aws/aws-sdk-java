@@ -140,9 +140,15 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private Boolean enableECSManagedTags;
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
+     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
+     * task creation, use the <a>TagResource</a> API action.
      * </p>
+     * <note>
+     * <p>
+     * An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     * </p>
+     * </note>
      */
     private String propagateTags;
 
@@ -1030,13 +1036,23 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
+     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
+     * task creation, use the <a>TagResource</a> API action.
      * </p>
+     * <note>
+     * <p>
+     * An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     * </p>
+     * </note>
      * 
      * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
+     *        the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to
+     *        a task after task creation, use the <a>TagResource</a> API action.</p> <note>
+     *        <p>
+     *        An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     *        </p>
      * @see PropagateTags
      */
 
@@ -1046,12 +1062,22 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
+     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
+     * task creation, use the <a>TagResource</a> API action.
      * </p>
+     * <note>
+     * <p>
+     * An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     * </p>
+     * </note>
      * 
-     * @return Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *         is specified, the tags are not propagated.
+     * @return Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
+     *         the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to
+     *         a task after task creation, use the <a>TagResource</a> API action.</p> <note>
+     *         <p>
+     *         An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     *         </p>
      * @see PropagateTags
      */
 
@@ -1061,13 +1087,23 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
+     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
+     * task creation, use the <a>TagResource</a> API action.
      * </p>
+     * <note>
+     * <p>
+     * An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     * </p>
+     * </note>
      * 
      * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
+     *        the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to
+     *        a task after task creation, use the <a>TagResource</a> API action.</p> <note>
+     *        <p>
+     *        An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */
@@ -1079,13 +1115,23 @@ public class RunTaskRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specifies whether to propagate the tags from the task definition or the service to the task. If no value is
-     * specified, the tags are not propagated.
+     * Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags
+     * are not propagated. Tags can only be propagated to the task during task creation. To add tags to a task after
+     * task creation, use the <a>TagResource</a> API action.
      * </p>
+     * <note>
+     * <p>
+     * An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     * </p>
+     * </note>
      * 
      * @param propagateTags
-     *        Specifies whether to propagate the tags from the task definition or the service to the task. If no value
-     *        is specified, the tags are not propagated.
+     *        Specifies whether to propagate the tags from the task definition to the task. If no value is specified,
+     *        the tags are not propagated. Tags can only be propagated to the task during task creation. To add tags to
+     *        a task after task creation, use the <a>TagResource</a> API action.</p> <note>
+     *        <p>
+     *        An error will be received if you specify the <code>SERVICE</code> option when running a task.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PropagateTags
      */

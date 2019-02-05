@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a step scaling policy configuration.
+ * Represents a step scaling policy configuration to use with Application Auto Scaling.
  * </p>
  * 
  * @see <a

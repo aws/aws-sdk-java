@@ -71,6 +71,13 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private Integer memoryReservation;
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ResourceRequirement> resourceRequirements;
 
     /**
      * <p>
@@ -430,6 +437,87 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @return The type and amount of a resource to assign to a container, instead of the default value from the task
+     *         definition. The only supported resource is a GPU.
+     */
+
+    public java.util.List<ResourceRequirement> getResourceRequirements() {
+        if (resourceRequirements == null) {
+            resourceRequirements = new com.amazonaws.internal.SdkInternalList<ResourceRequirement>();
+        }
+        return resourceRequirements;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container, instead of the default value from the task
+     *        definition. The only supported resource is a GPU.
+     */
+
+    public void setResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
+        if (resourceRequirements == null) {
+            this.resourceRequirements = null;
+            return;
+        }
+
+        this.resourceRequirements = new com.amazonaws.internal.SdkInternalList<ResourceRequirement>(resourceRequirements);
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceRequirements(java.util.Collection)} or {@link #withResourceRequirements(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container, instead of the default value from the task
+     *        definition. The only supported resource is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerOverride withResourceRequirements(ResourceRequirement... resourceRequirements) {
+        if (this.resourceRequirements == null) {
+            setResourceRequirements(new com.amazonaws.internal.SdkInternalList<ResourceRequirement>(resourceRequirements.length));
+        }
+        for (ResourceRequirement ele : resourceRequirements) {
+            this.resourceRequirements.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type and amount of a resource to assign to a container, instead of the default value from the task
+     * definition. The only supported resource is a GPU.
+     * </p>
+     * 
+     * @param resourceRequirements
+     *        The type and amount of a resource to assign to a container, instead of the default value from the task
+     *        definition. The only supported resource is a GPU.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerOverride withResourceRequirements(java.util.Collection<ResourceRequirement> resourceRequirements) {
+        setResourceRequirements(resourceRequirements);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -452,7 +540,9 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
         if (getMemory() != null)
             sb.append("Memory: ").append(getMemory()).append(",");
         if (getMemoryReservation() != null)
-            sb.append("MemoryReservation: ").append(getMemoryReservation());
+            sb.append("MemoryReservation: ").append(getMemoryReservation()).append(",");
+        if (getResourceRequirements() != null)
+            sb.append("ResourceRequirements: ").append(getResourceRequirements());
         sb.append("}");
         return sb.toString();
     }
@@ -491,6 +581,10 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getMemoryReservation() != null && other.getMemoryReservation().equals(this.getMemoryReservation()) == false)
             return false;
+        if (other.getResourceRequirements() == null ^ this.getResourceRequirements() == null)
+            return false;
+        if (other.getResourceRequirements() != null && other.getResourceRequirements().equals(this.getResourceRequirements()) == false)
+            return false;
         return true;
     }
 
@@ -505,6 +599,7 @@ public class ContainerOverride implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getCpu() == null) ? 0 : getCpu().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getMemoryReservation() == null) ? 0 : getMemoryReservation().hashCode());
+        hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
         return hashCode;
     }
 

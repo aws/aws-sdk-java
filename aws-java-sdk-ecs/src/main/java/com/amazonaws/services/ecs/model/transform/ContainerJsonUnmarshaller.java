@@ -84,6 +84,22 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                     context.nextToken();
                     container.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cpu", targetDepth)) {
+                    context.nextToken();
+                    container.setCpu(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memory", targetDepth)) {
+                    context.nextToken();
+                    container.setMemory(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("memoryReservation", targetDepth)) {
+                    context.nextToken();
+                    container.setMemoryReservation(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("gpuIds", targetDepth)) {
+                    context.nextToken();
+                    container.setGpuIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

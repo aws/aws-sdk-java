@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configures a predefined metric for a target tracking policy.
+ * Configures a predefined metric for a target tracking policy to use with Application Auto Scaling.
  * </p>
  * 
  * @see <a

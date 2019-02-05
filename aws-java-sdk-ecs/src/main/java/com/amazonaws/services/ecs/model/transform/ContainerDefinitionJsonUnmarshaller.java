@@ -181,6 +181,11 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setSystemControls(new ListUnmarshaller<SystemControl>(SystemControlJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("resourceRequirements", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
+                            .unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
