@@ -85,6 +85,14 @@ public class DescribeVpcPeeringConnectionsRequestMarshaller implements
             }
         }
 
+        if (describeVpcPeeringConnectionsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeVpcPeeringConnectionsRequest.getNextToken()));
+        }
+
+        if (describeVpcPeeringConnectionsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeVpcPeeringConnectionsRequest.getMaxResults()));
+        }
+
         return request;
     }
 

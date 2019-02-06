@@ -27,18 +27,32 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The unique identifier (ID) for the <a>Protection</a> object that is described.
+     * The unique identifier (ID) for the <a>Protection</a> object that is described. When submitting the
+     * <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.
      * </p>
      */
     private String protectionId;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described. When
+     * submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or
+     * the <code>ProtectionID</code>, but not both.
+     * </p>
+     */
+    private String resourceArn;
 
     /**
      * <p>
-     * The unique identifier (ID) for the <a>Protection</a> object that is described.
+     * The unique identifier (ID) for the <a>Protection</a> object that is described. When submitting the
+     * <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.
      * </p>
      * 
      * @param protectionId
-     *        The unique identifier (ID) for the <a>Protection</a> object that is described.
+     *        The unique identifier (ID) for the <a>Protection</a> object that is described. When submitting the
+     *        <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the
+     *        <code>ProtectionID</code>, but not both.
      */
 
     public void setProtectionId(String protectionId) {
@@ -47,10 +61,14 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The unique identifier (ID) for the <a>Protection</a> object that is described.
+     * The unique identifier (ID) for the <a>Protection</a> object that is described. When submitting the
+     * <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.
      * </p>
      * 
-     * @return The unique identifier (ID) for the <a>Protection</a> object that is described.
+     * @return The unique identifier (ID) for the <a>Protection</a> object that is described. When submitting the
+     *         <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the
+     *         <code>ProtectionID</code>, but not both.
      */
 
     public String getProtectionId() {
@@ -59,16 +77,72 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The unique identifier (ID) for the <a>Protection</a> object that is described.
+     * The unique identifier (ID) for the <a>Protection</a> object that is described. When submitting the
+     * <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the
+     * <code>ProtectionID</code>, but not both.
      * </p>
      * 
      * @param protectionId
-     *        The unique identifier (ID) for the <a>Protection</a> object that is described.
+     *        The unique identifier (ID) for the <a>Protection</a> object that is described. When submitting the
+     *        <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or the
+     *        <code>ProtectionID</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeProtectionRequest withProtectionId(String protectionId) {
         setProtectionId(protectionId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described. When
+     * submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or
+     * the <code>ProtectionID</code>, but not both.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described.
+     *        When submitting the <code>DescribeProtection</code> request you must provide either the
+     *        <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
+     */
+
+    public void setResourceArn(String resourceArn) {
+        this.resourceArn = resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described. When
+     * submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or
+     * the <code>ProtectionID</code>, but not both.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described.
+     *         When submitting the <code>DescribeProtection</code> request you must provide either the
+     *         <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
+     */
+
+    public String getResourceArn() {
+        return this.resourceArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described. When
+     * submitting the <code>DescribeProtection</code> request you must provide either the <code>ResourceArn</code> or
+     * the <code>ProtectionID</code>, but not both.
+     * </p>
+     * 
+     * @param resourceArn
+     *        The ARN (Amazon Resource Name) of the AWS resource for the <a>Protection</a> object that is described.
+     *        When submitting the <code>DescribeProtection</code> request you must provide either the
+     *        <code>ResourceArn</code> or the <code>ProtectionID</code>, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeProtectionRequest withResourceArn(String resourceArn) {
+        setResourceArn(resourceArn);
         return this;
     }
 
@@ -85,7 +159,9 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProtectionId() != null)
-            sb.append("ProtectionId: ").append(getProtectionId());
+            sb.append("ProtectionId: ").append(getProtectionId()).append(",");
+        if (getResourceArn() != null)
+            sb.append("ResourceArn: ").append(getResourceArn());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +180,10 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getProtectionId() != null && other.getProtectionId().equals(this.getProtectionId()) == false)
             return false;
+        if (other.getResourceArn() == null ^ this.getResourceArn() == null)
+            return false;
+        if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +193,7 @@ public class DescribeProtectionRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProtectionId() == null) ? 0 : getProtectionId().hashCode());
+        hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         return hashCode;
     }
 

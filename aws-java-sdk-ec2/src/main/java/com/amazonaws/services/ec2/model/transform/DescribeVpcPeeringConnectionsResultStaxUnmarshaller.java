@@ -55,6 +55,10 @@ public class DescribeVpcPeeringConnectionsResultStaxUnmarshaller implements Unma
                     continue;
                 }
 
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeVpcPeeringConnectionsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeVpcPeeringConnectionsResult;

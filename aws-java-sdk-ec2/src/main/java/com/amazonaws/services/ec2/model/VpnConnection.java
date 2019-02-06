@@ -44,9 +44,7 @@ public class VpnConnection implements Serializable, Cloneable {
     /**
      * <p>
      * The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value of
-     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
-     * Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
      * </p>
      */
     private String category;
@@ -206,16 +204,12 @@ public class VpnConnection implements Serializable, Cloneable {
     /**
      * <p>
      * The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value of
-     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
-     * Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
      * </p>
      * 
      * @param category
      *        The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value
-     *        of <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
-     *        Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        of <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
      */
 
     public void setCategory(String category) {
@@ -225,15 +219,11 @@ public class VpnConnection implements Serializable, Cloneable {
     /**
      * <p>
      * The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value of
-     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
-     * Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
      * </p>
      * 
      * @return The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value
-     *         of <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
-     *         Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *         of <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
      */
 
     public String getCategory() {
@@ -243,16 +233,12 @@ public class VpnConnection implements Serializable, Cloneable {
     /**
      * <p>
      * The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value of
-     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
-     * Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
      * </p>
      * 
      * @param category
      *        The category of the VPN connection. A value of <code>VPN</code> indicates an AWS VPN connection. A value
-     *        of <code>VPN-Classic</code> indicates an AWS Classic VPN connection. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_VPN.html#vpn-categories">AWS Managed VPN
-     *        Categories</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     *        of <code>VPN-Classic</code> indicates an AWS Classic VPN connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

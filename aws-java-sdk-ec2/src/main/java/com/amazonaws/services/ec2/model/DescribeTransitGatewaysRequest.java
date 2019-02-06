@@ -39,11 +39,6 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
      * </p>
      * </li>
@@ -89,20 +84,19 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).
+     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * </ul>
@@ -202,11 +196,6 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
      * </p>
      * </li>
@@ -252,9 +241,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).
+     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
@@ -262,21 +256,10 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> | <code>deleted</code>).
-     * </p>
-     * </li>
      * </ul>
      * 
      * @return One or more filters. The possible values are:</p>
      *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     *         </p>
-     *         </li>
      *         <li>
      *         <p>
      *         <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
@@ -326,20 +309,19 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      *         </li>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     *         <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     *         <code>failed</code> | <code>rejected</code>).
+     *         <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     *         <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>transit-gateway-id</code> - The ID of the transit gateway.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     *         <code>available</code> | <code>deleting</code> | <code>deleted</code>).
      *         </p>
      *         </li>
      */
@@ -356,11 +338,6 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * One or more filters. The possible values are:
      * </p>
      * <ul>
-     * <li>
-     * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     * </p>
-     * </li>
      * <li>
      * <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
@@ -408,9 +385,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).
+     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
@@ -418,22 +400,11 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> | <code>deleted</code>).
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param filters
      *        One or more filters. The possible values are:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
@@ -483,20 +454,19 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     *        <code>failed</code> | <code>rejected</code>).
+     *        <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     *        <code>available</code> | <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      */
@@ -517,11 +487,6 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
      * </p>
      * </li>
@@ -567,20 +532,19 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).
+     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> | <code>deleted</code>).
      * </p>
      * </li>
      * </ul>
@@ -593,11 +557,6 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * @param filters
      *        One or more filters. The possible values are:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
@@ -647,20 +606,19 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     *        <code>failed</code> | <code>rejected</code>).
+     *        <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     *        <code>available</code> | <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -683,11 +641,6 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <ul>
      * <li>
      * <p>
-     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
      * </p>
      * </li>
@@ -733,9 +686,14 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * </li>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     * <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     * <code>failed</code> | <code>rejected</code>).
+     * <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      * </p>
      * </li>
      * <li>
@@ -743,22 +701,11 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      * <code>transit-gateway-id</code> - The ID of the transit gateway.
      * </p>
      * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     * <code>available</code> | <code>deleting</code> | <code>deleted</code>).
-     * </p>
-     * </li>
      * </ul>
      * 
      * @param filters
      *        One or more filters. The possible values are:</p>
      *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
-     *        </p>
-     *        </li>
      *        <li>
      *        <p>
      *        <code>options.propagation-default-route-table-id</code> - The ID of the default propagation route table.
@@ -808,20 +755,19 @@ public class DescribeTransitGatewaysRequest extends AmazonWebServiceRequest impl
      *        </li>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>pendingAcceptance</code> | <code>pending</code> |
-     *        <code>available</code> | <code>modifying</code> | <code>deleting</code> | <code>deleted</code> |
-     *        <code>failed</code> | <code>rejected</code>).
+     *        <code>owner-id</code> - The ID of the AWS account that owns the transit gateway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>transit-gateway-id</code> - The ID of the transit gateway.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-state</code> - The state of the transit gateway (<code>pending</code> |
-     *        <code>available</code> | <code>deleting</code> | <code>deleted</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -55,7 +55,7 @@ import com.amazonaws.services.shield.model.transform.*;
  * This is the <i>AWS Shield Advanced API Reference</i>. This guide is for developers who need detailed information
  * about the AWS Shield Advanced API actions, data types, and errors. For detailed information about AWS WAF and AWS
  * Shield Advanced features and an overview of how to use the AWS WAF and AWS Shield Advanced APIs, see the <a
- * href="http://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -511,7 +511,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
     /**
      * <p>
      * Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution,
-     * Elastic Load Balancing load balancer, Elastic IP Address, or an Amazon Route 53 hosted zone.
+     * Elastic Load Balancing load balancer, AWS Global Accelerator accelerator, Elastic IP Address, or an Amazon Route
+     * 53 hosted zone.
      * </p>
      * <p>
      * You can add protection to only a single resource with each CreateProtection request. If you want to add
@@ -793,6 +794,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
      * @throws AccessDeniedException
+     *         Exception that indicates the specified <code>AttackId</code> does not exist, or the requester does not
+     *         have the appropriate permissions to access the <code>AttackId</code>.
      * @sample AWSShield.DescribeAttack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttack" target="_top">AWS API
      *      Documentation</a>
@@ -966,6 +969,8 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
      * @throws InternalErrorException
      *         Exception that indicates that a problem occurred with the service infrastructure. You can retry the
      *         request.
+     * @throws InvalidParameterException
+     *         Exception that indicates that the parameters passed to the API are invalid.
      * @throws ResourceNotFoundException
      *         Exception indicating the specified resource does not exist.
      * @sample AWSShield.DescribeProtection

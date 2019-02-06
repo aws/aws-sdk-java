@@ -15,7 +15,10 @@ package com.amazonaws.services.shield.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Exception that indicates the specified <code>AttackId</code> does not exist, or the requester does not have the
+ * appropriate permissions to access the <code>AttackId</code>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AccessDeniedException extends com.amazonaws.services.shield.model.AWSShieldException {

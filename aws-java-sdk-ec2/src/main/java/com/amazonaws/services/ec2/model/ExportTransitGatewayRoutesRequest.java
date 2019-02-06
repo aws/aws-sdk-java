@@ -39,27 +39,51 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example,
+     * if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as
+     * 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -119,27 +143,51 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example,
+     * if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as
+     * 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -148,28 +196,52 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>route-search.exact-match</code> - The exact match of the specified filter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR
+     *         filter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For
+     *         example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify
+     *         supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     *         <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> |
-     *         <code>blackhole</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     *         <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      *         </p>
      *         </li>
      */
@@ -188,27 +260,51 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example,
+     * if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as
+     * 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -218,28 +314,51 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.exact-match</code> - The exact match of the specified filter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For
+     *        example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify
+     *        supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> |
-     *        <code>blackhole</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      */
@@ -260,27 +379,51 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example,
+     * if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as
+     * 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -295,28 +438,51 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.exact-match</code> - The exact match of the specified filter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For
+     *        example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify
+     *        supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> |
-     *        <code>blackhole</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -339,27 +505,51 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * <ul>
      * <li>
      * <p>
+     * <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.exact-match</code> - The exact match of the specified filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For example,
+     * if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify supernet-of-match as
+     * 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> | <code>blackhole</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     * <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      * </p>
      * </li>
      * </ul>
@@ -369,28 +559,51 @@ public class ExportTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>attachment.transit-gateway-attachment-id</code>- The id of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>attachment.resource-id</code> - The resource id of the transit gateway attachment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.exact-match</code> - The exact match of the specified filter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.longest-prefix-match</code> - The longest prefix that matches the route.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.subnet-of-match</code> - The routes with a subnet that match the specified CIDR filter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass the CIDR filter. For
+     *        example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route table and you specify
+     *        supernet-of-match as 10.0.1.0/30, then the result returns 10.0.1.0/29.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
+     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>transit-gateway-route-destination-cidr-block</code> - The CIDR range.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>transit-gateway-route-state</code> - The state of the route (<code>active</code> |
-     *        <code>blackhole</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-transit-gateway-attachment-id</code> - The ID of the attachment.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-type</code> - The route type (<code>static</code> | <code>propagated</code>).
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>transit-gateway-route-vpn-connection-id</code> - The ID of the VPN connection.
+     *        <code>type</code> - The type of roue (<code>active</code> | <code>blackhole</code>).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

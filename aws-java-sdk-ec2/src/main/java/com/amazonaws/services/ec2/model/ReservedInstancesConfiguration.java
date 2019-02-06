@@ -36,6 +36,11 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * <p>
      * The number of modified Reserved Instances.
      * </p>
+     * <note>
+     * <p>
+     * This is a required field for a request.
+     * </p>
+     * </note>
      */
     private Integer instanceCount;
     /**
@@ -101,9 +106,17 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * <p>
      * The number of modified Reserved Instances.
      * </p>
+     * <note>
+     * <p>
+     * This is a required field for a request.
+     * </p>
+     * </note>
      * 
      * @param instanceCount
-     *        The number of modified Reserved Instances.
+     *        The number of modified Reserved Instances.</p> <note>
+     *        <p>
+     *        This is a required field for a request.
+     *        </p>
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -114,8 +127,16 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * <p>
      * The number of modified Reserved Instances.
      * </p>
+     * <note>
+     * <p>
+     * This is a required field for a request.
+     * </p>
+     * </note>
      * 
-     * @return The number of modified Reserved Instances.
+     * @return The number of modified Reserved Instances.</p> <note>
+     *         <p>
+     *         This is a required field for a request.
+     *         </p>
      */
 
     public Integer getInstanceCount() {
@@ -126,9 +147,17 @@ public class ReservedInstancesConfiguration implements Serializable, Cloneable {
      * <p>
      * The number of modified Reserved Instances.
      * </p>
+     * <note>
+     * <p>
+     * This is a required field for a request.
+     * </p>
+     * </note>
      * 
      * @param instanceCount
-     *        The number of modified Reserved Instances.
+     *        The number of modified Reserved Instances.</p> <note>
+     *        <p>
+     *        This is a required field for a request.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

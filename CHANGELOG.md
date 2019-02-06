@@ -1,3 +1,16 @@
+# __1.11.492__ __2019-02-05__
+## __AWS Service Catalog__
+  - ### Features
+    - Service Catalog Documentation Update for ProvisionedProductDetail
+
+## __AWS Shield__
+  - ### Features
+    - The DescribeProtection request now accepts resource ARN as valid parameter.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - ec2.DescribeVpcPeeringConnections pagination support
+
 # __1.11.491__ __2019-02-04__
 ## __AWS CodeCommit__
   - ### Features

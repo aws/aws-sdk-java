@@ -114,12 +114,22 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.
      * </p>
+     * <note>
+     * <p>
+     * At least one of Size or SnapshotId are required.
+     * </p>
+     * </note>
      */
     private Integer size;
     /**
      * <p>
      * The snapshot from which to create the volume.
      * </p>
+     * <note>
+     * <p>
+     * At least one of Size or SnapshotId are required.
+     * </p>
+     * </note>
      */
     private String snapshotId;
     /**
@@ -163,6 +173,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
      *        snapshot size.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        At least one of Size or SnapshotId are required.
+     *        </p>
      * @param availabilityZone
      *        The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
      *        Availability Zones that are currently available to you.
@@ -177,7 +192,10 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * initialize any additional object members.
      * 
      * @param snapshotId
-     *        The snapshot from which to create the volume.
+     *        The snapshot from which to create the volume.</p> <note>
+     *        <p>
+     *        At least one of Size or SnapshotId are required.
+     *        </p>
      * @param availabilityZone
      *        The Availability Zone in which to create the volume. Use <a>DescribeAvailabilityZones</a> to list the
      *        Availability Zones that are currently available to you.
@@ -681,6 +699,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.
      * </p>
+     * <note>
+     * <p>
+     * At least one of Size or SnapshotId are required.
+     * </p>
+     * </note>
      * 
      * @param size
      *        The size of the volume, in GiBs.</p>
@@ -692,6 +715,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
      *        snapshot size.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        At least one of Size or SnapshotId are required.
+     *        </p>
      */
 
     public void setSize(Integer size) {
@@ -711,6 +739,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.
      * </p>
+     * <note>
+     * <p>
+     * At least one of Size or SnapshotId are required.
+     * </p>
+     * </note>
      * 
      * @return The size of the volume, in GiBs.</p>
      *         <p>
@@ -721,6 +754,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         <p>
      *         Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is
      *         the snapshot size.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         At least one of Size or SnapshotId are required.
+     *         </p>
      */
 
     public Integer getSize() {
@@ -740,6 +778,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.
      * </p>
+     * <note>
+     * <p>
+     * At least one of Size or SnapshotId are required.
+     * </p>
+     * </note>
      * 
      * @param size
      *        The size of the volume, in GiBs.</p>
@@ -751,6 +794,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        <p>
      *        Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the
      *        snapshot size.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        At least one of Size or SnapshotId are required.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -763,9 +811,17 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The snapshot from which to create the volume.
      * </p>
+     * <note>
+     * <p>
+     * At least one of Size or SnapshotId are required.
+     * </p>
+     * </note>
      * 
      * @param snapshotId
-     *        The snapshot from which to create the volume.
+     *        The snapshot from which to create the volume.</p> <note>
+     *        <p>
+     *        At least one of Size or SnapshotId are required.
+     *        </p>
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -776,8 +832,16 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The snapshot from which to create the volume.
      * </p>
+     * <note>
+     * <p>
+     * At least one of Size or SnapshotId are required.
+     * </p>
+     * </note>
      * 
-     * @return The snapshot from which to create the volume.
+     * @return The snapshot from which to create the volume.</p> <note>
+     *         <p>
+     *         At least one of Size or SnapshotId are required.
+     *         </p>
      */
 
     public String getSnapshotId() {
@@ -788,9 +852,17 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * The snapshot from which to create the volume.
      * </p>
+     * <note>
+     * <p>
+     * At least one of Size or SnapshotId are required.
+     * </p>
+     * </note>
      * 
      * @param snapshotId
-     *        The snapshot from which to create the volume.
+     *        The snapshot from which to create the volume.</p> <note>
+     *        <p>
+     *        At least one of Size or SnapshotId are required.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

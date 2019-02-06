@@ -65,7 +65,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for an
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
      * <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
@@ -78,8 +78,15 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not running.
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
      * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
      * </ul>
@@ -299,7 +306,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for an
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
      * <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
@@ -312,8 +319,15 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not running.
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
      * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
      * </ul>
@@ -329,7 +343,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for
+     *        <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
      *        an <code>AVAILABLE</code> status before performing operations.
      *        </p>
      *        </li>
@@ -342,9 +356,16 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not
+     *        <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
      *        running. For example, CloudFormation received a parameter value that was not valid and could not launch
      *        the stack.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *        product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *        execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
      *        </p>
      *        </li>
      * @see ProvisionedProductStatus
@@ -367,7 +388,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for an
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
      * <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
@@ -380,8 +401,15 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not running.
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
      * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
      * </ul>
@@ -396,7 +424,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for
+     *         <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
      *         an <code>AVAILABLE</code> status before performing operations.
      *         </p>
      *         </li>
@@ -409,9 +437,16 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not
+     *         <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
      *         running. For example, CloudFormation received a parameter value that was not valid and could not launch
      *         the stack.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *         product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *         execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
      *         </p>
      *         </li>
      * @see ProvisionedProductStatus
@@ -434,7 +469,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for an
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
      * <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
@@ -447,8 +482,15 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not running.
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
      * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
      * </ul>
@@ -464,7 +506,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for
+     *        <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
      *        an <code>AVAILABLE</code> status before performing operations.
      *        </p>
      *        </li>
@@ -477,9 +519,16 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not
+     *        <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
      *        running. For example, CloudFormation received a parameter value that was not valid and could not launch
      *        the stack.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *        product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *        execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -504,7 +553,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for an
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
      * <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
@@ -517,8 +566,15 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not running.
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
      * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
      * </ul>
@@ -534,7 +590,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for
+     *        <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
      *        an <code>AVAILABLE</code> status before performing operations.
      *        </p>
      *        </li>
@@ -547,9 +603,16 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not
+     *        <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
      *        running. For example, CloudFormation received a parameter value that was not valid and could not launch
      *        the stack.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *        product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *        execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
      *        </p>
      *        </li>
      * @see ProvisionedProductStatus
@@ -572,7 +635,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for an
+     * <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for an
      * <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
@@ -585,8 +648,15 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      * </li>
      * <li>
      * <p>
-     * <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not running.
+     * <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not running.
      * For example, CloudFormation received a parameter value that was not valid and could not launch the stack.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new product,
+     * but resources have not yet been created. After reviewing the list of resources to be created, execute the plan.
+     * Wait for an <code>AVAILABLE</code> status before performing operations.
      * </p>
      * </li>
      * </ul>
@@ -602,7 +672,7 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UNDER_CHANGE</code> - Transitive state, operations performed might not have valid results. Wait for
+     *        <code>UNDER_CHANGE</code> - Transitive state. Operations performed might not have valid results. Wait for
      *        an <code>AVAILABLE</code> status before performing operations.
      *        </p>
      *        </li>
@@ -615,9 +685,16 @@ public class ProvisionedProductDetail implements Serializable, Cloneable, Struct
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ERROR</code> - An unexpected error occurred, the provisioned product exists but the stack is not
+     *        <code>ERROR</code> - An unexpected error occurred. The provisioned product exists but the stack is not
      *        running. For example, CloudFormation received a parameter value that was not valid and could not launch
      *        the stack.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PLAN_IN_PROGRESS</code> - Transitive state. The plan operations were performed to provision a new
+     *        product, but resources have not yet been created. After reviewing the list of resources to be created,
+     *        execute the plan. Wait for an <code>AVAILABLE</code> status before performing operations.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

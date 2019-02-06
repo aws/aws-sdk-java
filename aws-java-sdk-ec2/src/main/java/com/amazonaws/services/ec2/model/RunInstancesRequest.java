@@ -315,7 +315,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     private CpuOptionsRequest cpuOptions;
     /**
      * <p>
-     * Information about the Capacity Reservation targeting option.
+     * Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's
+     * Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity
+     * Reservation that has matching attributes (instance type, platform, Availability Zone).
      * </p>
      */
     private CapacityReservationSpecification capacityReservationSpecification;
@@ -2637,11 +2639,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Information about the Capacity Reservation targeting option.
+     * Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's
+     * Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity
+     * Reservation that has matching attributes (instance type, platform, Availability Zone).
      * </p>
      * 
      * @param capacityReservationSpecification
-     *        Information about the Capacity Reservation targeting option.
+     *        Information about the Capacity Reservation targeting option. If you do not specify this parameter, the
+     *        instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any
+     *        open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).
      */
 
     public void setCapacityReservationSpecification(CapacityReservationSpecification capacityReservationSpecification) {
@@ -2650,10 +2656,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Information about the Capacity Reservation targeting option.
+     * Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's
+     * Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity
+     * Reservation that has matching attributes (instance type, platform, Availability Zone).
      * </p>
      * 
-     * @return Information about the Capacity Reservation targeting option.
+     * @return Information about the Capacity Reservation targeting option. If you do not specify this parameter, the
+     *         instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any
+     *         open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).
      */
 
     public CapacityReservationSpecification getCapacityReservationSpecification() {
@@ -2662,11 +2672,15 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
 
     /**
      * <p>
-     * Information about the Capacity Reservation targeting option.
+     * Information about the Capacity Reservation targeting option. If you do not specify this parameter, the instance's
+     * Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity
+     * Reservation that has matching attributes (instance type, platform, Availability Zone).
      * </p>
      * 
      * @param capacityReservationSpecification
-     *        Information about the Capacity Reservation targeting option.
+     *        Information about the Capacity Reservation targeting option. If you do not specify this parameter, the
+     *        instance's Capacity Reservation preference defaults to <code>open</code>, which enables it to run in any
+     *        open Capacity Reservation that has matching attributes (instance type, platform, Availability Zone).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

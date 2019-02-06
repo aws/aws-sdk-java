@@ -17,10 +17,14 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an instance's Capacity Reservation targeting option. You can specify only one option at a time. Use the
- * <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand Instance or to
- * run in any <code>open</code> Capacity Reservation that has matching attributes (instance type, platform, Availability
- * Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity Reservation.
+ * Describes an instance's Capacity Reservation targeting option. You can specify only one parameter at a time. If you
+ * specify <code>CapacityReservationPreference</code> and <code>CapacityReservationTarget</code>, the request fails.
+ * </p>
+ * <p>
+ * Use the <code>CapacityReservationPreference</code> parameter to configure the instance to run as an On-Demand
+ * Instance or to run in any <code>open</code> Capacity Reservation that has matching attributes (instance type,
+ * platform, Availability Zone). Use the <code>CapacityReservationTarget</code> parameter to explicitly target a
+ * specific Capacity Reservation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationSpecification"

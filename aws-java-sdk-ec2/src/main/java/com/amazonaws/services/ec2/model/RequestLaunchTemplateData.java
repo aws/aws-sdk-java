@@ -208,7 +208,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private LaunchTemplateCpuOptionsRequest cpuOptions;
     /**
      * <p>
-     * The Capacity Reservation targeting option.
+     * The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity
+     * Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation
+     * that has matching attributes (instance type, platform, Availability Zone).
      * </p>
      */
     private LaunchTemplateCapacityReservationSpecificationRequest capacityReservationSpecification;
@@ -1712,11 +1714,15 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Capacity Reservation targeting option.
+     * The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity
+     * Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation
+     * that has matching attributes (instance type, platform, Availability Zone).
      * </p>
      * 
      * @param capacityReservationSpecification
-     *        The Capacity Reservation targeting option.
+     *        The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity
+     *        Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity
+     *        Reservation that has matching attributes (instance type, platform, Availability Zone).
      */
 
     public void setCapacityReservationSpecification(LaunchTemplateCapacityReservationSpecificationRequest capacityReservationSpecification) {
@@ -1725,10 +1731,14 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Capacity Reservation targeting option.
+     * The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity
+     * Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation
+     * that has matching attributes (instance type, platform, Availability Zone).
      * </p>
      * 
-     * @return The Capacity Reservation targeting option.
+     * @return The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity
+     *         Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity
+     *         Reservation that has matching attributes (instance type, platform, Availability Zone).
      */
 
     public LaunchTemplateCapacityReservationSpecificationRequest getCapacityReservationSpecification() {
@@ -1737,11 +1747,15 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Capacity Reservation targeting option.
+     * The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity
+     * Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity Reservation
+     * that has matching attributes (instance type, platform, Availability Zone).
      * </p>
      * 
      * @param capacityReservationSpecification
-     *        The Capacity Reservation targeting option.
+     *        The Capacity Reservation targeting option. If you do not specify this parameter, the instance's Capacity
+     *        Reservation preference defaults to <code>open</code>, which enables it to run in any open Capacity
+     *        Reservation that has matching attributes (instance type, platform, Availability Zone).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

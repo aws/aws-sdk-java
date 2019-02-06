@@ -27,18 +27,21 @@ public class AdvertiseByoipCidrRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The IPv4 address range, in CIDR notation.
+     * The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise
+     * only a portion of the provisioned range.
      * </p>
      */
     private String cidr;
 
     /**
      * <p>
-     * The IPv4 address range, in CIDR notation.
+     * The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise
+     * only a portion of the provisioned range.
      * </p>
      * 
      * @param cidr
-     *        The IPv4 address range, in CIDR notation.
+     *        The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned. You can't
+     *        advertise only a portion of the provisioned range.
      */
 
     public void setCidr(String cidr) {
@@ -47,10 +50,12 @@ public class AdvertiseByoipCidrRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The IPv4 address range, in CIDR notation.
+     * The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise
+     * only a portion of the provisioned range.
      * </p>
      * 
-     * @return The IPv4 address range, in CIDR notation.
+     * @return The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned. You can't
+     *         advertise only a portion of the provisioned range.
      */
 
     public String getCidr() {
@@ -59,11 +64,13 @@ public class AdvertiseByoipCidrRequest extends AmazonWebServiceRequest implement
 
     /**
      * <p>
-     * The IPv4 address range, in CIDR notation.
+     * The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise
+     * only a portion of the provisioned range.
      * </p>
      * 
      * @param cidr
-     *        The IPv4 address range, in CIDR notation.
+     *        The IPv4 address range, in CIDR notation. This must be the exact range that you provisioned. You can't
+     *        advertise only a portion of the provisioned range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

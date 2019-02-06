@@ -84,7 +84,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
     private String sourceSecurityGroupName;
     /**
      * <p>
-     * [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a different
+     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
      * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
      * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
@@ -523,7 +523,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a different
+     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
      * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
      * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
@@ -531,7 +531,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a
+     *        [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
      *        different account. You can't specify this parameter in combination with the following parameters: the CIDR
      *        IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates
      *        rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port
@@ -544,14 +544,14 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a different
+     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
      * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
      * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
      * permissions instead.
      * </p>
      * 
-     * @return [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a
+     * @return [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
      *         different account. You can't specify this parameter in combination with the following parameters: the
      *         CIDR IP address range, the IP protocol, the start of the port range, and the end of the port range.
      *         Creates rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and
@@ -564,7 +564,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
 
     /**
      * <p>
-     * [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a different
+     * [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a different
      * account. You can't specify this parameter in combination with the following parameters: the CIDR IP address
      * range, the IP protocol, the start of the port range, and the end of the port range. Creates rules that grant full
      * ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port range, use a set of IP
@@ -572,7 +572,7 @@ public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceReques
      * </p>
      * 
      * @param sourceSecurityGroupOwnerId
-     *        [EC2-Classic] The AWS account ID for the source security group, if the source security group is in a
+     *        [nondefault VPC] The AWS account ID for the source security group, if the source security group is in a
      *        different account. You can't specify this parameter in combination with the following parameters: the CIDR
      *        IP address range, the IP protocol, the start of the port range, and the end of the port range. Creates
      *        rules that grant full ICMP, UDP, and TCP access. To create a rule with a specific IP protocol and port

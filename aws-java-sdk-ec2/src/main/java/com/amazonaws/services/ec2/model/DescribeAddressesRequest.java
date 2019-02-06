@@ -91,7 +91,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
+     * One or more Elastic IP addresses.
      * </p>
      * <p>
      * Default: Describes all your Elastic IP addresses.
@@ -644,13 +644,13 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
+     * One or more Elastic IP addresses.
      * </p>
      * <p>
      * Default: Describes all your Elastic IP addresses.
      * </p>
      * 
-     * @return [EC2-Classic] One or more Elastic IP addresses.</p>
+     * @return One or more Elastic IP addresses.</p>
      *         <p>
      *         Default: Describes all your Elastic IP addresses.
      */
@@ -664,14 +664,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
+     * One or more Elastic IP addresses.
      * </p>
      * <p>
      * Default: Describes all your Elastic IP addresses.
      * </p>
      * 
      * @param publicIps
-     *        [EC2-Classic] One or more Elastic IP addresses.</p>
+     *        One or more Elastic IP addresses.</p>
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
      */
@@ -687,7 +687,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
+     * One or more Elastic IP addresses.
      * </p>
      * <p>
      * Default: Describes all your Elastic IP addresses.
@@ -699,7 +699,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param publicIps
-     *        [EC2-Classic] One or more Elastic IP addresses.</p>
+     *        One or more Elastic IP addresses.</p>
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -717,14 +717,14 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * [EC2-Classic] One or more Elastic IP addresses.
+     * One or more Elastic IP addresses.
      * </p>
      * <p>
      * Default: Describes all your Elastic IP addresses.
      * </p>
      * 
      * @param publicIps
-     *        [EC2-Classic] One or more Elastic IP addresses.</p>
+     *        One or more Elastic IP addresses.</p>
      *        <p>
      *        Default: Describes all your Elastic IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
