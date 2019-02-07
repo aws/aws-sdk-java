@@ -104,7 +104,7 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The state of the Spot Instance request. Spot status information helps track your Spot Instance requests. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
@@ -686,14 +686,14 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The state of the Spot Instance request. Spot status information helps track your Spot Instance requests. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param state
      *        The state of the Spot Instance request. Spot status information helps track your Spot Instance requests.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
      *        <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @see SpotInstanceState
      */
@@ -705,13 +705,13 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The state of the Spot Instance request. Spot status information helps track your Spot Instance requests. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The state of the Spot Instance request. Spot status information helps track your Spot Instance requests.
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
      *         <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @see SpotInstanceState
      */
@@ -723,14 +723,14 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The state of the Spot Instance request. Spot status information helps track your Spot Instance requests. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param state
      *        The state of the Spot Instance request. Spot status information helps track your Spot Instance requests.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
      *        <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotInstanceState
@@ -744,14 +744,14 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The state of the Spot Instance request. Spot status information helps track your Spot Instance requests. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param state
      *        The state of the Spot Instance request. Spot status information helps track your Spot Instance requests.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
      *        <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @see SpotInstanceState
      */
@@ -763,14 +763,14 @@ public class SpotInstanceRequest implements Serializable, Cloneable {
     /**
      * <p>
      * The state of the Spot Instance request. Spot status information helps track your Spot Instance requests. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot
      * Status</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param state
      *        The state of the Spot Instance request. Spot status information helps track your Spot Instance requests.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Status</a> in the
      *        <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotInstanceState

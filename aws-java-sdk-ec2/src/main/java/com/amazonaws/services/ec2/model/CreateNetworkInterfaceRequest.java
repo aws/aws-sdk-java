@@ -79,7 +79,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      * <p>
      * The number of IP addresses you can assign to a network interface varies by instance type. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
      * Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      */
@@ -482,7 +482,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      * <p>
      * The number of IP addresses you can assign to a network interface varies by instance type. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
      * Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -494,7 +494,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *        <p>
      *        The number of IP addresses you can assign to a network interface varies by instance type. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
      *        Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 
@@ -510,7 +510,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      * <p>
      * The number of IP addresses you can assign to a network interface varies by instance type. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
      * Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -521,7 +521,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *         <p>
      *         The number of IP addresses you can assign to a network interface varies by instance type. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
      *         Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 
@@ -537,7 +537,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      * </p>
      * <p>
      * The number of IP addresses you can assign to a network interface varies by instance type. For more information,
-     * see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
      * Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -549,7 +549,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest imple
      *        <p>
      *        The number of IP addresses you can assign to a network interface varies by instance type. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses
      *        Per ENI Per Instance Type</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

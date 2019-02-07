@@ -28,7 +28,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      */
@@ -78,7 +78,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * places a synchronous one-time request, and returns errors for any instances that could not be launched. A value
      * of <code>request</code> places an asynchronous one-time request without maintaining capacity or submitting
      * requests in alternative capacity pools if capacity is unavailable. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      * >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -109,9 +109,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
      * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href
+     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
      */
@@ -120,14 +121,14 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      */
 
@@ -138,13 +139,13 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *         Idempotency</a>.
      */
 
@@ -155,14 +156,14 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
     /**
      * <p>
      * Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more
      *        information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -497,7 +498,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * places a synchronous one-time request, and returns errors for any instances that could not be launched. A value
      * of <code>request</code> places an asynchronous one-time request without maintaining capacity or submitting
      * requests in alternative capacity pools if capacity is unavailable. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      * >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -508,7 +509,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        could not be launched. A value of <code>request</code> places an asynchronous one-time request without
      *        maintaining capacity or submitting requests in alternative capacity pools if capacity is unavailable. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      *        >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @see FleetType
      */
@@ -524,7 +525,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * places a synchronous one-time request, and returns errors for any instances that could not be launched. A value
      * of <code>request</code> places an asynchronous one-time request without maintaining capacity or submitting
      * requests in alternative capacity pools if capacity is unavailable. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      * >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -534,7 +535,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *         could not be launched. A value of <code>request</code> places an asynchronous one-time request without
      *         maintaining capacity or submitting requests in alternative capacity pools if capacity is unavailable. For
      *         more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      *         >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @see FleetType
      */
@@ -550,7 +551,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * places a synchronous one-time request, and returns errors for any instances that could not be launched. A value
      * of <code>request</code> places an asynchronous one-time request without maintaining capacity or submitting
      * requests in alternative capacity pools if capacity is unavailable. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      * >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -561,7 +562,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        could not be launched. A value of <code>request</code> places an asynchronous one-time request without
      *        maintaining capacity or submitting requests in alternative capacity pools if capacity is unavailable. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      *        >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
@@ -579,7 +580,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * places a synchronous one-time request, and returns errors for any instances that could not be launched. A value
      * of <code>request</code> places an asynchronous one-time request without maintaining capacity or submitting
      * requests in alternative capacity pools if capacity is unavailable. For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      * >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -590,7 +591,7 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        could not be launched. A value of <code>request</code> places an asynchronous one-time request without
      *        maintaining capacity or submitting requests in alternative capacity pools if capacity is unavailable. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-configuration-strategies.html#ec2-fleet-request-type"
      *        >EC2 Fleet Request Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
@@ -761,18 +762,19 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
      * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href
+     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
      * 
      * @return The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
      *         must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
      *         tags in the <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
      *         >launch template</a>. For information about tagging after launch, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *         Resources</a>.
      */
 
@@ -787,9 +789,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
      * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href
+     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
      * 
@@ -797,9 +800,9 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
      *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
      *        tags in the <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
      *        >launch template</a>. For information about tagging after launch, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      */
 
@@ -816,9 +819,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
      * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href
+     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
      * <p>
@@ -831,9 +835,9 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
      *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
      *        tags in the <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
      *        >launch template</a>. For information about tagging after launch, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -852,9 +856,10 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code> must be
      * <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
+     * href
+     * ="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch
      * template</a>. For information about tagging after launch, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      * Resources</a>.
      * </p>
      * 
@@ -862,9 +867,9 @@ public class CreateFleetRequest extends AmazonWebServiceRequest implements Seria
      *        The key-value pair for tagging the EC2 Fleet request on creation. The value for <code>ResourceType</code>
      *        must be <code>fleet</code>, otherwise the fleet request fails. To tag instances at launch, specify the
      *        tags in the <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template"
      *        >launch template</a>. For information about tagging after launch, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your
      *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

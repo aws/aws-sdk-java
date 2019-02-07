@@ -32,7 +32,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
      * listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      */
@@ -63,14 +63,14 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
      * listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
      *        duplicate listings. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      */
 
@@ -82,13 +82,13 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
      * listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @return Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
      *         duplicate listings. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *         Idempotency</a>.
      */
 
@@ -100,14 +100,14 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
      * <p>
      * Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid duplicate
      * listings. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier you provide to ensure idempotency of your listings. This helps avoid
      *        duplicate listings. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      *        Idempotency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

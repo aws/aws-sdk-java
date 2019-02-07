@@ -60,7 +60,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
      * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
      * perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      */
@@ -286,7 +286,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
      * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
      * perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -294,7 +294,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
      *        enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
      *        NAT instance to perform NAT. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *        the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 
@@ -307,14 +307,14 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
      * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
      * perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
      *         enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
      *         NAT instance to perform NAT. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *         the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 
@@ -327,7 +327,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
      * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
      * perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -335,7 +335,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
      *        enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
      *        NAT instance to perform NAT. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *        the <i>Amazon Virtual Private Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -350,14 +350,14 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      * Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is enabled,
      * and <code>false</code> means checking is disabled. This value must be <code>false</code> for a NAT instance to
      * perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means checking is
      *         enabled, and <code>false</code> means checking is disabled. This value must be <code>false</code> for a
      *         NAT instance to perform NAT. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *         the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 

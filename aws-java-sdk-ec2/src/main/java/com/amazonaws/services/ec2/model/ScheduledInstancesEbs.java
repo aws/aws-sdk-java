@@ -45,7 +45,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
      * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
      * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -202,7 +202,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
      * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
      * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -218,7 +218,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *        the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
      *        baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
      *        For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
@@ -239,7 +239,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
      * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
      * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -254,8 +254,8 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *         the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
      *         baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
      *         For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>
      *         volumes.
@@ -276,7 +276,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      * number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the baseline
      * performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more
      * information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -292,7 +292,7 @@ public class ScheduledInstancesEbs implements Serializable, Cloneable {
      *        the number of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents the
      *        baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting.
      *        For more information about <code>gp2</code> baseline performance, I/O credits, and bursting, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *        in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and 100-10000 IOPS for <code>gp2</code>

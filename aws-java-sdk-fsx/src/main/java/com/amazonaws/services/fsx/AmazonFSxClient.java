@@ -108,6 +108,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                             new JsonErrorShapeMetadata().withErrorCode("BackupInProgress").withModeledClass(
                                     com.amazonaws.services.fsx.model.BackupInProgressException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidExportPath").withModeledClass(
+                                    com.amazonaws.services.fsx.model.InvalidExportPathException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceDoesNotSupportTagging").withModeledClass(
                                     com.amazonaws.services.fsx.model.ResourceDoesNotSupportTaggingException.class))
                     .addErrorMetadata(
@@ -325,6 +328,8 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      *         parameters settings. A client request token should always uniquely identify a single request.
      * @throws InvalidImportPathException
      *         The path provided for data repository import isn't valid.
+     * @throws InvalidExportPathException
+     *         The path provided for data repository export isn't valid.
      * @throws InvalidNetworkSettingsException
      *         One or more network settings specified in the request are invalid. <code>InvalidVpcId</code> means that
      *         the ID passed for the virtual private cloud (VPC) is invalid. <code>InvalidSubnetIds</code> returns the
@@ -517,6 +522,9 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * @return Result of the DeleteBackup operation returned by the service.
      * @throws BadRequestException
      *         A generic error indicating a failure with a client request.
+     * @throws BackupInProgressException
+     *         Another backup is already under way. Wait for completion before initiating additional backups of this
+     *         file system.
      * @throws BackupNotFoundException
      *         No Amazon FSx backups were found based upon the supplied parameters.
      * @throws BackupRestoringException

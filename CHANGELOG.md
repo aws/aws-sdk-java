@@ -1,3 +1,12 @@
+# __1.11.493__ __2019-02-06__
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Add Linux with SQL Server Standard, Linux with SQL Server Web, and Linux with SQL Server Enterprise to the list of allowed instance platforms for On-Demand Capacity Reservations.
+
+## __Amazon FSx__
+  - ### Features
+    - New optional ExportPath parameter added to the CreateFileSystemLustreConfiguration object for user-defined export paths. Used with the CreateFileSystem action when creating an Amazon FSx for Lustre file system.
+
 # __1.11.492__ __2019-02-05__
 ## __AWS Service Catalog__
   - ### Features

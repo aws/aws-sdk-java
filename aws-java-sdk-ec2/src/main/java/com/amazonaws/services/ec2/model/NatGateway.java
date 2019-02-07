@@ -103,7 +103,7 @@ public class NatGateway implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
      * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      */
@@ -665,13 +665,13 @@ public class NatGateway implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
      * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param provisionedBandwidth
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -682,12 +682,12 @@ public class NatGateway implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
      * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @return Reserved. If you need to sustain traffic greater than the <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
      *         contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      */
 
@@ -698,13 +698,13 @@ public class NatGateway implements Serializable, Cloneable {
     /**
      * <p>
      * Reserved. If you need to sustain traffic greater than the <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>, contact
      * us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * </p>
      * 
      * @param provisionedBandwidth
      *        Reserved. If you need to sustain traffic greater than the <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/vpc-nat-gateway.html">documented limits</a>,
      *        contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

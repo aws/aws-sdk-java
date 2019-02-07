@@ -39,11 +39,8 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
     private String importPath;
     /**
      * <p>
-     * The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the archive
-     * operation from the file system to Amazon S3. The value is
-     * <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format, for
-     * example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different prefix in
-     * the Amazon S3 bucket, preventing input data from being overwritten.
+     * The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre file
+     * system files in S3.
      * </p>
      */
     private String exportPath;
@@ -117,19 +114,13 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the archive
-     * operation from the file system to Amazon S3. The value is
-     * <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format, for
-     * example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different prefix in
-     * the Amazon S3 bucket, preventing input data from being overwritten.
+     * The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre file
+     * system files in S3.
      * </p>
      * 
      * @param exportPath
-     *        The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the
-     *        archive operation from the file system to Amazon S3. The value is
-     *        <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format,
-     *        for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different
-     *        prefix in the Amazon S3 bucket, preventing input data from being overwritten.
+     *        The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre
+     *        file system files in S3.
      */
 
     public void setExportPath(String exportPath) {
@@ -138,18 +129,12 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the archive
-     * operation from the file system to Amazon S3. The value is
-     * <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format, for
-     * example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different prefix in
-     * the Amazon S3 bucket, preventing input data from being overwritten.
+     * The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre file
+     * system files in S3.
      * </p>
      * 
-     * @return The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the
-     *         archive operation from the file system to Amazon S3. The value is
-     *         <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format,
-     *         for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different
-     *         prefix in the Amazon S3 bucket, preventing input data from being overwritten.
+     * @return The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre
+     *         file system files in S3.
      */
 
     public String getExportPath() {
@@ -158,19 +143,13 @@ public class DataRepositoryConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the archive
-     * operation from the file system to Amazon S3. The value is
-     * <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format, for
-     * example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different prefix in
-     * the Amazon S3 bucket, preventing input data from being overwritten.
+     * The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre file
+     * system files in S3.
      * </p>
      * 
      * @param exportPath
-     *        The Amazon S3 commit path to use for storing new and changed Lustre file system files as part of the
-     *        archive operation from the file system to Amazon S3. The value is
-     *        <code>s3://import-bucket/FSxLustre[creationtimestamp]</code>. The timestamp is presented in UTC format,
-     *        for example <code>s3://import-bucket/FSxLustre20181105T222312Z</code>. Files are archived to a different
-     *        prefix in the Amazon S3 bucket, preventing input data from being overwritten.
+     *        The export path to the Amazon S3 bucket (and prefix) that you are using to store new and changed Lustre
+     *        file system files in S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

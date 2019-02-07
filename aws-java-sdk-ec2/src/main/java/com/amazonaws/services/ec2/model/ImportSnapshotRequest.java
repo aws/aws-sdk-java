@@ -55,7 +55,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for EBS is
      * used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -276,7 +276,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for EBS is
      * used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -284,7 +284,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      *        Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for
      *        EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
      *        <code>KmsKeyId</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -296,15 +296,15 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for EBS is
      * used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for
      *         EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
      *         <code>KmsKeyId</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean getEncrypted() {
@@ -315,7 +315,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for EBS is
      * used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -323,7 +323,7 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      *        Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for
      *        EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
      *        <code>KmsKeyId</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -337,15 +337,15 @@ public class ImportSnapshotRequest extends AmazonWebServiceRequest implements Se
      * <p>
      * Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for EBS is
      * used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For
-     * more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Specifies whether the destination snapshot of the imported image should be encrypted. The default CMK for
      *         EBS is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
      *         <code>KmsKeyId</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean isEncrypted() {

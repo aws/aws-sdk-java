@@ -49,7 +49,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
@@ -103,8 +103,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Changes the instance type to the specified value. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the instance
-     * type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
+     * instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
      * </p>
      */
     private String instanceType;
@@ -112,7 +112,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels and
      * RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * </p>
      */
     private String kernel;
@@ -120,7 +120,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of kernels and
      * RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * </p>
      */
     private String ramdisk;
@@ -338,7 +338,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
@@ -349,7 +349,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         <p>
      *         To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *         instance. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      *         >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud
      *         User Guide</i>.
      */
@@ -370,7 +370,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
@@ -382,7 +382,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *        <p>
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      *        >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
      */
@@ -405,7 +405,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
@@ -422,7 +422,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *        <p>
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      *        >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -447,7 +447,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.
      * </p>
@@ -459,7 +459,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *        <p>
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
      *        >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud
      *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -856,13 +856,13 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Changes the instance type to the specified value. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the instance
-     * type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
+     * instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
      * </p>
      * 
      * @param instanceType
      *        Changes the instance type to the specified value. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
      *        instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
      */
 
@@ -873,12 +873,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Changes the instance type to the specified value. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the instance
-     * type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
+     * instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
      * </p>
      * 
      * @return Changes the instance type to the specified value. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
      *         instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
      */
 
@@ -889,13 +889,13 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Changes the instance type to the specified value. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the instance
-     * type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
+     * instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
      * </p>
      * 
      * @param instanceType
      *        Changes the instance type to the specified value. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
      *        instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -909,13 +909,13 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels and
      * RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * </p>
      * 
      * @param kernel
      *        Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels
      *        and RAM disks. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
 
     public void setKernel(String kernel) {
@@ -926,12 +926,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels and
      * RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * </p>
      * 
      * @return Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of
      *         kernels and RAM disks. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
 
     public String getKernel() {
@@ -942,13 +942,13 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels and
      * RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * </p>
      * 
      * @param kernel
      *        Changes the instance's kernel to the specified value. We recommend that you use PV-GRUB instead of kernels
      *        and RAM disks. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -961,13 +961,13 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of kernels and
      * RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * </p>
      * 
      * @param ramdisk
      *        Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of
      *        kernels and RAM disks. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
 
     public void setRamdisk(String ramdisk) {
@@ -978,12 +978,12 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of kernels and
      * RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * </p>
      * 
      * @return Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of
      *         kernels and RAM disks. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      */
 
     public String getRamdisk() {
@@ -994,13 +994,13 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * <p>
      * Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of kernels and
      * RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * </p>
      * 
      * @param ramdisk
      *        Changes the instance's RAM disk to the specified value. We recommend that you use PV-GRUB instead of
      *        kernels and RAM disks. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

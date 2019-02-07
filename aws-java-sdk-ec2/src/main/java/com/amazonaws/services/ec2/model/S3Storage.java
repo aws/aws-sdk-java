@@ -30,7 +30,7 @@ public class S3Storage implements Serializable, Cloneable {
      * <p>
      * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
      * follow the guidance in <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
      * Managing AWS Access Keys</a>.
      * </p>
      */
@@ -65,15 +65,15 @@ public class S3Storage implements Serializable, Cloneable {
      * <p>
      * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
      * follow the guidance in <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
      * Managing AWS Access Keys</a>.
      * </p>
      * 
      * @param aWSAccessKeyId
      *        The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
      *        and follow the guidance in <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
-     *        Managing AWS Access Keys</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices
+     *        for Managing AWS Access Keys</a>.
      */
 
     public void setAWSAccessKeyId(String aWSAccessKeyId) {
@@ -84,13 +84,13 @@ public class S3Storage implements Serializable, Cloneable {
      * <p>
      * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
      * follow the guidance in <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
      * Managing AWS Access Keys</a>.
      * </p>
      * 
      * @return The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
      *         and follow the guidance in <a
-     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices
      *         for Managing AWS Access Keys</a>.
      */
 
@@ -102,15 +102,15 @@ public class S3Storage implements Serializable, Cloneable {
      * <p>
      * The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review and
      * follow the guidance in <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
      * Managing AWS Access Keys</a>.
      * </p>
      * 
      * @param aWSAccessKeyId
      *        The access key ID of the owner of the bucket. Before you specify a value for your access key ID, review
      *        and follow the guidance in <a
-     *        href="http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices for
-     *        Managing AWS Access Keys</a>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html">Best Practices
+     *        for Managing AWS Access Keys</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -245,7 +245,7 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      */
@@ -2169,7 +2169,7 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -2178,7 +2178,7 @@ public class Instance implements Serializable, Cloneable {
      *        source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
      *        is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
      *        for the instance to perform NAT. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *        the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 
@@ -2192,7 +2192,7 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -2200,7 +2200,7 @@ public class Instance implements Serializable, Cloneable {
      *         source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
      *         is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
      *         for the instance to perform NAT. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *         the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 
@@ -2214,7 +2214,7 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -2223,7 +2223,7 @@ public class Instance implements Serializable, Cloneable {
      *        source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
      *        is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
      *        for the instance to perform NAT. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
+     *        href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *        the <i>Amazon Virtual Private Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2239,7 +2239,7 @@ public class Instance implements Serializable, Cloneable {
      * source/destination checking is enabled on the instance. A value of <code>true</code> means that checking is
      * enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code> for the
      * instance to perform NAT. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
+     * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in the
      * <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
@@ -2247,7 +2247,7 @@ public class Instance implements Serializable, Cloneable {
      *         source/destination checking is enabled on the instance. A value of <code>true</code> means that checking
      *         is enabled, and <code>false</code> means that checking is disabled. The value must be <code>false</code>
      *         for the instance to perform NAT. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT Instances</a> in
      *         the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
 

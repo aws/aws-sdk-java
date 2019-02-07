@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Information about the error that occurred. For more information about errors, see <a
- * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnsuccessfulItemError" target="_top">AWS API

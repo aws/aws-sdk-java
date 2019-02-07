@@ -84,7 +84,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The IDs of the elastic network interface from which a specific file system is accessible. The elastic network
      * interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
@@ -115,7 +115,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
@@ -564,7 +564,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The IDs of the elastic network interface from which a specific file system is accessible. The elastic network
      * interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
@@ -575,7 +575,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * @return The IDs of the elastic network interface from which a specific file system is accessible. The elastic
      *         network interface is automatically created in the same VPC that the Amazon FSx file system was created
      *         in. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
      *         in the <i>Amazon EC2 User Guide.</i> </p>
      *         <p>
      *         For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an
@@ -590,7 +590,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The IDs of the elastic network interface from which a specific file system is accessible. The elastic network
      * interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
@@ -602,8 +602,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      *        The IDs of the elastic network interface from which a specific file system is accessible. The elastic
      *        network interface is automatically created in the same VPC that the Amazon FSx file system was created in.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in
-     *        the <i>Amazon EC2 User Guide.</i> </p>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
+     *        in the <i>Amazon EC2 User Guide.</i> </p>
      *        <p>
      *        For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an
      *        Amazon FSx for Lustre file system, you can have more than one.
@@ -622,7 +622,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The IDs of the elastic network interface from which a specific file system is accessible. The elastic network
      * interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
@@ -639,8 +639,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      *        The IDs of the elastic network interface from which a specific file system is accessible. The elastic
      *        network interface is automatically created in the same VPC that the Amazon FSx file system was created in.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in
-     *        the <i>Amazon EC2 User Guide.</i> </p>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
+     *        in the <i>Amazon EC2 User Guide.</i> </p>
      *        <p>
      *        For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an
      *        Amazon FSx for Lustre file system, you can have more than one.
@@ -661,7 +661,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The IDs of the elastic network interface from which a specific file system is accessible. The elastic network
      * interface is automatically created in the same VPC that the Amazon FSx file system was created in. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network
      * Interfaces</a> in the <i>Amazon EC2 User Guide.</i>
      * </p>
      * <p>
@@ -673,8 +673,8 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      *        The IDs of the elastic network interface from which a specific file system is accessible. The elastic
      *        network interface is automatically created in the same VPC that the Amazon FSx file system was created in.
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a> in
-     *        the <i>Amazon EC2 User Guide.</i> </p>
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html">Elastic Network Interfaces</a>
+     *        in the <i>Amazon EC2 User Guide.</i> </p>
      *        <p>
      *        For an Amazon FSx for Windows File Server file system, you can have one network interface Id. For an
      *        Amazon FSx for Lustre file system, you can have more than one.
@@ -815,12 +815,12 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The tags to associate with the file system. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2
      *         Resources</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
@@ -831,13 +831,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags to associate with the file system. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2
      *        Resources</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
@@ -853,7 +853,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
@@ -864,7 +864,7 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param tags
      *        The tags to associate with the file system. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2
      *        Resources</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -882,13 +882,13 @@ public class FileSystem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tags to associate with the file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param tags
      *        The tags to associate with the file system. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2
      *        Resources</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

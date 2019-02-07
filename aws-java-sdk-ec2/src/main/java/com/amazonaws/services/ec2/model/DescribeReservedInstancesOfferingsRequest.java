@@ -106,7 +106,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -825,14 +825,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
-     *        information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @see InstanceType
      */
 
@@ -843,13 +844,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
      *         <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @see InstanceType
      */
@@ -861,14 +862,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
-     *        information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -881,14 +883,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
-     *        information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @see InstanceType
      */
 
@@ -899,14 +902,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     /**
      * <p>
      * The instance type that the reservation will cover (for example, <code>m1.small</code>). For more information, see
-     * <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type that the reservation will cover (for example, <code>m1.small</code>). For more
-     *        information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-     *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
+     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */

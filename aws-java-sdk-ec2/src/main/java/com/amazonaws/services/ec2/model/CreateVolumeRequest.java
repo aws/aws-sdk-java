@@ -40,7 +40,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      * encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or vice versa. If your AMI
      * uses encrypted volumes, you can only launch it on supported instance types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -51,7 +51,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
      * families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -257,7 +257,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      * encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or vice versa. If your AMI
      * uses encrypted volumes, you can only launch it on supported instance types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -267,7 +267,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        automatically encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or
      *        vice versa. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -281,7 +281,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      * encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or vice versa. If your AMI
      * uses encrypted volumes, you can only launch it on supported instance types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -290,8 +290,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         automatically encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or
      *         vice versa. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean getEncrypted() {
@@ -304,7 +304,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      * encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or vice versa. If your AMI
      * uses encrypted volumes, you can only launch it on supported instance types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -314,7 +314,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        automatically encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or
      *        vice versa. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
      *        more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -330,7 +330,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically
      * encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or vice versa. If your AMI
      * uses encrypted volumes, you can only launch it on supported instance types. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -339,8 +339,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         automatically encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or
      *         vice versa. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For
      *         more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean isEncrypted() {
@@ -353,7 +353,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
      * families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -365,7 +365,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
      *        only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      *        instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
      *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
@@ -381,7 +381,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
      * families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -392,7 +392,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *         IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
      *         only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      *         instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
-     *         <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *         <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
      *         Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *         <p>
      *         This parameter is valid only for Provisioned IOPS SSD (io1) volumes.
@@ -408,7 +408,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      * Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed only on <a
      * href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based instances</a>. Other instance
      * families guarantee performance up to 32,000 IOPS. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <p>
@@ -420,7 +420,7 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest implements Seri
      *        IOPS/GiB. Range is 100 to 64,000 IOPS for volumes in most regions. Maximum IOPS of 64,000 is guaranteed
      *        only on <a href="AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
      *        instances</a>. Other instance families guarantee performance up to 32,000 IOPS. For more information, see
-     *        <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
+     *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
      *        Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
      *        <p>
      *        This parameter is valid only for Provisioned IOPS SSD (io1) volumes.

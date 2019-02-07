@@ -64,7 +64,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
      * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      */
@@ -130,7 +130,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
      * party cloud like AWS. For more information, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
@@ -406,7 +406,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
      * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -414,7 +414,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS
      *        is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
      *        <code>KmsKeyId</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
@@ -426,15 +426,15 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
      * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS
      *         is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
      *         <code>KmsKeyId</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean getEncrypted() {
@@ -445,7 +445,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
      * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
@@ -453,7 +453,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS
      *        is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
      *        <code>KmsKeyId</code>. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
      *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -467,15 +467,15 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS is used
      * unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using <code>KmsKeyId</code>. For more
-     * information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
+     * information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS
      * Encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @return Specifies whether the destination AMI of the imported image should be encrypted. The default CMK for EBS
      *         is used unless you specify a non-default AWS Key Management Service (AWS KMS) CMK using
      *         <code>KmsKeyId</code>. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a>
+     *         in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      */
 
     public Boolean isEncrypted() {
@@ -816,7 +816,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
      * party cloud like AWS. For more information, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
@@ -828,7 +828,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        <p>
      *        <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
      *        third party cloud like AWS. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *        "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *        >Prerequisites</a> in the VM Import/Export User Guide.
      *        </p>
      *        <p>
@@ -846,7 +846,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
      * party cloud like AWS. For more information, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
@@ -857,7 +857,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         <p>
      *         <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
      *         third party cloud like AWS. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *         "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *         >Prerequisites</a> in the VM Import/Export User Guide.
      *         </p>
      *         <p>
@@ -875,7 +875,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * <p>
      * <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a third
      * party cloud like AWS. For more information, see <a
-     * href="http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
@@ -887,7 +887,7 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        <p>
      *        <b>Note:</b> You may only use BYOL if you have existing licenses with rights to use these licenses in a
      *        third party cloud like AWS. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
+     *        "https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html#prerequisites-image"
      *        >Prerequisites</a> in the VM Import/Export User Guide.
      *        </p>
      *        <p>
