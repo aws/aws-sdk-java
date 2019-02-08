@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -28,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateInputSecurityGroupRequestMarshaller {
 
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> WHITELISTRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("whitelistRules").build();
 
@@ -47,6 +50,7 @@ public class CreateInputSecurityGroupRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(createInputSecurityGroupRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createInputSecurityGroupRequest.getWhitelistRules(), WHITELISTRULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

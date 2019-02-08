@@ -47,7 +47,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
     private String configurationName;
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session and uniquely identifies it.
      * </p>
      */
@@ -63,7 +63,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
      * Data</a>.
      * </p>
      * </li>
@@ -192,13 +192,14 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session and uniquely identifies it.
      * </p>
      * 
      * @param gameSessionArn
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        that is assigned to a game session and uniquely identifies it.
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        game session and uniquely identifies it.
      */
 
     public void setGameSessionArn(String gameSessionArn) {
@@ -207,12 +208,12 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session and uniquely identifies it.
      * </p>
      * 
      * @return Amazon Resource Name (<a
-     *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
      *         game session and uniquely identifies it.
      */
 
@@ -222,13 +223,14 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
+     * Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that
      * is assigned to a game session and uniquely identifies it.
      * </p>
      * 
      * @param gameSessionArn
-     *        Amazon Resource Name (<a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     *        that is assigned to a game session and uniquely identifies it.
+     *        Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        game session and uniquely identifies it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,7 +250,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
      * Data</a>.
      * </p>
      * </li>
@@ -268,7 +270,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *         PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      *         <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *         matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     *         href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      *         Match Data</a>.
      *         </p>
      *         </li>
@@ -295,7 +297,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
      * Data</a>.
      * </p>
      * </li>
@@ -316,7 +318,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      *        Match Data</a>.
      *        </p>
      *        </li>
@@ -348,7 +350,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
      * Data</a>.
      * </p>
      * </li>
@@ -374,7 +376,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      *        Match Data</a>.
      *        </p>
      *        </li>
@@ -408,7 +410,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      * PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      * <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      * matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data"> Match
      * Data</a>.
      * </p>
      * </li>
@@ -429,7 +431,7 @@ public class StartMatchBackfillRequest extends com.amazonaws.AmazonWebServiceReq
      *        PlayerID, PlayerAttributes, Team -\\- This information is maintained in the <a>GameSession</a> object,
      *        <code>MatchmakerData</code> property, for all players who are currently assigned to the game session. The
      *        matchmaker data is in JSON syntax, formatted as a string. For more details, see <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">
      *        Match Data</a>.
      *        </p>
      *        </li>

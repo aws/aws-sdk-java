@@ -123,6 +123,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public DeleteMatchmakingRuleSetResult deleteMatchmakingRuleSet(DeleteMatchmakingRuleSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteScalingPolicyResult deleteScalingPolicy(DeleteScalingPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

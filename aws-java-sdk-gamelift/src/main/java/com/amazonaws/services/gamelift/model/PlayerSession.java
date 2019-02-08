@@ -29,9 +29,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * When a player disconnects, the player session status changes to <code>COMPLETED</code>. Once the session ends, the
  * player session object is retained for 30 days and then removed.
  * </p>
- * <p>
- * Player-session-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

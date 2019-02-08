@@ -1,3 +1,20 @@
+# __1.11.494__ __2019-02-07__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - This release adds tagging of channels, inputs, and input security groups.
+
+## __AWS RoboMaker__
+  - ### Features
+    - Added support for tagging and tag-based access control for AWS RoboMaker resources. Also, DescribeSimulationJob now includes a new failureReason field to help debug simulation job failures
+
+## __Amazon Elasticsearch Service__
+  - ### Features
+    - Feature: Support for three Availability Zone deployments
+
+## __Amazon GameLift__
+  - ### Features
+    - This release delivers a new API action for deleting unused matchmaking rule sets. More details are available at https://aws.amazon.com/releasenotes/?tag=releasenotes%23keywords%23amazon-gamelift.
+
 # __1.11.493__ __2019-02-06__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

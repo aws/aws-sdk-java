@@ -21,9 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Properties describing a game build.
  * </p>
- * <p>
- * Build-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

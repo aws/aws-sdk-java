@@ -55,8 +55,86 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
     private String failureReason;
     /**
      * <p>
-     * The failure code of the deployment job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>BadPermissionError</dt>
+     * <dd>
+     * <p>
+     * AWS Greengrass requires a service-level role permission to access other services. The role must include the <a
+     * href=
+     * "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     * > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     * </p>
+     * </dd>
+     * <dt>ExtractingBundleFailure</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be extracted from the bundle.
+     * </p>
+     * </dd>
+     * <dt>FailureThresholdBreached</dt>
+     * <dd>
+     * <p>
+     * The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     * </p>
+     * </dd>
+     * <dt>GreengrassDeploymentFailed</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be deployed to the robot.
+     * </p>
+     * </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt>
+     * <dd>
+     * <p>
+     * The AWS Greengrass group or version associated with a robot is missing.
+     * </p>
+     * </dd>
+     * <dt>InternalServerError</dt>
+     * <dd>
+     * <p>
+     * An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt>
+     * <dd>
+     * <p>
+     * The robot application does not have a source that matches the architecture of the robot.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotDeploymentResource</dt>
+     * <dd>
+     * <p>
+     * One or more of the resources specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?
+     * </p>
+     * </dd>
+     * <dt>PostLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The post-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>PreLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The pre-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>ResourceNotFound</dt>
+     * <dd>
+     * <p>
+     * One or more deployment resources are missing. For example, do robot application source bundles still exist?
+     * </p>
+     * </dd>
+     * <dt>RobotDeploymentNoResponse</dt>
+     * <dd>
+     * <p>
+     * There is no response from the robot. It might not be powered on or connected to the internet.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String failureCode;
     /**
@@ -71,6 +149,12 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private DeploymentConfig deploymentConfig;
+    /**
+     * <p>
+     * The list of all tags added to the deployment job.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -323,11 +407,167 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The failure code of the deployment job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>BadPermissionError</dt>
+     * <dd>
+     * <p>
+     * AWS Greengrass requires a service-level role permission to access other services. The role must include the <a
+     * href=
+     * "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     * > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     * </p>
+     * </dd>
+     * <dt>ExtractingBundleFailure</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be extracted from the bundle.
+     * </p>
+     * </dd>
+     * <dt>FailureThresholdBreached</dt>
+     * <dd>
+     * <p>
+     * The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     * </p>
+     * </dd>
+     * <dt>GreengrassDeploymentFailed</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be deployed to the robot.
+     * </p>
+     * </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt>
+     * <dd>
+     * <p>
+     * The AWS Greengrass group or version associated with a robot is missing.
+     * </p>
+     * </dd>
+     * <dt>InternalServerError</dt>
+     * <dd>
+     * <p>
+     * An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt>
+     * <dd>
+     * <p>
+     * The robot application does not have a source that matches the architecture of the robot.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotDeploymentResource</dt>
+     * <dd>
+     * <p>
+     * One or more of the resources specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?
+     * </p>
+     * </dd>
+     * <dt>PostLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The post-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>PreLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The pre-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>ResourceNotFound</dt>
+     * <dd>
+     * <p>
+     * One or more deployment resources are missing. For example, do robot application source bundles still exist?
+     * </p>
+     * </dd>
+     * <dt>RobotDeploymentNoResponse</dt>
+     * <dd>
+     * <p>
+     * There is no response from the robot. It might not be powered on or connected to the internet.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param failureCode
-     *        The failure code of the deployment job if it failed.
+     *        The failure code of the simulation job if it failed:</p>
+     *        <dl>
+     *        <dt>BadPermissionError</dt>
+     *        <dd>
+     *        <p>
+     *        AWS Greengrass requires a service-level role permission to access other services. The role must include
+     *        the <a href=
+     *        "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     *        > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     *        </p>
+     *        </dd>
+     *        <dt>ExtractingBundleFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application could not be extracted from the bundle.
+     *        </p>
+     *        </dd>
+     *        <dt>FailureThresholdBreached</dt>
+     *        <dd>
+     *        <p>
+     *        The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     *        </p>
+     *        </dd>
+     *        <dt>GreengrassDeploymentFailed</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application could not be deployed to the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>GreengrassGroupVersionDoesNotExist</dt>
+     *        <dd>
+     *        <p>
+     *        The AWS Greengrass group or version associated with a robot is missing.
+     *        </p>
+     *        </dd>
+     *        <dt>InternalServerError</dt>
+     *        <dd>
+     *        <p>
+     *        An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     *        </p>
+     *        </dd>
+     *        <dt>MissingRobotApplicationArchitecture</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application does not have a source that matches the architecture of the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>MissingRobotDeploymentResource</dt>
+     *        <dd>
+     *        <p>
+     *        One or more of the resources specified for the robot application are missing. For example, does the robot
+     *        application have the correct launch package and launch file?
+     *        </p>
+     *        </dd>
+     *        <dt>PostLaunchFileFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The post-launch script failed.
+     *        </p>
+     *        </dd>
+     *        <dt>PreLaunchFileFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The pre-launch script failed.
+     *        </p>
+     *        </dd>
+     *        <dt>ResourceNotFound</dt>
+     *        <dd>
+     *        <p>
+     *        One or more deployment resources are missing. For example, do robot application source bundles still
+     *        exist?
+     *        </p>
+     *        </dd>
+     *        <dt>RobotDeploymentNoResponse</dt>
+     *        <dd>
+     *        <p>
+     *        There is no response from the robot. It might not be powered on or connected to the internet.
+     *        </p>
+     *        </dd>
      * @see DeploymentJobErrorCode
      */
 
@@ -337,10 +577,166 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The failure code of the deployment job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>BadPermissionError</dt>
+     * <dd>
+     * <p>
+     * AWS Greengrass requires a service-level role permission to access other services. The role must include the <a
+     * href=
+     * "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     * > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     * </p>
+     * </dd>
+     * <dt>ExtractingBundleFailure</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be extracted from the bundle.
+     * </p>
+     * </dd>
+     * <dt>FailureThresholdBreached</dt>
+     * <dd>
+     * <p>
+     * The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     * </p>
+     * </dd>
+     * <dt>GreengrassDeploymentFailed</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be deployed to the robot.
+     * </p>
+     * </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt>
+     * <dd>
+     * <p>
+     * The AWS Greengrass group or version associated with a robot is missing.
+     * </p>
+     * </dd>
+     * <dt>InternalServerError</dt>
+     * <dd>
+     * <p>
+     * An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt>
+     * <dd>
+     * <p>
+     * The robot application does not have a source that matches the architecture of the robot.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotDeploymentResource</dt>
+     * <dd>
+     * <p>
+     * One or more of the resources specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?
+     * </p>
+     * </dd>
+     * <dt>PostLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The post-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>PreLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The pre-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>ResourceNotFound</dt>
+     * <dd>
+     * <p>
+     * One or more deployment resources are missing. For example, do robot application source bundles still exist?
+     * </p>
+     * </dd>
+     * <dt>RobotDeploymentNoResponse</dt>
+     * <dd>
+     * <p>
+     * There is no response from the robot. It might not be powered on or connected to the internet.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The failure code of the deployment job if it failed.
+     * @return The failure code of the simulation job if it failed:</p>
+     *         <dl>
+     *         <dt>BadPermissionError</dt>
+     *         <dd>
+     *         <p>
+     *         AWS Greengrass requires a service-level role permission to access other services. The role must include
+     *         the <a href=
+     *         "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     *         > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     *         </p>
+     *         </dd>
+     *         <dt>ExtractingBundleFailure</dt>
+     *         <dd>
+     *         <p>
+     *         The robot application could not be extracted from the bundle.
+     *         </p>
+     *         </dd>
+     *         <dt>FailureThresholdBreached</dt>
+     *         <dd>
+     *         <p>
+     *         The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     *         </p>
+     *         </dd>
+     *         <dt>GreengrassDeploymentFailed</dt>
+     *         <dd>
+     *         <p>
+     *         The robot application could not be deployed to the robot.
+     *         </p>
+     *         </dd>
+     *         <dt>GreengrassGroupVersionDoesNotExist</dt>
+     *         <dd>
+     *         <p>
+     *         The AWS Greengrass group or version associated with a robot is missing.
+     *         </p>
+     *         </dd>
+     *         <dt>InternalServerError</dt>
+     *         <dd>
+     *         <p>
+     *         An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     *         </p>
+     *         </dd>
+     *         <dt>MissingRobotApplicationArchitecture</dt>
+     *         <dd>
+     *         <p>
+     *         The robot application does not have a source that matches the architecture of the robot.
+     *         </p>
+     *         </dd>
+     *         <dt>MissingRobotDeploymentResource</dt>
+     *         <dd>
+     *         <p>
+     *         One or more of the resources specified for the robot application are missing. For example, does the robot
+     *         application have the correct launch package and launch file?
+     *         </p>
+     *         </dd>
+     *         <dt>PostLaunchFileFailure</dt>
+     *         <dd>
+     *         <p>
+     *         The post-launch script failed.
+     *         </p>
+     *         </dd>
+     *         <dt>PreLaunchFileFailure</dt>
+     *         <dd>
+     *         <p>
+     *         The pre-launch script failed.
+     *         </p>
+     *         </dd>
+     *         <dt>ResourceNotFound</dt>
+     *         <dd>
+     *         <p>
+     *         One or more deployment resources are missing. For example, do robot application source bundles still
+     *         exist?
+     *         </p>
+     *         </dd>
+     *         <dt>RobotDeploymentNoResponse</dt>
+     *         <dd>
+     *         <p>
+     *         There is no response from the robot. It might not be powered on or connected to the internet.
+     *         </p>
+     *         </dd>
      * @see DeploymentJobErrorCode
      */
 
@@ -350,11 +746,167 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The failure code of the deployment job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>BadPermissionError</dt>
+     * <dd>
+     * <p>
+     * AWS Greengrass requires a service-level role permission to access other services. The role must include the <a
+     * href=
+     * "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     * > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     * </p>
+     * </dd>
+     * <dt>ExtractingBundleFailure</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be extracted from the bundle.
+     * </p>
+     * </dd>
+     * <dt>FailureThresholdBreached</dt>
+     * <dd>
+     * <p>
+     * The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     * </p>
+     * </dd>
+     * <dt>GreengrassDeploymentFailed</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be deployed to the robot.
+     * </p>
+     * </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt>
+     * <dd>
+     * <p>
+     * The AWS Greengrass group or version associated with a robot is missing.
+     * </p>
+     * </dd>
+     * <dt>InternalServerError</dt>
+     * <dd>
+     * <p>
+     * An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt>
+     * <dd>
+     * <p>
+     * The robot application does not have a source that matches the architecture of the robot.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotDeploymentResource</dt>
+     * <dd>
+     * <p>
+     * One or more of the resources specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?
+     * </p>
+     * </dd>
+     * <dt>PostLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The post-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>PreLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The pre-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>ResourceNotFound</dt>
+     * <dd>
+     * <p>
+     * One or more deployment resources are missing. For example, do robot application source bundles still exist?
+     * </p>
+     * </dd>
+     * <dt>RobotDeploymentNoResponse</dt>
+     * <dd>
+     * <p>
+     * There is no response from the robot. It might not be powered on or connected to the internet.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param failureCode
-     *        The failure code of the deployment job if it failed.
+     *        The failure code of the simulation job if it failed:</p>
+     *        <dl>
+     *        <dt>BadPermissionError</dt>
+     *        <dd>
+     *        <p>
+     *        AWS Greengrass requires a service-level role permission to access other services. The role must include
+     *        the <a href=
+     *        "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     *        > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     *        </p>
+     *        </dd>
+     *        <dt>ExtractingBundleFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application could not be extracted from the bundle.
+     *        </p>
+     *        </dd>
+     *        <dt>FailureThresholdBreached</dt>
+     *        <dd>
+     *        <p>
+     *        The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     *        </p>
+     *        </dd>
+     *        <dt>GreengrassDeploymentFailed</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application could not be deployed to the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>GreengrassGroupVersionDoesNotExist</dt>
+     *        <dd>
+     *        <p>
+     *        The AWS Greengrass group or version associated with a robot is missing.
+     *        </p>
+     *        </dd>
+     *        <dt>InternalServerError</dt>
+     *        <dd>
+     *        <p>
+     *        An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     *        </p>
+     *        </dd>
+     *        <dt>MissingRobotApplicationArchitecture</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application does not have a source that matches the architecture of the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>MissingRobotDeploymentResource</dt>
+     *        <dd>
+     *        <p>
+     *        One or more of the resources specified for the robot application are missing. For example, does the robot
+     *        application have the correct launch package and launch file?
+     *        </p>
+     *        </dd>
+     *        <dt>PostLaunchFileFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The post-launch script failed.
+     *        </p>
+     *        </dd>
+     *        <dt>PreLaunchFileFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The pre-launch script failed.
+     *        </p>
+     *        </dd>
+     *        <dt>ResourceNotFound</dt>
+     *        <dd>
+     *        <p>
+     *        One or more deployment resources are missing. For example, do robot application source bundles still
+     *        exist?
+     *        </p>
+     *        </dd>
+     *        <dt>RobotDeploymentNoResponse</dt>
+     *        <dd>
+     *        <p>
+     *        There is no response from the robot. It might not be powered on or connected to the internet.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentJobErrorCode
      */
@@ -366,11 +918,167 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The failure code of the deployment job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>BadPermissionError</dt>
+     * <dd>
+     * <p>
+     * AWS Greengrass requires a service-level role permission to access other services. The role must include the <a
+     * href=
+     * "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     * > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     * </p>
+     * </dd>
+     * <dt>ExtractingBundleFailure</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be extracted from the bundle.
+     * </p>
+     * </dd>
+     * <dt>FailureThresholdBreached</dt>
+     * <dd>
+     * <p>
+     * The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     * </p>
+     * </dd>
+     * <dt>GreengrassDeploymentFailed</dt>
+     * <dd>
+     * <p>
+     * The robot application could not be deployed to the robot.
+     * </p>
+     * </dd>
+     * <dt>GreengrassGroupVersionDoesNotExist</dt>
+     * <dd>
+     * <p>
+     * The AWS Greengrass group or version associated with a robot is missing.
+     * </p>
+     * </dd>
+     * <dt>InternalServerError</dt>
+     * <dd>
+     * <p>
+     * An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotApplicationArchitecture</dt>
+     * <dd>
+     * <p>
+     * The robot application does not have a source that matches the architecture of the robot.
+     * </p>
+     * </dd>
+     * <dt>MissingRobotDeploymentResource</dt>
+     * <dd>
+     * <p>
+     * One or more of the resources specified for the robot application are missing. For example, does the robot
+     * application have the correct launch package and launch file?
+     * </p>
+     * </dd>
+     * <dt>PostLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The post-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>PreLaunchFileFailure</dt>
+     * <dd>
+     * <p>
+     * The pre-launch script failed.
+     * </p>
+     * </dd>
+     * <dt>ResourceNotFound</dt>
+     * <dd>
+     * <p>
+     * One or more deployment resources are missing. For example, do robot application source bundles still exist?
+     * </p>
+     * </dd>
+     * <dt>RobotDeploymentNoResponse</dt>
+     * <dd>
+     * <p>
+     * There is no response from the robot. It might not be powered on or connected to the internet.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param failureCode
-     *        The failure code of the deployment job if it failed.
+     *        The failure code of the simulation job if it failed:</p>
+     *        <dl>
+     *        <dt>BadPermissionError</dt>
+     *        <dd>
+     *        <p>
+     *        AWS Greengrass requires a service-level role permission to access other services. The role must include
+     *        the <a href=
+     *        "https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor"
+     *        > <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>.
+     *        </p>
+     *        </dd>
+     *        <dt>ExtractingBundleFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application could not be extracted from the bundle.
+     *        </p>
+     *        </dd>
+     *        <dt>FailureThresholdBreached</dt>
+     *        <dd>
+     *        <p>
+     *        The percentage of robots that could not be updated exceeded the percentage set for the deployment.
+     *        </p>
+     *        </dd>
+     *        <dt>GreengrassDeploymentFailed</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application could not be deployed to the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>GreengrassGroupVersionDoesNotExist</dt>
+     *        <dd>
+     *        <p>
+     *        The AWS Greengrass group or version associated with a robot is missing.
+     *        </p>
+     *        </dd>
+     *        <dt>InternalServerError</dt>
+     *        <dd>
+     *        <p>
+     *        An internal error has occurred. Retry your request, but if the problem persists, contact us with details.
+     *        </p>
+     *        </dd>
+     *        <dt>MissingRobotApplicationArchitecture</dt>
+     *        <dd>
+     *        <p>
+     *        The robot application does not have a source that matches the architecture of the robot.
+     *        </p>
+     *        </dd>
+     *        <dt>MissingRobotDeploymentResource</dt>
+     *        <dd>
+     *        <p>
+     *        One or more of the resources specified for the robot application are missing. For example, does the robot
+     *        application have the correct launch package and launch file?
+     *        </p>
+     *        </dd>
+     *        <dt>PostLaunchFileFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The post-launch script failed.
+     *        </p>
+     *        </dd>
+     *        <dt>PreLaunchFileFailure</dt>
+     *        <dd>
+     *        <p>
+     *        The pre-launch script failed.
+     *        </p>
+     *        </dd>
+     *        <dt>ResourceNotFound</dt>
+     *        <dd>
+     *        <p>
+     *        One or more deployment resources are missing. For example, do robot application source bundles still
+     *        exist?
+     *        </p>
+     *        </dd>
+     *        <dt>RobotDeploymentNoResponse</dt>
+     *        <dd>
+     *        <p>
+     *        There is no response from the robot. It might not be powered on or connected to the internet.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentJobErrorCode
      */
@@ -461,6 +1169,67 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The list of all tags added to the deployment job.
+     * </p>
+     * 
+     * @return The list of all tags added to the deployment job.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the deployment job.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the deployment job.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the deployment job.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the deployment job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentJobResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateDeploymentJobResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentJobResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -487,7 +1256,9 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getDeploymentConfig() != null)
-            sb.append("DeploymentConfig: ").append(getDeploymentConfig());
+            sb.append("DeploymentConfig: ").append(getDeploymentConfig()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -534,6 +1305,10 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getDeploymentConfig() != null && other.getDeploymentConfig().equals(this.getDeploymentConfig()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -550,6 +1325,7 @@ public class CreateDeploymentJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getDeploymentConfig() == null) ? 0 : getDeploymentConfig().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

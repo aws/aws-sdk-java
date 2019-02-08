@@ -30,8 +30,8 @@ public class DescribeMatchmakingRuleSetsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different
+     * from the optional "name" field in the rule set body.)
      * </p>
      */
     private java.util.List<String> names;
@@ -52,12 +52,12 @@ public class DescribeMatchmakingRuleSetsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different
+     * from the optional "name" field in the rule set body.)
      * </p>
      * 
-     * @return Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with
-     *         a matchmaking configuration.
+     * @return List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is
+     *         different from the optional "name" field in the rule set body.)
      */
 
     public java.util.List<String> getNames() {
@@ -66,13 +66,13 @@ public class DescribeMatchmakingRuleSetsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different
+     * from the optional "name" field in the rule set body.)
      * </p>
      * 
      * @param names
-     *        Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     *        matchmaking configuration.
+     *        List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is
+     *        different from the optional "name" field in the rule set body.)
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -86,8 +86,8 @@ public class DescribeMatchmakingRuleSetsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different
+     * from the optional "name" field in the rule set body.)
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -96,8 +96,8 @@ public class DescribeMatchmakingRuleSetsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param names
-     *        Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     *        matchmaking configuration.
+     *        List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is
+     *        different from the optional "name" field in the rule set body.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,13 +113,13 @@ public class DescribeMatchmakingRuleSetsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     * matchmaking configuration.
+     * List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is different
+     * from the optional "name" field in the rule set body.)
      * </p>
      * 
      * @param names
-     *        Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a
-     *        matchmaking configuration.
+     *        List of one or more matchmaking rule set names to retrieve details for. (Note: The rule set name is
+     *        different from the optional "name" field in the rule set body.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

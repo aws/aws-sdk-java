@@ -36,7 +36,7 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
     private String packageName;
     /**
      * <p>
-     * The launch file.
+     * The launch file name.
      * </p>
      */
     private String launchFile;
@@ -89,11 +89,11 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch file.
+     * The launch file name.
      * </p>
      * 
      * @param launchFile
-     *        The launch file.
+     *        The launch file name.
      */
 
     public void setLaunchFile(String launchFile) {
@@ -102,10 +102,10 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch file.
+     * The launch file name.
      * </p>
      * 
-     * @return The launch file.
+     * @return The launch file name.
      */
 
     public String getLaunchFile() {
@@ -114,11 +114,11 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch file.
+     * The launch file name.
      * </p>
      * 
      * @param launchFile
-     *        The launch file.
+     *        The launch file name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

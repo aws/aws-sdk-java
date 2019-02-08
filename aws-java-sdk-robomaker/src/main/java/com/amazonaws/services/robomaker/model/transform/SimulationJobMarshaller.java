@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.robomaker.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -40,6 +41,8 @@ public class SimulationJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureBehavior").build();
     private static final MarshallingInfo<String> FAILURECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureCode").build();
+    private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReason").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +57,8 @@ public class SimulationJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("robotApplications").build();
     private static final MarshallingInfo<List> SIMULATIONAPPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("simulationApplications").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
 
@@ -79,6 +84,7 @@ public class SimulationJobMarshaller {
             protocolMarshaller.marshall(simulationJob.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(simulationJob.getFailureBehavior(), FAILUREBEHAVIOR_BINDING);
             protocolMarshaller.marshall(simulationJob.getFailureCode(), FAILURECODE_BINDING);
+            protocolMarshaller.marshall(simulationJob.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(simulationJob.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(simulationJob.getOutputLocation(), OUTPUTLOCATION_BINDING);
             protocolMarshaller.marshall(simulationJob.getMaxJobDurationInSeconds(), MAXJOBDURATIONINSECONDS_BINDING);
@@ -86,6 +92,7 @@ public class SimulationJobMarshaller {
             protocolMarshaller.marshall(simulationJob.getIamRole(), IAMROLE_BINDING);
             protocolMarshaller.marshall(simulationJob.getRobotApplications(), ROBOTAPPLICATIONS_BINDING);
             protocolMarshaller.marshall(simulationJob.getSimulationApplications(), SIMULATIONAPPLICATIONS_BINDING);
+            protocolMarshaller.marshall(simulationJob.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(simulationJob.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -49,8 +49,94 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
     private String failureBehavior;
     /**
      * <p>
-     * The failure code of the simulation job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>InternalServiceError</dt>
+     * <dd>
+     * <p>
+     * Internal service error.
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Robot application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Simulation application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsS3Output</dt>
+     * <dd>
+     * <p>
+     * Unable to publish outputs to customer-provided S3 bucket.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt>
+     * <dd>
+     * <p>
+     * Unable to publish logs to customer-provided CloudWatch Logs resource.
+     * </p>
+     * </dd>
+     * <dt>SubnetIpLimitExceeded</dt>
+     * <dd>
+     * <p>
+     * Subnet IP limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>ENILimitExceeded</dt>
+     * <dd>
+     * <p>
+     * ENI limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsUserCredentials</dt>
+     * <dd>
+     * <p>
+     * Unable to use the Role provided.
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for RobotApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for SimulationApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String failureCode;
     /**
@@ -96,6 +182,12 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<SimulationApplicationConfig> simulationApplications;
+    /**
+     * <p>
+     * The list of all tags added to the simulation job.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * Information about the vpc configuration.
@@ -303,11 +395,182 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The failure code of the simulation job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>InternalServiceError</dt>
+     * <dd>
+     * <p>
+     * Internal service error.
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Robot application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Simulation application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsS3Output</dt>
+     * <dd>
+     * <p>
+     * Unable to publish outputs to customer-provided S3 bucket.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt>
+     * <dd>
+     * <p>
+     * Unable to publish logs to customer-provided CloudWatch Logs resource.
+     * </p>
+     * </dd>
+     * <dt>SubnetIpLimitExceeded</dt>
+     * <dd>
+     * <p>
+     * Subnet IP limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>ENILimitExceeded</dt>
+     * <dd>
+     * <p>
+     * ENI limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsUserCredentials</dt>
+     * <dd>
+     * <p>
+     * Unable to use the Role provided.
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for RobotApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for SimulationApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param failureCode
-     *        The failure code of the simulation job if it failed.
+     *        The failure code of the simulation job if it failed:</p>
+     *        <dl>
+     *        <dt>InternalServiceError</dt>
+     *        <dd>
+     *        <p>
+     *        Internal service error.
+     *        </p>
+     *        </dd>
+     *        <dt>RobotApplicationCrash</dt>
+     *        <dd>
+     *        <p>
+     *        Robot application exited abnormally.
+     *        </p>
+     *        </dd>
+     *        <dt>SimulationApplicationCrash</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation application exited abnormally.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Robot application bundle could not be downloaded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation application bundle could not be downloaded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsS3Output</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to publish outputs to customer-provided S3 bucket.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsCloudwatchLogs</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to publish logs to customer-provided CloudWatch Logs resource.
+     *        </p>
+     *        </dd>
+     *        <dt>SubnetIpLimitExceeded</dt>
+     *        <dd>
+     *        <p>
+     *        Subnet IP limit exceeded.
+     *        </p>
+     *        </dd>
+     *        <dt>ENILimitExceeded</dt>
+     *        <dd>
+     *        <p>
+     *        ENI limit exceeded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsUserCredentials</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to use the Role provided.
+     *        </p>
+     *        </dd>
+     *        <dt>InvalidBundleRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     *        </p>
+     *        </dd>
+     *        <dt>InvalidBundleSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     *        </p>
+     *        </dd>
+     *        <dt>RobotApplicationVersionMismatchedEtag</dt>
+     *        <dd>
+     *        <p>
+     *        Etag for RobotApplication does not match value during version creation.
+     *        </p>
+     *        </dd>
+     *        <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     *        <dd>
+     *        <p>
+     *        Etag for SimulationApplication does not match value during version creation.
+     *        </p>
+     *        </dd>
      * @see SimulationJobErrorCode
      */
 
@@ -317,10 +580,181 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The failure code of the simulation job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>InternalServiceError</dt>
+     * <dd>
+     * <p>
+     * Internal service error.
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Robot application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Simulation application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsS3Output</dt>
+     * <dd>
+     * <p>
+     * Unable to publish outputs to customer-provided S3 bucket.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt>
+     * <dd>
+     * <p>
+     * Unable to publish logs to customer-provided CloudWatch Logs resource.
+     * </p>
+     * </dd>
+     * <dt>SubnetIpLimitExceeded</dt>
+     * <dd>
+     * <p>
+     * Subnet IP limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>ENILimitExceeded</dt>
+     * <dd>
+     * <p>
+     * ENI limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsUserCredentials</dt>
+     * <dd>
+     * <p>
+     * Unable to use the Role provided.
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for RobotApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for SimulationApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The failure code of the simulation job if it failed.
+     * @return The failure code of the simulation job if it failed:</p>
+     *         <dl>
+     *         <dt>InternalServiceError</dt>
+     *         <dd>
+     *         <p>
+     *         Internal service error.
+     *         </p>
+     *         </dd>
+     *         <dt>RobotApplicationCrash</dt>
+     *         <dd>
+     *         <p>
+     *         Robot application exited abnormally.
+     *         </p>
+     *         </dd>
+     *         <dt>SimulationApplicationCrash</dt>
+     *         <dd>
+     *         <p>
+     *         Simulation application exited abnormally.
+     *         </p>
+     *         </dd>
+     *         <dt>BadPermissionsRobotApplication</dt>
+     *         <dd>
+     *         <p>
+     *         Robot application bundle could not be downloaded.
+     *         </p>
+     *         </dd>
+     *         <dt>BadPermissionsSimulationApplication</dt>
+     *         <dd>
+     *         <p>
+     *         Simulation application bundle could not be downloaded.
+     *         </p>
+     *         </dd>
+     *         <dt>BadPermissionsS3Output</dt>
+     *         <dd>
+     *         <p>
+     *         Unable to publish outputs to customer-provided S3 bucket.
+     *         </p>
+     *         </dd>
+     *         <dt>BadPermissionsCloudwatchLogs</dt>
+     *         <dd>
+     *         <p>
+     *         Unable to publish logs to customer-provided CloudWatch Logs resource.
+     *         </p>
+     *         </dd>
+     *         <dt>SubnetIpLimitExceeded</dt>
+     *         <dd>
+     *         <p>
+     *         Subnet IP limit exceeded.
+     *         </p>
+     *         </dd>
+     *         <dt>ENILimitExceeded</dt>
+     *         <dd>
+     *         <p>
+     *         ENI limit exceeded.
+     *         </p>
+     *         </dd>
+     *         <dt>BadPermissionsUserCredentials</dt>
+     *         <dd>
+     *         <p>
+     *         Unable to use the Role provided.
+     *         </p>
+     *         </dd>
+     *         <dt>InvalidBundleRobotApplication</dt>
+     *         <dd>
+     *         <p>
+     *         Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     *         </p>
+     *         </dd>
+     *         <dt>InvalidBundleSimulationApplication</dt>
+     *         <dd>
+     *         <p>
+     *         Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     *         </p>
+     *         </dd>
+     *         <dt>RobotApplicationVersionMismatchedEtag</dt>
+     *         <dd>
+     *         <p>
+     *         Etag for RobotApplication does not match value during version creation.
+     *         </p>
+     *         </dd>
+     *         <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     *         <dd>
+     *         <p>
+     *         Etag for SimulationApplication does not match value during version creation.
+     *         </p>
+     *         </dd>
      * @see SimulationJobErrorCode
      */
 
@@ -330,11 +764,182 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The failure code of the simulation job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>InternalServiceError</dt>
+     * <dd>
+     * <p>
+     * Internal service error.
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Robot application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Simulation application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsS3Output</dt>
+     * <dd>
+     * <p>
+     * Unable to publish outputs to customer-provided S3 bucket.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt>
+     * <dd>
+     * <p>
+     * Unable to publish logs to customer-provided CloudWatch Logs resource.
+     * </p>
+     * </dd>
+     * <dt>SubnetIpLimitExceeded</dt>
+     * <dd>
+     * <p>
+     * Subnet IP limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>ENILimitExceeded</dt>
+     * <dd>
+     * <p>
+     * ENI limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsUserCredentials</dt>
+     * <dd>
+     * <p>
+     * Unable to use the Role provided.
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for RobotApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for SimulationApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param failureCode
-     *        The failure code of the simulation job if it failed.
+     *        The failure code of the simulation job if it failed:</p>
+     *        <dl>
+     *        <dt>InternalServiceError</dt>
+     *        <dd>
+     *        <p>
+     *        Internal service error.
+     *        </p>
+     *        </dd>
+     *        <dt>RobotApplicationCrash</dt>
+     *        <dd>
+     *        <p>
+     *        Robot application exited abnormally.
+     *        </p>
+     *        </dd>
+     *        <dt>SimulationApplicationCrash</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation application exited abnormally.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Robot application bundle could not be downloaded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation application bundle could not be downloaded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsS3Output</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to publish outputs to customer-provided S3 bucket.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsCloudwatchLogs</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to publish logs to customer-provided CloudWatch Logs resource.
+     *        </p>
+     *        </dd>
+     *        <dt>SubnetIpLimitExceeded</dt>
+     *        <dd>
+     *        <p>
+     *        Subnet IP limit exceeded.
+     *        </p>
+     *        </dd>
+     *        <dt>ENILimitExceeded</dt>
+     *        <dd>
+     *        <p>
+     *        ENI limit exceeded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsUserCredentials</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to use the Role provided.
+     *        </p>
+     *        </dd>
+     *        <dt>InvalidBundleRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     *        </p>
+     *        </dd>
+     *        <dt>InvalidBundleSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     *        </p>
+     *        </dd>
+     *        <dt>RobotApplicationVersionMismatchedEtag</dt>
+     *        <dd>
+     *        <p>
+     *        Etag for RobotApplication does not match value during version creation.
+     *        </p>
+     *        </dd>
+     *        <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     *        <dd>
+     *        <p>
+     *        Etag for SimulationApplication does not match value during version creation.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SimulationJobErrorCode
      */
@@ -346,11 +951,182 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The failure code of the simulation job if it failed.
+     * The failure code of the simulation job if it failed:
      * </p>
+     * <dl>
+     * <dt>InternalServiceError</dt>
+     * <dd>
+     * <p>
+     * Internal service error.
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Robot application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationCrash</dt>
+     * <dd>
+     * <p>
+     * Simulation application exited abnormally.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation application bundle could not be downloaded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsS3Output</dt>
+     * <dd>
+     * <p>
+     * Unable to publish outputs to customer-provided S3 bucket.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsCloudwatchLogs</dt>
+     * <dd>
+     * <p>
+     * Unable to publish logs to customer-provided CloudWatch Logs resource.
+     * </p>
+     * </dd>
+     * <dt>SubnetIpLimitExceeded</dt>
+     * <dd>
+     * <p>
+     * Subnet IP limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>ENILimitExceeded</dt>
+     * <dd>
+     * <p>
+     * ENI limit exceeded.
+     * </p>
+     * </dd>
+     * <dt>BadPermissionsUserCredentials</dt>
+     * <dd>
+     * <p>
+     * Unable to use the Role provided.
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleRobotApplication</dt>
+     * <dd>
+     * <p>
+     * Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>InvalidBundleSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     * </p>
+     * </dd>
+     * <dt>RobotApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for RobotApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     * <dd>
+     * <p>
+     * Etag for SimulationApplication does not match value during version creation.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param failureCode
-     *        The failure code of the simulation job if it failed.
+     *        The failure code of the simulation job if it failed:</p>
+     *        <dl>
+     *        <dt>InternalServiceError</dt>
+     *        <dd>
+     *        <p>
+     *        Internal service error.
+     *        </p>
+     *        </dd>
+     *        <dt>RobotApplicationCrash</dt>
+     *        <dd>
+     *        <p>
+     *        Robot application exited abnormally.
+     *        </p>
+     *        </dd>
+     *        <dt>SimulationApplicationCrash</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation application exited abnormally.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Robot application bundle could not be downloaded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation application bundle could not be downloaded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsS3Output</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to publish outputs to customer-provided S3 bucket.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsCloudwatchLogs</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to publish logs to customer-provided CloudWatch Logs resource.
+     *        </p>
+     *        </dd>
+     *        <dt>SubnetIpLimitExceeded</dt>
+     *        <dd>
+     *        <p>
+     *        Subnet IP limit exceeded.
+     *        </p>
+     *        </dd>
+     *        <dt>ENILimitExceeded</dt>
+     *        <dd>
+     *        <p>
+     *        ENI limit exceeded.
+     *        </p>
+     *        </dd>
+     *        <dt>BadPermissionsUserCredentials</dt>
+     *        <dd>
+     *        <p>
+     *        Unable to use the Role provided.
+     *        </p>
+     *        </dd>
+     *        <dt>InvalidBundleRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Robot bundle cannot be extracted (invalid format, bundling error, or other issue).
+     *        </p>
+     *        </dd>
+     *        <dt>InvalidBundleSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        Simulation bundle cannot be extracted (invalid format, bundling error, or other issue).
+     *        </p>
+     *        </dd>
+     *        <dt>RobotApplicationVersionMismatchedEtag</dt>
+     *        <dd>
+     *        <p>
+     *        Etag for RobotApplication does not match value during version creation.
+     *        </p>
+     *        </dd>
+     *        <dt>SimulationApplicationVersionMismatchedEtag</dt>
+     *        <dd>
+     *        <p>
+     *        Etag for SimulationApplication does not match value during version creation.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SimulationJobErrorCode
      */
@@ -708,6 +1484,67 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * The list of all tags added to the simulation job.
+     * </p>
+     * 
+     * @return The list of all tags added to the simulation job.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the simulation job.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the simulation job.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the simulation job.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the simulation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationJobResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateSimulationJobResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationJobResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the vpc configuration.
      * </p>
      * 
@@ -782,6 +1619,8 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("RobotApplications: ").append(getRobotApplications()).append(",");
         if (getSimulationApplications() != null)
             sb.append("SimulationApplications: ").append(getSimulationApplications()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
@@ -846,6 +1685,10 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getSimulationApplications() != null && other.getSimulationApplications().equals(this.getSimulationApplications()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
@@ -870,6 +1713,7 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getIamRole() == null) ? 0 : getIamRole().hashCode());
         hashCode = prime * hashCode + ((getRobotApplications() == null) ? 0 : getRobotApplications().hashCode());
         hashCode = prime * hashCode + ((getSimulationApplications() == null) ? 0 : getSimulationApplications().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }

@@ -23,9 +23,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * object contains only the player ID and player session ID. To retrieve full details on a player session, call
  * <a>DescribePlayerSessions</a> with the player session ID.
  * </p>
- * <p>
- * Player-session-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

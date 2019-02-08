@@ -53,6 +53,12 @@ public class CreateRobotResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String architecture;
+    /**
+     * <p>
+     * The list of all tags added to the robot.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -274,6 +280,67 @@ public class CreateRobotResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The list of all tags added to the robot.
+     * </p>
+     * 
+     * @return The list of all tags added to the robot.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the robot.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the robot.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the robot.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the robot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRobotResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateRobotResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRobotResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -294,7 +361,9 @@ public class CreateRobotResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getGreengrassGroupId() != null)
             sb.append("GreengrassGroupId: ").append(getGreengrassGroupId()).append(",");
         if (getArchitecture() != null)
-            sb.append("Architecture: ").append(getArchitecture());
+            sb.append("Architecture: ").append(getArchitecture()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -329,6 +398,10 @@ public class CreateRobotResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -342,6 +415,7 @@ public class CreateRobotResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getGreengrassGroupId() == null) ? 0 : getGreengrassGroupId().hashCode());
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

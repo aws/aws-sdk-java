@@ -21,9 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Routing configuration for a fleet alias.
  * </p>
- * <p>
- * Fleet-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

@@ -23,9 +23,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * capacity of one instance, but can be updated as needed. The maximum number of instances for a fleet is determined by
  * the fleet's instance type.
  * </p>
- * <p>
- * Fleet-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

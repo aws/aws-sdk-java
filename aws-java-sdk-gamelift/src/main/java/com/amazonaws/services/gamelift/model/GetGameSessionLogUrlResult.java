@@ -28,18 +28,24 @@ public class GetGameSessionLogUrlResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Location of the requested game session logs, available for download.
+     * Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after
+     * which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day
+     * period that the logs are retained.
      * </p>
      */
     private String preSignedUrl;
 
     /**
      * <p>
-     * Location of the requested game session logs, available for download.
+     * Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after
+     * which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day
+     * period that the logs are retained.
      * </p>
      * 
      * @param preSignedUrl
-     *        Location of the requested game session logs, available for download.
+     *        Location of the requested game session logs, available for download. This URL is valid for 15 minutes,
+     *        after which S3 will reject any download request using this URL. You can request a new URL any time within
+     *        the 14-day period that the logs are retained.
      */
 
     public void setPreSignedUrl(String preSignedUrl) {
@@ -48,10 +54,14 @@ public class GetGameSessionLogUrlResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Location of the requested game session logs, available for download.
+     * Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after
+     * which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day
+     * period that the logs are retained.
      * </p>
      * 
-     * @return Location of the requested game session logs, available for download.
+     * @return Location of the requested game session logs, available for download. This URL is valid for 15 minutes,
+     *         after which S3 will reject any download request using this URL. You can request a new URL any time within
+     *         the 14-day period that the logs are retained.
      */
 
     public String getPreSignedUrl() {
@@ -60,11 +70,15 @@ public class GetGameSessionLogUrlResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Location of the requested game session logs, available for download.
+     * Location of the requested game session logs, available for download. This URL is valid for 15 minutes, after
+     * which S3 will reject any download request using this URL. You can request a new URL any time within the 14-day
+     * period that the logs are retained.
      * </p>
      * 
      * @param preSignedUrl
-     *        Location of the requested game session logs, available for download.
+     *        Location of the requested game session logs, available for download. This URL is valid for 15 minutes,
+     *        after which S3 will reject any download request using this URL. You can request a new URL any time within
+     *        the 14-day period that the logs are retained.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -87,7 +87,13 @@ public interface AWSRoboMaker {
 
     /**
      * <p>
-     * Creates a deployment job.
+     * Deploys a specific version of a robot application to robots in a fleet.
+     * </p>
+     * <p>
+     * The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a
+     * new version, use <code>CreateRobotApplicationVersion</code> or see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot
+     * Application Version</a>.
      * </p>
      * 
      * @param createDeploymentJobRequest
@@ -105,6 +111,7 @@ public interface AWSRoboMaker {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
      * @throws ConcurrentDeploymentException
+     *         The failure percentage threshold percentage was met.
      * @throws IdempotentParameterMismatchException
      *         The request uses the same client token as a previous, but non-identical request. Do not reuse a client
      *         token with different requests, unless the requests are identical.
@@ -155,7 +162,7 @@ public interface AWSRoboMaker {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
      * @throws ResourceAlreadyExistsException
-     *         The specified resource already exists
+     *         The specified resource already exists.
      * @sample AWSRoboMaker.CreateRobot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/CreateRobot" target="_top">AWS API
      *      Documentation</a>
@@ -173,7 +180,7 @@ public interface AWSRoboMaker {
      *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
      *         provides an explanation of the error value.
      * @throws ResourceAlreadyExistsException
-     *         The specified resource already exists
+     *         The specified resource already exists.
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
@@ -227,7 +234,7 @@ public interface AWSRoboMaker {
      *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
      *         provides an explanation of the error value.
      * @throws ResourceAlreadyExistsException
-     *         The specified resource already exists
+     *         The specified resource already exists.
      * @throws LimitExceededException
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
@@ -663,6 +670,28 @@ public interface AWSRoboMaker {
 
     /**
      * <p>
+     * Lists all tags on a AWS RoboMaker resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @sample AWSRoboMaker.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Registers a robot with a fleet.
      * </p>
      * 
@@ -731,6 +760,7 @@ public interface AWSRoboMaker {
      *         The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests
      *         exceeds the maximum number allowed.
      * @throws ConcurrentDeploymentException
+     *         The failure percentage threshold percentage was met.
      * @throws IdempotentParameterMismatchException
      *         The request uses the same client token as a previous, but non-identical request. Do not reuse a client
      *         token with different requests, unless the requests are identical.
@@ -739,6 +769,64 @@ public interface AWSRoboMaker {
      *      API Documentation</a>
      */
     SyncDeploymentJobResult syncDeploymentJob(SyncDeploymentJobRequest syncDeploymentJobRequest);
+
+    /**
+     * <p>
+     * Adds or edits tags for a AWS RoboMaker resource.
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be
+     * empty strings.
+     * </p>
+     * <p>
+     * For information about the rules that apply to tag keys and tag values, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+     * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @sample AWSRoboMaker.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified AWS RoboMaker resource.
+     * </p>
+     * <p>
+     * To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+     * <code>TagResource</code> </a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         AWS RoboMaker experienced a service issue. Try your call again.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidParameterException
+     *         A parameter specified in a request is not valid, is unsupported, or cannot be used. The returned message
+     *         provides an explanation of the error value.
+     * @throws ThrottlingException
+     *         AWS RoboMaker is temporarily unable to process the request. Try your call again.
+     * @sample AWSRoboMaker.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

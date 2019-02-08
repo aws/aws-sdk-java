@@ -15,7 +15,9 @@ package com.amazonaws.services.robomaker.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The failure percentage threshold percentage was met.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ConcurrentDeploymentException extends com.amazonaws.services.robomaker.model.AWSRoboMakerException {

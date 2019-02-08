@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -44,6 +45,8 @@ public class CreateInputRequestMarshaller {
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<List> SOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sources").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
 
@@ -70,6 +73,7 @@ public class CreateInputRequestMarshaller {
             protocolMarshaller.marshall(createInputRequest.getRequestId(), REQUESTID_BINDING);
             protocolMarshaller.marshall(createInputRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createInputRequest.getSources(), SOURCES_BINDING);
+            protocolMarshaller.marshall(createInputRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createInputRequest.getType(), TYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

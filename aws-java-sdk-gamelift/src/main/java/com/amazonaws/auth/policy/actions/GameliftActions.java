@@ -59,6 +59,8 @@ public enum GameliftActions implements Action {
     DeleteGameSessionQueue("gamelift:DeleteGameSessionQueue"),
     /** Action for the DeleteMatchmakingConfiguration operation. */
     DeleteMatchmakingConfiguration("gamelift:DeleteMatchmakingConfiguration"),
+    /** Action for the DeleteMatchmakingRuleSet operation. */
+    DeleteMatchmakingRuleSet("gamelift:DeleteMatchmakingRuleSet"),
     /** Action for the DeleteScalingPolicy operation. */
     DeleteScalingPolicy("gamelift:DeleteScalingPolicy"),
     /** Action for the DeleteVpcPeeringAuthorization operation. */

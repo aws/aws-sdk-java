@@ -47,10 +47,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
     private Long maxJobDurationInSeconds;
     /**
      * <p>
-     * The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     * policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     * "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     * >specify AWS security credentials for your application</a>.
+     * The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated
+     * policies on your behalf. This is how credentials are passed in to your simulation job.
      * </p>
      */
     private String iamRole;
@@ -86,6 +84,12 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<SimulationApplicationConfig> simulationApplications;
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the simulation job.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
     /**
      * <p>
      * If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security
@@ -229,17 +233,13 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     * policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     * "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     * >specify AWS security credentials for your application</a>.
+     * The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated
+     * policies on your behalf. This is how credentials are passed in to your simulation job.
      * </p>
      * 
      * @param iamRole
-     *        The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     *        policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     *        "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     *        >specify AWS security credentials for your application</a>.
+     *        The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its
+     *        associated policies on your behalf. This is how credentials are passed in to your simulation job.
      */
 
     public void setIamRole(String iamRole) {
@@ -248,17 +248,12 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     * policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     * "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     * >specify AWS security credentials for your application</a>.
+     * The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated
+     * policies on your behalf. This is how credentials are passed in to your simulation job.
      * </p>
      * 
-     * @return The IAM role that allows the simulation instance to call the AWS APIs that are specified in its
-     *         associated policies on your behalf. This is how credentials are passed in to your simulation job. See how
-     *         to <a href=
-     *         "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     *         >specify AWS security credentials for your application</a>.
+     * @return The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its
+     *         associated policies on your behalf. This is how credentials are passed in to your simulation job.
      */
 
     public String getIamRole() {
@@ -267,17 +262,13 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     * policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     * "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     * >specify AWS security credentials for your application</a>.
+     * The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated
+     * policies on your behalf. This is how credentials are passed in to your simulation job.
      * </p>
      * 
      * @param iamRole
-     *        The IAM role that allows the simulation instance to call the AWS APIs that are specified in its associated
-     *        policies on your behalf. This is how credentials are passed in to your simulation job. See how to <a href=
-     *        "https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/deployment-ecs-specify-credentials"
-     *        >specify AWS security credentials for your application</a>.
+     *        The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its
+     *        associated policies on your behalf. This is how credentials are passed in to your simulation job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,6 +586,67 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * A map that contains tag keys and tag values that are attached to the simulation job.
+     * </p>
+     * 
+     * @return A map that contains tag keys and tag values that are attached to the simulation job.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the simulation job.
+     * </p>
+     * 
+     * @param tags
+     *        A map that contains tag keys and tag values that are attached to the simulation job.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the simulation job.
+     * </p>
+     * 
+     * @param tags
+     *        A map that contains tag keys and tag values that are attached to the simulation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationJobRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateSimulationJobRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationJobRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
      * If your simulation job accesses resources in a VPC, you provide this parameter identifying the list of security
      * group IDs and subnet IDs. These must belong to the same VPC. You must provide at least one security group and one
      * subnet ID.
@@ -671,6 +723,8 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("RobotApplications: ").append(getRobotApplications()).append(",");
         if (getSimulationApplications() != null)
             sb.append("SimulationApplications: ").append(getSimulationApplications()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig());
         sb.append("}");
@@ -715,6 +769,10 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getSimulationApplications() != null && other.getSimulationApplications().equals(this.getSimulationApplications()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getVpcConfig() == null ^ this.getVpcConfig() == null)
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
@@ -734,6 +792,7 @@ public class CreateSimulationJobRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getFailureBehavior() == null) ? 0 : getFailureBehavior().hashCode());
         hashCode = prime * hashCode + ((getRobotApplications() == null) ? 0 : getRobotApplications().hashCode());
         hashCode = prime * hashCode + ((getSimulationApplications() == null) ? 0 : getSimulationApplications().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;
     }

@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.robomaker.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class CreateRobotRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("architecture").build();
     private static final MarshallingInfo<String> GREENGRASSGROUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("greengrassGroupId").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateRobotRequestMarshaller instance = new CreateRobotRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class CreateRobotRequestMarshaller {
             protocolMarshaller.marshall(createRobotRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createRobotRequest.getArchitecture(), ARCHITECTURE_BINDING);
             protocolMarshaller.marshall(createRobotRequest.getGreengrassGroupId(), GREENGRASSGROUPID_BINDING);
+            protocolMarshaller.marshall(createRobotRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

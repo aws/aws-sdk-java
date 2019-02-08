@@ -55,6 +55,12 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
     private Boolean zoneAwarenessEnabled;
     /**
      * <p>
+     * Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * </p>
+     */
+    private ZoneAwarenessConfig zoneAwarenessConfig;
+    /**
+     * <p>
      * The instance type for a dedicated master node.
      * </p>
      */
@@ -317,6 +323,46 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
 
     /**
      * <p>
+     * Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * </p>
+     * 
+     * @param zoneAwarenessConfig
+     *        Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     */
+
+    public void setZoneAwarenessConfig(ZoneAwarenessConfig zoneAwarenessConfig) {
+        this.zoneAwarenessConfig = zoneAwarenessConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * </p>
+     * 
+     * @return Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     */
+
+    public ZoneAwarenessConfig getZoneAwarenessConfig() {
+        return this.zoneAwarenessConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * </p>
+     * 
+     * @param zoneAwarenessConfig
+     *        Specifies the zone awareness configuration for a domain when zone awareness is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchClusterConfig withZoneAwarenessConfig(ZoneAwarenessConfig zoneAwarenessConfig) {
+        setZoneAwarenessConfig(zoneAwarenessConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The instance type for a dedicated master node.
      * </p>
      * 
@@ -448,6 +494,8 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
             sb.append("DedicatedMasterEnabled: ").append(getDedicatedMasterEnabled()).append(",");
         if (getZoneAwarenessEnabled() != null)
             sb.append("ZoneAwarenessEnabled: ").append(getZoneAwarenessEnabled()).append(",");
+        if (getZoneAwarenessConfig() != null)
+            sb.append("ZoneAwarenessConfig: ").append(getZoneAwarenessConfig()).append(",");
         if (getDedicatedMasterType() != null)
             sb.append("DedicatedMasterType: ").append(getDedicatedMasterType()).append(",");
         if (getDedicatedMasterCount() != null)
@@ -482,6 +530,10 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
             return false;
         if (other.getZoneAwarenessEnabled() != null && other.getZoneAwarenessEnabled().equals(this.getZoneAwarenessEnabled()) == false)
             return false;
+        if (other.getZoneAwarenessConfig() == null ^ this.getZoneAwarenessConfig() == null)
+            return false;
+        if (other.getZoneAwarenessConfig() != null && other.getZoneAwarenessConfig().equals(this.getZoneAwarenessConfig()) == false)
+            return false;
         if (other.getDedicatedMasterType() == null ^ this.getDedicatedMasterType() == null)
             return false;
         if (other.getDedicatedMasterType() != null && other.getDedicatedMasterType().equals(this.getDedicatedMasterType()) == false)
@@ -502,6 +554,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getDedicatedMasterEnabled() == null) ? 0 : getDedicatedMasterEnabled().hashCode());
         hashCode = prime * hashCode + ((getZoneAwarenessEnabled() == null) ? 0 : getZoneAwarenessEnabled().hashCode());
+        hashCode = prime * hashCode + ((getZoneAwarenessConfig() == null) ? 0 : getZoneAwarenessConfig().hashCode());
         hashCode = prime * hashCode + ((getDedicatedMasterType() == null) ? 0 : getDedicatedMasterType().hashCode());
         hashCode = prime * hashCode + ((getDedicatedMasterCount() == null) ? 0 : getDedicatedMasterCount().hashCode());
         return hashCode;

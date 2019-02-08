@@ -64,6 +64,10 @@ public class ElasticsearchClusterConfigJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     elasticsearchClusterConfig.setZoneAwarenessEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("ZoneAwarenessConfig", targetDepth)) {
+                    context.nextToken();
+                    elasticsearchClusterConfig.setZoneAwarenessConfig(ZoneAwarenessConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("DedicatedMasterType", targetDepth)) {
                     context.nextToken();
                     elasticsearchClusterConfig.setDedicatedMasterType(context.getUnmarshaller(String.class).unmarshall(context));

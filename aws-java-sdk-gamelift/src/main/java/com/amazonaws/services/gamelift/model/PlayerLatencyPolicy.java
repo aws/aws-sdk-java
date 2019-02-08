@@ -24,9 +24,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * reporting latency higher than the cap. Latency policies are only enforced when the placement request contains player
  * latency information.
  * </p>
- * <p>
- * Queue-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

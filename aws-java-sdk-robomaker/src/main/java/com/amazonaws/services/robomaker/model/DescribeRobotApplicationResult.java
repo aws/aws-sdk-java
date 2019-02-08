@@ -65,6 +65,12 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private java.util.Date lastUpdatedAt;
+    /**
+     * <p>
+     * The list of all tags added to the specified robot application.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -377,6 +383,67 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The list of all tags added to the specified robot application.
+     * </p>
+     * 
+     * @return The list of all tags added to the specified robot application.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the specified robot application.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the specified robot application.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the specified robot application.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the specified robot application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRobotApplicationResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public DescribeRobotApplicationResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRobotApplicationResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -401,7 +468,9 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
         if (getRevisionId() != null)
             sb.append("RevisionId: ").append(getRevisionId()).append(",");
         if (getLastUpdatedAt() != null)
-            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt());
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -444,6 +513,10 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -459,6 +532,7 @@ public class DescribeRobotApplicationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getRobotSoftwareSuite() == null) ? 0 : getRobotSoftwareSuite().hashCode());
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

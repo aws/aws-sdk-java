@@ -24,9 +24,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed
  * for the target based policy, including the target value.
  * </p>
- * <p>
- * Operations related to fleet capacity scaling include:
- * </p>
  * <ul>
  * <li>
  * <p>

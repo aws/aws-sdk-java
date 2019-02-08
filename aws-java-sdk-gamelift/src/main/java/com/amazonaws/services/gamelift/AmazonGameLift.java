@@ -58,17 +58,17 @@ import com.amazonaws.services.gamelift.model.*;
  * <li>
  * <p>
  * The Amazon Web Services software development kit (<a href="http://aws.amazon.com/tools/#sdk">AWS SDK</a>) is
- * available in <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients"
+ * available in <a href=
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-supported.html#gamelift-supported-clients"
  * >multiple languages</a> including C++ and C#. Use the SDK to access the API programmatically from an application,
  * such as a game client.
  * </p>
  * </li>
  * <li>
  * <p>
- * The <a href="http://aws.amazon.com/cli/">AWS command-line interface</a> (CLI) tool is primarily useful for handling
- * administrative actions, such as setting up and managing Amazon GameLift settings and resources. You can use the AWS
- * CLI to manage all of your AWS services.
+ * The <a href="https://docs.aws.amazon.com/cli/latest/userguide/">AWS command-line interface</a> (CLI) tool is
+ * primarily useful for handling administrative actions, such as setting up and managing Amazon GameLift settings and
+ * resources. You can use the AWS CLI to manage all of your AWS services.
  * </p>
  * </li>
  * <li>
@@ -84,7 +84,7 @@ import com.amazonaws.services.gamelift.model.*;
  * Amazon GameLift Local is a tool for testing your game's integration with Amazon GameLift before deploying it on the
  * service. This tools supports a subset of key API actions, which can be called from either the AWS CLI or
  * programmatically. See <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing an
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-testing-local.html">Testing an
  * Integration</a>.
  * </p>
  * </li>
@@ -95,7 +95,7 @@ import com.amazonaws.services.gamelift.model.*;
  * <ul>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer Guide</a> -- Read about Amazon
+ * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/"> Developer Guide</a> -- Read about Amazon
  * GameLift features and how to use them.
  * </p>
  * </li>
@@ -107,7 +107,8 @@ import com.amazonaws.services.gamelift.model.*;
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date with new features and techniques.
+ * <a href="https://gamedev.amazon.com/blogs/gamedev/">GameDev Blog</a> -- Stay up to date with new features and
+ * techniques.
  * </p>
  * </li>
  * <li>
@@ -118,8 +119,8 @@ import com.amazonaws.services.gamelift.model.*;
  * </li>
  * <li>
  * <p>
- * <a href="http://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document history</a> -- Stay
+ * <a href="https://aws.amazon.com/releasenotes/Amazon-GameLift/">Release notes</a> and <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/doc-history.html">document history</a> -- Stay
  * current with updates to the Amazon GameLift service, SDKs, and documentation.
  * </p>
  * </li>
@@ -278,7 +279,7 @@ import com.amazonaws.services.gamelift.model.*;
  * </p>
  * <p>
  * When setting up Amazon GameLift resources for your game, you first <a
- * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create a game build</a>
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">create a game build</a>
  * and upload it to Amazon GameLift. You can then use these actions to configure and manage a fleet of resources to run
  * your game servers, scale capacity to meet player demand, access performance and utilization metrics, and more.
  * </p>
@@ -416,39 +417,75 @@ import com.amazonaws.services.gamelift.model.*;
  * </li>
  * <li>
  * <p>
- * <b>Manage VPC peering connections for fleets</b>
+ * <b>Manage game session queues</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of your VPCs.
+ * <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new game sessions.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection authorizations.
+ * <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection authorization.
+ * <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session queue.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the VPC for a Amazon GameLift fleet and
- * one of your VPCs.
+ * <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the region.
+ * </p>
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Manage FlexMatch resources</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking configuration with instructions for building a player
+ * group and placing in a new game session.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or pending VPC peering connections with a
- * Amazon GameLift fleet.
+ * <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations defined a Amazon GameLift region.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a Amazon GameLift fleet.
+ * <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking configuration. queue.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from the region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching for player matches.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in a Amazon GameLift region.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of matchmaking rules.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteMatchmakingRuleSet</a> -- Remove a matchmaking rule set from the region.
  * </p>
  * </li>
  * </ul>
@@ -534,70 +571,39 @@ import com.amazonaws.services.gamelift.model.*;
  * </li>
  * <li>
  * <p>
- * <b>Manage game session queues</b>
+ * <b>Manage VPC peering connections for fleets</b>
  * </p>
  * <ul>
  * <li>
  * <p>
- * <a>CreateGameSessionQueue</a> -- Create a queue for processing requests for new game sessions.
+ * <a>CreateVpcPeeringAuthorization</a> -- Authorize a peering connection to one of your VPCs.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeGameSessionQueues</a> -- Retrieve game session queues defined in a Amazon GameLift region.
+ * <a>DescribeVpcPeeringAuthorizations</a> -- Retrieve valid peering connection authorizations.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateGameSessionQueue</a> -- Change the configuration of a game session queue.
+ * <a>DeleteVpcPeeringAuthorization</a> -- Delete a peering connection authorization.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DeleteGameSessionQueue</a> -- Remove a game session queue from the region.
- * </p>
- * </li>
- * </ul>
- * </li>
- * <li>
- * <p>
- * <b>Manage FlexMatch resources</b>
- * </p>
- * <ul>
- * <li>
- * <p>
- * <a>CreateMatchmakingConfiguration</a> -- Create a matchmaking configuration with instructions for building a player
- * group and placing in a new game session.
+ * <a>CreateVpcPeeringConnection</a> -- Establish a peering connection between the VPC for a Amazon GameLift fleet and
+ * one of your VPCs.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>DescribeMatchmakingConfigurations</a> -- Retrieve matchmaking configurations defined a Amazon GameLift region.
+ * <a>DescribeVpcPeeringConnections</a> -- Retrieve information on active or pending VPC peering connections with a
+ * Amazon GameLift fleet.
  * </p>
  * </li>
  * <li>
  * <p>
- * <a>UpdateMatchmakingConfiguration</a> -- Change settings for matchmaking configuration. queue.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteMatchmakingConfiguration</a> -- Remove a matchmaking configuration from the region.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>CreateMatchmakingRuleSet</a> -- Create a set of rules to use when searching for player matches.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeMatchmakingRuleSets</a> -- Retrieve matchmaking rule sets defined in a Amazon GameLift region.
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>ValidateMatchmakingRuleSet</a> -- Verify syntax for a set of matchmaking rules.
+ * <a>DeleteVpcPeeringConnection</a> -- Delete a VPC peering connection with a Amazon GameLift fleet.
  * </p>
  * </li>
  * </ul>
@@ -691,9 +697,6 @@ public interface AmazonGameLift {
      * where one or more players failed to accept the match, the ticket status is set to <code>FAILED</code>, and
      * processing is terminated. A new matchmaking request for these players can be submitted as needed.
      * </p>
-     * <p>
-     * Matchmaking-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -761,9 +764,6 @@ public interface AmazonGameLift {
      * including an alias ID, which you can reference when creating a game session. You can reassign an alias to another
      * fleet by calling <code>UpdateAlias</code>.
      * </p>
-     * <p>
-     * Alias-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -827,16 +827,16 @@ public interface AmazonGameLift {
      * </p>
      * <p>
      * Game server binaries must be combined into a <code>.zip</code> file for use with Amazon GameLift. See <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html">Uploading Your
      * Game</a> for more information.
      * </p>
      * <important>
      * <p>
      * To create new builds quickly and easily, use the AWS CLI command <b> <a
-     * href="http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a> </b>. This
+     * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a> </b>. This
      * helper command uploads your build and creates a new build record in one step, and automatically handles the
      * necessary permissions. See <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html"> Upload Build
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html"> Upload Build
      * Files to Amazon GameLift</a> for more help.
      * </p>
      * </important>
@@ -849,7 +849,7 @@ public interface AmazonGameLift {
      * <p>
      * Store a build file in an Amazon S3 bucket under your own AWS account. To use this option, you must first give
      * Amazon GameLift access to that Amazon S3 bucket. See <a href=
-     * "http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build"
      * > Create a Build with Files in Amazon S3</a> for detailed help. To create a new build record using files in your
      * Amazon S3 bucket, call <code>CreateBuild</code> and specify a build name, operating system, and the storage
      * location of your game build.
@@ -861,7 +861,7 @@ public interface AmazonGameLift {
      * <code>CreateBuild</code> with a build name and operating system. This action creates a new build record and
      * returns an Amazon S3 storage location (bucket and key only) and temporary access credentials. Use the credentials
      * to manually upload your build file to the storage location (see the Amazon S3 topic <a
-     * href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading Objects</a>). You can
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading Objects</a>). You can
      * upload files to a location only once.
      * </p>
      * </li>
@@ -870,9 +870,6 @@ public interface AmazonGameLift {
      * If successful, this operation creates a new build record with a unique build ID and places it in
      * <code>INITIALIZED</code> status. You can use <a>DescribeBuild</a> to check the status of your build. A build must
      * be in <code>READY</code> status before it can be used to create fleets.
-     * </p>
-     * <p>
-     * Build-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -927,51 +924,12 @@ public interface AmazonGameLift {
      * Creates a new fleet to run your game servers. A fleet is a set of Amazon Elastic Compute Cloud (Amazon EC2)
      * instances, each of which can run multiple server processes to host game sessions. You set up a fleet to use
      * instances with certain hardware specifications (see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
-     * EC2 Instance Types</a> for more information), and deploy your game build to run on each instance.
+     * EC2 Instance Types</a>), and deploy your game build to the fleet.
      * </p>
      * <p>
-     * To create a new fleet, you must specify the following: (1) a fleet name, (2) the build ID of a successfully
-     * uploaded game build, (3) an EC2 instance type, and (4) a run-time configuration, which describes the server
-     * processes to run on each instance in the fleet. If you don't specify a fleet type (on-demand or spot), the new
-     * fleet uses on-demand instances by default.
-     * </p>
-     * <p>
-     * You can also configure the new fleet with the following settings:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Fleet description
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Access permissions for inbound traffic
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Fleet-wide game session protection
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Resource usage limits
-     * </p>
-     * </li>
-     * </ul>
-     * <ul>
-     * <li>
-     * <p>
-     * VPC peering connection (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
-     * GameLift Fleets</a>)
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * If you use Amazon CloudWatch for metrics, you can add the new fleet to a metric group. By adding multiple fleets
-     * to a metric group, you can view aggregated metrics for all the fleets in the group.
+     * To create a new fleet, you must provide the following: (1) a fleet name, (2) an EC2 instance type, (3) the build
+     * ID for your game build, and (4) a run-time configuration, which specifies the server processes to run on each
+     * instance in the fleet. If fleet type is not set, the new fleet will use on-demand instances by default.
      * </p>
      * <p>
      * If the <code>CreateFleet</code> call is successful, Amazon GameLift performs the following tasks. You can track
@@ -1011,7 +969,14 @@ public interface AmazonGameLift {
      * </li>
      * </ul>
      * <p>
-     * Fleet-related operations include:
+     * <b>Learn more</b>
+     * </p>
+     * <p>
+     * See Amazon GameLift Developer Guide topics in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html"> Working with Fleets</a>.
+     * </p>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -1178,9 +1143,6 @@ public interface AmazonGameLift {
      * <p>
      * <i>Available in Amazon GameLift Local.</i>
      * </p>
-     * <p>
-     * Game-session-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -1305,9 +1267,6 @@ public interface AmazonGameLift {
      * To create a new queue, provide a name, timeout value, a list of destinations and, if desired, a set of latency
      * policies. If successful, a new queue object is returned.
      * </p>
-     * <p>
-     * Queue-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -1375,12 +1334,9 @@ public interface AmazonGameLift {
      * polling ticket status with <a>DescribeMatchmaking</a>; or (2) receiving notifications with Amazon Simple
      * Notification Service (SNS). To use notifications, you first need to set up an SNS topic to receive the
      * notifications, and provide the topic ARN in the matchmaking configuration (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html"> Setting up
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-notification.html"> Setting up
      * Notifications for Matchmaking</a>). Since notifications promise only "best effort" delivery, we recommend calling
      * <code>DescribeMatchmaking</code> if no notifications are received within 30 seconds.
-     * </p>
-     * <p>
-     * Operations related to match configurations and rule sets include:
      * </p>
      * <ul>
      * <li>
@@ -1416,6 +1372,11 @@ public interface AmazonGameLift {
      * <li>
      * <p>
      * <a>ValidateMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingRuleSet</a>
      * </p>
      * </li>
      * </ul>
@@ -1447,26 +1408,40 @@ public interface AmazonGameLift {
      * <p>
      * Creates a new rule set for FlexMatch matchmaking. A rule set describes the type of match to create, such as the
      * number and size of teams, and sets the parameters for acceptable player matches, such as minimum skill level or
-     * character type. Rule sets are used in matchmaking configurations, which define how matchmaking requests are
-     * handled. Each <a>MatchmakingConfiguration</a> uses one rule set; you can set up multiple rule sets to handle the
-     * scenarios that suit your game (such as for different game modes), and create a separate matchmaking configuration
-     * for each rule set. See additional information on rule set content in the <a>MatchmakingRuleSet</a> structure. For
-     * help creating rule sets, including useful examples, see the topic <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html"> Adding FlexMatch to Your
-     * Game</a>.
+     * character type. A rule set is used by a <a>MatchmakingConfiguration</a>.
      * </p>
      * <p>
-     * Once created, matchmaking rule sets cannot be changed or deleted, so we recommend checking the rule set syntax
-     * using <a>ValidateMatchmakingRuleSet</a> before creating the rule set.
+     * To create a matchmaking rule set, provide unique rule set name and the rule set body in JSON format. Rule sets
+     * must be defined in the same region as the matchmaking configuration they will be used with.
      * </p>
      * <p>
-     * To create a matchmaking rule set, provide the set of rules and a unique name. Rule sets must be defined in the
-     * same region as the matchmaking configuration they will be used with. Rule sets cannot be edited or deleted. If
-     * you need to change a rule set, create a new one with the necessary edits and then update matchmaking
-     * configurations to use the new rule set.
+     * Since matchmaking rule sets cannot be edited, it is a good idea to check the rule set syntax using
+     * <a>ValidateMatchmakingRuleSet</a> before creating a new rule set.
      * </p>
      * <p>
-     * Operations related to match configurations and rule sets include:
+     * <b>Learn more</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a Rule Set</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-configuration.html">Design a
+     * Matchmaker</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html">Matchmaking with
+     * FlexMatch</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -1502,6 +1477,11 @@ public interface AmazonGameLift {
      * <li>
      * <p>
      * <a>ValidateMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingRuleSet</a>
      * </p>
      * </li>
      * </ul>
@@ -1536,9 +1516,6 @@ public interface AmazonGameLift {
      * </p>
      * <p>
      * <i>Available in Amazon GameLift Local.</i>
-     * </p>
-     * <p>
-     * Player-session-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -1626,9 +1603,6 @@ public interface AmazonGameLift {
      * <p>
      * <i>Available in Amazon GameLift Local.</i>
      * </p>
-     * <p>
-     * Player-session-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -1706,7 +1680,7 @@ public interface AmazonGameLift {
      * virtual private cloud (VPC) in your AWS account. VPC peering enables the game servers on your fleet to
      * communicate directly with other AWS resources. Once you've received authorization, call
      * <a>CreateVpcPeeringConnection</a> to establish the peering connection. For more information, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon
      * GameLift Fleets</a>.
      * </p>
      * <p>
@@ -1729,9 +1703,6 @@ public interface AmazonGameLift {
      * The authorization remains valid for 24 hours unless it is canceled by a call to
      * <a>DeleteVpcPeeringAuthorization</a>. You must create or delete the peering connection while the authorization is
      * valid.
-     * </p>
-     * <p>
-     * VPC peering connection operations include:
      * </p>
      * <ul>
      * <li>
@@ -1792,8 +1763,8 @@ public interface AmazonGameLift {
      * your Amazon GameLift fleet. VPC peering enables the game servers on your fleet to communicate directly with other
      * AWS resources. You can peer with VPCs in any AWS account that you have access to, including the account that you
      * use to manage your Amazon GameLift fleets. You cannot peer with VPCs that are in different regions. For more
-     * information, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering
-     * with Amazon GameLift Fleets</a>.
+     * information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.
      * </p>
      * <p>
      * Before calling this operation to establish the peering connection, you first need to call
@@ -1808,9 +1779,6 @@ public interface AmazonGameLift {
      * with. This operation is asynchronous. If successful, a <a>VpcPeeringConnection</a> request is created. You can
      * use continuous polling to track the request's status using <a>DescribeVpcPeeringConnections</a>, or by monitoring
      * fleet events for success or failure using <a>DescribeFleetEvents</a>.
-     * </p>
-     * <p>
-     * VPC peering connection operations include:
      * </p>
      * <ul>
      * <li>
@@ -1869,9 +1837,6 @@ public interface AmazonGameLift {
      * <p>
      * Deletes an alias. This action removes all record of the alias. Game clients attempting to access a server process
      * using the deleted alias receive an error. To delete an alias, specify the alias ID to be deleted.
-     * </p>
-     * <p>
-     * Alias-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -1934,9 +1899,6 @@ public interface AmazonGameLift {
      * To delete a build, specify its ID. Deleting a build does not affect the status of any active fleets using the
      * build, but you can no longer create new fleets with the deleted build.
      * </p>
-     * <p>
-     * Build-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -1993,9 +1955,6 @@ public interface AmazonGameLift {
      * <p>
      * This action removes the fleet's resources and the fleet record. Once a fleet is deleted, you can no longer use
      * that fleet.
-     * </p>
-     * <p>
-     * Fleet-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -2129,9 +2088,6 @@ public interface AmazonGameLift {
      * Deletes a game session queue. This action means that any <a>StartGameSessionPlacement</a> requests that reference
      * this queue will fail. To delete a queue, specify the queue name.
      * </p>
-     * <p>
-     * Queue-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -2180,8 +2136,86 @@ public interface AmazonGameLift {
      * Permanently removes a FlexMatch matchmaking configuration. To delete, specify the configuration name. A
      * matchmaking configuration cannot be deleted if it is being used in any active matchmaking tickets.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * Operations related to match configurations and rule sets include:
+     * <a>CreateMatchmakingConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeMatchmakingConfigurations</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>UpdateMatchmakingConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>CreateMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DescribeMatchmakingRuleSets</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>ValidateMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param deleteMatchmakingConfigurationRequest
+     *        Represents the input for a request action.
+     * @return Result of the DeleteMatchmakingConfiguration operation returned by the service.
+     * @throws InvalidRequestException
+     *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
+     *         retrying.
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be found. Clients should not retry such
+     *         requests.
+     * @throws InternalServiceException
+     *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
+     *         such requests immediately or after a waiting period.
+     * @throws UnsupportedRegionException
+     *         The requested operation is not supported in the region specified.
+     * @sample AmazonGameLift.DeleteMatchmakingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMatchmakingConfigurationResult deleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest deleteMatchmakingConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes an existing matchmaking rule set. To delete the rule set, provide the rule set name. Rule sets cannot be
+     * deleted if they are currently being used by a matchmaking configuration.
+     * </p>
+     * <p>
+     * <b>Learn more</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a Rule Set</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -2219,27 +2253,32 @@ public interface AmazonGameLift {
      * <a>ValidateMatchmakingRuleSet</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingRuleSet</a>
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @param deleteMatchmakingConfigurationRequest
+     * @param deleteMatchmakingRuleSetRequest
      *        Represents the input for a request action.
-     * @return Result of the DeleteMatchmakingConfiguration operation returned by the service.
+     * @return Result of the DeleteMatchmakingRuleSet operation returned by the service.
      * @throws InvalidRequestException
      *         One or more parameter values in the request are invalid. Correct the invalid parameter values before
      *         retrying.
-     * @throws NotFoundException
-     *         A service resource associated with the request could not be found. Clients should not retry such
-     *         requests.
      * @throws InternalServiceException
      *         The service encountered an unrecoverable internal failure while processing the request. Clients can retry
      *         such requests immediately or after a waiting period.
      * @throws UnsupportedRegionException
      *         The requested operation is not supported in the region specified.
-     * @sample AmazonGameLift.DeleteMatchmakingConfiguration
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingConfiguration"
+     * @throws NotFoundException
+     *         A service resource associated with the request could not be found. Clients should not retry such
+     *         requests.
+     * @sample AmazonGameLift.DeleteMatchmakingRuleSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingRuleSet"
      *      target="_top">AWS API Documentation</a>
      */
-    DeleteMatchmakingConfigurationResult deleteMatchmakingConfiguration(DeleteMatchmakingConfigurationRequest deleteMatchmakingConfigurationRequest);
+    DeleteMatchmakingRuleSetResult deleteMatchmakingRuleSet(DeleteMatchmakingRuleSetRequest deleteMatchmakingRuleSetRequest);
 
     /**
      * <p>
@@ -2249,9 +2288,6 @@ public interface AmazonGameLift {
      * <p>
      * To temporarily suspend scaling policies, call <a>StopFleetActions</a>. This operation suspends all policies for
      * the fleet.
-     * </p>
-     * <p>
-     * Operations related to fleet capacity scaling include:
      * </p>
      * <ul>
      * <li>
@@ -2335,9 +2371,6 @@ public interface AmazonGameLift {
      * Cancels a pending VPC peering authorization for the specified VPC. If the authorization has already been used to
      * create a peering connection, call <a>DeleteVpcPeeringConnection</a> to remove the connection.
      * </p>
-     * <p>
-     * VPC peering connection operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -2402,9 +2435,6 @@ public interface AmazonGameLift {
      * GameLift fleets. Identify the connection to delete by the connection ID and fleet ID. If successful, the
      * connection is removed.
      * </p>
-     * <p>
-     * VPC peering connection operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -2466,9 +2496,6 @@ public interface AmazonGameLift {
      * <p>
      * To get alias properties, specify the alias ID. If successful, the requested alias record is returned.
      * </p>
-     * <p>
-     * Alias-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -2526,9 +2553,6 @@ public interface AmazonGameLift {
      * <p>
      * Retrieves properties for a build. To request a build record, specify a build ID. If successful, an object
      * containing the build properties is returned.
-     * </p>
-     * <p>
-     * Build-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -2597,9 +2621,6 @@ public interface AmazonGameLift {
      * <p>
      * Service limits vary depending on region. Available regions for Amazon GameLift can be found in the AWS Management
      * Console for Amazon GameLift (see the drop-down list in the upper right corner).
-     * </p>
-     * <p>
-     * Fleet-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -2736,9 +2757,6 @@ public interface AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
-     * <p>
-     * Fleet-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -2878,9 +2896,6 @@ public interface AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
-     * <p>
-     * Fleet-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -3010,9 +3025,6 @@ public interface AmazonGameLift {
      * Retrieves entries from the specified fleet's event log. You can specify a time range to limit the result set. Use
      * the pagination parameters to retrieve results as a set of sequential pages. If successful, a collection of event
      * log entries matching the request are returned.
-     * </p>
-     * <p>
-     * Fleet-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -3144,9 +3156,6 @@ public interface AmazonGameLift {
      * and port settings that incoming traffic can use to access server processes in the fleet. To get a fleet's inbound
      * connection permissions, specify a fleet ID. If successful, a collection of <a>IpPermission</a> objects is
      * returned for the requested fleet ID. If the requested fleet has been deleted, the result set is empty.
-     * </p>
-     * <p>
-     * Fleet-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -3286,9 +3295,6 @@ public interface AmazonGameLift {
      * request fails and the error message includes the maximum allowed.
      * </p>
      * </note>
-     * <p>
-     * Fleet-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -3426,9 +3432,6 @@ public interface AmazonGameLift {
      * sequential pages. If successful, a <a>GameSessionDetail</a> object is returned for each session matching the
      * request.
      * </p>
-     * <p>
-     * Game-session-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -3514,9 +3517,6 @@ public interface AmazonGameLift {
      * Retrieves properties and current status of a game session placement request. To get game session placement
      * details, specify the placement ID. If successful, a <a>GameSessionPlacement</a> object is returned.
      * </p>
-     * <p>
-     * Game-session-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -3599,9 +3599,6 @@ public interface AmazonGameLift {
      * returned for each requested queue. When specifying a list of queues, objects are returned only for queues that
      * currently exist in the region.
      * </p>
-     * <p>
-     * Queue-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -3659,9 +3656,6 @@ public interface AmazonGameLift {
      * </p>
      * <p>
      * <i>Available in Amazon GameLift Local.</i>
-     * </p>
-     * <p>
-     * Game-session-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -3788,9 +3782,6 @@ public interface AmazonGameLift {
      * To request matchmaking tickets, provide a list of up to 10 ticket IDs. If the request is successful, a ticket
      * object is returned for each requested ID that currently exists.
      * </p>
-     * <p>
-     * Matchmaking-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -3845,9 +3836,6 @@ public interface AmazonGameLift {
      * returned for each requested name. When specifying a list of names, only configurations that currently exist are
      * returned.
      * </p>
-     * <p>
-     * Operations related to match configurations and rule sets include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -3882,6 +3870,11 @@ public interface AmazonGameLift {
      * <li>
      * <p>
      * <a>ValidateMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingRuleSet</a>
      * </p>
      * </li>
      * </ul>
@@ -3910,7 +3903,17 @@ public interface AmazonGameLift {
      * retrieve results as a set of sequential pages. If successful, a rule set is returned for each requested name.
      * </p>
      * <p>
-     * Operations related to match configurations and rule sets include:
+     * <b>Learn more</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a Rule Set</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -3946,6 +3949,11 @@ public interface AmazonGameLift {
      * <li>
      * <p>
      * <a>ValidateMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingRuleSet</a>
      * </p>
      * </li>
      * </ul>
@@ -3985,9 +3993,6 @@ public interface AmazonGameLift {
      * </p>
      * <p>
      * <i>Available in Amazon GameLift Local.</i>
-     * </p>
-     * <p>
-     * Player-session-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -4053,9 +4058,6 @@ public interface AmazonGameLift {
      * <p>
      * Retrieves the current run-time configuration for the specified fleet. The run-time configuration tells Amazon
      * GameLift how to launch server processes on instances in the fleet.
-     * </p>
-     * <p>
-     * Fleet-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -4195,9 +4197,6 @@ public interface AmazonGameLift {
      * status of the scaling policies, which remains ACTIVE. To see whether a fleet's scaling policies are in force or
      * suspended, call <a>DescribeFleetAttributes</a> and check the stopped actions.
      * </p>
-     * <p>
-     * Operations related to fleet capacity scaling include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4280,9 +4279,6 @@ public interface AmazonGameLift {
      * Retrieves valid VPC peering authorizations that are pending for the AWS account. This operation returns all VPC
      * peering authorizations and requests for peering. This includes those initiated and received by this account.
      * </p>
-     * <p>
-     * VPC peering connection operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4342,9 +4338,6 @@ public interface AmazonGameLift {
      * GameLift fleets. Specify a fleet ID or leave the parameter empty to retrieve all connection records. If
      * successful, the retrieved information includes both active and pending connections. Active connections identify
      * the IpV4 CIDR block that the VPC uses to connect.
-     * </p>
-     * <p>
-     * VPC peering connection operations include:
      * </p>
      * <ul>
      * <li>
@@ -4407,13 +4400,10 @@ public interface AmazonGameLift {
      * </p>
      * <note>
      * <p>
-     * See the <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
+     * See the <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">AWS
      * Service Limits</a> page for maximum log file sizes. Log files that exceed this limit are not saved.
      * </p>
      * </note>
-     * <p>
-     * Game-session-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4501,13 +4491,13 @@ public interface AmazonGameLift {
      * The private key must be saved in the proper format to a <code>.pem</code> file before using. If you're making
      * this request using the AWS CLI, saving the secret can be handled as part of the GetInstanceAccess request. (See
      * the example later in this topic). For more information on remote access, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely Accessing an
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-remote-access.html">Remotely Accessing an
      * Instance</a>.
      * </p>
      * <p>
-     * To request access to a specific instance, specify the IDs of the instance and the fleet it belongs to. If
-     * successful, an <a>InstanceAccess</a> object is returned containing the instance's IP address and a set of
-     * credentials.
+     * To request access to a specific instance, specify the IDs of both the instance and the fleet it belongs to. You
+     * can retrieve a fleet's instance IDs by calling <a>DescribeInstances</a>. If successful, an <a>InstanceAccess</a>
+     * object is returned containing the instance's IP address and a set of credentials.
      * </p>
      * 
      * @param getInstanceAccessRequest
@@ -4540,9 +4530,6 @@ public interface AmazonGameLift {
      * Returned aliases are not listed in any particular order.
      * </p>
      * </note>
-     * <p>
-     * Alias-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4604,9 +4591,6 @@ public interface AmazonGameLift {
      * Build records are not listed in any particular order.
      * </p>
      * </note>
-     * <p>
-     * Build-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4662,9 +4646,6 @@ public interface AmazonGameLift {
      * Fleet records are not listed in any particular order.
      * </p>
      * </note>
-     * <p>
-     * Fleet-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -4811,7 +4792,7 @@ public interface AmazonGameLift {
      * </p>
      * <p>
      * Learn more about how to work with auto-scaling in <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set Up Fleet Automatic
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-autoscaling.html">Set Up Fleet Automatic
      * Scaling</a>.
      * </p>
      * <p>
@@ -4871,9 +4852,6 @@ public interface AmazonGameLift {
      * name is returned. Scaling policies are automatically in force as soon as they're successfully created. If the
      * fleet's auto-scaling actions are temporarily suspended, the new policy will be in force once the fleet actions
      * are restarted.
-     * </p>
-     * <p>
-     * Operations related to fleet capacity scaling include:
      * </p>
      * <ul>
      * <li>
@@ -4986,9 +4964,6 @@ public interface AmazonGameLift {
     /**
      * <p>
      * Retrieves the fleet ID that a specified alias is currently pointing to.
-     * </p>
-     * <p>
-     * Alias-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -5119,9 +5094,6 @@ public interface AmazonGameLift {
      * search each fleet separately and combine the results. This search feature finds only game sessions that are in
      * <code>ACTIVE</code> status. To locate games in statuses other than active, use <a>DescribeGameSessionDetails</a>.
      * </p>
-     * <p>
-     * Game-session-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5212,9 +5184,6 @@ public interface AmazonGameLift {
      * are restarted, Amazon GameLift once again initiates scaling events as triggered by the fleet's scaling policies.
      * If actions on the fleet were never stopped, this operation will have no effect. You can view a fleet's stopped
      * actions using <a>DescribeFleetAttributes</a>.
-     * </p>
-     * <p>
-     * Operations related to fleet capacity scaling include:
      * </p>
      * <ul>
      * <li>
@@ -5329,7 +5298,8 @@ public interface AmazonGameLift {
      * </li>
      * <li>
      * <p>
-     * (Optional) A set of IDs and player data for each player you want to join to the new game session
+     * (Optional) A set of player data and a unique player ID for each player that you are joining to the new game
+     * session (player data is optional, but if you include it, you must also provide a unique ID for each player)
      * </p>
      * </li>
      * <li>
@@ -5346,9 +5316,6 @@ public interface AmazonGameLift {
      * status. If the status is <code>FULFILLED</code>, a new game session has been created and a game session ARN and
      * region are referenced. If the placement request times out, you can resubmit the request or retry it with a
      * different queue.
-     * </p>
-     * <p>
-     * Game-session-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -5438,7 +5405,7 @@ public interface AmazonGameLift {
      * configuration, and a set of data that describes all current players in the game session. If successful, a match
      * backfill ticket is created and returned with status set to QUEUED. The ticket is placed in the matchmaker's
      * ticket pool and processed. Track the status of the ticket to respond as needed. For more detail how to set up
-     * backfilling, see <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
+     * backfilling, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-backfill.html">
      * Backfill Existing Games with FlexMatch</a>.
      * </p>
      * <p>
@@ -5448,11 +5415,8 @@ public interface AmazonGameLift {
      * players. All tickets in the match are updated with the game session's connection information, and the
      * <a>GameSession</a> object is updated to include matchmaker data on the new players. For more detail on how match
      * backfill requests are processed, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html"> How Amazon GameLift FlexMatch
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html"> How Amazon GameLift FlexMatch
      * Works</a>.
-     * </p>
-     * <p>
-     * Matchmaking-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -5511,7 +5475,7 @@ public interface AmazonGameLift {
      * group of players who want to play together. FlexMatch finds additional players as needed to fill the match. Match
      * type, rules, and the queue used to place a new game session are defined in a
      * <code>MatchmakingConfiguration</code>. For complete information on setting up and using FlexMatch, see the topic
-     * <a href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html"> Adding FlexMatch to Your
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-intro.html"> Adding FlexMatch to Your
      * Game</a>.
      * </p>
      * <p>
@@ -5582,9 +5546,6 @@ public interface AmazonGameLift {
      * </p>
      * </li>
      * </ol>
-     * <p>
-     * Matchmaking-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5671,9 +5632,6 @@ public interface AmazonGameLift {
      * Cancels a game session placement that is in <code>PENDING</code> status. To stop a placement, provide the
      * placement ID values. If successful, the placement is moved to <code>CANCELLED</code> status.
      * </p>
-     * <p>
-     * Game-session-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5755,9 +5713,6 @@ public interface AmazonGameLift {
      * ticket ID. If successful, work on the ticket is stopped, and the ticket status is changed to
      * <code>CANCELLED</code>.
      * </p>
-     * <p>
-     * Matchmaking-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5811,9 +5766,6 @@ public interface AmazonGameLift {
      * Updates properties for an alias. To update properties, specify the alias ID to be updated and provide the
      * information to be changed. To reassign an alias to another fleet, provide an updated routing strategy. If
      * successful, the updated alias record is returned.
-     * </p>
-     * <p>
-     * Alias-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -5874,9 +5826,6 @@ public interface AmazonGameLift {
      * build ID to update and provide the new values. If successful, a build object containing the updated metadata is
      * returned.
      * </p>
-     * <p>
-     * Build-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -5929,9 +5878,6 @@ public interface AmazonGameLift {
      * <p>
      * Updates fleet properties, including name and description, for a fleet. To update metadata, specify the fleet ID
      * and the property values that you want to change. If successful, the fleet ID for the updated fleet is returned.
-     * </p>
-     * <p>
-     * Fleet-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -6084,9 +6030,6 @@ public interface AmazonGameLift {
      * <a>DescribeFleetCapacity</a>. If the desired instance count is higher than the instance type's limit, the
      * "Limit Exceeded" exception occurs.
      * </p>
-     * <p>
-     * Fleet-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -6227,9 +6170,6 @@ public interface AmazonGameLift {
      * <code>InboundPermissionAuthorizations</code>, and permissions you want to remove in
      * <code>InboundPermissionRevocations</code>. Permissions to be removed must match existing fleet permissions. If
      * successful, the fleet ID for the updated fleet is returned.
-     * </p>
-     * <p>
-     * Fleet-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -6372,9 +6312,6 @@ public interface AmazonGameLift {
      * session, specify the game session ID and the values you want to change. If successful, an updated
      * <a>GameSession</a> object is returned.
      * </p>
-     * <p>
-     * Game-session-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -6462,9 +6399,6 @@ public interface AmazonGameLift {
      * processed. To update settings, specify the queue name to be updated and provide the new settings. When updating
      * destinations, provide a complete list of destinations.
      * </p>
-     * <p>
-     * Queue-related operations include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -6513,9 +6447,6 @@ public interface AmazonGameLift {
      * Updates settings for a FlexMatch matchmaking configuration. To update settings, specify the configuration name to
      * be updated and provide the new settings.
      * </p>
-     * <p>
-     * Operations related to match configurations and rule sets include:
-     * </p>
      * <ul>
      * <li>
      * <p>
@@ -6550,6 +6481,11 @@ public interface AmazonGameLift {
      * <li>
      * <p>
      * <a>ValidateMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingRuleSet</a>
      * </p>
      * </li>
      * </ul>
@@ -6590,9 +6526,6 @@ public interface AmazonGameLift {
      * update; they continue to run until they end, while Amazon GameLift simply adds new server processes to fit the
      * current run-time configuration. As a result, the run-time configuration changes are applied gradually as existing
      * processes shut down and new processes are launched in Amazon GameLift's normal process recycling activity.
-     * </p>
-     * <p>
-     * Fleet-related operations include:
      * </p>
      * <ul>
      * <li>
@@ -6723,12 +6656,22 @@ public interface AmazonGameLift {
 
     /**
      * <p>
-     * Validates the syntax of a matchmaking rule or rule set. This operation checks that the rule set uses
+     * Validates the syntax of a matchmaking rule or rule set. This operation checks that the rule set is using
      * syntactically correct JSON and that it conforms to allowed property expressions. To validate syntax, provide a
-     * rule set string.
+     * rule set JSON string.
      * </p>
      * <p>
-     * Operations related to match configurations and rule sets include:
+     * <b>Learn more</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build a Rule Set</a>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Related operations</b>
      * </p>
      * <ul>
      * <li>
@@ -6764,6 +6707,11 @@ public interface AmazonGameLift {
      * <li>
      * <p>
      * <a>ValidateMatchmakingRuleSet</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a>DeleteMatchmakingRuleSet</a>
      * </p>
      * </li>
      * </ul>

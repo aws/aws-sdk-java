@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.robomaker.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -45,6 +46,8 @@ public class CreateSimulationJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("robotApplications").build();
     private static final MarshallingInfo<List> SIMULATIONAPPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("simulationApplications").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfig").build();
 
@@ -71,6 +74,7 @@ public class CreateSimulationJobRequestMarshaller {
             protocolMarshaller.marshall(createSimulationJobRequest.getFailureBehavior(), FAILUREBEHAVIOR_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getRobotApplications(), ROBOTAPPLICATIONS_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getSimulationApplications(), SIMULATIONAPPLICATIONS_BINDING);
+            protocolMarshaller.marshall(createSimulationJobRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

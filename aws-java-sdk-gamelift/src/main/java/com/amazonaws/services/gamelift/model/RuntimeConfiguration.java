@@ -37,9 +37,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * values of the <code>ConcurrentExecutions</code> parameter for each <code> <a>ServerProcess</a> </code> object in the
  * run-time configuration.
  * </p>
- * <p>
- * Fleet-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

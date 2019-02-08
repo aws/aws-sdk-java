@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.robomaker.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -38,6 +39,8 @@ public class CreateSimulationApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("robotSoftwareSuite").build();
     private static final MarshallingInfo<StructuredPojo> RENDERINGENGINE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("renderingEngine").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateSimulationApplicationRequestMarshaller instance = new CreateSimulationApplicationRequestMarshaller();
 
@@ -60,6 +63,7 @@ public class CreateSimulationApplicationRequestMarshaller {
             protocolMarshaller.marshall(createSimulationApplicationRequest.getSimulationSoftwareSuite(), SIMULATIONSOFTWARESUITE_BINDING);
             protocolMarshaller.marshall(createSimulationApplicationRequest.getRobotSoftwareSuite(), ROBOTSOFTWARESUITE_BINDING);
             protocolMarshaller.marshall(createSimulationApplicationRequest.getRenderingEngine(), RENDERINGENGINE_BINDING);
+            protocolMarshaller.marshall(createSimulationApplicationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.robomaker.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -39,6 +40,8 @@ public class CreateDeploymentJobRequestMarshaller {
             .marshallLocationName("fleet").build();
     private static final MarshallingInfo<List> DEPLOYMENTAPPLICATIONCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentApplicationConfigs").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateDeploymentJobRequestMarshaller instance = new CreateDeploymentJobRequestMarshaller();
 
@@ -60,6 +63,7 @@ public class CreateDeploymentJobRequestMarshaller {
             protocolMarshaller.marshall(createDeploymentJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createDeploymentJobRequest.getFleet(), FLEET_BINDING);
             protocolMarshaller.marshall(createDeploymentJobRequest.getDeploymentApplicationConfigs(), DEPLOYMENTAPPLICATIONCONFIGS_BINDING);
+            protocolMarshaller.marshall(createDeploymentJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

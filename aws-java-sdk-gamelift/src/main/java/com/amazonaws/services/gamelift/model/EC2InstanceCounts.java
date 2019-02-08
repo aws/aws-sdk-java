@@ -23,9 +23,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * number of desired instances. Pending and terminating counts are non-zero only if fleet capacity is adjusting to an
  * <a>UpdateFleetCapacity</a> request, or if access to resources is temporarily affected.
  * </p>
- * <p>
- * Fleet-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

@@ -77,6 +77,12 @@ public class DescribeDeploymentJobResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.List<RobotDeployment> robotDeploymentSummary;
+    /**
+     * <p>
+     * The list of all tags added to the specified deployment job.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -537,6 +543,67 @@ public class DescribeDeploymentJobResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The list of all tags added to the specified deployment job.
+     * </p>
+     * 
+     * @return The list of all tags added to the specified deployment job.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the specified deployment job.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the specified deployment job.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The list of all tags added to the specified deployment job.
+     * </p>
+     * 
+     * @param tags
+     *        The list of all tags added to the specified deployment job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDeploymentJobResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public DescribeDeploymentJobResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDeploymentJobResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -565,7 +632,9 @@ public class DescribeDeploymentJobResult extends com.amazonaws.AmazonWebServiceR
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getRobotDeploymentSummary() != null)
-            sb.append("RobotDeploymentSummary: ").append(getRobotDeploymentSummary());
+            sb.append("RobotDeploymentSummary: ").append(getRobotDeploymentSummary()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -616,6 +685,10 @@ public class DescribeDeploymentJobResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getRobotDeploymentSummary() != null && other.getRobotDeploymentSummary().equals(this.getRobotDeploymentSummary()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -633,6 +706,7 @@ public class DescribeDeploymentJobResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getRobotDeploymentSummary() == null) ? 0 : getRobotDeploymentSummary().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

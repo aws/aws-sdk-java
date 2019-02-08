@@ -96,7 +96,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      * descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
      * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
@@ -741,7 +741,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      * descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
      * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
@@ -812,8 +812,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param metricName
      *        Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      *        descriptions of fleet metrics, see <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
-     *        GameLift with Amazon CloudWatch</a>. </p>
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     *        Amazon GameLift with Amazon CloudWatch</a>. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -888,7 +888,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      * descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
      * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
@@ -958,7 +958,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      *         descriptions of fleet metrics, see <a
-     *         href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     *         href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
      *         Amazon GameLift with Amazon CloudWatch</a>. </p>
      *         <ul>
      *         <li>
@@ -1035,7 +1035,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      * descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
      * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
@@ -1106,8 +1106,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param metricName
      *        Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      *        descriptions of fleet metrics, see <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
-     *        GameLift with Amazon CloudWatch</a>. </p>
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     *        Amazon GameLift with Amazon CloudWatch</a>. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1184,7 +1184,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      * descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
      * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
@@ -1255,8 +1255,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param metricName
      *        Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      *        descriptions of fleet metrics, see <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
-     *        GameLift with Amazon CloudWatch</a>. </p>
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     *        Amazon GameLift with Amazon CloudWatch</a>. </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1331,7 +1331,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      * descriptions of fleet metrics, see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
      * GameLift with Amazon CloudWatch</a>.
      * </p>
      * <ul>
@@ -1402,8 +1402,8 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param metricName
      *        Name of the Amazon GameLift-defined metric that is used to trigger a scaling adjustment. For detailed
      *        descriptions of fleet metrics, see <a
-     *        href="http://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor Amazon
-     *        GameLift with Amazon CloudWatch</a>. </p>
+     *        href="https://docs.aws.amazon.com/gamelift/latest/developerguide/monitoring-cloudwatch.html">Monitor
+     *        Amazon GameLift with Amazon CloudWatch</a>. </p>
      *        <ul>
      *        <li>
      *        <p>

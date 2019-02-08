@@ -55,6 +55,12 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private RenderingEngine renderingEngine;
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the simulation application.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -287,6 +293,67 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the simulation application.
+     * </p>
+     * 
+     * @return A map that contains tag keys and tag values that are attached to the simulation application.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the simulation application.
+     * </p>
+     * 
+     * @param tags
+     *        A map that contains tag keys and tag values that are attached to the simulation application.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A map that contains tag keys and tag values that are attached to the simulation application.
+     * </p>
+     * 
+     * @param tags
+     *        A map that contains tag keys and tag values that are attached to the simulation application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationApplicationRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateSimulationApplicationRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationApplicationRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -307,7 +374,9 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
         if (getRobotSoftwareSuite() != null)
             sb.append("RobotSoftwareSuite: ").append(getRobotSoftwareSuite()).append(",");
         if (getRenderingEngine() != null)
-            sb.append("RenderingEngine: ").append(getRenderingEngine());
+            sb.append("RenderingEngine: ").append(getRenderingEngine()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -342,6 +411,10 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getRenderingEngine() != null && other.getRenderingEngine().equals(this.getRenderingEngine()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +428,7 @@ public class CreateSimulationApplicationRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getSimulationSoftwareSuite() == null) ? 0 : getSimulationSoftwareSuite().hashCode());
         hashCode = prime * hashCode + ((getRobotSoftwareSuite() == null) ? 0 : getRobotSoftwareSuite().hashCode());
         hashCode = prime * hashCode + ((getRenderingEngine() == null) ? 0 : getRenderingEngine().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

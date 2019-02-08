@@ -36,25 +36,25 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
     private String packageName;
     /**
      * <p>
-     * The deployment pre-launch file. This file will be executed prior to the deployment launch file.
+     * The deployment pre-launch file. This file will be executed prior to the launch file.
      * </p>
      */
     private String preLaunchFile;
     /**
      * <p>
-     * The deployment launch file.
+     * The launch file name.
      * </p>
      */
     private String launchFile;
     /**
      * <p>
-     * The deployment post-launch file. This file will be executed after the deployment launch file.
+     * The deployment post-launch file. This file will be executed after the launch file.
      * </p>
      */
     private String postLaunchFile;
     /**
      * <p>
-     * An array of key/value pairs specifying environment variables for the deployment application.
+     * An array of key/value pairs specifying environment variables for the robot application
      * </p>
      */
     private java.util.Map<String, String> environmentVariables;
@@ -101,11 +101,11 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment pre-launch file. This file will be executed prior to the deployment launch file.
+     * The deployment pre-launch file. This file will be executed prior to the launch file.
      * </p>
      * 
      * @param preLaunchFile
-     *        The deployment pre-launch file. This file will be executed prior to the deployment launch file.
+     *        The deployment pre-launch file. This file will be executed prior to the launch file.
      */
 
     public void setPreLaunchFile(String preLaunchFile) {
@@ -114,10 +114,10 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment pre-launch file. This file will be executed prior to the deployment launch file.
+     * The deployment pre-launch file. This file will be executed prior to the launch file.
      * </p>
      * 
-     * @return The deployment pre-launch file. This file will be executed prior to the deployment launch file.
+     * @return The deployment pre-launch file. This file will be executed prior to the launch file.
      */
 
     public String getPreLaunchFile() {
@@ -126,11 +126,11 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment pre-launch file. This file will be executed prior to the deployment launch file.
+     * The deployment pre-launch file. This file will be executed prior to the launch file.
      * </p>
      * 
      * @param preLaunchFile
-     *        The deployment pre-launch file. This file will be executed prior to the deployment launch file.
+     *        The deployment pre-launch file. This file will be executed prior to the launch file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment launch file.
+     * The launch file name.
      * </p>
      * 
      * @param launchFile
-     *        The deployment launch file.
+     *        The launch file name.
      */
 
     public void setLaunchFile(String launchFile) {
@@ -154,10 +154,10 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment launch file.
+     * The launch file name.
      * </p>
      * 
-     * @return The deployment launch file.
+     * @return The launch file name.
      */
 
     public String getLaunchFile() {
@@ -166,11 +166,11 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment launch file.
+     * The launch file name.
      * </p>
      * 
      * @param launchFile
-     *        The deployment launch file.
+     *        The launch file name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +181,11 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment post-launch file. This file will be executed after the deployment launch file.
+     * The deployment post-launch file. This file will be executed after the launch file.
      * </p>
      * 
      * @param postLaunchFile
-     *        The deployment post-launch file. This file will be executed after the deployment launch file.
+     *        The deployment post-launch file. This file will be executed after the launch file.
      */
 
     public void setPostLaunchFile(String postLaunchFile) {
@@ -194,10 +194,10 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment post-launch file. This file will be executed after the deployment launch file.
+     * The deployment post-launch file. This file will be executed after the launch file.
      * </p>
      * 
-     * @return The deployment post-launch file. This file will be executed after the deployment launch file.
+     * @return The deployment post-launch file. This file will be executed after the launch file.
      */
 
     public String getPostLaunchFile() {
@@ -206,11 +206,11 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The deployment post-launch file. This file will be executed after the deployment launch file.
+     * The deployment post-launch file. This file will be executed after the launch file.
      * </p>
      * 
      * @param postLaunchFile
-     *        The deployment post-launch file. This file will be executed after the deployment launch file.
+     *        The deployment post-launch file. This file will be executed after the launch file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,10 +221,10 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An array of key/value pairs specifying environment variables for the deployment application.
+     * An array of key/value pairs specifying environment variables for the robot application
      * </p>
      * 
-     * @return An array of key/value pairs specifying environment variables for the deployment application.
+     * @return An array of key/value pairs specifying environment variables for the robot application
      */
 
     public java.util.Map<String, String> getEnvironmentVariables() {
@@ -233,11 +233,11 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An array of key/value pairs specifying environment variables for the deployment application.
+     * An array of key/value pairs specifying environment variables for the robot application
      * </p>
      * 
      * @param environmentVariables
-     *        An array of key/value pairs specifying environment variables for the deployment application.
+     *        An array of key/value pairs specifying environment variables for the robot application
      */
 
     public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
@@ -246,11 +246,11 @@ public class DeploymentLaunchConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An array of key/value pairs specifying environment variables for the deployment application.
+     * An array of key/value pairs specifying environment variables for the robot application
      * </p>
      * 
      * @param environmentVariables
-     *        An array of key/value pairs specifying environment variables for the deployment application.
+     *        An array of key/value pairs specifying environment variables for the robot application
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

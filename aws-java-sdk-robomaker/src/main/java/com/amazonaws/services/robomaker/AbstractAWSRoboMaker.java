@@ -163,6 +163,11 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterRobotResult registerRobot(RegisterRobotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -174,6 +179,16 @@ public class AbstractAWSRoboMaker implements AWSRoboMaker {
 
     @Override
     public SyncDeploymentJobResult syncDeploymentJob(SyncDeploymentJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -72,6 +72,10 @@ public class DescribeSimulationJobResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeSimulationJobResult.setFailureCode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("failureReason", targetDepth)) {
+                    context.nextToken();
+                    describeSimulationJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("clientRequestToken", targetDepth)) {
                     context.nextToken();
                     describeSimulationJobResult.setClientRequestToken(context.getUnmarshaller(String.class).unmarshall(context));
@@ -101,6 +105,11 @@ public class DescribeSimulationJobResultJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     describeSimulationJobResult.setSimulationApplications(new ListUnmarshaller<SimulationApplicationConfig>(
                             SimulationApplicationConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    describeSimulationJobResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("vpcConfig", targetDepth)) {
                     context.nextToken();

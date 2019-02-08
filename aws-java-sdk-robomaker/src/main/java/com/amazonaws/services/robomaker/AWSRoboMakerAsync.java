@@ -98,7 +98,13 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
-     * Creates a deployment job.
+     * Deploys a specific version of a robot application to robots in a fleet.
+     * </p>
+     * <p>
+     * The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a
+     * new version, use <code>CreateRobotApplicationVersion</code> or see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot
+     * Application Version</a>.
      * </p>
      * 
      * @param createDeploymentJobRequest
@@ -111,7 +117,13 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
-     * Creates a deployment job.
+     * Deploys a specific version of a robot application to robots in a fleet.
+     * </p>
+     * <p>
+     * The robot application must have a numbered <code>applicationVersion</code> for consistency reasons. To create a
+     * new version, use <code>CreateRobotApplicationVersion</code> or see <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating a Robot
+     * Application Version</a>.
      * </p>
      * 
      * @param createDeploymentJobRequest
@@ -895,6 +907,37 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
 
     /**
      * <p>
+     * Lists all tags on a AWS RoboMaker resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSRoboMakerAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists all tags on a AWS RoboMaker resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSRoboMakerAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Registers a robot with a fleet.
      * </p>
      * 
@@ -985,6 +1028,96 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
      */
     java.util.concurrent.Future<SyncDeploymentJobResult> syncDeploymentJobAsync(SyncDeploymentJobRequest syncDeploymentJobRequest,
             com.amazonaws.handlers.AsyncHandler<SyncDeploymentJobRequest, SyncDeploymentJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or edits tags for a AWS RoboMaker resource.
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be
+     * empty strings.
+     * </p>
+     * <p>
+     * For information about the rules that apply to tag keys and tag values, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+     * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSRoboMakerAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or edits tags for a AWS RoboMaker resource.
+     * </p>
+     * <p>
+     * Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be
+     * empty strings.
+     * </p>
+     * <p>
+     * For information about the rules that apply to tag keys and tag values, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined
+     * Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSRoboMakerAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified AWS RoboMaker resource.
+     * </p>
+     * <p>
+     * To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+     * <code>TagResource</code> </a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSRoboMakerAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes the specified tags from the specified AWS RoboMaker resource.
+     * </p>
+     * <p>
+     * To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a
+     * href="https://docs.aws.amazon.com/robomaker/latest/dg//API_Reference.htmlAPI_TagResource.html">
+     * <code>TagResource</code> </a>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSRoboMakerAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/robomaker-2018-06-29/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

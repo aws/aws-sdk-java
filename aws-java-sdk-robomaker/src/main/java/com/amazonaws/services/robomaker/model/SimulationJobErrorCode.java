@@ -33,7 +33,10 @@ public enum SimulationJobErrorCode {
     InvalidBundleRobotApplication("InvalidBundleRobotApplication"),
     InvalidBundleSimulationApplication("InvalidBundleSimulationApplication"),
     RobotApplicationVersionMismatchedEtag("RobotApplicationVersionMismatchedEtag"),
-    SimulationApplicationVersionMismatchedEtag("SimulationApplicationVersionMismatchedEtag");
+    SimulationApplicationVersionMismatchedEtag("SimulationApplicationVersionMismatchedEtag"),
+    WrongRegionS3Output("WrongRegionS3Output"),
+    WrongRegionRobotApplication("WrongRegionRobotApplication"),
+    WrongRegionSimulationApplication("WrongRegionSimulationApplication");
 
     private String value;
 

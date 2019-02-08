@@ -21,9 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Properties describing a fleet alias.
  * </p>
- * <p>
- * Alias-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

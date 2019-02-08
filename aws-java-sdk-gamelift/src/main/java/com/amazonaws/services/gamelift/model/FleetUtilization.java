@@ -21,9 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Current status of fleet utilization, including the number of game and player sessions being hosted.
  * </p>
- * <p>
- * Fleet-related operations include:
- * </p>
  * <ul>
  * <li>
  * <p>

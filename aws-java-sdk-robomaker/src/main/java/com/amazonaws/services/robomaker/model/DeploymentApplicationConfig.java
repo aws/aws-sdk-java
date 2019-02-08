@@ -30,7 +30,7 @@ public class DeploymentApplicationConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The application.
+     * The Amazon Resource Name (ARN) of the robot application.
      * </p>
      */
     private String application;
@@ -42,18 +42,18 @@ public class DeploymentApplicationConfig implements Serializable, Cloneable, Str
     private String applicationVersion;
     /**
      * <p>
-     * The launch configuration, usually <code>roslaunch</code>.
+     * The launch configuration.
      * </p>
      */
     private DeploymentLaunchConfig launchConfig;
 
     /**
      * <p>
-     * The application.
+     * The Amazon Resource Name (ARN) of the robot application.
      * </p>
      * 
      * @param application
-     *        The application.
+     *        The Amazon Resource Name (ARN) of the robot application.
      */
 
     public void setApplication(String application) {
@@ -62,10 +62,10 @@ public class DeploymentApplicationConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The application.
+     * The Amazon Resource Name (ARN) of the robot application.
      * </p>
      * 
-     * @return The application.
+     * @return The Amazon Resource Name (ARN) of the robot application.
      */
 
     public String getApplication() {
@@ -74,11 +74,11 @@ public class DeploymentApplicationConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The application.
+     * The Amazon Resource Name (ARN) of the robot application.
      * </p>
      * 
      * @param application
-     *        The application.
+     *        The Amazon Resource Name (ARN) of the robot application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class DeploymentApplicationConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The launch configuration, usually <code>roslaunch</code>.
+     * The launch configuration.
      * </p>
      * 
      * @param launchConfig
-     *        The launch configuration, usually <code>roslaunch</code>.
+     *        The launch configuration.
      */
 
     public void setLaunchConfig(DeploymentLaunchConfig launchConfig) {
@@ -142,10 +142,10 @@ public class DeploymentApplicationConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The launch configuration, usually <code>roslaunch</code>.
+     * The launch configuration.
      * </p>
      * 
-     * @return The launch configuration, usually <code>roslaunch</code>.
+     * @return The launch configuration.
      */
 
     public DeploymentLaunchConfig getLaunchConfig() {
@@ -154,11 +154,11 @@ public class DeploymentApplicationConfig implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The launch configuration, usually <code>roslaunch</code>.
+     * The launch configuration.
      * </p>
      * 
      * @param launchConfig
-     *        The launch configuration, usually <code>roslaunch</code>.
+     *        The launch configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
