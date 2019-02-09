@@ -38,7 +38,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -58,7 +58,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
      * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
      * advantage of the feature. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
      * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -133,7 +133,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -161,7 +161,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type to use with your task. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -360,13 +360,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return A list of container definitions in JSON format that describe the different containers that make up your
      *         task. For more information about container definition parameters and defaults, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      *         Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -381,14 +381,14 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param containerDefinitions
      *        A list of container definitions in JSON format that describe the different containers that make up your
      *        task. For more information about container definition parameters and defaults, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -405,7 +405,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -417,7 +417,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * @param containerDefinitions
      *        A list of container definitions in JSON format that describe the different containers that make up your
      *        task. For more information about container definition parameters and defaults, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -436,14 +436,14 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of container definitions in JSON format that describe the different containers that make up your task. For
      * more information about container definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param containerDefinitions
      *        A list of container definitions in JSON format that describe the different containers that make up your
      *        task. For more information about container definition parameters and defaults, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task
      *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -502,7 +502,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
      * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
      * advantage of the feature. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
      * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -513,7 +513,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
      *        launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
      *        order to take advantage of the feature. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
      *        Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -530,7 +530,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
      * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
      * advantage of the feature. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
      * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -540,8 +540,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
      *         launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
      *         order to take advantage of the feature. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
-     *         Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows
+     *         IAM Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
     public String getTaskRoleArn() {
@@ -557,7 +557,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you launch the
      * Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in order to take
      * advantage of the feature. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM Roles
      * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -568,7 +568,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
      *        launch the Amazon ECS-optimized Windows AMI. Your containers must also run some configuration code in
      *        order to take advantage of the feature. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows_task_IAM_roles.html">Windows IAM
      *        Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1147,7 +1147,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1158,7 +1158,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         For more information about volume definition parameters and defaults, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      *         Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -1179,7 +1179,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1191,7 +1191,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about volume definition parameters and defaults, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -1214,7 +1214,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -1231,7 +1231,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about volume definition parameters and defaults, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1256,7 +1256,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about volume definition parameters and defaults, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      * Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1268,7 +1268,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        For more information about volume definition parameters and defaults, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definitions.html">Amazon ECS Task
      *        Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1516,12 +1516,12 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type to use with your task. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The launch type to use with your task. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see Compatibility
      */
@@ -1536,13 +1536,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type to use with your task. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param compatibilities
      *        The launch type to use with your task. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see Compatibility
      */
@@ -1559,7 +1559,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type to use with your task. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
@@ -1570,7 +1570,7 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param compatibilities
      *        The launch type to use with your task. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
@@ -1589,13 +1589,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type to use with your task. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param compatibilities
      *        The launch type to use with your task. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility
@@ -1609,13 +1609,13 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type to use with your task. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param compatibilities
      *        The launch type to use with your task. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Compatibility

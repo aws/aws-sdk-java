@@ -26,7 +26,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement
  * Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
  * 
@@ -47,7 +47,7 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
     /**
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -149,13 +149,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
     /**
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
      *        A cluster query language expression to apply to the constraint. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -166,12 +166,12 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
     /**
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return A cluster query language expression to apply to the constraint. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *         Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -182,13 +182,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
     /**
      * <p>
      * A cluster query language expression to apply to the constraint. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param expression
      *        A cluster query language expression to apply to the constraint. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

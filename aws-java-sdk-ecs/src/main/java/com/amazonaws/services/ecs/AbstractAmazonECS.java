@@ -204,6 +204,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public PutAccountSettingDefaultResult putAccountSettingDefault(PutAccountSettingDefaultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutAttributesResult putAttributes(PutAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

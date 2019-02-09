@@ -1256,6 +1256,39 @@ public class AmazonECSAsyncClient extends AmazonECSClient implements AmazonECSAs
     }
 
     @Override
+    public java.util.concurrent.Future<PutAccountSettingDefaultResult> putAccountSettingDefaultAsync(PutAccountSettingDefaultRequest request) {
+
+        return putAccountSettingDefaultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountSettingDefaultResult> putAccountSettingDefaultAsync(final PutAccountSettingDefaultRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccountSettingDefaultRequest, PutAccountSettingDefaultResult> asyncHandler) {
+        final PutAccountSettingDefaultRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccountSettingDefaultResult>() {
+            @Override
+            public PutAccountSettingDefaultResult call() throws Exception {
+                PutAccountSettingDefaultResult result = null;
+
+                try {
+                    result = executePutAccountSettingDefault(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutAttributesResult> putAttributesAsync(PutAttributesRequest request) {
 
         return putAttributesAsync(request, null);

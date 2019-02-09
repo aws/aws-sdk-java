@@ -120,7 +120,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -130,7 +130,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The platform version on which your tasks in the service are running. A platform version is only specified for
      * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -156,7 +156,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has
      * a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * </p>
      */
@@ -1017,13 +1017,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type on which to run your service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
@@ -1035,12 +1035,12 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The launch type on which to run your service. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
@@ -1052,13 +1052,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type on which to run your service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
@@ -1072,13 +1072,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The launch type on which to run your service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type on which to run your service. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
@@ -1094,7 +1094,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The platform version on which your tasks in the service are running. A platform version is only specified for
      * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1102,7 +1102,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The platform version on which your tasks in the service are running. A platform version is only specified
      *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
      *        is used by default. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -1115,14 +1115,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The platform version on which your tasks in the service are running. A platform version is only specified for
      * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The platform version on which your tasks in the service are running. A platform version is only specified
      *         for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform
      *         version is used by default. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -1135,7 +1135,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The platform version on which your tasks in the service are running. A platform version is only specified for
      * tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
      * default. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1143,7 +1143,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The platform version on which your tasks in the service are running. A platform version is only specified
      *        for tasks using the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version
      *        is used by default. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1174,7 +1174,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has
      * a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -1198,7 +1198,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name
      *        <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role
      *        name. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      *        >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      */
 
@@ -1227,7 +1227,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has
      * a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -1250,7 +1250,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name
      *         <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the
      *         role name. For more information, see <a href=
-     *         "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      *         >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      */
 
@@ -1279,7 +1279,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * is recommended) or prefix the role name with the path. For example, if a role with the name <code>bar</code> has
      * a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role name. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      * >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
@@ -1303,7 +1303,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name
      *        <code>bar</code> has a path of <code>/foo/</code> then you would specify <code>/foo/bar</code> as the role
      *        name. For more information, see <a href=
-     *        "http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names"
      *        >Friendly Names and Paths</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

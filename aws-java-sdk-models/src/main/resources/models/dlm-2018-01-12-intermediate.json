@@ -55,7 +55,7 @@
     "defaultEndpoint" : "dlm.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "dlm.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<fullname>Amazon Data Lifecycle Manager</fullname> <p>With Amazon Data Lifecycle Manager, you can manage the lifecycle of your AWS resources. You create lifecycle policies, which are used to automate operations on the specified resources.</p> <p>Amazon DLM supports Amazon EBS volumes and snapshots. For information about using Amazon DLM with Amazon EBS, see <a href=\"http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html\">Automating the Amazon EBS Snapshot Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p>",
+    "documentation" : "<fullname>Amazon Data Lifecycle Manager</fullname> <p>With Amazon Data Lifecycle Manager, you can manage the lifecycle of your AWS resources. You create lifecycle policies, which are used to automate operations on the specified resources.</p> <p>Amazon DLM supports Amazon EBS volumes and snapshots. For information about using Amazon DLM with Amazon EBS, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html\">Automating the Amazon EBS Snapshot Lifecycle</a> in the <i>Amazon EC2 User Guide</i>.</p>",
     "endpointPrefix" : "dlm",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -5293,7 +5293,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "dateCreated",
           "variableType" : "java.util.Date",
@@ -5359,7 +5359,7 @@
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
-          "timestampFormat" : "unixTimestamp",
+          "timestampFormat" : "iso8601",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "dateModified",
           "variableType" : "java.util.Date",
@@ -5493,7 +5493,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was created.</p>\n@param dateCreated The local date and time when the lifecycle policy was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "dateCreated",
             "variableType" : "java.util.Date",
@@ -5560,7 +5560,7 @@
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The local date and time when the lifecycle policy was last modified.</p>\n@param dateModified The local date and time when the lifecycle policy was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
-            "timestampFormat" : "unixTimestamp",
+            "timestampFormat" : "iso8601",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "dateModified",
             "variableType" : "java.util.Date",

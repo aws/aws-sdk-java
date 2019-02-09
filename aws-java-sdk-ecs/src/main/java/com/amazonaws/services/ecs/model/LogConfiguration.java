@@ -33,7 +33,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
      * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -67,7 +67,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
      * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -90,8 +90,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
      *        the only supported value is <code>awslogs</code>. For more information about using the
      *        <code>awslogs</code> driver, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     *        Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
@@ -116,7 +116,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
      * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -138,7 +138,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
      *         the only supported value is <code>awslogs</code>. For more information about using the
      *         <code>awslogs</code> driver, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
      *         Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *         <p>
      *         If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
@@ -164,7 +164,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
      * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -187,8 +187,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
      *        the only supported value is <code>awslogs</code>. For more information about using the
      *        <code>awslogs</code> driver, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     *        Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
@@ -215,7 +215,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
      * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -238,8 +238,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
      *        the only supported value is <code>awslogs</code>. For more information about using the
      *        <code>awslogs</code> driver, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     *        Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a
@@ -264,7 +264,7 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * The log driver to use for the container. The valid values listed for this parameter are log drivers that the
      * Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type, the only
      * supported value is <code>awslogs</code>. For more information about using the <code>awslogs</code> driver, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
      * Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
@@ -287,8 +287,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        the Amazon ECS container agent can communicate with by default. If you are using the Fargate launch type,
      *        the only supported value is <code>awslogs</code>. For more information about using the
      *        <code>awslogs</code> driver, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs Log
-     *        Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_awslogs.html">Using the awslogs
+     *        Log Driver</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p> <note>
      *        <p>
      *        If you have a custom driver that is not listed above that you would like to work with the Amazon ECS
      *        container agent, you can fork the Amazon ECS container agent project that is <a

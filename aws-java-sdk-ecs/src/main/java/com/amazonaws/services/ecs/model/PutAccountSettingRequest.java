@@ -45,7 +45,7 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
      * modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the account unless an
-     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the setting are
+     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the settings are
      * changed only for the authenticated user.
      * </p>
      */
@@ -184,7 +184,7 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
      * modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the account unless an
-     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the setting are
+     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the settings are
      * changed only for the authenticated user.
      * </p>
      * 
@@ -192,7 +192,7 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
      *        user, it modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the
      *        account unless an IAM user or role explicitly overrides these settings for themselves. If this field is
-     *        omitted, the setting are changed only for the authenticated user.
+     *        omitted, the settings are changed only for the authenticated user.
      */
 
     public void setPrincipalArn(String principalArn) {
@@ -203,14 +203,14 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
      * modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the account unless an
-     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the setting are
+     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the settings are
      * changed only for the authenticated user.
      * </p>
      * 
      * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
      *         user, it modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the
      *         account unless an IAM user or role explicitly overrides these settings for themselves. If this field is
-     *         omitted, the setting are changed only for the authenticated user.
+     *         omitted, the settings are changed only for the authenticated user.
      */
 
     public String getPrincipalArn() {
@@ -221,7 +221,7 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root user, it
      * modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the account unless an
-     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the setting are
+     * IAM user or role explicitly overrides these settings for themselves. If this field is omitted, the settings are
      * changed only for the authenticated user.
      * </p>
      * 
@@ -229,7 +229,7 @@ public class PutAccountSettingRequest extends com.amazonaws.AmazonWebServiceRequ
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If you specify the root
      *        user, it modifies the ARN and resource ID format for all IAM users, IAM roles, and the root user of the
      *        account unless an IAM user or role explicitly overrides these settings for themselves. If this field is
-     *        omitted, the setting are changed only for the authenticated user.
+     *        omitted, the settings are changed only for the authenticated user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

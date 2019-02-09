@@ -36,7 +36,7 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -126,14 +126,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param filter
      *        You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *        statements. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -145,13 +145,13 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *         statements. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *         Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -163,14 +163,14 @@ public class ListContainerInstancesRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      * statements. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query
      * Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param filter
      *        You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language
      *        statements. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      *        Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

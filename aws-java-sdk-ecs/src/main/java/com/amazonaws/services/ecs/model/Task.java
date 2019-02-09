@@ -265,7 +265,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -275,7 +275,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The platform version on which your task is running. A platform version is only specified for tasks using the
      * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -1900,13 +1900,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type on which your task is running. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
@@ -1918,12 +1918,12 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The launch type on which your task is running. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *         Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
@@ -1935,13 +1935,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type on which your task is running. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
@@ -1955,13 +1955,13 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The launch type on which your task is running. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
      *        The launch type on which your task is running. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch
      *        Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
@@ -1977,7 +1977,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The platform version on which your task is running. A platform version is only specified for tasks using the
      * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -1985,7 +1985,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      *        The platform version on which your task is running. A platform version is only specified for tasks using
      *        the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
      *        default. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -1998,14 +1998,14 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The platform version on which your task is running. A platform version is only specified for tasks using the
      * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @return The platform version on which your task is running. A platform version is only specified for tasks using
      *         the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
      *         default. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *         Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -2018,7 +2018,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      * The platform version on which your task is running. A platform version is only specified for tasks using the
      * Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by default. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
      * Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -2026,7 +2026,7 @@ public class Task implements Serializable, Cloneable, StructuredPojo {
      *        The platform version on which your task is running. A platform version is only specified for tasks using
      *        the Fargate launch type. If one is not specified, the <code>LATEST</code> platform version is used by
      *        default. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate
      *        Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

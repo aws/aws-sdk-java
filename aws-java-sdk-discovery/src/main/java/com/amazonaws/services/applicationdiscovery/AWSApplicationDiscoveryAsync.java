@@ -917,14 +917,14 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * </ol>
      * <p>
      * For more information, including step-by-step procedures, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
+     * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
      * Import</a> in the <i>AWS Application Discovery Service User Guide</i>.
      * </p>
      * <note>
      * <p>
      * There are limits to the number of import tasks you can create (and delete) in an AWS account. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
+     * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
      * Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.
      * </p>
      * </note>
@@ -973,14 +973,14 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
      * </ol>
      * <p>
      * For more information, including step-by-step procedures, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
+     * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
      * Import</a> in the <i>AWS Application Discovery Service User Guide</i>.
      * </p>
      * <note>
      * <p>
      * There are limits to the number of import tasks you can create (and delete) in an AWS account. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
+     * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application
      * Discovery Service Limits</a> in the <i>AWS Application Discovery Service User Guide</i>.
      * </p>
      * </note>

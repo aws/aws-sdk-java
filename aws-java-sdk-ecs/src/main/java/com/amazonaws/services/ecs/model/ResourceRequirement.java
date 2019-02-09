@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type and amount of a resource to assign to a container. The only supported resource is a GPU.
+ * The type and amount of a resource to assign to a container. The only supported resource is a GPU. For more
+ * information, see <a href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working with GPUs
+ * on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ResourceRequirement" target="_top">AWS API
@@ -30,24 +32,30 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of GPUs to assign to a container.
+     * The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve for the container. The
+     * number of GPUs reserved for all containers in a task should not exceed the number of available GPUs on the
+     * container instance the task is launched on.
      * </p>
      */
     private String value;
     /**
      * <p>
-     * The type of resource a container desires. The only supported value is <code>GPU</code>.
+     * The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The number of GPUs to assign to a container.
+     * The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve for the container. The
+     * number of GPUs reserved for all containers in a task should not exceed the number of available GPUs on the
+     * container instance the task is launched on.
      * </p>
      * 
      * @param value
-     *        The number of GPUs to assign to a container.
+     *        The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve for the container.
+     *        The number of GPUs reserved for all containers in a task should not exceed the number of available GPUs on
+     *        the container instance the task is launched on.
      */
 
     public void setValue(String value) {
@@ -56,10 +64,14 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of GPUs to assign to a container.
+     * The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve for the container. The
+     * number of GPUs reserved for all containers in a task should not exceed the number of available GPUs on the
+     * container instance the task is launched on.
      * </p>
      * 
-     * @return The number of GPUs to assign to a container.
+     * @return The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve for the container.
+     *         The number of GPUs reserved for all containers in a task should not exceed the number of available GPUs
+     *         on the container instance the task is launched on.
      */
 
     public String getValue() {
@@ -68,11 +80,15 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The number of GPUs to assign to a container.
+     * The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve for the container. The
+     * number of GPUs reserved for all containers in a task should not exceed the number of available GPUs on the
+     * container instance the task is launched on.
      * </p>
      * 
      * @param value
-     *        The number of GPUs to assign to a container.
+     *        The number of physical <code>GPUs</code> the Amazon ECS container agent will reserve for the container.
+     *        The number of GPUs reserved for all containers in a task should not exceed the number of available GPUs on
+     *        the container instance the task is launched on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +99,11 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of resource a container desires. The only supported value is <code>GPU</code>.
+     * The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * </p>
      * 
      * @param type
-     *        The type of resource a container desires. The only supported value is <code>GPU</code>.
+     *        The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * @see ResourceType
      */
 
@@ -97,10 +113,10 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of resource a container desires. The only supported value is <code>GPU</code>.
+     * The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * </p>
      * 
-     * @return The type of resource a container desires. The only supported value is <code>GPU</code>.
+     * @return The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * @see ResourceType
      */
 
@@ -110,11 +126,11 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of resource a container desires. The only supported value is <code>GPU</code>.
+     * The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * </p>
      * 
      * @param type
-     *        The type of resource a container desires. The only supported value is <code>GPU</code>.
+     *        The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -126,11 +142,11 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The type of resource a container desires. The only supported value is <code>GPU</code>.
+     * The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * </p>
      * 
      * @param type
-     *        The type of resource a container desires. The only supported value is <code>GPU</code>.
+     *        The type of resource to assign to a container. The only supported value is <code>GPU</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

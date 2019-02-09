@@ -126,6 +126,13 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      * Limitations</a> in the Amazon Simple Storage Service Developer Guide.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use
+     * Amazon S3. You can sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.
+     * </p>
+     * </li>
      * </ul>
      */
     private String statusDetail;
@@ -625,6 +632,13 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      * Limitations</a> in the Amazon Simple Storage Service Developer Guide.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use
+     * Amazon S3. You can sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusDetail
@@ -675,6 +689,13 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      *        buckets or request a limit increase and try again. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
      *        Limitations</a> in the Amazon Simple Storage Service Developer Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you
+     *        can use Amazon S3. You can sign up at the following URL: <a
+     *        href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.
      *        </p>
      *        </li>
      */
@@ -734,6 +755,13 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      * Limitations</a> in the Amazon Simple Storage Service Developer Guide.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use
+     * Amazon S3. You can sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Contains information about any errors that have occurred. This data type can have the following
@@ -783,6 +811,13 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      *         buckets or request a limit increase and try again. For more information, see <a
      *         href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
      *         Limitations</a> in the Amazon Simple Storage Service Developer Guide.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you
+     *         can use Amazon S3. You can sign up at the following URL: <a
+     *         href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.
      *         </p>
      *         </li>
      */
@@ -842,6 +877,13 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      * Limitations</a> in the Amazon Simple Storage Service Developer Guide.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you can use
+     * Amazon S3. You can sign up at the following URL: <a
+     * href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusDetail
@@ -892,6 +934,13 @@ public class ContinuousExportDescription implements Serializable, Cloneable, Str
      *        buckets or request a limit increase and try again. For more information, see <a
      *        href="http://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html">Bucket Restrictions and
      *        Limitations</a> in the Amazon Simple Storage Service Developer Guide.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        S3_NOT_SIGNED_UP - Your account is not signed up for the Amazon S3 service. You must sign up before you
+     *        can use Amazon S3. You can sign up at the following URL: <a
+     *        href="https://aws.amazon.com/s3">https://aws.amazon.com/s3</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

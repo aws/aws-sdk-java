@@ -85,7 +85,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
      * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
      * running on the container instance are removed if possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -573,7 +573,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
      * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
      * running on the container instance are removed if possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -582,7 +582,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *        <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
      *        <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
      *        tasks running on the container instance are removed if possible. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
      *        >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -596,7 +596,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
      * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
      * running on the container instance are removed if possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -604,7 +604,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *         <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
      *         <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
      *         tasks running on the container instance are removed if possible. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
      *         >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      */
 
@@ -618,7 +618,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      * <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
      * <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service tasks
      * running on the container instance are removed if possible. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
      * Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
@@ -627,7 +627,7 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
      *        <code>DRAINING</code>. <code>ACTIVE</code> indicates that the container instance can accept tasks.
      *        <code>DRAINING</code> indicates that new tasks are not placed on the container instance and any service
      *        tasks running on the container instance are removed if possible. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html"
      *        >Container Instance Draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
