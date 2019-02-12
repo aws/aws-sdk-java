@@ -508,17 +508,27 @@ public class AmazonHttpClient {
                                    HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
                                    HttpResponseHandler<AmazonServiceException> errorResponseHandler,
                                    ExecutionContext executionContext) {
+        return execute(request, responseHandler, errorResponseHandler, executionContext,
+                       new AmazonWebServiceRequestAdapter(request.getOriginalRequest()));
+    }
+
+    @SdkInternalApi
+    public <T> Response<T> execute(Request<?> request,
+                                   HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
+                                   HttpResponseHandler<AmazonServiceException> errorResponseHandler,
+                                   ExecutionContext executionContext,
+                                   RequestConfig requestConfig) {
         HttpResponseHandler<T> adaptedRespHandler = new AwsResponseHandlerAdapter<T>(
-                getNonNullResponseHandler(responseHandler),
-                request,
-                executionContext.getAwsRequestMetrics(),
-                responseMetadataCache);
+            getNonNullResponseHandler(responseHandler),
+            request,
+            executionContext.getAwsRequestMetrics(),
+            responseMetadataCache);
         return requestExecutionBuilder()
-                .request(request)
-                .requestConfig(new AmazonWebServiceRequestAdapter(request.getOriginalRequest()))
-                .errorResponseHandler(new AwsErrorResponseHandler(errorResponseHandler, executionContext.getAwsRequestMetrics()))
-                .executionContext(executionContext)
-                .execute(adaptedRespHandler);
+            .request(request)
+            .requestConfig(requestConfig)
+            .errorResponseHandler(new AwsErrorResponseHandler(errorResponseHandler, executionContext.getAwsRequestMetrics()))
+            .executionContext(executionContext)
+            .execute(adaptedRespHandler);
     }
 
     /**

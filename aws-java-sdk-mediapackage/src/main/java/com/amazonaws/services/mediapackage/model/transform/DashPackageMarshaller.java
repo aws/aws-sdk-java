@@ -30,6 +30,8 @@ public class DashPackageMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> ENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
+    private static final MarshallingInfo<String> MANIFESTLAYOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manifestLayout").build();
     private static final MarshallingInfo<Integer> MANIFESTWINDOWSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manifestWindowSeconds").build();
     private static final MarshallingInfo<Integer> MINBUFFERTIMESECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -42,6 +44,8 @@ public class DashPackageMarshaller {
             .marshallLocationName("profile").build();
     private static final MarshallingInfo<Integer> SEGMENTDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentDurationSeconds").build();
+    private static final MarshallingInfo<String> SEGMENTTEMPLATEFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("segmentTemplateFormat").build();
     private static final MarshallingInfo<StructuredPojo> STREAMSELECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamSelection").build();
     private static final MarshallingInfo<Integer> SUGGESTEDPRESENTATIONDELAYSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -64,12 +68,14 @@ public class DashPackageMarshaller {
 
         try {
             protocolMarshaller.marshall(dashPackage.getEncryption(), ENCRYPTION_BINDING);
+            protocolMarshaller.marshall(dashPackage.getManifestLayout(), MANIFESTLAYOUT_BINDING);
             protocolMarshaller.marshall(dashPackage.getManifestWindowSeconds(), MANIFESTWINDOWSECONDS_BINDING);
             protocolMarshaller.marshall(dashPackage.getMinBufferTimeSeconds(), MINBUFFERTIMESECONDS_BINDING);
             protocolMarshaller.marshall(dashPackage.getMinUpdatePeriodSeconds(), MINUPDATEPERIODSECONDS_BINDING);
             protocolMarshaller.marshall(dashPackage.getPeriodTriggers(), PERIODTRIGGERS_BINDING);
             protocolMarshaller.marshall(dashPackage.getProfile(), PROFILE_BINDING);
             protocolMarshaller.marshall(dashPackage.getSegmentDurationSeconds(), SEGMENTDURATIONSECONDS_BINDING);
+            protocolMarshaller.marshall(dashPackage.getSegmentTemplateFormat(), SEGMENTTEMPLATEFORMAT_BINDING);
             protocolMarshaller.marshall(dashPackage.getStreamSelection(), STREAMSELECTION_BINDING);
             protocolMarshaller.marshall(dashPackage.getSuggestedPresentationDelaySeconds(), SUGGESTEDPRESENTATIONDELAYSECONDS_BINDING);
         } catch (Exception e) {

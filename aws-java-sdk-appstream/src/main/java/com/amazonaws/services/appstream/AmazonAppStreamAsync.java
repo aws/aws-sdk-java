@@ -27,11 +27,11 @@ import com.amazonaws.services.appstream.model.*;
  * <p>
  * <fullname>Amazon AppStream 2.0</fullname>
  * <p>
- * This is the <i>Amazon AppStream 2.0 API Reference</i>. It provides descriptions and syntax for each of the actions
- * and data types in AppStream 2.0. AppStream 2.0 is a fully managed application streaming service. You centrally manage
- * your desktop applications on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0 manages the AWS
- * resources required to host and run your applications, scales automatically, and provides access to your users on
- * demand.
+ * This is the <i>Amazon AppStream 2.0 API Reference</i>. This reference provides descriptions and syntax for each of
+ * the actions and data types in AppStream 2.0. AppStream 2.0 is a fully managed application streaming service. You
+ * centrally manage your desktop applications on AppStream 2.0 and securely deliver them to any computer. AppStream 2.0
+ * manages the AWS resources required to host and run your applications, scales automatically, and provides access to
+ * your users on demand.
  * </p>
  * <p>
  * To learn more about AppStream 2.0, see the following resources:
@@ -817,9 +817,9 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
-     * Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided
-     * for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not
-     * provided, the default is to authenticate users using a streaming URL.
+     * Retrieves a list that describes the active streaming sessions for a specified stack and fleet. If a value for
+     * <code>UserId</code> is provided for the stack and fleet, only streaming sessions for that user are described. If
+     * an authentication type is not provided, the default is to authenticate users using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -832,9 +832,9 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
 
     /**
      * <p>
-     * Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a UserId is provided
-     * for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not
-     * provided, the default is to authenticate users using a streaming URL.
+     * Retrieves a list that describes the active streaming sessions for a specified stack and fleet. If a value for
+     * <code>UserId</code> is provided for the stack and fleet, only streaming sessions for that user are described. If
+     * an authentication type is not provided, the default is to authenticate users using a streaming URL.
      * </p>
      * 
      * @param describeSessionsRequest
@@ -1172,7 +1172,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
@@ -1191,7 +1191,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
@@ -1347,7 +1347,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
@@ -1374,7 +1374,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
@@ -1400,7 +1400,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
@@ -1421,7 +1421,7 @@ public interface AmazonAppStreamAsync extends AmazonAppStream {
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 

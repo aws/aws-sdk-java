@@ -15,9 +15,7 @@ package com.amazonaws.services.appstream.model;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Possible values for the state of a streaming session.
- * </p>
+ * 
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SessionState {

@@ -27,6 +27,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class DashPackage implements Serializable, Cloneable, StructuredPojo {
 
     private DashEncryption encryption;
+    /**
+     * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
+     * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
+     * elements are combined and presented at the AdaptationSet level.
+     */
+    private String manifestLayout;
     /** Time window (in seconds) contained in each manifest. */
     private Integer manifestWindowSeconds;
     /** Minimum duration (in seconds) that a player will buffer media before starting the presentation. */
@@ -53,6 +59,12 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
      * segment duration.
      */
     private Integer segmentDurationSeconds;
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     */
+    private String segmentTemplateFormat;
 
     private StreamSelection streamSelection;
     /** Duration (in seconds) to delay live content before presentation. */
@@ -81,6 +93,73 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
 
     public DashPackage withEncryption(DashEncryption encryption) {
         setEncryption(encryption);
+        return this;
+    }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
+     * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
+     * elements are combined and presented at the AdaptationSet level.
+     * 
+     * @param manifestLayout
+     *        Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL,
+     *        elements like SegmentTemplate and ContentProtection are included in each Representation. When set to
+     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+     * @see ManifestLayout
+     */
+
+    public void setManifestLayout(String manifestLayout) {
+        this.manifestLayout = manifestLayout;
+    }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
+     * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
+     * elements are combined and presented at the AdaptationSet level.
+     * 
+     * @return Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL,
+     *         elements like SegmentTemplate and ContentProtection are included in each Representation. When set to
+     *         COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+     * @see ManifestLayout
+     */
+
+    public String getManifestLayout() {
+        return this.manifestLayout;
+    }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
+     * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
+     * elements are combined and presented at the AdaptationSet level.
+     * 
+     * @param manifestLayout
+     *        Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL,
+     *        elements like SegmentTemplate and ContentProtection are included in each Representation. When set to
+     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManifestLayout
+     */
+
+    public DashPackage withManifestLayout(String manifestLayout) {
+        setManifestLayout(manifestLayout);
+        return this;
+    }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL, elements like
+     * SegmentTemplate and ContentProtection are included in each Representation. When set to COMPACT, duplicate
+     * elements are combined and presented at the AdaptationSet level.
+     * 
+     * @param manifestLayout
+     *        Determines the position of some tags in the Media Presentation Description (MPD). When set to FULL,
+     *        elements like SegmentTemplate and ContentProtection are included in each Representation. When set to
+     *        COMPACT, duplicate elements are combined and presented at the AdaptationSet level.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManifestLayout
+     */
+
+    public DashPackage withManifestLayout(ManifestLayout manifestLayout) {
+        this.manifestLayout = manifestLayout.toString();
         return this;
     }
 
@@ -411,6 +490,74 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * 
+     * @param segmentTemplateFormat
+     *        Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     *        NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When
+     *        set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * @see SegmentTemplateFormat
+     */
+
+    public void setSegmentTemplateFormat(String segmentTemplateFormat) {
+        this.segmentTemplateFormat = segmentTemplateFormat;
+    }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * 
+     * @return Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     *         NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs.
+     *         When set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media
+     *         URLs.
+     * @see SegmentTemplateFormat
+     */
+
+    public String getSegmentTemplateFormat() {
+        return this.segmentTemplateFormat;
+    }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * 
+     * @param segmentTemplateFormat
+     *        Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     *        NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When
+     *        set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SegmentTemplateFormat
+     */
+
+    public DashPackage withSegmentTemplateFormat(String segmentTemplateFormat) {
+        setSegmentTemplateFormat(segmentTemplateFormat);
+        return this;
+    }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     * NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * 
+     * @param segmentTemplateFormat
+     *        Determines the type of SegmentTimeline included in the Media Presentation Description (MPD). When set to
+     *        NUMBER_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Number$ media URLs. When
+     *        set to TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with $Time$ media URLs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SegmentTemplateFormat
+     */
+
+    public DashPackage withSegmentTemplateFormat(SegmentTemplateFormat segmentTemplateFormat) {
+        this.segmentTemplateFormat = segmentTemplateFormat.toString();
+        return this;
+    }
+
+    /**
      * @param streamSelection
      */
 
@@ -484,6 +631,8 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getEncryption() != null)
             sb.append("Encryption: ").append(getEncryption()).append(",");
+        if (getManifestLayout() != null)
+            sb.append("ManifestLayout: ").append(getManifestLayout()).append(",");
         if (getManifestWindowSeconds() != null)
             sb.append("ManifestWindowSeconds: ").append(getManifestWindowSeconds()).append(",");
         if (getMinBufferTimeSeconds() != null)
@@ -496,6 +645,8 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Profile: ").append(getProfile()).append(",");
         if (getSegmentDurationSeconds() != null)
             sb.append("SegmentDurationSeconds: ").append(getSegmentDurationSeconds()).append(",");
+        if (getSegmentTemplateFormat() != null)
+            sb.append("SegmentTemplateFormat: ").append(getSegmentTemplateFormat()).append(",");
         if (getStreamSelection() != null)
             sb.append("StreamSelection: ").append(getStreamSelection()).append(",");
         if (getSuggestedPresentationDelaySeconds() != null)
@@ -517,6 +668,10 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         if (other.getEncryption() == null ^ this.getEncryption() == null)
             return false;
         if (other.getEncryption() != null && other.getEncryption().equals(this.getEncryption()) == false)
+            return false;
+        if (other.getManifestLayout() == null ^ this.getManifestLayout() == null)
+            return false;
+        if (other.getManifestLayout() != null && other.getManifestLayout().equals(this.getManifestLayout()) == false)
             return false;
         if (other.getManifestWindowSeconds() == null ^ this.getManifestWindowSeconds() == null)
             return false;
@@ -542,6 +697,10 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSegmentDurationSeconds() != null && other.getSegmentDurationSeconds().equals(this.getSegmentDurationSeconds()) == false)
             return false;
+        if (other.getSegmentTemplateFormat() == null ^ this.getSegmentTemplateFormat() == null)
+            return false;
+        if (other.getSegmentTemplateFormat() != null && other.getSegmentTemplateFormat().equals(this.getSegmentTemplateFormat()) == false)
+            return false;
         if (other.getStreamSelection() == null ^ this.getStreamSelection() == null)
             return false;
         if (other.getStreamSelection() != null && other.getStreamSelection().equals(this.getStreamSelection()) == false)
@@ -560,12 +719,14 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
+        hashCode = prime * hashCode + ((getManifestLayout() == null) ? 0 : getManifestLayout().hashCode());
         hashCode = prime * hashCode + ((getManifestWindowSeconds() == null) ? 0 : getManifestWindowSeconds().hashCode());
         hashCode = prime * hashCode + ((getMinBufferTimeSeconds() == null) ? 0 : getMinBufferTimeSeconds().hashCode());
         hashCode = prime * hashCode + ((getMinUpdatePeriodSeconds() == null) ? 0 : getMinUpdatePeriodSeconds().hashCode());
         hashCode = prime * hashCode + ((getPeriodTriggers() == null) ? 0 : getPeriodTriggers().hashCode());
         hashCode = prime * hashCode + ((getProfile() == null) ? 0 : getProfile().hashCode());
         hashCode = prime * hashCode + ((getSegmentDurationSeconds() == null) ? 0 : getSegmentDurationSeconds().hashCode());
+        hashCode = prime * hashCode + ((getSegmentTemplateFormat() == null) ? 0 : getSegmentTemplateFormat().hashCode());
         hashCode = prime * hashCode + ((getStreamSelection() == null) ? 0 : getStreamSelection().hashCode());
         hashCode = prime * hashCode + ((getSuggestedPresentationDelaySeconds() == null) ? 0 : getSuggestedPresentationDelaySeconds().hashCode());
         return hashCode;

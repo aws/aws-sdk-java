@@ -187,7 +187,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * </p>
      */
     private Integer maxUserDurationInSeconds;
@@ -195,7 +195,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 57600.
+     * value between 60 and 360000.
      * </p>
      */
     private Integer disconnectTimeoutInSeconds;
@@ -226,15 +226,15 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private DomainJoinInfo domainJoinInfo;
     /**
      * <p>
-     * The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
-     * Environment=Test, or, if you do not specify a value, Environment=.
+     * The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      */
@@ -1278,11 +1278,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      */
 
     public void setMaxUserDurationInSeconds(Integer maxUserDurationInSeconds) {
@@ -1291,10 +1291,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * </p>
      * 
-     * @return The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * @return The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      */
 
     public Integer getMaxUserDurationInSeconds() {
@@ -1303,11 +1303,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1320,13 +1320,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 57600.
+     * value between 60 and 360000.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
      *        The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      *        disconnected reconnects within this time interval, the user is connected to their previous session.
-     *        Specify a value between 60 and 57600.
+     *        Specify a value between 60 and 360000.
      */
 
     public void setDisconnectTimeoutInSeconds(Integer disconnectTimeoutInSeconds) {
@@ -1337,12 +1337,12 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 57600.
+     * value between 60 and 360000.
      * </p>
      * 
      * @return The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      *         disconnected reconnects within this time interval, the user is connected to their previous session.
-     *         Specify a value between 60 and 57600.
+     *         Specify a value between 60 and 360000.
      */
 
     public Integer getDisconnectTimeoutInSeconds() {
@@ -1353,13 +1353,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 57600.
+     * value between 60 and 360000.
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
      *        The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      *        disconnected reconnects within this time interval, the user is connected to their previous session.
-     *        Specify a value between 60 and 57600.
+     *        Specify a value between 60 and 360000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1548,26 +1548,26 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
-     * Environment=Test, or, if you do not specify a value, Environment=.
+     * The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
-     * @return The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
-     *         Environment=Test, or, if you do not specify a value, Environment=. </p>
+     * @return The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example,
+     *         Environment=Test. If you do not specify a value, Environment=. </p>
      *         <p>
-     *         If you do not specify a value, we set the value to an empty string.
+     *         If you do not specify a value, the value is set to an empty string.
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *         href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
      *         Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      */
 
@@ -1577,27 +1577,27 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
-     * Environment=Test, or, if you do not specify a value, Environment=.
+     * The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
      * @param tags
-     *        The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
-     *        Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
-     *        If you do not specify a value, we set the value to an empty string.
+     *        If you do not specify a value, the value is set to an empty string.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
      *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      */
 
@@ -1607,27 +1607,27 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
-     * Environment=Test, or, if you do not specify a value, Environment=.
+     * The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
      * @param tags
-     *        The tags to associate with the fleet. A tag is a key-value pair (the value is optional). For example,
-     *        Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
-     *        If you do not specify a value, we set the value to an empty string.
+     *        If you do not specify a value, the value is set to an empty string.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
      *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1177,6 +1177,21 @@ public abstract class AbstractAmazonS3 implements AmazonS3 {
     }
 
     @Override
+    public PresignedUrlDownloadResult download(PresignedUrlDownloadRequest presignedUrlDownloadRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public void download(PresignedUrlDownloadRequest presignedUrlDownloadRequest, File destinationFile) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
+    public PresignedUrlUploadResult upload(PresignedUrlUploadRequest presignedUrlUploadRequest) {
+        throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
+    }
+
+    @Override
     public void shutdown() {
         throw new UnsupportedOperationException("Extend AbstractAmazonS3 to provide an implementation");
     }

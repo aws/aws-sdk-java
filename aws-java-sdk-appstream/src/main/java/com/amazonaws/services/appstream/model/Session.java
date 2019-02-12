@@ -60,8 +60,32 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML federation
-     * (<code>SAML</code>).
+     * Specifies whether a user is connected to the streaming session.
+     * </p>
+     */
+    private String connectionState;
+    /**
+     * <p>
+     * The time when a streaming instance is dedicated for the user.
+     * </p>
+     */
+    private java.util.Date startTime;
+    /**
+     * <p>
+     * The time when the streaming session is set to expire. This time is based on the
+     * <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session
+     * can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>,
+     * when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the
+     * <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming
+     * instance is terminated and the streaming session ends.
+     * </p>
+     */
+    private java.util.Date maxExpirationTime;
+    /**
+     * <p>
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     * authenticate users using a streaming URL.
      * </p>
      */
     private String authenticationType;
@@ -307,13 +331,201 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML federation
-     * (<code>SAML</code>).
+     * Specifies whether a user is connected to the streaming session.
+     * </p>
+     * 
+     * @param connectionState
+     *        Specifies whether a user is connected to the streaming session.
+     * @see SessionConnectionState
+     */
+
+    public void setConnectionState(String connectionState) {
+        this.connectionState = connectionState;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a user is connected to the streaming session.
+     * </p>
+     * 
+     * @return Specifies whether a user is connected to the streaming session.
+     * @see SessionConnectionState
+     */
+
+    public String getConnectionState() {
+        return this.connectionState;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a user is connected to the streaming session.
+     * </p>
+     * 
+     * @param connectionState
+     *        Specifies whether a user is connected to the streaming session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SessionConnectionState
+     */
+
+    public Session withConnectionState(String connectionState) {
+        setConnectionState(connectionState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a user is connected to the streaming session.
+     * </p>
+     * 
+     * @param connectionState
+     *        Specifies whether a user is connected to the streaming session.
+     * @see SessionConnectionState
+     */
+
+    public void setConnectionState(SessionConnectionState connectionState) {
+        withConnectionState(connectionState);
+    }
+
+    /**
+     * <p>
+     * Specifies whether a user is connected to the streaming session.
+     * </p>
+     * 
+     * @param connectionState
+     *        Specifies whether a user is connected to the streaming session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SessionConnectionState
+     */
+
+    public Session withConnectionState(SessionConnectionState connectionState) {
+        this.connectionState = connectionState.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when a streaming instance is dedicated for the user.
+     * </p>
+     * 
+     * @param startTime
+     *        The time when a streaming instance is dedicated for the user.
+     */
+
+    public void setStartTime(java.util.Date startTime) {
+        this.startTime = startTime;
+    }
+
+    /**
+     * <p>
+     * The time when a streaming instance is dedicated for the user.
+     * </p>
+     * 
+     * @return The time when a streaming instance is dedicated for the user.
+     */
+
+    public java.util.Date getStartTime() {
+        return this.startTime;
+    }
+
+    /**
+     * <p>
+     * The time when a streaming instance is dedicated for the user.
+     * </p>
+     * 
+     * @param startTime
+     *        The time when a streaming instance is dedicated for the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Session withStartTime(java.util.Date startTime) {
+        setStartTime(startTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time when the streaming session is set to expire. This time is based on the
+     * <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session
+     * can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>,
+     * when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the
+     * <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming
+     * instance is terminated and the streaming session ends.
+     * </p>
+     * 
+     * @param maxExpirationTime
+     *        The time when the streaming session is set to expire. This time is based on the
+     *        <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming
+     *        session can run. A streaming session might end earlier than the time specified in
+     *        <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the
+     *        user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the
+     *        user chooses to end his or her session, the streaming instance is terminated and the streaming session
+     *        ends.
+     */
+
+    public void setMaxExpirationTime(java.util.Date maxExpirationTime) {
+        this.maxExpirationTime = maxExpirationTime;
+    }
+
+    /**
+     * <p>
+     * The time when the streaming session is set to expire. This time is based on the
+     * <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session
+     * can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>,
+     * when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the
+     * <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming
+     * instance is terminated and the streaming session ends.
+     * </p>
+     * 
+     * @return The time when the streaming session is set to expire. This time is based on the
+     *         <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming
+     *         session can run. A streaming session might end earlier than the time specified in
+     *         <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the
+     *         user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the
+     *         user chooses to end his or her session, the streaming instance is terminated and the streaming session
+     *         ends.
+     */
+
+    public java.util.Date getMaxExpirationTime() {
+        return this.maxExpirationTime;
+    }
+
+    /**
+     * <p>
+     * The time when the streaming session is set to expire. This time is based on the
+     * <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming session
+     * can run. A streaming session might end earlier than the time specified in <code>SessionMaxExpirationTime</code>,
+     * when the <code>DisconnectTimeOutInSeconds</code> elapses or the user chooses to end his or her session. If the
+     * <code>DisconnectTimeOutInSeconds</code> elapses, or the user chooses to end his or her session, the streaming
+     * instance is terminated and the streaming session ends.
+     * </p>
+     * 
+     * @param maxExpirationTime
+     *        The time when the streaming session is set to expire. This time is based on the
+     *        <code>MaxUserDurationinSeconds</code> value, which determines the maximum length of time that a streaming
+     *        session can run. A streaming session might end earlier than the time specified in
+     *        <code>SessionMaxExpirationTime</code>, when the <code>DisconnectTimeOutInSeconds</code> elapses or the
+     *        user chooses to end his or her session. If the <code>DisconnectTimeOutInSeconds</code> elapses, or the
+     *        user chooses to end his or her session, the streaming instance is terminated and the streaming session
+     *        ends.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Session withMaxExpirationTime(java.util.Date maxExpirationTime) {
+        setMaxExpirationTime(maxExpirationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     * authenticate users using a streaming URL.
      * </p>
      * 
      * @param authenticationType
-     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML
-     *        federation (<code>SAML</code>).
+     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     *        federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     *        authenticate users using a streaming URL.
      * @see AuthenticationType
      */
 
@@ -323,12 +535,14 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML federation
-     * (<code>SAML</code>).
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     * authenticate users using a streaming URL.
      * </p>
      * 
-     * @return The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML
-     *         federation (<code>SAML</code>).
+     * @return The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     *         federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     *         authenticate users using a streaming URL.
      * @see AuthenticationType
      */
 
@@ -338,13 +552,15 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML federation
-     * (<code>SAML</code>).
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     * authenticate users using a streaming URL.
      * </p>
      * 
      * @param authenticationType
-     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML
-     *        federation (<code>SAML</code>).
+     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     *        federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     *        authenticate users using a streaming URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -356,13 +572,15 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML federation
-     * (<code>SAML</code>).
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     * authenticate users using a streaming URL.
      * </p>
      * 
      * @param authenticationType
-     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML
-     *        federation (<code>SAML</code>).
+     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     *        federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     *        authenticate users using a streaming URL.
      * @see AuthenticationType
      */
 
@@ -372,13 +590,15 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML federation
-     * (<code>SAML</code>).
+     * The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     * federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     * authenticate users using a streaming URL.
      * </p>
      * 
      * @param authenticationType
-     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>) or SAML
-     *        federation (<code>SAML</code>).
+     *        The authentication method. The user is authenticated using a streaming URL (<code>API</code>), SAML 2.0
+     *        federation (<code>SAML</code>), or the AppStream 2.0 user pool (<code>USERPOOL</code>). The default is to
+     *        authenticate users using a streaming URL.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationType
      */
@@ -450,6 +670,12 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
             sb.append("FleetName: ").append(getFleetName()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
+        if (getConnectionState() != null)
+            sb.append("ConnectionState: ").append(getConnectionState()).append(",");
+        if (getStartTime() != null)
+            sb.append("StartTime: ").append(getStartTime()).append(",");
+        if (getMaxExpirationTime() != null)
+            sb.append("MaxExpirationTime: ").append(getMaxExpirationTime()).append(",");
         if (getAuthenticationType() != null)
             sb.append("AuthenticationType: ").append(getAuthenticationType()).append(",");
         if (getNetworkAccessConfiguration() != null)
@@ -488,6 +714,18 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getConnectionState() == null ^ this.getConnectionState() == null)
+            return false;
+        if (other.getConnectionState() != null && other.getConnectionState().equals(this.getConnectionState()) == false)
+            return false;
+        if (other.getStartTime() == null ^ this.getStartTime() == null)
+            return false;
+        if (other.getStartTime() != null && other.getStartTime().equals(this.getStartTime()) == false)
+            return false;
+        if (other.getMaxExpirationTime() == null ^ this.getMaxExpirationTime() == null)
+            return false;
+        if (other.getMaxExpirationTime() != null && other.getMaxExpirationTime().equals(this.getMaxExpirationTime()) == false)
+            return false;
         if (other.getAuthenticationType() == null ^ this.getAuthenticationType() == null)
             return false;
         if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
@@ -509,6 +747,9 @@ public class Session implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStackName() == null) ? 0 : getStackName().hashCode());
         hashCode = prime * hashCode + ((getFleetName() == null) ? 0 : getFleetName().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getConnectionState() == null) ? 0 : getConnectionState().hashCode());
+        hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        hashCode = prime * hashCode + ((getMaxExpirationTime() == null) ? 0 : getMaxExpirationTime().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         hashCode = prime * hashCode + ((getNetworkAccessConfiguration() == null) ? 0 : getNetworkAccessConfiguration().hashCode());
         return hashCode;

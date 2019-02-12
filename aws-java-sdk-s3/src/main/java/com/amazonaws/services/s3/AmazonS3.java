@@ -51,8 +51,6 @@ import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
-import com.amazonaws.services.s3.model.DeletePublicAccessBlockRequest;
-import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
@@ -65,6 +63,8 @@ import com.amazonaws.services.s3.model.DeleteObjectTaggingRequest;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
 import com.amazonaws.services.s3.model.DeleteObjectsRequest;
 import com.amazonaws.services.s3.model.DeleteObjectsResult;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.DeleteVersionRequest;
 import com.amazonaws.services.s3.model.GeneratePresignedUrlRequest;
 import com.amazonaws.services.s3.model.GetBucketAccelerateConfigurationRequest;
@@ -78,8 +78,6 @@ import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketLocationRequest;
-import com.amazonaws.services.s3.model.GetPublicAccessBlockRequest;
-import com.amazonaws.services.s3.model.GetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
@@ -102,6 +100,8 @@ import com.amazonaws.services.s3.model.GetObjectRetentionRequest;
 import com.amazonaws.services.s3.model.GetObjectRetentionResult;
 import com.amazonaws.services.s3.model.GetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.GetObjectTaggingResult;
+import com.amazonaws.services.s3.model.GetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.GetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetS3AccountOwnerRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.HeadBucketRequest;
@@ -130,6 +130,10 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.PresignedUrlDownloadRequest;
+import com.amazonaws.services.s3.model.PresignedUrlDownloadResult;
+import com.amazonaws.services.s3.model.PresignedUrlUploadRequest;
+import com.amazonaws.services.s3.model.PresignedUrlUploadResult;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
@@ -148,8 +152,6 @@ import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
-import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
-import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
@@ -168,6 +170,8 @@ import com.amazonaws.services.s3.model.SetObjectRetentionRequest;
 import com.amazonaws.services.s3.model.SetObjectRetentionResult;
 import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
+import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
@@ -5374,6 +5378,139 @@ public interface AmazonS3 extends S3DirectSpi {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS API Documentation</a>
      */
     GetObjectRetentionResult getObjectRetention(GetObjectRetentionRequest getObjectRetentionRequest);
+
+    /**
+     * <p>
+     * Gets the object stored in Amazon S3 using a presigned url.
+     * <p>
+     * The result contains {@link S3Object} representing the downloaded object.
+     * Be extremely careful when using this method; the returned Amazon S3
+     * object contains a direct stream of data from the HTTP connection. The
+     * underlying HTTP connection cannot be reused until the user finishes
+     * reading the data and closes the stream. Also note that if not all data
+     * is read from the stream then the SDK will abort the underlying connection,
+     * this may have a negative impact on performance. Therefore:
+     * </p>
+     * <ul>
+     * <li>Use the data from the input stream in Amazon S3 object as soon as possible</li>
+     * <li>Read all data from the stream
+     *      (use {@link PresignedUrlDownloadRequest#setRange(long, long)} to request only the bytes you need)</li>
+     * <li>Close the input stream in Amazon S3 object as soon as possible</li>
+     * </ul>
+     * If these rules are not followed, the client can run out of resources by
+     * allocating too many open, but unused, HTTP connections. </p>
+     * <p>
+     *
+     * @param presignedUrlDownloadRequest The request object to download the object.
+     * @return result shape containing the downloaded stream
+     *
+     * @throws SdkClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+     PresignedUrlDownloadResult download(PresignedUrlDownloadRequest presignedUrlDownloadRequest);
+
+    /**
+     * <p>
+     * Gets the object stored in Amazon S3 using a presigned url.
+     * <p>
+     * The result contains {@link S3Object} representing the downloaded object.
+     * Be extremely careful when using this method; the returned Amazon S3
+     * object contains a direct stream of data from the HTTP connection. The
+     * underlying HTTP connection cannot be reused until the user finishes
+     * reading the data and closes the stream. Also note that if not all data
+     * is read from the stream then the SDK will abort the underlying connection,
+     * this may have a negative impact on performance. Therefore:
+     * </p>
+     * <ul>
+     * <li>Use the data from the input stream in Amazon S3 object as soon as possible</li>
+     * <li>Read all data from the stream
+     *      (use {@link PresignedUrlDownloadRequest#setRange(long, long)} to request only the bytes you need)</li>
+     * <li>Close the input stream in Amazon S3 object as soon as possible</li>
+     * </ul>
+     * If these rules are not followed, the client can run out of resources by
+     * allocating too many open, but unused, HTTP connections. </p>
+     * <p>
+     *
+     * @param presignedUrlDownloadRequest The request object to download the object.
+     * @param destinationFile Indicates the file (which might already exist) where
+     *                        to save the object content being downloading from Amazon S3.
+     *
+     * @throws SdkClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+     void download(PresignedUrlDownloadRequest presignedUrlDownloadRequest, File destinationFile);
+
+    /**
+     * <p>
+     * Uploads a new object into S3 using the given presigned url.
+     *
+     * <p></p>
+     * Depending on whether a file or input stream is being uploaded,
+     * this request has slightly different behavior.
+     * </p>
+     * <p>
+     * When uploading a file:
+     * </p>
+     * <ul>
+     * <li>
+     * The client automatically computes a checksum of the file. Amazon S3 uses
+     * checksums to validate the data in each file.</li>
+     * <li>
+     * Using the file extension, Amazon S3 attempts to determine the correct content
+     * type and content disposition to use for the object with some exceptions. See below.
+     * </li>
+     * <li>
+     * If the given presigned url is created using <b>SigV2 signer</b> and content type is not provided,
+     * then SDK will not attempt to determine the content type and instead sends an empty string for content type.
+     * This is because content type is signed header in SigV2 and so the content type can only be sent
+     * if it is used in creating presigned url.
+     * </li>
+     * <li>
+     * If the given presigned url is created using <b>SigV4 signer</b>, then SDK attempts to determine
+     * the correct content type and sends it with the request if not provided. Note that this only works
+     * if you have not used content type while creating the presigned url. If you have used content type while
+     * creating the url, then you should set the same content type while making this API call through
+     * {@link PresignedUrlUploadRequest#setMetadata(ObjectMetadata)} or
+     * {@link PresignedUrlUploadRequest#putCustomRequestHeader(String, String)}
+     * </li>
+     * </ul>
+     * <p>
+     * When uploading directly from an input stream, content length <b>must</b> be
+     * specified before data can be uploaded to Amazon S3. If not provided, the
+     * library will <b>have to</b> buffer the contents of the input stream in order
+     * to calculate it. Amazon S3 explicitly requires that the content length be
+     * sent in the request headers before any of the data is sent.</li>
+     * <p>
+     * Amazon S3 is a distributed system. If Amazon S3 receives multiple write
+     * requests for the same object nearly simultaneously, all of the objects might
+     * be stored. However, only one object will obtain the key.
+     * </p>
+     *
+     *
+     * @param presignedUrlUploadRequest
+     *            The request object containing all the parameters to upload a
+     *            new object to Amazon S3.
+     *
+     * @return A {@link PresignedUrlUploadResult} object containing the information
+     *         returned by Amazon S3 for the newly created object.
+     *
+     * @throws SdkClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+     PresignedUrlUploadResult upload(PresignedUrlUploadRequest presignedUrlUploadRequest);
+
 
     /**
      * Shuts down this client object, releasing any resources that might be held

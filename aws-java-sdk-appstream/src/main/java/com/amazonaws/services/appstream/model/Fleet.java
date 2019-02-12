@@ -100,7 +100,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     private ComputeCapacityStatus computeCapacityStatus;
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * </p>
      */
     private Integer maxUserDurationInSeconds;
@@ -108,7 +108,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 57600.
+     * value between 60 and 360000. By default, this value is 900 seconds (15 minutes).
      * </p>
      */
     private Integer disconnectTimeoutInSeconds;
@@ -705,11 +705,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      */
 
     public void setMaxUserDurationInSeconds(Integer maxUserDurationInSeconds) {
@@ -718,10 +718,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * </p>
      * 
-     * @return The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * @return The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      */
 
     public Integer getMaxUserDurationInSeconds() {
@@ -730,11 +730,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     * The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * </p>
      * 
      * @param maxUserDurationInSeconds
-     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+     *        The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 360000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -747,13 +747,13 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 57600.
+     * value between 60 and 360000. By default, this value is 900 seconds (15 minutes).
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
      *        The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      *        disconnected reconnects within this time interval, the user is connected to their previous session.
-     *        Specify a value between 60 and 57600.
+     *        Specify a value between 60 and 360000. By default, this value is 900 seconds (15 minutes).
      */
 
     public void setDisconnectTimeoutInSeconds(Integer disconnectTimeoutInSeconds) {
@@ -764,12 +764,12 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 57600.
+     * value between 60 and 360000. By default, this value is 900 seconds (15 minutes).
      * </p>
      * 
      * @return The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      *         disconnected reconnects within this time interval, the user is connected to their previous session.
-     *         Specify a value between 60 and 57600.
+     *         Specify a value between 60 and 360000. By default, this value is 900 seconds (15 minutes).
      */
 
     public Integer getDisconnectTimeoutInSeconds() {
@@ -780,13 +780,13 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      * disconnected reconnects within this time interval, the user is connected to their previous session. Specify a
-     * value between 60 and 57600.
+     * value between 60 and 360000. By default, this value is 900 seconds (15 minutes).
      * </p>
      * 
      * @param disconnectTimeoutInSeconds
      *        The time after disconnection when a session is considered to have ended, in seconds. If a user who was
      *        disconnected reconnects within this time interval, the user is connected to their previous session.
-     *        Specify a value between 60 and 57600.
+     *        Specify a value between 60 and 360000. By default, this value is 900 seconds (15 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

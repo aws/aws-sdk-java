@@ -283,9 +283,15 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
      * artifacts.
      * </p>
+     * <note>
      * <p>
-     * This is expressed either as the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      */
     private String encryptionKey;
@@ -2238,17 +2244,28 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
      * artifacts.
      * </p>
+     * <note>
      * <p>
-     * This is expressed either as the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @param encryptionKey
      *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *        output artifacts.</p>
+     *        output artifacts.</p> <note>
      *        <p>
-     *        This is expressed either as the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     *        (using the format <code>alias/<i>alias-name</i> </code>).
+     *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *        permission to that key.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -2260,16 +2277,27 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
      * artifacts.
      * </p>
+     * <note>
      * <p>
-     * This is expressed either as the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *         output artifacts.</p>
+     *         output artifacts.</p> <note>
      *         <p>
-     *         This is expressed either as the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     *         (using the format <code>alias/<i>alias-name</i> </code>).
+     *         You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *         permission to that key.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *         the format <code>alias/<i>alias-name</i> </code>).
      */
 
     public String getEncryptionKey() {
@@ -2281,17 +2309,28 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
      * artifacts.
      * </p>
+     * <note>
      * <p>
-     * This is expressed either as the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias (using
-     * the format <code>alias/<i>alias-name</i> </code>).
+     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
+     * that key.
+     * </p>
+     * </note>
+     * <p>
+     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @param encryptionKey
      *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *        output artifacts.</p>
+     *        output artifacts.</p> <note>
      *        <p>
-     *        This is expressed either as the Amazon Resource Name (ARN) of the CMK or, if specified, the CMK's alias
-     *        (using the format <code>alias/<i>alias-name</i> </code>).
+     *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
+     *        permission to that key.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *        the format <code>alias/<i>alias-name</i> </code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

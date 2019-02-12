@@ -1,3 +1,16 @@
+# __1.11.496__ __2019-02-11__
+## __AWS CodeBuild__
+  - ### Features
+    - Add customized webhook filter support
+
+## __AWS Elemental MediaPackage__
+  - ### Features
+    - Adds optional configuration for DASH to compact the manifest by combining duplicate SegmentTemplate tags. Adds optional configuration for DASH SegmentTemplate format to refer to segments by "Number" (default) or by "Time".
+
+## __Amazon AppStream__
+  - ### Features
+    - This update enables customers to find the start time, max expiration time, and connection status associated with AppStream streaming session.
+
 # __1.11.495__ __2019-02-08__
 ## __AWS Application Discovery Service__
   - ### Features

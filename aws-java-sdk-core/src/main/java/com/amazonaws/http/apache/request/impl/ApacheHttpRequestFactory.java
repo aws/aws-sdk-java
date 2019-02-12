@@ -61,13 +61,22 @@ public class ApacheHttpRequestFactory implements
             FakeIOException {
         URI endpoint = request.getEndpoint();
 
-        /*
-         * HttpClient cannot handle url in pattern of "http://host//path", so we
-         * have to escape the double-slash between endpoint and resource-path
-         * into "/%2F"
-         */
-        String uri = SdkHttpUtils.appendUri(endpoint.toString(), request
-                .getResourcePath(), true);
+
+        String uri;
+
+        // skipAppendUriPath is set for APIs making requests with presigned urls. Otherwise
+        // a slash will be appended at the end and the request will fail
+        if (request.getOriginalRequest().getRequestClientOptions().isSkipAppendUriPath()) {
+            uri = endpoint.toString();
+        } else {
+            /*
+             * HttpClient cannot handle url in pattern of "http://host//path", so we
+             * have to escape the double-slash between endpoint and resource-path
+             * into "/%2F"
+             */
+            uri = SdkHttpUtils.appendUri(endpoint.toString(), request.getResourcePath(), true);
+        }
+
         String encodedParams = SdkHttpUtils.encodeParameters(request);
 
         /*

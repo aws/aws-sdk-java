@@ -49,7 +49,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      */
@@ -57,7 +57,7 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      */
@@ -217,13 +217,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param groupName
      *        The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *        >Working with Log Groups and Log Streams</a>.
      */
 
@@ -234,12 +234,12 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @return The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *         >Working with Log Groups and Log Streams</a>.
      */
 
@@ -250,13 +250,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param groupName
      *        The group name of the logs in Amazon CloudWatch Logs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *        >Working with Log Groups and Log Streams</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -269,13 +269,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param streamName
      *        The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *        >Working with Log Groups and Log Streams</a>.
      */
 
@@ -286,12 +286,12 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @return The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *         >Working with Log Groups and Log Streams</a>.
      */
 
@@ -302,13 +302,13 @@ public class CloudWatchLogsConfig implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working
      * with Log Groups and Log Streams</a>.
      * </p>
      * 
      * @param streamName
      *        The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html"
      *        >Working with Log Groups and Log Streams</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -14,8 +14,6 @@
  */
 package com.amazonaws.services.s3.transfer;
 
-import java.io.IOException;
-
 import com.amazonaws.services.s3.model.CryptoMode;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.transfer.exception.PauseException;
@@ -29,7 +27,7 @@ import com.amazonaws.services.s3.transfer.exception.PauseException;
  * @see TransferManager#download(com.amazonaws.services.s3.model.GetObjectRequest,
  *      java.io.File)
  */
-public interface Download extends Transfer {
+public interface Download extends AbortableTransfer {
 
     /**
      * Returns the ObjectMetadata for the object being downloaded.
@@ -51,13 +49,6 @@ public interface Download extends Transfer {
      * @return The key under which this object was stored in Amazon S3.
      */
     public String getKey();
-
-    /**
-     * Cancels this download.
-     *
-     * @throws IOException
-     */
-    public void abort() throws IOException;
 
     /**
      * Pause the current download operation and returns the information that can

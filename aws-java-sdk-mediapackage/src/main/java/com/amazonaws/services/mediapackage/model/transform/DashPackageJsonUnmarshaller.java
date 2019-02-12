@@ -52,6 +52,10 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                     context.nextToken();
                     dashPackage.setEncryption(DashEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("manifestLayout", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setManifestLayout(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("manifestWindowSeconds", targetDepth)) {
                     context.nextToken();
                     dashPackage.setManifestWindowSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -75,6 +79,10 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                 if (context.testExpression("segmentDurationSeconds", targetDepth)) {
                     context.nextToken();
                     dashPackage.setSegmentDurationSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("segmentTemplateFormat", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setSegmentTemplateFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("streamSelection", targetDepth)) {
                     context.nextToken();

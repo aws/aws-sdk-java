@@ -27,49 +27,37 @@ import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 import com.amazonaws.services.s3.transfer.exception.FileLockException;
-import com.amazonaws.services.s3.transfer.internal.AbstractTransfer;
+import com.amazonaws.services.s3.transfer.internal.AbstractDownloadCallable;
 import com.amazonaws.services.s3.transfer.internal.CompleteMultipartDownload;
 import com.amazonaws.services.s3.transfer.internal.DownloadImpl;
 import com.amazonaws.services.s3.transfer.internal.DownloadMonitor;
-import com.amazonaws.services.s3.transfer.internal.DownloadPartCallable;
+import com.amazonaws.services.s3.transfer.internal.DownloadS3ObjectCallable;
 import com.amazonaws.util.IOUtils;
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.net.SocketException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 import javax.net.ssl.SSLProtocolException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 @SdkInternalApi
-final class DownloadCallable implements Callable<File> {
+final class DownloadCallable extends AbstractDownloadCallable {
     private static final Log LOG = LogFactory.getLog(DownloadCallable.class);
 
     private final AmazonS3 s3;
-    private final CountDownLatch latch;
     private final GetObjectRequest req;
     private final boolean resumeExistingDownload;
     private final DownloadImpl download;
-    private final File dstfile;
     private final long origStartingByte;
-    private final long timeout;
-    private final ScheduledExecutorService timedExecutor;
-    /** The thread pool in which parts are downloaded downloaded. */
-    private final ExecutorService executor;
-    private final List<Future<Long>> futures;
-    private final boolean isDownloadParallel;
     private Integer lastFullyMergedPartNumber;
     private Long lastFullyMergedPartPosition;
     private final boolean resumeOnRetry;
-
     private long expectedFileLength;
 
     DownloadCallable(AmazonS3 s3, CountDownLatch latch,
@@ -79,23 +67,18 @@ final class DownloadCallable implements Callable<File> {
                      ScheduledExecutorService timedExecutor,
                      ExecutorService executor,
                      Integer lastFullyDownloadedPartNumber, boolean isDownloadParallel, boolean resumeOnRetry) {
-        if (s3 == null || latch == null || req == null || dstfile == null || download == null) {
+        super(constructCallableConfig(executor, dstfile, latch, download, isDownloadParallel, timedExecutor, timeout));
+
+        if (s3 == null || req == null || download == null) {
             throw new IllegalArgumentException();
         }
         this.s3 = s3;
-        this.latch = latch;
         this.req = req;
         this.resumeExistingDownload = resumeExistingDownload;
         this.download = download;
-        this.dstfile = dstfile;
         this.origStartingByte = origStartingByte;
         this.expectedFileLength = expectedFileLength;
-        this.timeout = timeout;
-        this.timedExecutor = timedExecutor;
-        this.executor = executor;
-        this.futures = new ArrayList<Future<Long>>();
         this.lastFullyMergedPartNumber = lastFullyDownloadedPartNumber;
-        this.isDownloadParallel = isDownloadParallel;
         this.resumeOnRetry = resumeOnRetry;
     }
 
@@ -104,58 +87,21 @@ final class DownloadCallable implements Callable<File> {
         return this;
     }
 
-    /**
-     * This method must return a non-null object, or else the existing
-     * implementation in {@link AbstractTransfer#waitForCompletion()}
-     * would block forever.
-     *
-     * @return the downloaded file
-     */
     @Override
-    public File call() throws Exception {
-        try {
-            latch.await();
+    protected void downloadAsSingleObject() {
+        S3Object s3Object = retryableDownloadS3ObjectToFile(dstfile,
+                                                            new DownloadTaskImpl(s3, download, req));
+        updateDownloadStatus(s3Object);
+    }
 
-            if (isTimeoutEnabled()) {
-                timedExecutor.schedule(new Runnable() {
-                    public void run() {
-                        try {
-                            if (download.getState() != TransferState.Completed) {
-                                download.abort();
-                            }
-                        } catch (Exception e) {
-                            throw new SdkClientException(
-                                "Unable to abort download after timeout", e);
-                        }
-                    }
-                }, timeout, TimeUnit.MILLISECONDS);
-            }
+    @Override
+    protected void downloadInParallel() throws Exception {
+        downloadInParallel(ServiceUtils.getPartCount(req, s3));
+    }
 
-            download.setState(TransferState.InProgress);
-            createParentDirectoryIfNecessary(dstfile);
-
-            if (isDownloadParallel) {
-                downloadInParallel(ServiceUtils.getPartCount(req, s3));
-            } else {
-                S3Object s3Object = retryableDownloadS3ObjectToFile(dstfile,
-                                                                    new DownloadTaskImpl(s3, download, req));
-                updateDownloadStatus(s3Object);
-            }
-            return dstfile;
-        } catch (Throwable t) {
-            // Cancel all the futures
-            for (Future<Long> f : futures) {
-                f.cancel(true);
-            }
-            // Downloads aren't allowed to move from canceled to failed
-            if (download.getState() != TransferState.Canceled) {
-                download.setState(TransferState.Failed);
-            }
-            if (t instanceof Exception)
-                throw (Exception) t;
-            else
-                throw (Error) t;
-        }
+    @Override
+    protected void setState(TransferState transferState) {
+        download.setState(transferState);
     }
 
     /**
@@ -209,8 +155,12 @@ final class DownloadCallable implements Callable<File> {
             getPartRequest.setNonmatchingETagConstraints(req.getNonmatchingETagConstraints());
             getPartRequest.setRequesterPays(req.isRequesterPays());
 
-            futures.add(executor.submit(new DownloadPartCallable(s3, getPartRequest.withPartNumber(i), dstfile,
-                                                                 filePositionToWrite)));
+            // Update the part number
+            getPartRequest.setPartNumber(i);
+
+            futures.add(executor.submit(new DownloadS3ObjectCallable(serviceCall(getPartRequest),
+                                                                     dstfile,
+                                                                     filePositionToWrite)));
 
             previousPartLength = ServiceUtils.getPartSize(req, s3, i);
         }
@@ -218,6 +168,18 @@ final class DownloadCallable implements Callable<File> {
         Future<File> future = executor.submit(new CompleteMultipartDownload(futures, dstfile, download,
                                                                             ++lastFullyMergedPartNumber));
         ((DownloadMonitor) download.getMonitor()).setFuture(future);
+    }
+
+    /**
+     * Returns a Callable to execute {@link AmazonS3#getObject(GetObjectRequest)} with given request.
+     */
+    private Callable<S3Object> serviceCall(final GetObjectRequest request) {
+        return new Callable<S3Object>() {
+            @Override
+            public S3Object call() throws Exception {
+                return s3.getObject(request);
+            }
+        };
     }
 
     /**
@@ -341,10 +303,6 @@ final class DownloadCallable implements Callable<File> {
                 s3Object.getObjectContent().abort();
             }
         }
-    }
-
-    private boolean isTimeoutEnabled() {
-        return timeout > 0;
     }
 
     private static boolean testing;

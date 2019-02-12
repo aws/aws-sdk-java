@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.codebuild.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class UpdateWebhookRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("projectName").build();
     private static final MarshallingInfo<String> BRANCHFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("branchFilter").build();
+    private static final MarshallingInfo<List> FILTERGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("filterGroups").build();
     private static final MarshallingInfo<Boolean> ROTATESECRET_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rotateSecret").build();
 
@@ -52,6 +55,7 @@ public class UpdateWebhookRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateWebhookRequest.getProjectName(), PROJECTNAME_BINDING);
             protocolMarshaller.marshall(updateWebhookRequest.getBranchFilter(), BRANCHFILTER_BINDING);
+            protocolMarshaller.marshall(updateWebhookRequest.getFilterGroups(), FILTERGROUPS_BINDING);
             protocolMarshaller.marshall(updateWebhookRequest.getRotateSecret(), ROTATESECRET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

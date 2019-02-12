@@ -79,15 +79,15 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private ApplicationSettings applicationSettings;
     /**
      * <p>
-     * The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
-     * Environment=Test, or, if you do not specify a value, Environment=.
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      */
@@ -501,26 +501,26 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
-     * Environment=Test, or, if you do not specify a value, Environment=.
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
-     * @return The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
-     *         Environment=Test, or, if you do not specify a value, Environment=. </p>
+     * @return The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *         Environment=Test. If you do not specify a value, Environment=. </p>
      *         <p>
-     *         If you do not specify a value, we set the value to an empty string.
+     *         If you do not specify a value, the value is set to an empty string.
      *         </p>
      *         <p>
      *         For more information about tags, see <a
-     *         href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *         href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
      *         Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      */
 
@@ -530,27 +530,27 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
-     * Environment=Test, or, if you do not specify a value, Environment=.
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
      * @param tags
-     *        The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
-     *        Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
-     *        If you do not specify a value, we set the value to an empty string.
+     *        If you do not specify a value, the value is set to an empty string.
      *        </p>
      *        <p>
      *        For more information about tags, see <a
-     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
      *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      */
 
@@ -560,27 +560,27 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
-     * Environment=Test, or, if you do not specify a value, Environment=.
+     * The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     * Environment=Test. If you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * <p>
      * For more information about tags, see <a
-     * href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
+     * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
      * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * </p>
      * 
      * @param tags
-     *        The tags to associate with the stack. A tag is a key-value pair (the value is optional). For example,
-     *        Environment=Test, or, if you do not specify a value, Environment=. </p>
+     *        The tags to associate with the stack. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
-     *        If you do not specify a value, we set the value to an empty string.
+     *        If you do not specify a value, the value is set to an empty string.
      *        </p>
      *        <p>
      *        For more information about tags, see <a
-     *        href="http://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
+     *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
      *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

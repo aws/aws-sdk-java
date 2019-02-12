@@ -19,9 +19,13 @@ import java.util.concurrent.Future;
 public class DownloadMonitor implements TransferMonitor {
 
     private Future<?> future;
-    private final DownloadImpl download;
+    private final AbstractTransfer download;
 
     public DownloadMonitor(DownloadImpl download, Future<?> future) {
+        this((AbstractTransfer) download, future);
+    }
+
+    public DownloadMonitor(AbstractTransfer download, Future<?> future) {
         this.download = download;
         this.future = future;
     }

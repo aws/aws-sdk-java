@@ -33,11 +33,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String resourceArn;
     /**
      * <p>
-     * The tags to associate. A tag is a key-value pair (the value is optional). For example,
-     * <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>.
+     * The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If
+     * you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -84,17 +84,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate. A tag is a key-value pair (the value is optional). For example,
-     * <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>.
+     * The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If
+     * you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * 
-     * @return The tags to associate. A tag is a key-value pair (the value is optional). For example,
-     *         <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>. </p>
+     * @return The tags to associate. A tag is a key-value pair, and the value is optional. For example,
+     *         Environment=Test. If you do not specify a value, Environment=. </p>
      *         <p>
-     *         If you do not specify a value, we set the value to an empty string.
+     *         If you do not specify a value, the value is set to an empty string.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -103,18 +103,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate. A tag is a key-value pair (the value is optional). For example,
-     * <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>.
+     * The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If
+     * you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * 
      * @param tags
-     *        The tags to associate. A tag is a key-value pair (the value is optional). For example,
-     *        <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>. </p>
+     *        The tags to associate. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
-     *        If you do not specify a value, we set the value to an empty string.
+     *        If you do not specify a value, the value is set to an empty string.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -123,18 +123,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to associate. A tag is a key-value pair (the value is optional). For example,
-     * <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>.
+     * The tags to associate. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If
+     * you do not specify a value, Environment=.
      * </p>
      * <p>
-     * If you do not specify a value, we set the value to an empty string.
+     * If you do not specify a value, the value is set to an empty string.
      * </p>
      * 
      * @param tags
-     *        The tags to associate. A tag is a key-value pair (the value is optional). For example,
-     *        <code>Environment=Test</code>, or, if you do not specify a value, <code>Environment=</code>. </p>
+     *        The tags to associate. A tag is a key-value pair, and the value is optional. For example,
+     *        Environment=Test. If you do not specify a value, Environment=. </p>
      *        <p>
-     *        If you do not specify a value, we set the value to an empty string.
+     *        If you do not specify a value, the value is set to an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

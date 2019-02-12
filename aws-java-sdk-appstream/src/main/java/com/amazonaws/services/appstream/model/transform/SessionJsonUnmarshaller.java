@@ -68,6 +68,18 @@ public class SessionJsonUnmarshaller implements Unmarshaller<Session, JsonUnmars
                     context.nextToken();
                     session.setState(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ConnectionState", targetDepth)) {
+                    context.nextToken();
+                    session.setConnectionState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StartTime", targetDepth)) {
+                    context.nextToken();
+                    session.setStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("MaxExpirationTime", targetDepth)) {
+                    context.nextToken();
+                    session.setMaxExpirationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("AuthenticationType", targetDepth)) {
                     context.nextToken();
                     session.setAuthenticationType(context.getUnmarshaller(String.class).unmarshall(context));
