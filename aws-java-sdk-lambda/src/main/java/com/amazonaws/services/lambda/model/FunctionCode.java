@@ -37,7 +37,7 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      */
     private String s3Bucket;
@@ -126,11 +126,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -139,10 +139,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
-     * @return An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * @return An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS
+     *         account.
      */
 
     public String getS3Bucket() {
@@ -151,11 +152,11 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

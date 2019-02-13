@@ -25,7 +25,7 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Limits related to concurrency and code storage.
+     * Limits that are related to concurrency and code storage.
      * </p>
      */
     private AccountLimit accountLimit;
@@ -38,11 +38,11 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Limits related to concurrency and code storage.
+     * Limits that are related to concurrency and code storage.
      * </p>
      * 
      * @param accountLimit
-     *        Limits related to concurrency and code storage.
+     *        Limits that are related to concurrency and code storage.
      */
 
     public void setAccountLimit(AccountLimit accountLimit) {
@@ -51,10 +51,10 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Limits related to concurrency and code storage.
+     * Limits that are related to concurrency and code storage.
      * </p>
      * 
-     * @return Limits related to concurrency and code storage.
+     * @return Limits that are related to concurrency and code storage.
      */
 
     public AccountLimit getAccountLimit() {
@@ -63,11 +63,11 @@ public class GetAccountSettingsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Limits related to concurrency and code storage.
+     * Limits that are related to concurrency and code storage.
      * </p>
      * 
      * @param accountLimit
-     *        Limits related to concurrency and code storage.
+     *        Limits that are related to concurrency and code storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

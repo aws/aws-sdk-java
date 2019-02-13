@@ -27,7 +27,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -57,20 +57,20 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
     private String functionName;
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * Limit the number of versions returned.
+     * Limit the number of versions that are returned.
      * </p>
      */
     private Integer maxItems;
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -98,7 +98,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -130,7 +130,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -157,7 +157,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      * characters in length.
      * </p>
      * 
-     * @return The name of the lambda function.</p>
+     * @return The name of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -189,7 +189,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -217,7 +217,7 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -251,11 +251,11 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param marker
-     *        Specify the pagination token returned by a previous request to retrieve the next page of results.
+     *        Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      */
 
     public void setMarker(String marker) {
@@ -264,10 +264,10 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
-     * @return Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * @return Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      */
 
     public String getMarker() {
@@ -276,11 +276,11 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param marker
-     *        Specify the pagination token returned by a previous request to retrieve the next page of results.
+     *        Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,11 +291,11 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Limit the number of versions returned.
+     * Limit the number of versions that are returned.
      * </p>
      * 
      * @param maxItems
-     *        Limit the number of versions returned.
+     *        Limit the number of versions that are returned.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -304,10 +304,10 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Limit the number of versions returned.
+     * Limit the number of versions that are returned.
      * </p>
      * 
-     * @return Limit the number of versions returned.
+     * @return Limit the number of versions that are returned.
      */
 
     public Integer getMaxItems() {
@@ -316,11 +316,11 @@ public class ListVersionsByFunctionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Limit the number of versions returned.
+     * Limit the number of versions that are returned.
      * </p>
      * 
      * @param maxItems
-     *        Limit the number of versions returned.
+     *        Limit the number of versions that are returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

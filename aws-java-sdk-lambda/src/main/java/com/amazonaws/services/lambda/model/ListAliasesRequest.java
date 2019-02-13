@@ -27,7 +27,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -63,7 +63,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String functionVersion;
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      */
     private String marker;
@@ -76,7 +76,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -104,7 +104,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -136,7 +136,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -163,7 +163,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * characters in length.
      * </p>
      * 
-     * @return The name of the lambda function.</p>
+     * @return The name of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -195,7 +195,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -223,7 +223,7 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -297,11 +297,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param marker
-     *        Specify the pagination token returned by a previous request to retrieve the next page of results.
+     *        Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      */
 
     public void setMarker(String marker) {
@@ -310,10 +310,10 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
-     * @return Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * @return Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      */
 
     public String getMarker() {
@@ -322,11 +322,11 @@ public class ListAliasesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param marker
-     *        Specify the pagination token returned by a previous request to retrieve the next page of results.
+     *        Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

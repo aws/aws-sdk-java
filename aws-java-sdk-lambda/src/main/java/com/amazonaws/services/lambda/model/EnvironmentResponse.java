@@ -36,7 +36,7 @@ public class EnvironmentResponse implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalMap<String, String> variables;
     /**
      * <p>
-     * Error messages for environment variables that could not be applied.
+     * Error messages for environment variables that couldn't be applied.
      * </p>
      */
     private EnvironmentError error;
@@ -107,11 +107,11 @@ public class EnvironmentResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Error messages for environment variables that could not be applied.
+     * Error messages for environment variables that couldn't be applied.
      * </p>
      * 
      * @param error
-     *        Error messages for environment variables that could not be applied.
+     *        Error messages for environment variables that couldn't be applied.
      */
 
     public void setError(EnvironmentError error) {
@@ -120,10 +120,10 @@ public class EnvironmentResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Error messages for environment variables that could not be applied.
+     * Error messages for environment variables that couldn't be applied.
      * </p>
      * 
-     * @return Error messages for environment variables that could not be applied.
+     * @return Error messages for environment variables that couldn't be applied.
      */
 
     public EnvironmentError getError() {
@@ -132,11 +132,11 @@ public class EnvironmentResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Error messages for environment variables that could not be applied.
+     * Error messages for environment variables that couldn't be applied.
      * </p>
      * 
      * @param error
-     *        Error messages for environment variables that could not be applied.
+     *        Error messages for environment variables that couldn't be applied.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

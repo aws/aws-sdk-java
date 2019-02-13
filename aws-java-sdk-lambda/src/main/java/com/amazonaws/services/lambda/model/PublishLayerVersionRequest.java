@@ -45,7 +45,7 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
     private LayerVersionContentInput content;
     /**
      * <p>
-     * A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
      */
@@ -196,11 +196,11 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
      * 
-     * @return A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * @return A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      *         runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * @see Runtime
      */
@@ -214,12 +214,12 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
      * 
      * @param compatibleRuntimes
-     *        A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     *        A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * @see Runtime
      */
@@ -235,7 +235,7 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
      * <p>
@@ -245,7 +245,7 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param compatibleRuntimes
-     *        A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     *        A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
@@ -263,12 +263,12 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
      * 
      * @param compatibleRuntimes
-     *        A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     *        A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime
@@ -281,12 +281,12 @@ public class PublishLayerVersionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     * A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      * runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * </p>
      * 
      * @param compatibleRuntimes
-     *        A list of compatible <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
+     *        A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
      *        runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Runtime

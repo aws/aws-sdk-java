@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A Lambda function alias's <a
- * href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic shifting</a>
- * configuration.
+ * The <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">traffic-shifting</a>
+ * configuration of a Lambda function alias.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AliasRoutingConfiguration" target="_top">AWS
@@ -32,17 +32,17 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the second alias, and the percentage of traffic that is routed to it.
+     * The name of the second alias, and the percentage of traffic that's routed to it.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, Double> additionalVersionWeights;
 
     /**
      * <p>
-     * The name of the second alias, and the percentage of traffic that is routed to it.
+     * The name of the second alias, and the percentage of traffic that's routed to it.
      * </p>
      * 
-     * @return The name of the second alias, and the percentage of traffic that is routed to it.
+     * @return The name of the second alias, and the percentage of traffic that's routed to it.
      */
 
     public java.util.Map<String, Double> getAdditionalVersionWeights() {
@@ -54,11 +54,11 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the second alias, and the percentage of traffic that is routed to it.
+     * The name of the second alias, and the percentage of traffic that's routed to it.
      * </p>
      * 
      * @param additionalVersionWeights
-     *        The name of the second alias, and the percentage of traffic that is routed to it.
+     *        The name of the second alias, and the percentage of traffic that's routed to it.
      */
 
     public void setAdditionalVersionWeights(java.util.Map<String, Double> additionalVersionWeights) {
@@ -68,11 +68,11 @@ public class AliasRoutingConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the second alias, and the percentage of traffic that is routed to it.
+     * The name of the second alias, and the percentage of traffic that's routed to it.
      * </p>
      * 
      * @param additionalVersionWeights
-     *        The name of the second alias, and the percentage of traffic that is routed to it.
+     *        The name of the second alias, and the percentage of traffic that's routed to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

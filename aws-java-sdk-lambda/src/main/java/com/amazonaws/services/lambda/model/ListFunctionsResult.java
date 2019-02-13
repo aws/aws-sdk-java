@@ -28,7 +28,7 @@ public class ListFunctionsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination token included if more results are available.
+     * The pagination token that's included if more results are available.
      * </p>
      */
     private String nextMarker;
@@ -41,11 +41,11 @@ public class ListFunctionsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination token included if more results are available.
+     * The pagination token that's included if more results are available.
      * </p>
      * 
      * @param nextMarker
-     *        Pagination token included if more results are available.
+     *        The pagination token that's included if more results are available.
      */
 
     public void setNextMarker(String nextMarker) {
@@ -54,10 +54,10 @@ public class ListFunctionsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination token included if more results are available.
+     * The pagination token that's included if more results are available.
      * </p>
      * 
-     * @return Pagination token included if more results are available.
+     * @return The pagination token that's included if more results are available.
      */
 
     public String getNextMarker() {
@@ -66,11 +66,11 @@ public class ListFunctionsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Pagination token included if more results are available.
+     * The pagination token that's included if more results are available.
      * </p>
      * 
      * @param nextMarker
-     *        Pagination token included if more results are available.
+     *        The pagination token that's included if more results are available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

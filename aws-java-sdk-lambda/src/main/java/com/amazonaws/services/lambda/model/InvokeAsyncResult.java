@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Upon success, it returns empty response. Otherwise, throws an exception.
+ * A success response (<code>202 Accepted</code>) indicates that the request is queued for invocation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeAsync" target="_top">AWS API
@@ -29,18 +29,18 @@ public class InvokeAsyncResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * It will be 202 upon success.
+     * The status code.
      * </p>
      */
     private Integer status;
 
     /**
      * <p>
-     * It will be 202 upon success.
+     * The status code.
      * </p>
      * 
      * @param status
-     *        It will be 202 upon success.
+     *        The status code.
      */
 
     public void setStatus(Integer status) {
@@ -49,10 +49,10 @@ public class InvokeAsyncResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * It will be 202 upon success.
+     * The status code.
      * </p>
      * 
-     * @return It will be 202 upon success.
+     * @return The status code.
      */
 
     public Integer getStatus() {
@@ -61,11 +61,11 @@ public class InvokeAsyncResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * It will be 202 upon success.
+     * The status code.
      * </p>
      * 
      * @param status
-     *        It will be 202 upon success.
+     *        The status code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -30,7 +30,7 @@ public class AccountUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of storage space, in bytes, in use by deployment packages and layer archives.
+     * The amount of storage space, in bytes, that's being used by deployment packages and layer archives.
      * </p>
      */
     private Long totalCodeSize;
@@ -43,11 +43,11 @@ public class AccountUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of storage space, in bytes, in use by deployment packages and layer archives.
+     * The amount of storage space, in bytes, that's being used by deployment packages and layer archives.
      * </p>
      * 
      * @param totalCodeSize
-     *        The amount of storage space, in bytes, in use by deployment packages and layer archives.
+     *        The amount of storage space, in bytes, that's being used by deployment packages and layer archives.
      */
 
     public void setTotalCodeSize(Long totalCodeSize) {
@@ -56,10 +56,10 @@ public class AccountUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of storage space, in bytes, in use by deployment packages and layer archives.
+     * The amount of storage space, in bytes, that's being used by deployment packages and layer archives.
      * </p>
      * 
-     * @return The amount of storage space, in bytes, in use by deployment packages and layer archives.
+     * @return The amount of storage space, in bytes, that's being used by deployment packages and layer archives.
      */
 
     public Long getTotalCodeSize() {
@@ -68,11 +68,11 @@ public class AccountUsage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount of storage space, in bytes, in use by deployment packages and layer archives.
+     * The amount of storage space, in bytes, that's being used by deployment packages and layer archives.
      * </p>
      * 
      * @param totalCodeSize
-     *        The amount of storage space, in bytes, in use by deployment packages and layer archives.
+     *        The amount of storage space, in bytes, that's being used by deployment packages and layer archives.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

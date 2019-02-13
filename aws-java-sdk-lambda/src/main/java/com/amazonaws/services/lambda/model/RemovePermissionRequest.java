@@ -69,8 +69,8 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     private String qualifier;
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
-     * that has changed since you last read it.
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      */
     private String revisionId;
@@ -338,13 +338,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
-     * that has changed since you last read it.
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-     *        policy that has changed since you last read it.
+     *        Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a policy that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -353,12 +353,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
-     * that has changed since you last read it.
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
-     * @return Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-     *         policy that has changed since you last read it.
+     * @return Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *         modifying a policy that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -367,13 +367,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
-     * that has changed since you last read it.
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-     *        policy that has changed since you last read it.
+     *        Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a policy that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

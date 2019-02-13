@@ -57,7 +57,7 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String functionName;
     /**
      * <p>
-     * Specify a version to delete. You cannot delete a version that is referenced by an alias.
+     * Specify a version to delete. You can't delete a version that's referenced by an alias.
      * </p>
      */
     private String qualifier;
@@ -245,11 +245,11 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a version to delete. You cannot delete a version that is referenced by an alias.
+     * Specify a version to delete. You can't delete a version that's referenced by an alias.
      * </p>
      * 
      * @param qualifier
-     *        Specify a version to delete. You cannot delete a version that is referenced by an alias.
+     *        Specify a version to delete. You can't delete a version that's referenced by an alias.
      */
 
     public void setQualifier(String qualifier) {
@@ -258,10 +258,10 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a version to delete. You cannot delete a version that is referenced by an alias.
+     * Specify a version to delete. You can't delete a version that's referenced by an alias.
      * </p>
      * 
-     * @return Specify a version to delete. You cannot delete a version that is referenced by an alias.
+     * @return Specify a version to delete. You can't delete a version that's referenced by an alias.
      */
 
     public String getQualifier() {
@@ -270,11 +270,11 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a version to delete. You cannot delete a version that is referenced by an alias.
+     * Specify a version to delete. You can't delete a version that's referenced by an alias.
      * </p>
      * 
      * @param qualifier
-     *        Specify a version to delete. You cannot delete a version that is referenced by an alias.
+     *        Specify a version to delete. You can't delete a version that's referenced by an alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

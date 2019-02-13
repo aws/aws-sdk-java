@@ -69,7 +69,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
-     * dead-letter queue (if configured). The API response only includes a status code.
+     * dead-letter queue (if it's configured). The API response only includes a status code.
      * </p>
      * </li>
      * <li>
@@ -95,7 +95,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
     private String clientContext;
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      */
     private java.nio.ByteBuffer payload;
@@ -301,7 +301,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
-     * dead-letter queue (if configured). The API response only includes a status code.
+     * dead-letter queue (if it's configured). The API response only includes a status code.
      * </p>
      * </li>
      * <li>
@@ -325,7 +325,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        <li>
      *        <p>
      *        <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-     *        function's dead-letter queue (if configured). The API response only includes a status code.
+     *        function's dead-letter queue (if it's configured). The API response only includes a status code.
      *        </p>
      *        </li>
      *        <li>
@@ -355,7 +355,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
-     * dead-letter queue (if configured). The API response only includes a status code.
+     * dead-letter queue (if it's configured). The API response only includes a status code.
      * </p>
      * </li>
      * <li>
@@ -378,7 +378,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *         <li>
      *         <p>
      *         <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-     *         function's dead-letter queue (if configured). The API response only includes a status code.
+     *         function's dead-letter queue (if it's configured). The API response only includes a status code.
      *         </p>
      *         </li>
      *         <li>
@@ -408,7 +408,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
-     * dead-letter queue (if configured). The API response only includes a status code.
+     * dead-letter queue (if it's configured). The API response only includes a status code.
      * </p>
      * </li>
      * <li>
@@ -432,7 +432,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        <li>
      *        <p>
      *        <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-     *        function's dead-letter queue (if configured). The API response only includes a status code.
+     *        function's dead-letter queue (if it's configured). The API response only includes a status code.
      *        </p>
      *        </li>
      *        <li>
@@ -464,7 +464,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
-     * dead-letter queue (if configured). The API response only includes a status code.
+     * dead-letter queue (if it's configured). The API response only includes a status code.
      * </p>
      * </li>
      * <li>
@@ -488,7 +488,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        <li>
      *        <p>
      *        <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-     *        function's dead-letter queue (if configured). The API response only includes a status code.
+     *        function's dead-letter queue (if it's configured). The API response only includes a status code.
      *        </p>
      *        </li>
      *        <li>
@@ -518,7 +518,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * <li>
      * <p>
      * <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the function's
-     * dead-letter queue (if configured). The API response only includes a status code.
+     * dead-letter queue (if it's configured). The API response only includes a status code.
      * </p>
      * </li>
      * <li>
@@ -542,7 +542,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      *        <li>
      *        <p>
      *        <code>Event</code> - Invoke the function asynchronously. Send events that fail multiple times to the
-     *        function's dead-letter queue (if configured). The API response only includes a status code.
+     *        function's dead-letter queue (if it's configured). The API response only includes a status code.
      *        </p>
      *        </li>
      *        <li>
@@ -678,7 +678,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -692,7 +692,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param payload
-     *        JSON that you want to provide to your Lambda function as input.
+     *        The JSON that you want to provide to your Lambda function as input.
      */
 
     public void setPayload(java.nio.ByteBuffer payload) {
@@ -701,7 +701,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -711,7 +711,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * {@code position}.
      * </p>
      * 
-     * @return JSON that you want to provide to your Lambda function as input.
+     * @return The JSON that you want to provide to your Lambda function as input.
      */
 
     public java.nio.ByteBuffer getPayload() {
@@ -720,7 +720,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -734,7 +734,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param payload
-     *        JSON that you want to provide to your Lambda function as input.
+     *        The JSON that you want to provide to your Lambda function as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -745,7 +745,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -759,7 +759,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param payload
-     *        JSON that you want to provide to your Lambda function as input.
+     *        The JSON that you want to provide to your Lambda function as input.
      */
     public void setPayload(String payload) {
         setPayload(new com.amazonaws.adapters.types.StringToByteBufferAdapter().adapt(payload));
@@ -767,7 +767,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -781,7 +781,7 @@ public class InvokeRequest extends com.amazonaws.AmazonWebServiceRequest impleme
      * </p>
      * 
      * @param payload
-     *        JSON that you want to provide to your Lambda function as input.
+     *        The JSON that you want to provide to your Lambda function as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     public InvokeRequest withPayload(String payload) {

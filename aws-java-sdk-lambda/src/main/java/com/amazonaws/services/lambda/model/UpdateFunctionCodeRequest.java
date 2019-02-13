@@ -63,7 +63,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     private java.nio.ByteBuffer zipFile;
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      */
     private String s3Bucket;
@@ -94,7 +94,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean dryRun;
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * function that has changed since you last read it.
      * </p>
      */
@@ -353,11 +353,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      */
 
     public void setS3Bucket(String s3Bucket) {
@@ -366,10 +366,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
-     * @return An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * @return An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS
+     *         account.
      */
 
     public String getS3Bucket() {
@@ -378,11 +379,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     * An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * </p>
      * 
      * @param s3Bucket
-     *        An Amazon S3 bucket in the same region as your function. The bucket can be in a different AWS account.
+     *        An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -587,13 +588,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * function that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
-     *        function that has changed since you last read it.
+     *        Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a function that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -602,12 +603,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * function that has changed since you last read it.
      * </p>
      * 
-     * @return Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying
-     *         a function that has changed since you last read it.
+     * @return Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *         modifying a function that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -616,13 +617,13 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * function that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the function if the revision ID matches the ID specified. Use this option to avoid modifying a
-     *        function that has changed since you last read it.
+     *        Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a function that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

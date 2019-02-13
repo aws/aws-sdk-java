@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about an <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
+ * Details about an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda
  * layer</a>.
  * </p>
  * 

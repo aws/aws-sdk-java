@@ -27,7 +27,7 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -57,29 +57,29 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String functionName;
     /**
      * <p>
-     * Only publish a version if the hash matches the value specified. Use this option to avoid publishing a version if
-     * the function code has changed since you last updated it. You can get the hash for the version you uploaded from
-     * the output of <a>UpdateFunctionCode</a>.
+     * Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing
+     * a version if the function code has changed since you last updated it. You can get the hash for the version that
+     * you uploaded from the output of <a>UpdateFunctionCode</a>.
      * </p>
      */
     private String codeSha256;
     /**
      * <p>
-     * Specify a description for the version to override the description in the function configuration.
+     * A description for the version to override the description in the function configuration.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID specified. Use this option to avoid publishing a
-     * version if the function configuration has changed since you last updated it.
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing
+     * a version if the function configuration has changed since you last updated it.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -107,7 +107,7 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -139,7 +139,7 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -166,7 +166,7 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
      * characters in length.
      * </p>
      * 
-     * @return The name of the lambda function.</p>
+     * @return The name of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -198,7 +198,7 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -226,7 +226,7 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -260,15 +260,15 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Only publish a version if the hash matches the value specified. Use this option to avoid publishing a version if
-     * the function code has changed since you last updated it. You can get the hash for the version you uploaded from
-     * the output of <a>UpdateFunctionCode</a>.
+     * Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing
+     * a version if the function code has changed since you last updated it. You can get the hash for the version that
+     * you uploaded from the output of <a>UpdateFunctionCode</a>.
      * </p>
      * 
      * @param codeSha256
-     *        Only publish a version if the hash matches the value specified. Use this option to avoid publishing a
-     *        version if the function code has changed since you last updated it. You can get the hash for the version
-     *        you uploaded from the output of <a>UpdateFunctionCode</a>.
+     *        Only publish a version if the hash value matches the value that's specified. Use this option to avoid
+     *        publishing a version if the function code has changed since you last updated it. You can get the hash for
+     *        the version that you uploaded from the output of <a>UpdateFunctionCode</a>.
      */
 
     public void setCodeSha256(String codeSha256) {
@@ -277,14 +277,14 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Only publish a version if the hash matches the value specified. Use this option to avoid publishing a version if
-     * the function code has changed since you last updated it. You can get the hash for the version you uploaded from
-     * the output of <a>UpdateFunctionCode</a>.
+     * Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing
+     * a version if the function code has changed since you last updated it. You can get the hash for the version that
+     * you uploaded from the output of <a>UpdateFunctionCode</a>.
      * </p>
      * 
-     * @return Only publish a version if the hash matches the value specified. Use this option to avoid publishing a
-     *         version if the function code has changed since you last updated it. You can get the hash for the version
-     *         you uploaded from the output of <a>UpdateFunctionCode</a>.
+     * @return Only publish a version if the hash value matches the value that's specified. Use this option to avoid
+     *         publishing a version if the function code has changed since you last updated it. You can get the hash for
+     *         the version that you uploaded from the output of <a>UpdateFunctionCode</a>.
      */
 
     public String getCodeSha256() {
@@ -293,15 +293,15 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Only publish a version if the hash matches the value specified. Use this option to avoid publishing a version if
-     * the function code has changed since you last updated it. You can get the hash for the version you uploaded from
-     * the output of <a>UpdateFunctionCode</a>.
+     * Only publish a version if the hash value matches the value that's specified. Use this option to avoid publishing
+     * a version if the function code has changed since you last updated it. You can get the hash for the version that
+     * you uploaded from the output of <a>UpdateFunctionCode</a>.
      * </p>
      * 
      * @param codeSha256
-     *        Only publish a version if the hash matches the value specified. Use this option to avoid publishing a
-     *        version if the function code has changed since you last updated it. You can get the hash for the version
-     *        you uploaded from the output of <a>UpdateFunctionCode</a>.
+     *        Only publish a version if the hash value matches the value that's specified. Use this option to avoid
+     *        publishing a version if the function code has changed since you last updated it. You can get the hash for
+     *        the version that you uploaded from the output of <a>UpdateFunctionCode</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,11 +312,11 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a description for the version to override the description in the function configuration.
+     * A description for the version to override the description in the function configuration.
      * </p>
      * 
      * @param description
-     *        Specify a description for the version to override the description in the function configuration.
+     *        A description for the version to override the description in the function configuration.
      */
 
     public void setDescription(String description) {
@@ -325,10 +325,10 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a description for the version to override the description in the function configuration.
+     * A description for the version to override the description in the function configuration.
      * </p>
      * 
-     * @return Specify a description for the version to override the description in the function configuration.
+     * @return A description for the version to override the description in the function configuration.
      */
 
     public String getDescription() {
@@ -337,11 +337,11 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a description for the version to override the description in the function configuration.
+     * A description for the version to override the description in the function configuration.
      * </p>
      * 
      * @param description
-     *        Specify a description for the version to override the description in the function configuration.
+     *        A description for the version to override the description in the function configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,13 +352,13 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID specified. Use this option to avoid publishing a
-     * version if the function configuration has changed since you last updated it.
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing
+     * a version if the function configuration has changed since you last updated it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the function if the revision ID matches the ID specified. Use this option to avoid publishing
-     *        a version if the function configuration has changed since you last updated it.
+     *        Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *        publishing a version if the function configuration has changed since you last updated it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -367,12 +367,12 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID specified. Use this option to avoid publishing a
-     * version if the function configuration has changed since you last updated it.
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing
+     * a version if the function configuration has changed since you last updated it.
      * </p>
      * 
-     * @return Only update the function if the revision ID matches the ID specified. Use this option to avoid publishing
-     *         a version if the function configuration has changed since you last updated it.
+     * @return Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *         publishing a version if the function configuration has changed since you last updated it.
      */
 
     public String getRevisionId() {
@@ -381,13 +381,13 @@ public class PublishVersionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID specified. Use this option to avoid publishing a
-     * version if the function configuration has changed since you last updated it.
+     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid publishing
+     * a version if the function configuration has changed since you last updated it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the function if the revision ID matches the ID specified. Use this option to avoid publishing
-     *        a version if the function configuration has changed since you last updated it.
+     *        Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *        publishing a version if the function configuration has changed since you last updated it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

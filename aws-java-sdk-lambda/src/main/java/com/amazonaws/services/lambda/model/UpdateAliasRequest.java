@@ -27,7 +27,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -75,22 +75,22 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.
      * </p>
      */
     private AliasRoutingConfiguration routingConfig;
     /**
      * <p>
-     * Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an alias
-     * that has changed since you last read it.
+     * Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an
+     * alias that has changed since you last read it.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -118,7 +118,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -150,7 +150,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -177,7 +177,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * characters in length.
      * </p>
      * 
-     * @return The name of the lambda function.</p>
+     * @return The name of the Lambda function.</p>
      *         <p class="title">
      *         <b>Name formats</b>
      *         </p>
@@ -209,7 +209,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the lambda function.
+     * The name of the Lambda function.
      * </p>
      * <p class="title">
      * <b>Name formats</b>
@@ -237,7 +237,7 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param functionName
-     *        The name of the lambda function.</p>
+     *        The name of the Lambda function.</p>
      *        <p class="title">
      *        <b>Name formats</b>
      *        </p>
@@ -391,13 +391,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
      *        The <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      *        configuration</a> of the alias.
      */
 
@@ -407,12 +407,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.
      * </p>
      * 
      * @return The <a
-     *         href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      *         configuration</a> of the alias.
      */
 
@@ -422,13 +422,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The <a href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     * The <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      * configuration</a> of the alias.
      * </p>
      * 
      * @param routingConfig
      *        The <a
-     *        href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">routing
      *        configuration</a> of the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -440,13 +440,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an alias
-     * that has changed since you last read it.
+     * Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an
+     * alias that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an
-     *        alias that has changed since you last read it.
+     *        Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying an alias that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -455,12 +455,12 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an alias
-     * that has changed since you last read it.
+     * Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an
+     * alias that has changed since you last read it.
      * </p>
      * 
-     * @return Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an
-     *         alias that has changed since you last read it.
+     * @return Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid
+     *         modifying an alias that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -469,13 +469,13 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an alias
-     * that has changed since you last read it.
+     * Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid modifying an
+     * alias that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the alias if the revision ID matches the ID specified. Use this option to avoid modifying an
-     *        alias that has changed since you last read it.
+     *        Only update the alias if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying an alias that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

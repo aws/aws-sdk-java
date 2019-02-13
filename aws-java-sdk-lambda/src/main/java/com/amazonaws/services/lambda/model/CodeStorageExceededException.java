@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * You have exceeded your maximum total code size per account. <a
- * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

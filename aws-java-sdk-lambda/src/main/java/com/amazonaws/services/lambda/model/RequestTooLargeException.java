@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information, see <a
- * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

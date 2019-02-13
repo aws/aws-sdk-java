@@ -1,3 +1,8 @@
+# __1.11.497__ __2019-02-12__
+## __AWS Lambda__
+  - ### Features
+    - Documentation updates for AWS Lambda
+
 # __1.11.496__ __2019-02-11__
 ## __AWS CodeBuild__
   - ### Features

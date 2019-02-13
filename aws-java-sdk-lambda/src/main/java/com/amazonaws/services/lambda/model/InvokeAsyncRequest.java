@@ -57,7 +57,7 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String functionName;
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      */
     private java.io.InputStream invokeArgs;
@@ -245,11 +245,11 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * 
      * @param invokeArgs
-     *        JSON that you want to provide to your Lambda function as input.
+     *        The JSON that you want to provide to your Lambda function as input.
      */
 
     public void setInvokeArgs(java.io.InputStream invokeArgs) {
@@ -258,10 +258,10 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * 
-     * @return JSON that you want to provide to your Lambda function as input.
+     * @return The JSON that you want to provide to your Lambda function as input.
      */
 
     public java.io.InputStream getInvokeArgs() {
@@ -270,11 +270,11 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * 
      * @param invokeArgs
-     *        JSON that you want to provide to your Lambda function as input.
+     *        The JSON that you want to provide to your Lambda function as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -285,11 +285,11 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * 
      * @param invokeArgs
-     *        JSON that you want to provide to your Lambda function as input.
+     *        The JSON that you want to provide to your Lambda function as input.
      */
     public void setInvokeArgs(String invokeArgs) {
         setInvokeArgs(new com.amazonaws.adapters.types.StringToInputStreamAdapter().adapt(invokeArgs));
@@ -297,11 +297,11 @@ public class InvokeAsyncRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * JSON that you want to provide to your Lambda function as input.
+     * The JSON that you want to provide to your Lambda function as input.
      * </p>
      * 
      * @param invokeArgs
-     *        JSON that you want to provide to your Lambda function as input.
+     *        The JSON that you want to provide to your Lambda function as input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     public InvokeAsyncRequest withInvokeArgs(String invokeArgs) {

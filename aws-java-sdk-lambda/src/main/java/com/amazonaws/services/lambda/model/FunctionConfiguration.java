@@ -54,13 +54,13 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private String role;
     /**
      * <p>
-     * The function Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin executing your function.
      * </p>
      */
     private String handler;
     /**
      * <p>
-     * The size of the function's deployment package in bytes.
+     * The size of the function's deployment package, in bytes.
      * </p>
      */
     private Long codeSize;
@@ -72,13 +72,13 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private String description;
     /**
      * <p>
-     * The amount of time that Lambda allows a function to run before terminating it.
+     * The amount of time that Lambda allows a function to run before stopping it.
      * </p>
      */
     private Integer timeout;
     /**
      * <p>
-     * The memory allocated to the function
+     * The memory that's allocated to the function.
      * </p>
      */
     private Integer memorySize;
@@ -121,8 +121,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private EnvironmentResponse environment;
     /**
      * <p>
-     * The KMS key used to encrypt the function's environment variables. Only returned if you've configured a customer
-     * managed CMK.
+     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+     * configured a customer-managed CMK.
      * </p>
      */
     private String kMSKeyArn;
@@ -140,13 +140,13 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     private String masterArn;
     /**
      * <p>
-     * Represents the latest updated revision of the function or alias.
+     * The latest updated revision of the function or alias.
      * </p>
      */
     private String revisionId;
     /**
      * <p>
-     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Layer> layers;
@@ -346,11 +346,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin executing your function.
      * </p>
      * 
      * @param handler
-     *        The function Lambda calls to begin executing your function.
+     *        The function that Lambda calls to begin executing your function.
      */
 
     public void setHandler(String handler) {
@@ -359,10 +359,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin executing your function.
      * </p>
      * 
-     * @return The function Lambda calls to begin executing your function.
+     * @return The function that Lambda calls to begin executing your function.
      */
 
     public String getHandler() {
@@ -371,11 +371,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function Lambda calls to begin executing your function.
+     * The function that Lambda calls to begin executing your function.
      * </p>
      * 
      * @param handler
-     *        The function Lambda calls to begin executing your function.
+     *        The function that Lambda calls to begin executing your function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,11 +386,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The size of the function's deployment package in bytes.
+     * The size of the function's deployment package, in bytes.
      * </p>
      * 
      * @param codeSize
-     *        The size of the function's deployment package in bytes.
+     *        The size of the function's deployment package, in bytes.
      */
 
     public void setCodeSize(Long codeSize) {
@@ -399,10 +399,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The size of the function's deployment package in bytes.
+     * The size of the function's deployment package, in bytes.
      * </p>
      * 
-     * @return The size of the function's deployment package in bytes.
+     * @return The size of the function's deployment package, in bytes.
      */
 
     public Long getCodeSize() {
@@ -411,11 +411,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The size of the function's deployment package in bytes.
+     * The size of the function's deployment package, in bytes.
      * </p>
      * 
      * @param codeSize
-     *        The size of the function's deployment package in bytes.
+     *        The size of the function's deployment package, in bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,11 +466,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of time that Lambda allows a function to run before terminating it.
+     * The amount of time that Lambda allows a function to run before stopping it.
      * </p>
      * 
      * @param timeout
-     *        The amount of time that Lambda allows a function to run before terminating it.
+     *        The amount of time that Lambda allows a function to run before stopping it.
      */
 
     public void setTimeout(Integer timeout) {
@@ -479,10 +479,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of time that Lambda allows a function to run before terminating it.
+     * The amount of time that Lambda allows a function to run before stopping it.
      * </p>
      * 
-     * @return The amount of time that Lambda allows a function to run before terminating it.
+     * @return The amount of time that Lambda allows a function to run before stopping it.
      */
 
     public Integer getTimeout() {
@@ -491,11 +491,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The amount of time that Lambda allows a function to run before terminating it.
+     * The amount of time that Lambda allows a function to run before stopping it.
      * </p>
      * 
      * @param timeout
-     *        The amount of time that Lambda allows a function to run before terminating it.
+     *        The amount of time that Lambda allows a function to run before stopping it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -506,11 +506,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The memory allocated to the function
+     * The memory that's allocated to the function.
      * </p>
      * 
      * @param memorySize
-     *        The memory allocated to the function
+     *        The memory that's allocated to the function.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -519,10 +519,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The memory allocated to the function
+     * The memory that's allocated to the function.
      * </p>
      * 
-     * @return The memory allocated to the function
+     * @return The memory that's allocated to the function.
      */
 
     public Integer getMemorySize() {
@@ -531,11 +531,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The memory allocated to the function
+     * The memory that's allocated to the function.
      * </p>
      * 
      * @param memorySize
-     *        The memory allocated to the function
+     *        The memory that's allocated to the function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -792,13 +792,13 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KMS key used to encrypt the function's environment variables. Only returned if you've configured a customer
-     * managed CMK.
+     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+     * configured a customer-managed CMK.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The KMS key used to encrypt the function's environment variables. Only returned if you've configured a
-     *        customer managed CMK.
+     *        The KMS key that's used to encrypt the function's environment variables. This key is only returned if
+     *        you've configured a customer-managed CMK.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -807,12 +807,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KMS key used to encrypt the function's environment variables. Only returned if you've configured a customer
-     * managed CMK.
+     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+     * configured a customer-managed CMK.
      * </p>
      * 
-     * @return The KMS key used to encrypt the function's environment variables. Only returned if you've configured a
-     *         customer managed CMK.
+     * @return The KMS key that's used to encrypt the function's environment variables. This key is only returned if
+     *         you've configured a customer-managed CMK.
      */
 
     public String getKMSKeyArn() {
@@ -821,13 +821,13 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The KMS key used to encrypt the function's environment variables. Only returned if you've configured a customer
-     * managed CMK.
+     * The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
+     * configured a customer-managed CMK.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The KMS key used to encrypt the function's environment variables. Only returned if you've configured a
-     *        customer managed CMK.
+     *        The KMS key that's used to encrypt the function's environment variables. This key is only returned if
+     *        you've configured a customer-managed CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -918,11 +918,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Represents the latest updated revision of the function or alias.
+     * The latest updated revision of the function or alias.
      * </p>
      * 
      * @param revisionId
-     *        Represents the latest updated revision of the function or alias.
+     *        The latest updated revision of the function or alias.
      */
 
     public void setRevisionId(String revisionId) {
@@ -931,10 +931,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Represents the latest updated revision of the function or alias.
+     * The latest updated revision of the function or alias.
      * </p>
      * 
-     * @return Represents the latest updated revision of the function or alias.
+     * @return The latest updated revision of the function or alias.
      */
 
     public String getRevisionId() {
@@ -943,11 +943,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Represents the latest updated revision of the function or alias.
+     * The latest updated revision of the function or alias.
      * </p>
      * 
      * @param revisionId
-     *        Represents the latest updated revision of the function or alias.
+     *        The latest updated revision of the function or alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -958,11 +958,11 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
      * </p>
      * 
-     * @return The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
-     *         layers</a>
+     * @return The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *         layers</a>.
      */
 
     public java.util.List<Layer> getLayers() {
@@ -974,11 +974,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
      * </p>
      * 
      * @param layers
-     *        The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
+     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *        layers</a>.
      */
 
     public void setLayers(java.util.Collection<Layer> layers) {
@@ -992,7 +993,7 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1001,7 +1002,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param layers
-     *        The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
+     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *        layers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1017,11 +1019,12 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>.
      * </p>
      * 
      * @param layers
-     *        The function's <a href="http://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>
+     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">
+     *        layers</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

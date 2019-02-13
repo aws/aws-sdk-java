@@ -30,24 +30,24 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The service hosting the file.
+     * The service that's hosting the file.
      * </p>
      */
     private String repositoryType;
     /**
      * <p>
-     * A pre-signed URL that you can use to download the deployment package.
+     * A presigned URL that you can use to download the deployment package.
      * </p>
      */
     private String location;
 
     /**
      * <p>
-     * The service hosting the file.
+     * The service that's hosting the file.
      * </p>
      * 
      * @param repositoryType
-     *        The service hosting the file.
+     *        The service that's hosting the file.
      */
 
     public void setRepositoryType(String repositoryType) {
@@ -56,10 +56,10 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The service hosting the file.
+     * The service that's hosting the file.
      * </p>
      * 
-     * @return The service hosting the file.
+     * @return The service that's hosting the file.
      */
 
     public String getRepositoryType() {
@@ -68,11 +68,11 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The service hosting the file.
+     * The service that's hosting the file.
      * </p>
      * 
      * @param repositoryType
-     *        The service hosting the file.
+     *        The service that's hosting the file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A pre-signed URL that you can use to download the deployment package.
+     * A presigned URL that you can use to download the deployment package.
      * </p>
      * 
      * @param location
-     *        A pre-signed URL that you can use to download the deployment package.
+     *        A presigned URL that you can use to download the deployment package.
      */
 
     public void setLocation(String location) {
@@ -96,10 +96,10 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A pre-signed URL that you can use to download the deployment package.
+     * A presigned URL that you can use to download the deployment package.
      * </p>
      * 
-     * @return A pre-signed URL that you can use to download the deployment package.
+     * @return A presigned URL that you can use to download the deployment package.
      */
 
     public String getLocation() {
@@ -108,11 +108,11 @@ public class FunctionCodeLocation implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A pre-signed URL that you can use to download the deployment package.
+     * A presigned URL that you can use to download the deployment package.
      * </p>
      * 
      * @param location
-     *        A pre-signed URL that you can use to download the deployment package.
+     *        A presigned URL that you can use to download the deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

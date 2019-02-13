@@ -25,18 +25,18 @@ public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The permission statement added to the function policy.
+     * The permission statement that's added to the function policy.
      * </p>
      */
     private String statement;
 
     /**
      * <p>
-     * The permission statement added to the function policy.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
      * @param statement
-     *        The permission statement added to the function policy.
+     *        The permission statement that's added to the function policy.
      */
 
     public void setStatement(String statement) {
@@ -45,10 +45,10 @@ public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The permission statement added to the function policy.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
-     * @return The permission statement added to the function policy.
+     * @return The permission statement that's added to the function policy.
      */
 
     public String getStatement() {
@@ -57,11 +57,11 @@ public class AddPermissionResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The permission statement added to the function policy.
+     * The permission statement that's added to the function policy.
      * </p>
      * 
      * @param statement
-     *        The permission statement added to the function policy.
+     *        The permission statement that's added to the function policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

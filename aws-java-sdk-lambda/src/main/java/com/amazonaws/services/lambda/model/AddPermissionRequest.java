@@ -84,10 +84,10 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String sourceArn;
     /**
      * <p>
-     * For AWS services, the ID of the account that owns the resource. Use instead of <code>SourceArn</code> to grant
-     * permission to resources owned by another account (e.g. all of an account's Amazon S3 buckets). Or use together
-     * with <code>SourceArn</code> to ensure that the resource is owned by the specified account. For example, an Amazon
-     * S3 bucket could be deleted by its owner and recreated by another account.
+     * For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code> to
+     * grant permission to resources that are owned by another account (for example, all of an account's Amazon S3
+     * buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
      * </p>
      */
     private String sourceAccount;
@@ -105,8 +105,8 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String qualifier;
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
-     * that has changed since you last read it.
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      */
     private String revisionId;
@@ -473,17 +473,18 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ID of the account that owns the resource. Use instead of <code>SourceArn</code> to grant
-     * permission to resources owned by another account (e.g. all of an account's Amazon S3 buckets). Or use together
-     * with <code>SourceArn</code> to ensure that the resource is owned by the specified account. For example, an Amazon
-     * S3 bucket could be deleted by its owner and recreated by another account.
+     * For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code> to
+     * grant permission to resources that are owned by another account (for example, all of an account's Amazon S3
+     * buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
      * </p>
      * 
      * @param sourceAccount
-     *        For AWS services, the ID of the account that owns the resource. Use instead of <code>SourceArn</code> to
-     *        grant permission to resources owned by another account (e.g. all of an account's Amazon S3 buckets). Or
-     *        use together with <code>SourceArn</code> to ensure that the resource is owned by the specified account.
-     *        For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+     *        For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code>
+     *        to grant permission to resources that are owned by another account (for example, all of an account's
+     *        Amazon S3 buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by
+     *        the specified account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by
+     *        another account.
      */
 
     public void setSourceAccount(String sourceAccount) {
@@ -492,16 +493,17 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ID of the account that owns the resource. Use instead of <code>SourceArn</code> to grant
-     * permission to resources owned by another account (e.g. all of an account's Amazon S3 buckets). Or use together
-     * with <code>SourceArn</code> to ensure that the resource is owned by the specified account. For example, an Amazon
-     * S3 bucket could be deleted by its owner and recreated by another account.
+     * For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code> to
+     * grant permission to resources that are owned by another account (for example, all of an account's Amazon S3
+     * buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
      * </p>
      * 
-     * @return For AWS services, the ID of the account that owns the resource. Use instead of <code>SourceArn</code> to
-     *         grant permission to resources owned by another account (e.g. all of an account's Amazon S3 buckets). Or
-     *         use together with <code>SourceArn</code> to ensure that the resource is owned by the specified account.
-     *         For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+     * @return For AWS services, the ID of the account that owns the resource. Use this instead of
+     *         <code>SourceArn</code> to grant permission to resources that are owned by another account (for example,
+     *         all of an account's Amazon S3 buckets). Or use it together with <code>SourceArn</code> to ensure that the
+     *         resource is owned by the specified account. For example, an Amazon S3 bucket could be deleted by its
+     *         owner and recreated by another account.
      */
 
     public String getSourceAccount() {
@@ -510,17 +512,18 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For AWS services, the ID of the account that owns the resource. Use instead of <code>SourceArn</code> to grant
-     * permission to resources owned by another account (e.g. all of an account's Amazon S3 buckets). Or use together
-     * with <code>SourceArn</code> to ensure that the resource is owned by the specified account. For example, an Amazon
-     * S3 bucket could be deleted by its owner and recreated by another account.
+     * For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code> to
+     * grant permission to resources that are owned by another account (for example, all of an account's Amazon S3
+     * buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by the specified
+     * account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
      * </p>
      * 
      * @param sourceAccount
-     *        For AWS services, the ID of the account that owns the resource. Use instead of <code>SourceArn</code> to
-     *        grant permission to resources owned by another account (e.g. all of an account's Amazon S3 buckets). Or
-     *        use together with <code>SourceArn</code> to ensure that the resource is owned by the specified account.
-     *        For example, an Amazon S3 bucket could be deleted by its owner and recreated by another account.
+     *        For AWS services, the ID of the account that owns the resource. Use this instead of <code>SourceArn</code>
+     *        to grant permission to resources that are owned by another account (for example, all of an account's
+     *        Amazon S3 buckets). Or use it together with <code>SourceArn</code> to ensure that the resource is owned by
+     *        the specified account. For example, an Amazon S3 bucket could be deleted by its owner and recreated by
+     *        another account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -611,13 +614,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
-     * that has changed since you last read it.
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-     *        policy that has changed since you last read it.
+     *        Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a policy that has changed since you last read it.
      */
 
     public void setRevisionId(String revisionId) {
@@ -626,12 +629,12 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
-     * that has changed since you last read it.
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
-     * @return Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-     *         policy that has changed since you last read it.
+     * @return Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *         modifying a policy that has changed since you last read it.
      */
 
     public String getRevisionId() {
@@ -640,13 +643,13 @@ public class AddPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy
-     * that has changed since you last read it.
+     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * policy that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a
-     *        policy that has changed since you last read it.
+     *        Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *        modifying a policy that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

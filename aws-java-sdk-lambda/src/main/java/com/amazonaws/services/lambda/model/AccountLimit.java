@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Limits related to concurrency and code storage. All file and storage sizes are in bytes.
+ * Limits that are related to concurrency and code storage. All file and storage sizes are in bytes.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit" target="_top">AWS API
@@ -36,13 +36,14 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     private Long totalCodeSize;
     /**
      * <p>
-     * The maximum size of your function's code and layers when extracted.
+     * The maximum size of your function's code and layers when they're extracted.
      * </p>
      */
     private Long codeSizeUnzipped;
     /**
      * <p>
-     * The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use Amazon S3 for larger files.
+     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
+     * files.
      * </p>
      */
     private Long codeSizeZipped;
@@ -54,8 +55,8 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
     private Integer concurrentExecutions;
     /**
      * <p>
-     * The maximum number of simultaneous function executions, less the concurrency reserved for individual functions
-     * with <a>PutFunctionConcurrency</a>.
+     * The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     * functions with <a>PutFunctionConcurrency</a>.
      * </p>
      */
     private Integer unreservedConcurrentExecutions;
@@ -102,11 +103,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of your function's code and layers when extracted.
+     * The maximum size of your function's code and layers when they're extracted.
      * </p>
      * 
      * @param codeSizeUnzipped
-     *        The maximum size of your function's code and layers when extracted.
+     *        The maximum size of your function's code and layers when they're extracted.
      */
 
     public void setCodeSizeUnzipped(Long codeSizeUnzipped) {
@@ -115,10 +116,10 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of your function's code and layers when extracted.
+     * The maximum size of your function's code and layers when they're extracted.
      * </p>
      * 
-     * @return The maximum size of your function's code and layers when extracted.
+     * @return The maximum size of your function's code and layers when they're extracted.
      */
 
     public Long getCodeSizeUnzipped() {
@@ -127,11 +128,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of your function's code and layers when extracted.
+     * The maximum size of your function's code and layers when they're extracted.
      * </p>
      * 
      * @param codeSizeUnzipped
-     *        The maximum size of your function's code and layers when extracted.
+     *        The maximum size of your function's code and layers when they're extracted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,12 +143,13 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use Amazon S3 for larger files.
+     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
+     * files.
      * </p>
      * 
      * @param codeSizeZipped
-     *        The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use Amazon S3 for larger
-     *        files.
+     *        The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
+     *        larger files.
      */
 
     public void setCodeSizeZipped(Long codeSizeZipped) {
@@ -156,11 +158,12 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use Amazon S3 for larger files.
+     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
+     * files.
      * </p>
      * 
-     * @return The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use Amazon S3 for larger
-     *         files.
+     * @return The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
+     *         larger files.
      */
 
     public Long getCodeSizeZipped() {
@@ -169,12 +172,13 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use Amazon S3 for larger files.
+     * The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for larger
+     * files.
      * </p>
      * 
      * @param codeSizeZipped
-     *        The maximum size of a deployment package when uploaded direcly to AWS Lambda. Use Amazon S3 for larger
-     *        files.
+     *        The maximum size of a deployment package when it's uploaded directly to AWS Lambda. Use Amazon S3 for
+     *        larger files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,12 +229,12 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of simultaneous function executions, less the concurrency reserved for individual functions
-     * with <a>PutFunctionConcurrency</a>.
+     * The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     * functions with <a>PutFunctionConcurrency</a>.
      * </p>
      * 
      * @param unreservedConcurrentExecutions
-     *        The maximum number of simultaneous function executions, less the concurrency reserved for individual
+     *        The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
      *        functions with <a>PutFunctionConcurrency</a>.
      */
 
@@ -240,11 +244,11 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of simultaneous function executions, less the concurrency reserved for individual functions
-     * with <a>PutFunctionConcurrency</a>.
+     * The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     * functions with <a>PutFunctionConcurrency</a>.
      * </p>
      * 
-     * @return The maximum number of simultaneous function executions, less the concurrency reserved for individual
+     * @return The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
      *         functions with <a>PutFunctionConcurrency</a>.
      */
 
@@ -254,12 +258,12 @@ public class AccountLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The maximum number of simultaneous function executions, less the concurrency reserved for individual functions
-     * with <a>PutFunctionConcurrency</a>.
+     * The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
+     * functions with <a>PutFunctionConcurrency</a>.
      * </p>
      * 
      * @param unreservedConcurrentExecutions
-     *        The maximum number of simultaneous function executions, less the concurrency reserved for individual
+     *        The maximum number of simultaneous function executions, minus the capacity that's reserved for individual
      *        functions with <a>PutFunctionConcurrency</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

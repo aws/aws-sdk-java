@@ -27,7 +27,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code> or
+     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
      * <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * </p>
      */
@@ -40,7 +40,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String functionVersion;
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      */
     private String marker;
@@ -53,12 +53,12 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code> or
+     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
      * <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * </p>
      * 
      * @param masterRegion
-     *        For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code> or
+     *        For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
      *        <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      */
 
@@ -68,11 +68,11 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code> or
+     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
      * <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * </p>
      * 
-     * @return For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code> or
+     * @return For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
      *         <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      */
 
@@ -82,12 +82,12 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code> or
+     * For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
      * <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * </p>
      * 
      * @param masterRegion
-     *        For Lambda@Edge functions, the region of the master function. For example, <code>us-east-2</code> or
+     *        For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-2</code> or
      *        <code>ALL</code>. If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -172,11 +172,11 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param marker
-     *        Specify the pagination token returned by a previous request to retrieve the next page of results.
+     *        Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      */
 
     public void setMarker(String marker) {
@@ -185,10 +185,10 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
-     * @return Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * @return Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      */
 
     public String getMarker() {
@@ -197,11 +197,11 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specify the pagination token returned by a previous request to retrieve the next page of results.
+     * Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param marker
-     *        Specify the pagination token returned by a previous request to retrieve the next page of results.
+     *        Specify the pagination token that's returned by a previous request to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
