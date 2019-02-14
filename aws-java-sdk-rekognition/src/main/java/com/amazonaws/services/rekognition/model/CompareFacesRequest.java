@@ -25,12 +25,20 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, passing base64-encoded image bytes is not supported.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      */
     private Image sourceImage;
     /**
      * <p>
      * The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, passing base64-encoded image bytes is not supported.
+     * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
      * </p>
      */
     private Image targetImage;
@@ -47,10 +55,18 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, passing base64-encoded image bytes is not supported.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @param sourceImage
      *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
-     *        operations, passing base64-encoded image bytes is not supported.
+     *        operations, passing base64-encoded image bytes is not supported. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      */
 
     public void setSourceImage(Image sourceImage) {
@@ -62,9 +78,17 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, passing base64-encoded image bytes is not supported.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @return The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
-     *         Rekognition operations, passing base64-encoded image bytes is not supported.
+     *         Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+     *         <p>
+     *         If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *         passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *         developer guide.
      */
 
     public Image getSourceImage() {
@@ -76,10 +100,18 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, passing base64-encoded image bytes is not supported.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @param sourceImage
      *        The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
-     *        operations, passing base64-encoded image bytes is not supported.
+     *        operations, passing base64-encoded image bytes is not supported. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,10 +125,18 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, passing base64-encoded image bytes is not supported.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @param targetImage
      *        The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
-     *        Rekognition operations, passing base64-encoded image bytes is not supported.
+     *        Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      */
 
     public void setTargetImage(Image targetImage) {
@@ -108,9 +148,17 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, passing base64-encoded image bytes is not supported.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @return The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
-     *         Rekognition operations, passing base64-encoded image bytes is not supported.
+     *         Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+     *         <p>
+     *         If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *         passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *         developer guide.
      */
 
     public Image getTargetImage() {
@@ -122,10 +170,18 @@ public class CompareFacesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, passing base64-encoded image bytes is not supported.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @param targetImage
      *        The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon
-     *        Rekognition operations, passing base64-encoded image bytes is not supported.
+     *        Rekognition operations, passing base64-encoded image bytes is not supported. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

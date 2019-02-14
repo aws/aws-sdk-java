@@ -46,6 +46,18 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date timestamp;
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * </p>
+     */
+    private Long valueInIA;
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * </p>
+     */
+    private Long valueInStandard;
 
     /**
      * <p>
@@ -134,6 +146,86 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * </p>
+     * 
+     * @param valueInIA
+     *        The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     */
+
+    public void setValueInIA(Long valueInIA) {
+        this.valueInIA = valueInIA;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * </p>
+     * 
+     * @return The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     */
+
+    public Long getValueInIA() {
+        return this.valueInIA;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * </p>
+     * 
+     * @param valueInIA
+     *        The latest known metered size (in bytes) of data stored in the Infrequent Access storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemSize withValueInIA(Long valueInIA) {
+        setValueInIA(valueInIA);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * </p>
+     * 
+     * @param valueInStandard
+     *        The latest known metered size (in bytes) of data stored in the Standard storage class.
+     */
+
+    public void setValueInStandard(Long valueInStandard) {
+        this.valueInStandard = valueInStandard;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * </p>
+     * 
+     * @return The latest known metered size (in bytes) of data stored in the Standard storage class.
+     */
+
+    public Long getValueInStandard() {
+        return this.valueInStandard;
+    }
+
+    /**
+     * <p>
+     * The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * </p>
+     * 
+     * @param valueInStandard
+     *        The latest known metered size (in bytes) of data stored in the Standard storage class.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FileSystemSize withValueInStandard(Long valueInStandard) {
+        setValueInStandard(valueInStandard);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -148,7 +240,11 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
         if (getValue() != null)
             sb.append("Value: ").append(getValue()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: ").append(getTimestamp());
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
+        if (getValueInIA() != null)
+            sb.append("ValueInIA: ").append(getValueInIA()).append(",");
+        if (getValueInStandard() != null)
+            sb.append("ValueInStandard: ").append(getValueInStandard());
         sb.append("}");
         return sb.toString();
     }
@@ -171,6 +267,14 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
+        if (other.getValueInIA() == null ^ this.getValueInIA() == null)
+            return false;
+        if (other.getValueInIA() != null && other.getValueInIA().equals(this.getValueInIA()) == false)
+            return false;
+        if (other.getValueInStandard() == null ^ this.getValueInStandard() == null)
+            return false;
+        if (other.getValueInStandard() != null && other.getValueInStandard().equals(this.getValueInStandard()) == false)
+            return false;
         return true;
     }
 
@@ -181,6 +285,8 @@ public class FileSystemSize implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getValueInIA() == null) ? 0 : getValueInIA().hashCode());
+        hashCode = prime * hashCode + ((getValueInStandard() == null) ? 0 : getValueInStandard().hashCode());
         return hashCode;
     }
 

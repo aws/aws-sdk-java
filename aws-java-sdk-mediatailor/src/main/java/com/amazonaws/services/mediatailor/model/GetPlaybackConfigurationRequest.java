@@ -27,18 +27,18 @@ public class GetPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier for the configuration.
+     * The identifier for the playback configuration.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The identifier for the configuration.
+     * The identifier for the playback configuration.
      * </p>
      * 
      * @param name
-     *        The identifier for the configuration.
+     *        The identifier for the playback configuration.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class GetPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier for the configuration.
+     * The identifier for the playback configuration.
      * </p>
      * 
-     * @return The identifier for the configuration.
+     * @return The identifier for the playback configuration.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class GetPlaybackConfigurationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier for the configuration.
+     * The identifier for the playback configuration.
      * </p>
      * 
      * @param name
-     *        The identifier for the configuration.
+     *        The identifier for the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

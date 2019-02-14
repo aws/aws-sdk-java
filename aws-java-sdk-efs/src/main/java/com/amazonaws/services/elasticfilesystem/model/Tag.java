@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag is a key-value pair. Allowed characters: letters, whitespace, and numbers, representable in UTF-8, and the
+ * A tag is a key-value pair. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the
  * following characters:<code> + - = . _ : /</code>
  * </p>
  * 

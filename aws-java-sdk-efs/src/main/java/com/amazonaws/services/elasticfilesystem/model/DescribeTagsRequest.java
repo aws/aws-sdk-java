@@ -28,8 +28,8 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Maximum number of file system tags to return in the response. It must be an integer with a value
-     * greater than zero.
+     * (Optional) Maximum number of file system tags to return in the response. Currently, this number is automatically
+     * set to 10.
      * </p>
      */
     private Integer maxItems;
@@ -49,13 +49,13 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Maximum number of file system tags to return in the response. It must be an integer with a value
-     * greater than zero.
+     * (Optional) Maximum number of file system tags to return in the response. Currently, this number is automatically
+     * set to 10.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Maximum number of file system tags to return in the response. It must be an integer with a
-     *        value greater than zero.
+     *        (Optional) Maximum number of file system tags to return in the response. Currently, this number is
+     *        automatically set to 10.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -64,12 +64,12 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Maximum number of file system tags to return in the response. It must be an integer with a value
-     * greater than zero.
+     * (Optional) Maximum number of file system tags to return in the response. Currently, this number is automatically
+     * set to 10.
      * </p>
      * 
-     * @return (Optional) Maximum number of file system tags to return in the response. It must be an integer with a
-     *         value greater than zero.
+     * @return (Optional) Maximum number of file system tags to return in the response. Currently, this number is
+     *         automatically set to 10.
      */
 
     public Integer getMaxItems() {
@@ -78,13 +78,13 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Maximum number of file system tags to return in the response. It must be an integer with a value
-     * greater than zero.
+     * (Optional) Maximum number of file system tags to return in the response. Currently, this number is automatically
+     * set to 10.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Maximum number of file system tags to return in the response. It must be an integer with a
-     *        value greater than zero.
+     *        (Optional) Maximum number of file system tags to return in the response. Currently, this number is
+     *        automatically set to 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

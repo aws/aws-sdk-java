@@ -33,8 +33,8 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
     private Integer maxResults;
     /**
      * <p>
-     * Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to
-     * fetch the next page of results.
+     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
+     * the next page of results.
      * </p>
      */
     private String nextToken;
@@ -81,12 +81,12 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to
-     * fetch the next page of results.
+     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
+     * the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token
+     *        Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
      *        to fetch the next page of results.
      */
 
@@ -96,11 +96,11 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to
-     * fetch the next page of results.
+     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
+     * the next page of results.
      * </p>
      * 
-     * @return Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token
+     * @return Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
      *         to fetch the next page of results.
      */
 
@@ -110,12 +110,12 @@ public class ListPlaybackConfigurationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to
-     * fetch the next page of results.
+     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
+     * the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token
+     *        Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
      *        to fetch the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -69,6 +69,10 @@ public class GetContentModerationResultJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     getContentModerationResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ModerationModelVersion", targetDepth)) {
+                    context.nextToken();
+                    getContentModerationResult.setModerationModelVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

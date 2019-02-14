@@ -81,20 +81,21 @@ import com.amazonaws.internal.auth.SignerProviderContext;
 import com.amazonaws.metrics.AwsSdkMetrics;
 import com.amazonaws.metrics.RequestMetricCollector;
 import com.amazonaws.monitoring.internal.ClientSideMonitoringRequestHandler;
+import com.amazonaws.retry.ClockSkewAdjuster;
+import com.amazonaws.retry.ClockSkewAdjuster.AdjustmentRequest;
+import com.amazonaws.retry.ClockSkewAdjuster.ClockSkewAdjustment;
 import com.amazonaws.retry.RetryPolicyAdapter;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.retry.internal.AuthErrorRetryStrategy;
 import com.amazonaws.retry.internal.AuthRetryParameters;
 import com.amazonaws.retry.v2.RetryPolicy;
 import com.amazonaws.retry.v2.RetryPolicyContext;
-import com.amazonaws.util.AwsClientSideMonitoringMetrics;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
-import com.amazonaws.util.AwsHostNameUtils;
+import com.amazonaws.util.AwsClientSideMonitoringMetrics;
 import com.amazonaws.util.CapacityManager;
 import com.amazonaws.util.CollectionUtils;
 import com.amazonaws.util.CountingInputStream;
-import com.amazonaws.util.DateUtils;
 import com.amazonaws.util.FakeIOException;
 import com.amazonaws.util.ImmutableMapParameter;
 import com.amazonaws.util.MetadataCache;
@@ -109,10 +110,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -183,6 +182,8 @@ public class AmazonHttpClient {
                      "If you experience XML parsing problems using the SDK, try upgrading to a more recent JVM update.");
         }
     }
+
+    private final ClockSkewAdjuster clockSkewAdjuster = new ClockSkewAdjuster();
 
     private final HttpRequestFactory<HttpRequestBase> httpRequestFactory =
             new ApacheHttpRequestFactory();
@@ -1367,15 +1368,15 @@ public class AmazonHttpClient {
                                                              execOneParams.apacheResponse,
                                                              localRequestContext);
 
-            /*
-             * If the exception is related to Clock skew,
-             * then update the client global time offset
-             * irrespective of retry logic
-             */
-            if (RetryUtils.isClockSkewError(exception)) {
-                int clockSkew = parseClockSkewOffset(execOneParams.apacheResponse, exception);
-                SDKGlobalTime.setGlobalTimeOffset(timeOffset = clockSkew);
+            ClockSkewAdjustment clockSkewAdjustment =
+                    clockSkewAdjuster.getAdjustment(new AdjustmentRequest().exception(exception)
+                                                                           .clientRequest(request)
+                                                                           .serviceResponse(execOneParams.apacheResponse));
+
+            if (clockSkewAdjustment.shouldAdjustForSkew()) {
+                timeOffset = clockSkewAdjustment.inSeconds();
                 request.setTimeOffset(timeOffset); // adjust time offset for the retry
+                SDKGlobalTime.setGlobalTimeOffset(timeOffset);
             }
 
 
@@ -1749,62 +1750,6 @@ public class AmazonHttpClient {
                 }
                 Thread.sleep(delay);
             }
-        }
-
-        // SWF: Signature not yet current: 20140819T173921Z is still later than 20140819T173829Z
-        // (20140819T173329Z + 5 min.)
-
-        /**
-         * Returns date string from the exception message body in form of yyyyMMdd'T'HHmmss'Z' We
-         * needed to extract date from the message body because SQS is the only service that does
-         * not provide date header in the response. Example, when device time is behind than the
-         * server time than we get a string that looks something like this: "Signature expired:
-         * 20130401T030113Z is now earlier than 20130401T034613Z (20130401T040113Z - 15 min.)"
-         *
-         * @param body The message from where the server time is being extracted
-         * @return Return datetime in string format (yyyyMMdd'T'HHmmss'Z')
-         */
-        private String getServerDateFromException(String body) {
-            final int startPos = body.indexOf("(");
-            int endPos = body.indexOf(" + ");
-            if (endPos == -1) {
-                endPos = body.indexOf(" - ");
-            }
-            return endPos == -1 ? null : body.substring(startPos + 1, endPos);
-        }
-
-        /**
-         * Returns the difference between the client's clock time and the service clock time in unit
-         * of seconds.
-         */
-        private int parseClockSkewOffset(org.apache.http.HttpResponse response,
-                                         SdkBaseException exception) {
-            final long currentTimeMilli = System.currentTimeMillis();
-            Date serverDate;
-            String serverDateStr = null;
-            Header[] responseDateHeader = response.getHeaders("Date");
-
-            try {
-                if (responseDateHeader.length == 0) {
-                    // SQS doesn't return Date header
-                    final String errmsg = exception.getMessage();
-                    serverDateStr = getServerDateFromException(errmsg);
-                    if (serverDateStr == null) {
-                        log.warn("Unable to parse clock skew offset from errmsg: " + errmsg);
-                        return 0;
-                    }
-                    serverDate = DateUtils.parseCompressedISO8601Date(serverDateStr);
-                } else {
-                    serverDateStr = responseDateHeader[0].getValue();
-                    serverDate = DateUtils.parseRFC822Date(serverDateStr);
-                }
-            } catch (RuntimeException e) {
-                log.warn("Unable to parse clock skew offset from response: " + serverDateStr, e);
-                return 0;
-            }
-
-            long diff = currentTimeMilli - serverDate.getTime();
-            return (int) (diff / 1000);
         }
 
         /**

@@ -58,7 +58,7 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
     private String lifeCycleState;
     /**
      * <p>
-     * Address at which the file system may be mounted via the mount target.
+     * Address at which the file system can be mounted by using the mount target.
      * </p>
      */
     private String ipAddress;
@@ -304,11 +304,11 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Address at which the file system may be mounted via the mount target.
+     * Address at which the file system can be mounted by using the mount target.
      * </p>
      * 
      * @param ipAddress
-     *        Address at which the file system may be mounted via the mount target.
+     *        Address at which the file system can be mounted by using the mount target.
      */
 
     public void setIpAddress(String ipAddress) {
@@ -317,10 +317,10 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Address at which the file system may be mounted via the mount target.
+     * Address at which the file system can be mounted by using the mount target.
      * </p>
      * 
-     * @return Address at which the file system may be mounted via the mount target.
+     * @return Address at which the file system can be mounted by using the mount target.
      */
 
     public String getIpAddress() {
@@ -329,11 +329,11 @@ public class CreateMountTargetResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Address at which the file system may be mounted via the mount target.
+     * Address at which the file system can be mounted by using the mount target.
      * </p>
      * 
      * @param ipAddress
-     *        Address at which the file system may be mounted via the mount target.
+     *        Address at which the file system can be mounted by using the mount target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -25,6 +25,10 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, you can't pass image bytes.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      */
     private Image image;
 
@@ -33,10 +37,18 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, you can't pass image bytes.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @param image
      *        The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon
-     *        Rekognition operations, you can't pass image bytes.
+     *        Rekognition operations, you can't pass image bytes. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      */
 
     public void setImage(Image image) {
@@ -48,9 +60,17 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, you can't pass image bytes.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @return The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon
-     *         Rekognition operations, you can't pass image bytes.
+     *         Rekognition operations, you can't pass image bytes. </p>
+     *         <p>
+     *         If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *         passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *         developer guide.
      */
 
     public Image getImage() {
@@ -62,10 +82,18 @@ public class DetectTextRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition
      * operations, you can't pass image bytes.
      * </p>
+     * <p>
+     * If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed
+     * using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition developer guide.
+     * </p>
      * 
      * @param image
      *        The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon
-     *        Rekognition operations, you can't pass image bytes.
+     *        Rekognition operations, you can't pass image bytes. </p>
+     *        <p>
+     *        If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes
+     *        passed using the <code>Bytes</code> field. For more information, see Images in the Amazon Rekognition
+     *        developer guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

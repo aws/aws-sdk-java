@@ -2123,7 +2123,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
      * </li>
      * <li>
      * <p>
-     * A face ID, <code>faceId</code>, assigned by the service for each face that's detected and stored.
+     * A face ID, <code>FaceId</code>, assigned by the service for each face that's detected and stored.
      * </p>
      * </li>
      * <li>

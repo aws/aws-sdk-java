@@ -50,7 +50,7 @@ public interface AWSMediaTailor {
 
     /**
      * <p>
-     * Deletes the configuration for the specified name.
+     * Deletes the playback configuration for the specified name.
      * </p>
      * 
      * @param deletePlaybackConfigurationRequest
@@ -63,7 +63,7 @@ public interface AWSMediaTailor {
 
     /**
      * <p>
-     * Returns the configuration for the specified name.
+     * Returns the playback configuration for the specified name.
      * </p>
      * 
      * @param getPlaybackConfigurationRequest
@@ -76,10 +76,10 @@ public interface AWSMediaTailor {
 
     /**
      * <p>
-     * Returns a list of the configurations defined in AWS Elemental MediaTailor. You can specify a max number of
-     * configurations to return at a time. The default max is 50. Results are returned in pagefuls. If AWS Elemental
-     * MediaTailor has more configurations than the specified max, it provides parameters in the response that you can
-     * use to retrieve the next pageful.
+     * Returns a list of the playback configurations defined in AWS Elemental MediaTailor. You can specify a maximum
+     * number of configurations to return at a time. The default maximum is 50. Results are returned in pagefuls. If
+     * MediaTailor has more configurations than the specified maximum, it provides parameters in the response that you
+     * can use to retrieve the next pageful.
      * </p>
      * 
      * @param listPlaybackConfigurationsRequest
@@ -92,7 +92,22 @@ public interface AWSMediaTailor {
 
     /**
      * <p>
-     * Adds a new configuration to AWS Elemental MediaTailor.
+     * Returns a list of the tags assigned to the specified playback configuration resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws BadRequestException
+     *         Invalid request parameters.
+     * @sample AWSMediaTailor.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Adds a new playback configuration to AWS Elemental MediaTailor.
      * </p>
      * 
      * @param putPlaybackConfigurationRequest
@@ -102,6 +117,36 @@ public interface AWSMediaTailor {
      *      target="_top">AWS API Documentation</a>
      */
     PutPlaybackConfigurationResult putPlaybackConfiguration(PutPlaybackConfigurationRequest putPlaybackConfigurationRequest);
+
+    /**
+     * <p>
+     * Adds tags to the specified playback configuration resource. You can specify one or more tags to add.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws BadRequestException
+     *         Invalid request parameters.
+     * @sample AWSMediaTailor.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from the specified playback configuration resource. You can specify one or more tags to remove.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws BadRequestException
+     *         Invalid request parameters.
+     * @sample AWSMediaTailor.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

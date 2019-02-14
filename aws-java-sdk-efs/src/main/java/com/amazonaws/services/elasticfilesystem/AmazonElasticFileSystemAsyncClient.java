@@ -503,6 +503,40 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeLifecycleConfigurationResult> describeLifecycleConfigurationAsync(DescribeLifecycleConfigurationRequest request) {
+
+        return describeLifecycleConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLifecycleConfigurationResult> describeLifecycleConfigurationAsync(
+            final DescribeLifecycleConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLifecycleConfigurationRequest, DescribeLifecycleConfigurationResult> asyncHandler) {
+        final DescribeLifecycleConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLifecycleConfigurationResult>() {
+            @Override
+            public DescribeLifecycleConfigurationResult call() throws Exception {
+                DescribeLifecycleConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeLifecycleConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeMountTargetSecurityGroupsResult> describeMountTargetSecurityGroupsAsync(
             DescribeMountTargetSecurityGroupsRequest request) {
 
@@ -623,6 +657,39 @@ public class AmazonElasticFileSystemAsyncClient extends AmazonElasticFileSystemC
 
                 try {
                     result = executeModifyMountTargetSecurityGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleConfigurationResult> putLifecycleConfigurationAsync(PutLifecycleConfigurationRequest request) {
+
+        return putLifecycleConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutLifecycleConfigurationResult> putLifecycleConfigurationAsync(final PutLifecycleConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutLifecycleConfigurationRequest, PutLifecycleConfigurationResult> asyncHandler) {
+        final PutLifecycleConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutLifecycleConfigurationResult>() {
+            @Override
+            public PutLifecycleConfigurationResult call() throws Exception {
+                PutLifecycleConfigurationResult result = null;
+
+                try {
+                    result = executePutLifecycleConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

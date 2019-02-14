@@ -28,7 +28,7 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
      * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
-     * 25000 characters.
+     * 25,000 characters.
      * </p>
      */
     private String adDecisionServerUrl;
@@ -41,7 +41,7 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private CdnConfiguration cdnConfiguration;
     /**
      * <p>
-     * The configuration object for DASH content.
+     * The configuration for DASH content.
      * </p>
      */
     private DashConfiguration dashConfiguration;
@@ -53,10 +53,16 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private HlsConfiguration hlsConfiguration;
     /**
      * <p>
-     * The identifier for the configuration.
+     * The identifier for the playback configuration.
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the playback configuration.
+     * </p>
+     */
+    private String playbackConfigurationArn;
     /**
      * <p>
      * The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use
@@ -72,18 +78,24 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
     private String sessionInitializationEndpointPrefix;
     /**
      * <p>
-     * URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
+     * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots
-     * designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
+     * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      */
     private String slateAdUrl;
     /**
      * <p>
-     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
-     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
-     * service team.
+     * The tags assigned to the playback configuration.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The name that is used to associate this playback configuration with a custom transcode profile. This overrides
+     * the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with
+     * the help of AWS Support.
      * </p>
      */
     private String transcodeProfileName;
@@ -99,14 +111,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
      * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
-     * 25000 characters.
+     * 25,000 characters.
      * </p>
      * 
      * @param adDecisionServerUrl
      *        The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *        placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
      *        session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
-     *        static VAST URL. The maximum length is 25000 characters.
+     *        static VAST URL. The maximum length is 25,000 characters.
      */
 
     public void setAdDecisionServerUrl(String adDecisionServerUrl) {
@@ -118,13 +130,13 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
      * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
-     * 25000 characters.
+     * 25,000 characters.
      * </p>
      * 
      * @return The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *         placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
      *         session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
-     *         static VAST URL. The maximum length is 25000 characters.
+     *         static VAST URL. The maximum length is 25,000 characters.
      */
 
     public String getAdDecisionServerUrl() {
@@ -136,14 +148,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
      * The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders
      * for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as
      * needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is
-     * 25000 characters.
+     * 25,000 characters.
      * </p>
      * 
      * @param adDecisionServerUrl
      *        The URL for the ad decision server (ADS). This includes the specification of static parameters and
      *        placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and
      *        session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a
-     *        static VAST URL. The maximum length is 25000 characters.
+     *        static VAST URL. The maximum length is 25,000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +212,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The configuration object for DASH content.
+     * The configuration for DASH content.
      * </p>
      * 
      * @param dashConfiguration
-     *        The configuration object for DASH content.
+     *        The configuration for DASH content.
      */
 
     public void setDashConfiguration(DashConfiguration dashConfiguration) {
@@ -213,10 +225,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The configuration object for DASH content.
+     * The configuration for DASH content.
      * </p>
      * 
-     * @return The configuration object for DASH content.
+     * @return The configuration for DASH content.
      */
 
     public DashConfiguration getDashConfiguration() {
@@ -225,11 +237,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The configuration object for DASH content.
+     * The configuration for DASH content.
      * </p>
      * 
      * @param dashConfiguration
-     *        The configuration object for DASH content.
+     *        The configuration for DASH content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +292,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier for the configuration.
+     * The identifier for the playback configuration.
      * </p>
      * 
      * @param name
-     *        The identifier for the configuration.
+     *        The identifier for the playback configuration.
      */
 
     public void setName(String name) {
@@ -293,10 +305,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier for the configuration.
+     * The identifier for the playback configuration.
      * </p>
      * 
-     * @return The identifier for the configuration.
+     * @return The identifier for the playback configuration.
      */
 
     public String getName() {
@@ -305,16 +317,56 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The identifier for the configuration.
+     * The identifier for the playback configuration.
      * </p>
      * 
      * @param name
-     *        The identifier for the configuration.
+     *        The identifier for the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutPlaybackConfigurationResult withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the playback configuration.
+     * </p>
+     * 
+     * @param playbackConfigurationArn
+     *        The Amazon Resource Name (ARN) for the playback configuration.
+     */
+
+    public void setPlaybackConfigurationArn(String playbackConfigurationArn) {
+        this.playbackConfigurationArn = playbackConfigurationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the playback configuration.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) for the playback configuration.
+     */
+
+    public String getPlaybackConfigurationArn() {
+        return this.playbackConfigurationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) for the playback configuration.
+     * </p>
+     * 
+     * @param playbackConfigurationArn
+     *        The Amazon Resource Name (ARN) for the playback configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationResult withPlaybackConfigurationArn(String playbackConfigurationArn) {
+        setPlaybackConfigurationArn(playbackConfigurationArn);
         return this;
     }
 
@@ -406,18 +458,18 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
+     * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots
-     * designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
+     * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
      * @param slateAdUrl
-     *        URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
+     *        The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
      *        Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *        for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides
-     *        it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains
-     *        both audio and video.
+     *        for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in
+     *        the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
+     *        audio and video.
      */
 
     public void setSlateAdUrl(String slateAdUrl) {
@@ -426,17 +478,17 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
+     * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots
-     * designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
+     * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
-     * @return URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
+     * @return The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
      *         Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *         for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides
-     *         it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains
-     *         both audio and video.
+     *         for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it
+     *         in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
+     *         audio and video.
      */
 
     public String getSlateAdUrl() {
@@ -445,18 +497,18 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
+     * The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental
      * MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID
-     * configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots
-     * designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
+     * playback configurations. For VPAID, the slate is required because MediaTailor provides it in the slots designated
+     * for dynamic ad content. The slate must be a high-quality asset that contains both audio and video.
      * </p>
      * 
      * @param slateAdUrl
-     *        URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
+     *        The URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS
      *        Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional
-     *        for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides
-     *        it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains
-     *        both audio and video.
+     *        for non-VPAID playback configurations. For VPAID, the slate is required because MediaTailor provides it in
+     *        the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both
+     *        audio and video.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -467,15 +519,76 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
-     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
-     * service team.
+     * The tags assigned to the playback configuration.
+     * </p>
+     * 
+     * @return The tags assigned to the playback configuration.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the playback configuration.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the playback configuration.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags assigned to the playback configuration.
+     * </p>
+     * 
+     * @param tags
+     *        The tags assigned to the playback configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationResult withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public PutPlaybackConfigurationResult addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPlaybackConfigurationResult clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name that is used to associate this playback configuration with a custom transcode profile. This overrides
+     * the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with
+     * the help of AWS Support.
      * </p>
      * 
      * @param transcodeProfileName
-     *        Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
-     *        transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
-     *        service team.
+     *        The name that is used to associate this playback configuration with a custom transcode profile. This
+     *        overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom
+     *        profiles with the help of AWS Support.
      */
 
     public void setTranscodeProfileName(String transcodeProfileName) {
@@ -484,14 +597,14 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
-     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
-     * service team.
+     * The name that is used to associate this playback configuration with a custom transcode profile. This overrides
+     * the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with
+     * the help of AWS Support.
      * </p>
      * 
-     * @return Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
-     *         transcoding defaults. Do not include this field if you have not setup custom profiles with the
-     *         MediaTailor service team.
+     * @return The name that is used to associate this playback configuration with a custom transcode profile. This
+     *         overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up
+     *         custom profiles with the help of AWS Support.
      */
 
     public String getTranscodeProfileName() {
@@ -500,15 +613,15 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
-     * transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
-     * service team.
+     * The name that is used to associate this playback configuration with a custom transcode profile. This overrides
+     * the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom profiles with
+     * the help of AWS Support.
      * </p>
      * 
      * @param transcodeProfileName
-     *        Associate this playbackConfiguration with a custom transcode profile, overriding MediaTailor's dynamic
-     *        transcoding defaults. Do not include this field if you have not setup custom profiles with the MediaTailor
-     *        service team.
+     *        The name that is used to associate this playback configuration with a custom transcode profile. This
+     *        overrides the dynamic transcoding defaults of MediaTailor. Use this only if you have already set up custom
+     *        profiles with the help of AWS Support.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -582,12 +695,16 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             sb.append("HlsConfiguration: ").append(getHlsConfiguration()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getPlaybackConfigurationArn() != null)
+            sb.append("PlaybackConfigurationArn: ").append(getPlaybackConfigurationArn()).append(",");
         if (getPlaybackEndpointPrefix() != null)
             sb.append("PlaybackEndpointPrefix: ").append(getPlaybackEndpointPrefix()).append(",");
         if (getSessionInitializationEndpointPrefix() != null)
             sb.append("SessionInitializationEndpointPrefix: ").append(getSessionInitializationEndpointPrefix()).append(",");
         if (getSlateAdUrl() != null)
             sb.append("SlateAdUrl: ").append(getSlateAdUrl()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getTranscodeProfileName() != null)
             sb.append("TranscodeProfileName: ").append(getTranscodeProfileName()).append(",");
         if (getVideoContentSourceUrl() != null)
@@ -626,6 +743,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getPlaybackConfigurationArn() == null ^ this.getPlaybackConfigurationArn() == null)
+            return false;
+        if (other.getPlaybackConfigurationArn() != null && other.getPlaybackConfigurationArn().equals(this.getPlaybackConfigurationArn()) == false)
+            return false;
         if (other.getPlaybackEndpointPrefix() == null ^ this.getPlaybackEndpointPrefix() == null)
             return false;
         if (other.getPlaybackEndpointPrefix() != null && other.getPlaybackEndpointPrefix().equals(this.getPlaybackEndpointPrefix()) == false)
@@ -638,6 +759,10 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         if (other.getSlateAdUrl() == null ^ this.getSlateAdUrl() == null)
             return false;
         if (other.getSlateAdUrl() != null && other.getSlateAdUrl().equals(this.getSlateAdUrl()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         if (other.getTranscodeProfileName() == null ^ this.getTranscodeProfileName() == null)
             return false;
@@ -660,9 +785,11 @@ public class PutPlaybackConfigurationResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDashConfiguration() == null) ? 0 : getDashConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHlsConfiguration() == null) ? 0 : getHlsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getPlaybackConfigurationArn() == null) ? 0 : getPlaybackConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getPlaybackEndpointPrefix() == null) ? 0 : getPlaybackEndpointPrefix().hashCode());
         hashCode = prime * hashCode + ((getSessionInitializationEndpointPrefix() == null) ? 0 : getSessionInitializationEndpointPrefix().hashCode());
         hashCode = prime * hashCode + ((getSlateAdUrl() == null) ? 0 : getSlateAdUrl().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTranscodeProfileName() == null) ? 0 : getTranscodeProfileName().hashCode());
         hashCode = prime * hashCode + ((getVideoContentSourceUrl() == null) ? 0 : getVideoContentSourceUrl().hashCode());
         return hashCode;

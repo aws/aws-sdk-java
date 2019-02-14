@@ -25,27 +25,27 @@ public class ListPlaybackConfigurationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Array of playback configurations. This may be all of the available configurations or a subset, depending on the
-     * settings you provide and on the total number of configurations stored.
+     * Array of playback configurations. This might be all the available configurations or a subset, depending on the
+     * settings that you provide and the total number of configurations stored.
      * </p>
      */
     private java.util.List<PlaybackConfiguration> items;
     /**
      * <p>
-     * Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to
-     * fetch the next page of results.
+     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
+     * the next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Array of playback configurations. This may be all of the available configurations or a subset, depending on the
-     * settings you provide and on the total number of configurations stored.
+     * Array of playback configurations. This might be all the available configurations or a subset, depending on the
+     * settings that you provide and the total number of configurations stored.
      * </p>
      * 
-     * @return Array of playback configurations. This may be all of the available configurations or a subset, depending
-     *         on the settings you provide and on the total number of configurations stored.
+     * @return Array of playback configurations. This might be all the available configurations or a subset, depending
+     *         on the settings that you provide and the total number of configurations stored.
      */
 
     public java.util.List<PlaybackConfiguration> getItems() {
@@ -54,13 +54,13 @@ public class ListPlaybackConfigurationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Array of playback configurations. This may be all of the available configurations or a subset, depending on the
-     * settings you provide and on the total number of configurations stored.
+     * Array of playback configurations. This might be all the available configurations or a subset, depending on the
+     * settings that you provide and the total number of configurations stored.
      * </p>
      * 
      * @param items
-     *        Array of playback configurations. This may be all of the available configurations or a subset, depending
-     *        on the settings you provide and on the total number of configurations stored.
+     *        Array of playback configurations. This might be all the available configurations or a subset, depending on
+     *        the settings that you provide and the total number of configurations stored.
      */
 
     public void setItems(java.util.Collection<PlaybackConfiguration> items) {
@@ -74,8 +74,8 @@ public class ListPlaybackConfigurationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Array of playback configurations. This may be all of the available configurations or a subset, depending on the
-     * settings you provide and on the total number of configurations stored.
+     * Array of playback configurations. This might be all the available configurations or a subset, depending on the
+     * settings that you provide and the total number of configurations stored.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,8 +84,8 @@ public class ListPlaybackConfigurationsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param items
-     *        Array of playback configurations. This may be all of the available configurations or a subset, depending
-     *        on the settings you provide and on the total number of configurations stored.
+     *        Array of playback configurations. This might be all the available configurations or a subset, depending on
+     *        the settings that you provide and the total number of configurations stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +101,13 @@ public class ListPlaybackConfigurationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Array of playback configurations. This may be all of the available configurations or a subset, depending on the
-     * settings you provide and on the total number of configurations stored.
+     * Array of playback configurations. This might be all the available configurations or a subset, depending on the
+     * settings that you provide and the total number of configurations stored.
      * </p>
      * 
      * @param items
-     *        Array of playback configurations. This may be all of the available configurations or a subset, depending
-     *        on the settings you provide and on the total number of configurations stored.
+     *        Array of playback configurations. This might be all the available configurations or a subset, depending on
+     *        the settings that you provide and the total number of configurations stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,12 +118,12 @@ public class ListPlaybackConfigurationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to
-     * fetch the next page of results.
+     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
+     * the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token
+     *        Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
      *        to fetch the next page of results.
      */
 
@@ -133,11 +133,11 @@ public class ListPlaybackConfigurationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to
-     * fetch the next page of results.
+     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
+     * the next page of results.
      * </p>
      * 
-     * @return Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token
+     * @return Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
      *         to fetch the next page of results.
      */
 
@@ -147,12 +147,12 @@ public class ListPlaybackConfigurationsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token to
-     * fetch the next page of results.
+     * Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch
+     * the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token returned by the GET list request when results overrun the meximum allowed. Use the token
+     *        Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token
      *        to fetch the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
