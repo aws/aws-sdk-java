@@ -52,14 +52,13 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
     private String creationTime;
     /**
      * <p>
-     * The date and time the Client VPN endpoint was deleted, if applicable. Information about deleted Client VPN
-     * endpoints is retained for 24 hours, unless a new Client VPN is created with the same name.
+     * The date and time the Client VPN endpoint was deleted, if applicable.
      * </p>
      */
     private String deletionTime;
     /**
      * <p>
-     * The DNS name to be used by clients when establishing a connection.
+     * The DNS name to be used by clients when connecting to the Client VPN endpoint.
      * </p>
      */
     private String dnsName;
@@ -71,7 +70,13 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
     private String clientCidrBlock;
     /**
      * <p>
-     * <b>Indicates whether VPN split tunneling is supported.</b>
+     * Information about the DNS servers to be used for DNS resolution.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> dnsServers;
+    /**
+     * <p>
+     * Indicates whether VPN split tunneling is supported.
      * </p>
      */
     private Boolean splitTunnel;
@@ -92,6 +97,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
      * Information about the associated target networks. A target network is a subnet in a VPC.
      * </p>
      */
+    @Deprecated
     private com.amazonaws.internal.SdkInternalList<AssociatedTargetNetwork> associatedTargetNetworks;
     /**
      * <p>
@@ -111,6 +117,12 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
      * </p>
      */
     private ConnectionLogResponseOptions connectionLogOptions;
+    /**
+     * <p>
+     * Any tags assigned to the Client VPN endpoint.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -274,13 +286,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the Client VPN endpoint was deleted, if applicable. Information about deleted Client VPN
-     * endpoints is retained for 24 hours, unless a new Client VPN is created with the same name.
+     * The date and time the Client VPN endpoint was deleted, if applicable.
      * </p>
      * 
      * @param deletionTime
-     *        The date and time the Client VPN endpoint was deleted, if applicable. Information about deleted Client VPN
-     *        endpoints is retained for 24 hours, unless a new Client VPN is created with the same name.
+     *        The date and time the Client VPN endpoint was deleted, if applicable.
      */
 
     public void setDeletionTime(String deletionTime) {
@@ -289,12 +299,10 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the Client VPN endpoint was deleted, if applicable. Information about deleted Client VPN
-     * endpoints is retained for 24 hours, unless a new Client VPN is created with the same name.
+     * The date and time the Client VPN endpoint was deleted, if applicable.
      * </p>
      * 
-     * @return The date and time the Client VPN endpoint was deleted, if applicable. Information about deleted Client
-     *         VPN endpoints is retained for 24 hours, unless a new Client VPN is created with the same name.
+     * @return The date and time the Client VPN endpoint was deleted, if applicable.
      */
 
     public String getDeletionTime() {
@@ -303,13 +311,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date and time the Client VPN endpoint was deleted, if applicable. Information about deleted Client VPN
-     * endpoints is retained for 24 hours, unless a new Client VPN is created with the same name.
+     * The date and time the Client VPN endpoint was deleted, if applicable.
      * </p>
      * 
      * @param deletionTime
-     *        The date and time the Client VPN endpoint was deleted, if applicable. Information about deleted Client VPN
-     *        endpoints is retained for 24 hours, unless a new Client VPN is created with the same name.
+     *        The date and time the Client VPN endpoint was deleted, if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,11 +326,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DNS name to be used by clients when establishing a connection.
+     * The DNS name to be used by clients when connecting to the Client VPN endpoint.
      * </p>
      * 
      * @param dnsName
-     *        The DNS name to be used by clients when establishing a connection.
+     *        The DNS name to be used by clients when connecting to the Client VPN endpoint.
      */
 
     public void setDnsName(String dnsName) {
@@ -333,10 +339,10 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DNS name to be used by clients when establishing a connection.
+     * The DNS name to be used by clients when connecting to the Client VPN endpoint.
      * </p>
      * 
-     * @return The DNS name to be used by clients when establishing a connection.
+     * @return The DNS name to be used by clients when connecting to the Client VPN endpoint.
      */
 
     public String getDnsName() {
@@ -345,11 +351,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The DNS name to be used by clients when establishing a connection.
+     * The DNS name to be used by clients when connecting to the Client VPN endpoint.
      * </p>
      * 
      * @param dnsName
-     *        The DNS name to be used by clients when establishing a connection.
+     *        The DNS name to be used by clients when connecting to the Client VPN endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,11 +406,84 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Indicates whether VPN split tunneling is supported.</b>
+     * Information about the DNS servers to be used for DNS resolution.
+     * </p>
+     * 
+     * @return Information about the DNS servers to be used for DNS resolution.
+     */
+
+    public java.util.List<String> getDnsServers() {
+        if (dnsServers == null) {
+            dnsServers = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return dnsServers;
+    }
+
+    /**
+     * <p>
+     * Information about the DNS servers to be used for DNS resolution.
+     * </p>
+     * 
+     * @param dnsServers
+     *        Information about the DNS servers to be used for DNS resolution.
+     */
+
+    public void setDnsServers(java.util.Collection<String> dnsServers) {
+        if (dnsServers == null) {
+            this.dnsServers = null;
+            return;
+        }
+
+        this.dnsServers = new com.amazonaws.internal.SdkInternalList<String>(dnsServers);
+    }
+
+    /**
+     * <p>
+     * Information about the DNS servers to be used for DNS resolution.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDnsServers(java.util.Collection)} or {@link #withDnsServers(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dnsServers
+     *        Information about the DNS servers to be used for DNS resolution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnEndpoint withDnsServers(String... dnsServers) {
+        if (this.dnsServers == null) {
+            setDnsServers(new com.amazonaws.internal.SdkInternalList<String>(dnsServers.length));
+        }
+        for (String ele : dnsServers) {
+            this.dnsServers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the DNS servers to be used for DNS resolution.
+     * </p>
+     * 
+     * @param dnsServers
+     *        Information about the DNS servers to be used for DNS resolution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnEndpoint withDnsServers(java.util.Collection<String> dnsServers) {
+        setDnsServers(dnsServers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether VPN split tunneling is supported.
      * </p>
      * 
      * @param splitTunnel
-     *        <b>Indicates whether VPN split tunneling is supported.</b>
+     *        Indicates whether VPN split tunneling is supported.
      */
 
     public void setSplitTunnel(Boolean splitTunnel) {
@@ -413,10 +492,10 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Indicates whether VPN split tunneling is supported.</b>
+     * Indicates whether VPN split tunneling is supported.
      * </p>
      * 
-     * @return <b>Indicates whether VPN split tunneling is supported.</b>
+     * @return Indicates whether VPN split tunneling is supported.
      */
 
     public Boolean getSplitTunnel() {
@@ -425,11 +504,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Indicates whether VPN split tunneling is supported.</b>
+     * Indicates whether VPN split tunneling is supported.
      * </p>
      * 
      * @param splitTunnel
-     *        <b>Indicates whether VPN split tunneling is supported.</b>
+     *        Indicates whether VPN split tunneling is supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,10 +519,10 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Indicates whether VPN split tunneling is supported.</b>
+     * Indicates whether VPN split tunneling is supported.
      * </p>
      * 
-     * @return <b>Indicates whether VPN split tunneling is supported.</b>
+     * @return Indicates whether VPN split tunneling is supported.
      */
 
     public Boolean isSplitTunnel() {
@@ -575,7 +654,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
      * 
      * @return Information about the associated target networks. A target network is a subnet in a VPC.
      */
-
+    @Deprecated
     public java.util.List<AssociatedTargetNetwork> getAssociatedTargetNetworks() {
         if (associatedTargetNetworks == null) {
             associatedTargetNetworks = new com.amazonaws.internal.SdkInternalList<AssociatedTargetNetwork>();
@@ -591,7 +670,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
      * @param associatedTargetNetworks
      *        Information about the associated target networks. A target network is a subnet in a VPC.
      */
-
+    @Deprecated
     public void setAssociatedTargetNetworks(java.util.Collection<AssociatedTargetNetwork> associatedTargetNetworks) {
         if (associatedTargetNetworks == null) {
             this.associatedTargetNetworks = null;
@@ -615,7 +694,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
      *        Information about the associated target networks. A target network is a subnet in a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ClientVpnEndpoint withAssociatedTargetNetworks(AssociatedTargetNetwork... associatedTargetNetworks) {
         if (this.associatedTargetNetworks == null) {
             setAssociatedTargetNetworks(new com.amazonaws.internal.SdkInternalList<AssociatedTargetNetwork>(associatedTargetNetworks.length));
@@ -635,7 +714,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
      *        Information about the associated target networks. A target network is a subnet in a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public ClientVpnEndpoint withAssociatedTargetNetworks(java.util.Collection<AssociatedTargetNetwork> associatedTargetNetworks) {
         setAssociatedTargetNetworks(associatedTargetNetworks);
         return this;
@@ -795,6 +874,79 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Any tags assigned to the Client VPN endpoint.
+     * </p>
+     * 
+     * @return Any tags assigned to the Client VPN endpoint.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Client VPN endpoint.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Client VPN endpoint.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Client VPN endpoint.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Client VPN endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnEndpoint withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the Client VPN endpoint.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the Client VPN endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnEndpoint withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -820,6 +972,8 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
             sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getClientCidrBlock() != null)
             sb.append("ClientCidrBlock: ").append(getClientCidrBlock()).append(",");
+        if (getDnsServers() != null)
+            sb.append("DnsServers: ").append(getDnsServers()).append(",");
         if (getSplitTunnel() != null)
             sb.append("SplitTunnel: ").append(getSplitTunnel()).append(",");
         if (getVpnProtocol() != null)
@@ -833,7 +987,9 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
         if (getAuthenticationOptions() != null)
             sb.append("AuthenticationOptions: ").append(getAuthenticationOptions()).append(",");
         if (getConnectionLogOptions() != null)
-            sb.append("ConnectionLogOptions: ").append(getConnectionLogOptions());
+            sb.append("ConnectionLogOptions: ").append(getConnectionLogOptions()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -876,6 +1032,10 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getClientCidrBlock() != null && other.getClientCidrBlock().equals(this.getClientCidrBlock()) == false)
             return false;
+        if (other.getDnsServers() == null ^ this.getDnsServers() == null)
+            return false;
+        if (other.getDnsServers() != null && other.getDnsServers().equals(this.getDnsServers()) == false)
+            return false;
         if (other.getSplitTunnel() == null ^ this.getSplitTunnel() == null)
             return false;
         if (other.getSplitTunnel() != null && other.getSplitTunnel().equals(this.getSplitTunnel()) == false)
@@ -904,6 +1064,10 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getConnectionLogOptions() != null && other.getConnectionLogOptions().equals(this.getConnectionLogOptions()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -919,6 +1083,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeletionTime() == null) ? 0 : getDeletionTime().hashCode());
         hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
         hashCode = prime * hashCode + ((getClientCidrBlock() == null) ? 0 : getClientCidrBlock().hashCode());
+        hashCode = prime * hashCode + ((getDnsServers() == null) ? 0 : getDnsServers().hashCode());
         hashCode = prime * hashCode + ((getSplitTunnel() == null) ? 0 : getSplitTunnel().hashCode());
         hashCode = prime * hashCode + ((getVpnProtocol() == null) ? 0 : getVpnProtocol().hashCode());
         hashCode = prime * hashCode + ((getTransportProtocol() == null) ? 0 : getTransportProtocol().hashCode());
@@ -926,6 +1091,7 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getServerCertificateArn() == null) ? 0 : getServerCertificateArn().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationOptions() == null) ? 0 : getAuthenticationOptions().hashCode());
         hashCode = prime * hashCode + ((getConnectionLogOptions() == null) ? 0 : getConnectionLogOptions().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

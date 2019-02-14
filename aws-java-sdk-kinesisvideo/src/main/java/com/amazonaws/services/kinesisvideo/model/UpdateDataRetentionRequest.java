@@ -52,7 +52,8 @@ public class UpdateDataRetentionRequest extends com.amazonaws.AmazonWebServiceRe
     private String operation;
     /**
      * <p>
-     * The retention period, in hours. The value you specify replaces the current value.
+     * The retention period, in hours. The value you specify replaces the current value. The maximum value for this
+     * parameter is 87600 (ten years).
      * </p>
      */
     private Integer dataRetentionChangeInHours;
@@ -244,11 +245,13 @@ public class UpdateDataRetentionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The retention period, in hours. The value you specify replaces the current value.
+     * The retention period, in hours. The value you specify replaces the current value. The maximum value for this
+     * parameter is 87600 (ten years).
      * </p>
      * 
      * @param dataRetentionChangeInHours
-     *        The retention period, in hours. The value you specify replaces the current value.
+     *        The retention period, in hours. The value you specify replaces the current value. The maximum value for
+     *        this parameter is 87600 (ten years).
      */
 
     public void setDataRetentionChangeInHours(Integer dataRetentionChangeInHours) {
@@ -257,10 +260,12 @@ public class UpdateDataRetentionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The retention period, in hours. The value you specify replaces the current value.
+     * The retention period, in hours. The value you specify replaces the current value. The maximum value for this
+     * parameter is 87600 (ten years).
      * </p>
      * 
-     * @return The retention period, in hours. The value you specify replaces the current value.
+     * @return The retention period, in hours. The value you specify replaces the current value. The maximum value for
+     *         this parameter is 87600 (ten years).
      */
 
     public Integer getDataRetentionChangeInHours() {
@@ -269,11 +274,13 @@ public class UpdateDataRetentionRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The retention period, in hours. The value you specify replaces the current value.
+     * The retention period, in hours. The value you specify replaces the current value. The maximum value for this
+     * parameter is 87600 (ten years).
      * </p>
      * 
      * @param dataRetentionChangeInHours
-     *        The retention period, in hours. The value you specify replaces the current value.
+     *        The retention period, in hours. The value you specify replaces the current value. The maximum value for
+     *        this parameter is 87600 (ten years).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

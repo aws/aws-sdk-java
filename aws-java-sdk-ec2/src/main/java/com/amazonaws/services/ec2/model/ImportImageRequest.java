@@ -134,7 +134,27 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
-     * Valid values: <code>AWS</code> | <code>BYOL</code>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BYOL</code> - Retains the source-system license, if appropriate.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value: <code>Auto</code>
      * </p>
      */
     private String licenseType;
@@ -820,7 +840,27 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
-     * Valid values: <code>AWS</code> | <code>BYOL</code>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BYOL</code> - Retains the source-system license, if appropriate.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value: <code>Auto</code>
      * </p>
      * 
      * @param licenseType
@@ -832,7 +872,27 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        >Prerequisites</a> in the VM Import/Export User Guide.
      *        </p>
      *        <p>
-     *        Valid values: <code>AWS</code> | <code>BYOL</code>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BYOL</code> - Retains the source-system license, if appropriate.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default value: <code>Auto</code>
      */
 
     public void setLicenseType(String licenseType) {
@@ -850,7 +910,27 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
-     * Valid values: <code>AWS</code> | <code>BYOL</code>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BYOL</code> - Retains the source-system license, if appropriate.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value: <code>Auto</code>
      * </p>
      * 
      * @return The license type to be used for the Amazon Machine Image (AMI) after importing.</p>
@@ -861,7 +941,27 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *         >Prerequisites</a> in the VM Import/Export User Guide.
      *         </p>
      *         <p>
-     *         Valid values: <code>AWS</code> | <code>BYOL</code>
+     *         Valid values include:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BYOL</code> - Retains the source-system license, if appropriate.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Default value: <code>Auto</code>
      */
 
     public String getLicenseType() {
@@ -879,7 +979,27 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      * >Prerequisites</a> in the VM Import/Export User Guide.
      * </p>
      * <p>
-     * Valid values: <code>AWS</code> | <code>BYOL</code>
+     * Valid values include:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BYOL</code> - Retains the source-system license, if appropriate.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Default value: <code>Auto</code>
      * </p>
      * 
      * @param licenseType
@@ -891,7 +1011,27 @@ public class ImportImageRequest extends AmazonWebServiceRequest implements Seria
      *        >Prerequisites</a> in the VM Import/Export User Guide.
      *        </p>
      *        <p>
-     *        Valid values: <code>AWS</code> | <code>BYOL</code>
+     *        Valid values include:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Auto</code> - Detects the source-system operating system (OS) and applies the appropriate license.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWS</code> - Replaces the source-system license with an AWS license, if appropriate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BYOL</code> - Retains the source-system license, if appropriate.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Default value: <code>Auto</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

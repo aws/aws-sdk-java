@@ -54,8 +54,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * for guidelines.
      * </p>
      * <p>
-     * To play video on the console, the media must be H.264 encoded, and you need to specify this video type in this
-     * parameter as <code>video/h264</code>.
+     * Example valid values include "video/h264" and "video/h264,audio/aac".
      * </p>
      * <p>
      * This parameter is optional; the default value is <code>null</code> (or empty in JSON).
@@ -72,7 +71,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      * >DescribeKey</a>.
      * </p>
      */
@@ -92,6 +91,12 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Integer dataRetentionInHours;
+    /**
+     * <p>
+     * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -221,8 +226,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * for guidelines.
      * </p>
      * <p>
-     * To play video on the console, the media must be H.264 encoded, and you need to specify this video type in this
-     * parameter as <code>video/h264</code>.
+     * Example valid values include "video/h264" and "video/h264,audio/aac".
      * </p>
      * <p>
      * This parameter is optional; the default value is <code>null</code> (or empty in JSON).
@@ -235,8 +239,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *        Requirements</a> for guidelines.</p>
      *        <p>
-     *        To play video on the console, the media must be H.264 encoded, and you need to specify this video type in
-     *        this parameter as <code>video/h264</code>.
+     *        Example valid values include "video/h264" and "video/h264,audio/aac".
      *        </p>
      *        <p>
      *        This parameter is optional; the default value is <code>null</code> (or empty in JSON).
@@ -255,8 +258,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * for guidelines.
      * </p>
      * <p>
-     * To play video on the console, the media must be H.264 encoded, and you need to specify this video type in this
-     * parameter as <code>video/h264</code>.
+     * Example valid values include "video/h264" and "video/h264,audio/aac".
      * </p>
      * <p>
      * This parameter is optional; the default value is <code>null</code> (or empty in JSON).
@@ -268,8 +270,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *         Requirements</a> for guidelines.</p>
      *         <p>
-     *         To play video on the console, the media must be H.264 encoded, and you need to specify this video type in
-     *         this parameter as <code>video/h264</code>.
+     *         Example valid values include "video/h264" and "video/h264,audio/aac".
      *         </p>
      *         <p>
      *         This parameter is optional; the default value is <code>null</code> (or empty in JSON).
@@ -288,8 +289,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * for guidelines.
      * </p>
      * <p>
-     * To play video on the console, the media must be H.264 encoded, and you need to specify this video type in this
-     * parameter as <code>video/h264</code>.
+     * Example valid values include "video/h264" and "video/h264,audio/aac".
      * </p>
      * <p>
      * This parameter is optional; the default value is <code>null</code> (or empty in JSON).
@@ -302,8 +302,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
      *        Requirements</a> for guidelines.</p>
      *        <p>
-     *        To play video on the console, the media must be H.264 encoded, and you need to specify this video type in
-     *        this parameter as <code>video/h264</code>.
+     *        Example valid values include "video/h264" and "video/h264,audio/aac".
      *        </p>
      *        <p>
      *        This parameter is optional; the default value is <code>null</code> (or empty in JSON).
@@ -325,7 +324,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      * >DescribeKey</a>.
      * </p>
      * 
@@ -337,7 +336,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      *        >DescribeKey</a>.
      */
 
@@ -355,7 +354,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      * >DescribeKey</a>.
      * </p>
      * 
@@ -367,7 +366,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </p>
      *         <p>
      *         For more information, see <a href=
-     *         "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *         "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      *         >DescribeKey</a>.
      */
 
@@ -385,7 +384,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * <p>
      * For more information, see <a href=
-     * "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     * "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      * >DescribeKey</a>.
      * </p>
      * 
@@ -397,7 +396,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </p>
      *        <p>
      *        For more information, see <a href=
-     *        "http://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
+     *        "https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters"
      *        >DescribeKey</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -499,6 +498,70 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+     * </p>
+     * 
+     * @return A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is
+     *         optional).
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is
+     *        optional).
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is
+     *        optional).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateStreamRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateStreamRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -519,7 +582,9 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getDataRetentionInHours() != null)
-            sb.append("DataRetentionInHours: ").append(getDataRetentionInHours());
+            sb.append("DataRetentionInHours: ").append(getDataRetentionInHours()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -554,6 +619,10 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDataRetentionInHours() != null && other.getDataRetentionInHours().equals(this.getDataRetentionInHours()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -567,6 +636,7 @@ public class CreateStreamRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getMediaType() == null) ? 0 : getMediaType().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getDataRetentionInHours() == null) ? 0 : getDataRetentionInHours().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

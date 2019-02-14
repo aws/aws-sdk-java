@@ -20,6 +20,7 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceType {
 
+    ClientVpnEndpoint("client-vpn-endpoint"),
     CustomerGateway("customer-gateway"),
     DedicatedHost("dedicated-host"),
     DhcpOptions("dhcp-options"),

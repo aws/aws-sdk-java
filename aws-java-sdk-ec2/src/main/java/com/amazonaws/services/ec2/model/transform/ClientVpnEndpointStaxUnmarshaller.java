@@ -80,6 +80,16 @@ public class ClientVpnEndpointStaxUnmarshaller implements Unmarshaller<ClientVpn
                     continue;
                 }
 
+                if (context.testExpression("dnsServer", targetDepth)) {
+                    clientVpnEndpoint.withDnsServers(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("dnsServer/item", targetDepth)) {
+                    clientVpnEndpoint.withDnsServers(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("splitTunnel", targetDepth)) {
                     clientVpnEndpoint.setSplitTunnel(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -124,6 +134,17 @@ public class ClientVpnEndpointStaxUnmarshaller implements Unmarshaller<ClientVpn
                     clientVpnEndpoint.setConnectionLogOptions(ConnectionLogResponseOptionsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tagSet", targetDepth)) {
+                    clientVpnEndpoint.withTags(new ArrayList<Tag>());
+                    continue;
+                }
+
+                if (context.testExpression("tagSet/item", targetDepth)) {
+                    clientVpnEndpoint.withTags(TagStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return clientVpnEndpoint;

@@ -58,6 +58,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
      * launch.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      */
     private Integer ipv6AddressCount;
     /**
@@ -65,6 +68,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary network
      * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
      * request. You cannot specify this option if you've specified a minimum number of instances to launch.
+     * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceIpv6Address> ipv6Addresses;
@@ -151,12 +157,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
     /**
      * <p>
      * [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security group
      * IDs instead.
+     * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      * <p>
      * Default: Amazon EC2 uses the default security group.
@@ -166,6 +178,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
     /**
      * <p>
      * [EC2-VPC] The ID of the subnet to launch the instance into.
+     * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      */
     private String subnetId;
@@ -241,6 +256,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * One or more network interfaces.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
     /**
@@ -251,6 +269,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * Only one private IP address can be designated as primary. You can't specify this option if you've specified the
      * option to designate a private IP address as the primary IP address in a network interface specification. You
      * cannot specify this option if you're launching more than one instance in the request.
+     * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
      * </p>
      */
     private String privateIpAddress;
@@ -635,12 +656,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
      * launch.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param ipv6AddressCount
      *        [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
      *        the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
      *        specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
-     *        number of instances to launch.
+     *        number of instances to launch.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      */
 
     public void setIpv6AddressCount(Integer ipv6AddressCount) {
@@ -654,11 +680,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
      * launch.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @return [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
      *         the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
      *         specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
-     *         number of instances to launch.
+     *         number of instances to launch.</p>
+     *         <p>
+     *         You cannot specify this option and the network interfaces option in the same request.
      */
 
     public Integer getIpv6AddressCount() {
@@ -672,12 +703,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * addresses in the same request. You can specify this option if you've specified a minimum number of instances to
      * launch.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param ipv6AddressCount
      *        [EC2-VPC] A number of IPv6 addresses to associate with the primary network interface. Amazon EC2 chooses
      *        the IPv6 addresses from the range of your subnet. You cannot specify this option and the option to assign
      *        specific IPv6 addresses in the same request. You can specify this option if you've specified a minimum
-     *        number of instances to launch.
+     *        number of instances to launch.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -692,11 +728,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
      * request. You cannot specify this option if you've specified a minimum number of instances to launch.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @return [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
      *         network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
      *         the same request. You cannot specify this option if you've specified a minimum number of instances to
-     *         launch.
+     *         launch.</p>
+     *         <p>
+     *         You cannot specify this option and the network interfaces option in the same request.
      */
 
     public java.util.List<InstanceIpv6Address> getIpv6Addresses() {
@@ -712,12 +753,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
      * request. You cannot specify this option if you've specified a minimum number of instances to launch.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param ipv6Addresses
      *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
      *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
      *        the same request. You cannot specify this option if you've specified a minimum number of instances to
-     *        launch.
+     *        launch.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      */
 
     public void setIpv6Addresses(java.util.Collection<InstanceIpv6Address> ipv6Addresses) {
@@ -736,6 +782,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * request. You cannot specify this option if you've specified a minimum number of instances to launch.
      * </p>
      * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIpv6Addresses(java.util.Collection)} or {@link #withIpv6Addresses(java.util.Collection)} if you want
      * to override the existing values.
@@ -745,7 +794,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
      *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
      *        the same request. You cannot specify this option if you've specified a minimum number of instances to
-     *        launch.
+     *        launch.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -765,12 +816,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * interface. You cannot specify this option and the option to assign a number of IPv6 addresses in the same
      * request. You cannot specify this option if you've specified a minimum number of instances to launch.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param ipv6Addresses
      *        [EC2-VPC] Specify one or more IPv6 addresses from the range of the subnet to associate with the primary
      *        network interface. You cannot specify this option and the option to assign a number of IPv6 addresses in
      *        the same request. You cannot specify this option if you've specified a minimum number of instances to
-     *        launch.
+     *        launch.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1264,10 +1320,16 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @return One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
+     *         </p>
+     *         <p>
+     *         You cannot specify this option and the network interfaces option in the same request.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -1284,11 +1346,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param securityGroupIds
      *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
+     *        </p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -1308,6 +1376,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
      * want to override the existing values.
@@ -1317,6 +1388,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
+     *        </p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1337,11 +1411,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param securityGroupIds
      *        One or more security group IDs. You can create a security group using <a>CreateSecurityGroup</a>.</p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
+     *        </p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1356,11 +1436,17 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
+     * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @return [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
      *         group IDs instead.</p>
+     *         <p>
+     *         You cannot specify this option and the network interfaces option in the same request.
+     *         </p>
      *         <p>
      *         Default: Amazon EC2 uses the default security group.
      */
@@ -1378,12 +1464,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
+     * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @param securityGroups
      *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
+     *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      */
@@ -1403,6 +1495,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
+     * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * <p>
@@ -1414,6 +1509,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * @param securityGroups
      *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
+     *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1435,12 +1533,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * IDs instead.
      * </p>
      * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
+     * <p>
      * Default: Amazon EC2 uses the default security group.
      * </p>
      * 
      * @param securityGroups
      *        [EC2-Classic, default VPC] One or more security group names. For a nondefault VPC, you must use security
      *        group IDs instead.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
+     *        </p>
      *        <p>
      *        Default: Amazon EC2 uses the default security group.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1455,9 +1559,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * [EC2-VPC] The ID of the subnet to launch the instance into.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param subnetId
-     *        [EC2-VPC] The ID of the subnet to launch the instance into.
+     *        [EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      */
 
     public void setSubnetId(String subnetId) {
@@ -1468,8 +1577,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * [EC2-VPC] The ID of the subnet to launch the instance into.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
-     * @return [EC2-VPC] The ID of the subnet to launch the instance into.
+     * @return [EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     *         <p>
+     *         You cannot specify this option and the network interfaces option in the same request.
      */
 
     public String getSubnetId() {
@@ -1480,9 +1594,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * [EC2-VPC] The ID of the subnet to launch the instance into.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param subnetId
-     *        [EC2-VPC] The ID of the subnet to launch the instance into.
+     *        [EC2-VPC] The ID of the subnet to launch the instance into.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2019,8 +2138,13 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * One or more network interfaces.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
-     * @return One or more network interfaces.
+     * @return One or more network interfaces.</p>
+     *         <p>
+     *         You cannot specify this option and the network interfaces option in the same request.
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -2034,9 +2158,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * One or more network interfaces.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        One or more network interfaces.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -2053,13 +2182,18 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * One or more network interfaces.
      * </p>
      * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        One or more network interfaces.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2077,9 +2211,14 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * <p>
      * One or more network interfaces.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param networkInterfaces
-     *        One or more network interfaces.
+     *        One or more network interfaces.</p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2097,6 +2236,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * option to designate a private IP address as the primary IP address in a network interface specification. You
      * cannot specify this option if you're launching more than one instance in the request.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param privateIpAddress
      *        [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
@@ -2105,6 +2247,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        Only one private IP address can be designated as primary. You can't specify this option if you've
      *        specified the option to designate a private IP address as the primary IP address in a network interface
      *        specification. You cannot specify this option if you're launching more than one instance in the request.
+     *        </p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      */
 
     public void setPrivateIpAddress(String privateIpAddress) {
@@ -2120,6 +2265,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * option to designate a private IP address as the primary IP address in a network interface specification. You
      * cannot specify this option if you're launching more than one instance in the request.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @return [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
      *         subnet.</p>
@@ -2127,6 +2275,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *         Only one private IP address can be designated as primary. You can't specify this option if you've
      *         specified the option to designate a private IP address as the primary IP address in a network interface
      *         specification. You cannot specify this option if you're launching more than one instance in the request.
+     *         </p>
+     *         <p>
+     *         You cannot specify this option and the network interfaces option in the same request.
      */
 
     public String getPrivateIpAddress() {
@@ -2142,6 +2293,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      * option to designate a private IP address as the primary IP address in a network interface specification. You
      * cannot specify this option if you're launching more than one instance in the request.
      * </p>
+     * <p>
+     * You cannot specify this option and the network interfaces option in the same request.
+     * </p>
      * 
      * @param privateIpAddress
      *        [EC2-VPC] The primary IPv4 address. You must specify a value from the IPv4 address range of the
@@ -2150,6 +2304,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest implements Seri
      *        Only one private IP address can be designated as primary. You can't specify this option if you've
      *        specified the option to designate a private IP address as the primary IP address in a network interface
      *        specification. You cannot specify this option if you're launching more than one instance in the request.
+     *        </p>
+     *        <p>
+     *        You cannot specify this option and the network interfaces option in the same request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
