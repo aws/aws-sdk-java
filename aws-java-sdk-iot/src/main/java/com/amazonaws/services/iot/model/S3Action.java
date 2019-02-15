@@ -46,7 +46,7 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
+     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
      * </p>
      */
     private String cannedAcl;
@@ -174,12 +174,12 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
+     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
      * </p>
      * 
      * @param cannedAcl
      *        The Amazon S3 canned ACL that controls access to the object identified by the object key. For more
-     *        information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     *        information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
      *        canned ACLs</a>.
      * @see CannedAccessControlList
      */
@@ -191,12 +191,12 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
+     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
      * </p>
      * 
      * @return The Amazon S3 canned ACL that controls access to the object identified by the object key. For more
-     *         information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
-     *         canned ACLs</a>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
      * @see CannedAccessControlList
      */
 
@@ -207,12 +207,12 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
+     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
      * </p>
      * 
      * @param cannedAcl
      *        The Amazon S3 canned ACL that controls access to the object identified by the object key. For more
-     *        information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     *        information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
      *        canned ACLs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CannedAccessControlList
@@ -226,12 +226,12 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
+     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
      * </p>
      * 
      * @param cannedAcl
      *        The Amazon S3 canned ACL that controls access to the object identified by the object key. For more
-     *        information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     *        information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
      *        canned ACLs</a>.
      * @see CannedAccessControlList
      */
@@ -243,12 +243,12 @@ public class S3Action implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information,
-     * see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
+     * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a>.
      * </p>
      * 
      * @param cannedAcl
      *        The Amazon S3 canned ACL that controls access to the object identified by the object key. For more
-     *        information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
+     *        information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3
      *        canned ACLs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CannedAccessControlList

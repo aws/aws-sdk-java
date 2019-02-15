@@ -196,7 +196,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     private StepScalingPolicyConfiguration stepScalingPolicyConfiguration;
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      */
     private TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration;
@@ -1596,11 +1596,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
      * @param targetTrackingScalingPolicyConfiguration
-     *        A target tracking policy.
+     *        A target tracking scaling policy.
      */
 
     public void setTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration targetTrackingScalingPolicyConfiguration) {
@@ -1609,10 +1609,10 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
-     * @return A target tracking policy.
+     * @return A target tracking scaling policy.
      */
 
     public TargetTrackingScalingPolicyConfiguration getTargetTrackingScalingPolicyConfiguration() {
@@ -1621,11 +1621,11 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy.
      * </p>
      * 
      * @param targetTrackingScalingPolicyConfiguration
-     *        A target tracking policy.
+     *        A target tracking scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

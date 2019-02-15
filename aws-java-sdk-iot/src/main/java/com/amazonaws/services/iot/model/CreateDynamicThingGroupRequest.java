@@ -48,7 +48,7 @@ public class CreateDynamicThingGroupRequest extends com.amazonaws.AmazonWebServi
      * The dynamic thing group search query string.
      * </p>
      * <p>
-     * See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
+     * See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
      * information about query string syntax.
      * </p>
      */
@@ -221,14 +221,14 @@ public class CreateDynamicThingGroupRequest extends com.amazonaws.AmazonWebServi
      * The dynamic thing group search query string.
      * </p>
      * <p>
-     * See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
+     * See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
      * information about query string syntax.
      * </p>
      * 
      * @param queryString
      *        The dynamic thing group search query string.</p>
      *        <p>
-     *        See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
+     *        See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
      *        information about query string syntax.
      */
 
@@ -241,14 +241,14 @@ public class CreateDynamicThingGroupRequest extends com.amazonaws.AmazonWebServi
      * The dynamic thing group search query string.
      * </p>
      * <p>
-     * See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
+     * See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
      * information about query string syntax.
      * </p>
      * 
      * @return The dynamic thing group search query string.</p>
      *         <p>
-     *         See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
-     *         information about query string syntax.
+     *         See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a>
+     *         for information about query string syntax.
      */
 
     public String getQueryString() {
@@ -260,14 +260,14 @@ public class CreateDynamicThingGroupRequest extends com.amazonaws.AmazonWebServi
      * The dynamic thing group search query string.
      * </p>
      * <p>
-     * See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
+     * See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
      * information about query string syntax.
      * </p>
      * 
      * @param queryString
      *        The dynamic thing group search query string.</p>
      *        <p>
-     *        See <a href="http://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
+     *        See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for
      *        information about query string syntax.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,3 +1,16 @@
+# __1.11.500__ __2019-02-15__
+## __AWS IoT__
+  - ### Features
+    - In this release, IoT Device Defender introduces support for tagging Scheduled Audit resources.
+
+## __Amazon Chime__
+  - ### Features
+    - Documentation updates for Amazon Chime
+
+## __Application Auto Scaling__
+  - ### Features
+    - Documentation updates for Application Auto Scaling
+
 # __1.11.499__ __2019-02-14__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

@@ -170,14 +170,14 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     private String scalableDimension;
     /**
      * <p>
-     * The minimum value to scale to in response to a scale in event. This parameter is required to register a scalable
+     * The minimum value to scale to in response to a scale-in event. This parameter is required to register a scalable
      * target.
      * </p>
      */
     private Integer minCapacity;
     /**
      * <p>
-     * The maximum value to scale to in response to a scale out event. This parameter is required to register a scalable
+     * The maximum value to scale to in response to a scale-out event. This parameter is required to register a scalable
      * target.
      * </p>
      */
@@ -1391,12 +1391,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale in event. This parameter is required to register a scalable
+     * The minimum value to scale to in response to a scale-in event. This parameter is required to register a scalable
      * target.
      * </p>
      * 
      * @param minCapacity
-     *        The minimum value to scale to in response to a scale in event. This parameter is required to register a
+     *        The minimum value to scale to in response to a scale-in event. This parameter is required to register a
      *        scalable target.
      */
 
@@ -1406,11 +1406,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale in event. This parameter is required to register a scalable
+     * The minimum value to scale to in response to a scale-in event. This parameter is required to register a scalable
      * target.
      * </p>
      * 
-     * @return The minimum value to scale to in response to a scale in event. This parameter is required to register a
+     * @return The minimum value to scale to in response to a scale-in event. This parameter is required to register a
      *         scalable target.
      */
 
@@ -1420,12 +1420,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The minimum value to scale to in response to a scale in event. This parameter is required to register a scalable
+     * The minimum value to scale to in response to a scale-in event. This parameter is required to register a scalable
      * target.
      * </p>
      * 
      * @param minCapacity
-     *        The minimum value to scale to in response to a scale in event. This parameter is required to register a
+     *        The minimum value to scale to in response to a scale-in event. This parameter is required to register a
      *        scalable target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1437,12 +1437,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale out event. This parameter is required to register a scalable
+     * The maximum value to scale to in response to a scale-out event. This parameter is required to register a scalable
      * target.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum value to scale to in response to a scale out event. This parameter is required to register a
+     *        The maximum value to scale to in response to a scale-out event. This parameter is required to register a
      *        scalable target.
      */
 
@@ -1452,11 +1452,11 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale out event. This parameter is required to register a scalable
+     * The maximum value to scale to in response to a scale-out event. This parameter is required to register a scalable
      * target.
      * </p>
      * 
-     * @return The maximum value to scale to in response to a scale out event. This parameter is required to register a
+     * @return The maximum value to scale to in response to a scale-out event. This parameter is required to register a
      *         scalable target.
      */
 
@@ -1466,12 +1466,12 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The maximum value to scale to in response to a scale out event. This parameter is required to register a scalable
+     * The maximum value to scale to in response to a scale-out event. This parameter is required to register a scalable
      * target.
      * </p>
      * 
      * @param maxCapacity
-     *        The maximum value to scale to in response to a scale out event. This parameter is required to register a
+     *        The maximum value to scale to in response to a scale-out event. This parameter is required to register a
      *        scalable target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

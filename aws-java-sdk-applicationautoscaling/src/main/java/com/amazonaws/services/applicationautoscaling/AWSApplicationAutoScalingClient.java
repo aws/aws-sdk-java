@@ -905,6 +905,20 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * You can view the scaling policies for a service namespace using <a>DescribeScalingPolicies</a>. If you are no
      * longer using a scaling policy, you can delete it using <a>DeleteScalingPolicy</a>.
      * </p>
+     * <p>
+     * Multiple scaling policies can be in force at the same time for the same scalable target. You can have one or more
+     * target tracking scaling policies, one or more step scaling policies, or both. However, there is a chance that
+     * multiple policies could conflict, instructing the scalable target to scale out or in at the same time.
+     * Application Auto Scaling gives precedence to the policy that provides the largest capacity for both scale in and
+     * scale out. For example, if one policy increases capacity by 3, another policy increases capacity by 200 percent,
+     * and the current capacity is 10, Application Auto Scaling uses the policy with the highest calculated capacity
+     * (200% of 10 = 20) and scales out to 30.
+     * </p>
+     * <p>
+     * Learn more about how to work with scaling policies in the <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
+     * >Application Auto Scaling User Guide</a>.
+     * </p>
      * 
      * @param putScalingPolicyRequest
      * @return Result of the PutScalingPolicy operation returned by the service.
@@ -993,6 +1007,11 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * You can view the scheduled actions using <a>DescribeScheduledActions</a>. If you are no longer using a scheduled
      * action, you can delete it using <a>DeleteScheduledAction</a>.
      * </p>
+     * <p>
+     * Learn more about how to work with scheduled actions in the <a
+     * href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html"
+     * >Application Auto Scaling User Guide</a>.
+     * </p>
      * 
      * @param putScheduledActionRequest
      * @return Result of the PutScheduledAction operation returned by the service.
@@ -1060,7 +1079,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
     /**
      * <p>
      * Registers or updates a scalable target. A scalable target is a resource that Application Auto Scaling can scale
-     * in and scale out. Each scalable target has a resource ID, scalable dimension, and namespace, as well as values
+     * out and scale in. Each scalable target has a resource ID, scalable dimension, and namespace, as well as values
      * for minimum and maximum capacity.
      * </p>
      * <p>

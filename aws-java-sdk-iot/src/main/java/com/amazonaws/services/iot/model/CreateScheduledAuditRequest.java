@@ -56,6 +56,12 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String scheduledAuditName;
+    /**
+     * <p>
+     * Metadata which can be used to manage the scheduled audit.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -374,6 +380,76 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Metadata which can be used to manage the scheduled audit.
+     * </p>
+     * 
+     * @return Metadata which can be used to manage the scheduled audit.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the scheduled audit.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the scheduled audit.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the scheduled audit.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the scheduled audit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateScheduledAuditRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Metadata which can be used to manage the scheduled audit.
+     * </p>
+     * 
+     * @param tags
+     *        Metadata which can be used to manage the scheduled audit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateScheduledAuditRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -394,7 +470,9 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
         if (getTargetCheckNames() != null)
             sb.append("TargetCheckNames: ").append(getTargetCheckNames()).append(",");
         if (getScheduledAuditName() != null)
-            sb.append("ScheduledAuditName: ").append(getScheduledAuditName());
+            sb.append("ScheduledAuditName: ").append(getScheduledAuditName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -429,6 +507,10 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getScheduledAuditName() != null && other.getScheduledAuditName().equals(this.getScheduledAuditName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -442,6 +524,7 @@ public class CreateScheduledAuditRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDayOfWeek() == null) ? 0 : getDayOfWeek().hashCode());
         hashCode = prime * hashCode + ((getTargetCheckNames() == null) ? 0 : getTargetCheckNames().hashCode());
         hashCode = prime * hashCode + ((getScheduledAuditName() == null) ? 0 : getScheduledAuditName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

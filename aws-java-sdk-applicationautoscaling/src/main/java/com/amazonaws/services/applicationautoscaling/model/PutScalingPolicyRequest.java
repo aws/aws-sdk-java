@@ -199,7 +199,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private StepScalingPolicyConfiguration stepScalingPolicyConfiguration;
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy. Includes support for predefined or customized metrics.
      * </p>
      * <p>
      * This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>
@@ -1651,7 +1651,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy. Includes support for predefined or customized metrics.
      * </p>
      * <p>
      * This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>
@@ -1659,7 +1659,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param targetTrackingScalingPolicyConfiguration
-     *        A target tracking policy.</p>
+     *        A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
      *        <p>
      *        This parameter is required if you are creating a policy and the policy type is
      *        <code>TargetTrackingScaling</code>.
@@ -1671,14 +1671,14 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy. Includes support for predefined or customized metrics.
      * </p>
      * <p>
      * This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>
      * .
      * </p>
      * 
-     * @return A target tracking policy.</p>
+     * @return A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
      *         <p>
      *         This parameter is required if you are creating a policy and the policy type is
      *         <code>TargetTrackingScaling</code>.
@@ -1690,7 +1690,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking policy.
+     * A target tracking scaling policy. Includes support for predefined or customized metrics.
      * </p>
      * <p>
      * This parameter is required if you are creating a policy and the policy type is <code>TargetTrackingScaling</code>
@@ -1698,7 +1698,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param targetTrackingScalingPolicyConfiguration
-     *        A target tracking policy.</p>
+     *        A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
      *        <p>
      *        This parameter is required if you are creating a policy and the policy type is
      *        <code>TargetTrackingScaling</code>.

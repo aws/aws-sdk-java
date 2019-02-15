@@ -49,7 +49,7 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime account type. For more information about different account types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      */
@@ -196,13 +196,13 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime account type. For more information about different account types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * 
      * @param accountType
      *        The Amazon Chime account type. For more information about different account types, see <a
-     *        href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     *        href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      *        Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * @see AccountType
      */
@@ -214,12 +214,12 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime account type. For more information about different account types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * 
      * @return The Amazon Chime account type. For more information about different account types, see <a
-     *         href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     *         href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      *         Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * @see AccountType
      */
@@ -231,13 +231,13 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime account type. For more information about different account types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * 
      * @param accountType
      *        The Amazon Chime account type. For more information about different account types, see <a
-     *        href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     *        href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      *        Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountType
@@ -251,13 +251,13 @@ public class Account implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The Amazon Chime account type. For more information about different account types, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     * href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * 
      * @param accountType
      *        The Amazon Chime account type. For more information about different account types, see <a
-     *        href="http://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
+     *        href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime
      *        Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccountType

@@ -23,7 +23,7 @@ public class RegisterThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The provisioning template. See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.
      * </p>
      */
@@ -31,7 +31,7 @@ public class RegisterThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The parameters for provisioning a thing. See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.
      * </p>
      */
@@ -40,13 +40,13 @@ public class RegisterThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The provisioning template. See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.
      * </p>
      * 
      * @param templateBody
      *        The provisioning template. See <a
-     *        href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      *        Provisioning</a> for more information.
      */
 
@@ -57,12 +57,12 @@ public class RegisterThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The provisioning template. See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.
      * </p>
      * 
      * @return The provisioning template. See <a
-     *         href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      *         Provisioning</a> for more information.
      */
 
@@ -73,13 +73,13 @@ public class RegisterThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The provisioning template. See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.
      * </p>
      * 
      * @param templateBody
      *        The provisioning template. See <a
-     *        href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      *        Provisioning</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -92,12 +92,12 @@ public class RegisterThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The parameters for provisioning a thing. See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.
      * </p>
      * 
      * @return The parameters for provisioning a thing. See <a
-     *         href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      *         Provisioning</a> for more information.
      */
 
@@ -108,13 +108,13 @@ public class RegisterThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The parameters for provisioning a thing. See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.
      * </p>
      * 
      * @param parameters
      *        The parameters for provisioning a thing. See <a
-     *        href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      *        Provisioning</a> for more information.
      */
 
@@ -125,13 +125,13 @@ public class RegisterThingRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The parameters for provisioning a thing. See <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      * Provisioning</a> for more information.
      * </p>
      * 
      * @param parameters
      *        The parameters for provisioning a thing. See <a
-     *        href="http://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/programmatic-provisioning.html">Programmatic
      *        Provisioning</a> for more information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

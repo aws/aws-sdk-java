@@ -27,7 +27,8 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     * <code>value</code>.
      * </p>
      */
     private String comparisonOperator;
@@ -39,7 +40,7 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     private MetricValue value;
     /**
      * <p>
-     * Use this to specify the period of time over which the behavior is evaluated, for those criteria which have a time
+     * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
      * dimension (for example, <code>NUM_MESSAGES_SENT</code>).
      * </p>
      */
@@ -47,11 +48,13 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     * <code>value</code>.
      * </p>
      * 
      * @param comparisonOperator
-     *        The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     *        <code>value</code>.
      * @see ComparisonOperator
      */
 
@@ -61,10 +64,12 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     * <code>value</code>.
      * </p>
      * 
-     * @return The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     * @return The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     *         <code>value</code>.
      * @see ComparisonOperator
      */
 
@@ -74,11 +79,13 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     * <code>value</code>.
      * </p>
      * 
      * @param comparisonOperator
-     *        The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     *        <code>value</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -90,11 +97,13 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     * <code>value</code>.
      * </p>
      * 
      * @param comparisonOperator
-     *        The operator that relates the thing measured (<code>metric</code>) to the criteria (<code>value</code>).
+     *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
+     *        <code>value</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -146,12 +155,12 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to specify the period of time over which the behavior is evaluated, for those criteria which have a time
+     * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
      * dimension (for example, <code>NUM_MESSAGES_SENT</code>).
      * </p>
      * 
      * @param durationSeconds
-     *        Use this to specify the period of time over which the behavior is evaluated, for those criteria which have
+     *        Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
      *        a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
      */
 
@@ -161,12 +170,12 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to specify the period of time over which the behavior is evaluated, for those criteria which have a time
+     * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
      * dimension (for example, <code>NUM_MESSAGES_SENT</code>).
      * </p>
      * 
-     * @return Use this to specify the period of time over which the behavior is evaluated, for those criteria which
-     *         have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+     * @return Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
+     *         a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
      */
 
     public Integer getDurationSeconds() {
@@ -175,12 +184,12 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Use this to specify the period of time over which the behavior is evaluated, for those criteria which have a time
+     * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
      * dimension (for example, <code>NUM_MESSAGES_SENT</code>).
      * </p>
      * 
      * @param durationSeconds
-     *        Use this to specify the period of time over which the behavior is evaluated, for those criteria which have
+     *        Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
      *        a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

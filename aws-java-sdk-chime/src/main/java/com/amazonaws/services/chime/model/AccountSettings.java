@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Settings related to the Amazon Chime account. This includes settings that start or stop remote control of shared
  * screens, or start or stop the dial-out option in the Amazon Chime web application. For more information about these
- * settings, see <a href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the
+ * settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the
  * <i>Amazon Chime Administration Guide</i>.
  * </p>
  * 
@@ -40,7 +40,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     * information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
+     * information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
      * without the Amazon Chime App</a>.
      * </p>
      */
@@ -101,13 +101,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     * information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
+     * information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
      * without the Amazon Chime App</a>.
      * </p>
      * 
      * @param enableDialOut
      *        Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     *        information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
+     *        information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
      *        Meeting without the Amazon Chime App</a>.
      */
 
@@ -118,12 +118,12 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     * information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
+     * information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
      * without the Amazon Chime App</a>.
      * </p>
      * 
      * @return Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     *         information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
+     *         information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
      *         Meeting without the Amazon Chime App</a>.
      */
 
@@ -134,13 +134,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     * information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
+     * information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
      * without the Amazon Chime App</a>.
      * </p>
      * 
      * @param enableDialOut
      *        Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     *        information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
+     *        information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
      *        Meeting without the Amazon Chime App</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -153,12 +153,12 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     * information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
+     * information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a Meeting
      * without the Amazon Chime App</a>.
      * </p>
      * 
      * @return Setting that allows meeting participants to choose the <b>Call me at a phone number</b> option. For more
-     *         information, see <a href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
+     *         information, see <a href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
      *         Meeting without the Amazon Chime App</a>.
      */
 

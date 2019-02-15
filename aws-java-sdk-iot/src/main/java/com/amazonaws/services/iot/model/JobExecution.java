@@ -58,19 +58,19 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
     private String thingArn;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was queued.
+     * The time, in seconds since the epoch, when the job execution was queued.
      * </p>
      */
     private java.util.Date queuedAt;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution started.
+     * The time, in seconds since the epoch, when the job execution started.
      * </p>
      */
     private java.util.Date startedAt;
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * The time, in seconds since the epoch, when the job execution was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedAt;
@@ -342,11 +342,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was queued.
+     * The time, in seconds since the epoch, when the job execution was queued.
      * </p>
      * 
      * @param queuedAt
-     *        The time, in milliseconds since the epoch, when the job execution was queued.
+     *        The time, in seconds since the epoch, when the job execution was queued.
      */
 
     public void setQueuedAt(java.util.Date queuedAt) {
@@ -355,10 +355,10 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was queued.
+     * The time, in seconds since the epoch, when the job execution was queued.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job execution was queued.
+     * @return The time, in seconds since the epoch, when the job execution was queued.
      */
 
     public java.util.Date getQueuedAt() {
@@ -367,11 +367,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was queued.
+     * The time, in seconds since the epoch, when the job execution was queued.
      * </p>
      * 
      * @param queuedAt
-     *        The time, in milliseconds since the epoch, when the job execution was queued.
+     *        The time, in seconds since the epoch, when the job execution was queued.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,11 +382,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution started.
+     * The time, in seconds since the epoch, when the job execution started.
      * </p>
      * 
      * @param startedAt
-     *        The time, in milliseconds since the epoch, when the job execution started.
+     *        The time, in seconds since the epoch, when the job execution started.
      */
 
     public void setStartedAt(java.util.Date startedAt) {
@@ -395,10 +395,10 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution started.
+     * The time, in seconds since the epoch, when the job execution started.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job execution started.
+     * @return The time, in seconds since the epoch, when the job execution started.
      */
 
     public java.util.Date getStartedAt() {
@@ -407,11 +407,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution started.
+     * The time, in seconds since the epoch, when the job execution started.
      * </p>
      * 
      * @param startedAt
-     *        The time, in milliseconds since the epoch, when the job execution started.
+     *        The time, in seconds since the epoch, when the job execution started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,11 +422,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * The time, in seconds since the epoch, when the job execution was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time, in milliseconds since the epoch, when the job execution was last updated.
+     *        The time, in seconds since the epoch, when the job execution was last updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -435,10 +435,10 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * The time, in seconds since the epoch, when the job execution was last updated.
      * </p>
      * 
-     * @return The time, in milliseconds since the epoch, when the job execution was last updated.
+     * @return The time, in seconds since the epoch, when the job execution was last updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -447,11 +447,11 @@ public class JobExecution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time, in milliseconds since the epoch, when the job execution was last updated.
+     * The time, in seconds since the epoch, when the job execution was last updated.
      * </p>
      * 
      * @param lastUpdatedAt
-     *        The time, in milliseconds since the epoch, when the job execution was last updated.
+     *        The time, in seconds since the epoch, when the job execution was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
