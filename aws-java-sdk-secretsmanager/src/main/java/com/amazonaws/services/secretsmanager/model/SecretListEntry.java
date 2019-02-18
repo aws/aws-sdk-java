@@ -35,7 +35,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
      * >Policy Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
      * </p>
      */
@@ -137,7 +137,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
      * >Policy Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
      * </p>
      * 
@@ -145,7 +145,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      *        The Amazon Resource Name (ARN) of the secret.</p>
      *        <p>
      *        For more information about ARNs in Secrets Manager, see <a href=
-     *        "http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
+     *        "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
      *        >Policy Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
      */
 
@@ -159,14 +159,14 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
      * >Policy Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the secret.</p>
      *         <p>
      *         For more information about ARNs in Secrets Manager, see <a href=
-     *         "http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
+     *         "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
      *         >Policy Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
      */
 
@@ -180,7 +180,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * <p>
      * For more information about ARNs in Secrets Manager, see <a
-     * href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
+     * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
      * >Policy Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
      * </p>
      * 
@@ -188,7 +188,7 @@ public class SecretListEntry implements Serializable, Cloneable, StructuredPojo 
      *        The Amazon Resource Name (ARN) of the secret.</p>
      *        <p>
      *        For more information about ARNs in Secrets Manager, see <a href=
-     *        "http://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
+     *        "https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources"
      *        >Policy Resources</a> in the <i>AWS Secrets Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -35,6 +35,11 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      */
     private String encryptionOption;
     /**
@@ -50,11 +55,20 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @param encryptionOption
      *        Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *        server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *        KMS-managed keys (CSE-KMS) is used.
+     *        KMS-managed keys (CSE-KMS) is used.</p>
+     *        <p>
+     *        If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *        setting for encryption is used. It specifies whether query results must be encrypted, for all queries that
+     *        run in this workgroup.
      * @see EncryptionOption
      */
 
@@ -68,10 +82,19 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @return Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *         server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *         KMS-managed keys (CSE-KMS) is used.
+     *         KMS-managed keys (CSE-KMS) is used.</p>
+     *         <p>
+     *         If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *         setting for encryption is used. It specifies whether query results must be encrypted, for all queries
+     *         that run in this workgroup.
      * @see EncryptionOption
      */
 
@@ -85,11 +108,20 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @param encryptionOption
      *        Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *        server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *        KMS-managed keys (CSE-KMS) is used.
+     *        KMS-managed keys (CSE-KMS) is used.</p>
+     *        <p>
+     *        If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *        setting for encryption is used. It specifies whether query results must be encrypted, for all queries that
+     *        run in this workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionOption
      */
@@ -105,11 +137,20 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @param encryptionOption
      *        Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *        server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *        KMS-managed keys (CSE-KMS) is used.
+     *        KMS-managed keys (CSE-KMS) is used.</p>
+     *        <p>
+     *        If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *        setting for encryption is used. It specifies whether query results must be encrypted, for all queries that
+     *        run in this workgroup.
      * @see EncryptionOption
      */
 
@@ -123,11 +164,20 @@ public class EncryptionConfiguration implements Serializable, Cloneable, Structu
      * encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys
      * (CSE-KMS) is used.
      * </p>
+     * <p>
+     * If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's setting for
+     * encryption is used. It specifies whether query results must be encrypted, for all queries that run in this
+     * workgroup.
+     * </p>
      * 
      * @param encryptionOption
      *        Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>),
      *        server-side encryption with KMS-managed keys (<code>SSE-KMS</code>), or client-side encryption with
-     *        KMS-managed keys (CSE-KMS) is used.
+     *        KMS-managed keys (CSE-KMS) is used.</p>
+     *        <p>
+     *        If a query runs in a workgroup and the workgroup overrides client-side settings, then the workgroup's
+     *        setting for encryption is used. It specifies whether query results must be encrypted, for all queries that
+     *        run in this workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionOption
      */

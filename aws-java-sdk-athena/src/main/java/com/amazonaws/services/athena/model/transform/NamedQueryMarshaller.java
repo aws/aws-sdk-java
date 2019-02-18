@@ -37,6 +37,8 @@ public class NamedQueryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryString").build();
     private static final MarshallingInfo<String> NAMEDQUERYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NamedQueryId").build();
+    private static final MarshallingInfo<String> WORKGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WorkGroup").build();
 
     private static final NamedQueryMarshaller instance = new NamedQueryMarshaller();
 
@@ -59,6 +61,7 @@ public class NamedQueryMarshaller {
             protocolMarshaller.marshall(namedQuery.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(namedQuery.getQueryString(), QUERYSTRING_BINDING);
             protocolMarshaller.marshall(namedQuery.getNamedQueryId(), NAMEDQUERYID_BINDING);
+            protocolMarshaller.marshall(namedQuery.getWorkGroup(), WORKGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

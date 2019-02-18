@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the request was throttled and includes the reason for throttling, for example, the limit of concurrent
- * queries has been exceeded.
+ * Indicates that the request was throttled.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

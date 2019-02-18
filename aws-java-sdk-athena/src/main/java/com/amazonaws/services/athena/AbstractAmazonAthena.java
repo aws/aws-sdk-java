@@ -43,7 +43,17 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public CreateWorkGroupResult createWorkGroup(CreateWorkGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNamedQueryResult deleteNamedQuery(DeleteNamedQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteWorkGroupResult deleteWorkGroup(DeleteWorkGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -63,6 +73,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public GetWorkGroupResult getWorkGroup(GetWorkGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListNamedQueriesResult listNamedQueries(ListNamedQueriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,12 +88,22 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public ListWorkGroupsResult listWorkGroups(ListWorkGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartQueryExecutionResult startQueryExecution(StartQueryExecutionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StopQueryExecutionResult stopQueryExecution(StopQueryExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateWorkGroupResult updateWorkGroup(UpdateWorkGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -52,7 +52,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter
      * for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      */
@@ -178,7 +178,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter
      * for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
@@ -187,7 +187,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         This parameter to the API requires a JSON text string argument. For information on how to format a JSON
      *         parameter for the various command line tool environments, see <a
-     *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      */
 
@@ -203,7 +203,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter
      * for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
@@ -213,7 +213,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        This parameter to the API requires a JSON text string argument. For information on how to format a JSON
      *        parameter for the various command line tool environments, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      */
 
@@ -234,7 +234,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter
      * for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * <p>
@@ -249,7 +249,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        This parameter to the API requires a JSON text string argument. For information on how to format a JSON
      *        parameter for the various command line tool environments, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -272,7 +272,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter
      * for the various command line tool environments, see <a
-     * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
@@ -282,7 +282,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        This parameter to the API requires a JSON text string argument. For information on how to format a JSON
      *        parameter for the various command line tool environments, see <a
-     *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
+     *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -68,6 +68,10 @@ public class NamedQueryJsonUnmarshaller implements Unmarshaller<NamedQuery, Json
                     context.nextToken();
                     namedQuery.setNamedQueryId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("WorkGroup", targetDepth)) {
+                    context.nextToken();
+                    namedQuery.setWorkGroup(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

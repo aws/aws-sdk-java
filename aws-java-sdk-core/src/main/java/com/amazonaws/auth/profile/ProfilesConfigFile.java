@@ -168,9 +168,14 @@ public class ProfilesConfigFile {
      */
     public void refresh() {
         if (profileFile.lastModified() > profileFileLastModified) {
-            profileFileLastModified = profileFile.lastModified();
-            allProfiles = loadProfiles(profileFile);
+            synchronized (this) {
+                if (profileFile.lastModified() > profileFileLastModified) {
+                    allProfiles = loadProfiles(profileFile);
+                    profileFileLastModified = profileFile.lastModified();
+                }
+            }
         }
+
         credentialProviderCache.clear();
     }
 

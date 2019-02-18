@@ -40,6 +40,8 @@ public class CreateNamedQueryRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> WORKGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("WorkGroup").build();
 
     private static final CreateNamedQueryRequestMarshaller instance = new CreateNamedQueryRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class CreateNamedQueryRequestMarshaller {
             protocolMarshaller.marshall(createNamedQueryRequest.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(createNamedQueryRequest.getQueryString(), QUERYSTRING_BINDING);
             protocolMarshaller.marshall(createNamedQueryRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createNamedQueryRequest.getWorkGroup(), WORKGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -176,6 +176,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorkGroupResult> createWorkGroupAsync(CreateWorkGroupRequest request) {
+
+        return createWorkGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorkGroupResult> createWorkGroupAsync(final CreateWorkGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateWorkGroupRequest, CreateWorkGroupResult> asyncHandler) {
+        final CreateWorkGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateWorkGroupResult>() {
+            @Override
+            public CreateWorkGroupResult call() throws Exception {
+                CreateWorkGroupResult result = null;
+
+                try {
+                    result = executeCreateWorkGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteNamedQueryResult> deleteNamedQueryAsync(DeleteNamedQueryRequest request) {
 
         return deleteNamedQueryAsync(request, null);
@@ -193,6 +226,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeDeleteNamedQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkGroupResult> deleteWorkGroupAsync(DeleteWorkGroupRequest request) {
+
+        return deleteWorkGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorkGroupResult> deleteWorkGroupAsync(final DeleteWorkGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteWorkGroupRequest, DeleteWorkGroupResult> asyncHandler) {
+        final DeleteWorkGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteWorkGroupResult>() {
+            @Override
+            public DeleteWorkGroupResult call() throws Exception {
+                DeleteWorkGroupResult result = null;
+
+                try {
+                    result = executeDeleteWorkGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -308,6 +374,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetWorkGroupResult> getWorkGroupAsync(GetWorkGroupRequest request) {
+
+        return getWorkGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkGroupResult> getWorkGroupAsync(final GetWorkGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetWorkGroupRequest, GetWorkGroupResult> asyncHandler) {
+        final GetWorkGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetWorkGroupResult>() {
+            @Override
+            public GetWorkGroupResult call() throws Exception {
+                GetWorkGroupResult result = null;
+
+                try {
+                    result = executeGetWorkGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListNamedQueriesResult> listNamedQueriesAsync(ListNamedQueriesRequest request) {
 
         return listNamedQueriesAsync(request, null);
@@ -374,6 +473,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<ListWorkGroupsResult> listWorkGroupsAsync(ListWorkGroupsRequest request) {
+
+        return listWorkGroupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkGroupsResult> listWorkGroupsAsync(final ListWorkGroupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListWorkGroupsRequest, ListWorkGroupsResult> asyncHandler) {
+        final ListWorkGroupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListWorkGroupsResult>() {
+            @Override
+            public ListWorkGroupsResult call() throws Exception {
+                ListWorkGroupsResult result = null;
+
+                try {
+                    result = executeListWorkGroups(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartQueryExecutionResult> startQueryExecutionAsync(StartQueryExecutionRequest request) {
 
         return startQueryExecutionAsync(request, null);
@@ -424,6 +556,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeStopQueryExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkGroupResult> updateWorkGroupAsync(UpdateWorkGroupRequest request) {
+
+        return updateWorkGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorkGroupResult> updateWorkGroupAsync(final UpdateWorkGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateWorkGroupRequest, UpdateWorkGroupResult> asyncHandler) {
+        final UpdateWorkGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateWorkGroupResult>() {
+            @Override
+            public UpdateWorkGroupResult call() throws Exception {
+                UpdateWorkGroupResult result = null;
+
+                try {
+                    result = executeUpdateWorkGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

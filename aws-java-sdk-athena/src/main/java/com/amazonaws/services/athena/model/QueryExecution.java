@@ -52,7 +52,9 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
-     * results.
+     * results. These are known as "client-side settings". If workgroup settings override client-side settings, then the
+     * query uses the location for the query results and the encryption configuration that are specified for the
+     * workgroup.
      * </p>
      */
     private ResultConfiguration resultConfiguration;
@@ -76,6 +78,12 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private QueryExecutionStatistics statistics;
+    /**
+     * <p>
+     * The name of the workgroup in which the query ran.
+     * </p>
+     */
+    private String workGroup;
 
     /**
      * <p>
@@ -243,12 +251,16 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
-     * results.
+     * results. These are known as "client-side settings". If workgroup settings override client-side settings, then the
+     * query uses the location for the query results and the encryption configuration that are specified for the
+     * workgroup.
      * </p>
      * 
      * @param resultConfiguration
      *        The location in Amazon S3 where query results were stored and the encryption option, if any, used for
-     *        query results.
+     *        query results. These are known as "client-side settings". If workgroup settings override client-side
+     *        settings, then the query uses the location for the query results and the encryption configuration that are
+     *        specified for the workgroup.
      */
 
     public void setResultConfiguration(ResultConfiguration resultConfiguration) {
@@ -258,11 +270,15 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
-     * results.
+     * results. These are known as "client-side settings". If workgroup settings override client-side settings, then the
+     * query uses the location for the query results and the encryption configuration that are specified for the
+     * workgroup.
      * </p>
      * 
      * @return The location in Amazon S3 where query results were stored and the encryption option, if any, used for
-     *         query results.
+     *         query results. These are known as "client-side settings". If workgroup settings override client-side
+     *         settings, then the query uses the location for the query results and the encryption configuration that
+     *         are specified for the workgroup.
      */
 
     public ResultConfiguration getResultConfiguration() {
@@ -272,12 +288,16 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The location in Amazon S3 where query results were stored and the encryption option, if any, used for query
-     * results.
+     * results. These are known as "client-side settings". If workgroup settings override client-side settings, then the
+     * query uses the location for the query results and the encryption configuration that are specified for the
+     * workgroup.
      * </p>
      * 
      * @param resultConfiguration
      *        The location in Amazon S3 where query results were stored and the encryption option, if any, used for
-     *        query results.
+     *        query results. These are known as "client-side settings". If workgroup settings override client-side
+     *        settings, then the query uses the location for the query results and the encryption configuration that are
+     *        specified for the workgroup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,6 +439,46 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the workgroup in which the query ran.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup in which the query ran.
+     */
+
+    public void setWorkGroup(String workGroup) {
+        this.workGroup = workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup in which the query ran.
+     * </p>
+     * 
+     * @return The name of the workgroup in which the query ran.
+     */
+
+    public String getWorkGroup() {
+        return this.workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup in which the query ran.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup in which the query ran.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecution withWorkGroup(String workGroup) {
+        setWorkGroup(workGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -443,7 +503,9 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatistics() != null)
-            sb.append("Statistics: ").append(getStatistics());
+            sb.append("Statistics: ").append(getStatistics()).append(",");
+        if (getWorkGroup() != null)
+            sb.append("WorkGroup: ").append(getWorkGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -486,6 +548,10 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatistics() != null && other.getStatistics().equals(this.getStatistics()) == false)
             return false;
+        if (other.getWorkGroup() == null ^ this.getWorkGroup() == null)
+            return false;
+        if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
+            return false;
         return true;
     }
 
@@ -501,6 +567,7 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getQueryExecutionContext() == null) ? 0 : getQueryExecutionContext().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
+        hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         return hashCode;
     }
 

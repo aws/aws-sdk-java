@@ -1,3 +1,12 @@
+# __1.11.501__ __2019-02-18__
+## __AWS Secrets Manager__
+  - ### Features
+    - This release increases the maximum allowed size of SecretString or SecretBinary from 4KB to 7KB in the CreateSecret, UpdateSecret, PutSecretValue and GetSecretValue APIs.
+
+## __Amazon Athena__
+  - ### Features
+    - This release adds support for Workgroups to Amazon Athena. Use Workgroups to isolate users, teams, applications or workloads in the same account, control costs by setting up query limits and creating Amazon SNS alarms, and publish query-related metrics to Amazon CloudWatch. 
+
 # __1.11.500__ __2019-02-15__
 ## __AWS IoT__
   - ### Features

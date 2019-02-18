@@ -151,11 +151,12 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query
-     * ID strings. Use <a>ListNamedQueries</a> to get the list of named query IDs. If information could not be retrieved
-     * for a submitted query ID, information about the query ID submitted is listed under
-     * <a>UnprocessedNamedQueryId</a>. Named queries are different from executed queries. Use
-     * <a>BatchGetQueryExecution</a> to get details about each unique query execution, and <a>ListQueryExecutions</a> to
-     * get a list of query execution IDs.
+     * ID strings. Requires you to have access to the workgroup in which the queries were saved. Use
+     * <a>ListNamedQueriesInput</a> to get the list of named query IDs in the specified workgroup. If information could
+     * not be retrieved for a submitted query ID, information about the query ID submitted is listed under
+     * <a>UnprocessedNamedQueryId</a>. Named queries differ from executed queries. Use
+     * <a>BatchGetQueryExecutionInput</a> to get details about each unique query execution, and
+     * <a>ListQueryExecutionsInput</a> to get a list of query execution IDs.
      * </p>
      * 
      * @param batchGetNamedQueryRequest
@@ -213,9 +214,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an
-     * array of query execution ID strings. To get a list of query execution IDs, use <a>ListQueryExecutions</a>. Query
-     * executions are different from named (saved) queries. Use <a>BatchGetNamedQuery</a> to get details about named
-     * queries.
+     * array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To
+     * get a list of query execution IDs, use <a>ListQueryExecutionsInput$WorkGroup</a>. Query executions differ from
+     * named (saved) queries. Use <a>BatchGetNamedQueryInput</a> to get details about named queries.
      * </p>
      * 
      * @param batchGetQueryExecutionRequest
@@ -273,7 +274,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Creates a named query.
+     * Creates a named query in the specified workgroup. Requires that you have access to the workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -335,7 +336,64 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Deletes a named query.
+     * Creates a workgroup with the specified name.
+     * </p>
+     * 
+     * @param createWorkGroupRequest
+     * @return Result of the CreateWorkGroup operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreateWorkGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateWorkGroupResult createWorkGroup(CreateWorkGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateWorkGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateWorkGroupResult executeCreateWorkGroup(CreateWorkGroupRequest createWorkGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createWorkGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateWorkGroupRequest> request = null;
+        Response<CreateWorkGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateWorkGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWorkGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWorkGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateWorkGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWorkGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the named query if you have access to the workgroup in which the query was saved.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -397,7 +455,65 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Returns information about a single query.
+     * Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.
+     * </p>
+     * 
+     * @param deleteWorkGroupRequest
+     * @return Result of the DeleteWorkGroup operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.DeleteWorkGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteWorkGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteWorkGroupResult deleteWorkGroup(DeleteWorkGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteWorkGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteWorkGroupResult executeDeleteWorkGroup(DeleteWorkGroupRequest deleteWorkGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteWorkGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteWorkGroupRequest> request = null;
+        Response<DeleteWorkGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteWorkGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWorkGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWorkGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteWorkGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWorkGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about a single query. Requires that you have access to the workgroup in which the query was
+     * saved.
      * </p>
      * 
      * @param getNamedQueryRequest
@@ -454,8 +570,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Returns information about a single execution of a query. Each time a query executes, information about the query
-     * execution is saved with a unique ID.
+     * Returns information about a single execution of a query if you have access to the workgroup in which the query
+     * ran. Each time a query executes, information about the query execution is saved with a unique ID.
      * </p>
      * 
      * @param getQueryExecutionRequest
@@ -512,8 +628,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Returns the results of a single query execution specified by <code>QueryExecutionId</code>. This request does not
-     * execute the query but returns results. Use <a>StartQueryExecution</a> to run a query.
+     * Returns the results of a single query execution specified by <code>QueryExecutionId</code> if you have access to
+     * the workgroup in which the query ran. This request does not execute the query but returns results. Use
+     * <a>StartQueryExecution</a> to run a query.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -570,7 +687,65 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Provides a list of all available query IDs.
+     * Returns information about the workgroup with the speficied name.
+     * </p>
+     * 
+     * @param getWorkGroupRequest
+     * @return Result of the GetWorkGroup operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.GetWorkGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetWorkGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetWorkGroupResult getWorkGroup(GetWorkGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetWorkGroup(request);
+    }
+
+    @SdkInternalApi
+    final GetWorkGroupResult executeGetWorkGroup(GetWorkGroupRequest getWorkGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getWorkGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetWorkGroupRequest> request = null;
+        Response<GetWorkGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetWorkGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWorkGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWorkGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetWorkGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetWorkGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
+     * access to the workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -632,7 +807,8 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Provides a list of all available query execution IDs.
+     * Provides a list of available query execution IDs for the queries in the specified workgroup. Requires you to have
+     * access to the workgroup in which the queries ran.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -694,7 +870,65 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Runs (executes) the SQL query statements contained in the <code>Query</code> string.
+     * Lists available workgroups for the account.
+     * </p>
+     * 
+     * @param listWorkGroupsRequest
+     * @return Result of the ListWorkGroups operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListWorkGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListWorkGroups" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListWorkGroupsResult listWorkGroups(ListWorkGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListWorkGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListWorkGroupsResult executeListWorkGroups(ListWorkGroupsRequest listWorkGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listWorkGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListWorkGroupsRequest> request = null;
+        Response<ListWorkGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListWorkGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWorkGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWorkGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListWorkGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListWorkGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
+     * in which the query ran.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -710,8 +944,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
      *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
      *         missing or out of range.
      * @throws TooManyRequestsException
-     *         Indicates that the request was throttled and includes the reason for throttling, for example, the limit
-     *         of concurrent queries has been exceeded.
+     *         Indicates that the request was throttled.
      * @sample AmazonAthena.StartQueryExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartQueryExecution" target="_top">AWS API
      *      Documentation</a>
@@ -759,7 +992,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Stops a query execution.
+     * Stops a query execution. Requires you to have access to the workgroup in which the query ran.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -809,6 +1042,63 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<StopQueryExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopQueryExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+     * </p>
+     * 
+     * @param updateWorkGroupRequest
+     * @return Result of the UpdateWorkGroup operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.UpdateWorkGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateWorkGroupResult updateWorkGroup(UpdateWorkGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWorkGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWorkGroupResult executeUpdateWorkGroup(UpdateWorkGroupRequest updateWorkGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWorkGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWorkGroupRequest> request = null;
+        Response<UpdateWorkGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWorkGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWorkGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWorkGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateWorkGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

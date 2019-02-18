@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A query, where <code>QueryString</code> is the SQL query statements that comprise the query.
+ * A query, where <code>QueryString</code> is the list of SQL query statements that comprise the query.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/NamedQuery" target="_top">AWS API
@@ -30,13 +30,13 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The plain-language name of the query.
+     * The query name.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A brief description of the query.
+     * The query description.
      * </p>
      */
     private String description;
@@ -58,14 +58,20 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String namedQueryId;
+    /**
+     * <p>
+     * The name of the workgroup that contains the named query.
+     * </p>
+     */
+    private String workGroup;
 
     /**
      * <p>
-     * The plain-language name of the query.
+     * The query name.
      * </p>
      * 
      * @param name
-     *        The plain-language name of the query.
+     *        The query name.
      */
 
     public void setName(String name) {
@@ -74,10 +80,10 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The plain-language name of the query.
+     * The query name.
      * </p>
      * 
-     * @return The plain-language name of the query.
+     * @return The query name.
      */
 
     public String getName() {
@@ -86,11 +92,11 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The plain-language name of the query.
+     * The query name.
      * </p>
      * 
      * @param name
-     *        The plain-language name of the query.
+     *        The query name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +107,11 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A brief description of the query.
+     * The query description.
      * </p>
      * 
      * @param description
-     *        A brief description of the query.
+     *        The query description.
      */
 
     public void setDescription(String description) {
@@ -114,10 +120,10 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A brief description of the query.
+     * The query description.
      * </p>
      * 
-     * @return A brief description of the query.
+     * @return The query description.
      */
 
     public String getDescription() {
@@ -126,11 +132,11 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A brief description of the query.
+     * The query description.
      * </p>
      * 
      * @param description
-     *        A brief description of the query.
+     *        The query description.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -260,6 +266,46 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the workgroup that contains the named query.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup that contains the named query.
+     */
+
+    public void setWorkGroup(String workGroup) {
+        this.workGroup = workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup that contains the named query.
+     * </p>
+     * 
+     * @return The name of the workgroup that contains the named query.
+     */
+
+    public String getWorkGroup() {
+        return this.workGroup;
+    }
+
+    /**
+     * <p>
+     * The name of the workgroup that contains the named query.
+     * </p>
+     * 
+     * @param workGroup
+     *        The name of the workgroup that contains the named query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NamedQuery withWorkGroup(String workGroup) {
+        setWorkGroup(workGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -280,7 +326,9 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
         if (getQueryString() != null)
             sb.append("QueryString: ").append(getQueryString()).append(",");
         if (getNamedQueryId() != null)
-            sb.append("NamedQueryId: ").append(getNamedQueryId());
+            sb.append("NamedQueryId: ").append(getNamedQueryId()).append(",");
+        if (getWorkGroup() != null)
+            sb.append("WorkGroup: ").append(getWorkGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +363,10 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNamedQueryId() != null && other.getNamedQueryId().equals(this.getNamedQueryId()) == false)
             return false;
+        if (other.getWorkGroup() == null ^ this.getWorkGroup() == null)
+            return false;
+        if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class NamedQuery implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
         hashCode = prime * hashCode + ((getQueryString() == null) ? 0 : getQueryString().hashCode());
         hashCode = prime * hashCode + ((getNamedQueryId() == null) ? 0 : getNamedQueryId().hashCode());
+        hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         return hashCode;
     }
 
