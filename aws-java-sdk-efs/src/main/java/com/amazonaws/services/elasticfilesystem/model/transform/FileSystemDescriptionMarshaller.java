@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.elasticfilesystem.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -53,6 +54,8 @@ public class FileSystemDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ThroughputMode").build();
     private static final MarshallingInfo<Double> PROVISIONEDTHROUGHPUTINMIBPS_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisionedThroughputInMibps").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final FileSystemDescriptionMarshaller instance = new FileSystemDescriptionMarshaller();
 
@@ -83,6 +86,7 @@ public class FileSystemDescriptionMarshaller {
             protocolMarshaller.marshall(fileSystemDescription.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getThroughputMode(), THROUGHPUTMODE_BINDING);
             protocolMarshaller.marshall(fileSystemDescription.getProvisionedThroughputInMibps(), PROVISIONEDTHROUGHPUTINMIBPS_BINDING);
+            protocolMarshaller.marshall(fileSystemDescription.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

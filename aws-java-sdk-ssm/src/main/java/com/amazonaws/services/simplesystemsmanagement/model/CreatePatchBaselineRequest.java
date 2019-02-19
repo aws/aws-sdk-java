@@ -126,6 +126,32 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it applies to. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=PatchSeverity,Value=Critical</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -1084,6 +1110,235 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it applies to. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=PatchSeverity,Value=Critical</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @return Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *         ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to
+     *         identify the severity level of patches it specifies and the operating system family it applies to. In
+     *         this case, you could specify the following key name/value pairs:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Key=PatchSeverity,Value=Critical</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Key=OS,Value=Windows</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it applies to. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=PatchSeverity,Value=Critical</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to
+     *        identify the severity level of patches it specifies and the operating system family it applies to. In this
+     *        case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=PatchSeverity,Value=Critical</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it applies to. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=PatchSeverity,Value=Critical</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to
+     *        identify the severity level of patches it specifies and the operating system family it applies to. In this
+     *        case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=PatchSeverity,Value=Critical</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePatchBaselineRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a patch baseline to identify the
+     * severity level of patches it specifies and the operating system family it applies to. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=PatchSeverity,Value=Critical</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a patch baseline to
+     *        identify the severity level of patches it specifies and the operating system family it applies to. In this
+     *        case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=PatchSeverity,Value=Critical</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing patch baseline, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePatchBaselineRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1118,7 +1373,9 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         if (getSources() != null)
             sb.append("Sources: ").append(getSources()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1183,6 +1440,10 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1203,6 +1464,7 @@ public class CreatePatchBaselineRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

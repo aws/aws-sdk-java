@@ -102,6 +102,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
+ * <code>WindowsServer2019</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>*</code>
  * </p>
  * <p>
@@ -573,6 +578,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <code>RedhatEnterpriseLinux7.4</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux7.5</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>RedhatEnterpriseLinux7.6</code>
  * </p>
  * </li>
  * <li>

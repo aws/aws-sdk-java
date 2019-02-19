@@ -28,33 +28,33 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Maximum number of file system tags to return in the response. Currently, this number is automatically
-     * set to 10.
+     * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     * automatically set to 10.
      * </p>
      */
     private Integer maxItems;
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
+     * (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
      * present, it specifies to continue the list from where the previous call left off.
      * </p>
      */
     private String marker;
     /**
      * <p>
-     * ID of the file system whose tag set you want to retrieve.
+     * The ID of the file system whose tag set you want to retrieve.
      * </p>
      */
     private String fileSystemId;
 
     /**
      * <p>
-     * (Optional) Maximum number of file system tags to return in the response. Currently, this number is automatically
-     * set to 10.
+     * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     * automatically set to 10.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Maximum number of file system tags to return in the response. Currently, this number is
+     *        (Optional) The maximum number of file system tags to return in the response. Currently, this number is
      *        automatically set to 10.
      */
 
@@ -64,11 +64,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Maximum number of file system tags to return in the response. Currently, this number is automatically
-     * set to 10.
+     * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     * automatically set to 10.
      * </p>
      * 
-     * @return (Optional) Maximum number of file system tags to return in the response. Currently, this number is
+     * @return (Optional) The maximum number of file system tags to return in the response. Currently, this number is
      *         automatically set to 10.
      */
 
@@ -78,12 +78,12 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Maximum number of file system tags to return in the response. Currently, this number is automatically
-     * set to 10.
+     * (Optional) The maximum number of file system tags to return in the response. Currently, this number is
+     * automatically set to 10.
      * </p>
      * 
      * @param maxItems
-     *        (Optional) Maximum number of file system tags to return in the response. Currently, this number is
+     *        (Optional) The maximum number of file system tags to return in the response. Currently, this number is
      *        automatically set to 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -95,13 +95,13 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
+     * (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
      * present, it specifies to continue the list from where the previous call left off.
      * </p>
      * 
      * @param marker
-     *        (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String).
-     *        If present, it specifies to continue the list from where the previous call left off.
+     *        (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation
+     *        (String). If present, it specifies to continue the list from where the previous call left off.
      */
 
     public void setMarker(String marker) {
@@ -110,12 +110,12 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
+     * (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
      * present, it specifies to continue the list from where the previous call left off.
      * </p>
      * 
-     * @return (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String).
-     *         If present, it specifies to continue the list from where the previous call left off.
+     * @return (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation
+     *         (String). If present, it specifies to continue the list from where the previous call left off.
      */
 
     public String getMarker() {
@@ -124,13 +124,13 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
+     * (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation (String). If
      * present, it specifies to continue the list from where the previous call left off.
      * </p>
      * 
      * @param marker
-     *        (Optional) Opaque pagination token returned from a previous <code>DescribeTags</code> operation (String).
-     *        If present, it specifies to continue the list from where the previous call left off.
+     *        (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code> operation
+     *        (String). If present, it specifies to continue the list from where the previous call left off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ID of the file system whose tag set you want to retrieve.
+     * The ID of the file system whose tag set you want to retrieve.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system whose tag set you want to retrieve.
+     *        The ID of the file system whose tag set you want to retrieve.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -154,10 +154,10 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ID of the file system whose tag set you want to retrieve.
+     * The ID of the file system whose tag set you want to retrieve.
      * </p>
      * 
-     * @return ID of the file system whose tag set you want to retrieve.
+     * @return The ID of the file system whose tag set you want to retrieve.
      */
 
     public String getFileSystemId() {
@@ -166,11 +166,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * ID of the file system whose tag set you want to retrieve.
+     * The ID of the file system whose tag set you want to retrieve.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system whose tag set you want to retrieve.
+     *        The ID of the file system whose tag set you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

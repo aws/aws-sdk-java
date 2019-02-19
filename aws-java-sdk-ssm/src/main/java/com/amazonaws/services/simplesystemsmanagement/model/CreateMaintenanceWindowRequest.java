@@ -97,6 +97,37 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window to identify the
+     * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=TaskType,Value=AgentUpdate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -596,6 +627,275 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window to identify the
+     * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=TaskType,Value=AgentUpdate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @return Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *         ways, such as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window
+     *         to identify the type of tasks it will run, the types of targets, and the environment it will run in. In
+     *         this case, you could specify the following key name/value pairs:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Key=TaskType,Value=AgentUpdate</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Key=OS,Value=Windows</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Key=Environment,Value=Production</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window to identify the
+     * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=TaskType,Value=AgentUpdate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window
+     *        to identify the type of tasks it will run, the types of targets, and the environment it will run in. In
+     *        this case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=TaskType,Value=AgentUpdate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window to identify the
+     * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=TaskType,Value=AgentUpdate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window
+     *        to identify the type of tasks it will run, the types of targets, and the environment it will run in. In
+     *        this case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=TaskType,Value=AgentUpdate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMaintenanceWindowRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window to identify the
+     * type of tasks it will run, the types of targets, and the environment it will run in. In this case, you could
+     * specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=TaskType,Value=AgentUpdate</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a Maintenance Window
+     *        to identify the type of tasks it will run, the types of targets, and the environment it will run in. In
+     *        this case, you could specify the following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=TaskType,Value=AgentUpdate</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing Maintenance Window, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMaintenanceWindowRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -626,7 +926,9 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
         if (getAllowUnassociatedTargets() != null)
             sb.append("AllowUnassociatedTargets: ").append(getAllowUnassociatedTargets()).append(",");
         if (getClientToken() != null)
-            sb.append("ClientToken: ").append(getClientToken());
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -681,6 +983,10 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -699,6 +1005,7 @@ public class CreateMaintenanceWindowRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());
         hashCode = prime * hashCode + ((getAllowUnassociatedTargets() == null) ? 0 : getAllowUnassociatedTargets().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

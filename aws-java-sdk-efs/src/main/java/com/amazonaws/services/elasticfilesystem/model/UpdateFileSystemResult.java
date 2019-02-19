@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Description of the file system.
+ * A description of the file system.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/UpdateFileSystem" target="_top">AWS
@@ -28,53 +28,54 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * AWS account that created the file system. If the file system was created by an IAM user, the parent account to
-     * which the user belongs is the owner.
+     * The AWS account that created the file system. If the file system was created by an IAM user, the parent account
+     * to which the user belongs is the owner.
      * </p>
      */
     private String ownerId;
     /**
      * <p>
-     * Opaque string specified in the request.
+     * The opaque string specified in the request.
      * </p>
      */
     private String creationToken;
     /**
      * <p>
-     * ID of the file system, assigned by Amazon EFS.
+     * The ID of the file system, assigned by Amazon EFS.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
+     * The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Lifecycle phase of the file system.
+     * The lifecycle phase of the file system.
      * </p>
      */
     private String lifeCycleState;
     /**
      * <p>
      * You can add tags to a file system, including a <code>Name</code> tag. For more information, see
-     * <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field.
+     * <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this
+     * field.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.
+     * The current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.
      * </p>
      */
     private Integer numberOfMountTargets;
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
-     * time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is
-     * the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+     * The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and
+     * the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
+     * is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
      * the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to
      * the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified
      * for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was
@@ -84,7 +85,7 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     private FileSystemSize sizeInBytes;
     /**
      * <p>
-     * The <code>PerformanceMode</code> of the file system.
+     * The performance mode of the file system.
      * </p>
      */
     private String performanceMode;
@@ -114,20 +115,26 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
      * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      * Increase</a> in the <i>Amazon EFS User Guide.</i>
      * </p>
      */
     private Double provisionedThroughputInMibps;
+    /**
+     * <p>
+     * The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * AWS account that created the file system. If the file system was created by an IAM user, the parent account to
-     * which the user belongs is the owner.
+     * The AWS account that created the file system. If the file system was created by an IAM user, the parent account
+     * to which the user belongs is the owner.
      * </p>
      * 
      * @param ownerId
-     *        AWS account that created the file system. If the file system was created by an IAM user, the parent
+     *        The AWS account that created the file system. If the file system was created by an IAM user, the parent
      *        account to which the user belongs is the owner.
      */
 
@@ -137,11 +144,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * AWS account that created the file system. If the file system was created by an IAM user, the parent account to
-     * which the user belongs is the owner.
+     * The AWS account that created the file system. If the file system was created by an IAM user, the parent account
+     * to which the user belongs is the owner.
      * </p>
      * 
-     * @return AWS account that created the file system. If the file system was created by an IAM user, the parent
+     * @return The AWS account that created the file system. If the file system was created by an IAM user, the parent
      *         account to which the user belongs is the owner.
      */
 
@@ -151,12 +158,12 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * AWS account that created the file system. If the file system was created by an IAM user, the parent account to
-     * which the user belongs is the owner.
+     * The AWS account that created the file system. If the file system was created by an IAM user, the parent account
+     * to which the user belongs is the owner.
      * </p>
      * 
      * @param ownerId
-     *        AWS account that created the file system. If the file system was created by an IAM user, the parent
+     *        The AWS account that created the file system. If the file system was created by an IAM user, the parent
      *        account to which the user belongs is the owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -168,11 +175,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Opaque string specified in the request.
+     * The opaque string specified in the request.
      * </p>
      * 
      * @param creationToken
-     *        Opaque string specified in the request.
+     *        The opaque string specified in the request.
      */
 
     public void setCreationToken(String creationToken) {
@@ -181,10 +188,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Opaque string specified in the request.
+     * The opaque string specified in the request.
      * </p>
      * 
-     * @return Opaque string specified in the request.
+     * @return The opaque string specified in the request.
      */
 
     public String getCreationToken() {
@@ -193,11 +200,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Opaque string specified in the request.
+     * The opaque string specified in the request.
      * </p>
      * 
      * @param creationToken
-     *        Opaque string specified in the request.
+     *        The opaque string specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +215,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * ID of the file system, assigned by Amazon EFS.
+     * The ID of the file system, assigned by Amazon EFS.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system, assigned by Amazon EFS.
+     *        The ID of the file system, assigned by Amazon EFS.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -221,10 +228,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * ID of the file system, assigned by Amazon EFS.
+     * The ID of the file system, assigned by Amazon EFS.
      * </p>
      * 
-     * @return ID of the file system, assigned by Amazon EFS.
+     * @return The ID of the file system, assigned by Amazon EFS.
      */
 
     public String getFileSystemId() {
@@ -233,11 +240,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * ID of the file system, assigned by Amazon EFS.
+     * The ID of the file system, assigned by Amazon EFS.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system, assigned by Amazon EFS.
+     *        The ID of the file system, assigned by Amazon EFS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -248,11 +255,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
+     * The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
      * </p>
      * 
      * @param creationTime
-     *        Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
+     *        The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -261,10 +268,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
+     * The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
      * </p>
      * 
-     * @return Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
+     * @return The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
      */
 
     public java.util.Date getCreationTime() {
@@ -273,11 +280,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
+     * The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
      * </p>
      * 
      * @param creationTime
-     *        Time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
+     *        The time that the file system was created, in seconds (since 1970-01-01T00:00:00Z).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +295,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Lifecycle phase of the file system.
+     * The lifecycle phase of the file system.
      * </p>
      * 
      * @param lifeCycleState
-     *        Lifecycle phase of the file system.
+     *        The lifecycle phase of the file system.
      * @see LifeCycleState
      */
 
@@ -302,10 +309,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Lifecycle phase of the file system.
+     * The lifecycle phase of the file system.
      * </p>
      * 
-     * @return Lifecycle phase of the file system.
+     * @return The lifecycle phase of the file system.
      * @see LifeCycleState
      */
 
@@ -315,11 +322,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Lifecycle phase of the file system.
+     * The lifecycle phase of the file system.
      * </p>
      * 
      * @param lifeCycleState
-     *        Lifecycle phase of the file system.
+     *        The lifecycle phase of the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifeCycleState
      */
@@ -331,11 +338,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Lifecycle phase of the file system.
+     * The lifecycle phase of the file system.
      * </p>
      * 
      * @param lifeCycleState
-     *        Lifecycle phase of the file system.
+     *        The lifecycle phase of the file system.
      * @see LifeCycleState
      */
 
@@ -345,11 +352,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Lifecycle phase of the file system.
+     * The lifecycle phase of the file system.
      * </p>
      * 
      * @param lifeCycleState
-     *        Lifecycle phase of the file system.
+     *        The lifecycle phase of the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifeCycleState
      */
@@ -362,13 +369,14 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * You can add tags to a file system, including a <code>Name</code> tag. For more information, see
-     * <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field.
+     * <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this
+     * field.
      * </p>
      * 
      * @param name
      *        You can add tags to a file system, including a <code>Name</code> tag. For more information, see
-     *        <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this
-     *        field.
+     *        <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in
+     *        this field.
      */
 
     public void setName(String name) {
@@ -378,12 +386,13 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * You can add tags to a file system, including a <code>Name</code> tag. For more information, see
-     * <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field.
+     * <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this
+     * field.
      * </p>
      * 
      * @return You can add tags to a file system, including a <code>Name</code> tag. For more information, see
-     *         <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this
-     *         field.
+     *         <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in
+     *         this field.
      */
 
     public String getName() {
@@ -393,13 +402,14 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * You can add tags to a file system, including a <code>Name</code> tag. For more information, see
-     * <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this field.
+     * <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this
+     * field.
      * </p>
      * 
      * @param name
      *        You can add tags to a file system, including a <code>Name</code> tag. For more information, see
-     *        <a>CreateTags</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in this
-     *        field.
+     *        <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon EFS returns the value in
+     *        this field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,11 +420,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.
+     * The current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.
      * </p>
      * 
      * @param numberOfMountTargets
-     *        Current number of mount targets that the file system has. For more information, see
+     *        The current number of mount targets that the file system has. For more information, see
      *        <a>CreateMountTarget</a>.
      */
 
@@ -424,10 +434,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.
+     * The current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.
      * </p>
      * 
-     * @return Current number of mount targets that the file system has. For more information, see
+     * @return The current number of mount targets that the file system has. For more information, see
      *         <a>CreateMountTarget</a>.
      */
 
@@ -437,11 +447,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.
+     * The current number of mount targets that the file system has. For more information, see <a>CreateMountTarget</a>.
      * </p>
      * 
      * @param numberOfMountTargets
-     *        Current number of mount targets that the file system has. For more information, see
+     *        The current number of mount targets that the file system has. For more information, see
      *        <a>CreateMountTarget</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -453,9 +463,9 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
-     * time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is
-     * the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+     * The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and
+     * the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
+     * is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
      * the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to
      * the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified
      * for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was
@@ -463,8 +473,8 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param sizeInBytes
-     *        Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field,
-     *        and the time at which that size was determined in its <code>Timestamp</code> field. The
+     *        The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code>
+     *        field, and the time at which that size was determined in its <code>Timestamp</code> field. The
      *        <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The
      *        <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but
      *        it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code>
@@ -478,17 +488,17 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
-     * time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is
-     * the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+     * The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and
+     * the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
+     * is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
      * the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to
      * the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified
      * for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was
      * at any point in time.
      * </p>
      * 
-     * @return Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field,
-     *         and the time at which that size was determined in its <code>Timestamp</code> field. The
+     * @return The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code>
+     *         field, and the time at which that size was determined in its <code>Timestamp</code> field. The
      *         <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The
      *         <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system,
      *         but it is eventually consistent when there are no writes to the file system. That is,
@@ -503,9 +513,9 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and the
-     * time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value is
-     * the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
+     * The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field, and
+     * the time at which that size was determined in its <code>Timestamp</code> field. The <code>Timestamp</code> value
+     * is the integer number of seconds since 1970-01-01T00:00:00Z. The <code>SizeInBytes</code> value doesn't represent
      * the size of a consistent snapshot of the file system, but it is eventually consistent when there are no writes to
      * the file system. That is, <code>SizeInBytes</code> represents actual size only if the file system is not modified
      * for a period longer than a couple of hours. Otherwise, the value is not the exact size that the file system was
@@ -513,8 +523,8 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param sizeInBytes
-     *        Latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code> field,
-     *        and the time at which that size was determined in its <code>Timestamp</code> field. The
+     *        The latest known metered size (in bytes) of data stored in the file system, in its <code>Value</code>
+     *        field, and the time at which that size was determined in its <code>Timestamp</code> field. The
      *        <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z. The
      *        <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot of the file system, but
      *        it is eventually consistent when there are no writes to the file system. That is, <code>SizeInBytes</code>
@@ -530,11 +540,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The <code>PerformanceMode</code> of the file system.
+     * The performance mode of the file system.
      * </p>
      * 
      * @param performanceMode
-     *        The <code>PerformanceMode</code> of the file system.
+     *        The performance mode of the file system.
      * @see PerformanceMode
      */
 
@@ -544,10 +554,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The <code>PerformanceMode</code> of the file system.
+     * The performance mode of the file system.
      * </p>
      * 
-     * @return The <code>PerformanceMode</code> of the file system.
+     * @return The performance mode of the file system.
      * @see PerformanceMode
      */
 
@@ -557,11 +567,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The <code>PerformanceMode</code> of the file system.
+     * The performance mode of the file system.
      * </p>
      * 
      * @param performanceMode
-     *        The <code>PerformanceMode</code> of the file system.
+     *        The performance mode of the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PerformanceMode
      */
@@ -573,11 +583,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The <code>PerformanceMode</code> of the file system.
+     * The performance mode of the file system.
      * </p>
      * 
      * @param performanceMode
-     *        The <code>PerformanceMode</code> of the file system.
+     *        The performance mode of the file system.
      * @see PerformanceMode
      */
 
@@ -587,11 +597,11 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The <code>PerformanceMode</code> of the file system.
+     * The performance mode of the file system.
      * </p>
      * 
      * @param performanceMode
-     *        The <code>PerformanceMode</code> of the file system.
+     *        The performance mode of the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PerformanceMode
      */
@@ -806,14 +816,14 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
      * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      * Increase</a> in the <i>Amazon EFS User Guide.</i>
      * </p>
      * 
      * @param provisionedThroughputInMibps
      *        The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
      *        is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     *        href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      *        Increase</a> in the <i>Amazon EFS User Guide.</i>
      */
 
@@ -825,13 +835,13 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
      * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      * Increase</a> in the <i>Amazon EFS User Guide.</i>
      * </p>
      * 
      * @return The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
      *         is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     *         href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     *         href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      *         Increase</a> in the <i>Amazon EFS User Guide.</i>
      */
 
@@ -843,20 +853,93 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
      * <p>
      * The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput is 1024
      * MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      * Increase</a> in the <i>Amazon EFS User Guide.</i>
      * </p>
      * 
      * @param provisionedThroughputInMibps
      *        The throughput, measured in MiB/s, that you want to provision for a file system. The limit on throughput
      *        is 1024 MiB/s. You can get these limits increased by contacting AWS Support. For more information, see <a
-     *        href="http://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
+     *        href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#soft-limits">Amazon EFS Limits That You Can
      *        Increase</a> in the <i>Amazon EFS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFileSystemResult withProvisionedThroughputInMibps(Double provisionedThroughputInMibps) {
         setProvisionedThroughputInMibps(provisionedThroughputInMibps);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     * </p>
+     * 
+     * @return The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     * </p>
+     * 
+     * @param tags
+     *        The tags associated with the file system, presented as an array of <code>Tag</code> objects.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -897,7 +980,9 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
         if (getThroughputMode() != null)
             sb.append("ThroughputMode: ").append(getThroughputMode()).append(",");
         if (getProvisionedThroughputInMibps() != null)
-            sb.append("ProvisionedThroughputInMibps: ").append(getProvisionedThroughputInMibps());
+            sb.append("ProvisionedThroughputInMibps: ").append(getProvisionedThroughputInMibps()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -964,6 +1049,10 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getProvisionedThroughputInMibps() != null && other.getProvisionedThroughputInMibps().equals(this.getProvisionedThroughputInMibps()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -985,6 +1074,7 @@ public class UpdateFileSystemResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getThroughputMode() == null) ? 0 : getThroughputMode().hashCode());
         hashCode = prime * hashCode + ((getProvisionedThroughputInMibps() == null) ? 0 : getProvisionedThroughputInMibps().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

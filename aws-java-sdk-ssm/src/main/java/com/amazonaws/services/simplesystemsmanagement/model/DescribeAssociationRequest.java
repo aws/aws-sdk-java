@@ -47,7 +47,8 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for
      * this parameter, or omit this parameter. To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association, use ListAssociationVersions.
+     * <a>ListAssociations</a>. To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>.
      * </p>
      */
     private String associationVersion;
@@ -176,14 +177,15 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for
      * this parameter, or omit this parameter. To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association, use ListAssociationVersions.
+     * <a>ListAssociations</a>. To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>.
      * </p>
      * 
      * @param associationVersion
      *        Specify the association version to retrieve. To view the latest version, either specify
      *        <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for an
-     *        instance, use ListInstanceAssociations. To get a list of versions for a specific association, use
-     *        ListAssociationVersions.
+     *        instance, use <a>ListAssociations</a>. To get a list of versions for a specific association, use
+     *        <a>ListAssociationVersions</a>.
      */
 
     public void setAssociationVersion(String associationVersion) {
@@ -194,13 +196,14 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for
      * this parameter, or omit this parameter. To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association, use ListAssociationVersions.
+     * <a>ListAssociations</a>. To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>.
      * </p>
      * 
      * @return Specify the association version to retrieve. To view the latest version, either specify
      *         <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for
-     *         an instance, use ListInstanceAssociations. To get a list of versions for a specific association, use
-     *         ListAssociationVersions.
+     *         an instance, use <a>ListAssociations</a>. To get a list of versions for a specific association, use
+     *         <a>ListAssociationVersions</a>.
      */
 
     public String getAssociationVersion() {
@@ -211,14 +214,15 @@ public class DescribeAssociationRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * Specify the association version to retrieve. To view the latest version, either specify <code>$LATEST</code> for
      * this parameter, or omit this parameter. To view a list of all associations for an instance, use
-     * ListInstanceAssociations. To get a list of versions for a specific association, use ListAssociationVersions.
+     * <a>ListAssociations</a>. To get a list of versions for a specific association, use
+     * <a>ListAssociationVersions</a>.
      * </p>
      * 
      * @param associationVersion
      *        Specify the association version to retrieve. To view the latest version, either specify
      *        <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of all associations for an
-     *        instance, use ListInstanceAssociations. To get a list of versions for a specific association, use
-     *        ListAssociationVersions.
+     *        instance, use <a>ListAssociations</a>. To get a list of versions for a specific association, use
+     *        <a>ListAssociationVersions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

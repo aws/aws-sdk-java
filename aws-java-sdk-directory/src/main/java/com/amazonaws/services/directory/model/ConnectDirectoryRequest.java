@@ -64,6 +64,12 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private DirectoryConnectSettings connectSettings;
+    /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -339,6 +345,79 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     * 
+     * @return The tags to be assigned to AD Connector.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to AD Connector.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to AD Connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectDirectoryRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to AD Connector.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to AD Connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConnectDirectoryRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -361,7 +440,9 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
         if (getSize() != null)
             sb.append("Size: ").append(getSize()).append(",");
         if (getConnectSettings() != null)
-            sb.append("ConnectSettings: ").append(getConnectSettings());
+            sb.append("ConnectSettings: ").append(getConnectSettings()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -400,6 +481,10 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getConnectSettings() != null && other.getConnectSettings().equals(this.getConnectSettings()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -414,6 +499,7 @@ public class ConnectDirectoryRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSize() == null) ? 0 : getSize().hashCode());
         hashCode = prime * hashCode + ((getConnectSettings() == null) ? 0 : getConnectSettings().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -71,13 +71,23 @@ public final class ClockSkewAdjuster {
         ValidationUtils.assertNotNull(adjustmentRequest.clientRequest, "adjustmentRequest.clientRequest");
         ValidationUtils.assertNotNull(adjustmentRequest.serviceResponse, "adjustmentRequest.serviceResponse");
 
-        return new ClockSkewAdjustment(calculateRecommendedAdjustment(adjustmentRequest));
-    }
+        int timeSkewInSeconds = 0;
+        boolean isAdjustmentRecommended = false;
 
-    private int calculateRecommendedAdjustment(AdjustmentRequest adjustmentRequest) {
-        return isAdjustmentRecommended(adjustmentRequest) ? timeSkewInSeconds(getCurrentDate(adjustmentRequest),
-                                                                              getServerDate(adjustmentRequest))
-                                                          : 0;
+        try {
+            if (isAdjustmentRecommended(adjustmentRequest)) {
+                Date serverDate = getServerDate(adjustmentRequest);
+
+                if (serverDate != null) {
+                    timeSkewInSeconds = timeSkewInSeconds(getCurrentDate(adjustmentRequest), serverDate);
+                    isAdjustmentRecommended = true;
+                }
+            }
+        } catch (RuntimeException e) {
+            log.warn("Unable to correct for clock skew.", e);
+        }
+
+        return new ClockSkewAdjustment(isAdjustmentRecommended, timeSkewInSeconds);
     }
 
     private boolean isAdjustmentRecommended(AdjustmentRequest adjustmentRequest) {
@@ -100,7 +110,12 @@ public final class ClockSkewAdjuster {
     }
 
     private boolean clientRequestWasSkewed(AdjustmentRequest adjustmentRequest) {
-        int requestClockSkew = timeSkewInSeconds(getClientDate(adjustmentRequest), getServerDate(adjustmentRequest));
+        Date serverDate = getServerDate(adjustmentRequest);
+        if (serverDate == null) {
+            return false;
+        }
+
+        int requestClockSkew = timeSkewInSeconds(getClientDate(adjustmentRequest), serverDate);
         return Math.abs(requestClockSkew) > CLOCK_SKEW_ADJUST_THRESHOLD_IN_SECONDS;
     }
 
@@ -110,19 +125,14 @@ public final class ClockSkewAdjuster {
      * the client clock is "slow".
      */
     private int timeSkewInSeconds(Date clientTime, Date serverTime) {
-        if (clientTime == null || serverTime == null) {
-            // If we do not have a client or server time, 0 is the safest skew to apply
-            return 0;
-        }
+        ValidationUtils.assertNotNull(clientTime, "clientTime");
+        ValidationUtils.assertNotNull(serverTime, "serverTime");
 
         long value = (clientTime.getTime() - serverTime.getTime()) / 1000;
 
         if ((int) value != value) {
-            log.warn("Time is too skewed to adjust: (clientTime: " + clientTime.getTime() + ") " +
-                     "(serverTime: " + serverTime.getTime() + ")");
-
-            // While not technically correct, 0 is the safest skew
-            return 0;
+            throw new IllegalStateException("Time is too skewed to adjust: (clientTime: " + clientTime.getTime() + ", " +
+                                            "serverTime: " + serverTime.getTime() + ")");
         }
         return (int) value;
     }
@@ -216,18 +226,20 @@ public final class ClockSkewAdjuster {
 
     @ThreadSafe
     public static final class ClockSkewAdjustment {
+        private final boolean shouldAdjustForSkew;
         private final int adjustmentInSeconds;
 
-        private ClockSkewAdjustment(int adjustmentInSeconds) {
+        private ClockSkewAdjustment(boolean shouldAdjust, int adjustmentInSeconds) {
+            this.shouldAdjustForSkew = shouldAdjust;
             this.adjustmentInSeconds = adjustmentInSeconds;
         }
 
         public boolean shouldAdjustForSkew() {
-            return adjustmentInSeconds != 0;
+            return shouldAdjustForSkew;
         }
 
         public int inSeconds() {
-            if (adjustmentInSeconds == 0) {
+            if (!shouldAdjustForSkew) {
                 throw new IllegalStateException("An adjustment is not recommended.");
             }
 

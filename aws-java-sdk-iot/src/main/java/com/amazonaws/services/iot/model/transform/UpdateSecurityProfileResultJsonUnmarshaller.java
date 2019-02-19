@@ -69,6 +69,11 @@ public class UpdateSecurityProfileResultJsonUnmarshaller implements Unmarshaller
                     updateSecurityProfileResult.setAlertTargets(new MapUnmarshaller<String, AlertTarget>(context.getUnmarshaller(String.class),
                             AlertTargetJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("additionalMetricsToRetain", targetDepth)) {
+                    context.nextToken();
+                    updateSecurityProfileResult.setAdditionalMetricsToRetain(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+                            .unmarshall(context));
+                }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();
                     updateSecurityProfileResult.setVersion(context.getUnmarshaller(Long.class).unmarshall(context));

@@ -98,6 +98,31 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String targetType;
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of
+     * targets or the environment where it will run. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -667,6 +692,231 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of
+     * targets or the environment where it will run. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @return Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *         ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to
+     *         identify the types of targets or the environment where it will run. In this case, you could specify the
+     *         following key name/value pairs:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Key=OS,Value=Windows</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Key=Environment,Value=Production</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of
+     * targets or the environment where it will run. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to
+     *        identify the types of targets or the environment where it will run. In this case, you could specify the
+     *        following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of
+     * targets or the environment where it will run. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to
+     *        identify the types of targets or the environment where it will run. In this case, you could specify the
+     *        following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDocumentRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag an SSM document to identify the types of
+     * targets or the environment where it will run. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=Environment,Value=Production</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an SSM document to
+     *        identify the types of targets or the environment where it will run. In this case, you could specify the
+     *        following key name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=Environment,Value=Production</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing SSM document, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDocumentRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -691,7 +941,9 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDocumentFormat() != null)
             sb.append("DocumentFormat: ").append(getDocumentFormat()).append(",");
         if (getTargetType() != null)
-            sb.append("TargetType: ").append(getTargetType());
+            sb.append("TargetType: ").append(getTargetType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -734,6 +986,10 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTargetType() != null && other.getTargetType().equals(this.getTargetType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -749,6 +1005,7 @@ public class CreateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDocumentType() == null) ? 0 : getDocumentType().hashCode());
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

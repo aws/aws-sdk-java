@@ -149,6 +149,37 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String allowedPattern;
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify
+     * the type of resource to which it applies, the environment, or the type of configuration data referenced by the
+     * parameter. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Resource,Value=S3bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -1005,6 +1036,279 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify
+     * the type of resource to which it applies, the environment, or the type of configuration data referenced by the
+     * parameter. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Resource,Value=S3bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @return Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *         ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager
+     *         parameter to identify the type of resource to which it applies, the environment, or the type of
+     *         configuration data referenced by the parameter. In this case, you could specify the following key
+     *         name/value pairs:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Key=Resource,Value=S3bucket</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Key=OS,Value=Windows</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Key=ParameterType,Value=LicenseKey</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify
+     * the type of resource to which it applies, the environment, or the type of configuration data referenced by the
+     * parameter. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Resource,Value=S3bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager
+     *        parameter to identify the type of resource to which it applies, the environment, or the type of
+     *        configuration data referenced by the parameter. In this case, you could specify the following key
+     *        name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=Resource,Value=S3bucket</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=ParameterType,Value=LicenseKey</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify
+     * the type of resource to which it applies, the environment, or the type of configuration data referenced by the
+     * parameter. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Resource,Value=S3bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager
+     *        parameter to identify the type of resource to which it applies, the environment, or the type of
+     *        configuration data referenced by the parameter. In this case, you could specify the following key
+     *        name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=Resource,Value=S3bucket</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=ParameterType,Value=LicenseKey</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutParameterRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
+     * as by purpose, owner, or environment. For example, you might want to tag a Systems Manager parameter to identify
+     * the type of resource to which it applies, the environment, or the type of configuration data referenced by the
+     * parameter. In this case, you could specify the following key name/value pairs:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Key=Resource,Value=S3bucket</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=OS,Value=Windows</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Key=ParameterType,Value=LicenseKey</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
+     *        ways, such as by purpose, owner, or environment. For example, you might want to tag a Systems Manager
+     *        parameter to identify the type of resource to which it applies, the environment, or the type of
+     *        configuration data referenced by the parameter. In this case, you could specify the following key
+     *        name/value pairs:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Key=Resource,Value=S3bucket</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=OS,Value=Windows</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Key=ParameterType,Value=LicenseKey</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a> action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutParameterRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1029,7 +1333,9 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getOverwrite() != null)
             sb.append("Overwrite: ").append(getOverwrite()).append(",");
         if (getAllowedPattern() != null)
-            sb.append("AllowedPattern: ").append(getAllowedPattern());
+            sb.append("AllowedPattern: ").append(getAllowedPattern()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1072,6 +1378,10 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getAllowedPattern() != null && other.getAllowedPattern().equals(this.getAllowedPattern()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1087,6 +1397,7 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getKeyId() == null) ? 0 : getKeyId().hashCode());
         hashCode = prime * hashCode + ((getOverwrite() == null) ? 0 : getOverwrite().hashCode());
         hashCode = prime * hashCode + ((getAllowedPattern() == null) ? 0 : getAllowedPattern().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -55,6 +55,7 @@ public class ClockSkewAdjusterTest {
     public void obviousSkewErrorsAdjust() {
         assertAdjusts(-SKEWED_SECONDS, clientRequest(0), amazonServiceException("", "RequestTimeTooSkewed", 400), httpResponse(futureSkewedDate));
         assertAdjusts(SKEWED_SECONDS, clientRequest(0), amazonServiceException("", "InvalidSignatureException", 400), httpResponse(pastSkewedDate));
+        assertAdjusts(0, clientRequest(0), amazonServiceException("", "RequestTimeTooSkewed", 400), httpResponse(unskewedDate));
     }
 
     @Test
@@ -182,9 +183,4 @@ public class ClockSkewAdjusterTest {
         }
         return response;
     }
-
-    private Date unskewedDate() {
-        return new Date();
-    }
-
 }

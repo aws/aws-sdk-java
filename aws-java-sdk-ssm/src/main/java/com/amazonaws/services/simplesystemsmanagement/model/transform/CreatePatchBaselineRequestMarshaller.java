@@ -55,6 +55,8 @@ public class CreatePatchBaselineRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreatePatchBaselineRequestMarshaller instance = new CreatePatchBaselineRequestMarshaller();
 
@@ -84,6 +86,7 @@ public class CreatePatchBaselineRequestMarshaller {
             protocolMarshaller.marshall(createPatchBaselineRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(createPatchBaselineRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createPatchBaselineRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -28,27 +28,27 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file
-     * system.
+     * The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the
+     * file system.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
-     * ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file
-     * system.
+     * The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the
+     * file system.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not
-     *        the file system.
+     *        The ID of the file system whose tags you want to modify (String). This operation modifies the tags only,
+     *        not the file system.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -57,12 +57,12 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file
-     * system.
+     * The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the
+     * file system.
      * </p>
      * 
-     * @return ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not
-     *         the file system.
+     * @return The ID of the file system whose tags you want to modify (String). This operation modifies the tags only,
+     *         not the file system.
      */
 
     public String getFileSystemId() {
@@ -71,13 +71,13 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the file
-     * system.
+     * The ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not the
+     * file system.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system whose tags you want to modify (String). This operation modifies the tags only, not
-     *        the file system.
+     *        The ID of the file system whose tags you want to modify (String). This operation modifies the tags only,
+     *        not the file system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,10 +88,10 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * </p>
      * 
-     * @return Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * @return An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      */
 
     public java.util.List<Tag> getTags() {
@@ -103,11 +103,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * </p>
      * 
      * @param tags
-     *        Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -121,7 +121,7 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -130,7 +130,7 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +146,11 @@ public class CreateTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     * An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * </p>
      * 
      * @param tags
-     *        Array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
+     *        An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

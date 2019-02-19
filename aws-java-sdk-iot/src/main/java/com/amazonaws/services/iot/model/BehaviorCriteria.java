@@ -28,7 +28,7 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code>.
+     * <code>value</code> or <code>statisticalThreshold</code>).
      * </p>
      */
     private String comparisonOperator;
@@ -41,20 +41,44 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
-     * dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+     * dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
+     * comparison, measurements from all devices are accumulated over this time duration before being used to calculate
+     * percentiles, and later, measurements from an individual device are also accumulated over this time duration
+     * before being given a percentile rank.
      * </p>
      */
     private Integer durationSeconds;
+    /**
+     * <p>
+     * If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs.
+     * If not specified, the default is 1.
+     * </p>
+     */
+    private Integer consecutiveDatapointsToAlarm;
+    /**
+     * <p>
+     * If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified
+     * number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.
+     * </p>
+     */
+    private Integer consecutiveDatapointsToClear;
+    /**
+     * <p>
+     * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in
+     * compliance or in violation of the behavior.
+     * </p>
+     */
+    private StatisticalThreshold statisticalThreshold;
 
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code>.
+     * <code>value</code> or <code>statisticalThreshold</code>).
      * </p>
      * 
      * @param comparisonOperator
      *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     *        <code>value</code>.
+     *        <code>value</code> or <code>statisticalThreshold</code>).
      * @see ComparisonOperator
      */
 
@@ -65,11 +89,11 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code>.
+     * <code>value</code> or <code>statisticalThreshold</code>).
      * </p>
      * 
      * @return The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     *         <code>value</code>.
+     *         <code>value</code> or <code>statisticalThreshold</code>).
      * @see ComparisonOperator
      */
 
@@ -80,12 +104,12 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code>.
+     * <code>value</code> or <code>statisticalThreshold</code>).
      * </p>
      * 
      * @param comparisonOperator
      *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     *        <code>value</code>.
+     *        <code>value</code> or <code>statisticalThreshold</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -98,12 +122,12 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     * <code>value</code>.
+     * <code>value</code> or <code>statisticalThreshold</code>).
      * </p>
      * 
      * @param comparisonOperator
      *        The operator that relates the thing measured (<code>metric</code>) to the criteria (containing a
-     *        <code>value</code>.
+     *        <code>value</code> or <code>statisticalThreshold</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComparisonOperator
      */
@@ -156,12 +180,18 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
-     * dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+     * dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
+     * comparison, measurements from all devices are accumulated over this time duration before being used to calculate
+     * percentiles, and later, measurements from an individual device are also accumulated over this time duration
+     * before being given a percentile rank.
      * </p>
      * 
      * @param durationSeconds
      *        Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
-     *        a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+     *        a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code>
+     *        metric comparison, measurements from all devices are accumulated over this time duration before being used
+     *        to calculate percentiles, and later, measurements from an individual device are also accumulated over this
+     *        time duration before being given a percentile rank.
      */
 
     public void setDurationSeconds(Integer durationSeconds) {
@@ -171,11 +201,17 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
-     * dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+     * dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
+     * comparison, measurements from all devices are accumulated over this time duration before being used to calculate
+     * percentiles, and later, measurements from an individual device are also accumulated over this time duration
+     * before being given a percentile rank.
      * </p>
      * 
      * @return Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
-     *         a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+     *         a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code>
+     *         metric comparison, measurements from all devices are accumulated over this time duration before being
+     *         used to calculate percentiles, and later, measurements from an individual device are also accumulated
+     *         over this time duration before being given a percentile rank.
      */
 
     public Integer getDurationSeconds() {
@@ -185,17 +221,161 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Use this to specify the time duration over which the behavior is evaluated, for those criteria which have a time
-     * dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+     * dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code> metric
+     * comparison, measurements from all devices are accumulated over this time duration before being used to calculate
+     * percentiles, and later, measurements from an individual device are also accumulated over this time duration
+     * before being given a percentile rank.
      * </p>
      * 
      * @param durationSeconds
      *        Use this to specify the time duration over which the behavior is evaluated, for those criteria which have
-     *        a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
+     *        a time dimension (for example, <code>NUM_MESSAGES_SENT</code>). For a <code>statisticalThreshhold</code>
+     *        metric comparison, measurements from all devices are accumulated over this time duration before being used
+     *        to calculate percentiles, and later, measurements from an individual device are also accumulated over this
+     *        time duration before being given a percentile rank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BehaviorCriteria withDurationSeconds(Integer durationSeconds) {
         setDurationSeconds(durationSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs.
+     * If not specified, the default is 1.
+     * </p>
+     * 
+     * @param consecutiveDatapointsToAlarm
+     *        If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm
+     *        occurs. If not specified, the default is 1.
+     */
+
+    public void setConsecutiveDatapointsToAlarm(Integer consecutiveDatapointsToAlarm) {
+        this.consecutiveDatapointsToAlarm = consecutiveDatapointsToAlarm;
+    }
+
+    /**
+     * <p>
+     * If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs.
+     * If not specified, the default is 1.
+     * </p>
+     * 
+     * @return If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm
+     *         occurs. If not specified, the default is 1.
+     */
+
+    public Integer getConsecutiveDatapointsToAlarm() {
+        return this.consecutiveDatapointsToAlarm;
+    }
+
+    /**
+     * <p>
+     * If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm occurs.
+     * If not specified, the default is 1.
+     * </p>
+     * 
+     * @param consecutiveDatapointsToAlarm
+     *        If a device is in violation of the behavior for the specified number of consecutive datapoints, an alarm
+     *        occurs. If not specified, the default is 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BehaviorCriteria withConsecutiveDatapointsToAlarm(Integer consecutiveDatapointsToAlarm) {
+        setConsecutiveDatapointsToAlarm(consecutiveDatapointsToAlarm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified
+     * number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.
+     * </p>
+     * 
+     * @param consecutiveDatapointsToClear
+     *        If an alarm has occurred and the offending device is no longer in violation of the behavior for the
+     *        specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.
+     */
+
+    public void setConsecutiveDatapointsToClear(Integer consecutiveDatapointsToClear) {
+        this.consecutiveDatapointsToClear = consecutiveDatapointsToClear;
+    }
+
+    /**
+     * <p>
+     * If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified
+     * number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.
+     * </p>
+     * 
+     * @return If an alarm has occurred and the offending device is no longer in violation of the behavior for the
+     *         specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.
+     */
+
+    public Integer getConsecutiveDatapointsToClear() {
+        return this.consecutiveDatapointsToClear;
+    }
+
+    /**
+     * <p>
+     * If an alarm has occurred and the offending device is no longer in violation of the behavior for the specified
+     * number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.
+     * </p>
+     * 
+     * @param consecutiveDatapointsToClear
+     *        If an alarm has occurred and the offending device is no longer in violation of the behavior for the
+     *        specified number of consecutive datapoints, the alarm is cleared. If not specified, the default is 1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BehaviorCriteria withConsecutiveDatapointsToClear(Integer consecutiveDatapointsToClear) {
+        setConsecutiveDatapointsToClear(consecutiveDatapointsToClear);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in
+     * compliance or in violation of the behavior.
+     * </p>
+     * 
+     * @param statisticalThreshold
+     *        A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to
+     *        be in compliance or in violation of the behavior.
+     */
+
+    public void setStatisticalThreshold(StatisticalThreshold statisticalThreshold) {
+        this.statisticalThreshold = statisticalThreshold;
+    }
+
+    /**
+     * <p>
+     * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in
+     * compliance or in violation of the behavior.
+     * </p>
+     * 
+     * @return A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to
+     *         be in compliance or in violation of the behavior.
+     */
+
+    public StatisticalThreshold getStatisticalThreshold() {
+        return this.statisticalThreshold;
+    }
+
+    /**
+     * <p>
+     * A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in
+     * compliance or in violation of the behavior.
+     * </p>
+     * 
+     * @param statisticalThreshold
+     *        A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to
+     *        be in compliance or in violation of the behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BehaviorCriteria withStatisticalThreshold(StatisticalThreshold statisticalThreshold) {
+        setStatisticalThreshold(statisticalThreshold);
         return this;
     }
 
@@ -216,7 +396,13 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
         if (getValue() != null)
             sb.append("Value: ").append(getValue()).append(",");
         if (getDurationSeconds() != null)
-            sb.append("DurationSeconds: ").append(getDurationSeconds());
+            sb.append("DurationSeconds: ").append(getDurationSeconds()).append(",");
+        if (getConsecutiveDatapointsToAlarm() != null)
+            sb.append("ConsecutiveDatapointsToAlarm: ").append(getConsecutiveDatapointsToAlarm()).append(",");
+        if (getConsecutiveDatapointsToClear() != null)
+            sb.append("ConsecutiveDatapointsToClear: ").append(getConsecutiveDatapointsToClear()).append(",");
+        if (getStatisticalThreshold() != null)
+            sb.append("StatisticalThreshold: ").append(getStatisticalThreshold());
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +429,18 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDurationSeconds() != null && other.getDurationSeconds().equals(this.getDurationSeconds()) == false)
             return false;
+        if (other.getConsecutiveDatapointsToAlarm() == null ^ this.getConsecutiveDatapointsToAlarm() == null)
+            return false;
+        if (other.getConsecutiveDatapointsToAlarm() != null && other.getConsecutiveDatapointsToAlarm().equals(this.getConsecutiveDatapointsToAlarm()) == false)
+            return false;
+        if (other.getConsecutiveDatapointsToClear() == null ^ this.getConsecutiveDatapointsToClear() == null)
+            return false;
+        if (other.getConsecutiveDatapointsToClear() != null && other.getConsecutiveDatapointsToClear().equals(this.getConsecutiveDatapointsToClear()) == false)
+            return false;
+        if (other.getStatisticalThreshold() == null ^ this.getStatisticalThreshold() == null)
+            return false;
+        if (other.getStatisticalThreshold() != null && other.getStatisticalThreshold().equals(this.getStatisticalThreshold()) == false)
+            return false;
         return true;
     }
 
@@ -254,6 +452,9 @@ public class BehaviorCriteria implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getComparisonOperator() == null) ? 0 : getComparisonOperator().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getDurationSeconds() == null) ? 0 : getDurationSeconds().hashCode());
+        hashCode = prime * hashCode + ((getConsecutiveDatapointsToAlarm() == null) ? 0 : getConsecutiveDatapointsToAlarm().hashCode());
+        hashCode = prime * hashCode + ((getConsecutiveDatapointsToClear() == null) ? 0 : getConsecutiveDatapointsToClear().hashCode());
+        hashCode = prime * hashCode + ((getStatisticalThreshold() == null) ? 0 : getStatisticalThreshold().hashCode());
         return hashCode;
     }
 

@@ -42,6 +42,8 @@ public class CreateDocumentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentFormat").build();
     private static final MarshallingInfo<String> TARGETTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetType").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateDocumentRequestMarshaller instance = new CreateDocumentRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateDocumentRequestMarshaller {
             protocolMarshaller.marshall(createDocumentRequest.getDocumentType(), DOCUMENTTYPE_BINDING);
             protocolMarshaller.marshall(createDocumentRequest.getDocumentFormat(), DOCUMENTFORMAT_BINDING);
             protocolMarshaller.marshall(createDocumentRequest.getTargetType(), TARGETTYPE_BINDING);
+            protocolMarshaller.marshall(createDocumentRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

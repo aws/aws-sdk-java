@@ -31,7 +31,7 @@ import com.amazonaws.services.elasticfilesystem.model.*;
  * Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2 instances in
  * the AWS Cloud. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and
  * remove files, so your applications have the storage they need, when they need it. For more information, see the <a
- * href="http://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User Guide</a>.
+ * href="https://docs.aws.amazon.com/efs/latest/ug/api-reference.html">User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -146,7 +146,7 @@ public interface AmazonElasticFileSystem {
      * <code>maxIO</code> performance mode can scale to higher levels of aggregate throughput and operations per second
      * with a tradeoff of slightly higher latencies for most file operations. The performance mode can't be changed
      * after the file system has been created. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon EFS: Performance
+     * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#performancemodes.html">Amazon EFS: Performance
      * Modes</a>.
      * </p>
      * <p>
@@ -154,7 +154,7 @@ public interface AmazonElasticFileSystem {
      * point you can create one or more mount targets for the file system in your VPC. For more information, see
      * <a>CreateMountTarget</a>. You mount your Amazon EFS file system on an EC2 instances in your VPC by using the
      * mount target. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How it Works</a>.
+     * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How it Works</a>.
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateFileSystem</code> action.
@@ -196,7 +196,7 @@ public interface AmazonElasticFileSystem {
      * Availability Zone share a single mount target for a given file system. If you have multiple subnets in an
      * Availability Zone, you create a mount target in one of the subnets. EC2 instances do not need to be in the same
      * subnet as the mount target in order to access their file system. For more information, see <a
-     * href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How it Works</a>.
+     * href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html">Amazon EFS: How it Works</a>.
      * </p>
      * <p>
      * In the request, you also specify a file system ID for which you are creating the mount target and the file
@@ -228,7 +228,7 @@ public interface AmazonElasticFileSystem {
      * <code>IpAddress</code>. You use this IP address when mounting the file system in an EC2 instance. You can also
      * use the mount target's DNS name when mounting the file system. The EC2 instance on which you mount the file
      * system by using the mount target can resolve the mount target's DNS name to its IP address. For more information,
-     * see <a href="http://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How it
+     * see <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How it
      * Works: Implementation Overview</a>.
      * </p>
      * <p>
@@ -309,8 +309,7 @@ public interface AmazonElasticFileSystem {
      * using a file system in an Availability Zone through a mount target created in another Availability Zone. For more
      * information, see <a href="http://aws.amazon.com/efs/">Amazon EFS</a>. In addition, by always using a mount target
      * local to the instance's Availability Zone, you eliminate a partial failure scenario. If the Availability Zone in
-     * which your mount target is created goes down, then you won't be able to access your file system through that
-     * mount target.
+     * which your mount target is created goes down, then you can't access your file system through that mount target.
      * </p>
      * <p>
      * This operation requires permissions for the following action on the file system:
@@ -368,7 +367,7 @@ public interface AmazonElasticFileSystem {
      *         The calling account has reached the limit for elastic network interfaces for the specific AWS Region. The
      *         client should try to delete some elastic network interfaces or get the account limit raised. For more
      *         information, see <a
-     *         href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC
+     *         href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC
      *         Limits</a> in the <i>Amazon VPC User Guide </i> (see the Network interfaces per VPC entry in the table).
      * @throws SecurityGroupLimitExceededException
      *         Returned if the size of <code>SecurityGroups</code> specified in the request is greater than five.
@@ -506,8 +505,8 @@ public interface AmazonElasticFileSystem {
     /**
      * <p>
      * Deletes the specified tags from a file system. If the <code>DeleteTags</code> request includes a tag key that
-     * does not exist, Amazon EFS ignores it and doesn't cause an error. For more information about tags and related
-     * restrictions, see <a href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
+     * doesn't exist, Amazon EFS ignores it and doesn't cause an error. For more information about tags and related
+     * restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Tag
      * Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>.
      * </p>
      * <p>
@@ -581,9 +580,9 @@ public interface AmazonElasticFileSystem {
     /**
      * <p>
      * Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon EFS file system. EFS
-     * lifecycle management uses the <code>LifecycleConfiguration</code> to identify which files to move to the EFS
-     * Infrequent Access (IA) storage class. For a file system without a <code>LifecycleConfiguration</code>, the call
-     * returns an empty array in the response.
+     * lifecycle management uses the <code>LifecycleConfiguration</code> object to identify which files to move to the
+     * EFS Infrequent Access (IA) storage class. For a file system without a <code>LifecycleConfiguration</code> object,
+     * the call returns an empty array in the response.
      * </p>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:DescribeLifecycleConfiguration</code>
@@ -676,7 +675,7 @@ public interface AmazonElasticFileSystem {
     /**
      * <p>
      * Returns the tags associated with a file system. The order of tags returned in the response of one
-     * <code>DescribeTags</code> call and the order of tags returned across the responses of a multi-call iteration
+     * <code>DescribeTags</code> call and the order of tags returned across the responses of a multiple-call iteration
      * (when using pagination) is unspecified.
      * </p>
      * <p>
@@ -750,13 +749,13 @@ public interface AmazonElasticFileSystem {
     /**
      * <p>
      * Enables lifecycle management by creating a new <code>LifecycleConfiguration</code> object. A
-     * <code>LifecycleConfiguration</code> defines when files in an Amazon EFS file system are automatically
+     * <code>LifecycleConfiguration</code> object defines when files in an Amazon EFS file system are automatically
      * transitioned to the lower-cost EFS Infrequent Access (IA) storage class. A <code>LifecycleConfiguration</code>
      * applies to all files in a file system.
      * </p>
      * <p>
      * Each Amazon EFS file system supports one lifecycle configuration, which applies to all files in the file system.
-     * If a <code>LifecycleConfiguration</code> already exists for the specified file system, a
+     * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
      * body deletes any existing <code>LifecycleConfiguration</code> and disables lifecycle management.
@@ -779,7 +778,7 @@ public interface AmazonElasticFileSystem {
      * <p>
      * A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that define when files are moved
      * to the IA storage class. The array can contain only one <code>"TransitionToIA": "AFTER_30_DAYS"</code>
-     * <code>LifecyclePolicy</code> object.
+     * <code>LifecyclePolicy</code> item.
      * </p>
      * </li>
      * </ul>

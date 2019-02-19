@@ -28,18 +28,18 @@ public class DescribeMountTargetSecurityGroupsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ID of the mount target whose security groups you want to retrieve.
+     * The ID of the mount target whose security groups you want to retrieve.
      * </p>
      */
     private String mountTargetId;
 
     /**
      * <p>
-     * ID of the mount target whose security groups you want to retrieve.
+     * The ID of the mount target whose security groups you want to retrieve.
      * </p>
      * 
      * @param mountTargetId
-     *        ID of the mount target whose security groups you want to retrieve.
+     *        The ID of the mount target whose security groups you want to retrieve.
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -48,10 +48,10 @@ public class DescribeMountTargetSecurityGroupsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ID of the mount target whose security groups you want to retrieve.
+     * The ID of the mount target whose security groups you want to retrieve.
      * </p>
      * 
-     * @return ID of the mount target whose security groups you want to retrieve.
+     * @return The ID of the mount target whose security groups you want to retrieve.
      */
 
     public String getMountTargetId() {
@@ -60,11 +60,11 @@ public class DescribeMountTargetSecurityGroupsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * ID of the mount target whose security groups you want to retrieve.
+     * The ID of the mount target whose security groups you want to retrieve.
      * </p>
      * 
      * @param mountTargetId
-     *        ID of the mount target whose security groups you want to retrieve.
+     *        The ID of the mount target whose security groups you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

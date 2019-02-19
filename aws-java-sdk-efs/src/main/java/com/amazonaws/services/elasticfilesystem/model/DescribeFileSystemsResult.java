@@ -31,7 +31,7 @@ public class DescribeFileSystemsResult extends com.amazonaws.AmazonWebServiceRes
     private String marker;
     /**
      * <p>
-     * Array of file system descriptions.
+     * An array of file system descriptions.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<FileSystemDescription> fileSystems;
@@ -85,10 +85,10 @@ public class DescribeFileSystemsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Array of file system descriptions.
+     * An array of file system descriptions.
      * </p>
      * 
-     * @return Array of file system descriptions.
+     * @return An array of file system descriptions.
      */
 
     public java.util.List<FileSystemDescription> getFileSystems() {
@@ -100,11 +100,11 @@ public class DescribeFileSystemsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Array of file system descriptions.
+     * An array of file system descriptions.
      * </p>
      * 
      * @param fileSystems
-     *        Array of file system descriptions.
+     *        An array of file system descriptions.
      */
 
     public void setFileSystems(java.util.Collection<FileSystemDescription> fileSystems) {
@@ -118,7 +118,7 @@ public class DescribeFileSystemsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Array of file system descriptions.
+     * An array of file system descriptions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -127,7 +127,7 @@ public class DescribeFileSystemsResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param fileSystems
-     *        Array of file system descriptions.
+     *        An array of file system descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,11 +143,11 @@ public class DescribeFileSystemsResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Array of file system descriptions.
+     * An array of file system descriptions.
      * </p>
      * 
      * @param fileSystems
-     *        Array of file system descriptions.
+     *        An array of file system descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

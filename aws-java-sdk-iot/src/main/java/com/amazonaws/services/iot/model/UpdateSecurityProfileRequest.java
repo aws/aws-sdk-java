@@ -46,6 +46,34 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     private java.util.Map<String, AlertTarget> alertTargets;
     /**
      * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * </p>
+     */
+    private java.util.List<String> additionalMetricsToRetain;
+    /**
+     * <p>
+     * If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are
+     * defined in the current invocation an exception occurs.
+     * </p>
+     */
+    private Boolean deleteBehaviors;
+    /**
+     * <p>
+     * If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code>
+     * are defined in the current invocation an exception occurs.
+     * </p>
+     */
+    private Boolean deleteAlertTargets;
+    /**
+     * <p>
+     * If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     * <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     * </p>
+     */
+    private Boolean deleteAdditionalMetricsToRetain;
+    /**
+     * <p>
      * The expected version of the security profile. A new version is generated whenever the security profile is
      * updated. If you specify a value that is different than the actual version, a
      * <code>VersionConflictException</code> is thrown.
@@ -266,6 +294,264 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * </p>
+     * 
+     * @return A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
+     *         the profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     */
+
+    public java.util.List<String> getAdditionalMetricsToRetain() {
+        return additionalMetricsToRetain;
+    }
+
+    /**
+     * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * </p>
+     * 
+     * @param additionalMetricsToRetain
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     */
+
+    public void setAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
+        if (additionalMetricsToRetain == null) {
+            this.additionalMetricsToRetain = null;
+            return;
+        }
+
+        this.additionalMetricsToRetain = new java.util.ArrayList<String>(additionalMetricsToRetain);
+    }
+
+    /**
+     * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalMetricsToRetain(java.util.Collection)} or
+     * {@link #withAdditionalMetricsToRetain(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalMetricsToRetain
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withAdditionalMetricsToRetain(String... additionalMetricsToRetain) {
+        if (this.additionalMetricsToRetain == null) {
+            setAdditionalMetricsToRetain(new java.util.ArrayList<String>(additionalMetricsToRetain.length));
+        }
+        for (String ele : additionalMetricsToRetain) {
+            this.additionalMetricsToRetain.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * </p>
+     * 
+     * @param additionalMetricsToRetain
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's <code>behaviors</code> but it is also retained for any metric specified here.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
+        setAdditionalMetricsToRetain(additionalMetricsToRetain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are
+     * defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @param deleteBehaviors
+     *        If true, delete all <code>behaviors</code> defined for this security profile. If any
+     *        <code>behaviors</code> are defined in the current invocation an exception occurs.
+     */
+
+    public void setDeleteBehaviors(Boolean deleteBehaviors) {
+        this.deleteBehaviors = deleteBehaviors;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are
+     * defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @return If true, delete all <code>behaviors</code> defined for this security profile. If any
+     *         <code>behaviors</code> are defined in the current invocation an exception occurs.
+     */
+
+    public Boolean getDeleteBehaviors() {
+        return this.deleteBehaviors;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are
+     * defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @param deleteBehaviors
+     *        If true, delete all <code>behaviors</code> defined for this security profile. If any
+     *        <code>behaviors</code> are defined in the current invocation an exception occurs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withDeleteBehaviors(Boolean deleteBehaviors) {
+        setDeleteBehaviors(deleteBehaviors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are
+     * defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @return If true, delete all <code>behaviors</code> defined for this security profile. If any
+     *         <code>behaviors</code> are defined in the current invocation an exception occurs.
+     */
+
+    public Boolean isDeleteBehaviors() {
+        return this.deleteBehaviors;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code>
+     * are defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @param deleteAlertTargets
+     *        If true, delete all <code>alertTargets</code> defined for this security profile. If any
+     *        <code>alertTargets</code> are defined in the current invocation an exception occurs.
+     */
+
+    public void setDeleteAlertTargets(Boolean deleteAlertTargets) {
+        this.deleteAlertTargets = deleteAlertTargets;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code>
+     * are defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @return If true, delete all <code>alertTargets</code> defined for this security profile. If any
+     *         <code>alertTargets</code> are defined in the current invocation an exception occurs.
+     */
+
+    public Boolean getDeleteAlertTargets() {
+        return this.deleteAlertTargets;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code>
+     * are defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @param deleteAlertTargets
+     *        If true, delete all <code>alertTargets</code> defined for this security profile. If any
+     *        <code>alertTargets</code> are defined in the current invocation an exception occurs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withDeleteAlertTargets(Boolean deleteAlertTargets) {
+        setDeleteAlertTargets(deleteAlertTargets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code>
+     * are defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @return If true, delete all <code>alertTargets</code> defined for this security profile. If any
+     *         <code>alertTargets</code> are defined in the current invocation an exception occurs.
+     */
+
+    public Boolean isDeleteAlertTargets() {
+        return this.deleteAlertTargets;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     * <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @param deleteAdditionalMetricsToRetain
+     *        If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     *        <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     */
+
+    public void setDeleteAdditionalMetricsToRetain(Boolean deleteAdditionalMetricsToRetain) {
+        this.deleteAdditionalMetricsToRetain = deleteAdditionalMetricsToRetain;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     * <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @return If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     *         <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     */
+
+    public Boolean getDeleteAdditionalMetricsToRetain() {
+        return this.deleteAdditionalMetricsToRetain;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     * <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @param deleteAdditionalMetricsToRetain
+     *        If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     *        <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withDeleteAdditionalMetricsToRetain(Boolean deleteAdditionalMetricsToRetain) {
+        setDeleteAdditionalMetricsToRetain(deleteAdditionalMetricsToRetain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     * <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     * </p>
+     * 
+     * @return If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any
+     *         <code>additionalMetricsToRetain</code> are defined in the current invocation an exception occurs.
+     */
+
+    public Boolean isDeleteAdditionalMetricsToRetain() {
+        return this.deleteAdditionalMetricsToRetain;
+    }
+
+    /**
+     * <p>
      * The expected version of the security profile. A new version is generated whenever the security profile is
      * updated. If you specify a value that is different than the actual version, a
      * <code>VersionConflictException</code> is thrown.
@@ -336,6 +622,14 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
             sb.append("Behaviors: ").append(getBehaviors()).append(",");
         if (getAlertTargets() != null)
             sb.append("AlertTargets: ").append(getAlertTargets()).append(",");
+        if (getAdditionalMetricsToRetain() != null)
+            sb.append("AdditionalMetricsToRetain: ").append(getAdditionalMetricsToRetain()).append(",");
+        if (getDeleteBehaviors() != null)
+            sb.append("DeleteBehaviors: ").append(getDeleteBehaviors()).append(",");
+        if (getDeleteAlertTargets() != null)
+            sb.append("DeleteAlertTargets: ").append(getDeleteAlertTargets()).append(",");
+        if (getDeleteAdditionalMetricsToRetain() != null)
+            sb.append("DeleteAdditionalMetricsToRetain: ").append(getDeleteAdditionalMetricsToRetain()).append(",");
         if (getExpectedVersion() != null)
             sb.append("ExpectedVersion: ").append(getExpectedVersion());
         sb.append("}");
@@ -368,6 +662,23 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getAlertTargets() != null && other.getAlertTargets().equals(this.getAlertTargets()) == false)
             return false;
+        if (other.getAdditionalMetricsToRetain() == null ^ this.getAdditionalMetricsToRetain() == null)
+            return false;
+        if (other.getAdditionalMetricsToRetain() != null && other.getAdditionalMetricsToRetain().equals(this.getAdditionalMetricsToRetain()) == false)
+            return false;
+        if (other.getDeleteBehaviors() == null ^ this.getDeleteBehaviors() == null)
+            return false;
+        if (other.getDeleteBehaviors() != null && other.getDeleteBehaviors().equals(this.getDeleteBehaviors()) == false)
+            return false;
+        if (other.getDeleteAlertTargets() == null ^ this.getDeleteAlertTargets() == null)
+            return false;
+        if (other.getDeleteAlertTargets() != null && other.getDeleteAlertTargets().equals(this.getDeleteAlertTargets()) == false)
+            return false;
+        if (other.getDeleteAdditionalMetricsToRetain() == null ^ this.getDeleteAdditionalMetricsToRetain() == null)
+            return false;
+        if (other.getDeleteAdditionalMetricsToRetain() != null
+                && other.getDeleteAdditionalMetricsToRetain().equals(this.getDeleteAdditionalMetricsToRetain()) == false)
+            return false;
         if (other.getExpectedVersion() == null ^ this.getExpectedVersion() == null)
             return false;
         if (other.getExpectedVersion() != null && other.getExpectedVersion().equals(this.getExpectedVersion()) == false)
@@ -384,6 +695,10 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getSecurityProfileDescription() == null) ? 0 : getSecurityProfileDescription().hashCode());
         hashCode = prime * hashCode + ((getBehaviors() == null) ? 0 : getBehaviors().hashCode());
         hashCode = prime * hashCode + ((getAlertTargets() == null) ? 0 : getAlertTargets().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalMetricsToRetain() == null) ? 0 : getAdditionalMetricsToRetain().hashCode());
+        hashCode = prime * hashCode + ((getDeleteBehaviors() == null) ? 0 : getDeleteBehaviors().hashCode());
+        hashCode = prime * hashCode + ((getDeleteAlertTargets() == null) ? 0 : getDeleteAlertTargets().hashCode());
+        hashCode = prime * hashCode + ((getDeleteAdditionalMetricsToRetain() == null) ? 0 : getDeleteAdditionalMetricsToRetain().hashCode());
         hashCode = prime * hashCode + ((getExpectedVersion() == null) ? 0 : getExpectedVersion().hashCode());
         return hashCode;
     }

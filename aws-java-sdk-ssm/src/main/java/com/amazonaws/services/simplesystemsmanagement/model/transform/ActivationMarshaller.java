@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.simplesystemsmanagement.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +46,8 @@ public class ActivationMarshaller {
             .marshallLocationName("Expired").build();
     private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final ActivationMarshaller instance = new ActivationMarshaller();
 
@@ -71,6 +74,7 @@ public class ActivationMarshaller {
             protocolMarshaller.marshall(activation.getExpirationDate(), EXPIRATIONDATE_BINDING);
             protocolMarshaller.marshall(activation.getExpired(), EXPIRED_BINDING);
             protocolMarshaller.marshall(activation.getCreatedDate(), CREATEDDATE_BINDING);
+            protocolMarshaller.marshall(activation.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

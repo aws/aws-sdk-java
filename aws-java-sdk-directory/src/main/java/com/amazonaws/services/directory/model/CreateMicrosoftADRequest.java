@@ -68,6 +68,12 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String edition;
+    /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -354,6 +360,79 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @return The tags to be assigned to the AWS Managed Microsoft AD directory.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the AWS Managed Microsoft AD directory.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMicrosoftADRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be assigned to the AWS Managed Microsoft AD directory.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateMicrosoftADRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +455,9 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getVpcSettings() != null)
             sb.append("VpcSettings: ").append(getVpcSettings()).append(",");
         if (getEdition() != null)
-            sb.append("Edition: ").append(getEdition());
+            sb.append("Edition: ").append(getEdition()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -415,6 +496,10 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEdition() != null && other.getEdition().equals(this.getEdition()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -429,6 +514,7 @@ public class CreateMicrosoftADRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVpcSettings() == null) ? 0 : getVpcSettings().hashCode());
         hashCode = prime * hashCode + ((getEdition() == null) ? 0 : getEdition().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

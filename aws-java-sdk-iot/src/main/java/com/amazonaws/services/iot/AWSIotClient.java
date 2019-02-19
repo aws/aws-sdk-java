@@ -839,7 +839,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Attaches the specified principal to the specified thing.
+     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users,
+     * groups, and roles, Amazon Cognito identities or federated identities.
      * </p>
      * 
      * @param attachThingPrincipalRequest
@@ -5177,7 +5178,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Detaches the specified principal from the specified thing.
+     * Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users,
+     * groups, and roles, Amazon Cognito identities or federated identities.
      * </p>
      * <note>
      * <p>
@@ -7145,7 +7147,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Lists the things associated with the specified principal.
+     * Lists the things associated with the specified principal. A principal can be X.509 certificates, IAM users,
+     * groups, and roles, Amazon Cognito identities or federated identities.
      * </p>
      * 
      * @param listPrincipalThingsRequest
@@ -7797,7 +7800,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Lists the principals associated with the specified thing.
+     * Lists the principals associated with the specified thing. A principal can be X.509 certificates, IAM users,
+     * groups, and roles, Amazon Cognito identities or federated identities.
      * </p>
      * 
      * @param listThingPrincipalsRequest

@@ -42,13 +42,13 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
     private String mountTargetId;
     /**
      * <p>
-     * ID of the file system for which the mount target is intended.
+     * The ID of the file system for which the mount target is intended.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * ID of the mount target's subnet.
+     * The ID of the mount target's subnet.
      * </p>
      */
     private String subnetId;
@@ -66,7 +66,7 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
     private String ipAddress;
     /**
      * <p>
-     * ID of the network interface that Amazon EFS created when it created the mount target.
+     * The ID of the network interface that Amazon EFS created when it created the mount target.
      * </p>
      */
     private String networkInterfaceId;
@@ -153,11 +153,11 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the file system for which the mount target is intended.
+     * The ID of the file system for which the mount target is intended.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system for which the mount target is intended.
+     *        The ID of the file system for which the mount target is intended.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -166,10 +166,10 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the file system for which the mount target is intended.
+     * The ID of the file system for which the mount target is intended.
      * </p>
      * 
-     * @return ID of the file system for which the mount target is intended.
+     * @return The ID of the file system for which the mount target is intended.
      */
 
     public String getFileSystemId() {
@@ -178,11 +178,11 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the file system for which the mount target is intended.
+     * The ID of the file system for which the mount target is intended.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system for which the mount target is intended.
+     *        The ID of the file system for which the mount target is intended.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the mount target's subnet.
+     * The ID of the mount target's subnet.
      * </p>
      * 
      * @param subnetId
-     *        ID of the mount target's subnet.
+     *        The ID of the mount target's subnet.
      */
 
     public void setSubnetId(String subnetId) {
@@ -206,10 +206,10 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the mount target's subnet.
+     * The ID of the mount target's subnet.
      * </p>
      * 
-     * @return ID of the mount target's subnet.
+     * @return The ID of the mount target's subnet.
      */
 
     public String getSubnetId() {
@@ -218,11 +218,11 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the mount target's subnet.
+     * The ID of the mount target's subnet.
      * </p>
      * 
      * @param subnetId
-     *        ID of the mount target's subnet.
+     *        The ID of the mount target's subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,11 +346,11 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the network interface that Amazon EFS created when it created the mount target.
+     * The ID of the network interface that Amazon EFS created when it created the mount target.
      * </p>
      * 
      * @param networkInterfaceId
-     *        ID of the network interface that Amazon EFS created when it created the mount target.
+     *        The ID of the network interface that Amazon EFS created when it created the mount target.
      */
 
     public void setNetworkInterfaceId(String networkInterfaceId) {
@@ -359,10 +359,10 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the network interface that Amazon EFS created when it created the mount target.
+     * The ID of the network interface that Amazon EFS created when it created the mount target.
      * </p>
      * 
-     * @return ID of the network interface that Amazon EFS created when it created the mount target.
+     * @return The ID of the network interface that Amazon EFS created when it created the mount target.
      */
 
     public String getNetworkInterfaceId() {
@@ -371,11 +371,11 @@ public class MountTargetDescription implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * ID of the network interface that Amazon EFS created when it created the mount target.
+     * The ID of the network interface that Amazon EFS created when it created the mount target.
      * </p>
      * 
      * @param networkInterfaceId
-     *        ID of the network interface that Amazon EFS created when it created the mount target.
+     *        The ID of the network interface that Amazon EFS created when it created the mount target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,3 +1,20 @@
+# __1.11.502__ __2019-02-19__
+## __AWS Directory Service__
+  - ### Features
+    - This release adds support for tags during directory creation (CreateDirectory, CreateMicrosoftAd, ConnectDirectory).
+
+## __AWS IoT__
+  - ### Features
+    - AWS IoT - AWS IoT Device Defender adds support for configuring behaviors in a security profile with statistical thresholds. Device Defender also adds support for configuring multiple data-point evaluations before a violation is either created or cleared.
+
+## __Amazon Elastic File System__
+  - ### Features
+    - Amazon EFS now supports adding tags to file system resources as part of the CreateFileSystem API . Using this capability, customers can now more easily enforce tag-based authorization for EFS file system resources.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - AWS Systems Manager now supports adding tags when creating Activations, Patch Baselines, Documents, Parameters, and Maintenance Windows
+
 # __1.11.501__ __2019-02-18__
 ## __AWS Secrets Manager__
   - ### Features

@@ -28,18 +28,18 @@ public class DeleteMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the mount target to delete (String).
+     * The ID of the mount target to delete (String).
      * </p>
      */
     private String mountTargetId;
 
     /**
      * <p>
-     * ID of the mount target to delete (String).
+     * The ID of the mount target to delete (String).
      * </p>
      * 
      * @param mountTargetId
-     *        ID of the mount target to delete (String).
+     *        The ID of the mount target to delete (String).
      */
 
     public void setMountTargetId(String mountTargetId) {
@@ -48,10 +48,10 @@ public class DeleteMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the mount target to delete (String).
+     * The ID of the mount target to delete (String).
      * </p>
      * 
-     * @return ID of the mount target to delete (String).
+     * @return The ID of the mount target to delete (String).
      */
 
     public String getMountTargetId() {
@@ -60,11 +60,11 @@ public class DeleteMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the mount target to delete (String).
+     * The ID of the mount target to delete (String).
      * </p>
      * 
      * @param mountTargetId
-     *        ID of the mount target to delete (String).
+     *        The ID of the mount target to delete (String).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

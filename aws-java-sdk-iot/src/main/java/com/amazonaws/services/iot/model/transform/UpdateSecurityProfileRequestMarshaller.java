@@ -37,6 +37,14 @@ public class UpdateSecurityProfileRequestMarshaller {
             .marshallLocationName("behaviors").build();
     private static final MarshallingInfo<Map> ALERTTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("alertTargets").build();
+    private static final MarshallingInfo<List> ADDITIONALMETRICSTORETAIN_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("additionalMetricsToRetain").build();
+    private static final MarshallingInfo<Boolean> DELETEBEHAVIORS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deleteBehaviors").build();
+    private static final MarshallingInfo<Boolean> DELETEALERTTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deleteAlertTargets").build();
+    private static final MarshallingInfo<Boolean> DELETEADDITIONALMETRICSTORETAIN_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deleteAdditionalMetricsToRetain").build();
     private static final MarshallingInfo<Long> EXPECTEDVERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("expectedVersion").build();
 
@@ -60,6 +68,10 @@ public class UpdateSecurityProfileRequestMarshaller {
             protocolMarshaller.marshall(updateSecurityProfileRequest.getSecurityProfileDescription(), SECURITYPROFILEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateSecurityProfileRequest.getBehaviors(), BEHAVIORS_BINDING);
             protocolMarshaller.marshall(updateSecurityProfileRequest.getAlertTargets(), ALERTTARGETS_BINDING);
+            protocolMarshaller.marshall(updateSecurityProfileRequest.getAdditionalMetricsToRetain(), ADDITIONALMETRICSTORETAIN_BINDING);
+            protocolMarshaller.marshall(updateSecurityProfileRequest.getDeleteBehaviors(), DELETEBEHAVIORS_BINDING);
+            protocolMarshaller.marshall(updateSecurityProfileRequest.getDeleteAlertTargets(), DELETEALERTTARGETS_BINDING);
+            protocolMarshaller.marshall(updateSecurityProfileRequest.getDeleteAdditionalMetricsToRetain(), DELETEADDITIONALMETRICSTORETAIN_BINDING);
             protocolMarshaller.marshall(updateSecurityProfileRequest.getExpectedVersion(), EXPECTEDVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

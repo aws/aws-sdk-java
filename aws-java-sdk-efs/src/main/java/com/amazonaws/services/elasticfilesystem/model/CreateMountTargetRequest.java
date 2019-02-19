@@ -28,13 +28,13 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the file system for which to create the mount target.
+     * The ID of the file system for which to create the mount target.
      * </p>
      */
     private String fileSystemId;
     /**
      * <p>
-     * ID of the subnet to add the mount target in.
+     * The ID of the subnet to add the mount target in.
      * </p>
      */
     private String subnetId;
@@ -54,11 +54,11 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the file system for which to create the mount target.
+     * The ID of the file system for which to create the mount target.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system for which to create the mount target.
+     *        The ID of the file system for which to create the mount target.
      */
 
     public void setFileSystemId(String fileSystemId) {
@@ -67,10 +67,10 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the file system for which to create the mount target.
+     * The ID of the file system for which to create the mount target.
      * </p>
      * 
-     * @return ID of the file system for which to create the mount target.
+     * @return The ID of the file system for which to create the mount target.
      */
 
     public String getFileSystemId() {
@@ -79,11 +79,11 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the file system for which to create the mount target.
+     * The ID of the file system for which to create the mount target.
      * </p>
      * 
      * @param fileSystemId
-     *        ID of the file system for which to create the mount target.
+     *        The ID of the file system for which to create the mount target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the subnet to add the mount target in.
+     * The ID of the subnet to add the mount target in.
      * </p>
      * 
      * @param subnetId
-     *        ID of the subnet to add the mount target in.
+     *        The ID of the subnet to add the mount target in.
      */
 
     public void setSubnetId(String subnetId) {
@@ -107,10 +107,10 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the subnet to add the mount target in.
+     * The ID of the subnet to add the mount target in.
      * </p>
      * 
-     * @return ID of the subnet to add the mount target in.
+     * @return The ID of the subnet to add the mount target in.
      */
 
     public String getSubnetId() {
@@ -119,11 +119,11 @@ public class CreateMountTargetRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * ID of the subnet to add the mount target in.
+     * The ID of the subnet to add the mount target in.
      * </p>
      * 
      * @param subnetId
-     *        ID of the subnet to add the mount target in.
+     *        The ID of the subnet to add the mount target in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

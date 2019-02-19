@@ -18,7 +18,7 @@ import javax.annotation.Generated;
  * <p>
  * The calling account has reached the limit for elastic network interfaces for the specific AWS Region. The client
  * should try to delete some elastic network interfaces or get the account limit raised. For more information, see <a
- * href="http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a> in the
+ * href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">Amazon VPC Limits</a> in the
  * <i>Amazon VPC User Guide </i> (see the Network interfaces per VPC entry in the table).
  * </p>
  */

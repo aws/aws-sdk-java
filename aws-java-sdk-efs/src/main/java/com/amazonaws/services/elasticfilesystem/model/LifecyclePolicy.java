@@ -30,7 +30,7 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition to the IA storage class. Currently, the only possible
+     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
      * value is <code>AFTER_30_DAYS</code>.
      * </p>
      * <p>
@@ -43,7 +43,7 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition to the IA storage class. Currently, the only possible
+     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
      * value is <code>AFTER_30_DAYS</code>.
      * </p>
      * <p>
@@ -53,8 +53,8 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param transitionToIA
-     *        A value that indicates how long it takes to transition to the IA storage class. Currently, the only
-     *        possible value is <code>AFTER_30_DAYS</code>.</p>
+     *        A value that indicates how long it takes to transition files to the IA storage class. Currently, the only
+     *        valid value is <code>AFTER_30_DAYS</code>.</p>
      *        <p>
      *        <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
      *        transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing
@@ -68,7 +68,7 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition to the IA storage class. Currently, the only possible
+     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
      * value is <code>AFTER_30_DAYS</code>.
      * </p>
      * <p>
@@ -77,8 +77,8 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
      * contents of a directory don't count as a file access event.
      * </p>
      * 
-     * @return A value that indicates how long it takes to transition to the IA storage class. Currently, the only
-     *         possible value is <code>AFTER_30_DAYS</code>.</p>
+     * @return A value that indicates how long it takes to transition files to the IA storage class. Currently, the only
+     *         valid value is <code>AFTER_30_DAYS</code>.</p>
      *         <p>
      *         <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
      *         transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing
@@ -92,7 +92,7 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition to the IA storage class. Currently, the only possible
+     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
      * value is <code>AFTER_30_DAYS</code>.
      * </p>
      * <p>
@@ -102,8 +102,8 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param transitionToIA
-     *        A value that indicates how long it takes to transition to the IA storage class. Currently, the only
-     *        possible value is <code>AFTER_30_DAYS</code>.</p>
+     *        A value that indicates how long it takes to transition files to the IA storage class. Currently, the only
+     *        valid value is <code>AFTER_30_DAYS</code>.</p>
      *        <p>
      *        <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
      *        transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing
@@ -119,7 +119,7 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A value that indicates how long it takes to transition to the IA storage class. Currently, the only possible
+     * A value that indicates how long it takes to transition files to the IA storage class. Currently, the only valid
      * value is <code>AFTER_30_DAYS</code>.
      * </p>
      * <p>
@@ -129,8 +129,8 @@ public class LifecyclePolicy implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param transitionToIA
-     *        A value that indicates how long it takes to transition to the IA storage class. Currently, the only
-     *        possible value is <code>AFTER_30_DAYS</code>.</p>
+     *        A value that indicates how long it takes to transition files to the IA storage class. Currently, the only
+     *        valid value is <code>AFTER_30_DAYS</code>.</p>
      *        <p>
      *        <code>AFTER_30_DAYS</code> indicates files that have not been read from or written to for 30 days are
      *        transitioned from the Standard storage class to the IA storage class. Metadata operations such as listing
