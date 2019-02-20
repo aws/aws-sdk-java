@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The repository does not contain any pull requests with that pull request ID. Check to make sure you have provided the
- * correct repository name for the pull request.
+ * The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify the correct
+ * repository name for the pull request ID.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

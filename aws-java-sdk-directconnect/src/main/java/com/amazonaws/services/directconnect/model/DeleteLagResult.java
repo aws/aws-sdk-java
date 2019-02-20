@@ -93,6 +93,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <code>deleted</code>: The LAG is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the LAG is not available.
+     * </p>
+     * </li>
      * </ul>
      */
     private String lagState;
@@ -393,6 +398,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <code>deleted</code>: The LAG is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the LAG is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param lagState
@@ -427,6 +437,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *        <li>
      *        <p>
      *        <code>deleted</code>: The LAG is deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the LAG is not available.
      *        </p>
      *        </li>
      * @see LagState
@@ -472,6 +487,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <code>deleted</code>: The LAG is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the LAG is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The state of the LAG. The following are the possible values:</p>
@@ -505,6 +525,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *         <li>
      *         <p>
      *         <code>deleted</code>: The LAG is deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unknown</code>: The state of the LAG is not available.
      *         </p>
      *         </li>
      * @see LagState
@@ -550,6 +575,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <code>deleted</code>: The LAG is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the LAG is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param lagState
@@ -584,6 +614,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *        <li>
      *        <p>
      *        <code>deleted</code>: The LAG is deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the LAG is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -631,6 +666,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <code>deleted</code>: The LAG is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the LAG is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param lagState
@@ -665,6 +705,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *        <li>
      *        <p>
      *        <code>deleted</code>: The LAG is deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the LAG is not available.
      *        </p>
      *        </li>
      * @see LagState
@@ -710,6 +755,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <code>deleted</code>: The LAG is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the LAG is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param lagState
@@ -744,6 +794,11 @@ public class DeleteLagResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *        <li>
      *        <p>
      *        <code>deleted</code>: The LAG is deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the LAG is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -123,6 +123,11 @@
  * <ul>
  * <li>
  * <p>
+ * <a>CreateCommit</a>, which creates a commit for changes to a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
  * </p>
  * </li>

@@ -27,7 +27,8 @@ public enum ConnectionState {
     Down("down"),
     Deleting("deleting"),
     Deleted("deleted"),
-    Rejected("rejected");
+    Rejected("rejected"),
+    Unknown("unknown");
 
     private String value;
 

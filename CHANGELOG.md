@@ -1,3 +1,16 @@
+# __1.11.503__ __2019-02-20__
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds an API for adding / updating / deleting / copying / moving / setting file modes for one or more files directly to an AWS CodeCommit repository without requiring a Git client.
+
+## __AWS Direct Connect__
+  - ### Features
+    - Documentation updates for AWS Direct Connect
+
+## __AWS Elemental MediaLive__
+  - ### Features
+    - This release adds support for VPC inputs, allowing you to push content from your Amazon VPC directly to MediaLive.
+
 # __1.11.502__ __2019-02-19__
 ## __AWS Directory Service__
   - ### Features

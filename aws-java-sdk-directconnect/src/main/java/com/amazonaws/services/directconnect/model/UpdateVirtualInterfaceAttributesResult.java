@@ -158,6 +158,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      * enters the <code>Rejected</code> state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.
+     * </p>
+     * </li>
      * </ul>
      */
     private String virtualInterfaceState;
@@ -822,6 +827,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      * enters the <code>Rejected</code> state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param virtualInterfaceState
@@ -873,6 +883,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      *        <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a
      *        virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the
      *        virtual interface enters the <code>Rejected</code> state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the virtual interface is not available.
      *        </p>
      *        </li>
      * @see VirtualInterfaceState
@@ -935,6 +950,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      * enters the <code>Rejected</code> state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The state of the virtual interface. The following are the possible values:</p>
@@ -985,6 +1005,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      *         <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a
      *         virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the
      *         virtual interface enters the <code>Rejected</code> state.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unknown</code>: The state of the virtual interface is not available.
      *         </p>
      *         </li>
      * @see VirtualInterfaceState
@@ -1047,6 +1072,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      * enters the <code>Rejected</code> state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param virtualInterfaceState
@@ -1098,6 +1128,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      *        <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a
      *        virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the
      *        virtual interface enters the <code>Rejected</code> state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the virtual interface is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1162,6 +1197,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      * enters the <code>Rejected</code> state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param virtualInterfaceState
@@ -1213,6 +1253,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      *        <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a
      *        virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the
      *        virtual interface enters the <code>Rejected</code> state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the virtual interface is not available.
      *        </p>
      *        </li>
      * @see VirtualInterfaceState
@@ -1275,6 +1320,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      * enters the <code>Rejected</code> state.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the virtual interface is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param virtualInterfaceState
@@ -1326,6 +1376,11 @@ public class UpdateVirtualInterfaceAttributesResult extends com.amazonaws.Amazon
      *        <code>rejected</code>: The virtual interface owner has declined creation of the virtual interface. If a
      *        virtual interface in the <code>Confirming</code> state is deleted by the virtual interface owner, the
      *        virtual interface enters the <code>Rejected</code> state.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the virtual interface is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

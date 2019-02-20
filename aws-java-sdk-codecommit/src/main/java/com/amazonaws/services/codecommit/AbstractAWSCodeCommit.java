@@ -48,6 +48,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public CreateCommitResult createCommit(CreateCommitRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePullRequestResult createPullRequest(CreatePullRequestRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -16,10 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified file is in a folder that exceeds the folder content size limit. Either save the file in a folder that
- * has less content, or remove files or subfolders from the folder so it does not exceed the size limit. For more
- * information about limits in AWS CodeCommit, see <a
- * href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+ * The commit cannot be created because at least one of the overall changes in the commit result in a folder contents
+ * exceeding the limit of 6 MB. Either reduce the number and size of your changes, or split the changes across multiple
+ * folders.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

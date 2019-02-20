@@ -92,6 +92,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      * state if it is deleted by the customer.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the connection is not available.
+     * </p>
+     * </li>
      * </ul>
      */
     private String connectionState;
@@ -330,6 +335,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      * state if it is deleted by the customer.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the connection is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionState
@@ -377,6 +387,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the
      *        <code>rejected</code> state if it is deleted by the customer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the connection is not available.
      *        </p>
      *        </li>
      * @see ConnectionState
@@ -434,6 +449,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      * state if it is deleted by the customer.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the connection is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The state of the connection. The following are the possible values:</p>
@@ -480,6 +500,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      *         <p>
      *         <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the
      *         <code>rejected</code> state if it is deleted by the customer.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unknown</code>: The state of the connection is not available.
      *         </p>
      *         </li>
      * @see ConnectionState
@@ -537,6 +562,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      * state if it is deleted by the customer.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the connection is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionState
@@ -584,6 +614,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the
      *        <code>rejected</code> state if it is deleted by the customer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the connection is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -643,6 +678,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      * state if it is deleted by the customer.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the connection is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionState
@@ -690,6 +730,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the
      *        <code>rejected</code> state if it is deleted by the customer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the connection is not available.
      *        </p>
      *        </li>
      * @see ConnectionState
@@ -747,6 +792,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      * state if it is deleted by the customer.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the connection is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionState
@@ -794,6 +844,11 @@ public class AllocateHostedConnectionResult extends com.amazonaws.AmazonWebServi
      *        <p>
      *        <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters the
      *        <code>rejected</code> state if it is deleted by the customer.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the connection is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

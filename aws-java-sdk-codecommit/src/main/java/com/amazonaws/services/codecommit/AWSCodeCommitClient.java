@@ -161,6 +161,11 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * <ul>
  * <li>
  * <p>
+ * <a>CreateCommit</a>, which creates a commit for changes to a repository.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetBlob</a>, which returns the base-64 encoded content of an individual Git blob object within a repository.
  * </p>
  * </li>
@@ -401,6 +406,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerEventsListRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.RepositoryTriggerEventsListRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileModeRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.FileModeRequiredException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommitDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommitDoesNotExistException.class))
                     .addErrorMetadata(
@@ -500,6 +508,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("IdempotencyParameterMismatchException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.IdempotencyParameterMismatchException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoChangeException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.NoChangeException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDescriptionException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidDescriptionException.class))
                     .addErrorMetadata(
@@ -521,11 +532,11 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("PullRequestIdRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.PullRequestIdRequiredException.class))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNameExistsException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryNameExistsException.class))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("FileDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.FileDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNameExistsException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.RepositoryNameExistsException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PathDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.PathDoesNotExistException.class))
@@ -563,6 +574,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeletionParameterException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidDeletionParameterException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SourceFileOrContentRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.SourceFileOrContentRequiredException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommentIdRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommentIdRequiredException.class))
                     .addErrorMetadata(
@@ -580,6 +594,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CommitRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.CommitRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumFileEntriesExceededException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.MaximumFileEntriesExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClientRequestTokenRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException.class))
@@ -599,17 +616,29 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("TargetRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.TargetRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RestrictedSourceFileException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.RestrictedSourceFileException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("FileTooLargeException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.FileTooLargeException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ManualMergeRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.ManualMergeRequiredException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PutFileEntryConflictException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.PutFileEntryConflictException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerBranchNameException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileContentAndSourceFileSpecifiedException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.FileContentAndSourceFileSpecifiedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PullRequestStatusRequiredException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SamePathRequestException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.SamePathRequestException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TipsDivergenceExceededException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.TipsDivergenceExceededException.class))
@@ -637,6 +666,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ParentCommitDoesNotExistException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FileEntryRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.FileEntryRequiredException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidActorArnException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidActorArnException.class))
@@ -1034,6 +1066,164 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateBranchResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBranchResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a commit for a repository on the tip of a specified branch.
+     * </p>
+     * 
+     * @param createCommitRequest
+     * @return Result of the CreateCommit operation returned by the service.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws ParentCommitIdRequiredException
+     *         A parent commit ID is required. To view the full commit ID of a branch in a repository, use
+     *         <a>GetBranch</a> or a Git command (for example, git pull or git log).
+     * @throws InvalidParentCommitIdException
+     *         The parent commit ID is not valid. The commit ID cannot be empty, and must match the head commit ID for
+     *         the branch of the repository where you want to add or update a file.
+     * @throws ParentCommitDoesNotExistException
+     *         The parent commit ID is not valid because it does not exist. The specified parent commit ID does not
+     *         exist in the specified branch of the repository.
+     * @throws ParentCommitIdOutdatedException
+     *         The file could not be added because the provided parent commit ID is not the current tip of the specified
+     *         branch. To view the full commit ID of the current head of the branch, use <a>GetBranch</a>.
+     * @throws BranchNameRequiredException
+     *         A branch name is required but was not specified.
+     * @throws InvalidBranchNameException
+     *         The specified reference name is not valid.
+     * @throws BranchDoesNotExistException
+     *         The specified branch does not exist.
+     * @throws BranchNameIsTagNameException
+     *         The specified branch name is not valid because it is a tag name. Type the name of a current branch in the
+     *         repository. For a list of valid branch names, use <a>ListBranches</a>.
+     * @throws FileEntryRequiredException
+     *         The commit cannot be created because no files have been specified as added, updated, or changed (PutFile
+     *         or DeleteFile) for the commit.
+     * @throws MaximumFileEntriesExceededException
+     *         The number of specified files to change as part of this commit exceeds the maximum number of files that
+     *         can be changed in a single commit. Consider using a Git client for these changes.
+     * @throws PutFileEntryConflictException
+     *         The commit cannot be created because one or more files specified in the commit reference both a file and
+     *         a folder.
+     * @throws SourceFileOrContentRequiredException
+     *         The commit cannot be created because no source files or file content have been specified for the commit.
+     * @throws FileContentAndSourceFileSpecifiedException
+     *         The commit cannot be created because both a source file and file content have been specified for the same
+     *         file. You cannot provide both. Either specify a source file, or provide the file content directly.
+     * @throws PathRequiredException
+     *         The folderPath for a location cannot be null.
+     * @throws InvalidPathException
+     *         The specified path is not valid.
+     * @throws SamePathRequestException
+     *         The commit cannot be created because one or more changes in this commit duplicate actions in the same
+     *         file path. For example, you cannot make the same delete request to the same file in the same file path
+     *         twice, or make a delete request and a move request to the same file as part of the same commit.
+     * @throws FileDoesNotExistException
+     *         The specified file does not exist. Verify that you have provided the correct name of the file, including
+     *         its full path and extension.
+     * @throws FileContentSizeLimitExceededException
+     *         The file cannot be added because it is too large. The maximum file size that can be added using PutFile
+     *         is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git
+     *         client.
+     * @throws FolderContentSizeLimitExceededException
+     *         The commit cannot be created because at least one of the overall changes in the commit result in a folder
+     *         contents exceeding the limit of 6 MB. Either reduce the number and size of your changes, or split the
+     *         changes across multiple folders.
+     * @throws InvalidDeletionParameterException
+     *         The specified deletion parameter is not valid.
+     * @throws RestrictedSourceFileException
+     *         The commit cannot be created because one of the changes specifies copying or moving a .gitkeep file.
+     * @throws FileModeRequiredException
+     *         The commit cannot be created because a file mode is required to update mode permissions for an existing
+     *         file, but no file mode has been specified.
+     * @throws InvalidFileModeException
+     *         The specified file mode permission is not valid. For a list of valid file mode permissions, see
+     *         <a>PutFile</a>.
+     * @throws NameLengthExceededException
+     *         The user name is not valid because it has exceeded the character limit for file names. File names,
+     *         including the path to the file, cannot exceed the character limit.
+     * @throws InvalidEmailException
+     *         The specified email address either contains one or more characters that are not allowed, or it exceeds
+     *         the maximum number of characters allowed for an email address.
+     * @throws CommitMessageLengthExceededException
+     *         The commit message is too long. Provide a shorter string.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @throws NoChangeException
+     *         The commit cannot be created because no changes will be made to the repository as a result of this
+     *         commit. A commit must contain at least one change.
+     * @throws FileNameConflictsWithDirectoryNameException
+     *         A file cannot be added to the repository because the specified file name has the same name as a directory
+     *         in this repository. Either provide another name for the file, or add the file in a directory that does
+     *         not match the file name.
+     * @throws DirectoryNameConflictsWithFileNameException
+     *         A file cannot be added to the repository because the specified path name has the same name as a file that
+     *         already exists in this repository. Either provide a different name for the file, or specify a different
+     *         path for the file.
+     * @throws FilePathConflictsWithSubmodulePathException
+     *         The commit cannot be created because a specified file path points to a submodule. Verify that the
+     *         destination files have valid file paths that do not point to a submodule.
+     * @sample AWSCodeCommit.CreateCommit
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateCommit" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateCommitResult createCommit(CreateCommitRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCommit(request);
+    }
+
+    @SdkInternalApi
+    final CreateCommitResult executeCreateCommit(CreateCommitRequest createCommitRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCommitRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCommitRequest> request = null;
+        Response<CreateCommitResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCommitRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCommitRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCommit");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCommitResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCommitResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1995,8 +2185,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws InvalidContinuationTokenException
      *         The specified continuation token is not valid.
      * @throws RepositoryNotAssociatedWithPullRequestException
-     *         The repository does not contain any pull requests with that pull request ID. Check to make sure you have
-     *         provided the correct repository name for the pull request.
+     *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
+     *         the correct repository name for the pull request ID.
      * @throws EncryptionIntegrityChecksFailedException
      *         An encryption integrity check failed.
      * @throws EncryptionKeyAccessDeniedException
@@ -2960,9 +3150,6 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         The specified reference does not exist. You must provide a full commit ID.
      * @throws InvalidCommitIdException
      *         The specified commit ID is not valid.
-     * @throws RepositoryNotAssociatedWithPullRequestException
-     *         The repository does not contain any pull requests with that pull request ID. Check to make sure you have
-     *         provided the correct repository name for the pull request.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws InvalidRepositoryNameException
@@ -3159,8 +3346,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      * @throws PullRequestIdRequiredException
      *         A pull request ID is required, but none was provided.
      * @throws RepositoryNotAssociatedWithPullRequestException
-     *         The repository does not contain any pull requests with that pull request ID. Check to make sure you have
-     *         provided the correct repository name for the pull request.
+     *         The repository does not contain any pull requests with that pull request ID. Use GetPullRequest to verify
+     *         the correct repository name for the pull request ID.
      * @throws RepositoryNameRequiredException
      *         A repository name is required but was not specified.
      * @throws RepositoryDoesNotExistException
@@ -3376,12 +3563,12 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         API.
      * @throws FileContentSizeLimitExceededException
      *         The file cannot be added because it is too large. The maximum file size that can be added using PutFile
-     *         is 6 MB. For files larger than 6 MB but smaller than 2 GB, add them using a Git client.
+     *         is 6 MB, and the combined file content change size is 7 MB. Consider making these changes using a Git
+     *         client.
      * @throws FolderContentSizeLimitExceededException
-     *         The specified file is in a folder that exceeds the folder content size limit. Either save the file in a
-     *         folder that has less content, or remove files or subfolders from the folder so it does not exceed the
-     *         size limit. For more information about limits in AWS CodeCommit, see <a
-     *         href="http://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">AWS CodeCommit User Guide</a>.
+     *         The commit cannot be created because at least one of the overall changes in the commit result in a folder
+     *         contents exceeding the limit of 6 MB. Either reduce the number and size of your changes, or split the
+     *         changes across multiple folders.
      * @throws PathRequiredException
      *         The folderPath for a location cannot be null.
      * @throws InvalidPathException
@@ -3430,9 +3617,8 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
      *         already exists in this repository. Either provide a different name for the file, or specify a different
      *         path for the file.
      * @throws FilePathConflictsWithSubmodulePathException
-     *         The specified file path or folder has the same path as a submodule in this repository. Either provide a
-     *         different name for the file, or save the file in a directory that does not conflict with the submodule
-     *         path.
+     *         The commit cannot be created because a specified file path points to a submodule. Verify that the
+     *         destination files have valid file paths that do not point to a submodule.
      * @sample AWSCodeCommit.PutFile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/PutFile" target="_top">AWS API
      *      Documentation</a>

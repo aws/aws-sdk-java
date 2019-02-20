@@ -54,6 +54,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateCommitResult> createCommitAsync(CreateCommitRequest request) {
+
+        return createCommitAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCommitResult> createCommitAsync(CreateCommitRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateCommitRequest, CreateCommitResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePullRequestResult> createPullRequestAsync(CreatePullRequestRequest request) {
 
         return createPullRequestAsync(request, null);

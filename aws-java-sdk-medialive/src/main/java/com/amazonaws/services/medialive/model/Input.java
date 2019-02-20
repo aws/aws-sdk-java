@@ -40,7 +40,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /** The Amazon Resource Name (ARN) of the role this input assumes during and after creation. */
     private String roleArn;
-    /** A list of IDs for all the security groups attached to the input. */
+    /** A list of IDs for all the Input Security Groups attached to the input. */
     private java.util.List<String> securityGroups;
     /** A list of the sources of the input (PULL-type). */
     private java.util.List<InputSource> sources;
@@ -378,9 +378,9 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A list of IDs for all the security groups attached to the input.
+     * A list of IDs for all the Input Security Groups attached to the input.
      * 
-     * @return A list of IDs for all the security groups attached to the input.
+     * @return A list of IDs for all the Input Security Groups attached to the input.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -388,10 +388,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A list of IDs for all the security groups attached to the input.
+     * A list of IDs for all the Input Security Groups attached to the input.
      * 
      * @param securityGroups
-     *        A list of IDs for all the security groups attached to the input.
+     *        A list of IDs for all the Input Security Groups attached to the input.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -404,7 +404,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A list of IDs for all the security groups attached to the input.
+     * A list of IDs for all the Input Security Groups attached to the input.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -412,7 +412,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroups
-     *        A list of IDs for all the security groups attached to the input.
+     *        A list of IDs for all the Input Security Groups attached to the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -427,10 +427,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * A list of IDs for all the security groups attached to the input.
+     * A list of IDs for all the Input Security Groups attached to the input.
      * 
      * @param securityGroups
-     *        A list of IDs for all the security groups attached to the input.
+     *        A list of IDs for all the Input Security Groups attached to the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

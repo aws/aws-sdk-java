@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum BGPStatus {
 
     Up("up"),
-    Down("down");
+    Down("down"),
+    Unknown("unknown");
 
     private String value;
 

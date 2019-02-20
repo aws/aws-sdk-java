@@ -54,6 +54,8 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     private String type;
 
+    private InputVpcRequest vpc;
+
     /**
      * Destination settings for PUSH type inputs.
      * 
@@ -526,6 +528,32 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * @param vpc
+     */
+
+    public void setVpc(InputVpcRequest vpc) {
+        this.vpc = vpc;
+    }
+
+    /**
+     * @return
+     */
+
+    public InputVpcRequest getVpc() {
+        return this.vpc;
+    }
+
+    /**
+     * @param vpc
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInputRequest withVpc(InputVpcRequest vpc) {
+        setVpc(vpc);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -554,7 +582,9 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getVpc() != null)
+            sb.append("Vpc: ").append(getVpc());
         sb.append("}");
         return sb.toString();
     }
@@ -605,6 +635,10 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getVpc() == null ^ this.getVpc() == null)
+            return false;
+        if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
+            return false;
         return true;
     }
 
@@ -622,6 +656,7 @@ public class CreateInputRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
         return hashCode;
     }
 

@@ -33,6 +33,8 @@ public class InputDestinationMarshaller {
             .marshallLocationName("port").build();
     private static final MarshallingInfo<String> URL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("url").build();
+    private static final MarshallingInfo<StructuredPojo> VPC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpc").build();
 
     private static final InputDestinationMarshaller instance = new InputDestinationMarshaller();
 
@@ -53,6 +55,7 @@ public class InputDestinationMarshaller {
             protocolMarshaller.marshall(inputDestination.getIp(), IP_BINDING);
             protocolMarshaller.marshall(inputDestination.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(inputDestination.getUrl(), URL_BINDING);
+            protocolMarshaller.marshall(inputDestination.getVpc(), VPC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

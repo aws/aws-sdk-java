@@ -76,6 +76,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * <code>deleted</code>: The interconnect is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the interconnect is not available.
+     * </p>
+     * </li>
      * </ul>
      */
     private String interconnectState;
@@ -250,6 +255,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * <code>deleted</code>: The interconnect is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the interconnect is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param interconnectState
@@ -284,6 +294,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>deleted</code>: The interconnect is deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the interconnect is not available.
      *        </p>
      *        </li>
      * @see InterconnectState
@@ -329,6 +344,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * <code>deleted</code>: The interconnect is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the interconnect is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The state of the interconnect. The following are the possible values:</p>
@@ -362,6 +382,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <code>deleted</code>: The interconnect is deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unknown</code>: The state of the interconnect is not available.
      *         </p>
      *         </li>
      * @see InterconnectState
@@ -407,6 +432,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * <code>deleted</code>: The interconnect is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the interconnect is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param interconnectState
@@ -441,6 +471,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>deleted</code>: The interconnect is deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the interconnect is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -488,6 +523,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * <code>deleted</code>: The interconnect is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the interconnect is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param interconnectState
@@ -522,6 +562,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>deleted</code>: The interconnect is deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the interconnect is not available.
      *        </p>
      *        </li>
      * @see InterconnectState
@@ -567,6 +612,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      * <code>deleted</code>: The interconnect is deleted.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>unknown</code>: The state of the interconnect is not available.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param interconnectState
@@ -601,6 +651,11 @@ public class Interconnect implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <code>deleted</code>: The interconnect is deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unknown</code>: The state of the interconnect is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

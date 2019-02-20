@@ -27,7 +27,8 @@ public enum VirtualInterfaceState {
     Down("down"),
     Deleting("deleting"),
     Deleted("deleted"),
-    Rejected("rejected");
+    Rejected("rejected"),
+    Unknown("unknown");
 
     private String value;
 

@@ -25,7 +25,8 @@ public enum InterconnectState {
     Available("available"),
     Down("down"),
     Deleting("deleting"),
-    Deleted("deleted");
+    Deleted("deleted"),
+    Unknown("unknown");
 
     private String value;
 

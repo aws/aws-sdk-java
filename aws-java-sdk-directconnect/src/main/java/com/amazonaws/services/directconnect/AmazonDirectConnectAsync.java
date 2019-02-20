@@ -1252,7 +1252,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that your APN partner or
      * service provider uses when establishing your cross connect to AWS at the colocation facility. For more
-     * information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+     * information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
      * Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
@@ -1275,7 +1275,7 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that your APN partner or
      * service provider uses when establishing your cross connect to AWS at the colocation facility. For more
-     * information, see <a href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
+     * information, see <a href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting
      * Cross Connects at AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
@@ -1576,8 +1576,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
      * establishing your cross connect to AWS at the colocation facility. For more information, see <a
-     * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at AWS
-     * Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at
+     * AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeInterconnectLoaRequest
@@ -1599,8 +1599,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
      * establishing your cross connect to AWS at the colocation facility. For more information, see <a
-     * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at AWS
-     * Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at
+     * AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeInterconnectLoaRequest
@@ -1701,8 +1701,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
      * establishing your cross connect to AWS at the colocation facility. For more information, see <a
-     * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at AWS
-     * Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at
+     * AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeLoaRequest
@@ -1720,8 +1720,8 @@ public interface AmazonDirectConnectAsync extends AmazonDirectConnect {
      * <p>
      * The Letter of Authorization - Connecting Facility Assignment (LOA-CFA) is a document that is used when
      * establishing your cross connect to AWS at the colocation facility. For more information, see <a
-     * href="http://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at AWS
-     * Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
+     * href="https://docs.aws.amazon.com/directconnect/latest/UserGuide/Colocation.html">Requesting Cross Connects at
+     * AWS Direct Connect Locations</a> in the <i>AWS Direct Connect User Guide</i>.
      * </p>
      * 
      * @param describeLoaRequest

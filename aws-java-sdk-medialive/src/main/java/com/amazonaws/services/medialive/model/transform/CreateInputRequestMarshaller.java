@@ -49,6 +49,8 @@ public class CreateInputRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<StructuredPojo> VPC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpc").build();
 
     private static final CreateInputRequestMarshaller instance = new CreateInputRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class CreateInputRequestMarshaller {
             protocolMarshaller.marshall(createInputRequest.getSources(), SOURCES_BINDING);
             protocolMarshaller.marshall(createInputRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createInputRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(createInputRequest.getVpc(), VPC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

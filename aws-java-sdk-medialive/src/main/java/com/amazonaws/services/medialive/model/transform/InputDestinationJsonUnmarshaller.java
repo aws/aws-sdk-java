@@ -60,6 +60,10 @@ public class InputDestinationJsonUnmarshaller implements Unmarshaller<InputDesti
                     context.nextToken();
                     inputDestination.setUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("vpc", targetDepth)) {
+                    context.nextToken();
+                    inputDestination.setVpc(InputDestinationVpcJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

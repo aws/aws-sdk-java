@@ -116,7 +116,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>unknown</code>: The BGP peer status is unknown.
+     * <code>unknown</code>: The BGP peer status is not available.
      * </p>
      * </li>
      * </ul>
@@ -773,7 +773,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>unknown</code>: The BGP peer status is unknown.
+     * <code>unknown</code>: The BGP peer status is not available.
      * </p>
      * </li>
      * </ul>
@@ -794,7 +794,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>unknown</code>: The BGP peer status is unknown.
+     *        <code>unknown</code>: The BGP peer status is not available.
      *        </p>
      *        </li>
      * @see BGPStatus
@@ -822,7 +822,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>unknown</code>: The BGP peer status is unknown.
+     * <code>unknown</code>: The BGP peer status is not available.
      * </p>
      * </li>
      * </ul>
@@ -842,7 +842,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>unknown</code>: The BGP peer status is unknown.
+     *         <code>unknown</code>: The BGP peer status is not available.
      *         </p>
      *         </li>
      * @see BGPStatus
@@ -870,7 +870,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>unknown</code>: The BGP peer status is unknown.
+     * <code>unknown</code>: The BGP peer status is not available.
      * </p>
      * </li>
      * </ul>
@@ -891,7 +891,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>unknown</code>: The BGP peer status is unknown.
+     *        <code>unknown</code>: The BGP peer status is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -921,7 +921,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>unknown</code>: The BGP peer status is unknown.
+     * <code>unknown</code>: The BGP peer status is not available.
      * </p>
      * </li>
      * </ul>
@@ -942,7 +942,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>unknown</code>: The BGP peer status is unknown.
+     *        <code>unknown</code>: The BGP peer status is not available.
      *        </p>
      *        </li>
      * @see BGPStatus
@@ -970,7 +970,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>unknown</code>: The BGP peer status is unknown.
+     * <code>unknown</code>: The BGP peer status is not available.
      * </p>
      * </li>
      * </ul>
@@ -991,7 +991,7 @@ public class BGPPeer implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>unknown</code>: The BGP peer status is unknown.
+     *        <code>unknown</code>: The BGP peer status is not available.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

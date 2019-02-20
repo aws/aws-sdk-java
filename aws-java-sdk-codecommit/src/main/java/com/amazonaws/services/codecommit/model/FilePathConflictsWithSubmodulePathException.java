@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified file path or folder has the same path as a submodule in this repository. Either provide a different
- * name for the file, or save the file in a directory that does not conflict with the submodule path.
+ * The commit cannot be created because a specified file path points to a submodule. Verify that the destination files
+ * have valid file paths that do not point to a submodule.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
