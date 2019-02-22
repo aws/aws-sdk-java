@@ -100,17 +100,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     private Integer queuedTimeoutInMinutes;
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
-     * artifacts.
+     * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
+     * build output artifacts.
      * </p>
-     * <note>
      * <p>
-     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
-     * that key.
-     * </p>
-     * </note>
-     * <p>
-     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      */
@@ -682,30 +676,19 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
-     * artifacts.
+     * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
+     * build output artifacts.
      * </p>
-     * <note>
      * <p>
-     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
-     * that key.
-     * </p>
-     * </note>
-     * <p>
-     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @param encryptionKey
-     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *        output artifacts.</p> <note>
+     *        The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
+     *        the build output artifacts.</p>
      *        <p>
-     *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
-     *        permission to that key.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *        You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using
      *        the format <code>alias/<i>alias-name</i> </code>).
      */
 
@@ -715,29 +698,18 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
-     * artifacts.
+     * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
+     * build output artifacts.
      * </p>
-     * <note>
      * <p>
-     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
-     * that key.
-     * </p>
-     * </note>
-     * <p>
-     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
-     * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *         output artifacts.</p> <note>
+     * @return The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
+     *         the build output artifacts.</p>
      *         <p>
-     *         You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
-     *         permission to that key.
-     *         </p>
-     *         </note>
-     *         <p>
-     *         You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *         You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using
      *         the format <code>alias/<i>alias-name</i> </code>).
      */
 
@@ -747,30 +719,19 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
-     * artifacts.
+     * The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the
+     * build output artifacts.
      * </p>
-     * <note>
      * <p>
-     * You can use a cross-account KMS key to encrypt the build output artifacts if your service role has permission to
-     * that key.
-     * </p>
-     * </note>
-     * <p>
-     * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
+     * You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using the
      * format <code>alias/<i>alias-name</i> </code>).
      * </p>
      * 
      * @param encryptionKey
-     *        The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
-     *        output artifacts.</p> <note>
+     *        The replacement AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting
+     *        the build output artifacts.</p>
      *        <p>
-     *        You can use a cross-account KMS key to encrypt the build output artifacts if your service role has
-     *        permission to that key.
-     *        </p>
-     *        </note>
-     *        <p>
-     *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
+     *        You can specify either the Amazon Resource Name (ARN)of the CMK or, if available, the CMK's alias (using
      *        the format <code>alias/<i>alias-name</i> </code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

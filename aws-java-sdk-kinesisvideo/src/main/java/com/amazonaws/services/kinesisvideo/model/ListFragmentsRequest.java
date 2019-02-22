@@ -48,7 +48,7 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String nextToken;
     /**
      * <p>
-     * Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * Describes the timestamp range and timestamp origin for the range of fragments to return.
      * </p>
      */
     private FragmentSelector fragmentSelector;
@@ -193,11 +193,11 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * Describes the timestamp range and timestamp origin for the range of fragments to return.
      * </p>
      * 
      * @param fragmentSelector
-     *        Describes the time stamp range and time stamp origin for the range of fragments to return.
+     *        Describes the timestamp range and timestamp origin for the range of fragments to return.
      */
 
     public void setFragmentSelector(FragmentSelector fragmentSelector) {
@@ -206,10 +206,10 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * Describes the timestamp range and timestamp origin for the range of fragments to return.
      * </p>
      * 
-     * @return Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * @return Describes the timestamp range and timestamp origin for the range of fragments to return.
      */
 
     public FragmentSelector getFragmentSelector() {
@@ -218,11 +218,11 @@ public class ListFragmentsRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Describes the time stamp range and time stamp origin for the range of fragments to return.
+     * Describes the timestamp range and timestamp origin for the range of fragments to return.
      * </p>
      * 
      * @param fragmentSelector
-     *        Describes the time stamp range and time stamp origin for the range of fragments to return.
+     *        Describes the timestamp range and timestamp origin for the range of fragments to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

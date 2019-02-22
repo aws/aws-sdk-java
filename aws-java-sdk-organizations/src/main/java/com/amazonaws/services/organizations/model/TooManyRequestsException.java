@@ -19,6 +19,11 @@ import javax.annotation.Generated;
  * You've sent too many requests in too short a period of time. The limit helps protect against denial-of-service
  * attacks. Try again later.
  * </p>
+ * <p>
+ * For information on limits that affect Organizations, see <a
+ * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of AWS
+ * Organizations</a> in the <i>AWS Organizations User Guide</i>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyRequestsException extends com.amazonaws.services.organizations.model.AWSOrganizationsException {

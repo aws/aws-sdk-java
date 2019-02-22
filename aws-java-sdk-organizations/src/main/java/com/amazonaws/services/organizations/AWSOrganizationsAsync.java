@@ -32,7 +32,7 @@ import com.amazonaws.services.organizations.model.*;
  * </p>
  * <p>
  * This guide provides descriptions of the Organizations API. For more information about using this service, see the <a
- * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS Organizations User
+ * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS Organizations User
  * Guide</a>.
  * </p>
  * <p>
@@ -54,7 +54,7 @@ import com.amazonaws.services.organizations.model.*;
  * <p>
  * We recommend that you use the AWS SDKs to make programmatic API calls to Organizations. However, you also can use the
  * Organizations Query API to make direct calls to the Organizations web service. To learn more about the Organizations
- * Query API, see <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html">Making
+ * Query API, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_query-requests.html">Making
  * Query Requests</a> in the <i>AWS Organizations User Guide</i>. Organizations supports GET and POST requests for all
  * actions. That is, the API does not require you to use GET for some actions and POST for others. However, GET requests
  * are subject to the limitation size of a URL. Therefore, for operations that require larger sizes, use a POST request.
@@ -72,7 +72,7 @@ import com.amazonaws.services.organizations.model.*;
  * </p>
  * <p>
  * To sign requests, we recommend that you use <a
- * href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
+ * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4</a>. If you have an
  * existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However,
  * some operations now require Signature Version 4. The documentation for operations that require version 4 indicate
  * this requirement.
@@ -131,7 +131,7 @@ import com.amazonaws.services.organizations.model.*;
  * <p>
  * For the various SDKs used to call the APIs, see the documentation for the SDK of interest to learn how to direct the
  * requests to a specific endpoint. For more information, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions and Endpoints</a> in the <i>AWS
+ * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sts_region">Regions and Endpoints</a> in the <i>AWS
  * General Reference</i>.
  * </p>
  * <p>
@@ -152,10 +152,10 @@ import com.amazonaws.services.organizations.model.*;
  * files to an Amazon S3 bucket. By using information collected by AWS CloudTrail, you can determine which requests were
  * successfully made to Organizations, who made the request, when it was made, and so on. For more about AWS
  * Organizations and its support for AWS CloudTrail, see <a
- * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html#orgs_cloudtrail-integration"
+ * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html#orgs_cloudtrail-integration"
  * >Logging AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations User Guide</i>. To learn more
  * about CloudTrail, including how to turn it on and find your log files, see the <a
- * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS CloudTrail
+ * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS CloudTrail
  * User Guide</a>.
  * </p>
  */
@@ -190,10 +190,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about invitations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an
      * AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide</i>. For more information about
      * requests to enable all features in the organization, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
      * >Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
@@ -239,10 +239,10 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about invitations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_invites.html">Inviting an
      * AWS Account to Join Your Organization</a> in the <i>AWS Organizations User Guide</i>. For more information about
      * requests to enable all features in the organization, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
      * >Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
@@ -294,14 +294,15 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * SCPs essentially are permission "filters". When you attach one SCP to a higher level root or OU, and you also
-     * attach a different SCP to a child OU or to an account, the child policy can further restrict only the permissions
-     * that pass through the parent filter and are available to the child. An SCP that is attached to a child cannot
-     * grant a permission that is not already granted by the parent. For example, imagine that the parent SCP allows
-     * permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The result is that the accounts affected
-     * by the child SCP are allowed to use only C, D, and E. They cannot use A or B because they were filtered out by
-     * the child OU. They also cannot use F and G because they were filtered out by the parent OU. They cannot be
-     * granted back by the child SCP; child SCPs can only filter the permissions they receive from the parent SCP.
+     * SCPs are JSON policies that specify the maximum permissions for an organization or organizational unit (OU). When
+     * you attach one SCP to a higher level root or OU, and you also attach a different SCP to a child OU or to an
+     * account, the child policy can further restrict only the permissions that pass through the parent filter and are
+     * available to the child. An SCP that is attached to a child cannot grant a permission that is not already granted
+     * by the parent. For example, imagine that the parent SCP allows permissions A, B, C, D, and E. The child SCP
+     * allows C, D, E, F, and G. The result is that the accounts affected by the child SCP are allowed to use only C, D,
+     * and E. They cannot use A or B because they were filtered out by the child OU. They also cannot use F and G
+     * because they were filtered out by the parent OU. They cannot be granted back by the child SCP; child SCPs can
+     * only filter the permissions they receive from the parent SCP.
      * </p>
      * <p>
      * AWS Organizations attaches a default SCP named <code>"FullAWSAccess</code> to every root, OU, and account. This
@@ -311,7 +312,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about how Organizations policies permissions work, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using Service
      * Control Policies</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
@@ -357,14 +358,15 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * </ul>
      * <p>
-     * SCPs essentially are permission "filters". When you attach one SCP to a higher level root or OU, and you also
-     * attach a different SCP to a child OU or to an account, the child policy can further restrict only the permissions
-     * that pass through the parent filter and are available to the child. An SCP that is attached to a child cannot
-     * grant a permission that is not already granted by the parent. For example, imagine that the parent SCP allows
-     * permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and G. The result is that the accounts affected
-     * by the child SCP are allowed to use only C, D, and E. They cannot use A or B because they were filtered out by
-     * the child OU. They also cannot use F and G because they were filtered out by the parent OU. They cannot be
-     * granted back by the child SCP; child SCPs can only filter the permissions they receive from the parent SCP.
+     * SCPs are JSON policies that specify the maximum permissions for an organization or organizational unit (OU). When
+     * you attach one SCP to a higher level root or OU, and you also attach a different SCP to a child OU or to an
+     * account, the child policy can further restrict only the permissions that pass through the parent filter and are
+     * available to the child. An SCP that is attached to a child cannot grant a permission that is not already granted
+     * by the parent. For example, imagine that the parent SCP allows permissions A, B, C, D, and E. The child SCP
+     * allows C, D, E, F, and G. The result is that the accounts affected by the child SCP are allowed to use only C, D,
+     * and E. They cannot use A or B because they were filtered out by the child OU. They also cannot use F and G
+     * because they were filtered out by the parent OU. They cannot be granted back by the child SCP; child SCPs can
+     * only filter the permissions they receive from the parent SCP.
      * </p>
      * <p>
      * AWS Organizations attaches a default SCP named <code>"FullAWSAccess</code> to every root, OU, and account. This
@@ -374,7 +376,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about how Organizations policies permissions work, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using Service
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using Service
      * Control Policies</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * </li>
@@ -465,7 +467,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For information on using AWS
      * CloudTrail with Organizations, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in
-     * Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * Your Organization</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -488,8 +490,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about creating accounts, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS
-     * Account in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an
+     * AWS Account in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <important>
      * <ul>
@@ -518,7 +520,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * Using CreateAccount to create multiple temporary accounts is not recommended. You can only close an account from
+     * Using CreateAccount to create multiple temporary accounts isn't recommended. You can only close an account from
      * the Billing and Cost Management Console, and you must be signed in as the root user. For information on the
      * requirements and process for closing an account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing an AWS
@@ -532,7 +534,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <b>IAM User and Role Access to Billing Information</b> switch enabled. If you enable it, IAM users and roles that
      * have appropriate permissions can view billing information for the account. If you disable it, only the account
      * root user can access billing information. For information about how to disable this switch for an account, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
      * Billing Information and Tools</a>.
      * </p>
      * </note>
@@ -565,7 +567,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For information on using AWS
      * CloudTrail with Organizations, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in
-     * Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * Your Organization</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
@@ -588,8 +590,8 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about creating accounts, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an AWS
-     * Account in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_create.html">Creating an
+     * AWS Account in Your Organization</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <important>
      * <ul>
@@ -618,7 +620,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </li>
      * <li>
      * <p>
-     * Using CreateAccount to create multiple temporary accounts is not recommended. You can only close an account from
+     * Using CreateAccount to create multiple temporary accounts isn't recommended. You can only close an account from
      * the Billing and Cost Management Console, and you must be signed in as the root user. For information on the
      * requirements and process for closing an account, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing an AWS
@@ -632,7 +634,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <b>IAM User and Role Access to Billing Information</b> switch enabled. If you enable it, IAM users and roles that
      * have appropriate permissions can view billing information for the account. If you disable it, only the account
      * root user can access billing information. For information about how to disable this switch for an account, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html">Granting Access to Your
      * Billing Information and Tools</a>.
      * </p>
      * </note>
@@ -654,7 +656,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * Creates an AWS organization. The account whose user is calling the CreateOrganization operation automatically
      * becomes the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
      * account</a> of the new organization.
      * </p>
      * <p>
@@ -681,7 +683,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <p>
      * Creates an AWS organization. The account whose user is calling the CreateOrganization operation automatically
      * becomes the <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
      * account</a> of the new organization.
      * </p>
      * <p>
@@ -718,7 +720,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about OUs, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational
      * Units</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
@@ -742,7 +744,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about OUs, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_ous.html">Managing Organizational
      * Units</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
@@ -769,7 +771,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about policies and their use, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organization
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organization
      * Policies</a>.
      * </p>
      * <p>
@@ -791,7 +793,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * </p>
      * <p>
      * For more information about policies and their use, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organization
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html">Managing Organization
      * Policies</a>.
      * </p>
      * <p>
@@ -1232,12 +1234,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <code>FullAWSAccess</code> policy with one that limits the permissions that can be delegated, then you must
      * attach the replacement policy before you can remove the default one. This is the authorization strategy of <a
      * href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist"
+     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist"
      * >whitelisting</a>. If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
      * attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override the
      * <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP), then you are
      * using the authorization strategy of <a href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist"
+     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist"
      * >blacklisting</a>.
      * </p>
      * <p>
@@ -1263,12 +1265,12 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <code>FullAWSAccess</code> policy with one that limits the permissions that can be delegated, then you must
      * attach the replacement policy before you can remove the default one. This is the authorization strategy of <a
      * href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist"
+     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_whitelist"
      * >whitelisting</a>. If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
      * attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override the
      * <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP), then you are
      * using the authorization strategy of <a href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist"
+     * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#orgs_policies_blacklist"
      * >blacklisting</a>.
      * </p>
      * <p>
@@ -1519,7 +1521,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * services and actions that can be called in each account. Until you enable all features, you have access only to
      * consolidated billing, and you can't use any of the advanced account administration features that AWS
      * Organizations supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
      * >Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <important>
@@ -1563,7 +1565,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * services and actions that can be called in each account. Until you enable all features, you have access only to
      * consolidated billing, and you can't use any of the advanced account administration features that AWS
      * Organizations supports. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html"
      * >Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <important>

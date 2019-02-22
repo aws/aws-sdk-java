@@ -35,8 +35,12 @@ public class GetHLSStreamingSessionURLRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlaybackMode").build();
     private static final MarshallingInfo<StructuredPojo> HLSFRAGMENTSELECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HLSFragmentSelector").build();
+    private static final MarshallingInfo<String> CONTAINERFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerFormat").build();
     private static final MarshallingInfo<String> DISCONTINUITYMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiscontinuityMode").build();
+    private static final MarshallingInfo<String> DISPLAYFRAGMENTTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayFragmentTimestamp").build();
     private static final MarshallingInfo<Integer> EXPIRES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Expires").build();
     private static final MarshallingInfo<Long> MAXMEDIAPLAYLISTFRAGMENTRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -62,7 +66,9 @@ public class GetHLSStreamingSessionURLRequestMarshaller {
             protocolMarshaller.marshall(getHLSStreamingSessionURLRequest.getStreamARN(), STREAMARN_BINDING);
             protocolMarshaller.marshall(getHLSStreamingSessionURLRequest.getPlaybackMode(), PLAYBACKMODE_BINDING);
             protocolMarshaller.marshall(getHLSStreamingSessionURLRequest.getHLSFragmentSelector(), HLSFRAGMENTSELECTOR_BINDING);
+            protocolMarshaller.marshall(getHLSStreamingSessionURLRequest.getContainerFormat(), CONTAINERFORMAT_BINDING);
             protocolMarshaller.marshall(getHLSStreamingSessionURLRequest.getDiscontinuityMode(), DISCONTINUITYMODE_BINDING);
+            protocolMarshaller.marshall(getHLSStreamingSessionURLRequest.getDisplayFragmentTimestamp(), DISPLAYFRAGMENTTIMESTAMP_BINDING);
             protocolMarshaller.marshall(getHLSStreamingSessionURLRequest.getExpires(), EXPIRES_BINDING);
             protocolMarshaller.marshall(getHLSStreamingSessionURLRequest.getMaxMediaPlaylistFragmentResults(), MAXMEDIAPLAYLISTFRAGMENTRESULTS_BINDING);
         } catch (Exception e) {

@@ -79,9 +79,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start time stamp, the fragment that has the larger fragment number (that is, the
+     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
-     * different time stamps but have overlapping durations are still included in the HLS media playlist. This can lead
+     * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
      * <p>
@@ -91,7 +91,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
     private String playbackMode;
     /**
      * <p>
-     * The time range of the requested fragment, and the source of the time stamps.
+     * The time range of the requested fragment, and the source of the timestamps.
      * </p>
      * <p>
      * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is optional if
@@ -104,22 +104,51 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
     private HLSFragmentSelector hLSFragmentSelector;
     /**
      * <p>
+     * Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     * container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because
+     * there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
+     * MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more
+     * bandwidth and cost than fMP4.
+     * </p>
+     * <p>
+     * The default is <code>FRAGMENTED_MP4</code>.
+     * </p>
+     */
+    private String containerFormat;
+    /**
+     * <p>
      * Specifies when flags marking discontinuities between fragments will be added to the media playlists. The default
      * is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code>
      * when it is <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * <p>
-     * Media players typically build a timeline of media content to play, based on the time stamps of each fragment.
-     * This means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
+     * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
+     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
      * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
      * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment time stamps are not
+     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
      * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.
+     * player timeline to accurately map to the producer timestamps.
      * </p>
      */
     private String discontinuityMode;
+    /**
+     * <p>
+     * Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media
+     * players report the playhead position as a time relative to the start of the first fragment in the playback
+     * session. However, when the start timestamps are included in the HLS media playlist, some media players might
+     * report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating
+     * a playback experience that shows viewers the wall-clock time of the media.
+     * </p>
+     * <p>
+     * The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     * timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * </p>
+     */
+    private String displayFragmentTimestamp;
     /**
      * <p>
      * The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12
@@ -305,9 +334,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start time stamp, the fragment that has the larger fragment number (that is, the
+     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
-     * different time stamps but have overlapping durations are still included in the HLS media playlist. This can lead
+     * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
      * <p>
@@ -350,9 +379,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </ul>
      *        <p>
      *        In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
-     *        there are multiple fragments with the same start time stamp, the fragment that has the larger fragment
+     *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
      *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
-     *        included. Fragments that have different time stamps but have overlapping durations are still included in
+     *        included. Fragments that have different timestamps but have overlapping durations are still included in
      *        the HLS media playlist. This can lead to unexpected behavior in the media player.
      *        </p>
      *        <p>
@@ -399,9 +428,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start time stamp, the fragment that has the larger fragment number (that is, the
+     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
-     * different time stamps but have overlapping durations are still included in the HLS media playlist. This can lead
+     * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
      * <p>
@@ -443,9 +472,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *         </ul>
      *         <p>
      *         In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
-     *         there are multiple fragments with the same start time stamp, the fragment that has the larger fragment
+     *         there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
      *         number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
-     *         included. Fragments that have different time stamps but have overlapping durations are still included in
+     *         included. Fragments that have different timestamps but have overlapping durations are still included in
      *         the HLS media playlist. This can lead to unexpected behavior in the media player.
      *         </p>
      *         <p>
@@ -492,9 +521,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start time stamp, the fragment that has the larger fragment number (that is, the
+     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
-     * different time stamps but have overlapping durations are still included in the HLS media playlist. This can lead
+     * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
      * <p>
@@ -537,9 +566,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </ul>
      *        <p>
      *        In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
-     *        there are multiple fragments with the same start time stamp, the fragment that has the larger fragment
+     *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
      *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
-     *        included. Fragments that have different time stamps but have overlapping durations are still included in
+     *        included. Fragments that have different timestamps but have overlapping durations are still included in
      *        the HLS media playlist. This can lead to unexpected behavior in the media player.
      *        </p>
      *        <p>
@@ -588,9 +617,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * <p>
      * In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are
-     * multiple fragments with the same start time stamp, the fragment that has the larger fragment number (that is, the
+     * multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the
      * newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have
-     * different time stamps but have overlapping durations are still included in the HLS media playlist. This can lead
+     * different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead
      * to unexpected behavior in the media player.
      * </p>
      * <p>
@@ -633,9 +662,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        </ul>
      *        <p>
      *        In both playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if
-     *        there are multiple fragments with the same start time stamp, the fragment that has the larger fragment
+     *        there are multiple fragments with the same start timestamp, the fragment that has the larger fragment
      *        number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not
-     *        included. Fragments that have different time stamps but have overlapping durations are still included in
+     *        included. Fragments that have different timestamps but have overlapping durations are still included in
      *        the HLS media playlist. This can lead to unexpected behavior in the media player.
      *        </p>
      *        <p>
@@ -651,7 +680,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time range of the requested fragment, and the source of the time stamps.
+     * The time range of the requested fragment, and the source of the timestamps.
      * </p>
      * <p>
      * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is optional if
@@ -662,7 +691,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param hLSFragmentSelector
-     *        The time range of the requested fragment, and the source of the time stamps.</p>
+     *        The time range of the requested fragment, and the source of the timestamps.</p>
      *        <p>
      *        This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is
      *        optional if <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is
@@ -677,7 +706,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time range of the requested fragment, and the source of the time stamps.
+     * The time range of the requested fragment, and the source of the timestamps.
      * </p>
      * <p>
      * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is optional if
@@ -687,7 +716,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * <code>TimestampRange</code> must be set.
      * </p>
      * 
-     * @return The time range of the requested fragment, and the source of the time stamps.</p>
+     * @return The time range of the requested fragment, and the source of the timestamps.</p>
      *         <p>
      *         This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is
      *         optional if <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is
@@ -702,7 +731,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The time range of the requested fragment, and the source of the time stamps.
+     * The time range of the requested fragment, and the source of the timestamps.
      * </p>
      * <p>
      * This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is optional if
@@ -713,7 +742,7 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param hLSFragmentSelector
-     *        The time range of the requested fragment, and the source of the time stamps.</p>
+     *        The time range of the requested fragment, and the source of the timestamps.</p>
      *        <p>
      *        This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. This parameter is
      *        optional if <code>PlaybackMode</code> is <code>LIVE</code>. If <code>PlaybackMode</code> is
@@ -730,19 +759,138 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     * container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because
+     * there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
+     * MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more
+     * bandwidth and cost than fMP4.
+     * </p>
+     * <p>
+     * The default is <code>FRAGMENTED_MP4</code>.
+     * </p>
+     * 
+     * @param containerFormat
+     *        Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     *        container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging
+     *        because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>.
+     *        HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on
+     *        older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     *        requires 5-25 percent more bandwidth and cost than fMP4.</p>
+     *        <p>
+     *        The default is <code>FRAGMENTED_MP4</code>.
+     * @see ContainerFormat
+     */
+
+    public void setContainerFormat(String containerFormat) {
+        this.containerFormat = containerFormat;
+    }
+
+    /**
+     * <p>
+     * Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     * container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because
+     * there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
+     * MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more
+     * bandwidth and cost than fMP4.
+     * </p>
+     * <p>
+     * The default is <code>FRAGMENTED_MP4</code>.
+     * </p>
+     * 
+     * @return Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     *         container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging
+     *         because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>.
+     *         HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on
+     *         older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     *         requires 5-25 percent more bandwidth and cost than fMP4.</p>
+     *         <p>
+     *         The default is <code>FRAGMENTED_MP4</code>.
+     * @see ContainerFormat
+     */
+
+    public String getContainerFormat() {
+        return this.containerFormat;
+    }
+
+    /**
+     * <p>
+     * Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     * container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because
+     * there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
+     * MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more
+     * bandwidth and cost than fMP4.
+     * </p>
+     * <p>
+     * The default is <code>FRAGMENTED_MP4</code>.
+     * </p>
+     * 
+     * @param containerFormat
+     *        Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     *        container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging
+     *        because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>.
+     *        HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on
+     *        older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     *        requires 5-25 percent more bandwidth and cost than fMP4.</p>
+     *        <p>
+     *        The default is <code>FRAGMENTED_MP4</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContainerFormat
+     */
+
+    public GetHLSStreamingSessionURLRequest withContainerFormat(String containerFormat) {
+        setContainerFormat(containerFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     * container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because
+     * there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported
+     * MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more
+     * bandwidth and cost than fMP4.
+     * </p>
+     * <p>
+     * The default is <code>FRAGMENTED_MP4</code>.
+     * </p>
+     * 
+     * @param containerFormat
+     *        Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+     *        container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging
+     *        because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>.
+     *        HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on
+     *        older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     *        requires 5-25 percent more bandwidth and cost than fMP4.</p>
+     *        <p>
+     *        The default is <code>FRAGMENTED_MP4</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ContainerFormat
+     */
+
+    public GetHLSStreamingSessionURLRequest withContainerFormat(ContainerFormat containerFormat) {
+        this.containerFormat = containerFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies when flags marking discontinuities between fragments will be added to the media playlists. The default
      * is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code>
      * when it is <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * <p>
-     * Media players typically build a timeline of media content to play, based on the time stamps of each fragment.
-     * This means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
+     * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
+     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
      * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
      * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment time stamps are not
+     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
      * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.
+     * player timeline to accurately map to the producer timestamps.
      * </p>
      * 
      * @param discontinuityMode
@@ -750,15 +898,15 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      *        <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p>
      *        <p>
-     *        Media players typically build a timeline of media content to play, based on the time stamps of each
+     *        Media players typically build a timeline of media content to play, based on the timestamps of each
      *        fragment. This means that if there is any overlap between fragments (as is typical if
      *        <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps
      *        between fragments in some places, and overwrites frames in other places. When there are discontinuity
      *        flags between fragments, the media player is expected to reset the timeline, resulting in the fragment
      *        being played immediately after the previous fragment. We recommend that you always have discontinuity
-     *        flags between fragments if the fragment time stamps are not accurate or if fragments might be missing. You
+     *        flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
      *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
-     *        producer time stamps.
+     *        producer timestamps.
      * @see DiscontinuityMode
      */
 
@@ -773,29 +921,29 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * when it is <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * <p>
-     * Media players typically build a timeline of media content to play, based on the time stamps of each fragment.
-     * This means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
+     * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
+     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
      * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
      * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment time stamps are not
+     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
      * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.
+     * player timeline to accurately map to the producer timestamps.
      * </p>
      * 
      * @return Specifies when flags marking discontinuities between fragments will be added to the media playlists. The
      *         default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      *         <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p>
      *         <p>
-     *         Media players typically build a timeline of media content to play, based on the time stamps of each
+     *         Media players typically build a timeline of media content to play, based on the timestamps of each
      *         fragment. This means that if there is any overlap between fragments (as is typical if
      *         <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps
      *         between fragments in some places, and overwrites frames in other places. When there are discontinuity
      *         flags between fragments, the media player is expected to reset the timeline, resulting in the fragment
      *         being played immediately after the previous fragment. We recommend that you always have discontinuity
-     *         flags between fragments if the fragment time stamps are not accurate or if fragments might be missing.
-     *         You should not place discontinuity flags between fragments for the player timeline to accurately map to
-     *         the producer time stamps.
+     *         flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
+     *         should not place discontinuity flags between fragments for the player timeline to accurately map to the
+     *         producer timestamps.
      * @see DiscontinuityMode
      */
 
@@ -810,14 +958,14 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * when it is <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * <p>
-     * Media players typically build a timeline of media content to play, based on the time stamps of each fragment.
-     * This means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
+     * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
+     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
      * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
      * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment time stamps are not
+     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
      * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.
+     * player timeline to accurately map to the producer timestamps.
      * </p>
      * 
      * @param discontinuityMode
@@ -825,15 +973,15 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      *        <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p>
      *        <p>
-     *        Media players typically build a timeline of media content to play, based on the time stamps of each
+     *        Media players typically build a timeline of media content to play, based on the timestamps of each
      *        fragment. This means that if there is any overlap between fragments (as is typical if
      *        <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps
      *        between fragments in some places, and overwrites frames in other places. When there are discontinuity
      *        flags between fragments, the media player is expected to reset the timeline, resulting in the fragment
      *        being played immediately after the previous fragment. We recommend that you always have discontinuity
-     *        flags between fragments if the fragment time stamps are not accurate or if fragments might be missing. You
+     *        flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
      *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
-     *        producer time stamps.
+     *        producer timestamps.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiscontinuityMode
      */
@@ -850,14 +998,14 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      * when it is <code>PRODUCER_TIMESTAMP</code>.
      * </p>
      * <p>
-     * Media players typically build a timeline of media content to play, based on the time stamps of each fragment.
-     * This means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
+     * Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This
+     * means that if there is any overlap between fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between fragments in some places, and
      * overwrites frames in other places. When there are discontinuity flags between fragments, the media player is
      * expected to reset the timeline, resulting in the fragment being played immediately after the previous fragment.
-     * We recommend that you always have discontinuity flags between fragments if the fragment time stamps are not
+     * We recommend that you always have discontinuity flags between fragments if the fragment timestamps are not
      * accurate or if fragments might be missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.
+     * player timeline to accurately map to the producer timestamps.
      * </p>
      * 
      * @param discontinuityMode
@@ -865,21 +1013,148 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
      *        default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      *        <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p>
      *        <p>
-     *        Media players typically build a timeline of media content to play, based on the time stamps of each
+     *        Media players typically build a timeline of media content to play, based on the timestamps of each
      *        fragment. This means that if there is any overlap between fragments (as is typical if
      *        <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps
      *        between fragments in some places, and overwrites frames in other places. When there are discontinuity
      *        flags between fragments, the media player is expected to reset the timeline, resulting in the fragment
      *        being played immediately after the previous fragment. We recommend that you always have discontinuity
-     *        flags between fragments if the fragment time stamps are not accurate or if fragments might be missing. You
+     *        flags between fragments if the fragment timestamps are not accurate or if fragments might be missing. You
      *        should not place discontinuity flags between fragments for the player timeline to accurately map to the
-     *        producer time stamps.
+     *        producer timestamps.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DiscontinuityMode
      */
 
     public GetHLSStreamingSessionURLRequest withDiscontinuityMode(DiscontinuityMode discontinuityMode) {
         this.discontinuityMode = discontinuityMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media
+     * players report the playhead position as a time relative to the start of the first fragment in the playback
+     * session. However, when the start timestamps are included in the HLS media playlist, some media players might
+     * report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating
+     * a playback experience that shows viewers the wall-clock time of the media.
+     * </p>
+     * <p>
+     * The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     * timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * </p>
+     * 
+     * @param displayFragmentTimestamp
+     *        Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically,
+     *        media players report the playhead position as a time relative to the start of the first fragment in the
+     *        playback session. However, when the start timestamps are included in the HLS media playlist, some media
+     *        players might report the current playhead as an absolute time based on the fragment timestamps. This can
+     *        be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
+     *        <p>
+     *        The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     *        timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     *        <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * @see DisplayFragmentTimestamp
+     */
+
+    public void setDisplayFragmentTimestamp(String displayFragmentTimestamp) {
+        this.displayFragmentTimestamp = displayFragmentTimestamp;
+    }
+
+    /**
+     * <p>
+     * Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media
+     * players report the playhead position as a time relative to the start of the first fragment in the playback
+     * session. However, when the start timestamps are included in the HLS media playlist, some media players might
+     * report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating
+     * a playback experience that shows viewers the wall-clock time of the media.
+     * </p>
+     * <p>
+     * The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     * timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * </p>
+     * 
+     * @return Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically,
+     *         media players report the playhead position as a time relative to the start of the first fragment in the
+     *         playback session. However, when the start timestamps are included in the HLS media playlist, some media
+     *         players might report the current playhead as an absolute time based on the fragment timestamps. This can
+     *         be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
+     *         <p>
+     *         The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     *         timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     *         <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * @see DisplayFragmentTimestamp
+     */
+
+    public String getDisplayFragmentTimestamp() {
+        return this.displayFragmentTimestamp;
+    }
+
+    /**
+     * <p>
+     * Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media
+     * players report the playhead position as a time relative to the start of the first fragment in the playback
+     * session. However, when the start timestamps are included in the HLS media playlist, some media players might
+     * report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating
+     * a playback experience that shows viewers the wall-clock time of the media.
+     * </p>
+     * <p>
+     * The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     * timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * </p>
+     * 
+     * @param displayFragmentTimestamp
+     *        Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically,
+     *        media players report the playhead position as a time relative to the start of the first fragment in the
+     *        playback session. However, when the start timestamps are included in the HLS media playlist, some media
+     *        players might report the current playhead as an absolute time based on the fragment timestamps. This can
+     *        be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
+     *        <p>
+     *        The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     *        timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     *        <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DisplayFragmentTimestamp
+     */
+
+    public GetHLSStreamingSessionURLRequest withDisplayFragmentTimestamp(String displayFragmentTimestamp) {
+        setDisplayFragmentTimestamp(displayFragmentTimestamp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media
+     * players report the playhead position as a time relative to the start of the first fragment in the playback
+     * session. However, when the start timestamps are included in the HLS media playlist, some media players might
+     * report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating
+     * a playback experience that shows viewers the wall-clock time of the media.
+     * </p>
+     * <p>
+     * The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     * timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * </p>
+     * 
+     * @param displayFragmentTimestamp
+     *        Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically,
+     *        media players report the playhead position as a time relative to the start of the first fragment in the
+     *        playback session. However, when the start timestamps are included in the HLS media playlist, some media
+     *        players might report the current playhead as an absolute time based on the fragment timestamps. This can
+     *        be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p>
+     *        <p>
+     *        The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the
+     *        timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     *        <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DisplayFragmentTimestamp
+     */
+
+    public GetHLSStreamingSessionURLRequest withDisplayFragmentTimestamp(DisplayFragmentTimestamp displayFragmentTimestamp) {
+        this.displayFragmentTimestamp = displayFragmentTimestamp.toString();
         return this;
     }
 
@@ -1142,8 +1417,12 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
             sb.append("PlaybackMode: ").append(getPlaybackMode()).append(",");
         if (getHLSFragmentSelector() != null)
             sb.append("HLSFragmentSelector: ").append(getHLSFragmentSelector()).append(",");
+        if (getContainerFormat() != null)
+            sb.append("ContainerFormat: ").append(getContainerFormat()).append(",");
         if (getDiscontinuityMode() != null)
             sb.append("DiscontinuityMode: ").append(getDiscontinuityMode()).append(",");
+        if (getDisplayFragmentTimestamp() != null)
+            sb.append("DisplayFragmentTimestamp: ").append(getDisplayFragmentTimestamp()).append(",");
         if (getExpires() != null)
             sb.append("Expires: ").append(getExpires()).append(",");
         if (getMaxMediaPlaylistFragmentResults() != null)
@@ -1178,9 +1457,17 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getHLSFragmentSelector() != null && other.getHLSFragmentSelector().equals(this.getHLSFragmentSelector()) == false)
             return false;
+        if (other.getContainerFormat() == null ^ this.getContainerFormat() == null)
+            return false;
+        if (other.getContainerFormat() != null && other.getContainerFormat().equals(this.getContainerFormat()) == false)
+            return false;
         if (other.getDiscontinuityMode() == null ^ this.getDiscontinuityMode() == null)
             return false;
         if (other.getDiscontinuityMode() != null && other.getDiscontinuityMode().equals(this.getDiscontinuityMode()) == false)
+            return false;
+        if (other.getDisplayFragmentTimestamp() == null ^ this.getDisplayFragmentTimestamp() == null)
+            return false;
+        if (other.getDisplayFragmentTimestamp() != null && other.getDisplayFragmentTimestamp().equals(this.getDisplayFragmentTimestamp()) == false)
             return false;
         if (other.getExpires() == null ^ this.getExpires() == null)
             return false;
@@ -1203,7 +1490,9 @@ public class GetHLSStreamingSessionURLRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getStreamARN() == null) ? 0 : getStreamARN().hashCode());
         hashCode = prime * hashCode + ((getPlaybackMode() == null) ? 0 : getPlaybackMode().hashCode());
         hashCode = prime * hashCode + ((getHLSFragmentSelector() == null) ? 0 : getHLSFragmentSelector().hashCode());
+        hashCode = prime * hashCode + ((getContainerFormat() == null) ? 0 : getContainerFormat().hashCode());
         hashCode = prime * hashCode + ((getDiscontinuityMode() == null) ? 0 : getDiscontinuityMode().hashCode());
+        hashCode = prime * hashCode + ((getDisplayFragmentTimestamp() == null) ? 0 : getDisplayFragmentTimestamp().hashCode());
         hashCode = prime * hashCode + ((getExpires() == null) ? 0 : getExpires().hashCode());
         hashCode = prime * hashCode + ((getMaxMediaPlaylistFragmentResults() == null) ? 0 : getMaxMediaPlaylistFragmentResults().hashCode());
         return hashCode;

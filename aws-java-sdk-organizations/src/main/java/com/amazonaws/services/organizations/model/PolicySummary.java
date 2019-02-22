@@ -45,7 +45,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
@@ -147,7 +147,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -155,7 +155,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      *        The Amazon Resource Name (ARN) of the policy.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
@@ -169,14 +169,14 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the policy.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
@@ -190,7 +190,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -198,7 +198,7 @@ public class PolicySummary implements Serializable, Cloneable, StructuredPojo {
      *        The Amazon Resource Name (ARN) of the policy.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

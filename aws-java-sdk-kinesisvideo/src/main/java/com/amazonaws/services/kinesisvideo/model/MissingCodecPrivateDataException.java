@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * No Codec Private Data was found in the video stream.
+ * No codec private data was found in at least one of tracks of the video stream.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

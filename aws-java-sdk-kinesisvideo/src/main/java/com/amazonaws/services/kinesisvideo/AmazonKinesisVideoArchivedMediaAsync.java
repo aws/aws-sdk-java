@@ -44,7 +44,8 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * <ul>
      * <li>
      * <p>
-     * The media type must be <code>video/h264</code>.
+     * The media must contain h.264 encoded video and, optionally, AAC encoded audio. Specifically, the codec id of
+     * track 1 should be <code>V_MPEG/ISO/AVC</code>. Optionally, the codec id of track 2 should be <code>A_AAC</code>.
      * </p>
      * </li>
      * <li>
@@ -54,11 +55,17 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * </li>
      * <li>
      * <p>
-     * The fragments must contain codec private data in the AVC (Advanced Video Coding) for H.264 format (<a
-     * href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC 14496-15</a>). For information about
-     * adapting stream data to a given format, see <a
-     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/latest/dg/producer-reference-nal.html">NAL
-     * Adaptation Flags</a>.
+     * The video track of each fragment must contain codec private data in the Advanced Video Coding (AVC) for H.264
+     * format (<a href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC 14496-15</a>). For
+     * information about adapting stream data to a given format, see <a
+     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL Adaptation
+     * Flags</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The audio track (if present) of each fragment must contain codec private data in the AAC format (<a
+     * href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC 13818-7</a>).
      * </p>
      * </li>
      * </ul>
@@ -94,7 +101,7 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * </note>
      * <p>
      * The media that is made available through the playlist consists only of the requested stream, time range, and
-     * format. No other media data (such as frames outside the requested window or alternate bit rates) is made
+     * format. No other media data (such as frames outside the requested window or alternate bitrates) is made
      * available.
      * </p>
      * </li>
@@ -103,8 +110,8 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * Provide the URL (containing the encrypted session token) for the HLS master playlist to a media player that
      * supports the HLS protocol. Kinesis Video Streams makes the HLS media playlist, initialization fragment, and media
      * fragments available through the master playlist URL. The initialization fragment contains the codec private data
-     * for the stream, and other data needed to set up the video decoder and renderer. The media fragments contain
-     * H.264-encoded video frames and time stamps.
+     * for the stream, and other data needed to set up the video or audio decoder and renderer. The media fragments
+     * contain H.264-encoded video frames or AAC-encoded audio samples.
      * </p>
      * </li>
      * <li>
@@ -116,8 +123,8 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * <li>
      * <p>
      * <b>GetHLSMasterPlaylist:</b> Retrieves an HLS master playlist, which contains a URL for the
-     * <code>GetHLSMediaPlaylist</code> action, and additional metadata for the media player, including estimated bit
-     * rate and resolution.
+     * <code>GetHLSMediaPlaylist</code> action for each track, and additional metadata for the media player, including
+     * estimated bitrate and resolution.
      * </p>
      * </li>
      * <li>
@@ -128,7 +135,9 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * the stream that the player needs to play it, such as whether the <code>PlaybackMode</code> is <code>LIVE</code>
      * or <code>ON_DEMAND</code>. The HLS media playlist is typically static for sessions with a
      * <code>PlaybackType</code> of <code>ON_DEMAND</code>. The HLS media playlist is continually updated with new
-     * fragments for sessions with a <code>PlaybackType</code> of <code>LIVE</code>.
+     * fragments for sessions with a <code>PlaybackType</code> of <code>LIVE</code>. There is a distinct HLS media
+     * playlist for the video track and the audio track (if applicable) that contains MP4 media URLs for the specific
+     * track.
      * </p>
      * </li>
      * <li>
@@ -139,25 +148,42 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * </p>
      * <p>
      * The initialization fragment does not correspond to a fragment in a Kinesis video stream. It contains only the
-     * codec private data for the stream, which the media player needs to decode video frames.
+     * codec private data for the stream and respective track, which the media player needs to decode the media frames.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>GetMP4MediaFragment:</b> Retrieves MP4 media fragments. These fragments contain the "<code>moof</code>" and "
-     * <code>mdat</code>" MP4 atoms and their child atoms, containing the encoded fragment's video frames and their time
-     * stamps.
+     * <code>mdat</code>" MP4 atoms and their child atoms, containing the encoded fragment's media frames and their
+     * timestamps.
      * </p>
      * <note>
      * <p>
      * After the first media fragment is made available in a streaming session, any fragments that don't contain the
-     * same codec private data are excluded in the HLS media playlist. Therefore, the codec private data does not change
-     * between fragments in a session.
+     * same codec private data cause an error to be returned when those different media fragments are loaded. Therefore,
+     * the codec private data should not change between fragments in a session. This also means that the session fails
+     * if the fragments in a stream change from having only video to having both audio and video.
      * </p>
      * </note>
      * <p>
      * Data retrieved with this action is billable. See <a
-     * href="aws.amazon.comkinesis/video-streams/pricing/">Pricing</a> for details.
+     * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a> for details.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>GetTSFragment:</b> Retrieves MPEG TS fragments containing both initialization and media data for all tracks in
+     * the stream.
+     * </p>
+     * <note>
+     * <p>
+     * If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API is used instead of
+     * <code>GetMP4InitFragment</code> and <code>GetMP4MediaFragment</code> to retrieve stream media.
+     * </p>
+     * </note>
+     * <p>
+     * Data retrieved with this action is billable. For more information, see <a
+     * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Kinesis Video Streams pricing</a>.
      * </p>
      * </li>
      * </ul>
@@ -223,7 +249,8 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * <ul>
      * <li>
      * <p>
-     * The media type must be <code>video/h264</code>.
+     * The media must contain h.264 encoded video and, optionally, AAC encoded audio. Specifically, the codec id of
+     * track 1 should be <code>V_MPEG/ISO/AVC</code>. Optionally, the codec id of track 2 should be <code>A_AAC</code>.
      * </p>
      * </li>
      * <li>
@@ -233,11 +260,17 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * </li>
      * <li>
      * <p>
-     * The fragments must contain codec private data in the AVC (Advanced Video Coding) for H.264 format (<a
-     * href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC 14496-15</a>). For information about
-     * adapting stream data to a given format, see <a
-     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/latest/dg/producer-reference-nal.html">NAL
-     * Adaptation Flags</a>.
+     * The video track of each fragment must contain codec private data in the Advanced Video Coding (AVC) for H.264
+     * format (<a href="https://www.iso.org/standard/55980.html">MPEG-4 specification ISO/IEC 14496-15</a>). For
+     * information about adapting stream data to a given format, see <a
+     * href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/producer-reference-nal.html">NAL Adaptation
+     * Flags</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The audio track (if present) of each fragment must contain codec private data in the AAC format (<a
+     * href="https://www.iso.org/standard/43345.html">AAC specification ISO/IEC 13818-7</a>).
      * </p>
      * </li>
      * </ul>
@@ -273,7 +306,7 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * </note>
      * <p>
      * The media that is made available through the playlist consists only of the requested stream, time range, and
-     * format. No other media data (such as frames outside the requested window or alternate bit rates) is made
+     * format. No other media data (such as frames outside the requested window or alternate bitrates) is made
      * available.
      * </p>
      * </li>
@@ -282,8 +315,8 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * Provide the URL (containing the encrypted session token) for the HLS master playlist to a media player that
      * supports the HLS protocol. Kinesis Video Streams makes the HLS media playlist, initialization fragment, and media
      * fragments available through the master playlist URL. The initialization fragment contains the codec private data
-     * for the stream, and other data needed to set up the video decoder and renderer. The media fragments contain
-     * H.264-encoded video frames and time stamps.
+     * for the stream, and other data needed to set up the video or audio decoder and renderer. The media fragments
+     * contain H.264-encoded video frames or AAC-encoded audio samples.
      * </p>
      * </li>
      * <li>
@@ -295,8 +328,8 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * <li>
      * <p>
      * <b>GetHLSMasterPlaylist:</b> Retrieves an HLS master playlist, which contains a URL for the
-     * <code>GetHLSMediaPlaylist</code> action, and additional metadata for the media player, including estimated bit
-     * rate and resolution.
+     * <code>GetHLSMediaPlaylist</code> action for each track, and additional metadata for the media player, including
+     * estimated bitrate and resolution.
      * </p>
      * </li>
      * <li>
@@ -307,7 +340,9 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * the stream that the player needs to play it, such as whether the <code>PlaybackMode</code> is <code>LIVE</code>
      * or <code>ON_DEMAND</code>. The HLS media playlist is typically static for sessions with a
      * <code>PlaybackType</code> of <code>ON_DEMAND</code>. The HLS media playlist is continually updated with new
-     * fragments for sessions with a <code>PlaybackType</code> of <code>LIVE</code>.
+     * fragments for sessions with a <code>PlaybackType</code> of <code>LIVE</code>. There is a distinct HLS media
+     * playlist for the video track and the audio track (if applicable) that contains MP4 media URLs for the specific
+     * track.
      * </p>
      * </li>
      * <li>
@@ -318,25 +353,42 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * </p>
      * <p>
      * The initialization fragment does not correspond to a fragment in a Kinesis video stream. It contains only the
-     * codec private data for the stream, which the media player needs to decode video frames.
+     * codec private data for the stream and respective track, which the media player needs to decode the media frames.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>GetMP4MediaFragment:</b> Retrieves MP4 media fragments. These fragments contain the "<code>moof</code>" and "
-     * <code>mdat</code>" MP4 atoms and their child atoms, containing the encoded fragment's video frames and their time
-     * stamps.
+     * <code>mdat</code>" MP4 atoms and their child atoms, containing the encoded fragment's media frames and their
+     * timestamps.
      * </p>
      * <note>
      * <p>
      * After the first media fragment is made available in a streaming session, any fragments that don't contain the
-     * same codec private data are excluded in the HLS media playlist. Therefore, the codec private data does not change
-     * between fragments in a session.
+     * same codec private data cause an error to be returned when those different media fragments are loaded. Therefore,
+     * the codec private data should not change between fragments in a session. This also means that the session fails
+     * if the fragments in a stream change from having only video to having both audio and video.
      * </p>
      * </note>
      * <p>
      * Data retrieved with this action is billable. See <a
-     * href="aws.amazon.comkinesis/video-streams/pricing/">Pricing</a> for details.
+     * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Pricing</a> for details.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>GetTSFragment:</b> Retrieves MPEG TS fragments containing both initialization and media data for all tracks in
+     * the stream.
+     * </p>
+     * <note>
+     * <p>
+     * If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API is used instead of
+     * <code>GetMP4InitFragment</code> and <code>GetMP4MediaFragment</code> to retrieve stream media.
+     * </p>
+     * </note>
+     * <p>
+     * Data retrieved with this action is billable. For more information, see <a
+     * href="https://aws.amazon.com/kinesis/video-streams/pricing/">Kinesis Video Streams pricing</a>.
      * </p>
      * </li>
      * </ul>
@@ -398,6 +450,13 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * Gets media for a list of fragments (specified by fragment number) from the archived data in an Amazon Kinesis
      * video stream.
      * </p>
+     * <note>
+     * <p>
+     * You must first call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the
+     * <code>GetMediaForFragmentList</code> requests to this endpoint using the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url parameter</a>.
+     * </p>
+     * </note>
      * <p>
      * The following limits apply when using the <code>GetMediaForFragmentList</code> API:
      * </p>
@@ -429,6 +488,13 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
      * Gets media for a list of fragments (specified by fragment number) from the archived data in an Amazon Kinesis
      * video stream.
      * </p>
+     * <note>
+     * <p>
+     * You must first call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the
+     * <code>GetMediaForFragmentList</code> requests to this endpoint using the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url parameter</a>.
+     * </p>
+     * </note>
      * <p>
      * The following limits apply when using the <code>GetMediaForFragmentList</code> API:
      * </p>
@@ -462,8 +528,20 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
 
     /**
      * <p>
-     * Returns a list of <a>Fragment</a> objects from the specified stream and start location within the archived data.
+     * Returns a list of <a>Fragment</a> objects from the specified stream and timestamp range within the archived data.
      * </p>
+     * <p>
+     * Listing fragments is eventually consistent. This means that even if the producer receives an acknowledgment that
+     * a fragment is persisted, the result might not be returned immediately from a request to
+     * <code>ListFragments</code>. However, results are typically available in less than one second.
+     * </p>
+     * <note>
+     * <p>
+     * You must first call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the
+     * <code>ListFragments</code> requests to this endpoint using the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url parameter</a>.
+     * </p>
+     * </note>
      * 
      * @param listFragmentsRequest
      * @return A Java Future containing the result of the ListFragments operation returned by the service.
@@ -475,8 +553,20 @@ public interface AmazonKinesisVideoArchivedMediaAsync extends AmazonKinesisVideo
 
     /**
      * <p>
-     * Returns a list of <a>Fragment</a> objects from the specified stream and start location within the archived data.
+     * Returns a list of <a>Fragment</a> objects from the specified stream and timestamp range within the archived data.
      * </p>
+     * <p>
+     * Listing fragments is eventually consistent. This means that even if the producer receives an acknowledgment that
+     * a fragment is persisted, the result might not be returned immediately from a request to
+     * <code>ListFragments</code>. However, results are typically available in less than one second.
+     * </p>
+     * <note>
+     * <p>
+     * You must first call the <code>GetDataEndpoint</code> API to get an endpoint. Then send the
+     * <code>ListFragments</code> requests to this endpoint using the <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url parameter</a>.
+     * </p>
+     * </note>
      * 
      * @param listFragmentsRequest
      * @param asyncHandler

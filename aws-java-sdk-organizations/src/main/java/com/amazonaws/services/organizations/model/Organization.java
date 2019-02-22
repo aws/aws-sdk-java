@@ -46,7 +46,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
@@ -56,7 +56,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
      * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
@@ -67,7 +67,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
@@ -171,7 +171,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -179,7 +179,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        The Amazon Resource Name (ARN) of an organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
@@ -193,14 +193,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an organization.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
@@ -214,7 +214,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -222,7 +222,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        The Amazon Resource Name (ARN) of an organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -237,7 +237,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
      * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -245,7 +245,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        Specifies the functionality that currently is available to the organization. If set to "ALL", then all
      *        features are enabled and policies can be applied to accounts in the organization. If set to
      *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
      *        Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @see OrganizationFeatureSet
      */
@@ -259,14 +259,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
      * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @return Specifies the functionality that currently is available to the organization. If set to "ALL", then all
      *         features are enabled and policies can be applied to accounts in the organization. If set to
      *         "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
-     *         see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *         see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
      *         Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @see OrganizationFeatureSet
      */
@@ -280,7 +280,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
      * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -288,7 +288,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        Specifies the functionality that currently is available to the organization. If set to "ALL", then all
      *        features are enabled and policies can be applied to accounts in the organization. If set to
      *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
      *        Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrganizationFeatureSet
@@ -304,7 +304,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
      * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -312,7 +312,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        Specifies the functionality that currently is available to the organization. If set to "ALL", then all
      *        features are enabled and policies can be applied to accounts in the organization. If set to
      *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
      *        Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @see OrganizationFeatureSet
      */
@@ -326,7 +326,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * Specifies the functionality that currently is available to the organization. If set to "ALL", then all features
      * are enabled and policies can be applied to accounts in the organization. If set to "CONSOLIDATED_BILLING", then
      * only consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling All
      * Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -334,7 +334,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        Specifies the functionality that currently is available to the organization. If set to "ALL", then all
      *        features are enabled and policies can be applied to accounts in the organization. If set to
      *        "CONSOLIDATED_BILLING", then only consolidated billing functionality is available. For more information,
-     *        see <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
+     *        see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">
      *        Enabling All Features in Your Organization</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrganizationFeatureSet
@@ -351,7 +351,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -360,7 +360,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
@@ -374,7 +374,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -382,7 +382,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *         organization.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      */
 
@@ -396,7 +396,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For more information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
@@ -405,7 +405,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      *        organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
+     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
      *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

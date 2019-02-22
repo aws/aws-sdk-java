@@ -56,6 +56,10 @@ public class ProjectCacheJsonUnmarshaller implements Unmarshaller<ProjectCache, 
                     context.nextToken();
                     projectCache.setLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("modes", targetDepth)) {
+                    context.nextToken();
+                    projectCache.setModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

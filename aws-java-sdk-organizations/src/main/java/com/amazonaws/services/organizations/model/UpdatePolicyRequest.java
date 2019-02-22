@@ -55,7 +55,7 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
      * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      */
@@ -227,14 +227,14 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
      * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param content
      *        If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *        the syntax for the policy's type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      */
 
@@ -246,13 +246,13 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
      * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @return If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *         the syntax for the policy's type. For more information, see <a
-     *         href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      *         Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      */
 
@@ -264,14 +264,14 @@ public class UpdatePolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * If provided, the new content for the policy. The text must be correctly formatted JSON that complies with the
      * syntax for the policy's type. For more information, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service Control
      * Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * 
      * @param content
      *        If provided, the new content for the policy. The text must be correctly formatted JSON that complies with
      *        the syntax for the policy's type. For more information, see <a
-     *        href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_scp-syntax.html">Service
      *        Control Policy Syntax</a> in the <i>AWS Organizations User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

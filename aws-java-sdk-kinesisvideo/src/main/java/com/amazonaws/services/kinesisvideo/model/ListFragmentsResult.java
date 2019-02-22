@@ -25,7 +25,8 @@ public class ListFragmentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of fragment numbers that correspond to the time stamp range provided.
+     * A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are in no
+     * specific order, even across pages.
      * </p>
      */
     private java.util.List<Fragment> fragments;
@@ -39,10 +40,12 @@ public class ListFragmentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of fragment numbers that correspond to the time stamp range provided.
+     * A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are in no
+     * specific order, even across pages.
      * </p>
      * 
-     * @return A list of fragment numbers that correspond to the time stamp range provided.
+     * @return A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are
+     *         in no specific order, even across pages.
      */
 
     public java.util.List<Fragment> getFragments() {
@@ -51,11 +54,13 @@ public class ListFragmentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of fragment numbers that correspond to the time stamp range provided.
+     * A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are in no
+     * specific order, even across pages.
      * </p>
      * 
      * @param fragments
-     *        A list of fragment numbers that correspond to the time stamp range provided.
+     *        A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are in
+     *        no specific order, even across pages.
      */
 
     public void setFragments(java.util.Collection<Fragment> fragments) {
@@ -69,7 +74,8 @@ public class ListFragmentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of fragment numbers that correspond to the time stamp range provided.
+     * A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are in no
+     * specific order, even across pages.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +84,8 @@ public class ListFragmentsResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @param fragments
-     *        A list of fragment numbers that correspond to the time stamp range provided.
+     *        A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are in
+     *        no specific order, even across pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +101,13 @@ public class ListFragmentsResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * A list of fragment numbers that correspond to the time stamp range provided.
+     * A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are in no
+     * specific order, even across pages.
      * </p>
      * 
      * @param fragments
-     *        A list of fragment numbers that correspond to the time stamp range provided.
+     *        A list of archived <a>Fragment</a> objects from the stream that meet the selector criteria. Results are in
+     *        no specific order, even across pages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

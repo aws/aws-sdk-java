@@ -46,18 +46,18 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String branchFilter;
     /**
      * <p>
-     * An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a
-     * build. A filter group must pcontain at least one <code>EVENT</code> <code>WebhookFilter</code>.
-     * </p>
-     */
-    private java.util.List<java.util.List<WebhookFilter>> filterGroups;
-    /**
-     * <p>
      * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
      * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
      * </p>
      */
     private Boolean rotateSecret;
+    /**
+     * <p>
+     * An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a
+     * build. A filter group must pcontain at least one <code>EVENT</code> <code>WebhookFilter</code>.
+     * </p>
+     */
+    private java.util.List<java.util.List<WebhookFilter>> filterGroups;
 
     /**
      * <p>
@@ -177,6 +177,66 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     * </p>
+     * 
+     * @param rotateSecret
+     *        A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
+     *        If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     */
+
+    public void setRotateSecret(Boolean rotateSecret) {
+        this.rotateSecret = rotateSecret;
+    }
+
+    /**
+     * <p>
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     * </p>
+     * 
+     * @return A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
+     *         If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     */
+
+    public Boolean getRotateSecret() {
+        return this.rotateSecret;
+    }
+
+    /**
+     * <p>
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     * </p>
+     * 
+     * @param rotateSecret
+     *        A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
+     *        If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWebhookRequest withRotateSecret(Boolean rotateSecret) {
+        setRotateSecret(rotateSecret);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
+     * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     * </p>
+     * 
+     * @return A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
+     *         If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
+     */
+
+    public Boolean isRotateSecret() {
+        return this.rotateSecret;
+    }
+
+    /**
+     * <p>
      * An array of arrays of <code>WebhookFilter</code> objects used to determine if a webhook event can trigger a
      * build. A filter group must pcontain at least one <code>EVENT</code> <code>WebhookFilter</code>.
      * </p>
@@ -254,66 +314,6 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * <p>
-     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
-     * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-     * </p>
-     * 
-     * @param rotateSecret
-     *        A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
-     *        If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-     */
-
-    public void setRotateSecret(Boolean rotateSecret) {
-        this.rotateSecret = rotateSecret;
-    }
-
-    /**
-     * <p>
-     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
-     * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-     * </p>
-     * 
-     * @return A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
-     *         If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-     */
-
-    public Boolean getRotateSecret() {
-        return this.rotateSecret;
-    }
-
-    /**
-     * <p>
-     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
-     * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-     * </p>
-     * 
-     * @param rotateSecret
-     *        A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
-     *        If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateWebhookRequest withRotateSecret(Boolean rotateSecret) {
-        setRotateSecret(rotateSecret);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A boolean value that specifies whether the associated GitHub repository's secret token should be updated. If you
-     * use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-     * </p>
-     * 
-     * @return A boolean value that specifies whether the associated GitHub repository's secret token should be updated.
-     *         If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored.
-     */
-
-    public Boolean isRotateSecret() {
-        return this.rotateSecret;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -329,10 +329,10 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getBranchFilter() != null)
             sb.append("BranchFilter: ").append(getBranchFilter()).append(",");
-        if (getFilterGroups() != null)
-            sb.append("FilterGroups: ").append(getFilterGroups()).append(",");
         if (getRotateSecret() != null)
-            sb.append("RotateSecret: ").append(getRotateSecret());
+            sb.append("RotateSecret: ").append(getRotateSecret()).append(",");
+        if (getFilterGroups() != null)
+            sb.append("FilterGroups: ").append(getFilterGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -355,13 +355,13 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getBranchFilter() != null && other.getBranchFilter().equals(this.getBranchFilter()) == false)
             return false;
-        if (other.getFilterGroups() == null ^ this.getFilterGroups() == null)
-            return false;
-        if (other.getFilterGroups() != null && other.getFilterGroups().equals(this.getFilterGroups()) == false)
-            return false;
         if (other.getRotateSecret() == null ^ this.getRotateSecret() == null)
             return false;
         if (other.getRotateSecret() != null && other.getRotateSecret().equals(this.getRotateSecret()) == false)
+            return false;
+        if (other.getFilterGroups() == null ^ this.getFilterGroups() == null)
+            return false;
+        if (other.getFilterGroups() != null && other.getFilterGroups().equals(this.getFilterGroups()) == false)
             return false;
         return true;
     }
@@ -373,8 +373,8 @@ public class UpdateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
         hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getBranchFilter() == null) ? 0 : getBranchFilter().hashCode());
-        hashCode = prime * hashCode + ((getFilterGroups() == null) ? 0 : getFilterGroups().hashCode());
         hashCode = prime * hashCode + ((getRotateSecret() == null) ? 0 : getRotateSecret().hashCode());
+        hashCode = prime * hashCode + ((getFilterGroups() == null) ? 0 : getFilterGroups().hashCode());
         return hashCode;
     }
 

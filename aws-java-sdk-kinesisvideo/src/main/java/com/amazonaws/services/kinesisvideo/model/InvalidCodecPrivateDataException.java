@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Codec Private Data in the video stream is not valid for this operation.
+ * The codec private data in at least one of the tracks of the video stream is not valid for this operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

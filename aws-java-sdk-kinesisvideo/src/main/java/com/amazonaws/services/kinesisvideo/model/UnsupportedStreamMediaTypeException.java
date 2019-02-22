@@ -16,7 +16,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An HLS streaming session was requested for a stream with a media type that is not <code>video/h264</code>.
+ * The type of the media (for example, h.264 video or ACC audio) could not be determined from the codec IDs of the
+ * tracks in the first fragment for a playback session. The codec ID for track 1 should be <code>V_MPEG/ISO/AVC</code>
+ * and, optionally, the codec ID for track 2 should be <code>A_AAC</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

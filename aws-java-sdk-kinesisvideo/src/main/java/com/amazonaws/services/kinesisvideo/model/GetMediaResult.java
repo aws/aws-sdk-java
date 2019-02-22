@@ -55,12 +55,12 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.
+     * AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.
+     * AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.
      * </p>
      * </li>
      * </ul>
@@ -105,7 +105,7 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </li>
      * <li>
      * <p>
-     * 4502 - Validation error on the Stream's KMS key
+     * 4502 - Validation error on the stream's KMS key
      * </p>
      * </li>
      * <li>
@@ -203,12 +203,12 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.
+     * AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.
+     * AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.
      * </p>
      * </li>
      * </ul>
@@ -253,7 +253,7 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </li>
      * <li>
      * <p>
-     * 4502 - Validation error on the Stream's KMS key
+     * 4502 - Validation error on the stream's KMS key
      * </p>
      * </li>
      * <li>
@@ -308,12 +308,12 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.
+     *        AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.
+     *        AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.
      *        </p>
      *        </li>
      *        </ul>
@@ -358,7 +358,7 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      *        </li>
      *        <li>
      *        <p>
-     *        4502 - Validation error on the Stream's KMS key
+     *        4502 - Validation error on the stream's KMS key
      *        </p>
      *        </li>
      *        <li>
@@ -418,12 +418,12 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.
+     * AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.
+     * AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.
      * </p>
      * </li>
      * </ul>
@@ -468,7 +468,7 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </li>
      * <li>
      * <p>
-     * 4502 - Validation error on the Stream's KMS key
+     * 4502 - Validation error on the stream's KMS key
      * </p>
      * </li>
      * <li>
@@ -522,12 +522,12 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      *         </li>
      *         <li>
      *         <p>
-     *         AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.
+     *         AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.
+     *         AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.
      *         </p>
      *         </li>
      *         </ul>
@@ -572,7 +572,7 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      *         </li>
      *         <li>
      *         <p>
-     *         4502 - Validation error on the Stream's KMS key
+     *         4502 - Validation error on the stream's KMS key
      *         </p>
      *         </li>
      *         <li>
@@ -632,12 +632,12 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.
+     * AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.
+     * AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.
      * </p>
      * </li>
      * </ul>
@@ -682,7 +682,7 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </li>
      * <li>
      * <p>
-     * 4502 - Validation error on the Stream's KMS key
+     * 4502 - Validation error on the stream's KMS key
      * </p>
      * </li>
      * <li>
@@ -737,12 +737,12 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.
+     *        AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server timestamp of the fragment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.
+     *        AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer timestamp of the fragment.
      *        </p>
      *        </li>
      *        </ul>
@@ -787,7 +787,7 @@ public class GetMediaResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      *        </li>
      *        <li>
      *        <p>
-     *        4502 - Validation error on the Stream's KMS key
+     *        4502 - Validation error on the stream's KMS key
      *        </p>
      *        </li>
      *        <li>

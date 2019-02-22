@@ -43,10 +43,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of
      * dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that
      * were used when the metrics were created. For an example, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      * >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying
      * dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      */
@@ -243,10 +243,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of
      * dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that
      * were used when the metrics were created. For an example, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      * >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying
      * dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
@@ -254,10 +254,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      *         CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination
      *         of dimensions was not published, you can't retrieve statistics for it. You must specify the same
      *         dimensions that were used when the metrics were created. For an example, see <a href=
-     *         "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     *         "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      *         >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about
      *         specifying dimensions, see <a
-     *         href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      *         Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
 
@@ -274,10 +274,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of
      * dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that
      * were used when the metrics were created. For an example, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      * >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying
      * dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
@@ -286,10 +286,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      *        CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of
      *        dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions
      *        that were used when the metrics were created. For an example, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      *        >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about
      *        specifying dimensions, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      *        Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      */
 
@@ -308,10 +308,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of
      * dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that
      * were used when the metrics were created. For an example, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      * >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying
      * dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * <p>
@@ -325,10 +325,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      *        CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of
      *        dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions
      *        that were used when the metrics were created. For an example, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      *        >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about
      *        specifying dimensions, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      *        Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -349,10 +349,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of
      * dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions that
      * were used when the metrics were created. For an example, see <a href=
-     * "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     * "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      * >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying
      * dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
@@ -361,10 +361,10 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      *        CloudWatch treats each unique combination of dimensions as a separate metric. If a specific combination of
      *        dimensions was not published, you can't retrieve statistics for it. You must specify the same dimensions
      *        that were used when the metrics were created. For an example, see <a href=
-     *        "http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
+     *        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations"
      *        >Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about
      *        specifying dimensions, see <a
-     *        href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      *        Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

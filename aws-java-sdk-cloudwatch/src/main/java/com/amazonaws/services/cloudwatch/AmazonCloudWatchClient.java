@@ -764,7 +764,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * the returned statistics, to create new time series that represent new insights into your data. For example, using
      * Lambda metrics, you could divide the Errors metric by the Invocations metric to get an error rate time series.
      * For more information about metric math expressions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax"
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax"
      * >Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * <p>
@@ -927,7 +927,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * For information about metrics and dimensions supported by AWS services, see the <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html">Amazon CloudWatch
      * Metrics and Dimensions Reference</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * 
@@ -1328,7 +1328,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * The first time you create an alarm in the AWS Management Console, the CLI, or by using the PutMetricAlarm API,
      * CloudWatch creates the necessary service-linked role for you. The service-linked role is called
      * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
      * >AWS service-linked role</a>.
      * </p>
      * 
@@ -1405,9 +1405,9 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * supported.
      * </p>
      * <p>
-     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. For more information
-     * about specifying dimensions, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
+     * You can use up to 10 dimensions per metric to further clarify what data the metric collects. Each dimension
+     * consists of a Name and Value pair. For more information about specifying dimensions, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
      * </p>
      * <p>

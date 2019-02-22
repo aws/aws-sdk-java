@@ -24,6 +24,16 @@ import com.amazonaws.services.transfer.model.*;
  * <b>Note:</b> Do not directly implement this interface, new methods are added to it regularly. Extend from
  * {@link com.amazonaws.services.transfer.AbstractAWSTransferAsync} instead.
  * </p>
+ * <p>
+ * <p>
+ * AWS Transfer for SFTP is a fully managed service that enables the transfer of files directly into and out of Amazon
+ * S3 using the Secure File Transfer Protocol (SFTP)—also known as Secure Shell (SSH) File Transfer Protocol. AWS helps
+ * you seamlessly migrate your file transfer workflows to AWS Transfer for SFTP—by integrating with existing
+ * authentication systems, and providing DNS routing with Amazon Route 53—so nothing changes for your customers and
+ * partners, or their applications. With your data in S3, you can use it with AWS services for processing, analytics,
+ * machine learning, and archiving. Getting started with AWS Transfer for SFTP (AWS SFTP) is easy; there is no
+ * infrastructure to buy and setup.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSTransferAsync extends AWSTransfer {

@@ -29,7 +29,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String arn;
-
+    /**
+     * <p>
+     * When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter to continue listing additional tags.
+     * </p>
+     */
     private String nextToken;
     /**
      * <p>
@@ -80,7 +86,16 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter to continue listing additional tags.
+     * </p>
+     * 
      * @param nextToken
+     *        When you can get additional results from the <code>ListTagsForResource</code> call, a
+     *        <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the
+     *        <code>NextToken</code> parameter to continue listing additional tags.
      */
 
     public void setNextToken(String nextToken) {
@@ -88,7 +103,15 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter to continue listing additional tags.
+     * </p>
+     * 
+     * @return When you can get additional results from the <code>ListTagsForResource</code> call, a
+     *         <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the
+     *         <code>NextToken</code> parameter to continue listing additional tags.
      */
 
     public String getNextToken() {
@@ -96,7 +119,16 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter to continue listing additional tags.
+     * </p>
+     * 
      * @param nextToken
+     *        When you can get additional results from the <code>ListTagsForResource</code> call, a
+     *        <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the
+     *        <code>NextToken</code> parameter to continue listing additional tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

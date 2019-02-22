@@ -45,12 +45,12 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the fragment.
+     * AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side time stamp of the fragment.
+     * AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.
      * </p>
      * </li>
      * </ul>
@@ -133,12 +133,12 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the fragment.
+     * AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side time stamp of the fragment.
+     * AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.
      * </p>
      * </li>
      * </ul>
@@ -177,12 +177,12 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the fragment.
+     *        AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side time stamp of the fragment.
+     *        AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.
      *        </p>
      *        </li>
      *        </ul>
@@ -227,12 +227,12 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the fragment.
+     * AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side time stamp of the fragment.
+     * AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.
      * </p>
      * </li>
      * </ul>
@@ -270,12 +270,12 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the fragment.
+     *         AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side time stamp of the fragment.
+     *         AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.
      *         </p>
      *         </li>
      *         </ul>
@@ -320,12 +320,12 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the fragment.
+     * AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.
      * </p>
      * </li>
      * <li>
      * <p>
-     * AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side time stamp of the fragment.
+     * AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.
      * </p>
      * </li>
      * </ul>
@@ -364,12 +364,12 @@ public class GetMediaForFragmentListResult extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the fragment.
+     *        AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the fragment.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side time stamp of the fragment.
+     *        AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP - Producer-side timestamp of the fragment.
      *        </p>
      *        </li>
      *        </ul>

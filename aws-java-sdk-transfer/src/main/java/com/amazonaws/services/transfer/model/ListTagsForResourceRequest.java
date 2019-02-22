@@ -32,9 +32,19 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String arn;
-
+    /**
+     * <p>
+     * Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * When you request additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
+     * parameter is returned in the input. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter to continue listing additional tags.
+     * </p>
+     */
     private String nextToken;
 
     /**
@@ -84,7 +94,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.
+     * </p>
+     * 
      * @param maxResults
+     *        Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -92,7 +107,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.
+     * </p>
+     * 
+     * @return Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.
      */
 
     public Integer getMaxResults() {
@@ -100,7 +119,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.
+     * </p>
+     * 
      * @param maxResults
+     *        Specifies the number of tags to return as a response to the <code>ListTagsForResource</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -110,7 +134,16 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * When you request additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
+     * parameter is returned in the input. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter to continue listing additional tags.
+     * </p>
+     * 
      * @param nextToken
+     *        When you request additional results from the <code>ListTagsForResource</code> call, a
+     *        <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent command the
+     *        <code>NextToken</code> parameter to continue listing additional tags.
      */
 
     public void setNextToken(String nextToken) {
@@ -118,7 +151,15 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * When you request additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
+     * parameter is returned in the input. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter to continue listing additional tags.
+     * </p>
+     * 
+     * @return When you request additional results from the <code>ListTagsForResource</code> call, a
+     *         <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent command the
+     *         <code>NextToken</code> parameter to continue listing additional tags.
      */
 
     public String getNextToken() {
@@ -126,7 +167,16 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * When you request additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
+     * parameter is returned in the input. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter to continue listing additional tags.
+     * </p>
+     * 
      * @param nextToken
+     *        When you request additional results from the <code>ListTagsForResource</code> call, a
+     *        <code>NextToken</code> parameter is returned in the input. You can then pass in a subsequent command the
+     *        <code>NextToken</code> parameter to continue listing additional tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

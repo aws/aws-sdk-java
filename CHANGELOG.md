@@ -1,3 +1,32 @@
+# __1.11.504__ __2019-02-21__
+## __AWS CodeBuild__
+  - ### Features
+    - Add support for CodeBuild local caching feature
+
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for organizations
+
+## __AWS Transfer for SFTP__
+  - ### Features
+    - Bug fix: increased the max length allowed for request parameter NextToken when paginating List operations
+
+## __Amazon CloudWatch__
+  - ### Features
+    - Documentation updates for monitoring
+
+## __Amazon Kinesis Video Streams__
+  - ### Features
+    - Documentation updates for Kinesis Video Streams
+
+## __Amazon Kinesis Video Streams Archived Media__
+  - ### Features
+    - In this release, HLS playback of KVS streams can be configured to output MPEG TS fragments using the ContainerFormat parameter. HLS playback of KVS streams can also be configured to include the EXT-X-PROGRAM-DATE-TIME field using the DisplayFragmentTimestamp parameter.
+
+## __Amazon WorkDocs__
+  - ### Features
+    - Documentation updates for workdocs
+
 # __1.11.503__ __2019-02-20__
 ## __AWS CodeCommit__
   - ### Features

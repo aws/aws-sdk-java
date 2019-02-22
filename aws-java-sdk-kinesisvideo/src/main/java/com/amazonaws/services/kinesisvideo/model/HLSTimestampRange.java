@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The start and end of the time stamp range for the requested media.
+ * The start and end of the timestamp range for the requested media.
  * </p>
  * <p>
  * This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
@@ -39,7 +39,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The start of the time stamp range for the requested media.
+     * The start of the timestamp range for the requested media.
      * </p>
      * <p>
      * If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.
@@ -55,7 +55,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
     private java.util.Date startTimestamp;
     /**
      * <p>
-     * The end of the time stamp range for the requested media. This value must be within 3 hours of the specified
+     * The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
      * <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.
      * </p>
      * <p>
@@ -67,7 +67,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) time stamp of the fragment.
+     * This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment.
      * Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.
      * </p>
      * </note>
@@ -76,7 +76,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The start of the time stamp range for the requested media.
+     * The start of the timestamp range for the requested media.
      * </p>
      * <p>
      * If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.
@@ -90,7 +90,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @param startTimestamp
-     *        The start of the time stamp range for the requested media.</p>
+     *        The start of the timestamp range for the requested media.</p>
      *        <p>
      *        If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is
      *        required.
@@ -109,7 +109,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The start of the time stamp range for the requested media.
+     * The start of the timestamp range for the requested media.
      * </p>
      * <p>
      * If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.
@@ -122,7 +122,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </note>
      * 
-     * @return The start of the time stamp range for the requested media.</p>
+     * @return The start of the timestamp range for the requested media.</p>
      *         <p>
      *         If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is
      *         required.
@@ -141,7 +141,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The start of the time stamp range for the requested media.
+     * The start of the timestamp range for the requested media.
      * </p>
      * <p>
      * If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.
@@ -155,7 +155,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @param startTimestamp
-     *        The start of the time stamp range for the requested media.</p>
+     *        The start of the timestamp range for the requested media.</p>
      *        <p>
      *        If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is
      *        required.
@@ -176,7 +176,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The end of the time stamp range for the requested media. This value must be within 3 hours of the specified
+     * The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
      * <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.
      * </p>
      * <p>
@@ -188,15 +188,14 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) time stamp of the fragment.
+     * This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment.
      * Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.
      * </p>
      * </note>
      * 
      * @param endTimestamp
-     *        The end of the time stamp range for the requested media. This value must be within 3 hours of the
-     *        specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code>
-     *        value.</p>
+     *        The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
+     *        <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
      *        <p>
      *        If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be
      *        in the past.
@@ -206,7 +205,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      *        </p>
      *        <note>
      *        <p>
-     *        This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) time stamp of the
+     *        This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the
      *        fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are
      *        included in the session.
      *        </p>
@@ -218,7 +217,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The end of the time stamp range for the requested media. This value must be within 3 hours of the specified
+     * The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
      * <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.
      * </p>
      * <p>
@@ -230,12 +229,12 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) time stamp of the fragment.
+     * This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment.
      * Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.
      * </p>
      * </note>
      * 
-     * @return The end of the time stamp range for the requested media. This value must be within 3 hours of the
+     * @return The end of the timestamp range for the requested media. This value must be within 3 hours of the
      *         specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code>
      *         value.</p>
      *         <p>
@@ -248,7 +247,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      *         </p>
      *         <note>
      *         <p>
-     *         This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) time stamp of the
+     *         This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the
      *         fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are
      *         included in the session.
      *         </p>
@@ -260,7 +259,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The end of the time stamp range for the requested media. This value must be within 3 hours of the specified
+     * The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
      * <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.
      * </p>
      * <p>
@@ -272,15 +271,14 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </p>
      * <note>
      * <p>
-     * This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) time stamp of the fragment.
+     * This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the fragment.
      * Fragments that start before the <code>EndTimestamp</code> value and continue past it are included in the session.
      * </p>
      * </note>
      * 
      * @param endTimestamp
-     *        The end of the time stamp range for the requested media. This value must be within 3 hours of the
-     *        specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code>
-     *        value.</p>
+     *        The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
+     *        <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
      *        <p>
      *        If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be
      *        in the past.
@@ -290,7 +288,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      *        </p>
      *        <note>
      *        <p>
-     *        This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) time stamp of the
+     *        This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting) timestamp of the
      *        fragment. Fragments that start before the <code>EndTimestamp</code> value and continue past it are
      *        included in the session.
      *        </p>

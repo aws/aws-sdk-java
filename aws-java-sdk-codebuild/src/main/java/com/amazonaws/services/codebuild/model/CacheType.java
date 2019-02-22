@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum CacheType {
 
     NO_CACHE("NO_CACHE"),
-    S3("S3");
+    S3("S3"),
+    LOCAL("LOCAL");
 
     private String value;
 
