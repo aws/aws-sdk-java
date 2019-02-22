@@ -28,7 +28,7 @@
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
  * You can run tasks on AWS, your own servers, or any system that has access to AWS. You can access and use Step
  * Functions using the console, the AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
- * href="http://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
  * </p>
  */
 package com.amazonaws.services.stepfunctions;

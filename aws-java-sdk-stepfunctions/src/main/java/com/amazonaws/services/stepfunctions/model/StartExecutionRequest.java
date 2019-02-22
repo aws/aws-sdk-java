@@ -33,9 +33,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String stateMachineArn;
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account and region for 90 days. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
      * <p>
@@ -128,9 +128,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account and region for 90 days. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
      * <p>
@@ -165,10 +165,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param name
-     *        The name of the execution. This name must be unique for your AWS account and region for 90 days. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     *        Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        The name of the execution. This name must be unique for your AWS account, region, and state machine for 90
+     *        days. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -206,9 +206,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account and region for 90 days. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
      * <p>
@@ -242,9 +242,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * </ul>
      * 
-     * @return The name of the execution. This name must be unique for your AWS account and region for 90 days. For more
-     *         information, see <a href=
-     *         "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     * @return The name of the execution. This name must be unique for your AWS account, region, and state machine for
+     *         90 days. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
      *         > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
      *         <p>
      *         A name must <i>not</i> contain:
@@ -283,9 +283,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account and region for 90 days. For more
-     * information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
      * </p>
      * <p>
@@ -320,10 +320,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </ul>
      * 
      * @param name
-     *        The name of the execution. This name must be unique for your AWS account and region for 90 days. For more
-     *        information, see <a href=
-     *        "http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     *        Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        The name of the execution. This name must be unique for your AWS account, region, and state machine for 90
+     *        days. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
+     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>

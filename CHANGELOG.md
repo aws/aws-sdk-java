@@ -1,3 +1,20 @@
+# __1.11.505__ __2019-02-22__
+## __AWS Cloud9__
+  - ### Features
+    - Adding EnvironmentLifecycle to the Environment data type.
+
+## __AWS Glue__
+  - ### Features
+    - AWS Glue adds support for assigning AWS resource tags to jobs, triggers, development endpoints, and crawlers. Each tag consists of a key and an optional value, both of which you define. With this capacity, customers can use tags in AWS Glue to easily organize and identify your resources, create cost allocation reports, and control access to resources. 
+
+## __AWS Step Functions__
+  - ### Features
+    - This release adds support for tag-on-create. You can now add tags when you create AWS Step Functions activity and state machine resources. For more information about tagging, see AWS Tagging Strategies.
+
+## __Amazon Athena__
+  - ### Features
+    - This release adds tagging support for Workgroups to Amazon Athena. Use these APIs to add, remove, or list tags on Workgroups, and leverage the tags for various authorization and billing scenarios.
+
 # __1.11.504__ __2019-02-21__
 ## __AWS CodeBuild__
   - ### Features

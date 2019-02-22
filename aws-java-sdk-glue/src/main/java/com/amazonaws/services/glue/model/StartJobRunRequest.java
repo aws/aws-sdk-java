@@ -39,7 +39,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String jobRunId;
     /**
      * <p>
-     * The job arguments specifically for this run. They override the equivalent default arguments set for in the job
+     * The job arguments specifically for this run. For this job run, they replace the default arguments set in the job
      * definition itself.
      * </p>
      * <p>
@@ -81,10 +81,28 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer timeout;
     /**
      * <p>
-     * AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing as low
-     * as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any other way
-     * cannot have fractional DPU allocations.
+     * The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative
+     * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
+     * <p>
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
+     * job, or an Apache Spark ETL job:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * or 1 DPU. The default is 0.0625 DPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100
+     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Double maxCapacity;
     /**
@@ -182,7 +200,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The job arguments specifically for this run. They override the equivalent default arguments set for in the job
+     * The job arguments specifically for this run. For this job run, they replace the default arguments set in the job
      * definition itself.
      * </p>
      * <p>
@@ -200,7 +218,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
-     * @return The job arguments specifically for this run. They override the equivalent default arguments set for in
+     * @return The job arguments specifically for this run. For this job run, they replace the default arguments set in
      *         the job definition itself.</p>
      *         <p>
      *         You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
@@ -223,7 +241,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The job arguments specifically for this run. They override the equivalent default arguments set for in the job
+     * The job arguments specifically for this run. For this job run, they replace the default arguments set in the job
      * definition itself.
      * </p>
      * <p>
@@ -242,8 +260,8 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param arguments
-     *        The job arguments specifically for this run. They override the equivalent default arguments set for in the
-     *        job definition itself.</p>
+     *        The job arguments specifically for this run. For this job run, they replace the default arguments set in
+     *        the job definition itself.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *        Glue itself consumes.
@@ -265,7 +283,7 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The job arguments specifically for this run. They override the equivalent default arguments set for in the job
+     * The job arguments specifically for this run. For this job run, they replace the default arguments set in the job
      * definition itself.
      * </p>
      * <p>
@@ -284,8 +302,8 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param arguments
-     *        The job arguments specifically for this run. They override the equivalent default arguments set for in the
-     *        job definition itself.</p>
+     *        The job arguments specifically for this run. For this job run, they replace the default arguments set in
+     *        the job definition itself.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *        Glue itself consumes.
@@ -455,15 +473,50 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing as low
-     * as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any other way
-     * cannot have fractional DPU allocations.
+     * The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative
+     * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
+     * <p>
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
+     * job, or an Apache Spark ETL job:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * or 1 DPU. The default is 0.0625 DPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100
+     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxCapacity
-     *        AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing
-     *        as low as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any
-     *        other way cannot have fractional DPU allocations.
+     *        The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a
+     *        relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For
+     *        more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
+     *        <p>
+     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
+     *        shell job, or an Apache Spark ETL job:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *        0.0625 or 1 DPU. The default is 0.0625 DPU.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     *        to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        </p>
+     *        </li>
      */
 
     public void setMaxCapacity(Double maxCapacity) {
@@ -472,14 +525,50 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing as low
-     * as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any other way
-     * cannot have fractional DPU allocations.
+     * The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative
+     * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
+     * <p>
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
+     * job, or an Apache Spark ETL job:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * or 1 DPU. The default is 0.0625 DPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100
+     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing
-     *         as low as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any
-     *         other way cannot have fractional DPU allocations.
+     * @return The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a
+     *         relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory.
+     *         For more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing
+     *         page</a>.</p>
+     *         <p>
+     *         The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
+     *         shell job, or an Apache Spark ETL job:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *         0.0625 or 1 DPU. The default is 0.0625 DPU.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from
+     *         2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *         </p>
+     *         </li>
      */
 
     public Double getMaxCapacity() {
@@ -488,15 +577,50 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing as low
-     * as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any other way
-     * cannot have fractional DPU allocations.
+     * The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative
+     * measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
+     * information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.
      * </p>
+     * <p>
+     * The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python shell
+     * job, or an Apache Spark ETL job:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625
+     * or 1 DPU. The default is 0.0625 DPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2 to 100
+     * DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param maxCapacity
-     *        AWS Glue supports running jobs on a <code>JobCommand.Name</code>="pythonshell" with allocated processing
-     *        as low as 0.0625 DPU, which can be specified using <code>MaxCapacity</code>. Glue ETL jobs running in any
-     *        other way cannot have fractional DPU allocations.
+     *        The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a
+     *        relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For
+     *        more information, see the <a href="https://aws.amazon.com/glue/pricing/">AWS Glue pricing page</a>.</p>
+     *        <p>
+     *        The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a python
+     *        shell job, or an Apache Spark ETL job:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When you specify a python shell job (<code>JobCommand.Name</code>="pythonshell"), you can allocate either
+     *        0.0625 or 1 DPU. The default is 0.0625 DPU.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>="glueetl"), you can allocate from 2
+     *        to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

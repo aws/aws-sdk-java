@@ -423,7 +423,7 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
+            sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getInstanceType() != null)

@@ -30,7 +30,8 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The values of the partition.
+     * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
+     * for a valid input.
      * </p>
      */
     private java.util.List<String> values;
@@ -61,10 +62,12 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The values of the partition.
+     * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
+     * for a valid input.
      * </p>
      * 
-     * @return The values of the partition.
+     * @return The values of the partition. Although this parameter is not required by the SDK, you must specify this
+     *         parameter for a valid input.
      */
 
     public java.util.List<String> getValues() {
@@ -73,11 +76,13 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The values of the partition.
+     * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
+     * for a valid input.
      * </p>
      * 
      * @param values
-     *        The values of the partition.
+     *        The values of the partition. Although this parameter is not required by the SDK, you must specify this
+     *        parameter for a valid input.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -91,7 +96,8 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The values of the partition.
+     * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
+     * for a valid input.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,7 +106,8 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        The values of the partition.
+     *        The values of the partition. Although this parameter is not required by the SDK, you must specify this
+     *        parameter for a valid input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +123,13 @@ public class PartitionInput implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The values of the partition.
+     * The values of the partition. Although this parameter is not required by the SDK, you must specify this parameter
+     * for a valid input.
      * </p>
      * 
      * @param values
-     *        The values of the partition.
+     *        The values of the partition. Although this parameter is not required by the SDK, you must specify this
+     *        parameter for a valid input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

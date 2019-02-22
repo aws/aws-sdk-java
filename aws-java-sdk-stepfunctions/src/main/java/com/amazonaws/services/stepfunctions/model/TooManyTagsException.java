@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 /**
  * <p>
  * You've exceeded the number of tags allowed for a resource. See the <a
- * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step Functions
  * Developer Guide.
  * </p>
  */

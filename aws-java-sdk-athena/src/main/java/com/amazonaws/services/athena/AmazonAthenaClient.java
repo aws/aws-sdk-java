@@ -95,6 +95,9 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
                                     com.amazonaws.services.athena.model.InvalidRequestException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
+                                    com.amazonaws.services.athena.model.ResourceNotFoundException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withModeledClass(
                                     com.amazonaws.services.athena.model.InternalServerException.class))
                     .addErrorMetadata(
@@ -687,7 +690,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Returns information about the workgroup with the speficied name.
+     * Returns information about the workgroup with the specified name.
      * </p>
      * 
      * @param getWorkGroupRequest
@@ -858,6 +861,65 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<ListQueryExecutionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListQueryExecutionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags associated with this workgroup.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1042,6 +1104,133 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<StopQueryExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopQueryExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
+     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
+     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
+     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
+     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
+     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
+     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
+     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
+     * commas, and removes their tags at the same time.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Athena");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

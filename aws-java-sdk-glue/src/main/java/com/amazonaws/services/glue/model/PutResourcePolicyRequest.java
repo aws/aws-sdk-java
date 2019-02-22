@@ -33,7 +33,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     private String policyInJson;
     /**
      * <p>
-     * This is the hash value returned when the previous policy was set using PutResourcePolicy. Its purpose is to
+     * The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to
      * prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.
      * </p>
      */
@@ -89,14 +89,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This is the hash value returned when the previous policy was set using PutResourcePolicy. Its purpose is to
+     * The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to
      * prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.
      * </p>
      * 
      * @param policyHashCondition
-     *        This is the hash value returned when the previous policy was set using PutResourcePolicy. Its purpose is
-     *        to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been
-     *        set.
+     *        The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose
+     *        is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has
+     *        been set.
      */
 
     public void setPolicyHashCondition(String policyHashCondition) {
@@ -105,13 +105,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This is the hash value returned when the previous policy was set using PutResourcePolicy. Its purpose is to
+     * The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to
      * prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.
      * </p>
      * 
-     * @return This is the hash value returned when the previous policy was set using PutResourcePolicy. Its purpose is
-     *         to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been
-     *         set.
+     * @return The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its
+     *         purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous
+     *         policy has been set.
      */
 
     public String getPolicyHashCondition() {
@@ -120,14 +120,14 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * This is the hash value returned when the previous policy was set using PutResourcePolicy. Its purpose is to
+     * The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to
      * prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.
      * </p>
      * 
      * @param policyHashCondition
-     *        This is the hash value returned when the previous policy was set using PutResourcePolicy. Its purpose is
-     *        to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been
-     *        set.
+     *        The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose
+     *        is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has
+     *        been set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

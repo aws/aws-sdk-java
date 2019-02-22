@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies encryption-at-rest configuration for the Data Catalog.
+ * Specifies the encryption-at-rest configuration for the Data Catalog.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/EncryptionAtRest" target="_top">AWS API

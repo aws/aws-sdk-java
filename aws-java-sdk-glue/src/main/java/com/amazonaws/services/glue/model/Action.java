@@ -35,7 +35,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
     private String jobName;
     /**
      * <p>
-     * Arguments to be passed to the job run.
+     * The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the
+     * job definition itself.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -116,7 +117,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arguments to be passed to the job run.
+     * The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the
+     * job definition itself.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -133,7 +135,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * Used by AWS Glue</a> topic in the developer guide.
      * </p>
      * 
-     * @return Arguments to be passed to the job run.</p>
+     * @return The job arguments used when this trigger fires. For this job run, they replace the default arguments set
+     *         in the job definition itself.</p>
      *         <p>
      *         You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *         Glue itself consumes.
@@ -155,7 +158,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arguments to be passed to the job run.
+     * The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the
+     * job definition itself.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -173,7 +177,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param arguments
-     *        Arguments to be passed to the job run.</p>
+     *        The job arguments used when this trigger fires. For this job run, they replace the default arguments set
+     *        in the job definition itself.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *        Glue itself consumes.
@@ -195,7 +200,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Arguments to be passed to the job run.
+     * The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the
+     * job definition itself.
      * </p>
      * <p>
      * You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue
@@ -213,7 +219,8 @@ public class Action implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param arguments
-     *        Arguments to be passed to the job run.</p>
+     *        The job arguments used when this trigger fires. For this job run, they replace the default arguments set
+     *        in the job definition itself.</p>
      *        <p>
      *        You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS
      *        Glue itself consumes.

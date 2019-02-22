@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -48,6 +49,8 @@ public class CreateDevEndpointRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExtraJarsS3Path").build();
     private static final MarshallingInfo<String> SECURITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfiguration").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateDevEndpointRequestMarshaller instance = new CreateDevEndpointRequestMarshaller();
 
@@ -75,6 +78,7 @@ public class CreateDevEndpointRequestMarshaller {
             protocolMarshaller.marshall(createDevEndpointRequest.getExtraPythonLibsS3Path(), EXTRAPYTHONLIBSS3PATH_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getExtraJarsS3Path(), EXTRAJARSS3PATH_BINDING);
             protocolMarshaller.marshall(createDevEndpointRequest.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDevEndpointRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

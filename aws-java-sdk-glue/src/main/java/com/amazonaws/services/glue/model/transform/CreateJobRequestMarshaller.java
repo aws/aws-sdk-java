@@ -57,6 +57,8 @@ public class CreateJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationProperty").build();
     private static final MarshallingInfo<String> SECURITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityConfiguration").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateJobRequestMarshaller instance = new CreateJobRequestMarshaller();
 
@@ -88,6 +90,7 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getMaxCapacity(), MAXCAPACITY_BINDING);
             protocolMarshaller.marshall(createJobRequest.getNotificationProperty(), NOTIFICATIONPROPERTY_BINDING);
             protocolMarshaller.marshall(createJobRequest.getSecurityConfiguration(), SECURITYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -181,7 +181,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

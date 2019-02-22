@@ -47,6 +47,12 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -196,6 +202,76 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * </p>
+     * 
+     * @return One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * </p>
+     * 
+     * @param tags
+     *        One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +288,9 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
         if (getConfiguration() != null)
             sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +317,10 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +332,7 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

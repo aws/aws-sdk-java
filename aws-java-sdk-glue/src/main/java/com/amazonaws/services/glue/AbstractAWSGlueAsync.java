@@ -92,6 +92,45 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetCrawlersResult> batchGetCrawlersAsync(BatchGetCrawlersRequest request) {
+
+        return batchGetCrawlersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCrawlersResult> batchGetCrawlersAsync(BatchGetCrawlersRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetCrawlersRequest, BatchGetCrawlersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDevEndpointsResult> batchGetDevEndpointsAsync(BatchGetDevEndpointsRequest request) {
+
+        return batchGetDevEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDevEndpointsResult> batchGetDevEndpointsAsync(BatchGetDevEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDevEndpointsRequest, BatchGetDevEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetJobsResult> batchGetJobsAsync(BatchGetJobsRequest request) {
+
+        return batchGetJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetJobsResult> batchGetJobsAsync(BatchGetJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetJobsRequest, BatchGetJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetPartitionResult> batchGetPartitionAsync(BatchGetPartitionRequest request) {
 
         return batchGetPartitionAsync(request, null);
@@ -100,6 +139,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<BatchGetPartitionResult> batchGetPartitionAsync(BatchGetPartitionRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchGetPartitionRequest, BatchGetPartitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetTriggersResult> batchGetTriggersAsync(BatchGetTriggersRequest request) {
+
+        return batchGetTriggersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetTriggersResult> batchGetTriggersAsync(BatchGetTriggersRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetTriggersRequest, BatchGetTriggersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -822,6 +874,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest request) {
+
+        return getTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTagsRequest, GetTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTriggerResult> getTriggerAsync(GetTriggerRequest request) {
 
         return getTriggerAsync(request, null);
@@ -882,6 +947,58 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<ImportCatalogToGlueResult> importCatalogToGlueAsync(ImportCatalogToGlueRequest request,
             com.amazonaws.handlers.AsyncHandler<ImportCatalogToGlueRequest, ImportCatalogToGlueResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrawlersResult> listCrawlersAsync(ListCrawlersRequest request) {
+
+        return listCrawlersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCrawlersResult> listCrawlersAsync(ListCrawlersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCrawlersRequest, ListCrawlersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevEndpointsResult> listDevEndpointsAsync(ListDevEndpointsRequest request) {
+
+        return listDevEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDevEndpointsResult> listDevEndpointsAsync(ListDevEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDevEndpointsRequest, ListDevEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request) {
+
+        return listJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJobsResult> listJobsAsync(ListJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListJobsRequest, ListJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTriggersResult> listTriggersAsync(ListTriggersRequest request) {
+
+        return listTriggersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTriggersResult> listTriggersAsync(ListTriggersRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTriggersRequest, ListTriggersResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1014,6 +1131,32 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<StopTriggerResult> stopTriggerAsync(StopTriggerRequest request,
             com.amazonaws.handlers.AsyncHandler<StopTriggerRequest, StopTriggerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

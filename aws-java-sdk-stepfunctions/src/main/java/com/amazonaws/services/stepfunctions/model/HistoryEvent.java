@@ -68,21 +68,53 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     private ActivitySucceededEventDetails activitySucceededEventDetails;
 
     private ActivityTimedOutEventDetails activityTimedOutEventDetails;
-
+    /**
+     * <p>
+     * Contains details about the failure of a task.
+     * </p>
+     */
     private TaskFailedEventDetails taskFailedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a task that was scheduled.
+     * </p>
+     */
     private TaskScheduledEventDetails taskScheduledEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a task that failed to start.
+     * </p>
+     */
     private TaskStartFailedEventDetails taskStartFailedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a task that was started.
+     * </p>
+     */
     private TaskStartedEventDetails taskStartedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a task that where the submit failed.
+     * </p>
+     */
     private TaskSubmitFailedEventDetails taskSubmitFailedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a submitted task.
+     * </p>
+     */
     private TaskSubmittedEventDetails taskSubmittedEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a task that succeeded.
+     * </p>
+     */
     private TaskSucceededEventDetails taskSucceededEventDetails;
-
+    /**
+     * <p>
+     * Contains details about a task that timed out.
+     * </p>
+     */
     private TaskTimedOutEventDetails taskTimedOutEventDetails;
 
     private ExecutionFailedEventDetails executionFailedEventDetails;
@@ -483,7 +515,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about the failure of a task.
+     * </p>
+     * 
      * @param taskFailedEventDetails
+     *        Contains details about the failure of a task.
      */
 
     public void setTaskFailedEventDetails(TaskFailedEventDetails taskFailedEventDetails) {
@@ -491,7 +528,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about the failure of a task.
+     * </p>
+     * 
+     * @return Contains details about the failure of a task.
      */
 
     public TaskFailedEventDetails getTaskFailedEventDetails() {
@@ -499,7 +540,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about the failure of a task.
+     * </p>
+     * 
      * @param taskFailedEventDetails
+     *        Contains details about the failure of a task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,7 +555,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that was scheduled.
+     * </p>
+     * 
      * @param taskScheduledEventDetails
+     *        Contains details about a task that was scheduled.
      */
 
     public void setTaskScheduledEventDetails(TaskScheduledEventDetails taskScheduledEventDetails) {
@@ -517,7 +568,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a task that was scheduled.
+     * </p>
+     * 
+     * @return Contains details about a task that was scheduled.
      */
 
     public TaskScheduledEventDetails getTaskScheduledEventDetails() {
@@ -525,7 +580,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that was scheduled.
+     * </p>
+     * 
      * @param taskScheduledEventDetails
+     *        Contains details about a task that was scheduled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -535,7 +595,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that failed to start.
+     * </p>
+     * 
      * @param taskStartFailedEventDetails
+     *        Contains details about a task that failed to start.
      */
 
     public void setTaskStartFailedEventDetails(TaskStartFailedEventDetails taskStartFailedEventDetails) {
@@ -543,7 +608,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a task that failed to start.
+     * </p>
+     * 
+     * @return Contains details about a task that failed to start.
      */
 
     public TaskStartFailedEventDetails getTaskStartFailedEventDetails() {
@@ -551,7 +620,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that failed to start.
+     * </p>
+     * 
      * @param taskStartFailedEventDetails
+     *        Contains details about a task that failed to start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -561,7 +635,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that was started.
+     * </p>
+     * 
      * @param taskStartedEventDetails
+     *        Contains details about a task that was started.
      */
 
     public void setTaskStartedEventDetails(TaskStartedEventDetails taskStartedEventDetails) {
@@ -569,7 +648,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a task that was started.
+     * </p>
+     * 
+     * @return Contains details about a task that was started.
      */
 
     public TaskStartedEventDetails getTaskStartedEventDetails() {
@@ -577,7 +660,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that was started.
+     * </p>
+     * 
      * @param taskStartedEventDetails
+     *        Contains details about a task that was started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -587,7 +675,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that where the submit failed.
+     * </p>
+     * 
      * @param taskSubmitFailedEventDetails
+     *        Contains details about a task that where the submit failed.
      */
 
     public void setTaskSubmitFailedEventDetails(TaskSubmitFailedEventDetails taskSubmitFailedEventDetails) {
@@ -595,7 +688,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a task that where the submit failed.
+     * </p>
+     * 
+     * @return Contains details about a task that where the submit failed.
      */
 
     public TaskSubmitFailedEventDetails getTaskSubmitFailedEventDetails() {
@@ -603,7 +700,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that where the submit failed.
+     * </p>
+     * 
      * @param taskSubmitFailedEventDetails
+     *        Contains details about a task that where the submit failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -613,7 +715,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a submitted task.
+     * </p>
+     * 
      * @param taskSubmittedEventDetails
+     *        Contains details about a submitted task.
      */
 
     public void setTaskSubmittedEventDetails(TaskSubmittedEventDetails taskSubmittedEventDetails) {
@@ -621,7 +728,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a submitted task.
+     * </p>
+     * 
+     * @return Contains details about a submitted task.
      */
 
     public TaskSubmittedEventDetails getTaskSubmittedEventDetails() {
@@ -629,7 +740,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a submitted task.
+     * </p>
+     * 
      * @param taskSubmittedEventDetails
+     *        Contains details about a submitted task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -639,7 +755,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that succeeded.
+     * </p>
+     * 
      * @param taskSucceededEventDetails
+     *        Contains details about a task that succeeded.
      */
 
     public void setTaskSucceededEventDetails(TaskSucceededEventDetails taskSucceededEventDetails) {
@@ -647,7 +768,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a task that succeeded.
+     * </p>
+     * 
+     * @return Contains details about a task that succeeded.
      */
 
     public TaskSucceededEventDetails getTaskSucceededEventDetails() {
@@ -655,7 +780,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that succeeded.
+     * </p>
+     * 
      * @param taskSucceededEventDetails
+     *        Contains details about a task that succeeded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -665,7 +795,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that timed out.
+     * </p>
+     * 
      * @param taskTimedOutEventDetails
+     *        Contains details about a task that timed out.
      */
 
     public void setTaskTimedOutEventDetails(TaskTimedOutEventDetails taskTimedOutEventDetails) {
@@ -673,7 +808,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Contains details about a task that timed out.
+     * </p>
+     * 
+     * @return Contains details about a task that timed out.
      */
 
     public TaskTimedOutEventDetails getTaskTimedOutEventDetails() {
@@ -681,7 +820,12 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about a task that timed out.
+     * </p>
+     * 
      * @param taskTimedOutEventDetails
+     *        Contains details about a task that timed out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

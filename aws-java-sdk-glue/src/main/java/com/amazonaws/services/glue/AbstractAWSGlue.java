@@ -53,7 +53,27 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public BatchGetCrawlersResult batchGetCrawlers(BatchGetCrawlersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetDevEndpointsResult batchGetDevEndpoints(BatchGetDevEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetJobsResult batchGetJobs(BatchGetJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetPartitionResult batchGetPartition(BatchGetPartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchGetTriggersResult batchGetTriggers(BatchGetTriggersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -333,6 +353,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetTagsResult getTags(GetTagsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTriggerResult getTrigger(GetTriggerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -354,6 +379,26 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public ImportCatalogToGlueResult importCatalogToGlue(ImportCatalogToGlueRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCrawlersResult listCrawlers(ListCrawlersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDevEndpointsResult listDevEndpoints(ListDevEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListJobsResult listJobs(ListJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListTriggersResult listTriggers(ListTriggersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -404,6 +449,16 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public StopTriggerResult stopTrigger(StopTriggerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

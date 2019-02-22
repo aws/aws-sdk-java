@@ -243,7 +243,7 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Returns information about the workgroup with the speficied name.
+     * Returns information about the workgroup with the specified name.
      * </p>
      * 
      * @param getWorkGroupRequest
@@ -306,6 +306,26 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     ListQueryExecutionsResult listQueryExecutions(ListQueryExecutionsRequest listQueryExecutionsRequest);
+
+    /**
+     * <p>
+     * Lists the tags associated with this workgroup.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
 
     /**
      * <p>
@@ -373,6 +393,55 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     StopQueryExecutionResult stopQueryExecution(StopQueryExecutionRequest stopQueryExecutionRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
+     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
+     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
+     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
+     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
+     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
+     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
+     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
+     * commas, and removes their tags at the same time.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

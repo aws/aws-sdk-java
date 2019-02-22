@@ -30,14 +30,14 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies encryption-at-rest configuration for the Data Catalog.
+     * Specifies the encryption-at-rest configuration for the Data Catalog.
      * </p>
      */
     private EncryptionAtRest encryptionAtRest;
     /**
      * <p>
-     * When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as
-     * part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     * When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the
+     * password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
      * <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only
      * password encryption.
      * </p>
@@ -46,11 +46,11 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies encryption-at-rest configuration for the Data Catalog.
+     * Specifies the encryption-at-rest configuration for the Data Catalog.
      * </p>
      * 
      * @param encryptionAtRest
-     *        Specifies encryption-at-rest configuration for the Data Catalog.
+     *        Specifies the encryption-at-rest configuration for the Data Catalog.
      */
 
     public void setEncryptionAtRest(EncryptionAtRest encryptionAtRest) {
@@ -59,10 +59,10 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies encryption-at-rest configuration for the Data Catalog.
+     * Specifies the encryption-at-rest configuration for the Data Catalog.
      * </p>
      * 
-     * @return Specifies encryption-at-rest configuration for the Data Catalog.
+     * @return Specifies the encryption-at-rest configuration for the Data Catalog.
      */
 
     public EncryptionAtRest getEncryptionAtRest() {
@@ -71,11 +71,11 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies encryption-at-rest configuration for the Data Catalog.
+     * Specifies the encryption-at-rest configuration for the Data Catalog.
      * </p>
      * 
      * @param encryptionAtRest
-     *        Specifies encryption-at-rest configuration for the Data Catalog.
+     *        Specifies the encryption-at-rest configuration for the Data Catalog.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,15 +86,15 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as
-     * part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     * When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the
+     * password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
      * <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only
      * password encryption.
      * </p>
      * 
      * @param connectionPasswordEncryption
-     *        When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password
-     *        as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     *        When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt
+     *        the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
      *        <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or
      *        only password encryption.
      */
@@ -105,16 +105,16 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as
-     * part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     * When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the
+     * password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
      * <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only
      * password encryption.
      * </p>
      * 
-     * @return When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the
-     *         password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
-     *         <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or
-     *         only password encryption.
+     * @return When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt
+     *         the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in
+     *         the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption
+     *         or only password encryption.
      */
 
     public ConnectionPasswordEncryption getConnectionPasswordEncryption() {
@@ -123,15 +123,15 @@ public class DataCatalogEncryptionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password as
-     * part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     * When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the
+     * password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
      * <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only
      * password encryption.
      * </p>
      * 
      * @param connectionPasswordEncryption
-     *        When password protection is enabled, the Data Catalog uses a customer-provided key to encrypt the password
-     *        as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
+     *        When connection password protection is enabled, the Data Catalog uses a customer-provided key to encrypt
+     *        the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the
      *        <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or
      *        only password encryption.
      * @return Returns a reference to this object so that method calls can be chained together.

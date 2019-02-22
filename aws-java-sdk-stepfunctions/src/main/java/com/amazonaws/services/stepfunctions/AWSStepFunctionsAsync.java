@@ -41,7 +41,7 @@ import com.amazonaws.services.stepfunctions.model.*;
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
  * You can run tasks on AWS, your own servers, or any system that has access to AWS. You can access and use Step
  * Functions using the console, the AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
- * href="http://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -55,6 +55,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * existence of your activity and returns an identifier for use in a state machine and when polling from the
      * activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createActivityRequest
      * @return A Java Future containing the result of the CreateActivity operation returned by the service.
@@ -72,6 +78,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * existence of your activity and returns an identifier for use in a state machine and when polling from the
      * activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createActivityRequest
      * @param asyncHandler
@@ -93,6 +105,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createStateMachineRequest
      * @return A Java Future containing the result of the CreateStateMachine operation returned by the service.
@@ -109,6 +127,12 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createStateMachineRequest
      * @param asyncHandler
@@ -390,7 +414,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * </p>
      * <p>
      * Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
      * for Activity Tasks</a> in the Step Functions Developer Guide.
      * </p>
      * </important>
@@ -418,7 +442,7 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * </p>
      * <p>
      * Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
      * for Activity Tasks</a> in the Step Functions Developer Guide.
      * </p>
      * </important>

@@ -88,6 +88,11 @@ public class AbstractAmazonAthena implements AmazonAthena {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWorkGroupsResult listWorkGroups(ListWorkGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,16 @@ public class AbstractAmazonAthena implements AmazonAthena {
 
     @Override
     public StopQueryExecutionResult stopQueryExecution(StopQueryExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

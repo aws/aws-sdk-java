@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.athena.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class CreateWorkGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateWorkGroupRequestMarshaller instance = new CreateWorkGroupRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class CreateWorkGroupRequestMarshaller {
             protocolMarshaller.marshall(createWorkGroupRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createWorkGroupRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(createWorkGroupRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createWorkGroupRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

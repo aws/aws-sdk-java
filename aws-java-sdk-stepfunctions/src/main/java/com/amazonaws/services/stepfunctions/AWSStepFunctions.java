@@ -42,7 +42,7 @@ import com.amazonaws.services.stepfunctions.model.*;
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
  * You can run tasks on AWS, your own servers, or any system that has access to AWS. You can access and use Step
  * Functions using the console, the AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
- * href="http://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -115,6 +115,12 @@ public interface AWSStepFunctions {
      * existence of your activity and returns an identifier for use in a state machine and when polling from the
      * activity.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createActivityRequest
      * @return Result of the CreateActivity operation returned by the service.
@@ -123,6 +129,10 @@ public interface AWSStepFunctions {
      *         activity can be created.
      * @throws InvalidNameException
      *         The provided name is invalid.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
      * @sample AWSStepFunctions.CreateActivity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity" target="_top">AWS API
      *      Documentation</a>
@@ -136,6 +146,12 @@ public interface AWSStepFunctions {
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language.
      * </p>
+     * <note>
+     * <p>
+     * This operation is eventually consistent. The results are best effort and may not reflect very recent updates and
+     * changes.
+     * </p>
+     * </note>
      * 
      * @param createStateMachineRequest
      * @return Result of the CreateStateMachine operation returned by the service.
@@ -152,6 +168,10 @@ public interface AWSStepFunctions {
      * @throws StateMachineLimitExceededException
      *         The maximum number of state machines has been reached. Existing state machines must be deleted before a
      *         new state machine can be created.
+     * @throws TooManyTagsException
+     *         You've exceeded the number of tags allowed for a resource. See the <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         Functions Developer Guide.
      * @sample AWSStepFunctions.CreateStateMachine
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine" target="_top">AWS API
      *      Documentation</a>
@@ -302,7 +322,7 @@ public interface AWSStepFunctions {
      * </p>
      * <p>
      * Polling with <code>GetActivityTask</code> can cause latency in some implementations. See <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling
      * for Activity Tasks</a> in the Step Functions Developer Guide.
      * </p>
      * </important>
@@ -588,7 +608,7 @@ public interface AWSStepFunctions {
      *         Could not fine the referenced resource. Only state machine and activity ARNs are supported.
      * @throws TooManyTagsException
      *         You've exceeded the number of tags allowed for a resource. See the <a
-     *         href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
      *         Functions Developer Guide.
      * @sample AWSStepFunctions.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource" target="_top">AWS API

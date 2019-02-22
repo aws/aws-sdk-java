@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -50,6 +51,8 @@ public class CreateCrawlerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Configuration").build();
     private static final MarshallingInfo<String> CRAWLERSECURITYCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CrawlerSecurityConfiguration").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateCrawlerRequestMarshaller instance = new CreateCrawlerRequestMarshaller();
 
@@ -78,6 +81,7 @@ public class CreateCrawlerRequestMarshaller {
             protocolMarshaller.marshall(createCrawlerRequest.getSchemaChangePolicy(), SCHEMACHANGEPOLICY_BINDING);
             protocolMarshaller.marshall(createCrawlerRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(createCrawlerRequest.getCrawlerSecurityConfiguration(), CRAWLERSECURITYCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createCrawlerRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

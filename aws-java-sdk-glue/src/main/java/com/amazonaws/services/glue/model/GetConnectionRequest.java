@@ -27,7 +27,7 @@ public class GetConnectionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the Data Catalog in which the connection resides. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which the connection resides. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      */
@@ -40,22 +40,22 @@ public class GetConnectionRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String name;
     /**
      * <p>
-     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
-     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
-     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
-     * the rest of the connection metadata (that is, the other connection properties).
+     * Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console
+     * uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller
+     * might not have permission to use the AWS KMS key to decrypt the password, but does have permission to access the
+     * rest of the connection properties.
      * </p>
      */
     private Boolean hidePassword;
 
     /**
      * <p>
-     * The ID of the Data Catalog in which the connection resides. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which the connection resides. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog in which the connection resides. If none is supplied, the AWS account ID is
+     *        The ID of the Data Catalog in which the connection resides. If none is provided, the AWS account ID is
      *        used by default.
      */
 
@@ -65,11 +65,11 @@ public class GetConnectionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the Data Catalog in which the connection resides. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which the connection resides. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
-     * @return The ID of the Data Catalog in which the connection resides. If none is supplied, the AWS account ID is
+     * @return The ID of the Data Catalog in which the connection resides. If none is provided, the AWS account ID is
      *         used by default.
      */
 
@@ -79,12 +79,12 @@ public class GetConnectionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the Data Catalog in which the connection resides. If none is supplied, the AWS account ID is used by
+     * The ID of the Data Catalog in which the connection resides. If none is provided, the AWS account ID is used by
      * default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the Data Catalog in which the connection resides. If none is supplied, the AWS account ID is
+     *        The ID of the Data Catalog in which the connection resides. If none is provided, the AWS account ID is
      *        used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -136,17 +136,17 @@ public class GetConnectionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
-     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
-     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
-     * the rest of the connection metadata (that is, the other connection properties).
+     * Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console
+     * uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller
+     * might not have permission to use the AWS KMS key to decrypt the password, but does have permission to access the
+     * rest of the connection properties.
      * </p>
      * 
      * @param hidePassword
-     *        Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue
-     *        console uses this flag to retrieve connections, since the console does not display passwords. Set this
-     *        parameter where the caller may not have permission to use the KMS key to decrypt the password, but does
-     *        have permission to access the rest of the connection metadata (that is, the other connection properties).
+     *        Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue
+     *        console uses this flag to retrieve the connection, and does not display the password. Set this parameter
+     *        when the caller might not have permission to use the AWS KMS key to decrypt the password, but does have
+     *        permission to access the rest of the connection properties.
      */
 
     public void setHidePassword(Boolean hidePassword) {
@@ -155,16 +155,16 @@ public class GetConnectionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
-     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
-     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
-     * the rest of the connection metadata (that is, the other connection properties).
+     * Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console
+     * uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller
+     * might not have permission to use the AWS KMS key to decrypt the password, but does have permission to access the
+     * rest of the connection properties.
      * </p>
      * 
-     * @return Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue
-     *         console uses this flag to retrieve connections, since the console does not display passwords. Set this
-     *         parameter where the caller may not have permission to use the KMS key to decrypt the password, but does
-     *         have permission to access the rest of the connection metadata (that is, the other connection properties).
+     * @return Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue
+     *         console uses this flag to retrieve the connection, and does not display the password. Set this parameter
+     *         when the caller might not have permission to use the AWS KMS key to decrypt the password, but does have
+     *         permission to access the rest of the connection properties.
      */
 
     public Boolean getHidePassword() {
@@ -173,17 +173,17 @@ public class GetConnectionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
-     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
-     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
-     * the rest of the connection metadata (that is, the other connection properties).
+     * Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console
+     * uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller
+     * might not have permission to use the AWS KMS key to decrypt the password, but does have permission to access the
+     * rest of the connection properties.
      * </p>
      * 
      * @param hidePassword
-     *        Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue
-     *        console uses this flag to retrieve connections, since the console does not display passwords. Set this
-     *        parameter where the caller may not have permission to use the KMS key to decrypt the password, but does
-     *        have permission to access the rest of the connection metadata (that is, the other connection properties).
+     *        Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue
+     *        console uses this flag to retrieve the connection, and does not display the password. Set this parameter
+     *        when the caller might not have permission to use the AWS KMS key to decrypt the password, but does have
+     *        permission to access the rest of the connection properties.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,16 +194,16 @@ public class GetConnectionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue console
-     * uses this flag to retrieve connections, since the console does not display passwords. Set this parameter where
-     * the caller may not have permission to use the KMS key to decrypt the password, but does have permission to access
-     * the rest of the connection metadata (that is, the other connection properties).
+     * Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue console
+     * uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller
+     * might not have permission to use the AWS KMS key to decrypt the password, but does have permission to access the
+     * rest of the connection properties.
      * </p>
      * 
-     * @return Allow you to retrieve the connection metadata without displaying the password. For instance, the AWS Glue
-     *         console uses this flag to retrieve connections, since the console does not display passwords. Set this
-     *         parameter where the caller may not have permission to use the KMS key to decrypt the password, but does
-     *         have permission to access the rest of the connection metadata (that is, the other connection properties).
+     * @return Allows you to retrieve the connection metadata without returning the password. For instance, the AWS Glue
+     *         console uses this flag to retrieve the connection, and does not display the password. Set this parameter
+     *         when the caller might not have permission to use the AWS KMS key to decrypt the password, but does have
+     *         permission to access the rest of the connection properties.
      */
 
     public Boolean isHidePassword() {

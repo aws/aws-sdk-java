@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Filters the connection definitions returned by the <code>GetConnections</code> API.
+ * Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnectionsFilter" target="_top">AWS API

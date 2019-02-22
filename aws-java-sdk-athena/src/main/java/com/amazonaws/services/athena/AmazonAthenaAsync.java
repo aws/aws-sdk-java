@@ -374,7 +374,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Returns information about the workgroup with the speficied name.
+     * Returns information about the workgroup with the specified name.
      * </p>
      * 
      * @param getWorkGroupRequest
@@ -387,7 +387,7 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Returns information about the workgroup with the speficied name.
+     * Returns information about the workgroup with the specified name.
      * </p>
      * 
      * @param getWorkGroupRequest
@@ -488,6 +488,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<ListQueryExecutionsResult> listQueryExecutionsAsync(ListQueryExecutionsRequest listQueryExecutionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListQueryExecutionsRequest, ListQueryExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the tags associated with this workgroup.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonAthenaAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Lists the tags associated with this workgroup.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -603,6 +634,86 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<StopQueryExecutionResult> stopQueryExecutionAsync(StopQueryExecutionRequest stopQueryExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StopQueryExecutionRequest, StopQueryExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
+     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
+     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
+     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
+     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
+     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
+     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
+     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonAthenaAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
+     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
+     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
+     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
+     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
+     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
+     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
+     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
+     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
+     * commas, and removes their tags at the same time.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonAthenaAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
+     * commas, and removes their tags at the same time.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
     /**
      * <p>

@@ -39,7 +39,7 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     /**
      * <p>
      * The Amazon States Language definition of the state machine. See <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
      * Language</a>.
      * </p>
      */
@@ -141,13 +141,13 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     /**
      * <p>
      * The Amazon States Language definition of the state machine. See <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
      * Language</a>.
      * </p>
      * 
      * @param definition
      *        The Amazon States Language definition of the state machine. See <a
-     *        href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
      *        States Language</a>.
      */
 
@@ -158,12 +158,12 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     /**
      * <p>
      * The Amazon States Language definition of the state machine. See <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
      * Language</a>.
      * </p>
      * 
      * @return The Amazon States Language definition of the state machine. See <a
-     *         href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
      *         States Language</a>.
      */
 
@@ -174,13 +174,13 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     /**
      * <p>
      * The Amazon States Language definition of the state machine. See <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
      * Language</a>.
      * </p>
      * 
      * @param definition
      *        The Amazon States Language definition of the state machine. See <a
-     *        href="http://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
      *        States Language</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
