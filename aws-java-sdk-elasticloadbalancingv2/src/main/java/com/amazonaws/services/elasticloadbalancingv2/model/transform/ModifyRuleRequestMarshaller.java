@@ -169,6 +169,11 @@ public class ModifyRuleRequestMarshaller implements Marshaller<Request<ModifyRul
                                 request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.OnUnauthenticatedRequest",
                                         StringUtils.fromString(authenticateOidcConfig.getOnUnauthenticatedRequest()));
                             }
+
+                            if (authenticateOidcConfig.getUseExistingClientSecret() != null) {
+                                request.addParameter("Actions.member." + actionsListIndex + ".AuthenticateOidcConfig.UseExistingClientSecret",
+                                        StringUtils.fromBoolean(authenticateOidcConfig.getUseExistingClientSecret()));
+                            }
                         }
                     }
 

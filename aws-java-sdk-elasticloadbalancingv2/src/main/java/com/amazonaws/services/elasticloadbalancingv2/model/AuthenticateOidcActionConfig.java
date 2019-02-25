@@ -62,7 +62,8 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
     private String clientId;
     /**
      * <p>
-     * The OAuth 2.0 client secret.
+     * The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule,
+     * you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.
      * </p>
      */
     private String clientSecret;
@@ -117,6 +118,13 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
      * </ul>
      */
     private String onUnauthenticatedRequest;
+    /**
+     * <p>
+     * Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can
+     * omit this parameter or set it to false.
+     * </p>
+     */
+    private Boolean useExistingClientSecret;
 
     /**
      * <p>
@@ -341,11 +349,13 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The OAuth 2.0 client secret.
+     * The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule,
+     * you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.
      * </p>
      * 
      * @param clientSecret
-     *        The OAuth 2.0 client secret.
+     *        The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a
+     *        rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.
      */
 
     public void setClientSecret(String clientSecret) {
@@ -354,10 +364,12 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The OAuth 2.0 client secret.
+     * The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule,
+     * you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.
      * </p>
      * 
-     * @return The OAuth 2.0 client secret.
+     * @return The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying
+     *         a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.
      */
 
     public String getClientSecret() {
@@ -366,11 +378,13 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The OAuth 2.0 client secret.
+     * The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a rule,
+     * you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.
      * </p>
      * 
      * @param clientSecret
-     *        The OAuth 2.0 client secret.
+     *        The OAuth 2.0 client secret. This parameter is required if you are creating a rule. If you are modifying a
+     *        rule, you can omit this parameter if you set <code>UseExistingClientSecret</code> to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -773,6 +787,66 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can
+     * omit this parameter or set it to false.
+     * </p>
+     * 
+     * @param useExistingClientSecret
+     *        Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you
+     *        can omit this parameter or set it to false.
+     */
+
+    public void setUseExistingClientSecret(Boolean useExistingClientSecret) {
+        this.useExistingClientSecret = useExistingClientSecret;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can
+     * omit this parameter or set it to false.
+     * </p>
+     * 
+     * @return Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule,
+     *         you can omit this parameter or set it to false.
+     */
+
+    public Boolean getUseExistingClientSecret() {
+        return this.useExistingClientSecret;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can
+     * omit this parameter or set it to false.
+     * </p>
+     * 
+     * @param useExistingClientSecret
+     *        Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you
+     *        can omit this parameter or set it to false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AuthenticateOidcActionConfig withUseExistingClientSecret(Boolean useExistingClientSecret) {
+        setUseExistingClientSecret(useExistingClientSecret);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule, you can
+     * omit this parameter or set it to false.
+     * </p>
+     * 
+     * @return Indicates whether to use the existing client secret when modifying a rule. If you are creating a rule,
+     *         you can omit this parameter or set it to false.
+     */
+
+    public Boolean isUseExistingClientSecret() {
+        return this.useExistingClientSecret;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -805,7 +879,9 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
         if (getAuthenticationRequestExtraParams() != null)
             sb.append("AuthenticationRequestExtraParams: ").append(getAuthenticationRequestExtraParams()).append(",");
         if (getOnUnauthenticatedRequest() != null)
-            sb.append("OnUnauthenticatedRequest: ").append(getOnUnauthenticatedRequest());
+            sb.append("OnUnauthenticatedRequest: ").append(getOnUnauthenticatedRequest()).append(",");
+        if (getUseExistingClientSecret() != null)
+            sb.append("UseExistingClientSecret: ").append(getUseExistingClientSecret());
         sb.append("}");
         return sb.toString();
     }
@@ -865,6 +941,10 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
             return false;
         if (other.getOnUnauthenticatedRequest() != null && other.getOnUnauthenticatedRequest().equals(this.getOnUnauthenticatedRequest()) == false)
             return false;
+        if (other.getUseExistingClientSecret() == null ^ this.getUseExistingClientSecret() == null)
+            return false;
+        if (other.getUseExistingClientSecret() != null && other.getUseExistingClientSecret().equals(this.getUseExistingClientSecret()) == false)
+            return false;
         return true;
     }
 
@@ -884,6 +964,7 @@ public class AuthenticateOidcActionConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSessionTimeout() == null) ? 0 : getSessionTimeout().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationRequestExtraParams() == null) ? 0 : getAuthenticationRequestExtraParams().hashCode());
         hashCode = prime * hashCode + ((getOnUnauthenticatedRequest() == null) ? 0 : getOnUnauthenticatedRequest().hashCode());
+        hashCode = prime * hashCode + ((getUseExistingClientSecret() == null) ? 0 : getUseExistingClientSecret().hashCode());
         return hashCode;
     }
 

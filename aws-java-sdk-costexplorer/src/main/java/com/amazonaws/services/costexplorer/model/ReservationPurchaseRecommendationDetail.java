@@ -28,6 +28,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ReservationPurchaseRecommendationDetail implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The account that this RI recommendation is for.
+     * </p>
+     */
     private String accountId;
     /**
      * <p>
@@ -147,7 +152,12 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     private String recurringStandardMonthlyCost;
 
     /**
+     * <p>
+     * The account that this RI recommendation is for.
+     * </p>
+     * 
      * @param accountId
+     *        The account that this RI recommendation is for.
      */
 
     public void setAccountId(String accountId) {
@@ -155,7 +165,11 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     }
 
     /**
-     * @return
+     * <p>
+     * The account that this RI recommendation is for.
+     * </p>
+     * 
+     * @return The account that this RI recommendation is for.
      */
 
     public String getAccountId() {
@@ -163,7 +177,12 @@ public class ReservationPurchaseRecommendationDetail implements Serializable, Cl
     }
 
     /**
+     * <p>
+     * The account that this RI recommendation is for.
+     * </p>
+     * 
      * @param accountId
+     *        The account that this RI recommendation is for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

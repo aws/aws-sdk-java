@@ -65,8 +65,9 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
     private java.util.Date endTime;
     /**
      * <p>
-     * The recurring schedule for this action, in Unix cron syntax format. For more information about this format, see
-     * <a href="http://crontab.org">Crontab</a>.
+     * The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated
+     * by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.
      * </p>
      */
     private String recurrence;
@@ -339,13 +340,15 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The recurring schedule for this action, in Unix cron syntax format. For more information about this format, see
-     * <a href="http://crontab.org">Crontab</a>.
+     * The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated
+     * by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.
      * </p>
      * 
      * @param recurrence
-     *        The recurring schedule for this action, in Unix cron syntax format. For more information about this
-     *        format, see <a href="http://crontab.org">Crontab</a>.
+     *        The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields
+     *        separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more
+     *        information about this format, see <a href="http://crontab.org">Crontab</a>.
      */
 
     public void setRecurrence(String recurrence) {
@@ -354,12 +357,14 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The recurring schedule for this action, in Unix cron syntax format. For more information about this format, see
-     * <a href="http://crontab.org">Crontab</a>.
+     * The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated
+     * by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.
      * </p>
      * 
-     * @return The recurring schedule for this action, in Unix cron syntax format. For more information about this
-     *         format, see <a href="http://crontab.org">Crontab</a>.
+     * @return The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields
+     *         separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more
+     *         information about this format, see <a href="http://crontab.org">Crontab</a>.
      */
 
     public String getRecurrence() {
@@ -368,13 +373,15 @@ public class PutScheduledUpdateGroupActionRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * The recurring schedule for this action, in Unix cron syntax format. For more information about this format, see
-     * <a href="http://crontab.org">Crontab</a>.
+     * The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields separated
+     * by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more information about this
+     * format, see <a href="http://crontab.org">Crontab</a>.
      * </p>
      * 
      * @param recurrence
-     *        The recurring schedule for this action, in Unix cron syntax format. For more information about this
-     *        format, see <a href="http://crontab.org">Crontab</a>.
+     *        The recurring schedule for this action, in Unix cron syntax format. This format consists of five fields
+     *        separated by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. For more
+     *        information about this format, see <a href="http://crontab.org">Crontab</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

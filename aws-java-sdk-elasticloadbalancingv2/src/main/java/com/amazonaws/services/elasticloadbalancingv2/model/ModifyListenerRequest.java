@@ -48,7 +48,7 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      */
@@ -258,14 +258,14 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param sslPolicy
      *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      *        >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      */
 
@@ -277,13 +277,13 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @return [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For
      *         more information, see <a href=
-     *         "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      *         >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      */
 
@@ -295,14 +295,14 @@ public class ModifyListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For more
      * information, see <a href=
-     * "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      * >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * </p>
      * 
      * @param sslPolicy
      *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. For
      *        more information, see <a href=
-     *        "http://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
      *        >Security Policies</a> in the <i>Application Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

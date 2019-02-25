@@ -36,17 +36,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The following attributes are supported by only Application Load Balancers:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code>
      * or <code>false</code>. The default is <code>false</code>.
      * </p>
@@ -63,6 +52,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
@@ -106,17 +106,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The following attributes are supported by only Application Load Balancers:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code>
      * or <code>false</code>. The default is <code>false</code>.
      * </p>
@@ -133,6 +122,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
@@ -166,17 +166,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The following attributes are supported by only Application Load Balancers:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
      *        <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is
      *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
@@ -193,6 +182,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Application Load Balancers:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
@@ -232,17 +232,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The following attributes are supported by only Application Load Balancers:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code>
      * or <code>false</code>. The default is <code>false</code>.
      * </p>
@@ -259,6 +248,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
@@ -291,17 +291,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         The following attributes are supported by only Application Load Balancers:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
      *         <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is
      *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *         </p>
@@ -318,6 +307,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by only Application Load Balancers:
+     *         </p>
+     *         <ul>
      *         <li>
      *         <p>
      *         <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
@@ -357,17 +357,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The following attributes are supported by only Application Load Balancers:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
      * <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is <code>true</code>
      * or <code>false</code>. The default is <code>false</code>.
      * </p>
@@ -384,6 +373,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by only Application Load Balancers:
+     * </p>
+     * <ul>
      * <li>
      * <p>
      * <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000
@@ -417,17 +417,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
-     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The following attributes are supported by only Application Load Balancers:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
      *        <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled. The value is
      *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
@@ -444,6 +433,17 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket for the access logs.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
+     *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by only Application Load Balancers:
+     *        </p>
+     *        <ul>
      *        <li>
      *        <p>
      *        <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The valid range is 1-4000

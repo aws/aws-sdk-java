@@ -169,7 +169,7 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
 
     /**
      * <p>
-     * Removes an object lifecycle policy from a container.
+     * Removes an object lifecycle policy from a container. It takes up to 20 minutes for the change to take effect.
      * </p>
      * 
      * @param deleteLifecyclePolicyRequest
@@ -182,7 +182,7 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
 
     /**
      * <p>
-     * Removes an object lifecycle policy from a container.
+     * Removes an object lifecycle policy from a container. It takes up to 20 minutes for the change to take effect.
      * </p>
      * 
      * @param deleteLifecyclePolicyRequest
@@ -449,6 +449,11 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
      * 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
      * the first applicable rule listed.
      * </p>
+     * <p>
+     * To learn more about CORS, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in
+     * AWS Elemental MediaStore</a>.
+     * </p>
      * 
      * @param putCorsPolicyRequest
      * @return A Java Future containing the result of the PutCorsPolicy operation returned by the service.
@@ -471,6 +476,11 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
      * 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
      * the first applicable rule listed.
      * </p>
+     * <p>
+     * To learn more about CORS, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in
+     * AWS Elemental MediaStore</a>.
+     * </p>
      * 
      * @param putCorsPolicyRequest
      * @param asyncHandler
@@ -488,7 +498,13 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
     /**
      * <p>
      * Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the
-     * service replaces the existing policy with the new policy.
+     * service replaces the existing policy with the new policy. It takes up to 20 minutes for the change to take
+     * effect.
+     * </p>
+     * <p>
+     * For information about how to construct an object lifecycle policy, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components of
+     * an Object Lifecycle Policy</a>.
      * </p>
      * 
      * @param putLifecyclePolicyRequest
@@ -502,7 +518,13 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
     /**
      * <p>
      * Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the
-     * service replaces the existing policy with the new policy.
+     * service replaces the existing policy with the new policy. It takes up to 20 minutes for the change to take
+     * effect.
+     * </p>
+     * <p>
+     * For information about how to construct an object lifecycle policy, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components of
+     * an Object Lifecycle Policy</a>.
      * </p>
      * 
      * @param putLifecyclePolicyRequest
@@ -517,5 +539,71 @@ public interface AWSMediaStoreAsync extends AWSMediaStore {
      */
     java.util.concurrent.Future<PutLifecyclePolicyResult> putLifecyclePolicyAsync(PutLifecyclePolicyRequest putLifecyclePolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutLifecyclePolicyRequest, PutLifecyclePolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts access logging on the specified container. When you enable access logging on a container, MediaStore
+     * delivers access logs for objects stored in that container to Amazon CloudWatch Logs.
+     * </p>
+     * 
+     * @param startAccessLoggingRequest
+     * @return A Java Future containing the result of the StartAccessLogging operation returned by the service.
+     * @sample AWSMediaStoreAsync.StartAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartAccessLoggingResult> startAccessLoggingAsync(StartAccessLoggingRequest startAccessLoggingRequest);
+
+    /**
+     * <p>
+     * Starts access logging on the specified container. When you enable access logging on a container, MediaStore
+     * delivers access logs for objects stored in that container to Amazon CloudWatch Logs.
+     * </p>
+     * 
+     * @param startAccessLoggingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartAccessLogging operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.StartAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartAccessLoggingResult> startAccessLoggingAsync(StartAccessLoggingRequest startAccessLoggingRequest,
+            com.amazonaws.handlers.AsyncHandler<StartAccessLoggingRequest, StartAccessLoggingResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops
+     * sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.
+     * </p>
+     * 
+     * @param stopAccessLoggingRequest
+     * @return A Java Future containing the result of the StopAccessLogging operation returned by the service.
+     * @sample AWSMediaStoreAsync.StopAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopAccessLoggingResult> stopAccessLoggingAsync(StopAccessLoggingRequest stopAccessLoggingRequest);
+
+    /**
+     * <p>
+     * Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops
+     * sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.
+     * </p>
+     * 
+     * @param stopAccessLoggingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopAccessLogging operation returned by the service.
+     * @sample AWSMediaStoreAsyncHandler.StopAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StopAccessLoggingResult> stopAccessLoggingAsync(StopAccessLoggingRequest stopAccessLoggingRequest,
+            com.amazonaws.handlers.AsyncHandler<StopAccessLoggingRequest, StopAccessLoggingResult> asyncHandler);
 
 }

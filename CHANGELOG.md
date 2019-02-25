@@ -1,3 +1,20 @@
+# __1.11.506__ __2019-02-25__
+## __AWS Cost Explorer Service__
+  - ### Features
+    - Added metrics to normalized units.
+
+## __AWS Elemental MediaStore__
+  - ### Features
+    - This release adds support for access logging, which provides detailed records for the requests that are made to objects in a container.
+
+## __Auto Scaling__
+  - ### Features
+    - Added support for passing an empty SpotMaxPrice parameter to remove a value previously set when updating an Amazon EC2 Auto Scaling group.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - This release enables you to use the existing client secret when modifying a rule with an action of type authenticate-oidc.
+
 # __1.11.505__ __2019-02-22__
 ## __AWS Cloud9__
   - ### Features

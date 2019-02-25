@@ -129,7 +129,7 @@ public interface AWSMediaStore {
 
     /**
      * <p>
-     * Removes an object lifecycle policy from a container.
+     * Removes an object lifecycle policy from a container. It takes up to 20 minutes for the change to take effect.
      * </p>
      * 
      * @param deleteLifecyclePolicyRequest
@@ -301,6 +301,11 @@ public interface AWSMediaStore {
      * 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
      * the first applicable rule listed.
      * </p>
+     * <p>
+     * To learn more about CORS, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in
+     * AWS Elemental MediaStore</a>.
+     * </p>
      * 
      * @param putCorsPolicyRequest
      * @return Result of the PutCorsPolicy operation returned by the service.
@@ -319,7 +324,13 @@ public interface AWSMediaStore {
     /**
      * <p>
      * Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the
-     * service replaces the existing policy with the new policy.
+     * service replaces the existing policy with the new policy. It takes up to 20 minutes for the change to take
+     * effect.
+     * </p>
+     * <p>
+     * For information about how to construct an object lifecycle policy, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components of
+     * an Object Lifecycle Policy</a>.
      * </p>
      * 
      * @param putLifecyclePolicyRequest
@@ -335,6 +346,46 @@ public interface AWSMediaStore {
      *      API Documentation</a>
      */
     PutLifecyclePolicyResult putLifecyclePolicy(PutLifecyclePolicyRequest putLifecyclePolicyRequest);
+
+    /**
+     * <p>
+     * Starts access logging on the specified container. When you enable access logging on a container, MediaStore
+     * delivers access logs for objects stored in that container to Amazon CloudWatch Logs.
+     * </p>
+     * 
+     * @param startAccessLoggingRequest
+     * @return Result of the StartAccessLogging operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.StartAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StartAccessLoggingResult startAccessLogging(StartAccessLoggingRequest startAccessLoggingRequest);
+
+    /**
+     * <p>
+     * Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops
+     * sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.
+     * </p>
+     * 
+     * @param stopAccessLoggingRequest
+     * @return Result of the StopAccessLogging operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.StopAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    StopAccessLoggingResult stopAccessLogging(StopAccessLoggingRequest stopAccessLoggingRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

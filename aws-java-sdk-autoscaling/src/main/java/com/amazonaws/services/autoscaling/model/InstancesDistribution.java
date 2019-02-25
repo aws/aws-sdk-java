@@ -88,8 +88,11 @@ public class InstancesDistribution implements Serializable, Cloneable {
     private Integer spotInstancePools;
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave this value blank
-     * (which is the default), the maximum Spot price is set at the On-Demand price.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
+     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.
+     * </p>
+     * <p>
+     * To remove a value that you previously set, include the parameter but leave the value blank.
      * </p>
      */
     private String spotMaxPrice;
@@ -440,13 +443,18 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave this value blank
-     * (which is the default), the maximum Spot price is set at the On-Demand price.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
+     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.
+     * </p>
+     * <p>
+     * To remove a value that you previously set, include the parameter but leave the value blank.
      * </p>
      * 
      * @param spotMaxPrice
-     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave this value
-     *        blank (which is the default), the maximum Spot price is set at the On-Demand price.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of
+     *        this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.</p>
+     *        <p>
+     *        To remove a value that you previously set, include the parameter but leave the value blank.
      */
 
     public void setSpotMaxPrice(String spotMaxPrice) {
@@ -455,12 +463,17 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave this value blank
-     * (which is the default), the maximum Spot price is set at the On-Demand price.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
+     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.
+     * </p>
+     * <p>
+     * To remove a value that you previously set, include the parameter but leave the value blank.
      * </p>
      * 
-     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave this value
-     *         blank (which is the default), the maximum Spot price is set at the On-Demand price.
+     * @return The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value
+     *         of this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.</p>
+     *         <p>
+     *         To remove a value that you previously set, include the parameter but leave the value blank.
      */
 
     public String getSpotMaxPrice() {
@@ -469,13 +482,18 @@ public class InstancesDistribution implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave this value blank
-     * (which is the default), the maximum Spot price is set at the On-Demand price.
+     * The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of this
+     * parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.
+     * </p>
+     * <p>
+     * To remove a value that you previously set, include the parameter but leave the value blank.
      * </p>
      * 
      * @param spotMaxPrice
-     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave this value
-     *        blank (which is the default), the maximum Spot price is set at the On-Demand price.
+     *        The maximum price per unit hour that you are willing to pay for a Spot Instance. If you leave the value of
+     *        this parameter blank (which is the default), the maximum Spot price is set at the On-Demand price.</p>
+     *        <p>
+     *        To remove a value that you previously set, include the parameter but leave the value blank.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

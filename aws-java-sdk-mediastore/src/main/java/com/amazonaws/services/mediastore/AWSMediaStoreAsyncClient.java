@@ -491,6 +491,72 @@ public class AWSMediaStoreAsyncClient extends AWSMediaStoreClient implements AWS
         });
     }
 
+    @Override
+    public java.util.concurrent.Future<StartAccessLoggingResult> startAccessLoggingAsync(StartAccessLoggingRequest request) {
+
+        return startAccessLoggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAccessLoggingResult> startAccessLoggingAsync(final StartAccessLoggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartAccessLoggingRequest, StartAccessLoggingResult> asyncHandler) {
+        final StartAccessLoggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartAccessLoggingResult>() {
+            @Override
+            public StartAccessLoggingResult call() throws Exception {
+                StartAccessLoggingResult result = null;
+
+                try {
+                    result = executeStartAccessLogging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopAccessLoggingResult> stopAccessLoggingAsync(StopAccessLoggingRequest request) {
+
+        return stopAccessLoggingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopAccessLoggingResult> stopAccessLoggingAsync(final StopAccessLoggingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopAccessLoggingRequest, StopAccessLoggingResult> asyncHandler) {
+        final StopAccessLoggingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopAccessLoggingResult>() {
+            @Override
+            public StopAccessLoggingResult call() throws Exception {
+                StopAccessLoggingResult result = null;
+
+                try {
+                    result = executeStopAccessLogging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
     /**
      * Shuts down the client, releasing all managed resources. This includes forcibly terminating all pending
      * asynchronous service calls. Clients who wish to give pending asynchronous service calls time to complete should

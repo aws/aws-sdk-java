@@ -387,7 +387,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
     /**
      * <p>
-     * Removes an object lifecycle policy from a container.
+     * Removes an object lifecycle policy from a container. It takes up to 20 minutes for the change to take effect.
      * </p>
      * 
      * @param deleteLifecyclePolicyRequest
@@ -833,6 +833,11 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
      * 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses
      * the first applicable rule listed.
      * </p>
+     * <p>
+     * To learn more about CORS, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in
+     * AWS Elemental MediaStore</a>.
+     * </p>
      * 
      * @param putCorsPolicyRequest
      * @return Result of the PutCorsPolicy operation returned by the service.
@@ -890,7 +895,13 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
     /**
      * <p>
      * Writes an object lifecycle policy to a container. If the container already has an object lifecycle policy, the
-     * service replaces the existing policy with the new policy.
+     * service replaces the existing policy with the new policy. It takes up to 20 minutes for the change to take
+     * effect.
+     * </p>
+     * <p>
+     * For information about how to construct an object lifecycle policy, see <a
+     * href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components of
+     * an Object Lifecycle Policy</a>.
      * </p>
      * 
      * @param putLifecyclePolicyRequest
@@ -936,6 +947,124 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
 
             HttpResponseHandler<AmazonWebServiceResponse<PutLifecyclePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutLifecyclePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts access logging on the specified container. When you enable access logging on a container, MediaStore
+     * delivers access logs for objects stored in that container to Amazon CloudWatch Logs.
+     * </p>
+     * 
+     * @param startAccessLoggingRequest
+     * @return Result of the StartAccessLogging operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.StartAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StartAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartAccessLoggingResult startAccessLogging(StartAccessLoggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartAccessLogging(request);
+    }
+
+    @SdkInternalApi
+    final StartAccessLoggingResult executeStartAccessLogging(StartAccessLoggingRequest startAccessLoggingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startAccessLoggingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartAccessLoggingRequest> request = null;
+        Response<StartAccessLoggingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartAccessLoggingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAccessLoggingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartAccessLogging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartAccessLoggingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartAccessLoggingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops
+     * sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.
+     * </p>
+     * 
+     * @param stopAccessLoggingRequest
+     * @return Result of the StopAccessLogging operation returned by the service.
+     * @throws ContainerInUseException
+     *         The container that you specified in the request already exists or is being updated.
+     * @throws ContainerNotFoundException
+     *         The container that you specified in the request does not exist.
+     * @throws InternalServerErrorException
+     *         The service is temporarily unavailable.
+     * @sample AWSMediaStore.StopAccessLogging
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/StopAccessLogging" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StopAccessLoggingResult stopAccessLogging(StopAccessLoggingRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopAccessLogging(request);
+    }
+
+    @SdkInternalApi
+    final StopAccessLoggingResult executeStopAccessLogging(StopAccessLoggingRequest stopAccessLoggingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopAccessLoggingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopAccessLoggingRequest> request = null;
+        Response<StopAccessLoggingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopAccessLoggingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopAccessLoggingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaStore");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopAccessLogging");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopAccessLoggingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopAccessLoggingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

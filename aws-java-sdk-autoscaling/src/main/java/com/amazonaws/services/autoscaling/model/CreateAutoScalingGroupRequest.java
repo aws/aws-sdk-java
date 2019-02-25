@@ -108,12 +108,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> availabilityZones;
     /**
      * <p>
-     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
-     * instead.
+     * One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer, use
+     * <code>TargetGroupARNs</code> instead.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load Balancer
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load Balancer
      * With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
@@ -154,7 +154,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      */
     private String placementGroup;
@@ -181,13 +181,18 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which
-     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> terminationPolicies;
     /**
      * <p>
      * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
+     * </p>
+     * <p>
+     * For more information about preventing instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Boolean newInstancesProtectedFromScaleIn;
@@ -779,20 +784,20 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
-     * instead.
+     * One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer, use
+     * <code>TargetGroupARNs</code> instead.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load Balancer
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load Balancer
      * With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return One or more Classic Load Balancers. To specify an Application Load Balancer, use
-     *         <code>TargetGroupARNs</code> instead.</p>
+     * @return One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer,
+     *         use <code>TargetGroupARNs</code> instead.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load
+     *         href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load
      *         Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
@@ -805,21 +810,21 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
-     * instead.
+     * One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer, use
+     * <code>TargetGroupARNs</code> instead.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load Balancer
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load Balancer
      * With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more Classic Load Balancers. To specify an Application Load Balancer, use
-     *        <code>TargetGroupARNs</code> instead.</p>
+     *        One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer,
+     *        use <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load
+     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load
      *        Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
@@ -834,12 +839,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
-     * instead.
+     * One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer, use
+     * <code>TargetGroupARNs</code> instead.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load Balancer
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load Balancer
      * With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
@@ -849,11 +854,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more Classic Load Balancers. To specify an Application Load Balancer, use
-     *        <code>TargetGroupARNs</code> instead.</p>
+     *        One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer,
+     *        use <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load
+     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load
      *        Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -870,21 +875,21 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * One or more Classic Load Balancers. To specify an Application Load Balancer, use <code>TargetGroupARNs</code>
-     * instead.
+     * One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer, use
+     * <code>TargetGroupARNs</code> instead.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load Balancer
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load Balancer
      * With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param loadBalancerNames
-     *        One or more Classic Load Balancers. To specify an Application Load Balancer, use
-     *        <code>TargetGroupARNs</code> instead.</p>
+     *        One or more Classic Load Balancers. To specify an Application Load Balancer or a Network Load Balancer,
+     *        use <code>TargetGroupARNs</code> instead.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html">Using a Load
+     *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Using a Load
      *        Balancer With an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1135,13 +1140,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param placementGroup
      *        The name of the placement group into which to launch your instances, if any. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public void setPlacementGroup(String placementGroup) {
@@ -1152,12 +1157,12 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @return The name of the placement group into which to launch your instances, if any. For more information, see <a
      *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
-     *         the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         the <i>Amazon EC2 User Guide for Linux Instances</i>.
      */
 
     public String getPlacementGroup() {
@@ -1168,13 +1173,13 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the placement group into which to launch your instances, if any. For more information, see <a
      * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * 
      * @param placementGroup
      *        The name of the placement group into which to launch your instances, if any. For more information, see <a
      *        href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement Groups</a> in
-     *        the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1282,7 +1287,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which
-     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return One or more termination policies used to select the instance to terminate. These policies are executed in
@@ -1290,7 +1295,8 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling
-     *         Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     *         Which Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User
+     *         Guide</i>.
      */
 
     public java.util.List<String> getTerminationPolicies() {
@@ -1308,7 +1314,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which
-     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param terminationPolicies
@@ -1317,7 +1323,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which
-     *        Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     *        Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
@@ -1337,7 +1343,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which
-     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1351,7 +1357,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which
-     *        Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     *        Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1373,7 +1379,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which
-     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     * Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param terminationPolicies
@@ -1382,7 +1388,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        For more information, see <a
      *        href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html">Controlling Which
-     *        Instances Auto Scaling Terminates During Scale In</a> in the <i>Auto Scaling User Guide</i>.
+     *        Instances Auto Scaling Terminates During Scale In</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1395,9 +1401,19 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
+     * <p>
+     * For more information about preventing instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @param newInstancesProtectedFromScaleIn
-     *        Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
+     *        Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling
+     *        in.</p>
+     *        <p>
+     *        For more information about preventing instances from terminating on scale in, see <a href=
+     *        "http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     *        >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setNewInstancesProtectedFromScaleIn(Boolean newInstancesProtectedFromScaleIn) {
@@ -1408,9 +1424,18 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
+     * <p>
+     * For more information about preventing instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @return Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling
-     *         in.
+     *         in.</p>
+     *         <p>
+     *         For more information about preventing instances from terminating on scale in, see <a href=
+     *         "http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     *         >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public Boolean getNewInstancesProtectedFromScaleIn() {
@@ -1421,9 +1446,19 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
+     * <p>
+     * For more information about preventing instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @param newInstancesProtectedFromScaleIn
-     *        Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
+     *        Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling
+     *        in.</p>
+     *        <p>
+     *        For more information about preventing instances from terminating on scale in, see <a href=
+     *        "http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     *        >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1436,9 +1471,18 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
      * </p>
+     * <p>
+     * For more information about preventing instances from terminating on scale in, see <a
+     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     * >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
      * 
      * @return Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling
-     *         in.
+     *         in.</p>
+     *         <p>
+     *         For more information about preventing instances from terminating on scale in, see <a href=
+     *         "http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection"
+     *         >Instance Protection</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public Boolean isNewInstancesProtectedFromScaleIn() {

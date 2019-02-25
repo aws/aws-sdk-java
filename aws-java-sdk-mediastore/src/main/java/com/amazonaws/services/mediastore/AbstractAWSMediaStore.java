@@ -93,6 +93,16 @@ public class AbstractAWSMediaStore implements AWSMediaStore {
     }
 
     @Override
+    public StartAccessLoggingResult startAccessLogging(StartAccessLoggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopAccessLoggingResult stopAccessLogging(StopAccessLoggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public void shutdown() {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -37,6 +37,8 @@ public class ContainerMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<Boolean> ACCESSLOGGINGENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessLoggingEnabled").build();
 
     private static final ContainerMarshaller instance = new ContainerMarshaller();
 
@@ -59,6 +61,7 @@ public class ContainerMarshaller {
             protocolMarshaller.marshall(container.getARN(), ARN_BINDING);
             protocolMarshaller.marshall(container.getName(), NAME_BINDING);
             protocolMarshaller.marshall(container.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(container.getAccessLoggingEnabled(), ACCESSLOGGINGENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }
