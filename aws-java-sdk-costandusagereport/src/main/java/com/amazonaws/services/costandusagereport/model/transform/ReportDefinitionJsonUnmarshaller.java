@@ -84,6 +84,14 @@ public class ReportDefinitionJsonUnmarshaller implements Unmarshaller<ReportDefi
                     context.nextToken();
                     reportDefinition.setAdditionalArtifacts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
                 }
+                if (context.testExpression("RefreshClosedReports", targetDepth)) {
+                    context.nextToken();
+                    reportDefinition.setRefreshClosedReports(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ReportVersioning", targetDepth)) {
+                    context.nextToken();
+                    reportDefinition.setReportVersioning(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

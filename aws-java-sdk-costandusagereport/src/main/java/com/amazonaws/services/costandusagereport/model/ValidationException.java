@@ -15,8 +15,9 @@ package com.amazonaws.services.costandusagereport.model;
 import javax.annotation.Generated;
 
 /**
- * This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or
- * Delete a report preference with an empty report name.
+ * <p>
+ * The input fails to satisfy the constraints specified by an AWS service.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ValidationException extends com.amazonaws.services.costandusagereport.model.AWSCostAndUsageReportException {

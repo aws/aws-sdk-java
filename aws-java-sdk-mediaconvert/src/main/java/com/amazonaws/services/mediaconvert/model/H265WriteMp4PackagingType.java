@@ -15,10 +15,14 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * If HVC1, output that is H.265 will be marked as HVC1 and adhere to the
- * ISO-IECJTC1-SC29_N13798_Text_ISOIEC_FDIS_14496-15_3rd_E spec which states that parameter set NAL units will be stored
- * in the sample headers but not in the samples directly. If HEV1, then H.265 will be marked as HEV1 and parameter set
- * NAL units will be written into the samples.
+ * Use this setting only for outputs encoded with H.265 that are in CMAF or DASH output groups. If you include
+ * writeMp4PackagingType in your JSON job specification for other outputs, your video might not work properly with
+ * downstream systems and video players. If the location of parameter set NAL units don't matter in your workflow,
+ * ignore this setting. The service defaults to marking your output as HEV1. Choose HVC1 to mark your output as HVC1.
+ * This makes your output compliant with this specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd
+ * Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples
+ * directly. Keep the default HEV1 to mark your output as HEV1. For these outputs, the service writes parameter set NAL
+ * units directly into the samples.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H265WriteMp4PackagingType {

@@ -27,7 +27,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class VideoDescription implements Serializable, Cloneable, StructuredPojo {
 
     private String afdSignaling;
-
+    /**
+     * You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This property
+     * is deprecated.
+     */
     private String antiAlias;
 
     private VideoCodecSettings codecSettings;
@@ -62,10 +65,9 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
 
     private String scalingBehavior;
     /**
-     * Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This setting changes the width of the
+     * Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width of the
      * anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from
-     * your input resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest setting, 100 the
-     * sharpest, and 50 recommended for most content.
+     * your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
      */
     private Integer sharpness;
 
@@ -122,7 +124,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This property
+     * is deprecated.
+     * 
      * @param antiAlias
+     *        You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This
+     *        property is deprecated.
      * @see AntiAlias
      */
 
@@ -131,7 +138,11 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This property
+     * is deprecated.
+     * 
+     * @return You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This
+     *         property is deprecated.
      * @see AntiAlias
      */
 
@@ -140,7 +151,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This property
+     * is deprecated.
+     * 
      * @param antiAlias
+     *        You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This
+     *        property is deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AntiAlias
      */
@@ -151,7 +167,12 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This property
+     * is deprecated.
+     * 
      * @param antiAlias
+     *        You no longer need to specify the anti-alias filter. It's now automatically applied to all outputs. This
+     *        property is deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AntiAlias
      */
@@ -523,16 +544,15 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This setting changes the width of the
+     * Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width of the
      * anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from
-     * your input resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest setting, 100 the
-     * sharpest, and 50 recommended for most content.
+     * your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
      * 
      * @param sharpness
-     *        Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This setting changes the width
+     *        Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width
      *        of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is
-     *        different from your input resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest
-     *        setting, 100 the sharpest, and 50 recommended for most content.
+     *        different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for
+     *        most content.
      */
 
     public void setSharpness(Integer sharpness) {
@@ -540,15 +560,14 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This setting changes the width of the
+     * Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width of the
      * anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from
-     * your input resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest setting, 100 the
-     * sharpest, and 50 recommended for most content.
+     * your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
      * 
-     * @return Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This setting changes the width
-     *         of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is
-     *         different from your input resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest
-     *         setting, 100 the sharpest, and 50 recommended for most content.
+     * @return Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the
+     *         width of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution
+     *         is different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended
+     *         for most content.
      */
 
     public Integer getSharpness() {
@@ -556,16 +575,15 @@ public class VideoDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This setting changes the width of the
+     * Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width of the
      * anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is different from
-     * your input resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest setting, 100 the
-     * sharpest, and 50 recommended for most content.
+     * your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.
      * 
      * @param sharpness
-     *        Use Sharpness (Sharpness)setting to specify the strength of anti-aliasing. This setting changes the width
+     *        Use Sharpness (Sharpness) setting to specify the strength of anti-aliasing. This setting changes the width
      *        of the anti-alias filter kernel used for scaling. Sharpness only applies if your output resolution is
-     *        different from your input resolution, and if you set Anti-alias (AntiAlias) to ENABLED. 0 is the softest
-     *        setting, 100 the sharpest, and 50 recommended for most content.
+     *        different from your input resolution. 0 is the softest setting, 100 the sharpest, and 50 recommended for
+     *        most content.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

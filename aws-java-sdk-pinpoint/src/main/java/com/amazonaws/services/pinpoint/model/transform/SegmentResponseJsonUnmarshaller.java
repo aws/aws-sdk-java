@@ -52,6 +52,10 @@ public class SegmentResponseJsonUnmarshaller implements Unmarshaller<SegmentResp
                     context.nextToken();
                     segmentResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    segmentResponse.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
                     segmentResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
@@ -83,6 +87,11 @@ public class SegmentResponseJsonUnmarshaller implements Unmarshaller<SegmentResp
                 if (context.testExpression("SegmentType", targetDepth)) {
                     context.nextToken();
                     segmentResponse.setSegmentType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    segmentResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();

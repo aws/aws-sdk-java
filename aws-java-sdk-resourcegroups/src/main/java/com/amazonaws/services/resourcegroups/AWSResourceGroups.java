@@ -291,8 +291,8 @@ public interface AWSResourceGroups {
 
     /**
      * <p>
-     * Adds specified tags to a resource with the specified ARN. Existing tags on a resource are not changed if they are
-     * not specified in the request parameters.
+     * Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they
+     * are not specified in the request parameters.
      * </p>
      * 
      * @param tagRequest

@@ -55,6 +55,8 @@ public class JobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("settings").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<Long> STATUSUPDATEINTERVALINSECS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusUpdateIntervalInSecs").build();
     private static final MarshallingInfo<StructuredPojo> TIMING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timing").build();
     private static final MarshallingInfo<Map> USERMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -89,6 +91,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(job.getSettings(), SETTINGS_BINDING);
             protocolMarshaller.marshall(job.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(job.getStatusUpdateIntervalInSecs(), STATUSUPDATEINTERVALINSECS_BINDING);
             protocolMarshaller.marshall(job.getTiming(), TIMING_BINDING);
             protocolMarshaller.marshall(job.getUserMetadata(), USERMETADATA_BINDING);
         } catch (Exception e) {

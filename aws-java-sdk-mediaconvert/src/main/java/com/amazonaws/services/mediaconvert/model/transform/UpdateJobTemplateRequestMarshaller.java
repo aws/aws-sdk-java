@@ -39,6 +39,8 @@ public class UpdateJobTemplateRequestMarshaller {
             .marshallLocationName("queue").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("settings").build();
+    private static final MarshallingInfo<Long> STATUSUPDATEINTERVALINSECS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusUpdateIntervalInSecs").build();
 
     private static final UpdateJobTemplateRequestMarshaller instance = new UpdateJobTemplateRequestMarshaller();
 
@@ -62,6 +64,7 @@ public class UpdateJobTemplateRequestMarshaller {
             protocolMarshaller.marshall(updateJobTemplateRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateJobTemplateRequest.getQueue(), QUEUE_BINDING);
             protocolMarshaller.marshall(updateJobTemplateRequest.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(updateJobTemplateRequest.getStatusUpdateIntervalInSecs(), STATUSUPDATEINTERVALINSECS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

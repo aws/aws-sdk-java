@@ -131,6 +131,8 @@ public enum PinpointActions implements Action {
     GetUserEndpoints("pinpoint:GetUserEndpoints"),
     /** Action for the GetVoiceChannel operation. */
     GetVoiceChannel("pinpoint:GetVoiceChannel"),
+    /** Action for the ListTagsForResource operation. */
+    ListTagsForResource("pinpoint:ListTagsForResource"),
     /** Action for the PhoneNumberValidate operation. */
     PhoneNumberValidate("pinpoint:PhoneNumberValidate"),
     /** Action for the PutEventStream operation. */
@@ -143,6 +145,10 @@ public enum PinpointActions implements Action {
     SendMessages("pinpoint:SendMessages"),
     /** Action for the SendUsersMessages operation. */
     SendUsersMessages("pinpoint:SendUsersMessages"),
+    /** Action for the TagResource operation. */
+    TagResource("pinpoint:TagResource"),
+    /** Action for the UntagResource operation. */
+    UntagResource("pinpoint:UntagResource"),
     /** Action for the UpdateAdmChannel operation. */
     UpdateAdmChannel("pinpoint:UpdateAdmChannel"),
     /** Action for the UpdateApnsChannel operation. */

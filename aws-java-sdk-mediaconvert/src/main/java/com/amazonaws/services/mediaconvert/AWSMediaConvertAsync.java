@@ -58,8 +58,7 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
             com.amazonaws.handlers.AsyncHandler<AssociateCertificateRequest, AssociateCertificateResult> asyncHandler);
 
     /**
-     * Permanently remove a job from a queue. Once you have canceled a job, you can't start it again. You can't delete a
-     * running job.
+     * Permanently cancel a job. Once you have canceled a job, you can't start it again.
      * 
      * @param cancelJobRequest
      * @return A Java Future containing the result of the CancelJob operation returned by the service.
@@ -70,8 +69,7 @@ public interface AWSMediaConvertAsync extends AWSMediaConvert {
     java.util.concurrent.Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest);
 
     /**
-     * Permanently remove a job from a queue. Once you have canceled a job, you can't start it again. You can't delete a
-     * running job.
+     * Permanently cancel a job. Once you have canceled a job, you can't start it again.
      * 
      * @param cancelJobRequest
      * @param asyncHandler

@@ -18,7 +18,13 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for M2TS Container.
+ * MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container
+ * (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT).
+ * Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets
+ * of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one
+ * MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and
+ * players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to
+ * locate specific data within the asset.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/M2tsSettings" target="_top">AWS API
  *      Documentation</a>
@@ -30,12 +36,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     /** The number of audio frames to insert for each PES packet. */
     private Integer audioFramesPerPes;
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted,
-     * and can be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify
+     * multiple PIDs as a JSON array. Default is the range 482-492.
      */
     private java.util.List<Integer> audioPids;
     /**
-     * The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
+     * Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
      * determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
      */
     private Integer bitrate;
@@ -46,13 +52,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     private DvbSdtSettings dvbSdtSettings;
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can
-     * be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a
+     * JSON array. Default is the range 460-479.
      */
     private java.util.List<Integer> dvbSubPids;
 
     private DvbTdtSettings dvbTdtSettings;
-    /** Packet Identifier (PID) for input source DVB Teletext data to this output. */
+    /** Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499. */
     private Integer dvbTeletextPid;
 
     private String ebpAudioInterval;
@@ -60,11 +66,17 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private String ebpPlacement;
 
     private String esRateInPes;
-
+    /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
+     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     */
     private String forceTsVideoEbpOrder;
-    /** The length in seconds of each fragment. Only used with EBP markers. */
+    /** The length, in seconds, of each fragment. Only used with EBP markers. */
     private Double fragmentTime;
-    /** Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream. */
+    /**
+     * Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport
+     * stream.
+     */
     private Integer maxPcrInterval;
     /**
      * When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by
@@ -86,21 +98,33 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
 
     private String pcrControl;
     /**
-     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the
-     * encoder will assign the same value as the Video PID.
+     * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
+     * value, the service will use the value for Video PID (VideoPid).
      */
     private Integer pcrPid;
-    /** The number of milliseconds between instances of this table in the output transport stream. */
+    /**
+     * Specify the number of milliseconds between instances of the program map table (PMT) in the output transport
+     * stream.
+     */
     private Integer pmtInterval;
-    /** Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. */
+    /** Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480. */
     private Integer pmtPid;
-    /** Packet Identifier (PID) of the private metadata stream in the transport stream. */
+    /** Specify the packet identifier (PID) of the private metadata stream. Default is 503. */
     private Integer privateMetadataPid;
-    /** The value of the program number field in the Program Map Table. */
+    /**
+     * Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this
+     * output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
+     * used for organizing data.
+     */
     private Integer programNumber;
 
     private String rateMode;
-    /** Packet Identifier (PID) of the SCTE-35 stream in the transport stream. */
+    /**
+     * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
+     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+     */
+    private M2tsScte35Esam scte35Esam;
+    /** Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream. */
     private Integer scte35Pid;
 
     private String scte35Source;
@@ -108,13 +132,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     private String segmentationMarkers;
 
     private String segmentationStyle;
-    /** The length in seconds of each segment. Required unless markers is set to _none_. */
+    /** Specify the length, in seconds, of each segment. Required unless markers is set to _none_. */
     private Double segmentationTime;
-    /** Packet Identifier (PID) of the timed metadata stream in the transport stream. */
+    /** Specify the packet identifier (PID) for timed metadata in this output. Default is 502. */
     private Integer timedMetadataPid;
-    /** The value of the transport stream ID field in the Program Map Table. */
+    /**
+     * Specify the ID for the transport stream itself in the program map table for this output. Transport stream IDs and
+     * program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
+     */
     private Integer transportStreamId;
-    /** Packet Identifier (PID) of the elementary video stream in the transport stream. */
+    /** Specify the packet identifier (PID) of the elementary video stream in the transport stream. */
     private Integer videoPid;
 
     /**
@@ -192,11 +219,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted,
-     * and can be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify
+     * multiple PIDs as a JSON array. Default is the range 482-492.
      * 
-     * @return Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are
-     *         accepted, and can be entered in ranges and/or by comma separation.
+     * @return Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output.
+     *         Specify multiple PIDs as a JSON array. Default is the range 482-492.
      */
 
     public java.util.List<Integer> getAudioPids() {
@@ -204,12 +231,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted,
-     * and can be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify
+     * multiple PIDs as a JSON array. Default is the range 482-492.
      * 
      * @param audioPids
-     *        Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are
-     *        accepted, and can be entered in ranges and/or by comma separation.
+     *        Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify
+     *        multiple PIDs as a JSON array. Default is the range 482-492.
      */
 
     public void setAudioPids(java.util.Collection<Integer> audioPids) {
@@ -222,8 +249,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted,
-     * and can be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify
+     * multiple PIDs as a JSON array. Default is the range 482-492.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAudioPids(java.util.Collection)} or {@link #withAudioPids(java.util.Collection)} if you want to
@@ -231,8 +258,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param audioPids
-     *        Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are
-     *        accepted, and can be entered in ranges and/or by comma separation.
+     *        Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify
+     *        multiple PIDs as a JSON array. Default is the range 482-492.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -247,12 +274,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted,
-     * and can be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify
+     * multiple PIDs as a JSON array. Default is the range 482-492.
      * 
      * @param audioPids
-     *        Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are
-     *        accepted, and can be entered in ranges and/or by comma separation.
+     *        Specify the packet identifiers (PIDs) for any elementary audio streams you include in this output. Specify
+     *        multiple PIDs as a JSON array. Default is the range 482-492.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,12 +289,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
+     * Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
      * determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
      * 
      * @param bitrate
-     *        The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
-     *        determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
+     *        Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer
+     *        automatically determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
      */
 
     public void setBitrate(Integer bitrate) {
@@ -275,11 +302,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
+     * Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
      * determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
      * 
-     * @return The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
-     *         determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
+     * @return Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer
+     *         automatically determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
      */
 
     public Integer getBitrate() {
@@ -287,12 +314,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
+     * Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
      * determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
      * 
      * @param bitrate
-     *        The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically
-     *        determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
+     *        Specify the output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer
+     *        automatically determine the appropriate bitrate. Other common values are 3750000, 7500000, and 15000000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,11 +421,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can
-     * be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a
+     * JSON array. Default is the range 460-479.
      * 
-     * @return Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted,
-     *         and can be entered in ranges and/or by comma separation.
+     * @return Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple
+     *         PIDs as a JSON array. Default is the range 460-479.
      */
 
     public java.util.List<Integer> getDvbSubPids() {
@@ -406,12 +433,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can
-     * be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a
+     * JSON array. Default is the range 460-479.
      * 
      * @param dvbSubPids
-     *        Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted,
-     *        and can be entered in ranges and/or by comma separation.
+     *        Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs
+     *        as a JSON array. Default is the range 460-479.
      */
 
     public void setDvbSubPids(java.util.Collection<Integer> dvbSubPids) {
@@ -424,8 +451,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can
-     * be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a
+     * JSON array. Default is the range 460-479.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setDvbSubPids(java.util.Collection)} or {@link #withDvbSubPids(java.util.Collection)} if you want to
@@ -433,8 +460,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dvbSubPids
-     *        Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted,
-     *        and can be entered in ranges and/or by comma separation.
+     *        Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs
+     *        as a JSON array. Default is the range 460-479.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -449,12 +476,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can
-     * be entered in ranges and/or by comma separation.
+     * Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs as a
+     * JSON array. Default is the range 460-479.
      * 
      * @param dvbSubPids
-     *        Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted,
-     *        and can be entered in ranges and/or by comma separation.
+     *        Specify the packet identifiers (PIDs) for DVB subtitle data included in this output. Specify multiple PIDs
+     *        as a JSON array. Default is the range 460-479.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,10 +517,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output.
+     * Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499.
      * 
      * @param dvbTeletextPid
-     *        Packet Identifier (PID) for input source DVB Teletext data to this output.
+     *        Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499.
      */
 
     public void setDvbTeletextPid(Integer dvbTeletextPid) {
@@ -501,9 +528,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output.
+     * Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499.
      * 
-     * @return Packet Identifier (PID) for input source DVB Teletext data to this output.
+     * @return Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499.
      */
 
     public Integer getDvbTeletextPid() {
@@ -511,10 +538,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for input source DVB Teletext data to this output.
+     * Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499.
      * 
      * @param dvbTeletextPid
-     *        Packet Identifier (PID) for input source DVB Teletext data to this output.
+     *        Specify the packet identifier (PID) for DVB teletext data you include in this output. Default is 499.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -644,7 +671,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
+     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * 
      * @param forceTsVideoEbpOrder
+     *        Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing
+     *        before your video EBP markers. To correct this problem, set this value to Force (FORCE).
      * @see M2tsForceTsVideoEbpOrder
      */
 
@@ -653,7 +685,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
+     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * 
+     * @return Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing
+     *         before your video EBP markers. To correct this problem, set this value to Force (FORCE).
      * @see M2tsForceTsVideoEbpOrder
      */
 
@@ -662,7 +698,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
+     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * 
      * @param forceTsVideoEbpOrder
+     *        Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing
+     *        before your video EBP markers. To correct this problem, set this value to Force (FORCE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsForceTsVideoEbpOrder
      */
@@ -673,7 +714,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before
+     * your video EBP markers. To correct this problem, set this value to Force (FORCE).
+     * 
      * @param forceTsVideoEbpOrder
+     *        Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing
+     *        before your video EBP markers. To correct this problem, set this value to Force (FORCE).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsForceTsVideoEbpOrder
      */
@@ -684,10 +730,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each fragment. Only used with EBP markers.
+     * The length, in seconds, of each fragment. Only used with EBP markers.
      * 
      * @param fragmentTime
-     *        The length in seconds of each fragment. Only used with EBP markers.
+     *        The length, in seconds, of each fragment. Only used with EBP markers.
      */
 
     public void setFragmentTime(Double fragmentTime) {
@@ -695,9 +741,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each fragment. Only used with EBP markers.
+     * The length, in seconds, of each fragment. Only used with EBP markers.
      * 
-     * @return The length in seconds of each fragment. Only used with EBP markers.
+     * @return The length, in seconds, of each fragment. Only used with EBP markers.
      */
 
     public Double getFragmentTime() {
@@ -705,10 +751,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each fragment. Only used with EBP markers.
+     * The length, in seconds, of each fragment. Only used with EBP markers.
      * 
      * @param fragmentTime
-     *        The length in seconds of each fragment. Only used with EBP markers.
+     *        The length, in seconds, of each fragment. Only used with EBP markers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -718,10 +764,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
+     * Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport
+     * stream.
      * 
      * @param maxPcrInterval
-     *        Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
+     *        Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the
+     *        transport stream.
      */
 
     public void setMaxPcrInterval(Integer maxPcrInterval) {
@@ -729,9 +777,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
+     * Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport
+     * stream.
      * 
-     * @return Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
+     * @return Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the
+     *         transport stream.
      */
 
     public Integer getMaxPcrInterval() {
@@ -739,10 +789,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
+     * Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport
+     * stream.
      * 
      * @param maxPcrInterval
-     *        Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.
+     *        Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the
+     *        transport stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -964,12 +1016,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the
-     * encoder will assign the same value as the Video PID.
+     * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
+     * value, the service will use the value for Video PID (VideoPid).
      * 
      * @param pcrPid
-     *        Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is
-     *        given, the encoder will assign the same value as the Video PID.
+     *        Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not
+     *        specify a value, the service will use the value for Video PID (VideoPid).
      */
 
     public void setPcrPid(Integer pcrPid) {
@@ -977,11 +1029,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the
-     * encoder will assign the same value as the Video PID.
+     * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
+     * value, the service will use the value for Video PID (VideoPid).
      * 
-     * @return Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is
-     *         given, the encoder will assign the same value as the Video PID.
+     * @return Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not
+     *         specify a value, the service will use the value for Video PID (VideoPid).
      */
 
     public Integer getPcrPid() {
@@ -989,12 +1041,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the
-     * encoder will assign the same value as the Video PID.
+     * Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not specify a
+     * value, the service will use the value for Video PID (VideoPid).
      * 
      * @param pcrPid
-     *        Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is
-     *        given, the encoder will assign the same value as the Video PID.
+     *        Specify the packet identifier (PID) for the program clock reference (PCR) in this output. If you do not
+     *        specify a value, the service will use the value for Video PID (VideoPid).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1004,10 +1056,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The number of milliseconds between instances of this table in the output transport stream.
+     * Specify the number of milliseconds between instances of the program map table (PMT) in the output transport
+     * stream.
      * 
      * @param pmtInterval
-     *        The number of milliseconds between instances of this table in the output transport stream.
+     *        Specify the number of milliseconds between instances of the program map table (PMT) in the output
+     *        transport stream.
      */
 
     public void setPmtInterval(Integer pmtInterval) {
@@ -1015,9 +1069,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The number of milliseconds between instances of this table in the output transport stream.
+     * Specify the number of milliseconds between instances of the program map table (PMT) in the output transport
+     * stream.
      * 
-     * @return The number of milliseconds between instances of this table in the output transport stream.
+     * @return Specify the number of milliseconds between instances of the program map table (PMT) in the output
+     *         transport stream.
      */
 
     public Integer getPmtInterval() {
@@ -1025,10 +1081,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The number of milliseconds between instances of this table in the output transport stream.
+     * Specify the number of milliseconds between instances of the program map table (PMT) in the output transport
+     * stream.
      * 
      * @param pmtInterval
-     *        The number of milliseconds between instances of this table in the output transport stream.
+     *        Specify the number of milliseconds between instances of the program map table (PMT) in the output
+     *        transport stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1038,10 +1096,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
      * 
      * @param pmtPid
-     *        Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     *        Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
      */
 
     public void setPmtPid(Integer pmtPid) {
@@ -1049,9 +1107,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
      * 
-     * @return Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * @return Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
      */
 
     public Integer getPmtPid() {
@@ -1059,10 +1117,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
      * 
      * @param pmtPid
-     *        Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     *        Specify the packet identifier (PID) for the program map table (PMT) itself. Default is 480.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1072,10 +1130,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the private metadata stream in the transport stream.
+     * Specify the packet identifier (PID) of the private metadata stream. Default is 503.
      * 
      * @param privateMetadataPid
-     *        Packet Identifier (PID) of the private metadata stream in the transport stream.
+     *        Specify the packet identifier (PID) of the private metadata stream. Default is 503.
      */
 
     public void setPrivateMetadataPid(Integer privateMetadataPid) {
@@ -1083,9 +1141,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the private metadata stream in the transport stream.
+     * Specify the packet identifier (PID) of the private metadata stream. Default is 503.
      * 
-     * @return Packet Identifier (PID) of the private metadata stream in the transport stream.
+     * @return Specify the packet identifier (PID) of the private metadata stream. Default is 503.
      */
 
     public Integer getPrivateMetadataPid() {
@@ -1093,10 +1151,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the private metadata stream in the transport stream.
+     * Specify the packet identifier (PID) of the private metadata stream. Default is 503.
      * 
      * @param privateMetadataPid
-     *        Packet Identifier (PID) of the private metadata stream in the transport stream.
+     *        Specify the packet identifier (PID) of the private metadata stream. Default is 503.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1106,10 +1164,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The value of the program number field in the Program Map Table.
+     * Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this
+     * output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
+     * used for organizing data.
      * 
      * @param programNumber
-     *        The value of the program number field in the Program Map Table.
+     *        Use Program number (programNumber) to specify the program number used in the program map table (PMT) for
+     *        this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream
+     *        containers, used for organizing data.
      */
 
     public void setProgramNumber(Integer programNumber) {
@@ -1117,9 +1179,13 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The value of the program number field in the Program Map Table.
+     * Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this
+     * output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
+     * used for organizing data.
      * 
-     * @return The value of the program number field in the Program Map Table.
+     * @return Use Program number (programNumber) to specify the program number used in the program map table (PMT) for
+     *         this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream
+     *         containers, used for organizing data.
      */
 
     public Integer getProgramNumber() {
@@ -1127,10 +1193,14 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The value of the program number field in the Program Map Table.
+     * Use Program number (programNumber) to specify the program number used in the program map table (PMT) for this
+     * output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream containers,
+     * used for organizing data.
      * 
      * @param programNumber
-     *        The value of the program number field in the Program Map Table.
+     *        Use Program number (programNumber) to specify the program number used in the program map table (PMT) for
+     *        this output. Default is 1. Program numbers and program map tables are parts of MPEG-2 transport stream
+     *        containers, used for organizing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1180,10 +1250,53 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
+     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+     * 
+     * @param scte35Esam
+     *        Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
+     *        insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML
+     *        (sccXml).
+     */
+
+    public void setScte35Esam(M2tsScte35Esam scte35Esam) {
+        this.scte35Esam = scte35Esam;
+    }
+
+    /**
+     * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
+     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+     * 
+     * @return Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
+     *         insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML
+     *         (sccXml).
+     */
+
+    public M2tsScte35Esam getScte35Esam() {
+        return this.scte35Esam;
+    }
+
+    /**
+     * Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
+     * insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml).
+     * 
+     * @param scte35Esam
+     *        Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the
+     *        insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML
+     *        (sccXml).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public M2tsSettings withScte35Esam(M2tsScte35Esam scte35Esam) {
+        setScte35Esam(scte35Esam);
+        return this;
+    }
+
+    /**
+     * Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream.
      * 
      * @param scte35Pid
-     *        Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     *        Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream.
      */
 
     public void setScte35Pid(Integer scte35Pid) {
@@ -1191,9 +1304,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     * Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream.
      * 
-     * @return Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     * @return Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream.
      */
 
     public Integer getScte35Pid() {
@@ -1201,10 +1314,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     * Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream.
      * 
      * @param scte35Pid
-     *        Packet Identifier (PID) of the SCTE-35 stream in the transport stream.
+     *        Specify the packet identifier (PID) of the SCTE-35 stream in the transport stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1334,10 +1447,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to _none_.
+     * Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
      * 
      * @param segmentationTime
-     *        The length in seconds of each segment. Required unless markers is set to _none_.
+     *        Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
      */
 
     public void setSegmentationTime(Double segmentationTime) {
@@ -1345,9 +1458,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to _none_.
+     * Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
      * 
-     * @return The length in seconds of each segment. Required unless markers is set to _none_.
+     * @return Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
      */
 
     public Double getSegmentationTime() {
@@ -1355,10 +1468,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The length in seconds of each segment. Required unless markers is set to _none_.
+     * Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
      * 
      * @param segmentationTime
-     *        The length in seconds of each segment. Required unless markers is set to _none_.
+     *        Specify the length, in seconds, of each segment. Required unless markers is set to _none_.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1368,10 +1481,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
      * 
      * @param timedMetadataPid
-     *        Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     *        Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
      */
 
     public void setTimedMetadataPid(Integer timedMetadataPid) {
@@ -1379,9 +1492,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
      * 
-     * @return Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * @return Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
      */
 
     public Integer getTimedMetadataPid() {
@@ -1389,10 +1502,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
      * 
      * @param timedMetadataPid
-     *        Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     *        Specify the packet identifier (PID) for timed metadata in this output. Default is 502.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1402,10 +1515,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The value of the transport stream ID field in the Program Map Table.
+     * Specify the ID for the transport stream itself in the program map table for this output. Transport stream IDs and
+     * program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
      * 
      * @param transportStreamId
-     *        The value of the transport stream ID field in the Program Map Table.
+     *        Specify the ID for the transport stream itself in the program map table for this output. Transport stream
+     *        IDs and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
      */
 
     public void setTransportStreamId(Integer transportStreamId) {
@@ -1413,9 +1528,11 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The value of the transport stream ID field in the Program Map Table.
+     * Specify the ID for the transport stream itself in the program map table for this output. Transport stream IDs and
+     * program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
      * 
-     * @return The value of the transport stream ID field in the Program Map Table.
+     * @return Specify the ID for the transport stream itself in the program map table for this output. Transport stream
+     *         IDs and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
      */
 
     public Integer getTransportStreamId() {
@@ -1423,10 +1540,12 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The value of the transport stream ID field in the Program Map Table.
+     * Specify the ID for the transport stream itself in the program map table for this output. Transport stream IDs and
+     * program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
      * 
      * @param transportStreamId
-     *        The value of the transport stream ID field in the Program Map Table.
+     *        Specify the ID for the transport stream itself in the program map table for this output. Transport stream
+     *        IDs and program map tables are parts of MPEG-2 transport stream containers, used for organizing data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1436,10 +1555,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * Specify the packet identifier (PID) of the elementary video stream in the transport stream.
      * 
      * @param videoPid
-     *        Packet Identifier (PID) of the elementary video stream in the transport stream.
+     *        Specify the packet identifier (PID) of the elementary video stream in the transport stream.
      */
 
     public void setVideoPid(Integer videoPid) {
@@ -1447,9 +1566,9 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * Specify the packet identifier (PID) of the elementary video stream in the transport stream.
      * 
-     * @return Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * @return Specify the packet identifier (PID) of the elementary video stream in the transport stream.
      */
 
     public Integer getVideoPid() {
@@ -1457,10 +1576,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * Specify the packet identifier (PID) of the elementary video stream in the transport stream.
      * 
      * @param videoPid
-     *        Packet Identifier (PID) of the elementary video stream in the transport stream.
+     *        Specify the packet identifier (PID) of the elementary video stream in the transport stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1535,6 +1654,8 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
         if (getRateMode() != null)
             sb.append("RateMode: ").append(getRateMode()).append(",");
+        if (getScte35Esam() != null)
+            sb.append("Scte35Esam: ").append(getScte35Esam()).append(",");
         if (getScte35Pid() != null)
             sb.append("Scte35Pid: ").append(getScte35Pid()).append(",");
         if (getScte35Source() != null)
@@ -1673,6 +1794,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRateMode() != null && other.getRateMode().equals(this.getRateMode()) == false)
             return false;
+        if (other.getScte35Esam() == null ^ this.getScte35Esam() == null)
+            return false;
+        if (other.getScte35Esam() != null && other.getScte35Esam().equals(this.getScte35Esam()) == false)
+            return false;
         if (other.getScte35Pid() == null ^ this.getScte35Pid() == null)
             return false;
         if (other.getScte35Pid() != null && other.getScte35Pid().equals(this.getScte35Pid()) == false)
@@ -1740,6 +1865,7 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPrivateMetadataPid() == null) ? 0 : getPrivateMetadataPid().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
         hashCode = prime * hashCode + ((getRateMode() == null) ? 0 : getRateMode().hashCode());
+        hashCode = prime * hashCode + ((getScte35Esam() == null) ? 0 : getScte35Esam().hashCode());
         hashCode = prime * hashCode + ((getScte35Pid() == null) ? 0 : getScte35Pid().hashCode());
         hashCode = prime * hashCode + ((getScte35Source() == null) ? 0 : getScte35Source().hashCode());
         hashCode = prime * hashCode + ((getSegmentationMarkers() == null) ? 0 : getSegmentationMarkers().hashCode());

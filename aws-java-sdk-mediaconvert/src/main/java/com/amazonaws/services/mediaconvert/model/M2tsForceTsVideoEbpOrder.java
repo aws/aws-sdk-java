@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before your
- * video EBP markers. Set this value to Force (FORCE) to correct this problem.
+ * video EBP markers. To correct this problem, set this value to Force (FORCE).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum M2tsForceTsVideoEbpOrder {

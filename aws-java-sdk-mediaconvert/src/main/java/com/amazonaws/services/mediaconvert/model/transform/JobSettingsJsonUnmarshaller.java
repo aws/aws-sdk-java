@@ -56,6 +56,10 @@ public class JobSettingsJsonUnmarshaller implements Unmarshaller<JobSettings, Js
                     context.nextToken();
                     jobSettings.setAvailBlanking(AvailBlankingJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("esam", targetDepth)) {
+                    context.nextToken();
+                    jobSettings.setEsam(EsamSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("inputs", targetDepth)) {
                     context.nextToken();
                     jobSettings.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance()).unmarshall(context));

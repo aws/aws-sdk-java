@@ -156,6 +156,10 @@ public class M2tsSettingsJsonUnmarshaller implements Unmarshaller<M2tsSettings, 
                     context.nextToken();
                     m2tsSettings.setRateMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("scte35Esam", targetDepth)) {
+                    context.nextToken();
+                    m2tsSettings.setScte35Esam(M2tsScte35EsamJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("scte35Pid", targetDepth)) {
                     context.nextToken();
                     m2tsSettings.setScte35Pid(context.getUnmarshaller(Integer.class).unmarshall(context));

@@ -303,6 +303,11 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PhoneNumberValidateResult phoneNumberValidate(PhoneNumberValidateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -329,6 +334,16 @@ public class AbstractAmazonPinpoint implements AmazonPinpoint {
 
     @Override
     public SendUsersMessagesResult sendUsersMessages(SendUsersMessagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

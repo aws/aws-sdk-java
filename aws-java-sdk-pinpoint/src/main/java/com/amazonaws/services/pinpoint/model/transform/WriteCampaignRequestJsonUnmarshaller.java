@@ -93,6 +93,11 @@ public class WriteCampaignRequestJsonUnmarshaller implements Unmarshaller<WriteC
                     context.nextToken();
                     writeCampaignRequest.setSegmentVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    writeCampaignRequest.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
                     context.nextToken();
                     writeCampaignRequest.setTreatmentDescription(context.getUnmarshaller(String.class).unmarshall(context));

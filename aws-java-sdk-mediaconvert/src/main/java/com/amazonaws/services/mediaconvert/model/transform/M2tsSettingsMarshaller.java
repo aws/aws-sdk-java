@@ -82,6 +82,8 @@ public class M2tsSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("programNumber").build();
     private static final MarshallingInfo<String> RATEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("rateMode").build();
+    private static final MarshallingInfo<StructuredPojo> SCTE35ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35Esam").build();
     private static final MarshallingInfo<Integer> SCTE35PID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35Pid").build();
     private static final MarshallingInfo<String> SCTE35SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -142,6 +144,7 @@ public class M2tsSettingsMarshaller {
             protocolMarshaller.marshall(m2tsSettings.getPrivateMetadataPid(), PRIVATEMETADATAPID_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getRateMode(), RATEMODE_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getScte35Esam(), SCTE35ESAM_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getScte35Pid(), SCTE35PID_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getScte35Source(), SCTE35SOURCE_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getSegmentationMarkers(), SEGMENTATIONMARKERS_BINDING);

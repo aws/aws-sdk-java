@@ -1311,6 +1311,15 @@ public interface AmazonPinpoint {
     GetVoiceChannelResult getVoiceChannel(GetVoiceChannelRequest getVoiceChannelRequest);
 
     /**
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonPinpoint.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
      * Returns information about the specified phone number.
      * 
      * @param phoneNumberValidateRequest
@@ -1448,6 +1457,24 @@ public interface AmazonPinpoint {
      *      Documentation</a>
      */
     SendUsersMessagesResult sendUsersMessages(SendUsersMessagesRequest sendUsersMessagesRequest);
+
+    /**
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @sample AmazonPinpoint.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @sample AmazonPinpoint.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Update an ADM channel.

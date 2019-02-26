@@ -15,7 +15,9 @@ package com.amazonaws.services.costandusagereport.model;
 import javax.annotation.Generated;
 
 /**
- * This exception is thrown on a known dependency failure.
+ * <p>
+ * An error on the server occurred during the processing of your request. Try again later.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InternalErrorException extends com.amazonaws.services.costandusagereport.model.AWSCostAndUsageReportException {

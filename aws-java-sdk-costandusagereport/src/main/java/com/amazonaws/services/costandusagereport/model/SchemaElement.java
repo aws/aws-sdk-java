@@ -15,8 +15,9 @@ package com.amazonaws.services.costandusagereport.model;
 import javax.annotation.Generated;
 
 /**
- * Preference of including Resource IDs. You can include additional details about individual resource IDs in your
- * report.
+ * <p>
+ * Whether or not AWS includes resource IDs in the report.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SchemaElement {

@@ -43,6 +43,8 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer programNumber;
 
+    private String rotate;
+
     /**
      * @param colorSpace
      * @see ColorSpace
@@ -236,6 +238,46 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param rotate
+     * @see InputRotate
+     */
+
+    public void setRotate(String rotate) {
+        this.rotate = rotate;
+    }
+
+    /**
+     * @return
+     * @see InputRotate
+     */
+
+    public String getRotate() {
+        return this.rotate;
+    }
+
+    /**
+     * @param rotate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputRotate
+     */
+
+    public VideoSelector withRotate(String rotate) {
+        setRotate(rotate);
+        return this;
+    }
+
+    /**
+     * @param rotate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputRotate
+     */
+
+    public VideoSelector withRotate(InputRotate rotate) {
+        this.rotate = rotate.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -256,7 +298,9 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
         if (getPid() != null)
             sb.append("Pid: ").append(getPid()).append(",");
         if (getProgramNumber() != null)
-            sb.append("ProgramNumber: ").append(getProgramNumber());
+            sb.append("ProgramNumber: ").append(getProgramNumber()).append(",");
+        if (getRotate() != null)
+            sb.append("Rotate: ").append(getRotate());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +335,10 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProgramNumber() != null && other.getProgramNumber().equals(this.getProgramNumber()) == false)
             return false;
+        if (other.getRotate() == null ^ this.getRotate() == null)
+            return false;
+        if (other.getRotate() != null && other.getRotate().equals(this.getRotate()) == false)
+            return false;
         return true;
     }
 
@@ -304,6 +352,7 @@ public class VideoSelector implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHdr10Metadata() == null) ? 0 : getHdr10Metadata().hashCode());
         hashCode = prime * hashCode + ((getPid() == null) ? 0 : getPid().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
+        hashCode = prime * hashCode + ((getRotate() == null) ? 0 : getRotate().hashCode());
         return hashCode;
     }
 

@@ -26,7 +26,29 @@ import com.amazonaws.services.costandusagereport.model.*;
  * {@link com.amazonaws.services.costandusagereport.AbstractAWSCostAndUsageReport} instead.
  * </p>
  * <p>
- * All public APIs for AWS Cost and Usage Report service
+ * <p>
+ * The AWS Cost and Usage Report API enables you to programmatically create, query, and delete AWS Cost and Usage report
+ * definitions.
+ * </p>
+ * <p>
+ * AWS Cost and Usage reports track the monthly AWS costs and usage associated with your AWS account. The report
+ * contains line items for each unique combination of AWS product, usage type, and operation that your AWS account uses.
+ * You can configure the AWS Cost and Usage report to show only the data that you want, using the AWS Cost and Usage
+ * API.
+ * </p>
+ * <p>
+ * Service Endpoint
+ * </p>
+ * <p>
+ * The AWS Cost and Usage Report API provides the following endpoint:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * cur.us-east-1.amazonaws.com
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCostAndUsageReport {
@@ -91,16 +113,17 @@ public interface AWSCostAndUsageReport {
     void setRegion(Region region);
 
     /**
-     * Delete a specified report definition
+     * <p>
+     * Deletes the specified report.
+     * </p>
      * 
      * @param deleteReportDefinitionRequest
-     *        Request of DeleteReportDefinition
+     *        Deletes the specified report.
      * @return Result of the DeleteReportDefinition operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on a known dependency failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws ValidationException
-     *         This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid
-     *         report name, or Delete a report preference with an empty report name.
+     *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSCostAndUsageReport.DeleteReportDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition" target="_top">AWS API
      *      Documentation</a>
@@ -108,13 +131,15 @@ public interface AWSCostAndUsageReport {
     DeleteReportDefinitionResult deleteReportDefinition(DeleteReportDefinitionRequest deleteReportDefinitionRequest);
 
     /**
-     * Describe a list of report definitions owned by the account
+     * <p>
+     * Lists the AWS Cost and Usage reports available to this account.
+     * </p>
      * 
      * @param describeReportDefinitionsRequest
-     *        Request of DescribeReportDefinitions
+     *        Requests a list of AWS Cost and Usage reports owned by the account.
      * @return Result of the DescribeReportDefinitions operation returned by the service.
      * @throws InternalErrorException
-     *         This exception is thrown on a known dependency failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @sample AWSCostAndUsageReport.DescribeReportDefinitions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions" target="_top">AWS
      *      API Documentation</a>
@@ -122,20 +147,22 @@ public interface AWSCostAndUsageReport {
     DescribeReportDefinitionsResult describeReportDefinitions(DescribeReportDefinitionsRequest describeReportDefinitionsRequest);
 
     /**
-     * Create a new report definition
+     * <p>
+     * Creates a new report using the description that you provide.
+     * </p>
      * 
      * @param putReportDefinitionRequest
-     *        Request of PutReportDefinition
+     *        Creates a Cost and Usage Report.
      * @return Result of the PutReportDefinition operation returned by the service.
      * @throws DuplicateReportNameException
-     *         This exception is thrown when putting a report preference with a name that already exists.
+     *         A report with the specified name already exists in the account. Specify a different report name.
      * @throws ReportLimitReachedException
-     *         This exception is thrown when the number of report preference reaches max limit. The max number is 5.
+     *         This account already has five reports defined. To define a new report, you must delete an existing
+     *         report.
      * @throws InternalErrorException
-     *         This exception is thrown on a known dependency failure.
+     *         An error on the server occurred during the processing of your request. Try again later.
      * @throws ValidationException
-     *         This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid
-     *         report name, or Delete a report preference with an empty report name.
+     *         The input fails to satisfy the constraints specified by an AWS service.
      * @sample AWSCostAndUsageReport.PutReportDefinition
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition" target="_top">AWS API
      *      Documentation</a>

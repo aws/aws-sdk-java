@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +31,8 @@ public class SegmentResponseMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").build();
     private static final MarshallingInfo<StructuredPojo> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -45,6 +49,8 @@ public class SegmentResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentGroups").build();
     private static final MarshallingInfo<String> SEGMENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentType").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<Integer> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
 
@@ -65,6 +71,7 @@ public class SegmentResponseMarshaller {
 
         try {
             protocolMarshaller.marshall(segmentResponse.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(segmentResponse.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(segmentResponse.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(segmentResponse.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(segmentResponse.getId(), ID_BINDING);
@@ -73,6 +80,7 @@ public class SegmentResponseMarshaller {
             protocolMarshaller.marshall(segmentResponse.getName(), NAME_BINDING);
             protocolMarshaller.marshall(segmentResponse.getSegmentGroups(), SEGMENTGROUPS_BINDING);
             protocolMarshaller.marshall(segmentResponse.getSegmentType(), SEGMENTTYPE_BINDING);
+            protocolMarshaller.marshall(segmentResponse.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(segmentResponse.getVersion(), VERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

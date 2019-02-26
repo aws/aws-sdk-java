@@ -437,12 +437,9 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * <code>DescribeExportConfigurations</code> is deprecated.
-     * </p>
-     * <p>
-     * Use instead <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
-     * <code>DescribeExportTasks</code> </a>.
+     * <code>DescribeExportConfigurations</code> is deprecated. Use <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html"
+     * >DescribeImportTasks</a>, instead.
      * </p>
      * 
      * @param describeExportConfigurationsRequest
@@ -456,12 +453,9 @@ public interface AWSApplicationDiscoveryAsync extends AWSApplicationDiscovery {
 
     /**
      * <p>
-     * <code>DescribeExportConfigurations</code> is deprecated.
-     * </p>
-     * <p>
-     * Use instead <a
-     * href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">
-     * <code>DescribeExportTasks</code> </a>.
+     * <code>DescribeExportConfigurations</code> is deprecated. Use <a
+     * href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html"
+     * >DescribeImportTasks</a>, instead.
      * </p>
      * 
      * @param describeExportConfigurationsRequest

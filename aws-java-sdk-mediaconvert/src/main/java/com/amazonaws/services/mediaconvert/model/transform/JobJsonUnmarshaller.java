@@ -100,6 +100,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("statusUpdateIntervalInSecs", targetDepth)) {
+                    context.nextToken();
+                    job.setStatusUpdateIntervalInSecs(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("timing", targetDepth)) {
                     context.nextToken();
                     job.setTiming(TimingJsonUnmarshaller.getInstance().unmarshall(context));

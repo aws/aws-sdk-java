@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Request of DeleteReportDefinition
+ * <p>
+ * Deletes the specified report.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition" target="_top">AWS API
  *      Documentation</a>

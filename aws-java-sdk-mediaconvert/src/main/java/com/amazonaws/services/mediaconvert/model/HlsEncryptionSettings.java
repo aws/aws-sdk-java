@@ -36,6 +36,8 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
 
     private String initializationVectorInManifest;
 
+    private String offlineEncrypted;
+
     private SpekeKeyProvider spekeKeyProvider;
 
     private StaticKeyProvider staticKeyProvider;
@@ -163,6 +165,46 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * @param offlineEncrypted
+     * @see HlsOfflineEncrypted
+     */
+
+    public void setOfflineEncrypted(String offlineEncrypted) {
+        this.offlineEncrypted = offlineEncrypted;
+    }
+
+    /**
+     * @return
+     * @see HlsOfflineEncrypted
+     */
+
+    public String getOfflineEncrypted() {
+        return this.offlineEncrypted;
+    }
+
+    /**
+     * @param offlineEncrypted
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsOfflineEncrypted
+     */
+
+    public HlsEncryptionSettings withOfflineEncrypted(String offlineEncrypted) {
+        setOfflineEncrypted(offlineEncrypted);
+        return this;
+    }
+
+    /**
+     * @param offlineEncrypted
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsOfflineEncrypted
+     */
+
+    public HlsEncryptionSettings withOfflineEncrypted(HlsOfflineEncrypted offlineEncrypted) {
+        this.offlineEncrypted = offlineEncrypted.toString();
+        return this;
+    }
+
+    /**
      * @param spekeKeyProvider
      */
 
@@ -272,6 +314,8 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
             sb.append("EncryptionMethod: ").append(getEncryptionMethod()).append(",");
         if (getInitializationVectorInManifest() != null)
             sb.append("InitializationVectorInManifest: ").append(getInitializationVectorInManifest()).append(",");
+        if (getOfflineEncrypted() != null)
+            sb.append("OfflineEncrypted: ").append(getOfflineEncrypted()).append(",");
         if (getSpekeKeyProvider() != null)
             sb.append("SpekeKeyProvider: ").append(getSpekeKeyProvider()).append(",");
         if (getStaticKeyProvider() != null)
@@ -305,6 +349,10 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
         if (other.getInitializationVectorInManifest() != null
                 && other.getInitializationVectorInManifest().equals(this.getInitializationVectorInManifest()) == false)
             return false;
+        if (other.getOfflineEncrypted() == null ^ this.getOfflineEncrypted() == null)
+            return false;
+        if (other.getOfflineEncrypted() != null && other.getOfflineEncrypted().equals(this.getOfflineEncrypted()) == false)
+            return false;
         if (other.getSpekeKeyProvider() == null ^ this.getSpekeKeyProvider() == null)
             return false;
         if (other.getSpekeKeyProvider() != null && other.getSpekeKeyProvider().equals(this.getSpekeKeyProvider()) == false)
@@ -328,6 +376,7 @@ public class HlsEncryptionSettings implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getConstantInitializationVector() == null) ? 0 : getConstantInitializationVector().hashCode());
         hashCode = prime * hashCode + ((getEncryptionMethod() == null) ? 0 : getEncryptionMethod().hashCode());
         hashCode = prime * hashCode + ((getInitializationVectorInManifest() == null) ? 0 : getInitializationVectorInManifest().hashCode());
+        hashCode = prime * hashCode + ((getOfflineEncrypted() == null) ? 0 : getOfflineEncrypted().hashCode());
         hashCode = prime * hashCode + ((getSpekeKeyProvider() == null) ? 0 : getSpekeKeyProvider().hashCode());
         hashCode = prime * hashCode + ((getStaticKeyProvider() == null) ? 0 : getStaticKeyProvider().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());

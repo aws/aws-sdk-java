@@ -117,7 +117,7 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If some records failed to be imported we recommend that you correct the records in the failed entries file and
-     * then imports that failed entries file. This prevents you frmo having to correct and update the larger original
+     * then imports that failed entries file. This prevents you from having to correct and update the larger original
      * file and attempt importing it again.
      * </p>
      */
@@ -679,7 +679,7 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If some records failed to be imported we recommend that you correct the records in the failed entries file and
-     * then imports that failed entries file. This prevents you frmo having to correct and update the larger original
+     * then imports that failed entries file. This prevents you from having to correct and update the larger original
      * file and attempt importing it again.
      * </p>
      * 
@@ -694,7 +694,7 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        If some records failed to be imported we recommend that you correct the records in the failed entries file
-     *        and then imports that failed entries file. This prevents you frmo having to correct and update the larger
+     *        and then imports that failed entries file. This prevents you from having to correct and update the larger
      *        original file and attempt importing it again.
      */
 
@@ -715,7 +715,7 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If some records failed to be imported we recommend that you correct the records in the failed entries file and
-     * then imports that failed entries file. This prevents you frmo having to correct and update the larger original
+     * then imports that failed entries file. This prevents you from having to correct and update the larger original
      * file and attempt importing it again.
      * </p>
      * 
@@ -729,7 +729,7 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         If some records failed to be imported we recommend that you correct the records in the failed entries
-     *         file and then imports that failed entries file. This prevents you frmo having to correct and update the
+     *         file and then imports that failed entries file. This prevents you from having to correct and update the
      *         larger original file and attempt importing it again.
      */
 
@@ -750,7 +750,7 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If some records failed to be imported we recommend that you correct the records in the failed entries file and
-     * then imports that failed entries file. This prevents you frmo having to correct and update the larger original
+     * then imports that failed entries file. This prevents you from having to correct and update the larger original
      * file and attempt importing it again.
      * </p>
      * 
@@ -765,7 +765,7 @@ public class ImportTask implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        If some records failed to be imported we recommend that you correct the records in the failed entries file
-     *        and then imports that failed entries file. This prevents you frmo having to correct and update the larger
+     *        and then imports that failed entries file. This prevents you from having to correct and update the larger
      *        original file and attempt importing it again.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

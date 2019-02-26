@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.pinpoint.model.transform;
 
+import java.util.Map;
+
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +35,8 @@ public class WriteSegmentRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> SEGMENTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SegmentGroups").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final WriteSegmentRequestMarshaller instance = new WriteSegmentRequestMarshaller();
 
@@ -53,6 +57,7 @@ public class WriteSegmentRequestMarshaller {
             protocolMarshaller.marshall(writeSegmentRequest.getDimensions(), DIMENSIONS_BINDING);
             protocolMarshaller.marshall(writeSegmentRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(writeSegmentRequest.getSegmentGroups(), SEGMENTGROUPS_BINDING);
+            protocolMarshaller.marshall(writeSegmentRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

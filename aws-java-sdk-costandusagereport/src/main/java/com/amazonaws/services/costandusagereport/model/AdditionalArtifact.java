@@ -15,13 +15,16 @@ package com.amazonaws.services.costandusagereport.model;
 import javax.annotation.Generated;
 
 /**
- * Enable support for Redshift and/or QuickSight.
+ * <p>
+ * The types of manifest that you want AWS to create for this report.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum AdditionalArtifact {
 
     REDSHIFT("REDSHIFT"),
-    QUICKSIGHT("QUICKSIGHT");
+    QUICKSIGHT("QUICKSIGHT"),
+    ATHENA("ATHENA");
 
     private String value;
 

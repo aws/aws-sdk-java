@@ -34,6 +34,8 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
      * triggered ad avails.
      */
     private AvailBlanking availBlanking;
+    /** Settings for Event Signaling And Messaging (ESAM). */
+    private EsamSettings esam;
     /**
      * Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job
      * template. Using the API, you can include multiple inputs when referencing a job template.
@@ -132,6 +134,40 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
 
     public JobTemplateSettings withAvailBlanking(AvailBlanking availBlanking) {
         setAvailBlanking(availBlanking);
+        return this;
+    }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     * 
+     * @param esam
+     *        Settings for Event Signaling And Messaging (ESAM).
+     */
+
+    public void setEsam(EsamSettings esam) {
+        this.esam = esam;
+    }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     * 
+     * @return Settings for Event Signaling And Messaging (ESAM).
+     */
+
+    public EsamSettings getEsam() {
+        return this.esam;
+    }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     * 
+     * @param esam
+     *        Settings for Event Signaling And Messaging (ESAM).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobTemplateSettings withEsam(EsamSettings esam) {
+        setEsam(esam);
         return this;
     }
 
@@ -457,6 +493,8 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
             sb.append("AdAvailOffset: ").append(getAdAvailOffset()).append(",");
         if (getAvailBlanking() != null)
             sb.append("AvailBlanking: ").append(getAvailBlanking()).append(",");
+        if (getEsam() != null)
+            sb.append("Esam: ").append(getEsam()).append(",");
         if (getInputs() != null)
             sb.append("Inputs: ").append(getInputs()).append(",");
         if (getMotionImageInserter() != null)
@@ -490,6 +528,10 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
         if (other.getAvailBlanking() == null ^ this.getAvailBlanking() == null)
             return false;
         if (other.getAvailBlanking() != null && other.getAvailBlanking().equals(this.getAvailBlanking()) == false)
+            return false;
+        if (other.getEsam() == null ^ this.getEsam() == null)
+            return false;
+        if (other.getEsam() != null && other.getEsam().equals(this.getEsam()) == false)
             return false;
         if (other.getInputs() == null ^ this.getInputs() == null)
             return false;
@@ -525,6 +567,7 @@ public class JobTemplateSettings implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getAdAvailOffset() == null) ? 0 : getAdAvailOffset().hashCode());
         hashCode = prime * hashCode + ((getAvailBlanking() == null) ? 0 : getAvailBlanking().hashCode());
+        hashCode = prime * hashCode + ((getEsam() == null) ? 0 : getEsam().hashCode());
         hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
         hashCode = prime * hashCode + ((getMotionImageInserter() == null) ? 0 : getMotionImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());

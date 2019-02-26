@@ -60,6 +60,10 @@ public class HlsEncryptionSettingsJsonUnmarshaller implements Unmarshaller<HlsEn
                     context.nextToken();
                     hlsEncryptionSettings.setInitializationVectorInManifest(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("offlineEncrypted", targetDepth)) {
+                    context.nextToken();
+                    hlsEncryptionSettings.setOfflineEncrypted(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("spekeKeyProvider", targetDepth)) {
                     context.nextToken();
                     hlsEncryptionSettings.setSpekeKeyProvider(SpekeKeyProviderJsonUnmarshaller.getInstance().unmarshall(context));

@@ -16,7 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * Response of DeleteReportDefinition
+ * <p>
+ * If the action is successful, the service sends back an HTTP 200 response.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DeleteReportDefinition" target="_top">AWS API
  *      Documentation</a>

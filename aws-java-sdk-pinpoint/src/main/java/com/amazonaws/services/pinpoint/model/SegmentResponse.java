@@ -28,6 +28,8 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
 
     /** The ID of the application that the segment applies to. */
     private String applicationId;
+    /** The arn for the segment. */
+    private String arn;
     /** The date and time when the segment was created. */
     private String creationDate;
     /** The segment dimensions attributes. */
@@ -53,6 +55,8 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
      * POST request to the jobs/import resource.
      */
     private String segmentType;
+    /** The Tags for the segment. */
+    private java.util.Map<String, String> tags;
     /** The segment version number. */
     private Integer version;
 
@@ -87,6 +91,40 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
 
     public SegmentResponse withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * The arn for the segment.
+     * 
+     * @param arn
+     *        The arn for the segment.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * The arn for the segment.
+     * 
+     * @return The arn for the segment.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * The arn for the segment.
+     * 
+     * @param arn
+     *        The arn for the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentResponse withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -438,6 +476,61 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * The Tags for the segment.
+     * 
+     * @return The Tags for the segment.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * The Tags for the segment.
+     * 
+     * @param tags
+     *        The Tags for the segment.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * The Tags for the segment.
+     * 
+     * @param tags
+     *        The Tags for the segment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentResponse withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public SegmentResponse addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SegmentResponse clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * The segment version number.
      * 
      * @param version
@@ -485,6 +578,8 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationDate() != null)
             sb.append("CreationDate: ").append(getCreationDate()).append(",");
         if (getDimensions() != null)
@@ -501,6 +596,8 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
             sb.append("SegmentGroups: ").append(getSegmentGroups()).append(",");
         if (getSegmentType() != null)
             sb.append("SegmentType: ").append(getSegmentType()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
         if (getVersion() != null)
             sb.append("Version: ").append(getVersion());
         sb.append("}");
@@ -520,6 +617,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
         if (other.getApplicationId() == null ^ this.getApplicationId() == null)
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
@@ -553,6 +654,10 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSegmentType() != null && other.getSegmentType().equals(this.getSegmentType()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         if (other.getVersion() == null ^ this.getVersion() == null)
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
@@ -566,6 +671,7 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
@@ -574,6 +680,7 @@ public class SegmentResponse implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSegmentGroups() == null) ? 0 : getSegmentGroups().hashCode());
         hashCode = prime * hashCode + ((getSegmentType() == null) ? 0 : getSegmentType().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;
     }

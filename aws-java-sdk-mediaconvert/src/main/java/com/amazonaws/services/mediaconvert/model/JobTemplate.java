@@ -48,6 +48,12 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
 
     private JobTemplateSettings settings;
     /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     */
+    private Long statusUpdateIntervalInSecs;
+    /**
      * A job template can be of two types: system or custom. System or built-in job templates can't be modified or
      * deleted by the user.
      */
@@ -358,6 +364,52 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateIntervalInSecs
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     */
+
+    public void setStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
+        this.statusUpdateIntervalInSecs = statusUpdateIntervalInSecs;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @return Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *         in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *         service begins processing your job to the time it completes the transcode or encounters an error.
+     */
+
+    public Long getStatusUpdateIntervalInSecs() {
+        return this.statusUpdateIntervalInSecs;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateIntervalInSecs
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobTemplate withStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
+        setStatusUpdateIntervalInSecs(statusUpdateIntervalInSecs);
+        return this;
+    }
+
+    /**
      * A job template can be of two types: system or custom. System or built-in job templates can't be modified or
      * deleted by the user.
      * 
@@ -446,6 +498,8 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getStatusUpdateIntervalInSecs() != null)
+            sb.append("StatusUpdateIntervalInSecs: ").append(getStatusUpdateIntervalInSecs()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -498,6 +552,10 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getStatusUpdateIntervalInSecs() == null ^ this.getStatusUpdateIntervalInSecs() == null)
+            return false;
+        if (other.getStatusUpdateIntervalInSecs() != null && other.getStatusUpdateIntervalInSecs().equals(this.getStatusUpdateIntervalInSecs()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -519,6 +577,7 @@ public class JobTemplate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getStatusUpdateIntervalInSecs() == null) ? 0 : getStatusUpdateIntervalInSecs().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

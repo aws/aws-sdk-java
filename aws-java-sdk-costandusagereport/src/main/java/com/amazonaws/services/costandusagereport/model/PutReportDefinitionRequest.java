@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Request of PutReportDefinition
+ * <p>
+ * Creates a Cost and Usage Report.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/PutReportDefinition" target="_top">AWS API
  *      Documentation</a>
@@ -26,10 +28,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutReportDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and
+     * data file information.
+     * </p>
+     */
     private ReportDefinition reportDefinition;
 
     /**
+     * <p>
+     * Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and
+     * data file information.
+     * </p>
+     * 
      * @param reportDefinition
+     *        Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata
+     *        and data file information.
      */
 
     public void setReportDefinition(ReportDefinition reportDefinition) {
@@ -37,7 +52,13 @@ public class PutReportDefinitionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and
+     * data file information.
+     * </p>
+     * 
+     * @return Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata
+     *         and data file information.
      */
 
     public ReportDefinition getReportDefinition() {
@@ -45,7 +66,14 @@ public class PutReportDefinitionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and
+     * data file information.
+     * </p>
+     * 
      * @param reportDefinition
+     *        Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata
+     *        and data file information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

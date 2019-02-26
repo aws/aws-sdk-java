@@ -40,6 +40,12 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     private String queue;
 
     private JobTemplateSettings settings;
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     */
+    private Long statusUpdateIntervalInSecs;
     /** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
     private java.util.Map<String, String> tags;
 
@@ -246,6 +252,52 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateIntervalInSecs
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     */
+
+    public void setStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
+        this.statusUpdateIntervalInSecs = statusUpdateIntervalInSecs;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @return Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *         in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *         service begins processing your job to the time it completes the transcode or encounters an error.
+     */
+
+    public Long getStatusUpdateIntervalInSecs() {
+        return this.statusUpdateIntervalInSecs;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateIntervalInSecs
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobTemplateRequest withStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
+        setStatusUpdateIntervalInSecs(statusUpdateIntervalInSecs);
+        return this;
+    }
+
+    /**
      * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
      * 
      * @return The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a
@@ -327,6 +379,8 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getStatusUpdateIntervalInSecs() != null)
+            sb.append("StatusUpdateIntervalInSecs: ").append(getStatusUpdateIntervalInSecs()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -367,6 +421,10 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getStatusUpdateIntervalInSecs() == null ^ this.getStatusUpdateIntervalInSecs() == null)
+            return false;
+        if (other.getStatusUpdateIntervalInSecs() != null && other.getStatusUpdateIntervalInSecs().equals(this.getStatusUpdateIntervalInSecs()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -385,6 +443,7 @@ public class CreateJobTemplateRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getStatusUpdateIntervalInSecs() == null) ? 0 : getStatusUpdateIntervalInSecs().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

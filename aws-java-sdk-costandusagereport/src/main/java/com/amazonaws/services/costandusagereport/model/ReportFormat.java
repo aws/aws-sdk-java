@@ -15,12 +15,15 @@ package com.amazonaws.services.costandusagereport.model;
 import javax.annotation.Generated;
 
 /**
- * Preferred format for report.
+ * <p>
+ * The format that AWS saves the report in.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ReportFormat {
 
-    TextORcsv("textORcsv");
+    TextORcsv("textORcsv"),
+    Parquet("Parquet");
 
     private String value;
 

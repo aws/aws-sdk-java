@@ -84,6 +84,10 @@ public class JobTemplateJsonUnmarshaller implements Unmarshaller<JobTemplate, Js
                     context.nextToken();
                     jobTemplate.setSettings(JobTemplateSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("statusUpdateIntervalInSecs", targetDepth)) {
+                    context.nextToken();
+                    jobTemplate.setStatusUpdateIntervalInSecs(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("type", targetDepth)) {
                     context.nextToken();
                     jobTemplate.setType(context.getUnmarshaller(String.class).unmarshall(context));

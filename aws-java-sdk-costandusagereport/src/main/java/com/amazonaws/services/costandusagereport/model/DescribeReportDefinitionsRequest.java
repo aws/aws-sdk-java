@@ -18,7 +18,9 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Request of DescribeReportDefinitions
+ * <p>
+ * Requests a list of AWS Cost and Usage reports owned by the account.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitions" target="_top">AWS API
  *      Documentation</a>

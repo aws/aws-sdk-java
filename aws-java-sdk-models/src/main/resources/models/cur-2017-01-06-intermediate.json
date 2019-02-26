@@ -57,7 +57,7 @@
     "defaultEndpoint" : "cur.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "cur.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "All public APIs for AWS Cost and Usage Report service",
+    "documentation" : "<p>The AWS Cost and Usage Report API enables you to programmatically create, query, and delete AWS Cost and Usage report definitions.</p> <p>AWS Cost and Usage reports track the monthly AWS costs and usage associated with your AWS account. The report contains line items for each unique combination of AWS product, usage type, and operation that your AWS account uses. You can configure the AWS Cost and Usage report to show only the data that you want, using the AWS Cost and Usage API.</p> <p>Service Endpoint</p> <p>The AWS Cost and Usage Report API provides the following endpoint:</p> <ul> <li> <p>cur.us-east-1.amazonaws.com</p> </li> </ul>",
     "endpointPrefix" : "cur",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -93,17 +93,17 @@
       "asyncReturnType" : "DeleteReportDefinitionResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "Delete a specified report definition",
+      "documentation" : "<p>Deletes the specified report.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
-        "documentation" : "This exception is thrown on a known dependency failure.",
+        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ValidationException",
-        "documentation" : "This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or Delete a report preference with an empty report name.",
+        "documentation" : "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -113,7 +113,7 @@
         "variableDeclarationType" : "DeleteReportDefinitionRequest",
         "variableName" : "deleteReportDefinitionRequest",
         "variableType" : "DeleteReportDefinitionRequest",
-        "documentation" : "Request of DeleteReportDefinition",
+        "documentation" : "<p>Deletes the specified report.</p>",
         "simpleType" : "DeleteReportDefinitionRequest",
         "variableSetterType" : "DeleteReportDefinitionRequest"
       },
@@ -122,7 +122,7 @@
       "operationName" : "DeleteReportDefinition",
       "returnType" : {
         "returnType" : "DeleteReportDefinitionResult",
-        "documentation" : "Response of DeleteReportDefinition"
+        "documentation" : "<p>If the action is successful, the service sends back an HTTP 200 response.</p>"
       },
       "syncReturnType" : "DeleteReportDefinitionResult"
     },
@@ -133,13 +133,13 @@
       "asyncReturnType" : "DescribeReportDefinitionsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "Describe a list of report definitions owned by the account",
+      "documentation" : "<p>Lists the AWS Cost and Usage reports available to this account.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "InternalErrorException",
-        "documentation" : "This exception is thrown on a known dependency failure.",
+        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -149,7 +149,7 @@
         "variableDeclarationType" : "DescribeReportDefinitionsRequest",
         "variableName" : "describeReportDefinitionsRequest",
         "variableType" : "DescribeReportDefinitionsRequest",
-        "documentation" : "Request of DescribeReportDefinitions",
+        "documentation" : "<p>Requests a list of AWS Cost and Usage reports owned by the account.</p>",
         "simpleType" : "DescribeReportDefinitionsRequest",
         "variableSetterType" : "DescribeReportDefinitionsRequest"
       },
@@ -158,7 +158,7 @@
       "operationName" : "DescribeReportDefinitions",
       "returnType" : {
         "returnType" : "DescribeReportDefinitionsResult",
-        "documentation" : "Response of DescribeReportDefinitions"
+        "documentation" : "<p>If the action is successful, the service sends back an HTTP 200 response.</p>"
       },
       "syncReturnType" : "DescribeReportDefinitionsResult"
     },
@@ -169,25 +169,25 @@
       "asyncReturnType" : "PutReportDefinitionResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "Create a new report definition",
+      "documentation" : "<p>Creates a new report using the description that you provide.</p>",
       "endpointDiscovery" : null,
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
         "exceptionName" : "DuplicateReportNameException",
-        "documentation" : "This exception is thrown when putting a report preference with a name that already exists.",
+        "documentation" : "<p>A report with the specified name already exists in the account. Specify a different report name.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ReportLimitReachedException",
-        "documentation" : "This exception is thrown when the number of report preference reaches max limit. The max number is 5.",
+        "documentation" : "<p>This account already has five reports defined. To define a new report, you must delete an existing report.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "InternalErrorException",
-        "documentation" : "This exception is thrown on a known dependency failure.",
+        "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "ValidationException",
-        "documentation" : "This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or Delete a report preference with an empty report name.",
+        "documentation" : "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -197,7 +197,7 @@
         "variableDeclarationType" : "PutReportDefinitionRequest",
         "variableName" : "putReportDefinitionRequest",
         "variableType" : "PutReportDefinitionRequest",
-        "documentation" : "Request of PutReportDefinition",
+        "documentation" : "<p>Creates a Cost and Usage Report.</p>",
         "simpleType" : "PutReportDefinitionRequest",
         "variableSetterType" : "PutReportDefinitionRequest"
       },
@@ -206,7 +206,7 @@
       "operationName" : "PutReportDefinition",
       "returnType" : {
         "returnType" : "PutReportDefinitionResult",
-        "documentation" : "Response of PutReportDefinition"
+        "documentation" : "<p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>"
       },
       "syncReturnType" : "PutReportDefinitionResult"
     }
@@ -221,7 +221,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Region of customer S3 bucket.",
+      "documentation" : "<p>The region of the S3 bucket that AWS delivers the report into.</p>",
       "enums" : [ {
         "name" : "UsEast1",
         "value" : "us-east-1"
@@ -246,6 +246,12 @@
       }, {
         "name" : "ApNortheast1",
         "value" : "ap-northeast-1"
+      }, {
+        "name" : "EuNorth1",
+        "value" : "eu-north-1"
+      }, {
+        "name" : "ApNortheast3",
+        "value" : "ap-northeast-3"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -285,13 +291,16 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Enable support for Redshift and/or QuickSight.",
+      "documentation" : "<p>The types of manifest that you want AWS to create for this report.</p>",
       "enums" : [ {
         "name" : "REDSHIFT",
         "value" : "REDSHIFT"
       }, {
         "name" : "QUICKSIGHT",
         "value" : "QUICKSIGHT"
+      }, {
+        "name" : "ATHENA",
+        "value" : "ATHENA"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -331,13 +340,16 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Preferred compression format for report.",
+      "documentation" : "<p>The compression format that AWS uses for the report.</p>",
       "enums" : [ {
         "name" : "ZIP",
         "value" : "ZIP"
       }, {
         "name" : "GZIP",
         "value" : "GZIP"
+      }, {
+        "name" : "Parquet",
+        "value" : "Parquet"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -377,7 +389,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Request of DeleteReportDefinition",
+      "documentation" : "<p>Deletes the specified report.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -555,7 +567,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Response of DeleteReportDefinition",
+      "documentation" : "<p>If the action is successful, the service sends back an HTTP 200 response.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -729,7 +741,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Request of DescribeReportDefinitions",
+      "documentation" : "<p>Requests a list of AWS Cost and Usage reports owned by the account.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1040,7 +1052,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Response of DescribeReportDefinitions",
+      "documentation" : "<p>If the action is successful, the service sends back an HTTP 200 response.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1052,11 +1064,11 @@
         "c2jName" : "ReportDefinitions",
         "c2jShape" : "ReportDefinitionList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>A list of AWS Cost and Usage reports owned by the account.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param reportDefinitions \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n@param reportDefinitions A list of AWS Cost and Usage reports owned by the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withReportDefinitions",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n@return A list of AWS Cost and Usage reports owned by the account.*/",
         "getterMethodName" : "getReportDefinitions",
         "getterModel" : {
           "returnType" : "java.util.List<ReportDefinition>",
@@ -1170,7 +1182,7 @@
         "marshallingType" : "LIST",
         "name" : "ReportDefinitions",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param reportDefinitions */",
+        "setterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n@param reportDefinitions A list of AWS Cost and Usage reports owned by the account.*/",
         "setterMethodName" : "setReportDefinitions",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1184,13 +1196,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if you want to override the existing values.</p>\n@param reportDefinitions \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if you want to override the existing values.</p>\n@param reportDefinitions A list of AWS Cost and Usage reports owned by the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<ReportDefinition>",
           "variableName" : "reportDefinitions",
           "variableType" : "java.util.List<ReportDefinition>",
-          "documentation" : "",
+          "documentation" : "<p>A list of AWS Cost and Usage reports owned by the account.</p>",
           "simpleType" : "List<ReportDefinition>",
           "variableSetterType" : "java.util.Collection<ReportDefinition>"
         },
@@ -1334,11 +1346,11 @@
           "c2jName" : "ReportDefinitions",
           "c2jShape" : "ReportDefinitionList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>A list of AWS Cost and Usage reports owned by the account.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param reportDefinitions \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n@param reportDefinitions A list of AWS Cost and Usage reports owned by the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withReportDefinitions",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n@return A list of AWS Cost and Usage reports owned by the account.*/",
           "getterMethodName" : "getReportDefinitions",
           "getterModel" : {
             "returnType" : "java.util.List<ReportDefinition>",
@@ -1452,7 +1464,7 @@
           "marshallingType" : "LIST",
           "name" : "ReportDefinitions",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param reportDefinitions */",
+          "setterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n@param reportDefinitions A list of AWS Cost and Usage reports owned by the account.*/",
           "setterMethodName" : "setReportDefinitions",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1466,13 +1478,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if you want to override the existing values.</p>\n@param reportDefinitions \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if you want to override the existing values.</p>\n@param reportDefinitions A list of AWS Cost and Usage reports owned by the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<ReportDefinition>",
             "variableName" : "reportDefinitions",
             "variableType" : "java.util.List<ReportDefinition>",
-            "documentation" : "",
+            "documentation" : "<p>A list of AWS Cost and Usage reports owned by the account.</p>",
             "simpleType" : "List<ReportDefinition>",
             "variableSetterType" : "java.util.Collection<ReportDefinition>"
           },
@@ -1509,7 +1521,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "This exception is thrown when putting a report preference with a name that already exists.",
+      "documentation" : "<p>A report with the specified name already exists in the account. Specify a different report name.</p>",
       "enums" : null,
       "errorCode" : "DuplicateReportNameException",
       "hasHeaderMember" : false,
@@ -1546,7 +1558,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "This exception is thrown on a known dependency failure.",
+      "documentation" : "<p>An error on the server occurred during the processing of your request. Try again later.</p>",
       "enums" : null,
       "errorCode" : "InternalErrorException",
       "hasHeaderMember" : false,
@@ -1583,7 +1595,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Request of PutReportDefinition",
+      "documentation" : "<p>Creates a Cost and Usage Report.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1602,11 +1614,11 @@
         "c2jName" : "ReportDefinition",
         "c2jShape" : "ReportDefinition",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param reportDefinition \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@param reportDefinition Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withReportDefinition",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@return Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.*/",
         "getterMethodName" : "getReportDefinition",
         "getterModel" : {
           "returnType" : "ReportDefinition",
@@ -1639,7 +1651,7 @@
         "marshallingType" : "STRUCTURED",
         "name" : "ReportDefinition",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param reportDefinition */",
+        "setterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@param reportDefinition Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.*/",
         "setterMethodName" : "setReportDefinition",
         "setterModel" : {
           "timestampFormat" : null,
@@ -1653,13 +1665,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param reportDefinition \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@param reportDefinition Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "ReportDefinition",
           "variableName" : "reportDefinition",
           "variableType" : "ReportDefinition",
-          "documentation" : "",
+          "documentation" : "<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>",
           "simpleType" : "ReportDefinition",
           "variableSetterType" : "ReportDefinition"
         },
@@ -1670,11 +1682,11 @@
           "c2jName" : "ReportDefinition",
           "c2jShape" : "ReportDefinition",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param reportDefinition \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@param reportDefinition Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withReportDefinition",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@return Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.*/",
           "getterMethodName" : "getReportDefinition",
           "getterModel" : {
             "returnType" : "ReportDefinition",
@@ -1707,7 +1719,7 @@
           "marshallingType" : "STRUCTURED",
           "name" : "ReportDefinition",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param reportDefinition */",
+          "setterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@param reportDefinition Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.*/",
           "setterMethodName" : "setReportDefinition",
           "setterModel" : {
             "timestampFormat" : null,
@@ -1721,13 +1733,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param reportDefinition \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@param reportDefinition Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "ReportDefinition",
             "variableName" : "reportDefinition",
             "variableType" : "ReportDefinition",
-            "documentation" : "",
+            "documentation" : "<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>",
             "simpleType" : "ReportDefinition",
             "variableSetterType" : "ReportDefinition"
           },
@@ -1761,7 +1773,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Response of PutReportDefinition",
+      "documentation" : "<p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1801,7 +1813,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "The definition of AWS Cost and Usage Report. Customer can specify the report name, time unit, report format, compression format, S3 bucket and additional artifacts and schema elements in the definition.",
+      "documentation" : "<p>The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition. </p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -2077,11 +2089,11 @@
         "c2jName" : "AdditionalSchemaElements",
         "c2jShape" : "SchemaElementList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>",
         "enumType" : "SchemaElement",
-        "fluentSetterDocumentation" : "/**\n@param additionalSchemaElements \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
+        "fluentSetterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n@param additionalSchemaElements A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
         "fluentSetterMethodName" : "withAdditionalSchemaElements",
-        "getterDocumentation" : "/**\n@return \n@see SchemaElement*/",
+        "getterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n@return A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@see SchemaElement*/",
         "getterMethodName" : "getAdditionalSchemaElements",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -2195,7 +2207,7 @@
         "marshallingType" : "LIST",
         "name" : "AdditionalSchemaElements",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param additionalSchemaElements \n@see SchemaElement*/",
+        "setterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n@param additionalSchemaElements A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@see SchemaElement*/",
         "setterMethodName" : "setAdditionalSchemaElements",
         "setterModel" : {
           "timestampFormat" : null,
@@ -2209,13 +2221,13 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalSchemaElements(java.util.Collection)} or {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalSchemaElements \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
+        "varargSetterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalSchemaElements(java.util.Collection)} or {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalSchemaElements A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "additionalSchemaElements",
           "variableType" : "java.util.List<String>",
-          "documentation" : "",
+          "documentation" : "<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -2422,11 +2434,11 @@
         "c2jName" : "AdditionalArtifacts",
         "c2jShape" : "AdditionalArtifactList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>A list of manifests that you want Amazon Web Services to create for this report.</p>",
         "enumType" : "AdditionalArtifact",
-        "fluentSetterDocumentation" : "/**\n@param additionalArtifacts \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
+        "fluentSetterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n@param additionalArtifacts A list of manifests that you want Amazon Web Services to create for this report.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
         "fluentSetterMethodName" : "withAdditionalArtifacts",
-        "getterDocumentation" : "/**\n@return \n@see AdditionalArtifact*/",
+        "getterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n@return A list of manifests that you want Amazon Web Services to create for this report.\n@see AdditionalArtifact*/",
         "getterMethodName" : "getAdditionalArtifacts",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -2540,7 +2552,7 @@
         "marshallingType" : "LIST",
         "name" : "AdditionalArtifacts",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param additionalArtifacts \n@see AdditionalArtifact*/",
+        "setterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n@param additionalArtifacts A list of manifests that you want Amazon Web Services to create for this report.\n@see AdditionalArtifact*/",
         "setterMethodName" : "setAdditionalArtifacts",
         "setterModel" : {
           "timestampFormat" : null,
@@ -2554,15 +2566,147 @@
         "shouldEmitLegacyEnumSetter" : true,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalArtifacts \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
+        "varargSetterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalArtifacts A list of manifests that you want Amazon Web Services to create for this report.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "additionalArtifacts",
           "variableType" : "java.util.List<String>",
-          "documentation" : "",
+          "documentation" : "<p>A list of manifests that you want Amazon Web Services to create for this report.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "RefreshClosedReports",
+        "c2jShape" : "RefreshClosedReports",
+        "deprecated" : false,
+        "documentation" : "<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@param refreshClosedReports Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withRefreshClosedReports",
+        "getterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@return Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.*/",
+        "getterMethodName" : "getRefreshClosedReports",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "RefreshClosedReports",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "RefreshClosedReports",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "RefreshClosedReports",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@param refreshClosedReports Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.*/",
+        "setterMethodName" : "setRefreshClosedReports",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "refreshClosedReports",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@param refreshClosedReports Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "refreshClosedReports",
+          "variableType" : "Boolean",
+          "documentation" : "<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ReportVersioning",
+        "c2jShape" : "ReportVersioning",
+        "deprecated" : false,
+        "documentation" : "<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>",
+        "enumType" : "ReportVersioning",
+        "fluentSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@param reportVersioning Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportVersioning*/",
+        "fluentSetterMethodName" : "withReportVersioning",
+        "getterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@return Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@see ReportVersioning*/",
+        "getterMethodName" : "getReportVersioning",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ReportVersioning",
+          "queryString" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ReportVersioning",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ReportVersioning",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@param reportVersioning Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@see ReportVersioning*/",
+        "setterMethodName" : "setReportVersioning",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "reportVersioning",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@param reportVersioning Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportVersioning*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "reportVersioning",
+          "variableType" : "String",
+          "documentation" : "<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
       } ],
@@ -2571,11 +2715,11 @@
           "c2jName" : "AdditionalArtifacts",
           "c2jShape" : "AdditionalArtifactList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>A list of manifests that you want Amazon Web Services to create for this report.</p>",
           "enumType" : "AdditionalArtifact",
-          "fluentSetterDocumentation" : "/**\n@param additionalArtifacts \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
+          "fluentSetterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n@param additionalArtifacts A list of manifests that you want Amazon Web Services to create for this report.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
           "fluentSetterMethodName" : "withAdditionalArtifacts",
-          "getterDocumentation" : "/**\n@return \n@see AdditionalArtifact*/",
+          "getterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n@return A list of manifests that you want Amazon Web Services to create for this report.\n@see AdditionalArtifact*/",
           "getterMethodName" : "getAdditionalArtifacts",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2689,7 +2833,7 @@
           "marshallingType" : "LIST",
           "name" : "AdditionalArtifacts",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param additionalArtifacts \n@see AdditionalArtifact*/",
+          "setterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n@param additionalArtifacts A list of manifests that you want Amazon Web Services to create for this report.\n@see AdditionalArtifact*/",
           "setterMethodName" : "setAdditionalArtifacts",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2703,13 +2847,13 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalArtifacts \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
+          "varargSetterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalArtifacts A list of manifests that you want Amazon Web Services to create for this report.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "additionalArtifacts",
             "variableType" : "java.util.List<String>",
-            "documentation" : "",
+            "documentation" : "<p>A list of manifests that you want Amazon Web Services to create for this report.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2719,11 +2863,11 @@
           "c2jName" : "AdditionalSchemaElements",
           "c2jShape" : "SchemaElementList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>",
           "enumType" : "SchemaElement",
-          "fluentSetterDocumentation" : "/**\n@param additionalSchemaElements \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
+          "fluentSetterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n@param additionalSchemaElements A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
           "fluentSetterMethodName" : "withAdditionalSchemaElements",
-          "getterDocumentation" : "/**\n@return \n@see SchemaElement*/",
+          "getterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n@return A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@see SchemaElement*/",
           "getterMethodName" : "getAdditionalSchemaElements",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -2837,7 +2981,7 @@
           "marshallingType" : "LIST",
           "name" : "AdditionalSchemaElements",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param additionalSchemaElements \n@see SchemaElement*/",
+          "setterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n@param additionalSchemaElements A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@see SchemaElement*/",
           "setterMethodName" : "setAdditionalSchemaElements",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2851,13 +2995,13 @@
           "shouldEmitLegacyEnumSetter" : true,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalSchemaElements(java.util.Collection)} or {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalSchemaElements \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
+          "varargSetterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalSchemaElements(java.util.Collection)} or {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalSchemaElements A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "additionalSchemaElements",
             "variableType" : "java.util.List<String>",
-            "documentation" : "",
+            "documentation" : "<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -2997,6 +3141,73 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "RefreshClosedReports" : {
+          "c2jName" : "RefreshClosedReports",
+          "c2jShape" : "RefreshClosedReports",
+          "deprecated" : false,
+          "documentation" : "<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@param refreshClosedReports Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withRefreshClosedReports",
+          "getterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@return Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.*/",
+          "getterMethodName" : "getRefreshClosedReports",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "RefreshClosedReports",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "RefreshClosedReports",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "RefreshClosedReports",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@param refreshClosedReports Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.*/",
+          "setterMethodName" : "setRefreshClosedReports",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "refreshClosedReports",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@param refreshClosedReports Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "refreshClosedReports",
+            "variableType" : "Boolean",
+            "documentation" : "<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "ReportName" : {
           "c2jName" : "ReportName",
           "c2jShape" : "ReportName",
@@ -3059,6 +3270,73 @@
             "variableName" : "reportName",
             "variableType" : "String",
             "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ReportVersioning" : {
+          "c2jName" : "ReportVersioning",
+          "c2jShape" : "ReportVersioning",
+          "deprecated" : false,
+          "documentation" : "<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>",
+          "enumType" : "ReportVersioning",
+          "fluentSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@param reportVersioning Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportVersioning*/",
+          "fluentSetterMethodName" : "withReportVersioning",
+          "getterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@return Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@see ReportVersioning*/",
+          "getterMethodName" : "getReportVersioning",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ReportVersioning",
+            "queryString" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ReportVersioning",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ReportVersioning",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@param reportVersioning Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@see ReportVersioning*/",
+          "setterMethodName" : "setReportVersioning",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "reportVersioning",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@param reportVersioning Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportVersioning*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "reportVersioning",
+            "variableType" : "String",
+            "documentation" : "<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -3363,10 +3641,13 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Preferred format for report.",
+      "documentation" : "<p>The format that AWS saves the report in.</p>",
       "enums" : [ {
         "name" : "TextORcsv",
         "value" : "textORcsv"
+      }, {
+        "name" : "Parquet",
+        "value" : "Parquet"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -3406,7 +3687,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "This exception is thrown when the number of report preference reaches max limit. The max number is 5.",
+      "documentation" : "<p>This account already has five reports defined. To define a new report, you must delete an existing report.</p>",
       "enums" : null,
       "errorCode" : "ReportLimitReachedException",
       "hasHeaderMember" : false,
@@ -3434,6 +3715,52 @@
       },
       "wrapper" : false
     },
+    "ReportVersioning" : {
+      "c2jName" : "ReportVersioning",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "enums" : [ {
+        "name" : "CREATE_NEW_REPORT",
+        "value" : "CREATE_NEW_REPORT"
+      }, {
+        "name" : "OVERWRITE_REPORT",
+        "value" : "OVERWRITE_REPORT"
+      } ],
+      "errorCode" : null,
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "ReportVersioning",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "ReportVersioning",
+        "variableName" : "reportVersioning",
+        "variableType" : "ReportVersioning",
+        "documentation" : null,
+        "simpleType" : "ReportVersioning",
+        "variableSetterType" : "ReportVersioning"
+      },
+      "wrapper" : false
+    },
     "SchemaElement" : {
       "c2jName" : "SchemaElement",
       "customization" : {
@@ -3443,7 +3770,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "Preference of including Resource IDs. You can include additional details about individual resource IDs in your report.",
+      "documentation" : "<p>Whether or not AWS includes resource IDs in the report. </p>",
       "enums" : [ {
         "name" : "RESOURCES",
         "value" : "RESOURCES"
@@ -3486,7 +3813,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "The frequency on which report data are measured and displayed.",
+      "documentation" : "<p>The length of time covered by the report. </p>",
       "enums" : [ {
         "name" : "HOURLY",
         "value" : "HOURLY"
@@ -3532,7 +3859,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "This exception is thrown when providing an invalid input. eg. Put a report preference with an invalid report name, or Delete a report preference with an empty report name.",
+      "documentation" : "<p>The input fails to satisfy the constraints specified by an AWS service.</p>",
       "enums" : null,
       "errorCode" : "ValidationException",
       "hasHeaderMember" : false,
@@ -3563,7 +3890,79 @@
   },
   "clientConfigFactory" : "ClientConfigurationFactory",
   "examples" : {
-    "examples" : { },
+    "examples" : {
+      "DeleteReportDefinition" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example deletes the AWS Cost and Usage report named ExampleReport.",
+        "id" : "to-delete-a-report",
+        "input" : {
+          "ReportName" : "ExampleReport"
+        },
+        "output" : null,
+        "title" : "To delete the AWS Cost and Usage report named ExampleReport."
+      } ],
+      "DescribeReportDefinitions" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example lists the AWS Cost and Usage reports for the account.",
+        "id" : "to-retrieve-report-definitions",
+        "input" : {
+          "MaxResults" : 5
+        },
+        "output" : {
+          "ReportDefinitions" : [ {
+            "ReportName" : "ExampleReport",
+            "TimeUnit" : "HOURLY",
+            "Format" : "textORcsv",
+            "Compression" : "GZIP",
+            "AdditionalSchemaElements" : [ "RESOURCES" ],
+            "S3Bucket" : "example-s3-bucket",
+            "S3Prefix" : "exampleprefix",
+            "S3Region" : "us-east-1",
+            "AdditionalArtifacts" : [ "QUICKSIGHT" ]
+          }, {
+            "ReportName" : "ExampleReport2",
+            "TimeUnit" : "HOURLY",
+            "Format" : "textORcsv",
+            "Compression" : "GZIP",
+            "AdditionalSchemaElements" : [ "RESOURCES" ],
+            "S3Bucket" : "example-s3-bucket",
+            "S3Prefix" : "exampleprefix",
+            "S3Region" : "us-east-1",
+            "AdditionalArtifacts" : [ "QUICKSIGHT" ]
+          } ]
+        },
+        "title" : "To list the AWS Cost and Usage reports for the account."
+      } ],
+      "PutReportDefinition" : [ {
+        "comments" : {
+          "input" : { },
+          "output" : { }
+        },
+        "description" : "The following example creates a AWS Cost and Usage report named ExampleReport.",
+        "id" : "to-create-a-report-definitions",
+        "input" : {
+          "ReportDefinition" : {
+            "ReportName" : "ExampleReport",
+            "TimeUnit" : "DAILY",
+            "Format" : "textORcsv",
+            "Compression" : "ZIP",
+            "AdditionalSchemaElements" : [ "RESOURCES" ],
+            "S3Bucket" : "example-s3-bucket",
+            "S3Prefix" : "exampleprefix",
+            "S3Region" : "us-east-1",
+            "AdditionalArtifacts" : [ "REDSHIFT", "QUICKSIGHT" ]
+          }
+        },
+        "output" : null,
+        "title" : "To create a report named ExampleReport."
+      } ]
+    },
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,

@@ -60,6 +60,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private JobSettings settings;
 
     private String status;
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     */
+    private Long statusUpdateIntervalInSecs;
 
     private Timing timing;
     /**
@@ -561,6 +567,52 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateIntervalInSecs
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     */
+
+    public void setStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
+        this.statusUpdateIntervalInSecs = statusUpdateIntervalInSecs;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @return Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *         in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *         service begins processing your job to the time it completes the transcode or encounters an error.
+     */
+
+    public Long getStatusUpdateIntervalInSecs() {
+        return this.statusUpdateIntervalInSecs;
+    }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
+     * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
+     * processing your job to the time it completes the transcode or encounters an error.
+     * 
+     * @param statusUpdateIntervalInSecs
+     *        Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval,
+     *        in seconds, between status updates. MediaConvert sends an update at this interval from the time the
+     *        service begins processing your job to the time it completes the transcode or encounters an error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withStatusUpdateIntervalInSecs(Long statusUpdateIntervalInSecs) {
+        setStatusUpdateIntervalInSecs(statusUpdateIntervalInSecs);
+        return this;
+    }
+
+    /**
      * @param timing
      */
 
@@ -685,6 +737,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("Settings: ").append(getSettings()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusUpdateIntervalInSecs() != null)
+            sb.append("StatusUpdateIntervalInSecs: ").append(getStatusUpdateIntervalInSecs()).append(",");
         if (getTiming() != null)
             sb.append("Timing: ").append(getTiming()).append(",");
         if (getUserMetadata() != null)
@@ -755,6 +809,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusUpdateIntervalInSecs() == null ^ this.getStatusUpdateIntervalInSecs() == null)
+            return false;
+        if (other.getStatusUpdateIntervalInSecs() != null && other.getStatusUpdateIntervalInSecs().equals(this.getStatusUpdateIntervalInSecs()) == false)
+            return false;
         if (other.getTiming() == null ^ this.getTiming() == null)
             return false;
         if (other.getTiming() != null && other.getTiming().equals(this.getTiming()) == false)
@@ -784,6 +842,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusUpdateIntervalInSecs() == null) ? 0 : getStatusUpdateIntervalInSecs().hashCode());
         hashCode = prime * hashCode + ((getTiming() == null) ? 0 : getTiming().hashCode());
         hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode());
         return hashCode;

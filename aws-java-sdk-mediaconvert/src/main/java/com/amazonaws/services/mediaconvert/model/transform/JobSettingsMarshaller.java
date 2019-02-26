@@ -32,6 +32,8 @@ public class JobSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("adAvailOffset").build();
     private static final MarshallingInfo<StructuredPojo> AVAILBLANKING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availBlanking").build();
+    private static final MarshallingInfo<StructuredPojo> ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("esam").build();
     private static final MarshallingInfo<List> INPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputs").build();
     private static final MarshallingInfo<StructuredPojo> MOTIONIMAGEINSERTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -63,6 +65,7 @@ public class JobSettingsMarshaller {
         try {
             protocolMarshaller.marshall(jobSettings.getAdAvailOffset(), ADAVAILOFFSET_BINDING);
             protocolMarshaller.marshall(jobSettings.getAvailBlanking(), AVAILBLANKING_BINDING);
+            protocolMarshaller.marshall(jobSettings.getEsam(), ESAM_BINDING);
             protocolMarshaller.marshall(jobSettings.getInputs(), INPUTS_BINDING);
             protocolMarshaller.marshall(jobSettings.getMotionImageInserter(), MOTIONIMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(jobSettings.getNielsenConfiguration(), NIELSENCONFIGURATION_BINDING);

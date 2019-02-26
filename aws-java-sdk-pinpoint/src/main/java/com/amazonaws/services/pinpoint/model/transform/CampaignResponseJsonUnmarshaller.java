@@ -57,6 +57,10 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                     context.nextToken();
                     campaignResponse.setApplicationId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    campaignResponse.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreationDate", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setCreationDate(context.getUnmarshaller(String.class).unmarshall(context));
@@ -116,6 +120,11 @@ public class CampaignResponseJsonUnmarshaller implements Unmarshaller<CampaignRe
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
                     campaignResponse.setState(CampaignStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    campaignResponse.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
+                            .unmarshall(context));
                 }
                 if (context.testExpression("TreatmentDescription", targetDepth)) {
                     context.nextToken();

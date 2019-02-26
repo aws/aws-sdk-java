@@ -1,3 +1,32 @@
+# __1.11.507__ __2019-02-26__
+## __AWS Application Discovery Service__
+  - ### Features
+    - Documentation updates for discovery
+
+## __AWS Cost and Usage Report Service__
+  - ### Features
+    - Adding support for Athena and new report preferences to the Cost and Usage Report API.
+
+## __AWS Elemental MediaConvert__
+  - ### Features
+    - AWS Elemental MediaConvert SDK has added several features including support for: auto-rotation or user-specified rotation of 0, 90, 180, or 270 degrees; multiple output groups with DRM; ESAM XML documents to specify ad insertion points; Offline Apple HLS FairPlay content protection. 
+
+## __AWS OpsWorks for Chef Automate__
+  - ### Features
+    - Documentation updates for opsworkscm
+
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for AWS Organizations
+
+## __AWS Resource Groups__
+  - ### Features
+    - Documentation updates for Resource Groups API; updating description of Tag API.
+
+## __Amazon Pinpoint__
+  - ### Features
+    - This release adds support for the Amazon Resource Groups Tagging API to Amazon Pinpoint, which means that you can now add and manage tags for Amazon Pinpoint projects (apps), campaigns, and segments. A tag is a label that you optionally define and associate with Amazon Pinpoint resource. Tags can help you categorize and manage these types of resources in different ways, such as by purpose, owner, environment, or other criteria. For example, you can use tags to apply policies or automation, or to identify resources that are subject to certain compliance requirements. A project, campaign, or segment can have as many as 50 tags. For more information about using and managing tags in Amazon Pinpoint, see the Amazon Pinpoint Developer Guide at https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html. For more information about the Amazon Resource Group Tagging API, see the Amazon Resource Group Tagging API Reference at https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/Welcome.html.
+
 # __1.11.506__ __2019-02-25__
 ## __AWS Cost Explorer Service__
   - ### Features

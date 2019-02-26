@@ -15,13 +15,16 @@ package com.amazonaws.services.costandusagereport.model;
 import javax.annotation.Generated;
 
 /**
- * Preferred compression format for report.
+ * <p>
+ * The compression format that AWS uses for the report.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CompressionFormat {
 
     ZIP("ZIP"),
-    GZIP("GZIP");
+    GZIP("GZIP"),
+    Parquet("Parquet");
 
     private String value;
 

@@ -15,7 +15,9 @@ package com.amazonaws.services.costandusagereport.model;
 import javax.annotation.Generated;
 
 /**
- * The frequency on which report data are measured and displayed.
+ * <p>
+ * The length of time covered by the report.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum TimeUnit {
